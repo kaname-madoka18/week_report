@@ -23,6 +23,11 @@
     }catch(_){return false}
   };
   const delegate=()=>catalogReady||catalogParent();
+  if(!catalogParent()){
+    document.querySelectorAll('a[data-catalog-home]').forEach(link=>{
+      link.textContent='← 返回网站目录';
+    });
+  }
   const notify=message=>{if(window.parent!==window)window.parent.postMessage(message,'*')};
   window.addEventListener('message',event=>{
     if(event.source===window.parent&&event.data?.type==='dataset-catalog-ready')catalogReady=true;

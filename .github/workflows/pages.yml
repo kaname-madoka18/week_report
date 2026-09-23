@@ -16,6 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Restore linked gallery media
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .media-release
+          gh release download gallery-media-20260923 --repo "$GITHUB_REPOSITORY" --pattern 'gallery-media-*.tar.gz' --dir .media-release
+          for archive in .media-release/*.tar.gz; do
+            tar -xzf "$archive" -C .
+          done
       - name: Prepare static site
         shell: bash
         run: |
@@ -26,7 +35,7 @@ jobs:
           dst = Path('_site')
           dst.mkdir()
           for item in src.iterdir():
-              if item.name in {'.git', '.github', '_site', 'README.md'}:
+              if item.name in {'.git', '.github', '_site', '.media-release', 'README.md'}:
                   continue
               out = dst / item.name
               if item.is_dir():

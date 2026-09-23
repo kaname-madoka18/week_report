@@ -41,10 +41,13 @@ function openFrame(index){
   const image=document.getElementById('large-frame');
   image.src=r.image;
   let video=document.getElementById('large-video');
-  if(!video){video=document.createElement('video');video.id='large-video';video.controls=true;video.preload='metadata';video.playsInline=true;video.style.cssText='display:block;width:100%;max-height:48vh;margin:12px auto;border-radius:8px;background:#101d2b';image.after(video)}
-  if(r.local_video){video.hidden=false;video.poster=r.image;video.src=r.local_video;video.load()}else{video.pause();video.removeAttribute('src');video.removeAttribute('poster');video.hidden=true;video.load()}
+  if(!video){video=document.createElement('video');video.id='large-video';video.controls=true;video.preload='metadata';video.playsInline=true;video.style.cssText='width:100%;max-height:48vh;margin:12px auto;border-radius:8px;background:#101d2b';image.after(video)}
+  image.hidden=!!r.local_video;
+  video.pause();video.onloadedmetadata=null;
+  if(r.local_video){video.hidden=false;video.poster=r.image;video.onloadedmetadata=()=>{const offset=Number(r.timestamp_seconds)||0;if(Number.isFinite(video.duration))video.currentTime=Math.min(offset,Math.max(0,video.duration-.1))};video.src=r.local_video;video.load()}else{video.removeAttribute('src');video.removeAttribute('poster');video.hidden=true;video.load()}
   document.getElementById('frame-detail').innerHTML='<strong>'+esc(label(r))+'</strong><br>第 '+(current+1)+' / '+active.length+' 张'+(group.media_kind==='image'?' · 静态图像':' · '+esc(durationLabel(group,r))+' '+secs(r.duration_seconds)+' · 取帧位置 '+secs(r.timestamp_seconds))+'<br><a href="'+esc(r.image)+'" target="_blank">打开图片</a>'+(r.source_url?' · <a href="'+esc(r.source_url)+'" target="_blank" rel="noopener">原始来源</a>':'')+(r.local_video?' · <a href="'+esc(r.local_video)+'" target="_blank" rel="noopener">本地小视频</a>':'');
   if(!dialog.open)dialog.showModal();
 }
-select.onchange=renderGroup;document.getElementById('frame-prev').onclick=()=>openFrame(current-1);document.getElementById('frame-next').onclick=()=>openFrame(current+1);document.getElementById('frame-close').onclick=()=>dialog.close();document.addEventListener('keydown',e=>{if(!dialog.open)return;if(e.key==='ArrowLeft')openFrame(current-1);if(e.key==='ArrowRight')openFrame(current+1)});
+dialog.addEventListener('close',()=>document.getElementById('large-video')?.pause());
+select.onchange=renderGroup;document.getElementById('frame-prev').onclick=()=>openFrame(current-1);document.getElementById('frame-next').onclick=()=>openFrame(current+1);document.getElementById('frame-close').onclick=()=>dialog.close();document.addEventListener('keydown',e=>{if(!dialog.open||e.target.tagName==='VIDEO')return;if(e.key==='ArrowLeft')openFrame(current-1);if(e.key==='ArrowRight')openFrame(current+1)});
 if(DATA.groups.length){const initial=location.hash.slice(1);if(DATA.groups.some(g=>g.id===initial))select.value=initial;renderGroup()}else{document.getElementById('gallery-controls').hidden=true;grid.innerHTML='<div class="empty">'+esc(DATA.no_preview_reason||'目前未取得符合下载限制的公开视频。请查看 overview 中的数据发布状态和访问方式。')+'</div>'}
