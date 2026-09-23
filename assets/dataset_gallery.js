@@ -38,7 +38,11 @@ function renderGroup(){
 }
 function openFrame(index){
   if(!active.length)return;current=(index+active.length)%active.length;const r=active[current],group=DATA.groups.find(g=>g.id===select.value);
-  document.getElementById('large-frame').src=r.image;
+  const image=document.getElementById('large-frame');
+  image.src=r.image;
+  let video=document.getElementById('large-video');
+  if(!video){video=document.createElement('video');video.id='large-video';video.controls=true;video.preload='metadata';video.playsInline=true;video.style.cssText='display:block;width:100%;max-height:48vh;margin:12px auto;border-radius:8px;background:#101d2b';image.after(video)}
+  if(r.local_video){video.hidden=false;video.poster=r.image;video.src=r.local_video;video.load()}else{video.pause();video.removeAttribute('src');video.removeAttribute('poster');video.hidden=true;video.load()}
   document.getElementById('frame-detail').innerHTML='<strong>'+esc(label(r))+'</strong><br>第 '+(current+1)+' / '+active.length+' 张'+(group.media_kind==='image'?' · 静态图像':' · '+esc(durationLabel(group,r))+' '+secs(r.duration_seconds)+' · 取帧位置 '+secs(r.timestamp_seconds))+'<br><a href="'+esc(r.image)+'" target="_blank">打开图片</a>'+(r.source_url?' · <a href="'+esc(r.source_url)+'" target="_blank" rel="noopener">原始来源</a>':'')+(r.local_video?' · <a href="'+esc(r.local_video)+'" target="_blank" rel="noopener">本地小视频</a>':'');
   if(!dialog.open)dialog.showModal();
 }
