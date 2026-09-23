@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="M3-Agent can process real-time visual and auditory inputs to build and update its long-term memory. Given an instruction, M3-Agent autonomously performs multi-turn, iterative reasoning and retrieves relevant information from memory to accomplish the task.">
+
+
+  <meta name="twitter:title" content="Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory">
+  <meta name="twitter:description" content="M3-Agent can process real-time visual and auditory inputs to build and update its long-term memory. Given an instruction, M3-Agent autonomously performs multi-turn, iterative reasoning and retrieves relevant information from memory to accomplish the task.">
+  <!-- <meta name="twitter:image" content="static/images/twitter_banner_image.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Multimodal Agent, Long-Term Memory, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+             <span class="author-block">
+                Lin Long<sup>1,2,*</sup>,
+              </span>
+              <span class="author-block">
+                Yichen He<sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                Wentao Ye</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                Yiyuan Pan<sup>1,3</sup>,
+              </span>
+              <span class="author-block">
+                Yuan Lin<sup>1,†</sup>,
+              </span>
+              <span class="author-block">
+                Hang Li<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Junbo Zhao<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Wei Li<sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>ByteDance Seed,</span>
+              <span class="author-block"><sup>2</sup>Zhejiang University,</span>
+              <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding author</small></span>
+              <span class="eql-cntrb"><small><br><a herf="linyuan.0@bytedance.com">linyuan.0@bytedance.com</a></small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2508.09736.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://github.com/bytedance-seed/m3-agent" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2508.09736" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce M3-Agent, a novel multimodal agent framework equipped with long-term memory. Like humans, M3-Agent can process real-time visual and auditory inputs to build and update its long-term memory. Beyond episodic memory, it also develops semantic memory, enabling it to accumulate world knowledge over time. Its memory is organized in an entity-centric, multimodal format, allowing deeper and more consistent understanding of the environment. Given an instruction, M3-Agent autonomously performs multi-turn, iterative reasoning and retrieves relevant information from memory to accomplish the task. To evaluate memory effectiveness and memory-based reasoning in multimodal agents, we develop M3-Bench, a new long-video question answering benchmark. M3-Bench comprises 100 newly recorded real-world videos captured from a robot’s perspective (M3-Bench-robot) and 920 web-sourced videos across diverse scenarios (M3-Bench-web). We annotate question-answer pairs designed to test key capabilities essential for agent applications, such as human understanding, general knowledge extraction, and cross- modal reasoning. Experimental results show that M3-Agent, trained via reinforcement learning, outperforms the strongest baseline, a prompting agent using Gemini-1.5-pro and GPT-4o, achieving 8.2%, 7.7%, and 5.3% higher accuracy on M3-Bench-robot, M3-Bench-web and VideoMME-long, respectively. Our work advances the multimodal agents toward more human-like long-term memory and provides insights into their practical design. Model, code and data are available at <a href="https://github.com/bytedance-seed/m3-agent">https://github.com/bytedance-seed/m3-agent</a>.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+    <img src="static/images/illustration.png" alt="Human centric memorization" class="center-image blend-img-background"/>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Youtube video -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-widescreen">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        
+        <div class="column is-four-fifths">
+          <h2 class="title is-2">A demo of M3-Agent as a personal assistant!</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/XUx31cBanfo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="level-set has-text-justified">
+            <p>
+              <br>
+              The video can also be accessed on <a href="https://www.bilibili.com/video/BV1h9YpznEx9/" target="_blank">Bilibili</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <center>
+          <h2 class="title is-2">M3-Bench</h2>
+          <div class="level-set has-text-justified">
+              <p>We introduce M3-Bench, an long video question answerin dataset designed to evaluate the capability of multimodal agents to perform reasoning over long-term memory. Each instance in M3-Bench comprises a long video simulating the perceptual input of an agent, along with a series of open-ended question-answer pairs. The dataset is organized into two subsets:</p>
+              <p>1. M3-Bench-robot, which contains 100 real-world videos recorded from a robot's first-person perspective, </p>
+              <p>2. M3-Bench-web, which includes 920 web-sourced videos covering a wider variety of content and scenarios. </p>
+          </div>
+          <img src="static/images/m3-bench-example.png" alt="m3-bench-example" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified"><p>
+               Examples from M3-Bench. M3-Bench-robot features long videos from realistic robotic work scenarios, while M3-Bench-web expands the video diversity to support broader evaluation. The question-answering tasks are designed to assess a multimodal agent’s ability to construct consistent and reliable long-term memory, as well as to reason effectively over that memory.
+          </p></div>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <center><h2 class="title is-3">Data Examples</h2></center>
+    <br>
+    <div class="container">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-5">
+          
+          <h5 class="subtitle is-4">M3-Bench-Robot</h5>
+
+          <div class="publication-video">
+             
+            <iframe src="https://www.youtube.com/embed/7W0gRqCRMZQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            
+          </div>
+          
+          <div class="level-set has-text-justified">
+          <p>
+            <b>1. Why is Abel a little bit angry?</b>&nbsp;[Human Understanding, Cross-Modal Reasoning]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>Because Cary drank up all the yogurt.
+          </p>
+          <p>
+            <b>2. What dish is in the red pot?</b>&nbsp;[Multi-Detail Reasoning]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>Winter melon stewed with spareribs.
+          </p>
+          <p>
+            <b>3. Which shelf in the refrigerator, countiong from the top, does Cary's family usually put the wine they bought on?</b>&nbsp;[Cross-Modal Reasoning]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>Third.
+          </p>
+          <p>
+            <b>4. Is Cary good at cooking?</b>&nbsp;[Human Understanding]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>No
+          </p>
+          </div>
+        </div>
+        <div class="column is-5">
+          <h5 class="subtitle is-4">M3-Bench-Web</h5>
+
+          <div class="publication-video">
+             
+            <iframe src="https://www.youtube.com/embed/Efk3K4epEzg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            
+          </div>
+          
+          <div class="level-set has-text-justified">
+          <p>
+            <b>1. Which collection has the highest starting price among the five items shown in the video?</b>&nbsp;[Multi-Detail Reasoning]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>Pirate Ship Float.
+          </p>
+          <p>
+            <b>2. What did the authentication expert do after examining the ink marks on the Led Zeppelin album?</b>&nbsp;[Multi-Hop Reasoning]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>He compared the handwriting.
+          </p>
+          <p>
+            <b>3. Which collection is Rick's favorite, as indicated in the video?</b>&nbsp;[Multi-Hop Reasoning, Human Understanding]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>The album of Led Zeppelin.
+          </p>
+          <p>
+            <b>4. Does Rick trust Trump's abilities, as shown in the video?</b>&nbsp;[Multi-Detail Reasoning, Human Understanding]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>No
+          </p>
+          </div>
+        </div>
+        <div class="column is-5">
+          <h5 class="subtitle is-4">M3-Bench-Web</h5>
+
+          <div class="publication-video">
+             
+            <iframe src="https://www.youtube.com/embed/6Unxpxy-Ct4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            
+          </div>
+          
+          <div class="level-set has-text-justified">
+          <p>
+            <b>1. How should the knife be positioned to efficiently and neatly slice scallions into shreds?</b>&nbsp;[General Knowledge Extraction]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>The blade should not be higher than the fingers.
+          </p>
+          <p>
+            <b>2. Is Lucas skilled at cooking based on his performance in the video?</b>&nbsp;[Multi-Detail Reasoning, Human Understanding]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>No.
+          </p>
+          <p>
+            <b>3. What symbolic meaning does the father associate with keeping the shrimp head intact?</b>&nbsp;[Human Understanding]
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>Answer:&nbsp;</b>It symbolizes a complete beginning and ending.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <center>
+            <h2 class="title is-3">Dataset Statistics</h2>
+          <img src="static/images/m3-bench-statistic.png" alt="m3-bench-statistic" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified"><p>
+               Statistical overview of M3-Bench benchmark. Each question may correspond to multiple question types.
+          </p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <center>
+          <h2 class="title is-2">M3-Agent</h2>
+          <div class="level-set has-text-justified">
+              <p>Architecture of M3-Agent. The system consists of two parallel processes: memorization and control. During memorization, M3-Agent processes video and audio streams online to generate episodic and semantic memory. During control, it executes instructions by iteratively thinking and retrieving from long-term memory. The long-term memory is structured as a multimodal graph.</p>
+          </div>
+          <img src="static/images/m3-agent.png" alt="m3-agent" class="center-image blend-img-background"/>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <center>
+          <h2 class="title is-2">Experimental Results</h2>
+          <img src="static/images/r1.png" alt="result1" class="center-image blend-img-background"/>
+          <h2 class="title is-2"></h2>
+          <img src="static/images/r2.png" alt="result1" class="center-image blend-img-background"/>
+          <h2 class="title is-2"></h2>
+          <img src="static/images/r3.png" alt="result1" class="center-image blend-img-background"/>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{long2025seeing,
+      title={Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory}, 
+      author={Lin Long, Yichen He, Wentao Ye, Yiyuan Pan, Yuan Lin, Hang Li, Junbo Zhao, Wei Li},
+      year={2025},
+      eprint={2508.09736},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+<!-- End BibTex citation -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- Default Statcounter code for M3-agent
+https://m3-agent.github.io -->
+<script type="text/javascript">
+var sc_project=12843789; 
+var sc_invisible=1; 
+var sc_security="e9c3bf5f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12843789/0/e9c3bf5f/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>

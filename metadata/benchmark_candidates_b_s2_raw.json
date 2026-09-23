@@ -1,0 +1,350 @@
+{
+  "retrieved_at": "2026-09-23",
+  "request_ids": [
+    "2506.15635",
+    "2601.03515",
+    "2502.10550",
+    "2501.11858",
+    "2505.23922",
+    "2503.12496",
+    "2507.15882",
+    "2510.01353",
+    "2510.08759",
+    "2601.10744",
+    "2602.06075",
+    "2504.00907",
+    "2411.03628",
+    "2501.05510",
+    "2411.04998",
+    "2503.22152",
+    "2411.19941",
+    "2412.18424",
+    "2410.21311",
+    "2501.08828",
+    "2411.04952",
+    "2505.11180",
+    "2412.09582"
+  ],
+  "results": [
+    {
+      "paperId": "919556328ac2da382215ea682f4eeb99b15fcf39",
+      "externalIds": {
+        "ArXiv": "2506.15635",
+        "DBLP": "journals/corr/abs-2506-15635",
+        "DOI": "10.48550/arXiv.2506.15635",
+        "CorpusId": 279447480
+      },
+      "url": "https://www.semanticscholar.org/paper/919556328ac2da382215ea682f4eeb99b15fcf39",
+      "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+      "venue": "arXiv.org",
+      "citationCount": 12,
+      "publicationDate": "2025-06-18"
+    },
+    {
+      "paperId": "c69c7ab705735b24903511d62fad8110699f708a",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2601-03515",
+        "ArXiv": "2601.03515",
+        "DOI": "10.48550/arXiv.2601.03515",
+        "CorpusId": 284532253
+      },
+      "url": "https://www.semanticscholar.org/paper/c69c7ab705735b24903511d62fad8110699f708a",
+      "title": "Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "citationCount": 39,
+      "publicationDate": "2026-01-07"
+    },
+    {
+      "paperId": "1a9fbae6456b87408d97721e967438ae308b8edd",
+      "externalIds": {
+        "ArXiv": "2502.10550",
+        "DBLP": "journals/corr/abs-2502-10550",
+        "DOI": "10.48550/arXiv.2502.10550",
+        "CorpusId": 276408688
+      },
+      "url": "https://www.semanticscholar.org/paper/1a9fbae6456b87408d97721e967438ae308b8edd",
+      "title": "Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning",
+      "venue": "arXiv.org",
+      "citationCount": 37,
+      "publicationDate": "2025-02-14"
+    },
+    {
+      "paperId": "fcbd6d1876e417248836b013c8186d454fccff5c",
+      "externalIds": {
+        "ArXiv": "2501.11858",
+        "DBLP": "journals/corr/abs-2501-11858",
+        "DOI": "10.48550/arXiv.2501.11858",
+        "CorpusId": 275788146
+      },
+      "url": "https://www.semanticscholar.org/paper/fcbd6d1876e417248836b013c8186d454fccff5c",
+      "title": "EmbodiedEval: Evaluate Multimodal LLMs as Embodied Agents",
+      "venue": "arXiv.org",
+      "citationCount": 55,
+      "publicationDate": "2025-01-21"
+    },
+    {
+      "paperId": "5599ecccf4a21dc1d3745cb8898396bf3b0db05f",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2505-23922",
+        "ArXiv": "2505.23922",
+        "DOI": "10.48550/arXiv.2505.23922",
+        "CorpusId": 279071042
+      },
+      "url": "https://www.semanticscholar.org/paper/5599ecccf4a21dc1d3745cb8898396bf3b0db05f",
+      "title": "ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding",
+      "venue": "arXiv.org",
+      "citationCount": 7,
+      "publicationDate": "2025-05-29"
+    },
+    {
+      "paperId": "965e19e719a3d298179ae5052917aa0ba1711511",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2503-12496",
+        "ArXiv": "2503.12496",
+        "DOI": "10.1109/ICCV51701.2025.01942",
+        "CorpusId": 277066584
+      },
+      "url": "https://www.semanticscholar.org/paper/965e19e719a3d298179ae5052917aa0ba1711511",
+      "title": "Does Your Vision-Language Model Get Lost in the Long Video Sampling Dilemma?",
+      "venue": "IEEE International Conference on Computer Vision",
+      "citationCount": 21,
+      "publicationDate": "2025-03-16"
+    },
+    {
+      "paperId": "a80793e03ae6ae9eb06846f1d15cc0b9d062c958",
+      "externalIds": {
+        "ArXiv": "2507.15882",
+        "DBLP": "journals/corr/abs-2507-15882",
+        "DOI": "10.1109/ICCVW69036.2025.00428",
+        "CorpusId": 280166930
+      },
+      "url": "https://www.semanticscholar.org/paper/a80793e03ae6ae9eb06846f1d15cc0b9d062c958",
+      "title": "Document Haystack: A Long Context Multimodal Image/Document Understanding Vision LLM Benchmark",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+      "citationCount": 6,
+      "publicationDate": "2025-07-18"
+    },
+    {
+      "paperId": "164188a2e6326e187b4d1699f17adf413f0d675d",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2510-01353",
+        "ArXiv": "2510.01353",
+        "DOI": "10.48550/arXiv.2510.01353",
+        "CorpusId": 281724947
+      },
+      "url": "https://www.semanticscholar.org/paper/164188a2e6326e187b4d1699f17adf413f0d675d",
+      "title": "MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments",
+      "venue": "arXiv.org",
+      "citationCount": 13,
+      "publicationDate": "2025-10-01"
+    },
+    {
+      "paperId": "86f08d7d3504cd8a7995e6d8550e7060f58f40ed",
+      "externalIds": {
+        "ArXiv": "2510.08759",
+        "CorpusId": 282055819
+      },
+      "url": "https://www.semanticscholar.org/paper/86f08d7d3504cd8a7995e6d8550e7060f58f40ed",
+      "title": "Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis",
+      "venue": "",
+      "citationCount": 4,
+      "publicationDate": "2025-10-09"
+    },
+    {
+      "paperId": "f47803da65556ddf778a1ca75e7a27944e0f4bb7",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2601-10744",
+        "ArXiv": "2601.10744",
+        "DOI": "10.48550/arXiv.2601.10744",
+        "CorpusId": 284860982
+      },
+      "url": "https://www.semanticscholar.org/paper/f47803da65556ddf778a1ca75e7a27944e0f4bb7",
+      "title": "Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration",
+      "venue": "arXiv.org",
+      "citationCount": 11,
+      "publicationDate": "2026-01-11"
+    },
+    {
+      "paperId": "5b037191c54cab52e9df3aadba62c140fdf4a51d",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2602-06075",
+        "ArXiv": "2602.06075",
+        "DOI": "10.48550/arXiv.2602.06075",
+        "CorpusId": 285401863
+      },
+      "url": "https://www.semanticscholar.org/paper/5b037191c54cab52e9df3aadba62c140fdf4a51d",
+      "title": "MemGUI-Bench: Benchmarking Memory of Mobile GUI Agents in Dynamic Environments",
+      "venue": "arXiv.org",
+      "citationCount": 15,
+      "publicationDate": "2026-02-03"
+    },
+    {
+      "paperId": "7b04ad06498a615f5ddefb56d208c45714c33528",
+      "externalIds": {
+        "ArXiv": "2504.00907",
+        "DBLP": "journals/corr/abs-2504-00907",
+        "DOI": "10.48550/arXiv.2504.00907",
+        "CorpusId": 277467256
+      },
+      "url": "https://www.semanticscholar.org/paper/7b04ad06498a615f5ddefb56d208c45714c33528",
+      "title": "Grounding Multimodal LLMs to Embodied Agents that Ask for Help with Reinforcement Learning",
+      "venue": "arXiv.org",
+      "citationCount": 26,
+      "publicationDate": "2025-04-01"
+    },
+    {
+      "paperId": "958e80006e3b62a0b41e50877d9e554c339615a7",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2411-03628",
+        "ArXiv": "2411.03628",
+        "DOI": "10.48550/arXiv.2411.03628",
+        "CorpusId": 273850338
+      },
+      "url": "https://www.semanticscholar.org/paper/958e80006e3b62a0b41e50877d9e554c339615a7",
+      "title": "StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding",
+      "venue": "arXiv.org",
+      "citationCount": 128,
+      "publicationDate": "2024-11-06"
+    },
+    {
+      "paperId": "6f00bdbb2082ec80ce0ae701f4c8c4ed52607a41",
+      "externalIds": {
+        "ArXiv": "2501.05510",
+        "DBLP": "journals/corr/abs-2501-05510",
+        "DOI": "10.1109/CVPR52734.2025.01761",
+        "CorpusId": 275458756
+      },
+      "url": "https://www.semanticscholar.org/paper/6f00bdbb2082ec80ce0ae701f4c8c4ed52607a41",
+      "title": "OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?",
+      "venue": "Computer Vision and Pattern Recognition",
+      "citationCount": 135,
+      "publicationDate": "2025-01-09"
+    },
+    {
+      "paperId": "043f80aadcafb06ce393ad7f8621f0b79753f55f",
+      "externalIds": {
+        "ArXiv": "2411.04998",
+        "DBLP": "journals/corr/abs-2411-04998",
+        "DOI": "10.48550/arXiv.2411.04998",
+        "CorpusId": 273877964
+      },
+      "url": "https://www.semanticscholar.org/paper/043f80aadcafb06ce393ad7f8621f0b79753f55f",
+      "title": "HourVideo: 1-Hour Video-Language Understanding",
+      "venue": "Neural Information Processing Systems",
+      "citationCount": 140,
+      "publicationDate": "2024-11-07"
+    },
+    {
+      "paperId": "23fd1097a3e34d2481ae2853708355975285025a",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2503-22152",
+        "ArXiv": "2503.22152",
+        "DOI": "10.48550/arXiv.2503.22152",
+        "CorpusId": 277435577
+      },
+      "url": "https://www.semanticscholar.org/paper/23fd1097a3e34d2481ae2853708355975285025a",
+      "title": "EgoToM: Benchmarking Theory of Mind Reasoning from Egocentric Videos",
+      "venue": "arXiv.org",
+      "citationCount": 9,
+      "publicationDate": "2025-03-28"
+    },
+    {
+      "paperId": "233c60f163103aad903193ca829570ffdef90ff5",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2411-19941",
+        "ArXiv": "2411.19941",
+        "DOI": "10.48550/arXiv.2411.19941",
+        "CorpusId": 274422836
+      },
+      "url": "https://www.semanticscholar.org/paper/233c60f163103aad903193ca829570ffdef90ff5",
+      "title": "Perception Test 2024: Challenge Summary and a Novel Hour-Long VideoQA Benchmark",
+      "venue": "arXiv.org",
+      "citationCount": 5,
+      "publicationDate": "2024-11-29"
+    },
+    {
+      "paperId": "aa90e099fd96d2cf47146d76bdf78de7f8bd966b",
+      "externalIds": {
+        "DBLP": "conf/acl/DengYBWLXLGS0025",
+        "ArXiv": "2412.18424",
+        "DOI": "10.48550/arXiv.2412.18424",
+        "CorpusId": 274992274
+      },
+      "url": "https://www.semanticscholar.org/paper/aa90e099fd96d2cf47146d76bdf78de7f8bd966b",
+      "title": "LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "citationCount": 87,
+      "publicationDate": "2024-12-24"
+    },
+    {
+      "paperId": "8ab0db9c193491491ed44f5bf217f62023c0e61a",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2410-21311",
+        "ArXiv": "2410.21311",
+        "DOI": "10.48550/arXiv.2410.21311",
+        "CorpusId": 273661836
+      },
+      "url": "https://www.semanticscholar.org/paper/8ab0db9c193491491ed44f5bf217f62023c0e61a",
+      "title": "MMDocBench: Benchmarking Large Vision-Language Models for Fine-Grained Visual Document Understanding",
+      "venue": "arXiv.org",
+      "citationCount": 23,
+      "publicationDate": "2024-10-25"
+    },
+    {
+      "paperId": "6009dd2db3c01982da333bba4b400a459c3a7276",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2501-08828",
+        "ArXiv": "2501.08828",
+        "DOI": "10.48550/arXiv.2501.08828",
+        "CorpusId": 275544550
+      },
+      "url": "https://www.semanticscholar.org/paper/6009dd2db3c01982da333bba4b400a459c3a7276",
+      "title": "MMDocIR: Benchmarking Multi-Modal Retrieval for Long Documents",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 55,
+      "publicationDate": "2025-01-15"
+    },
+    {
+      "paperId": "226787d438bc47f986f82625d6b74fa6f733ef60",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2411-04952",
+        "ArXiv": "2411.04952",
+        "DOI": "10.48550/arXiv.2411.04952",
+        "CorpusId": 273877376
+      },
+      "url": "https://www.semanticscholar.org/paper/226787d438bc47f986f82625d6b74fa6f733ef60",
+      "title": "M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding",
+      "venue": "arXiv.org",
+      "citationCount": 128,
+      "publicationDate": "2024-11-07"
+    },
+    {
+      "paperId": "859ba689c5221b947e34116aeca0240882695098",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2505-11180",
+        "ArXiv": "2505.11180",
+        "DOI": "10.48550/arXiv.2505.11180",
+        "CorpusId": 278714608
+      },
+      "url": "https://www.semanticscholar.org/paper/859ba689c5221b947e34116aeca0240882695098",
+      "title": "mmRAG: A Modular Benchmark for Retrieval-Augmented Generation over Text, Tables, and Knowledge Graphs",
+      "venue": "International Workshop on the Semantic Web",
+      "citationCount": 5,
+      "publicationDate": "2025-05-16"
+    },
+    {
+      "paperId": "f8a55ad541291aef76f709d2ad8ce2f82db842c9",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2412-09582",
+        "ArXiv": "2412.09582",
+        "DOI": "10.48550/arXiv.2412.09582",
+        "CorpusId": 273157978
+      },
+      "url": "https://www.semanticscholar.org/paper/f8a55ad541291aef76f709d2ad8ce2f82db842c9",
+      "title": "Neptune: The Long Orbit to Benchmarking Long Video Understanding",
+      "venue": "arXiv.org",
+      "citationCount": 27,
+      "publicationDate": "2024-12-12"
+    }
+  ]
+}

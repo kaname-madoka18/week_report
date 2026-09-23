@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>EgoLife Blog</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SELQYCGE0Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SELQYCGE0Z');
+    </script>
+    <link rel="icon" type="image/x-icon" href="static/images/egolife_circle.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title"><img src="static/images/logo_square.ico" style="width: 20%; height: 20%"/><br>EgoLife: Towards Egocentric Life Assistant</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">
+                            <a href="https://jingkang50.github.io/" target="_blank">Jingkang Yang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://choiszt.github.io/" target="_blank">Shuai Liu</a>,</span>
+                        <span class="author-block">
+                            <a href="https://openreview.net/profile?id=~Hongming_Guo1" target="_blank">Hongming Guo</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=kMui170AAAAJ&hl=zh-CN" target="_blank">Yuhao Dong</a>,</span>
+                        <span class="author-block">
+                            <a href="https://www.researchgate.net/scientific-contributions/Xiamengwei-Zhang-2298207971" target="_blank">Xiamengwei Zhang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://fesvhtr.github.io/zsc/" target="_blank">Sicheng Zhang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://openreview.net/profile?id=~Pengyun_Wang2" target="_blank">Pengyun Wang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=c35sPU8AAAAJ&hl=en" target="_blank">Zitang Zhou</a>,</span>
+                        <span class="author-block">
+                            <a href="https://nicous20.github.io/" target="_blank">Binzhu Xie</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=CSsCwyAAAAAJ&hl=zh-CN&authuser=2" target="_blank">Ziyue Wang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://networks.imdea.org/team/imdea-networks-team/people/bei-ouyang/" target="_blank">Bei Ouyang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=XbFxzicAAAAJ&hl=en" target="_blank">Zhengyu Lin</a>,</span>
+                        <span class="author-block">
+                            <a href="https://www.marcocominelli.com/" target="_blank">Marco Cominelli</a>,</span>
+                        <span class="author-block">
+                            <a href="https://caizhongang.com/" target="_blank">Zhongang Cai</a>,</span>
+                        <span class="author-block">
+                            <a href="https://zhangyuanhan-ai.github.io/" target="_blank">Yuanhan Zhang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://veiled-texture-20c.notion.site/Perry-Peiyuan-Zhang-ab24b48621c9491db767a76df860873a" target="_blank">Peiyuan Zhang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://hongfz16.github.io/" target="_blank">Fangzhou Hong</a>,</span>
+                        <span class="author-block">
+                            <a href="https://networks.imdea.org/team/imdea-networks-team/people/joerg-widmer/" target="_blank">Joerg Widmer</a>,</span>
+                        <span class="author-block">
+                            <a href="https://ans.unibs.it/people/gringoli/" target="_blank">Francesco Gringoli</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com.hk/citations?user=jZH2IPYAAAAJ&hl=en" target="_blank">Lei Yang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://brianboli.com/" target="_blank">Bo Li</a>,</span>
+                        <span class="author-block">
+                            <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a></span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>S-Lab, Nanyang Technological University, Singapore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>LMMs-Lab<br> <sup>3</sup>IMDEA Networks, Spain &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>4</sup>University of Brescia, Italy</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <div class="publication-links-row">
+                            <!-- ArXiv abstract Link -->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/papers/2503.03803" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                                <span>arXiv</span>
+                                </a>
+                                </span>
+                            <!-- Dataset -->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+                            <!-- EgoLifeThird (Baidu Netdisk) -->
+                            <span class="link-block">
+                  <a href="https://pan.baidu.com/s/1Xc3m4W9TxLx0QzQfb_LvmA?pwd=szxh" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark"
+                     title="Third-person fixed cameras data. Extraction code: szxh">
+                  <span class="icon">
+                    <i class="fas fa-video"></i>
+                  </span>
+                  <span>EgoLifeThird</span>
+                </a>
+              </span>
+
+                            <!-- Eye Gaze -->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/datasets/Wangtwohappy/EgoLife_EyeTracking_EyeGaze" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-eye"></i>
+                  </span>
+                  <span>Eye Gaze</span>
+                </a>
+              </span>
+
+                            <!-- Github link -->
+                            <span class="link-block">
+                    <a href="https://github.com/EvolvingLMMs-Lab/EgoLife" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                                <span>Code</span>
+                                </a>
+                                </span>
+                            </div>
+
+                            <div class="publication-links-row">
+                            <!-- Video link-->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/spaces/Jingkang/EgoGPT-7B" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#128421;</p>
+                  </span>
+                  <span>Gradio Demo</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://www.youtube.com/playlist?list=PLlweuFnfdo6F9Fu2Kyhc-kXu3qnaVsYOu" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <p style="font-size:20px">&#127902;</p>
+                </span>
+                <span>EgoLife Movie Mode</span>
+              </a>
+            </span>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section award-banner-section">
+    <div class="container is-max-desktop">
+        <div class="award-banner">
+            <div class="award-banner-icon" aria-hidden="true">🏆</div>
+            <div class="award-banner-content">
+                <span class="award-banner-label">Award Recognition</span>
+                <span class="award-banner-title">EgoVis 2024/2025 Distinguished Paper Awards</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- add a video carousel here -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We introduce <font color="#2E86C1"><b>EgoLife</b></font>, a project to develop an egocentric life assistant that accompanies and enhances personal efficiency through AI-powered wearable glasses 👓. To lay the foundation for this assistant, we conducted a comprehensive data collection study where six participants lived together for one week, continuously recording their daily activities—including discussions 💬, shopping 🛍️, cooking 🍳, socializing 👥, and entertainment 🎮—using AI glasses for multimodal egocentric video capture, along with synchronized third-person-view video references. This effort resulted in the <font color="#2E86C1"><b>EgoLife Dataset</b></font> 📖, a comprehensive 300-hour egocentric, interpersonal, multiview, and multimodal daily life dataset with intensive annotation. Leveraging this dataset, we introduce <font color="#E74C3C"><b>EgoLifeQA</b></font>❓, a suite of 3K long-context, life-oriented question-answering tasks designed to provide meaningful assistance in daily life by addressing practical questions such as recalling past relevant events, monitoring health habits, and offering personalized recommendations.
+                        <br><br>
+                        To address the key technical challenges of <font color="#27AE60">1)</font> developing robust visual-audio models for egocentric data, <font color="#27AE60">2)</font> enabling identity recognition, and <font color="#27AE60">3)</font> facilitating long-context question answering over extensive temporal information, we introduce <font color="#8E44AD"><b>EgoBulter</b></font> 🫡, an integrated system comprising <font color="#E67E22"><b>EgoGPT</b></font> 🧠 and <font color="#E67E22"><b>EgoRAG</b></font> 🔍. EgoGPT is a vision-language model trained on egocentric datasets, achieving state-of-the-art performance on egocentric video understanding. EgoRAG is a retrieval-based component that supports answering ultra-long-context questions. Our experimental studies verify their working mechanisms and reveal critical factors and bottlenecks, guiding future improvements. By releasing our datasets, models, and benchmarks, we aim to stimulate further research in egocentric AI assistants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+        <h2 class="title is-2" style="text-align: center;">The EgoLife Dataset</h2>
+        <h2 class="title is-3" style="text-align: center;">
+            <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
+            recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
+            Living together with a shared goal of organizing an <font color="#27AE60">Earth Day Event</font>,<br>
+            their experiences are preserved in over <font color="#E67E22"><b>250+ hours</b></font> of rich, everyday data.<br>
+            This includes <span style="color:#808080">egocentric</span>, <span style="color:#808080">interpersonal</span> and <span style="color:#808080">multiview</span> moments,<br>
+            offering a detailed and intimate view of their lives and teamwork.
+        </h2>
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <div style="width: 100%; margin: 0 auto;">
+                    <video width="100%" poster="" id="tree" autoplay controls muted loop>
+                        <source src="static/videos/trailer_0224_compress.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Video carousel -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">What EgoLife Captures and Annotates</h2>
+            <h2 class="title is-3" style="text-align: justify; margin-left: 25px; margin-right: 25px;">
+                Through <font color="#8E44AD">Meta Aria glasses</font> and other sensors, we collect rich multimodal data including <font color="#2E86C1">first-person video</font>, <font color="#E74C3C">audio</font>, <font color="#27AE60">eye tracking</font>, <font color="#F1C40F">motion</font>, and <font color="#E67E22">third-person videos</font> captured by mounted 15 Exo cameras. 
+                The dataset features <i>synchronized egocentric and third-person views</i>, <i>detailed activity timelines</i>, and <i>3D reconstructions of living spaces</i> - providing unprecedented insight into natural human behavior and interactions in a shared living environment.
+                Third-person fixed camera data is available via <a href="https://pan.baidu.com/s/1Xc3m4W9TxLx0QzQfb_LvmA?pwd=szxh" target="_blank" style="color: #2E86C1; text-decoration: underline;">Baidu Netdisk (EgoLifeThird)</a> (extraction code: <b>szxh</b>), and eye gaze data is available on <a href="https://huggingface.co/datasets/Wangtwohappy/EgoLife_EyeTracking_EyeGaze" target="_blank" style="color: #2E86C1; text-decoration: underline;">Hugging Face</a>.
+                Annotations include <font color="#E74C3C">audio transcripts</font>, <font color="#27AE60">dense captioning</font>, and <font color="#2E86C1">a long caption each 30 seconds</font>.
+            </h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Multimodal Data Collection</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/egolife_teaser.png" width="90%" height="100%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666; text-align: justify; margin-left: 25px; margin-right: 25px;">
+                            The EgoLife dataset contains rich multimodal signals including first-person video and audio recordings, eye gaze tracking data, IMU motion sensors, GPS location information, and environmental audio, providing a comprehensive view of daily activities.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Living Environment</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/egohouse.png" width="60%" height="60%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        The image shows a 3D reconstruction of the shared living space created using Aria Multi-MPS. The house also features 15 Exo cameras installed throughout the common areas and 2 mmWave devices (marked in red) positioned on the second floor. The visualization also includes color-coded traces showing 10-minute movement patterns of the participants throughout the house.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Time Synchronization</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <video width="75%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/timesync.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        The video shows the time synchronization of the egocentric and third-person views. The synchronization is achieved by aligning the audio signals of each group (e.g., egocentric, level-1, level-2) first then across views with automatic audio alignment and human-in-the-loop.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Activity Timeline</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/timeline.png" width="90%" height="100%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666; text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        The timeline provides a comprehensive overview of each participant's activities across the seven days, showing how they spent their time individually and collaboratively. From daily routines to team meetings to entertainment and event preparations, it offers a clear visualization of the participants' journey throughout the study period. The figure is inspired by Github contribution graph and is implemented by python matplotlib.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 5px;">
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <!-- Your video here -->
+                            <source src="static/videos/DAY3_A6_SHURE_14553000.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="demo-questions">
+                        <div style="width: 100%; height: 550px; overflow-y: auto;">
+                            <p style="font-size: 20px; font-weight: bold; margin-bottom: 15px;">Dense Caption</p>
+                            <p style="font-size: 18px;
+                          line-height: 20px;
+                          margin: 5px 0;
+                          font-weight: 400;
+                          color: #161616;">
+                          
+                          [1.333 - 6.600] <br>我们在湖边谈论远处的鱼群<br>
+                          We were discussing the school of fish in the distance by the lake<br><br>
+                          
+                          [8.366 - 12.300] <br>我看见Jake也丢了一块披萨进去<br>
+                          I saw Jake also threw a piece of pizza into the lake<br><br>
+                          
+                          [12.300 - 19.566] <br>我也使劲丢了一个，但是发现我的手链崩开了<br>
+                          I threw one hard too, but found my bracelet had snapped off<br><br>
+                          
+                          [20.600 - 23.566] <br>我很伤心，大叫了起来<br>
+                          I became very sad and shouted<br><br>
+                          
+                          [25.033 - 26.666] <br>我趴在栏杆这，看着湖面<br>
+                          I leaned against the railing and looked at the lake<br><br>
+                          </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div style="width: 100%; height: 550px; overflow-y: auto;">
+                            <p style="font-size: 20px; font-weight: bold; margin-bottom: 15px;">Transcript</p>
+                            <p style="font-size: 18px;
+                          line-height: 20px;
+                          margin: 5px 0;
+                          font-weight: 400;
+                          color: #161616;">
+                            [00.766 - 02.066] <br>Shure: 那是塑料袋还是鱼啊<br>
+                            Shure: Is that a plastic bag or a fish?<br><br>
+                            
+                            [02.500 - 03.300] <br>Katrina: 那<br>
+                            Katrina: That...<br><br>
+                            
+                            [04.700 - 05.666] <br>Jake: 那那个<br>
+                            Jake: That, that one...<br><br>
+                            
+                            [06.300 - 07.233] <br>Shure:啊那是活的应该<br>
+                            Shure: Ah, it should be alive<br><br>
+                            
+                            [07.233 - 08.233] <br>Jake：那漂这的吗<br>
+                            Jake: Is that floating there?<br><br>
+                            
+                            [10.933 - 11.866] <br>Shure:看好了<br>
+                            Shure: Watch this<br><br>
+                            
+                            [13.366 - 15.300] <br>Others：哦什么掉了<br>
+                            Others: Oh, what fell?<br><br>
+                            
+                            [15.666 - 16.466] <br>Katrina: 嗯手串<br>
+                            Katrina: Um, the bracelet<br><br>
+                            
+                            [17.200 - 18.033] <br>Katrina: 手串吗<br>
+                            Katrina: A bracelet?<br><br>
+                            
+                            [17.200 - 18.700] <br>Tasha： 手链吗<br>
+                            Tasha: A bracelet?<br><br>
+                            
+                            [18.700 - 29.366] <br>Shure: 啊<br>
+                            Shure: Ah<br><br>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+<!-- Teaser video-->
+<!--
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <video poster="" id="tree" autoplay controls muted loop height="100%">
+
+    <source src="static/videos/banner_video.mp4"
+    type="video/mp4">
+  </video>
+            <h2 class="subtitle has-text-centered">
+                Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+            </h2>
+        </div>
+    </div>
+</section>-->
+<!-- End teaser video -->
+
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">EgoLifeQA: Challenges for Personal Life Assistant</h2>
+            <p style="text-align: left; font-size: 20px; line-height: 1.2; margin: 20px 100px; text-align: justify;">
+                <span style="font-size: 20px; font-weight: bold;">Based on the storyline of EgoLife dataset, we created EgoLifeQA with 3K life-oriented questions requiring ultra-long context understanding. We ensure that 66% of questions need looking back over 2 hours of history and over 15% require reviewing more than 24 hours of past activities. 
+                We specifically design the following 5 types of QAs to evaluate the performance of the life assistant. 
+            </p>
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px; text-align: justify;">
+                            Question Types and Examples in the EgoLifeQA Benchmark. Each example includes a multiple-choice Q&A with supporting evidence from timestamps at least 5 minutes prior to the question. Black vertical lines indicate question timestamps, while colored curved lines connect to relevant evidence timestamps.
+                        </h2>
+                        <img src="static/images/egolifeqa.png" alt="MY ALT TEXT" />
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>EntityLog</b></font> for tracking object details, usage and status history<br>
+                            <i style="font-size: 20px;">e.g., "What is the price of the yogurt?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/实体日志片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f17338><b>EventRecall</b></font> for remembering past activities<br>
+                            <i style="font-size: 20px;">e.g., "What did I eat for lunch this week?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/事件回忆片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>TaskMaster</b></font> for intelligent task management<br>
+                            <i style="font-size: 20px;">e.g., "What else should I buy? I remember I used out of something..."</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/任务管理片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f17338><b>RelationMap</b></font> for understanding social interactions<br>
+                            <i style="font-size: 20px;">e.g., "Who was missing from the party?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/关系网络片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>HabitInsight</b></font> for analyzing personal patterns<br>
+                            <i style="font-size: 20px;">e.g., "What is my favorite vegetable? Which fruit I eat most these days?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/习惯洞察片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">EgoGPT & EgoRAG for AI Assistants</h2>
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">EgoBulter Architecture</h2>
+                    <h2 class="subtitle">
+                        The EgoBulter system consists of two key components: (a) a Captioning Stage that leverages EgoGPT to provide dense visual-audio understanding of egocentric video clips, and (b) a Question Answering Stage that employs EgoRAG for intelligent memory retrieval and response generation. The example shown illustrates the system's ability to perform sophisticated temporal reasoning spanning multiple days - it extracts relevant keywords, retrieves supporting evidence, and generates contextually appropriate answers for queries about daily activities like breakfast habits.
+                    </h2>
+                    <img src="static/images/egobulter.png" alt="MY ALT TEXT" />
+
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Overview of EgoGPT and its training pipeline</h2>
+                    <h2 class="subtitle">
+                        <br>The upper section illustrates the progression from LLaVA-OneVision (Qwen2 as the LLM) to an audio-supported variant by integrating Whisper as an audio encoder and fine-tuning an audio projector with ASR datasets. The final EgoGPT model is trained using SFT on EgoIT and EgoLife datasets. The left table presents the Dataset Composition of EgoIT-99K, summarizing nine egocentric video datasets used for instruction tuning, including the total duration, number of videos, and question-answer pairs. The right table reports the Performance of EgoGPT-7B, comparing it against state-of-the-art commercial and open-source models across three egocentric benchmarks: EgoSchema, EgoPlan, and EgoThink. The results indicate that EgoGPT, trained on EgoIT and EgoLife Day 1, achieves strong performance in egocentric reasoning tasks.
+                    </h2>
+                    <img src="static/images/egogpt.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Gradio Demo of EgoGPT</h2>
+                    <h2 class="subtitle">
+                        <br>The demo shows EgoGPT's ability to understand user queries and generate contextually appropriate answers. Try out our <a href="https://huggingface.co/spaces/Jingkang/EgoGPT-7B" target="_blank" style="color: #2E86C1; text-decoration: underline;">interactive demo</a> where you can upload your own egocentric video clips or experiment with our sample demo videos.
+                    </h2>
+                    <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                        <source src="static/videos/egogpt_demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Overview of EgoRAG framework</h2>
+                    <h2 class="subtitle">
+                        <br>A schematic representation of the EgoRAG system that processes user queries through a multi-stage pipeline: First, it identifies relevant time ranges using multi-level summarization. Then, it retrieves pertinent video segments based on those time ranges. Finally, it gathers multiple pieces of evidence which are fed into an answering model (e.g., EgoGPT) to generate comprehensive responses to user queries.
+                    </h2>
+                    <img src="static/images/egorag.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Quantitative Evaluation of EgoButler Framework.</h2>
+                    <h2 class="subtitle">
+                        <br>EgoGPT outperforms general models through personalization and multi-modal integration, though some challenges remain (low scores). EgoRAG improves long-context QA by retrieving evidence across videos, surpassing both EgoGPT and Gemini-1.5-Pro on 2+ hour queries. The combination of visual and audio signals provides optimal performance.
+                    </h2>
+                    <img src="static/images/egorag_num.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Qualitative Evaluation of EgoButler Framework.</h2>
+                    <h2 class="subtitle">
+                        <br>Qualitative Comparison of EgoGPT and Gemini-1.5-Pro under the EgoButler Framework. The top section compares
+                        captions from two models on a 30-second clip: EgoGPT excels in personalization and hallucinates less on the egocentric videos, providing more accurate descriptions of the first-person perspective and interpersonal interactions. The bottom
+                        section features a question that is answered by the clip, showcasing EgoRAG's skill in pinpointing relevant time slots and key clues from the video context. EgoRAG effectively retrieves temporal information and generates responses that demonstrate strong understanding of both visual and social context, outperforming Gemini-1.5-Pro in handling egocentric queries that require detailed scene comprehension and temporal reasoning.
+                    </h2>
+                    <img src="static/images/qualitative.png" alt="MY ALT TEXT" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Other Interesting Info</h2>
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">How the Project EgoLife Started</h2>
+                    <h2 class="subtitle" style="text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        <br>The EgoLife project was initiated as an unexpected opportunity after Meta generously sponsored us six Aria glasses. With the devices in hand, the leading author began contemplating their best use. Initially, individual recordings—such as attending concerts and football matches—were tested, but these fragmented experiences lacked coherence. It soon became clear that to truly explore AI-driven egocentric perception, a more immersive and structured approach was needed: six individuals living together, sharing experiences, and generating rich, unfiltered real-life data.
+                        <br>
+                        <br>Recruitment was conducted via RedNote, attracting 32 applicants within two days—29 of whom were female, while the remaining three males turned out to be unavailable during the filming period. In the end, the leading author had to become one of the participants, and luckily, another male recruit was secured just a day before filming through a co-author's personal network. Otherwise the dataset would have been "EgoLife: Surrounded by beauties". Interestingly, the participants overwhelmingly exhibited intuitive (N) and perceiving (P) MBTI traits, suggesting a natural affinity for open-ended, exploratory experiences.
+                        <br>
+                        <br>The selection of activities played a crucial role in shaping the project. Initially, we considered structured scenarios like opening a hot pot restaurant, which would capture teamwork and problem-solving in a real-world setting. However, this approach was too specialized and artificial, limiting participant diversity and everyday interactions. Instead, we opted for a more natural setup—six individuals living together—allowing for organic, unscripted dynamics. To balance structure with authenticity, we introduced social activities like a house party, ensuring a rich, diverse dataset that truly reflects real-world egocentric experiences.
+                    </h2>
+                    </h2>
+                </div>
+                <div class="item">
+                    <h2 class="title is-3" style="text-align: center;">How much does it cost to build EgoLife dataset?</h2>
+                    <h2 class="subtitle" style="text-align: justify;">
+                        <br>The initial filming and preparation costs were surprisingly economical, especially given our excellent location near Universal Studios Beijing - an affordable yet convenient area where participants lived comfortably in the EgoHouse. We are deeply grateful to our volunteers to be very supportive and co-authors who served as crew members during filming, providing tireless and invaluable support throughout the process. The bulk of our budget went into data annotation, with EgoLifeQA being particularly challenging as it required annotators to exercise creativity and demonstrate deep insight into user needs and experiences. This aspect of annotation demands imagination and empathy to generate meaningful questions that reflect real-world assistance scenarios. We acknowledge that further iterations and improvements in this annotation process may be needed as we continue to refine the dataset. Below is a detailed breakdown of our costs, demonstrating our resource allocation priorities. For community who are interested in similar projects, we are happy to share our experience and annotation support, feel free to contact us.
+                    </h2>
+                    <img src="static/images/cost.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <h2 class="title is-3" style="text-align: center;">Cool History Book for Egocentric Vision Datasets</h2>
+                    <h2 class="subtitle" style="text-align: justify;">
+                        <br> We are happy to share this timeline, presented by <a href="https://scholar.google.com/citations?user=c35sPU8AAAAJ&hl=en" target="_blank" style="color: #2E86C1; text-decoration: underline;">Zitang Zhou</a>. It showcases the evolution of egocentric vision datasets, from early hand-object interactions to today's advanced multimodal AI-powered memory systems. It's a wild ride through years of innovation—tracking, learning, and redefining how AI sees the world from a first-person perspective! Guided by this history lesson, our EgoIT was born with great respect for the past research and great hope for the future.
+                    </h2>
+                    <img src="static/images/egohistory.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto; width: 80%;" />
+                </div>
+                <div class="item">
+                    <h2 class="title is-3" style="text-align: center;">Review and Rebuttal Report</h2>
+                    <h2 class="subtitle" style="text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        <br> This paper initially received two borderline reviews and one weak accept, but in the final round, all reviewers recommended weak accept. The reviewers raised concerns about the dataset's scalability and potential biases in data collection. In response, we acknowledged the current limitations of the dataset and proposed a solution by releasing a public pipeline for future adaptation, including plans for expanding to additional languages and settings such as EgoLife-Milan. To address fairness, we clarified that EgoGPT with EgoIT only was used for fair comparisons with other general-purpose models, while EgoGPT (EgoIT+EgoLife D1) provides task-specific context to support the development of future models. We also addressed concerns about biases by explaining the minimal interventions made to ensure activity density, acknowledging that the dataset cannot be considered entirely "in-the-wild." We also provided further clarifications on data processing, audio integration, and experimental validation, showing that an LLM-based video summarization approach led to performance degradation on EgoSchema due to information loss. These responses effectively addressed key concerns, leading to an improved overall assessment of the paper.
+                        <br><br>
+                        It is also recommended to discuss potential limitations. EgoGPT demonstrates personalization capability and context-aware captioning, but it still faces key limitations. Its speech understanding remains incomplete, particularly in interpreting human laughter and emotions due to its reliance on ASR-trained data. Identity recognition also presents challenges, as EgoGPT tends to overfit early observations, sometimes misidentifying individuals based on initial appearances. EgoRAG enhances long-context retrieval but lacks multi-step reasoning, leading to failures when direct retrieval does not yield sufficient evidence. These findings highlight crucial areas for future improvement, including better speech comprehension, refined personalization strategies, and more advanced retrieval reasoning to enhance robustness and error resilience.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Join Us!</h2>
+            <p style="text-align: center; font-size: 20px; line-height: 1.5; margin: 20px 100px; text-align: justify;">
+                <b>EgoLife</b> is an evolving initiative that aims to push the boundaries of egocentric AI. We are actively working to enhance every aspect of the project - from <span style="color: #4CAF50;">expanding our dataset</span> and <span style="color: #FF9800;">enriching annotations</span> to <span style="color: #2196F3;">advancing our omnimodal models</span> and <span style="color: #9C27B0;">refining the long-range system II architecture</span>. We warmly welcome researchers who share our vision to join this exciting journey. If you're interested in contributing to the future of egocentric AI assistants, please reach out to us at <a href="mailto:jingkang001@e.ntu.edu.sg" style="color: #E91E63;">jingkang001@e.ntu.edu.sg</a>. Together, let's bring truly personalized AI assistance into reality!
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Youtube video
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Video Presentation</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+
+                    <div class="publication-video">
+                        <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+End youtube video -->
+
+
+<!-- Video carousel
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Another Carousel</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-video1">
+                    <video poster="" id="video1" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel1.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+                <div class="item item-video2">
+                    <video poster="" id="video2" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel2.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+                <div class="item item-video3">
+                    <video poster="" id="video3" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel3.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title" style="text-align: center;">Paper</h2>
+
+            <iframe src="static/pdfs/FunQA.pdf" width="100%" height="550">
+            </iframe>
+
+        </div>
+    </div>
+</section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{yang2025egolife,
+  title={EgoLife: Towards Egocentric Life Assistant},
+  author={Yang, Jingkang and Liu, Shuai and Guo, Hongming and Dong, Yuhao and Zhang, Xiamengwei and Zhang, Sicheng and Wang, Pengyun and Zhou, Zitang and Xie, Binzhu and Wang, Ziyue and Ouyang, Bei and Lin, Zhengyu and Cominelli, Marco and Cai, Zhongang and Zhang, Yuanhan and Zhang, Peiyuan and Hong, Fangzhou and Widmer, Joerg and Gringoli, Francesco and Yang, Lei and Li, Bo and Liu, Ziwei},
+  booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <p>
+                        This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                                                                                                                                                                                                             target="_blank">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+
+</html>

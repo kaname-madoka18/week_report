@@ -1,0 +1,314 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>新增 benchmark · 筛选与对比</title><link rel="stylesheet" href="assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="index.html" data-catalog-home>← 返回论文与数据集主目录</a></header><main class="report"><h1>新增 benchmark：筛选与对比</h1>
+<p>核验日期：2026-09-23。新增 <strong>RMBench、RoboDojo + 20 篇相关 benchmark</strong>，主目录现在共有 <strong>41 篇</strong>。</p>
+<p>20 篇调研新增的纳入条件为：arXiv <strong>首次提交</strong>在 2024-09-23 至 2026-09-23，Semantic Scholar 引用数 <strong>严格大于 20</strong>，论文提出公开 benchmark、dataset 或评价套件。更新版本和会议年份不用于替代首发日期。RMBench 与 RoboDojo 按指定单独加入，不占这 20 篇名额。</p>
+<p>“直接记忆”表示任务显式考察历史观察、事件、会话或空间记忆；“长上下文近邻”覆盖长视频、跨页信息保留与多模态检索；“评测近邻”覆盖相关的多步具身或知识获取能力。关联等级是本次整理的判断，各子页说明具体范围。文档类任务以页数、图像数和上下文长度计量，视频时长标为不适用。</p>
+<p>引用数统一取 Semantic Scholar 同一论文记录的 citationCount，未把预印本和会议版本的计数相加。GitHub stars 来自官方仓库 API。两类计数均为本次抓取快照；页面内保留来源链接、arXiv 日期和公开会议状态。22 篇子页面均已加入 papers.cool Kimi brief。</p>
+<h2>指定新增的两个机器人 benchmark</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>arXiv 首发</th>
+<th>引用数</th>
+<th>状态</th>
+<th>时长与数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="datasets/rmbench/overview.html">RMBench</a></td>
+<td>2026-03-01</td>
+<td><a href="https://www.semanticscholar.org/paper/5392d9e631c952661129be0cf79066954241bc0d" target="_blank" rel="noopener">40</a></td>
+<td>Under review · arXiv preprint</td>
+<td>18段官方发布评测录像实测25–350秒：16段25–150秒直接播放，2段350秒各抽50帧；全量训练episode的秒数分布未核验。</td>
+</tr>
+<tr>
+<td><a href="datasets/robodojo/overview.html">RoboDojo</a></td>
+<td>2026-07-05</td>
+<td><a href="https://www.semanticscholar.org/paper/697fee3831e3bebd5052c607383bd42a0b50e9dd" target="_blank" rel="noopener">19</a></td>
+<td>arXiv preprint · official benchmark release</td>
+<td>论文仿真训练3500条/20.66小时，平均21.25秒；真实1800条/17.91小时，平均35.82秒（25Hz）。18个本地官网演示实测6.72–65.72秒，直接播放。</td>
+</tr>
+</tbody>
+</table>
+<h2>符合条件的 20 篇</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>arXiv 首发</th>
+<th>引用数</th>
+<th>关联范围</th>
+<th>视频 / 上下文长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="datasets/videowebarena/overview.html">VideoWebArena</a></td>
+<td>2024-10-24</td>
+<td><a href="https://www.semanticscholar.org/paper/90462ced637ddc6c9e3b6033a447c287efe2928d" target="_blank" rel="noopener">42</a></td>
+<td>直接记忆</td>
+<td>74 个教程总长 3:48:19；单视频最短 1:16、最长 10:41、平均 3:05（论文表2）。</td>
+</tr>
+<tr>
+<td><a href="datasets/mmlongbench/overview.html">MMLongBench</a></td>
+<td>2025-05-15</td>
+<td><a href="https://www.semanticscholar.org/paper/ce2d9e6895db0a3154a530cbc3351b8b637e19b6" target="_blank" rel="noopener">28</a></td>
+<td>长上下文近邻</td>
+<td>非视频数据：输入按 8K、16K、32K、64K、128K token 五档组织，图像与文本交错。视频秒数不适用。</td>
+</tr>
+<tr>
+<td><a href="datasets/cg-bench/overview.html">CG-Bench</a></td>
+<td>2024-12-16</td>
+<td><a href="https://www.semanticscholar.org/paper/b31335e597a9aa07d8f94b5355fb938548aa2b23" target="_blank" rel="noopener">83</a></td>
+<td>长上下文近邻</td>
+<td>单视频 10–80 分钟；平均约 1,624.4 秒（27.1 分钟）；20–30 分钟最常见；证据片段平均 19.24 秒。</td>
+</tr>
+<tr>
+<td><a href="datasets/longvale/overview.html">LongVALE</a></td>
+<td>2024-11-29</td>
+<td><a href="https://www.semanticscholar.org/paper/f5cd5eb5ae03cd59e58b6c009afc77b90dee5b53" target="_blank" rel="noopener">60</a></td>
+<td>长上下文近邻</td>
+<td>训练集 473.8 小时、7,240 视频；评测集 75.6 小时、1,171 视频。总549.4小时，按官方总量计算平均约235.2秒/视频。</td>
+</tr>
+<tr>
+<td><a href="datasets/video-mmmu/overview.html">Video-MMMU</a></td>
+<td>2025-01-23</td>
+<td><a href="https://www.semanticscholar.org/paper/4e3d888abc01555feb92a60935c8e537abc4648a" target="_blank" rel="noopener">233</a></td>
+<td>长上下文近邻</td>
+<td>数据集视频平均 506.2 秒（约8分26秒）；本页短case为官网剪辑，其实测时长单独标注。</td>
+</tr>
+<tr>
+<td><a href="datasets/vsi-bench/overview.html">VSI-Bench</a></td>
+<td>2024-12-18</td>
+<td><a href="https://www.semanticscholar.org/paper/376461a2c049f6fa51a4303853fdc672e4d07a0d" target="_blank" rel="noopener">756</a></td>
+<td>直接记忆</td>
+<td>288个评测视频；本文本未取得可直接核验的统一平均时长。下方官网case由PyAV实测，官方分布图保留其源集合统计口径，不据图反推288视频的平均长度。</td>
+</tr>
+<tr>
+<td><a href="datasets/vrbench/overview.html">VRBench</a></td>
+<td>2025-06-12</td>
+<td><a href="https://www.semanticscholar.org/paper/b65d6bc8c7184db100d7a881f4d6c2bebfdea9dc" target="_blank" rel="noopener">28</a></td>
+<td>长上下文近邻</td>
+<td>平均约1.6小时/视频；视频筛选设最短20分钟；题目依赖分散在时间线上的多段证据。</td>
+</tr>
+<tr>
+<td><a href="datasets/video-mmlu/overview.html">Video-MMLU</a></td>
+<td>2025-04-20</td>
+<td><a href="https://www.semanticscholar.org/paper/9dd42fbd05b1632fbe8332ac1c02fe17707a32aa" target="_blank" rel="noopener">43</a></td>
+<td>评测近邻</td>
+<td>单视频10–240秒；平均109秒；82.2%不超过180秒。因此本页优先直接播放短case。</td>
+</tr>
+<tr>
+<td><a href="datasets/lv-haystack/overview.html">LV-Haystack / T*</a></td>
+<td>2025-04-03</td>
+<td><a href="https://www.semanticscholar.org/paper/40a5f4b9865a75c6b8321ce0c7f7154e1a36e0cd" target="_blank" rel="noopener">99</a></td>
+<td>长上下文近邻</td>
+<td>数据总长480小时；来自Ego4D与长视频问答源，单视频长度不一。官网演示视频长度另行实测，不能替代数据集原视频长度。</td>
+</tr>
+<tr>
+<td><a href="datasets/mem-gallery/overview.html">Mem-Gallery</a></td>
+<td>2026-01-07</td>
+<td><a href="https://www.semanticscholar.org/paper/c69c7ab705735b24903511d62fad8110699f708a" target="_blank" rel="noopener">39</a></td>
+<td>直接记忆</td>
+<td>非视频数据：以跨会话图文历史衡量记忆跨度，共240会话、3,962轮；视频秒数不适用。</td>
+</tr>
+<tr>
+<td><a href="datasets/mikasa-robo/overview.html">MIKASA / MIKASA-Robo</a></td>
+<td>2025-02-14</td>
+<td><a href="https://www.semanticscholar.org/paper/1a9fbae6456b87408d97721e967438ae308b8edd" target="_blank" rel="noopener">37</a></td>
+<td>直接记忆</td>
+<td>可配置的 episode/延迟长度，按控制步数定义；官方分 Short/Medium/Long 三档。页面短演示仅表示播放时长，不能代替轨迹长度。 本地2段官网案例播放时长 0.50–0.83秒。</td>
+</tr>
+<tr>
+<td><a href="datasets/embodiedeval/overview.html">EmbodiedEval</a></td>
+<td>2025-01-21</td>
+<td><a href="https://www.semanticscholar.org/paper/fcbd6d1876e417248836b013c8186d454fccff5c" target="_blank" rel="noopener">55</a></td>
+<td>评测近邻</td>
+<td>交互式仿真任务，无统一原视频时长；轨迹随智能体行为变化。子页面记录每段官方演示的实测播放秒数。 本地6段官网案例播放时长 3.00–15.00秒。 专家示范平均10.72步（论文），不换算为固定秒数。</td>
+</tr>
+<tr>
+<td><a href="datasets/lsdbench/overview.html">LSDBench</a></td>
+<td>2025-03-16</td>
+<td><a href="https://www.semanticscholar.org/paper/965e19e719a3d298179ae5052917aa0ba1711511" target="_blank" rel="noopener">21</a></td>
+<td>长上下文近邻</td>
+<td>原视频 20.32–115.32 分钟，平均 45.39 分钟；目标片段平均 3 分钟（官方 README）。</td>
+</tr>
+<tr>
+<td><a href="datasets/streamingbench/overview.html">StreamingBench</a></td>
+<td>2024-11-06</td>
+<td><a href="https://www.semanticscholar.org/paper/958e80006e3b62a0b41e50877d9e554c339615a7" target="_blank" rel="noopener">128</a></td>
+<td>长上下文近邻</td>
+<td>原视频 3 秒–24 分钟（论文数据统计）；另外测试查询前 60 秒上下文。官网演示长度另行实测，不能当作数据集时长。 本地1段官网案例播放时长 12.30–12.30秒。</td>
+</tr>
+<tr>
+<td><a href="datasets/ovo-bench/overview.html">OVO-Bench</a></td>
+<td>2025-01-09</td>
+<td><a href="https://www.semanticscholar.org/paper/6f00bdbb2082ec80ce0ae701f4c8c4ed52607a41" target="_blank" rel="noopener">135</a></td>
+<td>直接记忆</td>
+<td>正文描述主体视频为数分钟至半小时；平均查询时点 428.89 秒。附录 CRR 子任务平均原视频长度 6,857 秒（约114.3分钟），不能将全库统一写成≤30分钟。</td>
+</tr>
+<tr>
+<td><a href="datasets/hourvideo/overview.html">HourVideo</a></td>
+<td>2024-11-07</td>
+<td><a href="https://www.semanticscholar.org/paper/043f80aadcafb06ce393ad7f8621f0b79753f55f" target="_blank" rel="noopener">140</a></td>
+<td>直接记忆</td>
+<td>原视频 20–120 分钟；开发集 50 段共39.3小时。官网示例是压缩/剪辑后的问答演示，播放秒数单列。 本地6段官网案例播放时长 26.07–29.07秒。</td>
+</tr>
+<tr>
+<td><a href="datasets/longdocurl/overview.html">LongDocURL</a></td>
+<td>2024-12-24</td>
+<td><a href="https://www.semanticscholar.org/paper/aa90e099fd96d2cf47146d76bdf78de7f8bd966b" target="_blank" rel="noopener">87</a></td>
+<td>长上下文近邻</td>
+<td>不适用视频时长：输入是多页PDF与图表/文本/布局元素；规模以页数及上下文长度计。</td>
+</tr>
+<tr>
+<td><a href="datasets/mmdocir/overview.html">MMDocIR</a></td>
+<td>2025-01-15</td>
+<td><a href="https://www.semanticscholar.org/paper/6009dd2db3c01982da333bba4b400a459c3a7276" target="_blank" rel="noopener">55</a></td>
+<td>长上下文近邻</td>
+<td>不适用视频时长：输入是文档页图像、文本、图表和布局，按页及布局元素检索。</td>
+</tr>
+<tr>
+<td><a href="datasets/m3docvqa/overview.html">M3DocVQA / M3DocRAG</a></td>
+<td>2024-11-07</td>
+<td><a href="https://www.semanticscholar.org/paper/226787d438bc47f986f82625d6b74fa6f733ef60" target="_blank" rel="noopener">128</a></td>
+<td>长上下文近邻</td>
+<td>不适用视频时长：内容为PDF页面和文档证据，范围以文档数/页数描述。</td>
+</tr>
+<tr>
+<td><a href="datasets/neptune/overview.html">Neptune</a></td>
+<td>2024-12-12</td>
+<td><a href="https://www.semanticscholar.org/paper/f8a55ad541291aef76f709d2ad8ce2f82db842c9" target="_blank" rel="noopener">27</a></td>
+<td>长上下文近邻</td>
+<td>单视频16秒–15分钟，平均2.5分钟；约100小时总量。超过12%视频长于5分钟、超过25%长于3分钟（论文统计）。</td>
+</tr>
+</tbody>
+</table>
+<h2>筛选记录</h2>
+<p>LVBench、LongVideoBench、MLVU、InfiniBench、MMNeedle、MMLongBench-Doc 等首发早于 2024-09-23，因此未用较新的会议年份将其纳入本次两年窗口。另检索的候选如下：</p>
+<table>
+<thead>
+<tr>
+<th>候选</th>
+<th>当前引用</th>
+<th>未纳入原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2410.07752" target="_blank" rel="noopener">Lost in Time: A New Temporal Benchmark for VideoLLMs</a></td>
+<td><a href="https://www.semanticscholar.org/paper/39793dcf33e2bfe95c95803714ddb12d30436742" target="_blank" rel="noopener">29</a></td>
+<td>优先选择记忆关联更直接的工作</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2504.15415" target="_blank" rel="noopener">IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs</a></td>
+<td><a href="https://www.semanticscholar.org/paper/5ef2fb41d19d2abc0bf029739490b784b7d0d184" target="_blank" rel="noopener">5</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2501.01645" target="_blank" rel="noopener">HLV-1K: A Large-scale Hour-Long Video Benchmark for Time-Specific Long Video Understanding</a></td>
+<td><a href="https://www.semanticscholar.org/paper/1b1ee6c36445ca35b484b8ff269caade9e22decb" target="_blank" rel="noopener">7</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2501.05037" target="_blank" rel="noopener">LongViTU: Instruction Tuning for Long-Form Video Understanding</a></td>
+<td><a href="https://www.semanticscholar.org/paper/29d5140c26a5ca7e8beb674aa24828a4872a5863" target="_blank" rel="noopener">14</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2505.13928" target="_blank" rel="noopener">LoVR: A Benchmark for Long Video Retrieval in Multimodal Contexts</a></td>
+<td><a href="https://www.semanticscholar.org/paper/c4fb5022e455b6cc7b38fb827a0c56086d1e0222" target="_blank" rel="noopener">17</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2509.18436" target="_blank" rel="noopener">Memory-QA: Answering Recall Questions Based on Multimodal Memories</a></td>
+<td><a href="https://www.semanticscholar.org/paper/d04d8121d0f0edb0bbf8667deb3e5aa4a93d9121" target="_blank" rel="noopener">8</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.15128" target="_blank" rel="noopener">MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory</a></td>
+<td><a href="https://www.semanticscholar.org/paper/e5766ec08844810e4772beb40fffd7c4cc3576e9" target="_blank" rel="noopener">10</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.14906" target="_blank" rel="noopener">MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models</a></td>
+<td><a href="https://www.semanticscholar.org/paper/c868704871d238746bbb3b6c3b5549979558d41b" target="_blank" rel="noopener">1</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09461" target="_blank" rel="noopener">H2HMem: A Multimodal Memory Benchmark for Agents in Human-Human Interactions</a></td>
+<td><a href="https://www.semanticscholar.org/paper/588c36e0751149396e963dd1b85897cdc6dfc78f" target="_blank" rel="noopener">0</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.07402" target="_blank" rel="noopener">M3Exam: Benchmarking Multimodal Memory for Realistic User-Agent Interactions</a></td>
+<td><a href="https://www.semanticscholar.org/paper/b047002895a136aaec6869a9687631cf922edda9" target="_blank" rel="noopener">1</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2506.15635" target="_blank" rel="noopener">FindingDory: A Benchmark to Evaluate Memory in Embodied Agents</a></td>
+<td><a href="https://www.semanticscholar.org/paper/919556328ac2da382215ea682f4eeb99b15fcf39" target="_blank" rel="noopener">12</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2505.23922" target="_blank" rel="noopener">ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding</a></td>
+<td><a href="https://www.semanticscholar.org/paper/5599ecccf4a21dc1d3745cb8898396bf3b0db05f" target="_blank" rel="noopener">7</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2507.15882" target="_blank" rel="noopener">Document Haystack: A Long Context Multimodal Image/Document Understanding Vision LLM Benchmark</a></td>
+<td><a href="https://www.semanticscholar.org/paper/a80793e03ae6ae9eb06846f1d15cc0b9d062c958" target="_blank" rel="noopener">6</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2510.01353" target="_blank" rel="noopener">MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments</a></td>
+<td><a href="https://www.semanticscholar.org/paper/164188a2e6326e187b4d1699f17adf413f0d675d" target="_blank" rel="noopener">13</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2510.08759" target="_blank" rel="noopener">Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis</a></td>
+<td><a href="https://www.semanticscholar.org/paper/86f08d7d3504cd8a7995e6d8550e7060f58f40ed" target="_blank" rel="noopener">4</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2601.10744" target="_blank" rel="noopener">Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration</a></td>
+<td><a href="https://www.semanticscholar.org/paper/f47803da65556ddf778a1ca75e7a27944e0f4bb7" target="_blank" rel="noopener">11</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2602.06075" target="_blank" rel="noopener">MemGUI-Bench: Benchmarking Memory of Mobile GUI Agents in Dynamic Environments</a></td>
+<td><a href="https://www.semanticscholar.org/paper/5b037191c54cab52e9df3aadba62c140fdf4a51d" target="_blank" rel="noopener">15</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2504.00907" target="_blank" rel="noopener">Grounding Multimodal LLMs to Embodied Agents that Ask for Help with Reinforcement Learning</a></td>
+<td><a href="https://www.semanticscholar.org/paper/7b04ad06498a615f5ddefb56d208c45714c33528" target="_blank" rel="noopener">26</a></td>
+<td>优先选择记忆关联更直接的工作</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2503.22152" target="_blank" rel="noopener">EgoToM: Benchmarking Theory of Mind Reasoning from Egocentric Videos</a></td>
+<td><a href="https://www.semanticscholar.org/paper/23fd1097a3e34d2481ae2853708355975285025a" target="_blank" rel="noopener">9</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2411.19941" target="_blank" rel="noopener">Perception Test 2024: Challenge Summary and a Novel Hour-Long VideoQA Benchmark</a></td>
+<td><a href="https://www.semanticscholar.org/paper/233c60f163103aad903193ca829570ffdef90ff5" target="_blank" rel="noopener">5</a></td>
+<td>引用数未超过 20</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2410.21311" target="_blank" rel="noopener">MMDocBench: Benchmarking Large Vision-Language Models for Fine-Grained Visual Document Understanding</a></td>
+<td><a href="https://www.semanticscholar.org/paper/8ab0db9c193491491ed44f5bf217f62023c0e61a" target="_blank" rel="noopener">23</a></td>
+<td>优先选择记忆关联更直接的工作</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2505.11180" target="_blank" rel="noopener">mmRAG: A Modular Benchmark for Retrieval-Augmented Generation over Text, Tables, and Knowledge Graphs</a></td>
+<td><a href="https://www.semanticscholar.org/paper/859ba689c5221b947e34116aeca0240882695098" target="_blank" rel="noopener">5</a></td>
+<td>引用数未超过 20</td>
+</tr>
+</tbody>
+</table>
+<h2>预览与来源记录</h2>
+<p>短于或等于 180 秒且单文件小于 100 MB 的官方视频使用本地播放器。较长视频在能安全读取时提供 100 帧预览；文档与多图数据提供明确标为静态图像的示例。各页区分数据样本与官网演示，未取得媒体的条目写明访问限制。没有完整下载超过 100 MB 的视频。</p>
+<p><a href="index.html" data-catalog-home>返回主目录</a> · <a href="catalog_overview.md">完整目录汇总</a> · <a href="metadata/benchmark_expansion.json">筛选清单 JSON</a> · <a href="metadata/paper_metadata.json">论文元数据与 Kimi brief</a></p>
+<p>引用快照：<a href="metadata/benchmark_candidates_a_s2.json">A 组 Semantic Scholar 响应</a> · <a href="metadata/benchmark_candidates_b_s2_raw.json">B 组 Semantic Scholar 响应</a>。VSI-Bench、RMBench 与 RoboDojo 的补充查询保存在 <code>metadata/semantic_scholar_batch_*.json</code>。</p></main><script src="assets/page_navigation.js"></script></body></html>

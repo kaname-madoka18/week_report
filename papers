@@ -1,0 +1,82 @@
+EgoLife: Towards Egocentric Life Assistant
+论文：arXiv ｜ GitHub：EvolvingLMMs-Lab/EgoLife
+Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory (M3-Agent)
+论文：arXiv ｜ GitHub：ByteDance-Seed/m3-agent
+WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
+论文：arXiv ｜ GitHub：wgcyeo/WorldMM
+Towards Multimodal Lifelong Understanding: A Dataset and Agentic Baseline (MM-Lifelong / ReMA)
+论文：arXiv ｜ GitHub：cg1177/Recursive-Multimodal-Agent
+Agentic Very Long Video Understanding (EGAgent)
+论文：arXiv ｜ GitHub：facebookresearch/egagent
+Bridging Modalities, Spanning Time: Structured Memory for Ultra-Long Agentic Video Reasoning (MAGIC-Video)
+论文：arXiv ｜ GitHub：lijiazheng0917/MAGIC-video
+Ella: Embodied Social Agents with Lifelong Memory
+论文：arXiv ｜ GitHub：UMass-Embodied-AGI/Ella
+EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models
+论文：arXiv ｜ GitHub：目前未查到论文作者公开的官方代码仓库。
+SuperMemory-VQA: An Egocentric Visual Question Answering Benchmark for Long-Horizon Memory
+论文：目前官方仓库标注为 NeurIPS 2026 Datasets & Benchmarks Track under review，暂未看到公开 arXiv 页面 ｜ GitHub：AIoT-MLSys-Lab/supermemory-vqa
+Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents (Spatial Memory Benchmark, SMB)
+论文：arXiv ｜ GitHub：目前未查到官方代码仓库。
+Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control (HALO)
+论文：arXiv ｜ GitHub：UT-Austin-RobIn/HALO
+MemER: Scaling Up Memory for Robot Control via Experience Retrieval
+论文：arXiv 2510.20328 ｜ GitHub：memer-policy/memer
+Break Out the Silverware — Semantic Understanding of Stored Household Items
+论文：arXiv ｜ GitHub：目前未查到官方公开仓库。
+FetchBench: A Simulation Benchmark for Robot Fetching
+论文：arXiv ｜ GitHub：princeton-vl/FetchBench-CORL2024
+Visual Room Rearrangement (AI2-THOR Rearrangement / RoomR)
+论文：arXiv ｜ GitHub：allenai/ai2thor-rearrangement
+BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation
+论文：arXiv ｜ GitHub：StanfordVL/BEHAVIOR-1K
+RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots
+论文：arXiv ｜ GitHub：robocasa/robocasa
+HD-EPIC: A Highly-Detailed Egocentric Video Dataset
+论文：arXiv ｜ GitHub：hd-epic/hd-epic-annotations
+Ego4D: Around the World in 3,000 Hours of Egocentric Video — Episodic Memory Benchmark
+论文：arXiv ｜ GitHub：EGO4D/episodic-memory
+RMBench: Memory-Dependent Robotic Manipulation Benchmark with Insights into Policy Design
+论文：arXiv 2603.01229 ｜ GitHub：RoboTwin-Platform/RMBench
+RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies
+论文：arXiv 2607.04434 ｜ GitHub：RoboDojo-Benchmark/RoboDojo
+VideoWebArena: Evaluating Long Context Multimodal Agents with Video Understanding Web Tasks
+论文：arXiv 2410.19100 ｜ GitHub：ljang0/videowebarena
+MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly
+论文：arXiv 2505.10610 ｜ GitHub：EdinburghNLP/MMLongBench
+CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding
+论文：arXiv 2412.12075 ｜ GitHub：CG-Bench/CG-Bench
+LongVALE: Vision-Audio-Language-Event Benchmark Towards Time-Aware Omni-Modal Perception of Long Videos
+论文：arXiv 2411.19772 ｜ GitHub：ttgeng233/LongVALE
+Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos
+论文：arXiv 2501.13826 ｜ GitHub：EvolvingLMMs-Lab/VideoMMMU
+Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces
+论文：arXiv 2412.14171 ｜ GitHub：vision-x-nyu/thinking-in-space
+VRBench: A Benchmark for Multi-Step Reasoning in Long Narrative Videos
+论文：arXiv 2506.10857 ｜ GitHub：OpenGVLab/VRBench
+Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark
+论文：arXiv 2504.14693 ｜ GitHub：Espere-1119-Song/Video-MMLU
+Re-thinking Temporal Search for Long-Form Video Understanding
+论文：arXiv 2504.02259 ｜ GitHub：mll-lab-nu/TStar
+Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents
+论文：arXiv 2601.03515 ｜ GitHub：YuanchenBei/Mem-Gallery
+Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning
+论文：arXiv 2502.10550 ｜ GitHub：CognitiveAISystems/MIKASA-Robo
+EmbodiedEval: Evaluate Multimodal LLMs as Embodied Agents
+论文：arXiv 2501.11858 ｜ GitHub：thunlp/EmbodiedEval
+Does Your Vision-Language Model Get Lost in the Long Video Sampling Dilemma?
+论文：arXiv 2503.12496 ｜ GitHub：JIA-Lab-research/LSDBench
+StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding
+论文：arXiv 2411.03628 ｜ GitHub：THUNLP-MT/StreamingBench
+OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?
+论文：arXiv 2501.05510 ｜ GitHub：JoeLeelyf/OVO-Bench
+HourVideo: 1-Hour Video-Language Understanding
+论文：arXiv 2411.04998 ｜ GitHub：keshik6/HourVideo
+LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating
+论文：arXiv 2412.18424 ｜ GitHub：dengc2023/LongDocURL
+MMDocIR: Benchmarking Multi-Modal Retrieval for Long Documents
+论文：arXiv 2501.08828 ｜ GitHub：MMDocRAG/MMDocIR
+M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding
+论文：arXiv 2411.04952 ｜ GitHub：bloomberg/m3docrag
+Neptune: The Long Orbit to Benchmarking Long Video Understanding
+论文：arXiv 2412.09582 ｜ GitHub：google-deepmind/neptune

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en_GB" class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="en_GB" class="ie ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en_GB" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en_GB"> <!--<![endif]-->
+  <head>
+    <!--[if lte ie 8]><script type="text/javascript" src="/data/fanstatic/vendor/:version:2017-11-23T09:55:57.62/html5.min.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="/data/fanstatic/vendor/:version:2017-11-23T09:55:57.62/select2/select2.css" />
+<link rel="stylesheet" type="text/css" href="/data/fanstatic/css/:version:2017-11-23T09:55:57.60/main.min.css" />
+<link rel="stylesheet" type="text/css" href="/data/fanstatic/vendor/:version:2017-11-23T09:55:57.62/font-awesome/css/font-awesome.min.css" />
+
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46034734-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46034734-2');
+</script>
+  <meta charset="utf-8" />
+      <meta name="generator" content="ckan 2.7.5" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="og:site_name" content="data.bris" />
+ 	<meta name="og:url" content="https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47" />
+
+    <title>HD-EPIC - Datasets - data.bris</title>
+
+    
+    <link rel="shortcut icon" href="/data/images/icons/databris.ico" />
+    
+	
+      
+    
+    <link rel="stylesheet" href="/data/css/uob.css" />
+
+
+    
+      
+      
+    
+  
+  <meta property="og:title" content="HD-EPIC - data.bris">
+  <meta property="og:description" content="A Highly-Detailed Egocentric Video Dataset">
+     	
+  <meta name="og:image" content="https://data.bris.ac.uk/images/uob_facebook_icon.png" />
+  <meta name="DC.identifier" content="doi:10.5523/bris.3cqb5b81wk2dc2379fx1mrxh47" />
+  <meta name="DC.title" content="HD-EPIC" />
+  <meta name="DC.creator" content="Dima Damen, Michael Wray, Tobias Perrett, Jacob Chalk, Kevin Flanagan, Ahmad Dar Khalil, Saptarshi Sinha, Omar Emara, Zhifan Zhu, Siddhant Bansal, Kranti Parida, Prajwal Gatti, Rhodri Guerrier, Sam Pollard, Fahd Abdelazim" />
+  <meta name="citation_online_date" content="14 Mar 2025" />
+
+    
+  </head>
+
+  
+  <body data-site-root="https://data.bris.ac.uk/data/" data-locale-root="https://data.bris.ac.uk/data/" >
+
+    
+    <div class="hide"><a href="#content">Skip to content</a></div>
+  
+
+  
+    
+
+  <header class="account-masthead">
+    <div class="container">
+      
+        
+          <nav class="account not-authed">
+            <ul class="unstyled">
+              
+              <li><a href="/data/user/login">Log in</a></li>
+              
+              
+            </ul>
+          </nav>
+        
+      
+    </div>
+  </header>
+
+<header class="navbar navbar-static-top masthead">
+  
+    
+  
+  <div class="container">
+    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+      <span class="fa fa-bars"></span>
+    </button>
+    
+    <hgroup class="header-image pull-left">
+
+      
+        
+          <a class="logo" href="/data/"><img src="/data/images/uob-logo-full-colour-largest-2.png" alt="data.bris" title="data.bris" /></a>
+        
+      
+
+    </hgroup>
+
+    <div class="nav-collapse collapse">
+
+      
+  <nav class="section navigation">
+    <ul class="nav nav-pills">
+      
+        <li><a href="/data/group">Faculties</a></li><li><a href="/data/dataset?level=top">Datasets</a></li><li><a href="/data/licence">Licence</a></li><li><a href="/data/about">About</a></li>
+        <li><a href='http://www.bristol.ac.uk/staff/researchers/data/publishing-research-data/'>Depositing</a></li>
+        <li><a href='http://www.bristol.ac.uk/staff/researchers/data/accessing-research-data/'>Accessing</a></li>
+        <li><a href='http://www.bristol.ac.uk/staff/researchers/data/metrics/'>Metrics</a></li>
+      
+    </ul>
+  </nav>
+
+
+      
+  <form class="section site-search simple-input" action="/data/dataset" method="get">
+    <div class="field">
+      <label for="field-sitewide-search">Search Datasets</label>
+      <input id="field-sitewide-search" type="text" name="q" placeholder="Search" />
+      <input type="hidden" name="level" value="top" />
+      <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </form>
+
+
+    </div>
+  </div>
+</header>
+
+  
+    <div role="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/data/"><i class="fa fa-home"></i><span> Home</span></a></li>
+                    
+  
+    
+    
+      
+      <li><a href="/data/organization">Organisations</a></li>
+      <li><a href="/data/organization/engineering-org">Engineering</a></li>
+    
+    <li class="active"><a class=" active" href="/data/dataset/3cqb5b81wk2dc2379fx1mrxh47">HD-EPIC</a></li>
+  
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+
+            
+            
+            
+
+            
+              <div class="primary span9">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content page-header">
+                        
+                        <ul class="nav nav-tabs">
+                          
+  <li class="active"><a href="/data/dataset/3cqb5b81wk2dc2379fx1mrxh47"><i class="fa fa-sitemap"></i> Dataset</a></li>
+
+                        </ul>
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+  
+    
+      
+    
+
+  
+<section class="module-content">
+    
+    
+    <h1>
+        
+        HD-EPIC
+        
+        
+      
+    </h1>
+
+    
+    
+
+        
+
+        
+        
+            <div class="notes embedded-content">
+            <p>A Highly-Detailed Egocentric Video Dataset</p>
+            </div>
+        
+        
+
+        
+            <section class="additional-info">
+
+  
+  <p>
+    
+    
+    
+      
+      <a class="resource-url-analytics btn btn-success" href="https://data.bris.ac.uk/datasets/tar/3cqb5b81wk2dc2379fx1mrxh47.zip" rel="nofollow">Complete download (zip, 2.3 TiB)</a>
+    
+  </p>
+  
+
+  <table class="table table-bordered table-condensed">
+    <tbody>
+      
+      
+      
+      
+        <tr>
+          <th scope="row" class="dataset-label">Creator(s)</th>
+          <td class="dataset-details">Dima Damen, Michael Wray, Tobias Perrett, Jacob Chalk, Kevin Flanagan, Ahmad Dar Khalil, Saptarshi Sinha, Omar Emara, Zhifan Zhu, Siddhant Bansal, Kranti Parida, Prajwal Gatti, Rhodri Guerrier, Sam Pollard, Fahd Abdelazim</td>
+        </tr>
+      
+      
+      
+      
+      
+      
+      
+        <tr>
+          <th scope="row" class="dataset-label">Publication date</th>
+          <td class="dataset-details">14 Mar 2025</td>
+        </tr>
+      
+      
+      
+        <tr>
+          <th scope="row" class="dataset-label">Language</th>
+          <td class="dataset-details">eng</td>
+        </tr>
+      
+      
+      
+        <tr>
+          <th scope="row" class="dataset-label">Publisher</th>
+          <td class="dataset-details">University of Bristol</td>
+        </tr>
+      
+      
+        
+        
+        <tr>
+          <th scope="row" class="dataset-label">Licence</th>
+          <td class="dataset-details"><a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0</a></td>
+        </tr>
+        <tr>
+          <th scope="row" class="dataset-label">Warranty</th>
+          <td class="dataset-details"><a href="https://creativecommons.org/licenses/by/4.0/legalcode#s5">Disclaimer of Warranties and Limitation of Liability</a></td>
+        </tr>
+                
+      
+      
+      
+        <tr>
+          <th scope="row" class="dataset-label">DOI</th>
+          <td class="dataset-details">10.5523/bris.3cqb5b81wk2dc2379fx1mrxh47</td>
+        </tr>
+      
+      
+        <tr>
+          
+          <th scope="row" class="dataset-label">Citation</th>
+          <td class="dataset-details">
+            Dima Damen, Michael Wray, Tobias Perrett, Jacob Chalk, Kevin Flanagan, Ahmad Dar Khalil, Saptarshi Sinha, Omar Emara, Zhifan Zhu, Siddhant Bansal, Kranti Parida, Prajwal Gatti, Rhodri Guerrier, Sam Pollard, Fahd Abdelazim (2025): HD-EPIC. 
+            <a href="https://doi.org/10.5523/bris.3cqb5b81wk2dc2379fx1mrxh47" target="_blank">https://doi.org/10.5523/bris.3cqb5b81wk2dc2379fx1mrxh47</a>
+          </td>
+        </tr>
+      
+	       <tr>
+          
+          <th scope="row" class="dataset-label">Total size</th>
+          <td class="dataset-details">
+	    2.3 TiB
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</section>
+        
+
+    
+
+    
+    <span class="insert-comment-thread"></span>
+</section>
+
+
+  
+    
+<section id="dataset-resources" class="resources module-content">
+
+  
+  
+
+  
+  
+    <h3>Sub-levels</h3>
+    <ul class='package-hierarchy'>
+<li><a href='ce3bed40fc4e86f3cca16927d2141e92'>AcquisitionGuidelines</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='2be017a61579ea9a4d72dc5ffa09e0d6'>Audio-HDF5</a></li>
+<ul class='package-hierarchy'>
+<li><a href='8de775e20c6e28190b13181c27290095'>P01</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='afdb8403eb27ac22976656493675c970'>P02</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='8d279b563248a06f17c02a4212195f5e'>P03</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='f1ce3503cd81fe864b39f179374601ba'>P04</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='365ac7d47acb3fe922c53aca50fd1c8c'>P05</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='5df9ffb8f3029feb5c1aab7d2b2bbd95'>P06</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='d8172f2f63a352eb257c7f04513214ff'>P07</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='76ccb4216f2f86d288f61765aa803bdf'>P08</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='be7eb85590becaaccf2d47354bb3099e'>P09</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='8119ff95699a11289307c966d7493d5d'>Consent Form</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='3bba4effbb10cb7fbfe253a10aef36ee'>Digital-Twin</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='8b9eaf16497077f16a04358da78e386a'>Hands-Masks</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='0661f9022d77fb1ef97c866e3f7683a0'>SLAM-and-Gaze</a></li>
+<ul class='package-hierarchy'>
+<li><a href='413399c04c35248342c245bab0e17b9a'>P01</a></li>
+<li><a href='18e86692341ca96e75bf152209201688'>P02</a></li>
+<li><a href='6a267010d74011a101093c4d08b1fcae'>P03</a></li>
+<li><a href='4c1512fc09607de617b8025495407a79'>P04</a></li>
+<li><a href='c101263ea8f5f9d83154e44be890bbbd'>P05</a></li>
+<li><a href='06161e546a08fc5c3aa773bc4521d08c'>P06</a></li>
+<li><a href='4df49bdb086a7c46d78b169995be0353'>P07</a></li>
+<ul class='package-hierarchy'>
+<li><a href='6e78031996756ada3869caf9888193a0'>GAZE_HAND</a></li>
+<ul class='package-hierarchy'>
+<li><a href='eeabdc61643a748106b2635c0a8937cd'>mps_P07-20240529-102652_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='4a05bf012f2589a75023e06883f3e292'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='a6a8807a308601ec0441ca6fe8f58605'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='ff79f78a9f9d68227d897027d15b05de'>mps_P07-20240529-131737_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='8f07182ec67fb7242b4cef94b8fa556d'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='7092253874eae41f9d2d03cbf9cac749'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='60dd5b9ce8b26cdabc69499e2a487ce4'>mps_P07-20240529-134410_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='bba9284cc510d46158484c0846dff119'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='d4c10c8572cc378bec0b292bc42496f3'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='3f5bef1e198a0d1e09f34a1830645784'>mps_P07-20240529-191007_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='7142b59b816e40c0402b1188ccf0e524'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='25445f76b6e2cd14a57f07f2a78915f8'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='74a0fc624aeebd7f30e14d7eea805ab0'>mps_P07-20240529-194518_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='1b3ebd8873a0b7b92833361c9d7b30f1'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='0fb2074edf3f7351c7d63fa32c9ffd7a'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='3eeeb09edb0ea23a394dbfcfcea3e287'>mps_P07-20240530-102543_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='dd06feaabb7fe021f3593582a043a3a5'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='cf927448a40916d7fc762511cc4b0f9f'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='1aa4cf5aba33a9b941caf738f42afece'>mps_P07-20240530-111344_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='d7f099096d9585aa9aee3dda0a8f5508'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='bca89c6eb992ec695e8d28a5d417a326'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='1a0566a59daec7bfd58c09704ef31e8b'>mps_P07-20240531-101357_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='a7687aabee4795e96de220150eac1dce'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='36ec0a99c02b40a6eaade80814d7255d'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='2b62d08045aee0ce68adb04194ed35dd'>mps_P07-20240531-201703_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='e1bbd8d440f8e8fdd4ec053e3b8c3581'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='2c52f9775013a3f2f50cb94dac3e7efc'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+</ul>
+<li><a href='c8dba030874b98d3eda180c6cac4d395'>SLAM</a></li>
+<ul class='package-hierarchy'>
+<li><a href='26541c0caf1a0236a5a12455104fe595'>multi</a></li>
+<ul class='package-hierarchy'>
+<li><a href='2ce5c347289f9788b616a2c84417f20e'>0</a></li>
+<ul class='package-hierarchy'>
+<li><a href='6f653ff0e46988ca5e874fe8f3b64719'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='c795619be37d83db29160452f5e1ae3e'>1</a></li>
+<ul class='package-hierarchy'>
+<li><a href='b9469b0a84f3c4ccc66410a3daee2e3e'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='d32a6248d0550a609e8f80c6d3b82f77'>2</a></li>
+<ul class='package-hierarchy'>
+<li><a href='e65f881a7fd5eb052e78adebd7ff83a6'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='440f885a9245a215dfd9720eb8d2a868'>3</a></li>
+<ul class='package-hierarchy'>
+<li><a href='092c91bfdc9b7dfde09747f591b920d9'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='6ed18aafa81abb845e335d319b5ace07'>4</a></li>
+<ul class='package-hierarchy'>
+<li><a href='70c9b3fd6743372f56013d9d1ae9f24f'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='0b3279fd768f9640c74b329d3ed8aad2'>5</a></li>
+<ul class='package-hierarchy'>
+<li><a href='d506c6f4eb69439e0334f06d0ec79f68'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='5af157664418ae25b95ed477a67e3a9d'>6</a></li>
+<ul class='package-hierarchy'>
+<li><a href='a1e9107e5e0ee8a63a99cda6a2fc87ce'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='94cad005b3741a0440723611870cba14'>7</a></li>
+<ul class='package-hierarchy'>
+<li><a href='775ac5ea02ad08d793230d73db20cd5e'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='ef657e71ccf796c5297b01e20ad5cffb'>8</a></li>
+<ul class='package-hierarchy'>
+<li><a href='77605a60f6e2c5fdd133eaebaa471227'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href='93aa5db902ff10e14a35066eba3ae6b1'>P08</a></li>
+<ul class='package-hierarchy'>
+<li><a href='67372fa43841b37de0a098cb3602081b'>GAZE_HAND</a></li>
+<ul class='package-hierarchy'>
+<li><a href='b0f0de406077b90f783b782a66df0b50'>mps_P08-20240613-122900_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='fc2a5e33ef9b1f5344fda8a50c382604'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='63f9c906574b60f2c6a273161ee40335'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='ef034434d3071556b2b3f7e80ff90d69'>mps_P08-20240613-123547_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='f5b666f83de9eeac9c364bcf98c7e786'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='80554d796c623e09d2836e63a795ed67'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='b48831b0e368e38999a40d13675b6312'>mps_P08-20240614-085000_vrs</a></li>
+<li><a href='f37f3599256b793a0edf7c85786df488'>mps_P08-20240614-125650_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='c8f435472a4e70bae2ce9841b57e5b28'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='ccfb303399c9fc9199510e749ea06c68'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='e55c1dd16d281072a5aedbef5138c966'>mps_P08-20240614-132938_vrs</a></li>
+<li><a href='33e6e897c514f361fef58d68ee0eb0a1'>mps_P08-20240614-184945_vrs</a></li>
+<ul class='package-hierarchy'>
+<li><a href='4fac1936e027da8113e0b4b7a313254a'>eye_gaze</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='6a955e401b4bf18c39e6e95cd5e1a784'>hand_tracking</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='2074742694aa049bc23b56c105b8fcd3'>mps_P08-20240617-130401_vrs</a></li>
+<li><a href='d662e9014f9b833f48b9829884a36f0c'>mps_P08-20240617-184909_vrs</a></li>
+<li><a href='8a3194dd33f2d1206e6e33ca5abfbbaa'>mps_P08-20240618-163547_vrs</a></li>
+<li><a href='8cd99542c3caff6992d345d55db1802c'>mps_P08-20240618-171546_vrs</a></li>
+<li><a href='b88c0e07bbecbf8503c1772749220955'>mps_P08-20240620-180825_vrs</a></li>
+<li><a href='21f46386543a57bef9cffb3db3450d32'>mps_P08-20240622-141902_vrs</a></li>
+</ul>
+<li><a href='ab14bf2cfe1f31f4f54c910ebbf35b64'>SLAM</a></li>
+<ul class='package-hierarchy'>
+<li><a href='e80ffc8b520b91b1ec2d73f5466904c2'>multi</a></li>
+<ul class='package-hierarchy'>
+<li><a href='bf90c74103070ae72d009b347fbe379b'>0</a></li>
+<ul class='package-hierarchy'>
+<li><a href='d92a0dc02560be5b55f655b3d1e7aaa4'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='465548201813b7ee4daf6127d9005eb8'>1</a></li>
+<ul class='package-hierarchy'>
+<li><a href='4a61c284b6f25cffe4dffafda68a4b6b'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='84b2fcd7d992c7aa4c02674c4a7b34ac'>10</a></li>
+<ul class='package-hierarchy'>
+<li><a href='d51aa002ee087a049f49fa14cf5ba9a4'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='7624c7f29e2c5f67a67b94dd45730be8'>11</a></li>
+<ul class='package-hierarchy'>
+<li><a href='985c82525b8ca32c67ebb2af8d55decc'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='bcb1cd70d78e34b6dae2b9d7031f6292'>2</a></li>
+<ul class='package-hierarchy'>
+<li><a href='68748734504620806fb24a08b76effe2'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='048dd45b02df801d9454f0819f55a0b8'>3</a></li>
+<ul class='package-hierarchy'>
+<li><a href='16e741d96f9f2c5011d6950ff41912df'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='87fdd09fd60302f54afdfe59118a5382'>4</a></li>
+<ul class='package-hierarchy'>
+<li><a href='cfe05219463bcb573003194481c35f83'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='030abb5b8aff8482e47df219008f00ed'>5</a></li>
+<ul class='package-hierarchy'>
+<li><a href='a8c36f5e384dee38128a9203dabea9fa'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='cc8d0f6aa409166b429b6e151ab7e28c'>6</a></li>
+<ul class='package-hierarchy'>
+<li><a href='26c64c11c9b277d69525c3ed31478d4e'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='7e0d6994e641df781628c9a10079f71e'>7</a></li>
+<ul class='package-hierarchy'>
+<li><a href='8cffa714ea70b60e92a63930c4cdad91'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='725666ba58db4ff2ff33827d685f4084'>8</a></li>
+<ul class='package-hierarchy'>
+<li><a href='8695070a888af0e1530db4776e73192c'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='d5dcf76a94586bb0e85805291146f399'>9</a></li>
+<ul class='package-hierarchy'>
+<li><a href='ff49788c9546ed81db4f44f49741815d'>slam</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href='3ac238a1a9822d383cbdf14ba4325820'>P09</a></li>
+</ul>
+<li><a href='ab2b2df487a04127b7e5d68b46796936'>VRS</a></li>
+<ul class='package-hierarchy'>
+<li><a href='86b4ed3481608e46fba82634eedd106e'>P01</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='d882553fb6bd1b7c47a2aaf911368416'>P02</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='aa38a10b5f6fc57d89026b73d8170f49'>P03</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='23c870ddd0a28c3b0faa11e323eee9ac'>P04</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='ccafe649a1365aabac787473a39f09d8'>P05</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='027194ecec5cb78cd79ded6fd5f768ac'>P06</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='0e1251b9682de908c8b6325b99c0aa7f'>P07</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='d2ac797079d0c2ac27c3da315f68e7df'>P08</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='eb86114cfe08550408953271cb3dda7a'>P09</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+<li><a href='246d1d74632fbcc7b5d7e4e03f02b602'>Videos</a></li>
+<ul class='package-hierarchy'>
+<li><a href='bb929bf89f6bd309a9bb00dbcf271837'>P01</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='5fa45bf5367052a94d078c8020cff148'>P02</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='e9fecfbb048d05fb93492c324e9a67bc'>P03</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='eaba4e9ade6c98954876a4d4240aa467'>P04</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='7cf7a6f2a89ec013ced94e9a7e0fc29f'>P05</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='7f14c082431caf6482c38701922852da'>P06</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='1dfa38d5528290d550044769ac1fd31b'>P07</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='99a2f883256d423960d1558f89c8a1e0'>P08</a></li>
+<ul class='package-hierarchy'>
+</ul>
+<li><a href='0808af4392f46886d5f8e59458ba908a'>P09</a></li>
+<ul class='package-hierarchy'>
+</ul>
+</ul>
+</ul>
+
+  
+
+  
+  <h3>Data Resources</h3>
+    <ul class="resource-list">
+      
+        
+
+
+<li class="resource-item" data-id="d760b276-0d9a-4bb7-b65a-9990f4f86d0c">
+  
+  <a class="heading" href="https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/readme.txt" title="readme.txt">
+    
+    readme.txt
+    
+    <span class="format-label" property="dc:format" data-format="txt">TXT</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+    </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+    <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-share"></i>
+      Explore
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      
+      <li>
+        <a href="/data/dataset/3cqb5b81wk2dc2379fx1mrxh47/resource/d760b276-0d9a-4bb7-b65a-9990f4f86d0c">
+          
+            <i class="fa fa-info-circle"></i>
+            More information
+          
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/readme.txt" class="resource-url-analytics" target="_blank">
+          
+            <i class="fa fa-external-link"></i>
+            Go to resource
+          
+        </a>
+      </li>
+      
+      
+      
+    </ul>
+  </div>
+  
+  
+</li>
+      
+    </ul>
+  
+
+</section>
+  
+
+  
+    
+  
+
+  
+    
+
+
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+
+            
+              <aside class="secondary span3">
+                
+                
+
+  
+
+  
+    
+
+  
+    <section class="module module-narrow">
+      <div class="module context-info">
+        <div class="module-content">
+          
+            
+              <h1 class="heading">HD-EPIC</h1>
+            
+            
+              <div class="nums">
+                <dl>
+                  <dt>Followers</dt>
+                  <dd><span>0</span></dd>
+                </dl>
+              </div>
+            
+            
+              
+                <div class="follow_button">
+                  
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  
+
+  
+    
+      
+      
+
+
+
+
+  
+  <div class="module module-narrow module-shallow context-info">
+    
+      <h2 class="module-heading"><i class="fa fa-building-o"></i> Organisation</h2>
+    
+    <section class="module-content">
+      
+      
+        <div class="image">
+          <a href="/data/organization/engineering-org">
+            <img src="https://data.bris.ac.uk/data/images/engineering.jpg" width="200" alt="engineering-org" />
+          </a>
+        </div>
+      
+      
+      <h1 class="heading">Engineering
+        
+      </h1>
+      
+      
+      
+        <p>
+          Our leading academics are addressing many of society's grand challenges, for example in transport, the built environment, energy and advanced healthcare.
+For more information...
+          <a href="/data/organization/about/engineering-org">read more</a>
+        </p>
+      
+      
+      
+      
+    </section>
+  </div>
+  
+    
+  
+
+  
+    
+
+  <section class="module module-narrow social">
+    
+      <h2 class="module-heading"><i class="fa fa-medium fa-share-square-o"></i> Social</h2>
+    
+    
+      <ul class="nav nav-simple">
+        <li class="nav-item"><a href="https://plus.google.com/share?url=https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47" target="_blank"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+        <li class="nav-item"><a href="https://twitter.com/share?url=https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+        <li class="nav-item"><a href="https://www.facebook.com/sharer.php?u=https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+      </ul>
+    
+  </section>
+
+  
+
+  
+    
+
+
+  
+    
+      
+        <section class="module module-narrow module-shallow license">
+          
+            <h2 class="module-heading"><i class="fa fa-medium fa-lock"></i> License</h2>
+          
+          
+            <p class="module-content">
+              
+                
+  
+    
+    
+    <a href="https://creativecommons.org/licenses/by/4.0/" rel="dc:rights">Creative Commons Attribution 4.0</a>
+    
+  
+
+                
+                  <a href="http://opendefinition.org/okd/" title="This dataset satisfies the Open Definition.">
+                      <img class="open-data" src="/data/base/images/od_80x15_blue.png" alt="[Open Data]" />
+                  </a>
+                
+              
+            </p>
+          
+        </section>
+      
+    
+  
+
+  
+
+
+              </aside>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="span8 footer-links">
+        
+          <ul class="unstyled">
+            
+              <li><a href="/data/about">About data.bris</a></li>
+            
+          </ul>
+          <ul class="unstyled">
+            
+              
+              <li><a href="http://docs.ckan.org/en/2.7/api/">CKAN API</a></li>
+              <li><a href="http://www.ckan.org/">CKAN Association</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="/data/base/images/od_80x15_blue.png"></a></li>
+            
+          </ul>
+        
+      </div>
+      <div class="span4 attribution">
+        
+          <p><strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a></p>
+        
+        
+          
+<form class="form-inline form-select lang-select" action="/data/util/redirect" data-module="select-switch" method="POST">
+  <label for="field-lang-select">Language</label>
+  <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+    
+      <option value="/data/en_GB/dataset/3cqb5b81wk2dc2379fx1mrxh47" selected="selected">
+        English (United Kingdom)
+      </option>
+    
+  </select>
+  <button class="btn js-hide" type="submit">Go</button>
+</form>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  
+    
+  
+</footer>
+  
+    
+    
+    
+  
+    
+
+      
+  <script>document.getElementsByTagName('html')[0].className += ' js';</script>
+<script type="text/javascript" src="/data/fanstatic/vendor/:version:2017-11-23T09:55:57.62/jquery.min.js"></script>
+<script type="text/javascript" src="/data/fanstatic/vendor/:version:2017-11-23T09:55:57.62/:bundle:bootstrap/js/bootstrap.min.js;jed.min.js;moment-with-locales.js;select2/select2.min.js"></script>
+<script type="text/javascript" src="/data/fanstatic/base/:version:2019-07-09T15:53:33.14/:bundle:plugins/jquery.inherit.min.js;plugins/jquery.proxy-all.min.js;plugins/jquery.url-helpers.min.js;plugins/jquery.date-helpers.min.js;plugins/jquery.slug.min.js;plugins/jquery.slug-preview.min.js;plugins/jquery.truncator.min.js;plugins/jquery.masonry.min.js;plugins/jquery.form-warning.min.js;sandbox.min.js;module.min.js;pubsub.min.js;client.min.js;notify.min.js;i18n.min.js;main.min.js;modules/select-switch.min.js;modules/slug-preview.min.js;modules/basic-form.min.js;modules/confirm-action.min.js;modules/api-info.min.js;modules/autocomplete.min.js;modules/custom-fields.min.js;modules/data-viewer.min.js;modules/table-selectable-rows.min.js;modules/resource-form.min.js;modules/resource-upload-field.min.js;modules/resource-reorder.min.js;modules/resource-view-reorder.min.js;modules/follow.min.js;modules/activity-stream.min.js;modules/dashboard.min.js;modules/resource-view-embed.min.js;view-filters.min.js;modules/resource-view-filters-form.min.js;modules/resource-view-filters.min.js;modules/table-toggle-more.min.js;modules/dataset-visibility.min.js;modules/media-grid.min.js;modules/image-upload.min.js"></script></body>
+</html>
