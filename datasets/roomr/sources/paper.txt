@@ -1,0 +1,936 @@
+Visual Room Rearrangement
+Luca Weihs1 Matt Deitke1,2 Aniruddha Kembhavi1,2 Roozbeh Mottaghi1,2
+1PRIOR @ Allen Institute for AI 2University of Washington
+ai2thor.allenai.org/rearrangement
+Figure 1: An instance of the Room Rearrangement task. Objects begin in the positions indicated by the solid 3D bounding
+boxes. An agent must walk through the room and record the objects it sees. The agent is then removed, and objects are moved
+to the locations indicated by the dashed bounding boxes. The agent is then reintroduced into the room and must interact with
+objects (moving or opening them) to return the room to its original state.
+Abstract
+There has been a signiﬁcant recent progress in the ﬁeld
+of Embodied AI with researchers developing models and
+algorithms enabling embodied agents to navigate and in-
+teract within completely unseen environments. In this pa-
+per , we propose a new dataset and baseline models for the
+task of Rearrangement. We particularly focus on the task
+of Room Rearrangement: an agent begins by exploring a
+room and recording objects’ initial conﬁgurations. We then
+remove the agent and change the poses and states (e.g.,
+open/closed) of some objects in the room. The agent must
+restore the initial conﬁgurations of all objects in the room.
+Our dataset, named RoomR, includes 6,000 distinct rear-
+rangement settings involving 72 different object types in 120
+scenes. Our experiments show that solving this challenging
+interactive task that involves navigation and object interac-
+tion is beyond the capabilities of the current state-of-the-art
+techniques for embodied tasks and we are still very far from
+achieving perfect performance on these types of tasks.
+1. Introduction
+One of the longstanding goals of Embodied AI is to build
+agents that interact with their surrounding world and per-
+form tasks. Recently, navigation and instruction following
+tasks have gained popularity [ 1, 2, 4] in the Embodied AI
+community. These tasks are the building blocks of inter-
+active embodied agents, and over the past few years, we
+have observed remarkable progress regarding the develop-
+ment of models and algorithms. However, a typical assump-
+tion for these tasks is that the environment is static; namely,
+the agent can move within the environment but cannot inter-
+act with objects or modify their state. The ability to interact
+with and change its environment is crucial for any artiﬁ-
+cial embodied agent and cannot be studied in static envi-
+ronments. There is a general trend towards interactive tasks
+[50, 41, 49]. These tasks focus on speciﬁc aspects of in-
+teraction such as object manipulation, long-horizon plan-
+ning and understanding pre-condition and post-conditions
+of actions. In this paper, we address a more comprehensive
+task in a visually rich environment that can subsume each
+of these skills.
+5922
+
+We address an instantiation of the rearrangement prob-
+lem, an interactive task, recently introduced by Batra et
+al. [ 3]. The goal of the rearrangement task is to reach a
+goal room conﬁguration from an initial room conﬁguration
+through interaction. In our instantiation, an agent must re-
+cover a scene conﬁguration after we have randomly moved,
+or changed the state of, several objects ( e.g. see Fig. 1).
+This problem has two stages: walkthrough and unshuf-
+ﬂe . During the walkthrough stage, the agent may explore
+the scene and, through egocentric perception, record infor-
+mation regarding the goal conﬁguration. We then remove
+the agent from the room and move some objects to other
+locations or change their state ( e.g. opening a closed mi-
+crowave). In the unshufﬂe stage, the agent must interact
+with objects in the room to recover the goal conﬁguration
+observed in the walkthrough stage.
+Rearrangement poses several challenges such as infer-
+ring the visual differences between the initial and goal con-
+ﬁgurations, inferring the objects’ state, learning the post-
+conditions and pre-conditions of actions, maintaining a
+persistent and compact memory representation during the
+walkthrough stage, and successful navigation. To establish
+baseline performance for our task, we evaluate an actor-
+critic model akin to the state-of-the-art models used for
+long-horizon tasks such as navigation. We train our base-
+lines using decentralized distributed proximal policy op-
+timization (DD-PPO) [ 47, 40], a reward-based RL algo-
+rithm, as well as with DAgger [ 37], a behavioral cloning
+method. During the walkthrough stage, the agent uses a
+non-parametric mapping module to memorize its observa-
+tions along with any visible objects and their positions. In
+the unshufﬂe stage the agent compares images that it ob-
+serves against what it has observed in its map and may use
+this information to inform which objects it should move
+or open. As a proof-of-concept we also run experiments
+with a model that includes a semantic mapping component
+adapted from the Active Neural SLAM model [ 8].
+To facilitate research in this challenging direction,
+we compiled the Room Rearrangement (RoomR) dataset.
+RoomR is built upon AI2-THOR [ 29], a virtual interac-
+tive environment that enables interacting with objects and
+changing their state. The RoomR dataset includes 6,000 re-
+arrangement tasks that involve changing the pose and state
+of multiple objects within an episode. The level of the dif-
+ﬁculty of each episode varies depending on the differences
+between the initial and the goal object conﬁgurations. We
+have used 120 rooms and more than 70 unique object cate-
+gories to create the dataset.
+We consider two variations of the room rearrangement
+task. In the ﬁrst setting, which we call the 1-Phase task,
+the agent completes the walkthrough and unshufﬂe stages
+in parallel so that it is given aligned images from the walk-
+through and unshufﬂe conﬁgurations at every step. In the
+second setting, the 2-Phase task, the agent must complete
+the walkthrough and unshufﬂe stages sequentially; this 2-
+Phase variant is more challenging as it requires the agent to
+reason over longer time spans. Highlighting the difﬁculty
+of the rearrangement, our evaluations show that our strong
+baselines struggle even in the easier 1-Phase task. Rear-
+rangement poses a new set of challenges for the embodied-
+AI community. Our code and dataset are publicly available.
+A supplementary video1 provides the description of the task
+and some qualitative results.
+2. Related Work
+Embodied AI tasks. In recent years, we have witnessed a
+surge of interest in learning-based Embodied AI tasks. V ar-
+ious tasks have been proposed in this domain: navigation
+towards objects [ 4, 51, 48, 7] or towards a speciﬁc point
+[1, 38, 47, 36], scene exploration [ 9, 8], embodied question
+answering [ 18, 13], task completion [ 55], instruction fol-
+lowing [ 2, 41], object manipulation [ 16, 52], multi-agent
+coordination [ 24, 23], and many others. Rearrangement
+can be considered as a broader task that encompasses skills
+learned through these tasks.
+Rearrangement. Rearrangement Planning is an estab-
+lished ﬁeld in robotics research where the goal is to reach
+a goal state from an initial state [ 5, 44, 27, 31, 53, 33].
+While these methods have shown impressive performance,
+they consider complete observability of the state from per-
+fect visual perception [ 11, 27], a planar surface as the envi-
+ronment [30, 42], a static robot [ 15, 32], same environment
+for evaluation of generalization [ 39, 26], or a limited set of
+object categories or limited variation within the categories
+[10, 19]. Some works address some of these issues, such
+as generalization to new objects or imperfect perception
+[54, 6]. In this paper, we take a step further and relax these
+assumptions by considering raw visual input instead of per-
+fect perception, a visually and geometrically complex scene
+as the conﬁguration space, separate scenes for training and
+evaluation, a variety of objects, and object state changes.
+Task and motion planning. Our work can be considered
+as an instance of joint task and motion planning [ 25, 43,
+35, 17, 12] since solving the rearrangement task requires
+low-level motion planning to plan a sequence of actions and
+high-level task planning to recover the goal state from the
+initial state of the scene. However, the focus of these works
+is primarily on the planning problem rather than perception.
+3. The Room Rearrangement Task
+3.1. Deﬁnition
+Our goal is to rearrange an initial conﬁguration of a room
+into a goal conﬁguration. So that our agent does not have to
+1https://youtu.be/1APxaOC9U-A
+5923
+
+reason about soft-body physics, we restrict our attention to
+piece-wise rigid objects. Suppose a room contains n piece-
+wise rigid objects. We deﬁne the state for object i as si =
+(pi,o i,c i,b i) where
+• pi 2 {3D rotations and translations } = SE(3) records
+the pose of the object,
+• if the object can be opened oi 2 [0, 1] speciﬁes the
+openness of an object ( e.g. oi =0 .5 means a door is
+half open) and if the object cannot be opened ( e.g.a
+mug) then oi = ;,
+• ci records the 8 coordinates in R3 of the corners of the
+3D bounding box for object i, and
+• bi 2 {0, 1} records if the ith object is “broken” (1 if
+broken, otherwise 0).
+While this deﬁnition of an object’s state is constrained ( e.g.
+objects can be more than just “broken” and “unbroken”) it
+matches well the capabilities of our target embodied envi-
+ronment (AI2-THOR) and can be easily enriched as embod-
+ied environments become increasingly realistic. We now let
+S = SE(3) ⇥ ([0, 1] [ {;}) ⇥ R8·3 ⇥ {0, 1} be the set of
+all possible poses for a single object and S = Qn
+i=1 S the
+set of all possible joint object poses. The agent’s goal is to
+convert an initial conﬁguration s0 2 S to a goal s⇤ 2 S.
+Our task has two stages: (1) walkthrough and (2) unshuf-
+ﬂe . During the walkthrough stage, the agent is placed into a
+room with goal state s⇤, and it should collect as much infor-
+mation as needed for that particular state of the room in a
+maximum number of actions (for us, 250). The agent is re-
+moved from the room after the walkthrough stage. We then
+select a random subset of the n objects and change their
+state. The state change may be a change in p or o. This
+state will be the initial state s0 that the agent observes at
+the beginning of the unshufﬂe stage. The agent’s goal is to
+convert s0 to s⇤ (s0 ! s⇤) via a sequence of actions.
+3.2. Metrics
+To quantify an agent’s performance, we introduce four
+metrics below. Recall from the above that an agent begins
+an unshufﬂe episode with the room in state s0 and has the
+goal of rearranging the room to end in state s⇤. Suppose that
+at the end of an unshufﬂe episode, the agent has reconﬁg-
+ured the room so that it lies in state s =( s1,...,s n) 2 S.
+In practice, we cannot expect that the agent will place ob-
+jects in exactly the same positions as in s⇤. We instead
+choose a collection of thresholds which determine if two
+object poses are, approximately, equal. When two poses
+(si,s ⇤
+i ) are approximately equal we write si ⇡ s⇤
+i . Other-
+wise we write si 6⇡ s⇤
+i .
+Let s1
+i ,s 2
+i 2 S be two possible poses for object i. As it
+makes little intuitive sense to compare the poses of broken
+objects, we will always assert that poses of broken objects
+are unequal. Thus if b1
+i =1 or b2
+i =1 we deﬁne s1
+i 6⇡ s2.
+Now let’s assume that neither b1
+i =1 nor b2
+i =1 . If ob-
+ject i is pickupable, let IOU (s1
+i ,s 2
+i ) be the intersection over
+union between the 3D bounding boxes c1
+i ,c 2
+i . We then say
+that s1
+i ⇡ s2
+i if, and only if, IOU (s1
+i ,s 2
+i )   0.5. If object
+i is openable but not pickupable, we say that s1
+i ⇡ s2 if,
+and only if, |o1
+i   o2
+i |  0.2. The use of the IOU above
+means that object poses can be approximately equal even
+when their orientations are completely different. While this
+can be easily made more stringent, our rearrangement task
+is already quite challenging. Note also that our below met-
+rics do not consider the case where there are multiple identi-
+cal objects in a scene (as this does not occur in our dataset).
+We now describe our metrics.
+Success (SUCCESS ) – This is the most unforgiving of our
+metrics and equals 1 if all object poses in s and s⇤ are ap-
+proximately equal, otherwise it equals 0.
+% Fixed (Strict) (%F IXED STRICT ) – The above S UCCESS
+metric does not give any credit to an agent if it manages to
+rearrange some, but not all, objects within a room. To this
+end, let Mstart = {i | s0
+i 6⇡ s⇤
+i } be the set of misplaced
+objects at the start of the unshufﬂe stage and let Mend =
+{i | si 6⇡ s⇤
+i } be the set of misplaced objects at the end of
+the episode. We then let %F IXED STRICT equal 0 if |Mend \
+Mstart| > 0 (i.e. the agent has moved an object that should
+not have been moved) and, otherwise, let %F IXED STRICT
+equal 1   |Mend|/|Mstart| (i.e. the proportion of objects that
+were misplaced initially but ended in the correct pose).
+% Energy Remaining (%E) – Missing from all of the
+above metrics is the ability to give partial credit if, for ex-
+ample, the agent moves an object across a room and to-
+wards the goal pose, but fails to place it so that it has a
+sufﬁciently high IOU with the goal. To allow for partial
+credit, we deﬁne an energy function D : S ⇥ S ! [0, 1]
+that monotonically decreases to 0 as two poses get closer
+together (see the Appendix E for full details) and which
+equals zero if two poses are approximately equal. The
+%E metric is then deﬁned as the amount of energy re-
+maining at the end of the unshufﬂe episode divided by
+the total energy at the start of the unshufﬂe episode, e.g.
+%E =( Pn
+i=1 D(si,s ⇤
+i ))/(Pn
+i=1 D(s0
+i ,s ⇤
+i )).
+# Changed (#C HANGED ) – To give additional insight as to
+our agent’s behavior we also include the #C HANGED met-
+ric. This metric is simply the the number of objects whose
+pose has been changed by the agent during the unshufﬂe
+stage. Note that larger or smaller values of this metric are
+not necessarily “better” (both moving no objects and mov-
+ing many objects randomly are poor strategies).
+The above metrics are then averaged across episodes
+when reporting results.
+4. The RoomR Dataset
+The Room Rearrangement (RoomR) dataset utilizes 120
+rooms in AI2-THOR [ 29] and contains 6,000 unique rear-
+rangements (50 rearrangements per training, validation, and
+5924
+
+Object Distance Moved
+VerƟcal
+Horizontal
+0m 2m 4m 6m 8m 10m
+Figure 2: Distance distribution. The horizontal (Man-
+hattan distance) and vertical distance distributions between
+changed objects in their goal and initial positions.
+testing room). Each datapoint consists of an initial room
+state s0, the agent’s starting position, and the goal state s⇤.
+4.1. Generating Rearrangements
+The automatic generation of the dataset enables us to scale
+up the number of rearrangements easily. We generate each
+room rearrangement using the procedure that follows.
+Place agent. We randomize the agent’s position on the
+ﬂoor. The position is restricted to lie on a grid, where
+each cell is of size 0.25m ⇥ 0.25m. The agent’s rotation is
+then randomly chosen amongst {0 , 90 , 180 , 270 }. The
+agent’s starting pose is the same for both s0 and s⇤.
+Shufﬂe background objects. To obtain different conﬁgu-
+rations of objects for each task in the dataset, we randomly
+shufﬂe each movable object, ensuring background objects
+do not always appear in the same position. Shufﬂed objects
+are never hidden inside other receptacles ( e.g. fridges, cab-
+inets), which reduces the task’s complexity.
+Sample objects. We now randomly sample a set of N   0
+openable but non-pickupable objects and a set of M   0
+pickupable objects. These objects and counts are chosen
+randomly with N 2 {0, 1} and M 2 {1   N, ..., 5   N }.
+Goal ( s⇤) setup. We open the N objects sampled in the
+last step to some randomly chosen degree of openness in
+[0, 1] and move the other M pickupable objects to arbitrary
+locations within the room. The room’s current state is now
+s⇤, the start state for the walkthrough stage.
+Initial (s0) setup. We randomize the N sampled openable
+objects’ openness and shufﬂe the position of each of the M
+sampled pickupable objects once more. We are now in s0,
+the start state for the unshufﬂe stage.
+In the above process, we ensure that no broken objects are
+in s0 or s⇤. While we provide a ﬁxed number of datapoints
+per room, this process can be used to sample a practically
+unbounded number of rearrangements.
+4.2. Dataset Properties
+Rooms. There are 120 rooms across the categories of
+kitchen, living room, bathroom, and bedroom (30 rooms
+for each category). We designate 20 rooms for training, 5
+rooms for validation, and 5 rooms for testing, across each
+room category. Of the 6 ,000 unique rearrangements in our
+dataset, 4000 are designated for training, 1000 are set in
+Kitchens Living Rooms
+0.0m
+0.4m
+0.6m
+0.8m
+1.0m
+1.2m
+1.4m
+0.2m
+Bedrooms Bathrooms
+Object Volume
+Figure 3: Distribution of object size. Each column con-
+tains the cube root of every object’s bounding box volume
+that may change in openness (red) or position (blue) for a
+particular room. Notice that, across room categories, ob-
+jects that change in position are signiﬁcantly smaller than
+objects that change in openness.
+validation rooms, and 1000 are set in test rooms. For each
+such split, there are 50 rearrangements per room.
+Objects. There are 118 object categories (listed in Ap-
+pendix F), among which 62 are pickupable ( e.g. cup) and
+10 are openable and non-pickupable ( e.g. fridge). The set
+of object categories that appear in the validation and testing
+rooms is a subset of the object categories that appear during
+training. Thus, if a plant appears in a validation or test-
+ing room, then a plant is also present in one of the training
+rooms. While all object categories are seen during training,
+the physical appearance of object instances are often unique
+in training, validation, and testing rooms. AI2-THOR pro-
+vides annotation as to if an object is pickupable, openable,
+movable, or static.
+Across the dataset, there are 1895 pickupable object in-
+stances and 1262 openable non-pickupable object instances
+(an average of 15.7 and 10.5, respectively, per room). Fig. 2
+shows the distance distribution (horizontal and vertical) of
+objects between their initial and goal positions. It illustrates
+the complexity of the problem, where the agent must travel
+relatively far to recover the goal conﬁguration. Fig. 3 shows
+the distribution of these object groups and their sizes within
+every room. Note that pickupable objects ( e.g. apple, fork)
+tend to be relatively small and hard to ﬁnd, compared to
+openable non-pickupable objects ( e.g. cabinets, drawers).
+Further, across room categories, the number of openable
+non-pickupable objects varies considerably.
+5. Model
+In our experiments, Sec. 6, we consider two RoomR task
+variants: 1-Phase and 2-Phase. In the 1-Phase task, the
+agent completes the unshufﬂe and walkthrough stages si-
+5925
+
+Metric
+Map
+ResNetRGB
+Embedding
+ LSTM
+aƩenƟŽŶ
+GRU
+ResNet
+KƵƚƉƵƚƚŽ
+ŐĞŶƚWŽƐĞ
+Figure 4: Model overview. The model is used for both the unshufﬂe and walkthrough stages. The connections speciﬁc to
+the walkthrough and unshufﬂe stages are shown in blue and red, respectively. The dashed lines represent connections from
+the previous time step. The model’s trainable parameters, inputs and outputs, and intermediate features are shown in yellow,
+pink, and blue, respectively.
+multaneously in lock step. The model we employ for this
+1-Phase task is a simpliﬁcation of the model used when
+performing the 2-Phase task (in which both stages must be
+completed sequentially and so longer-term memory is re-
+quired). For space we only describe the 2-Phase model be-
+low, see our codebase for all architectural details.
+Our network architecture, see Fig. 4, follows the same
+basic structure as is commonly employed within Embod-
+ied AI tasks [ 38, 47, 14, 45, 23]: a combination of a con-
+volutional neural network to process input egocentric im-
+ages, a collection of embedding layers to encode discrete
+inputs, and an RNN to enable the agent to reason through
+time. In addition to this baseline architecture, we would
+like our agent to have two capabilities relevant to the rear-
+rangement task, namely the abilities to, during the unshufﬂe
+stage, (a) explicitly compare images seen during the walk-
+through stage against those seen during the unshufﬂe stage,
+and (b) reference an implicit representation of the walk-
+through stage. We now describe the details of our archi-
+tecture and how we enable these additional capabilities.
+Our agents are of the actor-critic [ 34] variety and thus, at
+each timestep t   0, given observations ω t (e.g. an egocen-
+tric RGB image) and a summary ht 1 of the agent’s history,
+we require that an agent produces a policy π θ (ω t | ht 1)
+(i.e. a distribution over the agent’s actions) and a value
+vθ (ω t | ht 1) (i.e. an estimate of future rewards). Here
+we let θ 2 Θ be a catch-all parameter representing all of
+the trainable parameters in our network. As we wish for
+our agent to have characteristically different behavior in the
+walkthrough and unshufﬂe stages, we have two separate
+policies π walk
+θ and π unsh.
+θ (and similarly for vθ ).
+To encode input 224 ⇥224⇥3 RGB egocentric images,
+we use a ResNet18 [ 21] model (pretrained on ImageNet)
+with frozen model weights with the ﬁnal average pooling
+and classiﬁcation layers removed. This ResNet18 model
+transforms input images into 7⇥7⇥512 tensors. For our
+RNN, we leverage a 1-layer LSTM [ 22] with 512 hidden
+units. To produce the policies π walk and π unsh. we use two
+512 ⇥ 84 linear layers, each applied to the output from the
+LSTM, and each followed by a softmax nonlinearity. Simi-
+larly, to produce the two values vwalk and vunsh. we use two
+distinct 512 ⇥ 1 linear layers applied to the output of the
+LSTM with no additional nonlinearity. We now describe
+how we enable agents the abilities (a) and (b) above.
+Mapping and image comparison. Our model includes a
+non-parametric mapping module. The module saves the
+RGB images seen by the agent during the walkthrough
+stage, along with the agent’s pose. During the unshufﬂe
+stage, the agent (i) queries the metric map for all poses
+visited during the walkthrough stage, (ii) chooses the pose
+closest to the agent’s current pose, and then (iii) retrieves
+the image saved by the walkthrough agent at that pose. Us-
+ing an attention mechanism, the agent can then compare
+this retrieved image against its current observation to decide
+which objects to target.
+Implicit representations of the walkthrough stage. In
+addition to explicitly storing the images seen during the
+walkthrough stage, we also wish to enable our agent to pro-
+duce an implicit representation of its experiences during the
+walkthrough stage. To this end, at every timestep t during
+the walkthrough stage we pass ht, the output of the 1-layer
+LSTM described above, to a 1-layer GRU with 512 hid-
+den units to produce the walkthrough encoding wt. During
+the unshufﬂe stage this walkthrough encoding is no longer
+updated and is simply taken as the encoding from the last
+walkthrough step. The walkthrough encoding is passed as
+5926
+
+an input to the LSTM in a recurrent fashion.
+6. Experiments
+This section provides the results for several baseline ap-
+proaches that achieve state-of-the-art performance on other
+embodied tasks ( e.g. navigation). The room rearrangement
+task and the RoomR dataset are very challenging. To make
+the problem more manageable, we simplify assumptions in
+choosing the action space and the sensor modalities. Sec.
+6.1 and Sec. 6.2 explain the details of the action space
+and sensor modalities, respectively. We show that even with
+these simpliﬁcations, the baseline models struggle.
+6.1. Action Space
+AI2-THOR offers a wide variety of means by which
+agents may interact with their environment ranging from
+“low-level” ( e.g. applying forces to individual objects) to
+“high-level” ( e.g. open an object of the given type) inter-
+actions. Prior work, e.g.[ 24, 45, 23, 18, 41] has primarily
+used higher-level actions to abstract away some details that
+would otherwise distract from the problem of interest. We
+follow this prior work and deﬁne our agent’s action space as
+A = ANav. [ ARotate [ ALook [ AUpDown [ APickup [ AOpen [
+{PLACE OBJECT , DONE } where taking action:
+• a 2 ANav. = {MOVE X | X 2 {AHEAD ,L EFT ,R IGHT ,
+BACK}} results in the agent moving 0.25m in the direc-
+tion speciﬁed by X in the agent’s coordinate frame (unless
+this would result in the agent colliding with an object).
+• a 2 ARotate = {ROTATELEFT , ROTATERIGHT } results in
+the agent rotating 90   clockwise if a = ROTATERIGHT
+and 90  counter-clockwise if a = ROTATELEFT .
+• a 2 ALook = {LOOK UP, LOOK DOWN} results in the
+agent lowering/raising its camera angle by 30  ,
+• a 2 APickup = {PICKUP X | X 2 {the 62 pickupable
+object types }} results in the agent picking up a visible
+object of type X if: (a) the agent is not already holding an
+object, (b) the agent is close enough to the object (within
+1.5m), and (c) picking up the object would not result in
+it colliding with objects in front of the agent. If there are
+multiple objects of type X then the closest is chosen.
+• a 2 AUpDown = {STAND, CROUCH } results in the agent
+raising or lowering the agent’s camera to one of two ﬁxed
+heights allowing it to, e.g., see objects under tables.
+• a 2 AOpen = {OPEN X | X 2 {the 10 openable object
+types that are not pickupable }}, if an object whose open-
+ness is different from the openness in the goal state is vis-
+ible and within 1.5m of the agent, this object’s openness
+is changed to its value in the goal state.
+• a = PLACE OBJECT results in the agent dropping its held
+object. If the held object’s goal state is visible and within
+1.5m of the agent, it is placed into that goal state. Oth-
+erwise, a heuristic is used to place the object on a nearby
+surface.
+• a = DONE results in the walkthrough or unshufﬂe stage
+immediately terminating.
+In total, there are |A| = 84 possible actions. Some of the
+above actions have been designed to be fairly abstract or
+“high-level,” e.g. the P LACE OBJECT action abstracts away
+all object manipulation complexities. As we discuss in Ap-
+pendix C, we have implemented “lower-level” actions. Still,
+we stress that, even with these more abstract actions, the
+planning and visual reasoning required in RoomR already
+makes the task very challenging.
+6.2. RoomR Variants
+We will now detail the 1-Phase and, more difﬁcult, 2-
+Phase variants of our RoomR task. These variants are, in
+part, deﬁned by the sensors available to the agent. We begin
+by listing all sensors (note that only a subset of these will
+be available to any given agent in the below variants):
+• RGB – An egocentric 224 ⇥224⇥3 RGB image corre-
+sponding to the agent’s current viewpoint (90   FOV). In the
+1-Phase task this corresponds to the RGB image from the
+unshufﬂe stage.
+• WALKTHROUGH RGB – This sensor is only available in
+the 1-Phase task and is identical to RGB except it shows
+the egocentric image as though the agent was in the Walk-
+through stage, i.e. all objects were in their goal positions.
+It is this sensor that makes it possible, during the 1-Phase
+task, for the agent to perform pixel-to-pixel comparisons
+between the environment as it should be in the walkthrough
+stage and as it is during the unshufﬂe stage.
+• AGENT POSITION – The agent’s position relative to its
+starting location (this is equivalent to the assumption of per-
+fect egomotion estimation).
+• INWALKTHROUGH – Only relevant during the 2-Phase
+task, this sensor returns “true” if the agent is currently in
+the walkthrough stage and otherwise returns “false”.
+1-Phase Task – In this variant, the agent takes actions
+within the walkthrough and unshufﬂe stages simultaneously
+in lock step. That is, if the agent takes a M OVE AHEAD
+action, the agent moves ahead in both stages simultane-
+ously; as the agent begins in the same starting position in
+both stages, the agent’s position will always be the same
+in both stages. As only navigational actions are allowed
+during walkthrough, all actions of type APickup [ AOpen [
+{PLACE OBJECT } are not executed by the agent in the walk-
+through stage. During the unshufﬂe stage, the agent has ac-
+cess to the RGB, W ALKTHROUGH RGB, and A GENT POSI -
+TION sensors to complete its task.
+2-Phase Task – In this task, the agent must complete both
+the walkthrough and unshufﬂe stages sequentially. In this
+5927
+
+For IL trained models, prob. of takinŐĞǆƉĞƌƚĂĐƟŽŶis nŽŶͲǌĞƌŽĨŽƌĮƌƐƚϭͲϱŵŝůůŝŽŶƐƚĞƉƐ͖ƌĞƐƵůƚƐŝŶƚŚŝƐƉĞƌŝŽĚĂƌĞŶ͛ƚƐŚŽǁŶĂƐƚŚĞǇŝŶĐůƵĚĞĞǆƉĞƌƚĂĐƟŽŶƐ͘ 
+Figure 5: Performance over training. The (training-set) performance of our models over ⇠75Mn training steps. We
+report the #C HANGED and %F IXED STRICT metrics, shown values and 95% error bars are generated using locally weighted
+scatterplot smoothing. Notice that the PPO models quickly saturate suggesting that they become stuck in local optima. IL
+continue to improve throughout training although Tab. 1 suggests that these models begin to overﬁt on the training scenes.
+100·SUCCESS " 100 ·%F IXED STRICT " %E # #C HANGED l
+Experiment Train V al. Test Train V al. Test Train V al. Test Train V al. Test
+1-Phase (Simple, IL) 2.2 1.3 1.8 7.3 4.7 4.8 1.17 1.10 1.08 1.1 0.7 0.6
+1-Phase (Simple, PPO) 1.8 2.1 0.7 6.7 6.7 4.6 0.95 0.96 0.99 0.3 0.4 0.4
+1-Phase (RN18, IL) 8.2 1.7 2.8 17.9 5.0 6.3 0.93 1.14 1.11 1.3 0.9 0.9
+1-Phase (RN18, PPO) 1.4 1.5 1.1 6.6 6.0 5.3 0.94 0.96 0.98 0.3 0.3 0.3
+1-Phase (RN18+ANM, IL) 4.8 5.2 3.2 12.8 11.1 8.9 1.05 1.05 1.04 1.3 1.0 1.0
+2-Phase (RN18, PPO+IL) 1.6 0.5 0.2 4.2 1.2 0.7 1.10 1.15 1.12 0.6 0.4 0.4
+2-Phase (RN18+ANM, PPO+IL) 2.3 0.6 0.3 7.3 1.6 1.4 1.09 1.15 1.10 0.9 0.5 0.4
+Heur. Expert 85.1 88.0 83.4 91.2 93.1 91.2 0.09 0.07 0.09 2.2 2.2 2.3
+Table 1: Results. For each experiment, (i) we evaluate model checkpoints, saved after approximately 0, 5, . . . , 75 million
+steps, on the validation set, (ii) choose the best performing (lowest avg. %F IXED STRICT ) checkpoint among these, and (iii)
+evaluate this best validation checkpoint on the other dataset splits. " and # denote if larger or smaller metric values are to be
+preferred, l denotes a metric that is meant to highlight behavior rather than a measure quality.
+task has access to the RGB, A GENT POSITION , and I N-
+WALKTHROUGH sensors.
+6.3. Training Pipeline
+As our experimental results show, we found training
+models to complete the RoomR task using purely reward-
+based reinforcement learning methods to be extremely chal-
+lenging. The difﬁculty remains even when using dense,
+shaped rewards. Thus, we have chosen to adopt a hybrid
+training strategy where we use the DD-PPO [ 47, 40] algo-
+rithm, a reward-based RL method, to train our agent when
+it is within the walkthrough stage, and an imitation learning
+(IL) approach, where we minimize a cross-entropy loss be-
+tween the agent’s policy and expert actions, is used when in
+the unshufﬂe stage. As it has been successfully employed in
+training agents in other embodied tasks ( e.g.[ 20]), for our
+IL training, we employ DAgger [ 37]. In DAgger, we begin
+training by forcing our agent to always take an expert’s ac-
+tion with probability 1 and anneal this probability to 0 over
+the ﬁrst 1Mn for the 1-Phase task and 5Mn steps for the
+2-Phase task. Tacitly assumed in the above is that we have
+access to an expert policy which can be efﬁciently evalu-
+ated at every state reached by our agent. Even with access
+to the full environment state, hand-designing an optimal,
+efﬁciently computable, expert is extremely difﬁcult: sim-
+ple considerations show that planning the agent’s route is at
+least as difﬁcult as the traveling salesman problem. There-
+fore, we do not attempt to design an optimal expert and,
+instead, a greedy heuristic expert with some backtracking
+and error detection capabilities. See Appendix B for more
+details. This expert is not perfect but, as seen in Tab. 1, can
+restore all but a small fraction of objects to their rightful
+places. For additional training details, see Appendix A.
+6.4. Results
+Recall from Sec. 4 that our dataset contains a training set
+of size 4000 and validation/testing sets of 1000 instances
+each. We report results on each of these splits but, for efﬁ-
+ciency, include only the ﬁrst 15 rearrangement instances per
+room in the training set (leaving 1200 instances).
+Baselines. We evaluate the following baseline models:
+• 1-Phase (RN18, IL) – An agent trained using pure imita-
+tion learning in the 1-Phase task. Recall that 1-Phase task
+models use a simpliﬁcation of the model from Sec. 5, see
+our code for more details.
+• 1-Phase (RN18, PPO) – As above but trained with PPO.
+• 1-Phase (Simple, IL) – As 1-Phase (RN18, IL) but we re-
+place the ResNet18 CNN backbone and attention module
+5928
+
+(a) Successful unshufﬂe of a knife and dish sponge.
+(b) Unsuccessful unshufﬂe of a newspaper and laptop.
+Figure 6: Qualitative results. Trajectories sampled from a
+1-Phase model. The goal, predicted, and initial conﬁgura-
+tions are green, pink, and blue, respectively.
+with 3 CNN blocks, this CNN is commonly used in embod-
+ied navigation baselines [ 38].
+• 1-Phase (Simple, PPO) – As PointU (Simple, IL) but
+trained with PPO rather than IL.
+• 2-Phase (RN18, PPO+IL) – An agent trained in the 2-
+Phase task using the model from Sec. 5. PPO and IL are
+used in the walkthrough and unshufﬂe stages, respectively.
+• 1-Phase (RN18+ANM, IL) – We pretrain a variant of the
+“Active Neural SLAM” (ANM) [ 8] architecture to perform
+semantic mapping within AI2-THOR using our set of 72
+object categories. We then freeze this mapping network and
+train our “1-Phase (RN18, IL)” model extended to allow for
+comparing between the maps created in the unshufﬂe and
+walkthrough stages. See Appendix D for more details.
+• 2-Phase (RN18+ANM, PPO+IL) – Similarly as above
+but with semantic mapping model integrated into “2-Phase
+(RN18, PPO+IL)” baseline above.
+Analysis. We record rolling metrics during training in
+Fig. 5. After training, we evaluate our models on our three
+dataset splits and record the average metric values in Tab. 1.
+From the results, we see several clear trends.
+Unshufﬂing objects is hard – Even when evaluated on the
+seen training rearrangements in the easier 1-Phase task, the
+success of our best model is only 8.2%.
+• Reward-based RL struggles to train – Fig. 5 shows that
+PPO-based models quickly appear to become trapped in lo-
+cal optima. Tab. 1 shows that the PPO agents move rel-
+atively few objects but, when they do move objects, they
+generally place them correctly even in test scenes.
+• Pretrained CNN backbones can improve performance –
+We hypothesized that using a pretrained CNN backbone
+would substantially improve generalization performance
+given the relatively little object variety (compared with Im-
+ageNet) in our dataset. We see compelling evidence of this
+when comparing the performance of the “1-Phase (Simple,
+IL)” and “1-Phase (RN18, IL)” baselines (S UCCESS and
+%F IXED STRICT improvements across all splits). The re-
+sults were more mixed for the PPO-trained baselines.
+• The 2-Phase task is much more difﬁcult than the 1-Phase
+task – Comparing the performance of the “2-Phase (RN18,
+PPO+IL)” and “1-Phase (RN18, IL)” baselines, it is clear
+that the 2-Phase task is much more difﬁcult than the 1-
+Phase task. If the agent managed to explore exhaustively
+during the walkthrough stage then the two tasks would be
+effectively identical. This suggests that the observed gap is
+primarily driven by learning dynamics and the walkthrough
+agent’s failure to explore exhaustively. Note that, as we se-
+lect the best val. set model, Tab. 1 may give the impression
+that the 2-Phase baseline failed to train at all: this is not
+the case as we can see, in Fig. 5, that the “2-Phase (RN18,
+PPO+IL)” baseline trains to almost the same training-set
+performance as the 1-Phase IL baselines.
+• Semantic mapping appears to substantially improve per-
+formance – Our preliminary results suggest that semantic
+mapping can have a substantial impact on improving the
+generalization performance of rearrangement models, note
+that the “+ANM” baselines outperform their counterparts in
+almost all metrics, especially so on the validation and test
+sets. These results are preliminary as we have not carefully
+balanced parameter counts to ensure fair comparisons.
+See Fig. 6 for success and failure examples.
+7. Discussion
+Our proposed Room Rearrangement task poses a rich
+set of challenges, including navigation, planning, and rea-
+soning about object poses and states. To facilitate learning
+for rearrangement, we propose the RoomR dataset that pro-
+vides a challenging testbed in visually rich interactive en-
+vironments. We show that modern deep RL methodologies
+obtain (test-set) performance only marginally above chance.
+Given the low performance of existing methods we suspect
+that future high-performance models will require novel ar-
+chitectures enabling comparative mapping (to record object
+positions during the walkthrough stage and compare these
+positions against those observed in the unshufﬂe stage), vi-
+sual reasoning about object positions, and physics to be able
+to manipulate objects to their goal locations. Moreover, we
+require new reinforcement learning methodologies to allow
+the walkthrough and unshufﬂe stages to be trained jointly
+with minimum mutual interference. Given these challenges,
+we hope the proposed task opens up new avenues of re-
+search in the domain of Embodied AI.
+5929
+
+References
+[1] Peter Anderson, Angel Chang, Devendra Singh Chaplot,
+Alexey Dosovitskiy, Saurabh Gupta, Vladlen Koltun, Jana
+Kosecka, Jitendra Malik, Roozbeh Mottaghi, Manolis Savva,
+and Amir R. Zamir. On evaluation of embodied navigation
+agents. arXiv, 2018. 1, 2
+[2] Peter Anderson, Qi Wu, Damien Teney, Jake Bruce, Mark
+Johnson, Niko S ¨underhauf, Ian D. Reid, Stephen Gould, and
+Anton van den Hengel. Vision-and-language navigation: In-
+terpreting visually-grounded navigation instructions in real
+environments. In CVPR, 2018. 1, 2
+[3] Dhruv Batra, Angel X. Chang, Sonia Chernova, Andrew J.
+Davison, Jia Deng, Vladlen Koltun, Sergey Levine, Jitendra
+Malik, Igor Mordatch, Roozbeh Mottaghi, Manolis Savva,
+and Hao Su. Rearrangement: A challenge for embodied ai.
+arXiv, 2020. 2
+[4] Dhruv Batra, Aaron Gokaslan, Aniruddha Kembhavi, Olek-
+sandr Maksymets, Roozbeh Mottaghi, Manolis Savva, A.
+Toshev, and Erik Wijmans. Objectnav revisited: On evalua-
+tion of embodied agents navigating to objects. arXiv, 2020.
+1, 2
+[5] Ohad Ben-Shahar and Ehud Rivlin. Practical pushing plan-
+ning for rearrangement tasks. ICRA, 1996. 2
+[6] Lars Berscheid, Pascal Meißner, and Torsten Kr ¨oger. Self-
+supervised learning for precise pick-and-place without ob-
+ject model. IEEE Robotics and Automation Letters , 2020.
+2
+[7] Devendra Singh Chaplot, Dhiraj Gandhi, Abhinav Gupta,
+and Ruslan Salakhutdinov. Object goal navigation using
+goal-oriented semantic exploration. In NeurIPS, 2020. 2
+[8] Devendra Singh Chaplot, Dhiraj Gandhi, Saurabh Gupta,
+Abhinav Gupta, and Ruslan Salakhutdinov. Learning to ex-
+plore using active neural slam. In ICLR, 2020. 2, 8, 12
+[9] Tao Chen, Saurabh Gupta, and Abhinav Gupta. Learning
+exploration policies for navigation. In ICLR, 2019. 2
+[10] Nikolaus Correll, Kostas E. Bekris, Dmitry Berenson, Oliver
+Brock, Albert Causo, Kris Hauser, Kei Okada, Alberto Ro-
+driguez, Joseph M. Romano, and Peter R. Wurman. Analy-
+sis and observations from the ﬁrst amazon picking challenge.
+IEEE Transactions on Automation Science and Engineering ,
+2018. 2
+[11] Akansel Cosgun, Tucker Hermans, Victor Emeli, and Mike
+Stilman. Push planning for object placement on cluttered
+table surfaces. In IROS, 2011. 2
+[12] Neil T Dantam, Zachary K Kingston, Swarat Chaudhuri, and
+Lydia E Kavraki. Incremental task and motion planning: A
+constraint-based approach. In RSS, 2016. 2
+[13] Abhishek Das, Samyak Datta, Georgia Gkioxari, Stefan Lee,
+Devi Parikh, and Dhruv Batra. Embodied Question Answer-
+ing. In CVPR, 2018. 2
+[14] Matt Deitke, Winson Han, Alvaro Herrasti, Aniruddha
+Kembhavi, Eric Kolve, Roozbeh Mottaghi, Jordi Salvador,
+Dustin Schwenk, Eli V anderBilt, Matthew Wallingford, Luca
+Weihs, Mark Y atskar, and Ali Farhadi. RoboTHOR: An
+Open Simulation-to-Real Embodied AI Platform. In CVPR,
+2020. 5
+[15] Mehmet Dogar and Siddhartha Srinivasa. A framework for
+push-grasping in clutter. In RSS, 2011. 2
+[16] Linxi Fan, Y uke Zhu, Jiren Zhu, Zihua Liu, Orien Zeng, An-
+chit Gupta, Joan Creus-Costa, Silvio Savarese, and Li Fei-
+Fei. Surreal: Open-source reinforcement learning framework
+and robot manipulation benchmark. In CORL, 2018. 2
+[17] Caelan Reed Garrett, Tomas Lozano-Perez, and Leslie Pack
+Kaelbling. Ffrob: Leveraging symbolic planning for efﬁ-
+cient task and motion planning. The International Journal of
+Robotics Research, 2018. 2
+[18] Daniel Gordon, Aniruddha Kembhavi, Mohammad Raste-
+gari, Joseph Redmon, Dieter Fox, and Ali Farhadi. IQA:
+Visual question answering in interactive environments. In
+CVPR, 2018. 2, 6
+[19] Marcus Gualtieri, Andreas ten Pas, and Robert Platt. Pick
+and place without geometric object models. In ICRA, 2018.
+2
+[20] Saurabh Gupta, V arun Tolani, James Davidson, Sergey
+Levine, Rahul Sukthankar, and Jitendra Malik. Cognitive
+mapping and planning for visual navigation. Int. J. Comput.
+Vis., 128(5):1311–1330, 2020. 7
+[21] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+Deep residual learning for image recognition. In CVPR,
+2016. 5
+[22] S. Hochreiter and J. Schmidhuber. Long short-term memory.
+Neural Computation, 1997. 5
+[23] Unnat Jain, Luca Weihs, Eric Kolve, Ali Farhadi, Svetlana
+Lazebnik, Aniruddha Kembhavi, and Alexander G. Schwing.
+A cordial sync: Going beyond marginal policies for multi-
+agent embodied tasks. In ECCV, 2020. 2, 5, 6
+[24] Unnat Jain, Luca Weihs, Eric Kolve, Mohammad Rastegari,
+Svetlana Lazebnik, Ali Farhadi, Alexander G. Schwing, and
+Aniruddha Kembhavi. Two body problem: Collaborative vi-
+sual task completion. In CVPR, 2019. 2, 6
+[25] Leslie Pack Kaelbling and Tom ´as Lozano-P ´erez. Hierarchi-
+cal task and motion planning in the now. In ICRA, 2011.
+2
+[26] Jennifer King, Joshua Haustein, Siddhartha Srinivasa, and
+Tamim Asfour. Nonprehensile whole arm rearrangement
+planning on physics manifolds. In ICRA, 2015. 2
+[27] Jennifer E King, Marco Cognetti, and Siddhartha S Srini-
+vasa. Rearrangement planning using object-centric and
+robot-centric action spaces. In ICRA, 2016. 2
+[28] D. Kingma and J. Ba. A method for stochastic optimization.
+In CVPR, 2017. 11
+[29] Eric Kolve, Roozbeh Mottaghi, Winson Han, Eli V anderBilt,
+Luca Weihs, Alvaro Herrasti, Daniel Gordon, Y uke Zhu, Ab-
+hinav Gupta, and Ali Farhadi. AI2-THOR: An Interactive 3D
+Environment for Visual AI. arXiv, 2017. 2, 3
+[30] Athanasios Krontiris and Kostas E Bekris. Dealing with dif-
+ﬁcult instances of object rearrangement. In RSS, 2015. 2
+[31] A. Krontiris and K. E. Bekris. Efﬁciently solving general
+rearrangement tasks: A fast extension primitive for an incre-
+mental sampling-based planner. In ICRA, 2016. 2
+[32] Athanasios Krontiris, Rahul Shome, Andrew Dobson, An-
+drew Kimmel, and Kostas Bekris. Rearranging similar ob-
+jects with a manipulator using pebble graphs. In IEEE-RAS
+International Conference on Humanoid Robots , 2014. 2
+5930
+
+[33] Y ann Labb ´e, Sergey Zagoruyko, Igor Kalevatykh, Ivan
+Laptev, Justin Carpentier, Mathieu Aubry, and Josef Sivic.
+Monte-carlo tree search for efﬁcient visually guided rear-
+rangement planning. IEEE Robotics and Automation Letters,
+2020. 2
+[34] V olodymyr Mnih, Adria Puigdomenech Badia, Mehdi Mirza,
+Alex Graves, Timothy Lillicrap, Tim Harley, David Silver,
+and Koray Kavukcuoglu. Asynchronous methods for deep
+reinforcement learning. In ICML, 2016. 5
+[35] Erion Plaku and Gregory D Hager. Sampling-based motion
+and symbolic action planning with geometric and differential
+constraints. In ICRA, 2010. 2
+[36] Santhosh K. Ramakrishnan, Ziad Al-Halah, and Kristen
+Grauman. Occupancy anticipation for efﬁcient exploration
+and navigation. In ECCV, 2020. 2
+[37] St ´ephane Ross, Geoffrey Gordon, and Drew Bagnell. A re-
+duction of imitation learning and structured prediction to no-
+regret online learning. In AISTATS, 2011. 2, 7
+[38] Manolis Savva, Abhishek Kadian, Oleksandr Maksymets,
+Yili Zhao, Erik Wijmans, Bhavana Jain, Julian Straub, Jia
+Liu, Vladlen Koltun, Jitendra Malik, Devi Parikh, and Dhruv
+Batra. Habitat: A platform for embodied ai research. In
+ICCV, 2019. 2, 5, 8
+[39] Jonathan Scholz and Mike Stilman. Combining motion plan-
+ning and optimization for ﬂexible robot manipulation. In
+IEEE-RAS International Conference on Humanoid Robots ,
+2010. 2
+[40] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Rad-
+ford, and Oleg Klimov. Proximal policy optimization algo-
+rithms. arXiv, 2017. 2, 7, 11
+[41] Mohit Shridhar, Jesse Thomason, Daniel Gordon, Y onatan
+Bisk, Winson Han, Roozbeh Mottaghi, Luke Zettlemoyer,
+and Dieter Fox. ALFRED: A Benchmark for Interpreting
+Grounded Instructions for Everyday Tasks. In CVPR, 2020.
+1, 2, 6
+[42] Haoran Song, Joshua A Haustein, Weihao Y uan, Kaiyu
+Hang, Michael Y u Wang, Danica Kragic, and Johannes A
+Stork. Multi-object rearrangement with monte carlo tree
+search: A case study on planar nonprehensile sorting. In
+IROS, 2020. 2
+[43] Siddharth Srivastava, Eugene Fang, Lorenzo Riano, Ro-
+han Chitnis, Stuart Russell, and Pieter Abbeel. Combined
+task and motion planning through an extensible planner-
+independent interface layer. In ICRA, 2014. 2
+[44] Mike Stilman, Jan-Ullrich Schamburek, James Kuffner, and
+Tamim Asfour. Manipulation planning among movable ob-
+stacles. In ICRA, 2007. 2
+[45] Luca Weihs, Aniruddha Kembhavi, Kiana Ehsani, Sarah M.
+Pratt, Winson Han, Alvaro Herrasti, Eric Kolve, Dustin
+Schwenk, Roozbeh Mottaghi, and Ali Farhadi. Learning
+generalizable visual representations via interactive game-
+play. In ICLR, 2021. 5, 6
+[46] Luca Weihs, Jordi Salvador, Klemen Kotar, Unnat Jain, Kuo-
+Hao Zeng, Roozbeh Mottaghi, and Aniruddha Kembhavi.
+Allenact: A framework for embodied ai research. arXiv,
+2020. 11
+[47] Erik Wijmans, Abhishek Kadian, Ari S. Morcos, Stefan Lee,
+Irfan Essa, Devi Parikh, Manolis Savva, and Dhruv Batra.
+Dd-ppo: Learning near-perfect pointgoal navigators from 2.5
+billion frames. In ICLR, 2020. 2, 5, 7
+[48] Mitchell Wortsman, Kiana Ehsani, Mohammad Rastegari,
+Ali Farhadi, and Roozbeh Mottaghi. Learning to learn how to
+learn: Self-adaptive visual navigation using meta-learning.
+In CVPR, 2019. 2
+[49] Fei Xia, Chengshu Li, Roberto Mart ´ın-Mart´ın, Or Litany,
+Alexander Toshev, and Silvio Savarese. Relmogen: Leverag-
+ing motion generation in reinforcement learning for mobile
+manipulation. arXiv, 2020. 1
+[50] Fanbo Xiang, Y uzhe Qin, Kaichun Mo, Yikuan Xia, Hao
+Zhu, Fangchen Liu, Minghua Liu, Hanxiao Jiang, Yifu Y uan,
+He Wang, Li Yi, Angel X. Chang, Leonidas J. Guibas, and
+Hao Su. Sapien: A simulated part-based interactive environ-
+ment. In CVPR, 2020. 1
+[51] Wei Y ang, Xiaolong Wang, Ali Farhadi, Abhinav Gupta, and
+Roozbeh Mottaghi. Visual semantic navigation using scene
+priors. In ICLR, 2019. 2
+[52] Tianhe Y u, Deirdre Quillen, Zhanpeng He, Ryan Julian,
+Karol Hausman, Chelsea Finn, and Sergey Levine. Meta-
+world: A benchmark and evaluation for multi-task and meta
+reinforcement learning. In CoRL, 2020. 2
+[53] Weihao Y uan, Johannes A Stork, Danica Kragic, Michael Y
+Wang, and Kaiyu Hang. Rearrangement with nonprehensile
+manipulation using deep reinforcement learning. In ICRA,
+2018. 2
+[54] Kevin Zakka, Andy Zeng, Johnny Lee, and Shuran Song.
+Form2ﬁt: Learning shape priors for generalizable assembly
+from disassembly. In ICRA, 2020. 2
+[55] Y uke Zhu, Daniel Gordon, Eric Kolve, Dieter Fox, Li Fei-
+Fei, Abhinav Gupta, Roozbeh Mottaghi, and Ali Farhadi. Vi-
+sual semantic planning using deep successor representations.
+In ICCV, 2017. 2
+5931

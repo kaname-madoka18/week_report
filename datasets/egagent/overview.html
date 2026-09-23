@@ -1,0 +1,274 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EGAgent：EgoLife 与 Video-MME · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">EGAgent：EgoLife 与 Video-MME</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-01-26</strong></div><div><span>引用数</span><strong>13</strong></div><div><span>GitHub stars</span><strong>61</strong></div><div><span>当前状态</span><strong>ACL 2026 · Long Paper</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2601.18157" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/facebookresearch/egagent" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/b9d0ad3c53d824061f01ae5de295729c289d695e" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://aclanthology.org/2026.acl-long.2161/" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Agentic+Very+Long+Video+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>论文旨在解决“超长视频理解”（very long video understanding）问题，核心挑战是：</p>
+<ol>
+<li>
+<p>上下文窗口受限<br/>
+   现有大模型（LLM/VLM）无法一次性摄入数天~数周的 egocentric 视频与音频流。</p>
+</li>
+<li>
+<p>多跳、跨模态、长程推理不足<br/>
+   传统 RAG 仅检索孤立片段，难以在连续时间轴上追踪“谁、何时、在哪、与何物/何人发生何种关系”，例如“本周我每天早上都跟谁一起喝咖啡？”这类查询需要跨天、跨模态、跨实体的组合推理。</p>
+</li>
+<li>
+<p>实体与关系随时间演化的建模缺失<br/>
+   既有方法缺乏显式、可检索的“时间-感知”实体关系表示，导致无法精确定位重复行为或社交互动。</p>
+</li>
+</ol>
+<p>为此，作者提出 EGAgent——以“实体-场景-图”为中心的 agentic 框架，将一周级 egocentric 视频转化为带时间戳的实体关系图，并配备规划代理、视觉搜索、音频搜索与图搜索工具，实现可解释、可组合、长程跨模态推理。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>相关研究可归纳为三条主线，均围绕“如何突破上下文窗口限制、实现长视频推理”展开：</p>
+<ol>
+<li>
+<p>长视频理解 × LLM 上下文压缩<br/>
+   - 帧/Token 压缩：LongViD、VideoTree、VideoXL、Bolt、AdaCM² 等通过关键帧选择或视觉 Token 降采样，把小时级视频压进 32k–128k token 窗口。<br/>
+   - 层级/滑动窗口摘要：VITED、DecAFNet、Streaming-DVC 等先局部摘要再全局融合，维持长程依赖。<br/>
+   - 直接扩展窗口：LongRoPE、Self-Extend 把 LLM 上下文扩到 2M tokens，但仍面临视觉模态巨量的计算与存储开销。</p>
+</li>
+<li>
+<p>图增强检索（Graph-based RAG）<br/>
+   - 文本知识图谱：GraphRAG、LightRAG 在文本语料上抽取实体-关系图，支持多跳问答。<br/>
+   - 视频-图 RAG：<br/>
+     – VideoRAG、AdaVideoRAG 将“片段-实体”建图，按查询难度自适应检索；<br/>
+     – RAVU、GraphVideoAgent 用 VLM 检测实体并生成时空图，再做推理；<br/>
+     – VideoMindPalace 构建室内“分层时空图”，但受限于房间级先验。<br/>
+   共同局限：图通常一次性构建、无细粒度时间戳，难以跟踪“跨天重复行为”或“关系随时间变化”。</p>
+</li>
+<li>
+<p>Agentic 视频理解<br/>
+   - VideoAgent、DrVideo、VideoDeepResearch 等把视频当长文档，让代理迭代调用“帧检索、字幕搜索、记忆更新”工具，直至信息足够回答查询。<br/>
+   关键差异：上述系统依赖非结构化字幕或帧嵌入，缺乏显式、可 SQL 化的“实体-关系-时间”三元组，因而在“追踪同一实体跨天出现”与“组合多跳约束”上精度有限。</p>
+</li>
+</ol>
+<p>EGAgent 在这三条线之上引入两项区别：<br/>
+- 时间感知实体场景图——每边带 (t_start, t_end) 可增量更新；<br/>
+- 代理循环内联合调用“图搜索 + 视觉搜索 + 音频搜索”，实现跨模态、长程、多跳推理。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文把“超长 egocentric 视频问答”形式化为映射<br/>
+$$H:(V,A_T,Q)\rightarrow A$$<br/>
+其中 $V$ 为一周级 1 FPS 帧流，$A_T$ 为带时间戳的转录文本，$Q$ 为自然语言查询。直接端到端推理不可行，因此采用两阶段解：</p>
+<ol>
+<li>
+<p>离线构建<strong>时间-感知实体场景图</strong>（Section 3.2）<br/>
+   对每秒帧提取视觉字幕 + 音频转录，用 LLM 融合成跨模态文档 $d$；再调用 LLMGraphTransformer 抽取出三元组<br/>
+   $$(v_s,\tau(v_s),r,v_t,\tau(v_t),t_{\text{start}},t_{\text{end}},d^*)$$<br/>
+   存入 SQLite，支持增量更新。图中节点类型 $\tau\in{\text{person},\text{object},\text{location}}$，关系类型 $r\in{\text{talks-to},\text{interacts-with},\text{mentions},\text{uses}}$，每条边附带精确到秒的时间区间。</p>
+</li>
+<li>
+<p>在线启用<strong>EGAgent 代理框架</strong>（Algorithm 1 &amp; Section 3.3）<br/>
+   - <strong>Planning Agent</strong>：将复杂 $Q$ 分解为子任务列表 ${(S_i,T_i,q_i)}_{i=1}^N$，最多 5 步。<br/>
+   - <strong>三模态检索工具</strong><br/>
+     – <em>Entity Graph Search</em>：SQL 查询图数据库，采用“严格→松弛”策略（先精确时间+实体+关系，再逐步放宽）。<br/>
+     – <em>Visual Search</em>：SigLIP-2 把 1 FPS 帧嵌入向量库，支持属性过滤（房间、时段）+ 语义相似度检索。<br/>
+     – <em>Audio Transcript Search</em>：可选 LLM 或 BM25，在说话人分离文本上定位相关片段。<br/>
+   - <strong>Analyzer Tool</strong>：轻量级 LLM 对检索结果做相关性判定、证据抽取、去重，写入工作记忆 $M$。<br/>
+   - <strong>VQA Agent</strong>：最后把 $Q$ 与累积记忆 $M$ 一并输入多模态 LLM，生成答案 $A$。</p>
+</li>
+</ol>
+<p>通过“图-视觉-音频”交替检索与记忆更新，EGAgent 能在 50 h 视频中完成跨天、跨模态、多跳推理，例如“上周购物时谁一直坐我旁边”这类查询：先用音频定位打车片段，再用图搜索找出同车人员，最终由 VQA 汇总判断。实验表明，该机制在 EgoLifeQA 上把 SOTA 绝对提升 20.6%，在 Video-MME(Long) 仅用 1/10 帧数即可与 AdaVideoRAG 打平。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文在两条公开基准上系统评估了 EGAgent 的“超长视频理解”能力，实验设计覆盖整体性能、细粒度能力、消融、效率与上界分析。</p>
+<ol>
+<li>主基准实验<br/>
+   1.1 EgoLifeQA（50 h egocentric，500 道 MCQ）<br/>
+   - 对比线：<br/>
+     – MLLM 均匀采样：LLaVA-Video-7B、GPT-4.1、Gemini 2.5 Pro<br/>
+     – RAG 线：LLaVA+Video-RAG<br/>
+     – Agentic 线：EgoButler、VideoAgent、Ego-R1<br/>
+   - 结果：<br/>
+     – EGAgent-Gemini2.5Pro(EG+F+T) 平均准确率 57.5%，<strong>超出原 SOTA 20.6%</strong>；<br/>
+     – 在需要多跳实体关系的 RelationMap / TaskMaster 子集上分别 <strong>+32% / +39.7%</strong>。  </li>
+</ol>
+<p>1.2 Video-MME (Long)（300 段 30–60 min 视频，900 道 MCQ）<br/>
+   - 对比线：Gemini-2.5-Pro、GPT-4.1、Video-RAG、AdaVideoRAG、DrVideo 等<br/>
+   - 结果：<br/>
+     – EGAgent-Gemini2.5Pro 74.1%，<strong>仅次于原生 Gemini 视频模式</strong>（82.0%），但仅用 50 帧（≈1/5 帧量）且处理帧数 <strong>&lt; AdaVideoRAG 的 1/10</strong> 即可持平或超越多数强基线。</p>
+<ol>
+<li>
+<p>消融实验（EgoLifeQA）<br/>
+   2.1 图构建方式<br/>
+   - 仅转录 T → 转录+视觉字幕 T+C，平均 <strong>+2.6%</strong>。<br/>
+   2.2 检索工具组合<br/>
+   - 单工具：F 34.6%、T 45.6%、EG 37.6%<br/>
+   - 两工具：F+T 48.6%<br/>
+   - 三工具：EG+F+T <strong>50.7%</strong>，在 RelationMap 上比 F+T 再 <strong>+26.7%</strong>。<br/>
+   2.3 转录搜索骨干<br/>
+   - LLM 搜索 ↔ BM25 搜索：准确率 −6.8%，token 量 <strong>÷3.3</strong>，延迟 <strong>−3.6×</strong>。</p>
+</li>
+<li>
+<p>效率与延迟<br/>
+   - 完整 pipeline 单题 wall-clock 125–169 s；<br/>
+   - 其中 Analyzer（LLM 重推理）占主要耗时；<br/>
+   - 实体图搜索仅增加 <strong>≈13% 延迟</strong>，却带来显著精度增益。</p>
+</li>
+<li>
+<p>上界与召回分析<br/>
+   4.1 Oracle 实验（使用 ground-truth 时刻）<br/>
+   - EGAgent 当前 50.7% → Oracle 68.7%，<strong>仍有 18% 绝对提升空间</strong>。<br/>
+   4.2 召回@窗口大小<br/>
+   - 三工具联合在 10 s 窗口即达 <strong>88.4% 召回</strong>，验证其<strong>细粒度时间定位</strong>能力；<br/>
+   - 单工具对比：视觉搜索 10 s 窗口 85.7%，音频 21.8%，实体图 12.7%，但图搜索在 &gt;2 min 窗口反超音频，提供<strong>延迟-召回折中</strong>。</p>
+</li>
+</ol>
+<p>综上，实验既展示了 EGAgent 在“一周级”超长视频上的新 SOTA，也量化了实体图、跨模态检索与代理规划各自的贡献，并指出未来进一步提升的关键在于更精准的时间定位与噪声抑制。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>以下方向可在此基础上继续推进，分为“方法-算法”“数据-评测”“系统-部署”三大层面：</p>
+<hr/>
+<h3>方法-算法层面</h3>
+<ol>
+<li>
+<p><strong>时间-感知图神经网络</strong><br/>
+   当前实体图仅用于 SQL 检索，可进一步为每条边引入连续时间嵌入，用 TGN/HTGN 做子图级推理，直接输出“时间-觉察”答案分布。</p>
+</li>
+<li>
+<p><strong>噪声鲁棒的增量图更新</strong><br/>
+   上游 ASR、视觉字幕错误会传导至图。可探索：<br/>
+   - 基于置信度的边过滤；<br/>
+   - 跨天实体共指消解（同一“Shure”在不同天被拼写变异）；<br/>
+   - 在线纠错机制，利用新观测对旧边进行贝叶斯更新。</p>
+</li>
+<li>
+<p><strong>多粒度时空层级</strong><br/>
+   在“帧-秒-分-小时-天”五级粒度分别维护子图，通过层级摘要实现 O(log T) 的检索，支持月-年级视频。</p>
+</li>
+<li>
+<p><strong>音频-视觉-图 联合嵌入空间</strong><br/>
+   把帧、声谱、图节点统一映射到共享嵌入空间，用 late-interaction 向量检索替代级联 SQL+向量，减少多工具调用延迟。</p>
+</li>
+<li>
+<p><strong>可解释代理规划学习</strong><br/>
+   目前子任务序列由 prompt 生成，可收集人类“推理链”数据，用强化学习或模仿学习训练 Planning Agent，降低失败循环与重复检索。</p>
+</li>
+</ol>
+<hr/>
+<h3>数据-评测层面</h3>
+<ol>
+<li>
+<p><strong>更长、更私密的基准</strong><br/>
+   - 月-年级连续 egocentric 数据（公开难，可考虑合成+隐私脱敏）；<br/>
+   - 引入“负活动”标签（查询的事件实际未发生），衡量模型拒识能力。</p>
+</li>
+<li>
+<p><strong>复合 habit 与因果推理任务</strong><br/>
+   设计需要反事实的问题，如“若我上周每晚提前 1 小时睡觉，还会被闹钟吵醒吗？”，推动模型结合实体图与因果常识。</p>
+</li>
+<li>
+<p><strong>多语言/多方言音频</strong><br/>
+   验证图构建与说话人分离在非英语、嘈杂环境下的鲁棒性。</p>
+</li>
+</ol>
+<hr/>
+<h3>系统-部署层面</h3>
+<ol>
+<li>
+<p><strong>端-云协同流水线</strong><br/>
+   - 眼镜端做 1 FPS 物体/人脸 on-device 提取，仅上传匿名实体节点，降低隐私与带宽；<br/>
+   - 云端负责跨天图合并与复杂查询。</p>
+</li>
+<li>
+<p><strong>记忆遗忘与隐私合规</strong><br/>
+    引入“过期-衰减”策略，对超过法定期限的边自动匿名化或删除；研究用户可控的“即时遗忘”指令（Right-to-be-Forgotten）。</p>
+</li>
+<li>
+<p><strong>低延迟近似查询</strong><br/>
+    针对 always-on 助手，设计 quality-latency trade-off 的早停机制：当检索置信度 &gt;τ 时立即返回答案，把剩余子任务转为后台 refine。</p>
+</li>
+<li>
+<p><strong>硬件加速的图检索</strong><br/>
+    将 SQLite 替换为 FPGA/ASIC 加速的图存储，支持毫秒级时间范围+实体类型双索引，满足可穿戴设备“秒级响应”需求。</p>
+</li>
+</ol>
+<hr/>
+<p>综上，实体-时间图已展现出对超长视频的组合推理优势，下一步可沿“更深度的时序建模、更鲁棒的增量更新、更长的真实数据、更贴近落地的系统优化”四轴继续探索。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p><strong>EGAgent：面向“周级”egocentric 视频的实体-图代理推理系统</strong></p>
+<ol>
+<li>
+<p>问题<br/>
+   全天候智能眼镜产生“数十小时-数天”连续第一视角视频，要求模型跨天、跨模态、多跳地回答“我上周和谁一起喝过咖啡”这类 habit-centric 查询。现有 LLM/VLM 受限于上下文窗口，且传统 RAG 无法显式追踪实体关系随时间演化。</p>
+</li>
+<li>
+<p>思路<br/>
+   - 先对超长视频建立<strong>时间-感知实体场景图</strong>（节点=人/物/地点，边=关系类型+起止时间戳），可增量更新。<br/>
+   - 再设计<strong>EGAgent 代理框架</strong>：Planning-Agent 把查询拆成 ≤5 个子任务，依次调用三大工具——<br/>
+     – Entity-Graph Search（SQL 时间-关系过滤）<br/>
+     – Visual Search（SigLIP-2 帧嵌入检索）<br/>
+     – Audio Transcript Search（LLM/BM25 定位说话片段）<br/>
+     每步结果经 Analyzer 过滤后写入工作记忆，最终由 VQA-Agent 汇总生成答案。</p>
+</li>
+<li>
+<p>实验<br/>
+   - EgoLifeQA（50 h，500 MCQ）：57.5% 准确率，<strong>超出原 SOTA 20.6%</strong>；在需多跳实体关系的 RelationMap/TaskMaster 子集分别 <strong>+32%/+39.7%</strong>。<br/>
+   - Video-MME (Long)（30–60 min 级）：74.1%，仅次于原生 Gemini-2.5-Pro，但仅用 50 帧（≈1/10 帧量）即可与 AdaVideoRAG 打平。<br/>
+   - 消融：三工具组合 &gt; 双工具 &gt; 单工具；图构建加入视觉字幕后平均 <strong>+2.6%</strong>；BM25 替换 LLM 搜索延迟 <strong>−3.6×</strong>，准确率仅 −6.8%。<br/>
+   - Oracle 分析显示仍有 <strong>≈18%</strong> 绝对提升空间，主要瓶颈在更精准的时间定位。</p>
+</li>
+<li>
+<p>贡献<br/>
+   - 提出<strong>时间-感知实体图</strong>表示，支持跨天、跨模态、组合推理。<br/>
+   - 设计<strong>EGAgent 代理流水线</strong>，首次把实体图检索纳入工具调用循环，实现超长视频 SOTA。<br/>
+   - 系统级评估与消融，验证实体图对关系型、习惯型问答的关键作用，并给出延迟-召回折中方案。</p>
+</li>
+<li>
+<p>局限与未来<br/>
+   上游 ASR/字幕错误会传导；依赖人工说话人分离；月-年级视频、因果推理、端侧部署与隐私遗忘机制待进一步探索。</p>
+</li>
+</ol></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Agentic%20Very%20Long%20Video%20Understanding，链接是 https://arxiv.org/pdf/2601.18157 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2601.18157 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="egagent">EGAgent：既有视频基准与方法演示</h1>
+<p><a href="../../index.html" data-catalog-home>返回全部论文目录</a> · <a href="preview_gallery.html">预览图册</a> · <a href="../../overview.html">EgoLife 完整 overview</a></p>
+<p>《Agentic Very Long Video Understanding》提出围绕实体场景图的 <strong>EGAgent</strong>：规划智能体组合视觉、音频转写和实体图搜索。<strong>本文没有新增原始视频数据集</strong>，实验使用 EgoLifeQA 与 Video-MME Long。核对日期为 2026-09-22，结果采用 <a href="https://arxiv.org/html/2601.18157v3" target="_blank" rel="noopener">论文 v3</a>。</p>
+<table>
+<thead>
+<tr>
+<th>数据与范围</th>
+<th>数量</th>
+<th>视频长度</th>
+<th>本地预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EgoLifeQA / Jake</td>
+<td>500 道四选一题，A1_JAKE 一周记录</td>
+<td>论文描述约 50 小时；原始发布通常 30 秒一段，本地清单有 6,266 个 Jake MP4</td>
+<td>复用 100 个跨七天 Jake 片段帧</td>
+</tr>
+<tr>
+<td>Video-MME Long</td>
+<td>300 个视频、900 道四选一题</td>
+<td>每个 30–60 分钟；全 Video-MME 另含 900 个视频、254 小时，不能把全库总时长写成长子集总和</td>
+<td>此次未抽取</td>
+</tr>
+<tr>
+<td>官网 teaser / pipeline</td>
+<td>两个方法演示 MP4</td>
+<td>teaser：21.028 秒、13.655 MB；pipeline：33.992 秒、13.267 MB</td>
+<td>每个演示按实际解码帧序号均匀 100 帧，包含原视频片段、文字及方法动画</td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="https://arxiv.org/html/2601.18157v3" target="_blank" rel="noopener">论文第 4.1 节</a>、<a href="https://github.com/MME-Benchmarks/Video-MME" target="_blank" rel="noopener">Video-MME 官方仓库</a>、<a href="https://facebookresearch.github.io/egagent/" target="_blank" rel="noopener">EGAgent 官网</a>。录制时长、现实跨度和算法采样预算是不同概念；“1 FPS → 50”表示从一秒一帧的索引里取 50 帧供模型分析，不表示视频长 50 秒。</p>
+<h2 id="_1">可访问内容与预览说明</h2>
+<p><a href="https://github.com/facebookresearch/egagent" target="_blank" rel="noopener">官方代码仓库</a>提供数据源构建、推理、基线及消融脚本；原视频按各数据集自己的入口获取。完整数据说明和更多真实场景图片见 <a href="../../overview.html">EgoLife overview</a>与 <a href="../../preview_gallery.html">EgoLife 图册</a>。</p>
+<p>本地保存两个官网 MP4，文件大小预先通过 GitHub 文件树确认严格小于 100,000,000 字节，再下载并校验 Git blob SHA-1。每个演示按实际解码帧序号均匀取 100 个不同帧（可变帧率，含停顿）；这是<strong>方法演示预览，不是 200 个独立数据集视频</strong>，也不替代对完整 Video-MME 的内容覆盖。全部帧路径、原网址、时刻、实测源文件长度与校验值见 <a href="metadata/demo_manifest.json">metadata/demo_manifest.json</a>；图册可以打开本地小视频。</p>
+<h2 id="_2">论文结果和条件</h2>
+<p>以下均为原论文报告值，本次没有运行评测。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">EgoLifeQA 准确率</th>
+<th style="text-align: right;">Video-MME Long 准确率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>均匀采样 Gemini 2.5 Pro</td>
+<td style="text-align: right;">46.8</td>
+<td style="text-align: right;">82.0</td>
+</tr>
+<tr>
+<td>EGAgent + GPT-4.1</td>
+<td style="text-align: right;">50.7</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>EGAgent + Gemini 2.5 Pro</td>
+<td style="text-align: right;"><strong>57.5</strong></td>
+<td style="text-align: right;"><strong>74.1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>在 EgoLifeQA 上，EGAgent + Gemini 2.5 Pro 相对该论文均匀采样同骨干基线提高 10.7 点；Video-MME Long 上则低于表内 Gemini 2.5 Pro 82.0 的基线，不能把“所有基准都最好”当作结论。两项基线帧数和音频输入也不同：EgoLife 均匀基线 3,000 帧加转写，Video-MME 均匀基线 256 帧加音频；EGAgent 使用检索的 50 帧及字幕/图信息。<a href="https://arxiv.org/html/2601.18157v3" target="_blank" rel="noopener">论文表 1、2</a></p>
+<p>EgoLife 实体图按每小时建立，Video-MME 每个视频一张图。EgoLife 使用带说话人身份的人工转写，Video-MME 使用 ASR；规划和多工具调用会增加模型调用成本。论文附录说明每个配置只有一次运行，没有重复实验方差。相对 WorldMM 与 MAGIC-Video 的数字也应对齐题集、骨干、采样和字幕条件后再比较。</p>
+<h2 id="_3">本地来源</h2>
+<p><a href="project.json">project.json</a> · <a href="metadata/demo_manifest.json">官网演示清单</a> · <a href="sources/README.md">官方 README 快照</a> · <a href="sources/paper.html">论文快照</a> · <a href="sources/repo_tree.json">含 MP4 大小与 hash 的文件树</a>。</p>
+<h2 id="_4">第二版短视频展示</h2>
+<p>本次第二版预览把本地完整副本不超过 <strong>180 秒</strong> 的视频改为直接播放的 video case 卡片，不再为这些短视频重复生成 100 帧图片；较长视频、没有安全本地副本的视频仍保留抽帧预览。当前项目检测到 <strong>2 个</strong>短视频 case，播放文件均小于 100 MB；页面中的时长、大小与 SHA-256 来自本地文件核验。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

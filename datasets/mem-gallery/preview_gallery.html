@@ -1,0 +1,262 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mem-Gallery：长期多模态会话记忆基准 · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Mem-Gallery：长期多模态会话记忆基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-01-07</strong></div><div><span>引用数</span><strong>39</strong></div><div><span>GitHub stars</span><strong>110</strong></div><div><span>当前状态</span><strong>ACL 2026 · Main</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/YuanchenBei/Mem-Gallery" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/c69c7ab705735b24903511d62fad8110699f708a" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://aclanthology.org/2026.acl-long.1892/" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Mem-Gallery%3A+Benchmarking+Multimodal+Long-Term+Conversational+Memory+for+MLLM+Agents" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>该论文旨在解决<strong>多模态大语言模型（MLLM）智能体在长期对话场景中缺乏系统化评估基准的问题</strong>。具体而言，现有基准存在以下两类缺陷：</p>
+<ol>
+<li>
+<p><strong>文本-only 多轮记忆基准</strong>（如 LongMemEval、MemoryAgentBench）<br/>
+   仅评估跨会话的文本记忆，完全丢弃视觉信息，无法衡量模型对图像内容的长期记忆能力。</p>
+</li>
+<li>
+<p><strong>局部多模态理解基准</strong>（如 MMDU、MMRC）<br/>
+   虽引入图像，但仅聚焦单会话、短程上下文，缺乏跨会话信息演化与管理的评估，难以检验模型在“长期-多模态-对话”场景下的记忆能力。</p>
+</li>
+</ol>
+<p>因此，作者提出 <strong>Mem-Gallery</strong> 基准，首次系统评估 MLLM 智能体在<strong>长期、多会话、多模态对话</strong>中的记忆能力，覆盖三大核心维度：</p>
+<ul>
+<li><strong>记忆提取与测试时适配</strong>（Memory Extraction &amp; Adaptation）  </li>
+<li><strong>记忆推理</strong>（Memory Reasoning）  </li>
+<li><strong>记忆知识管理</strong>（Memory Knowledge Management）</li>
+</ul>
+<p>通过 1 711 组高质量 QA 对、240 组多会话对话（平均 198 轮、跨 12 会话、含 1 003 张图像），揭示当前多模态记忆系统在信息保留、组织、推理与冲突处理上的关键瓶颈。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>相关研究可划分为两条主线，分别对应“<strong>文本-only 长期对话记忆</strong>”与“<strong>局部多模态对话理解</strong>”。Mem-Gallery 首次将二者缺陷同时补齐，因此与下列工作形成鲜明对比：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>代表基准 / 方法</th>
+<th>主要特征</th>
+<th>与 Mem-Gallery 的差距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文本-only 长期对话记忆</strong></td>
+<td>LoCoMo&lt;br&gt;LongMemEval&lt;br&gt;MemoryAgentBench</td>
+<td>多会话、长跨度、文本记忆评测</td>
+<td>完全丢弃视觉模态，无法评估跨模态长期依赖</td>
+</tr>
+<tr>
+<td><strong>局部多模态对话理解</strong></td>
+<td>MMDU&lt;br&gt;MMRC</td>
+<td>单会话、多图像、多轮对话理解</td>
+<td>无跨会话信息演化，不具备长期记忆评估能力</td>
+</tr>
+<tr>
+<td><strong>多模态长期记忆（非对话）</strong></td>
+<td>M3-Bench&lt;br&gt;ViLoMem</td>
+<td>长视频或长文档 QA</td>
+<td>缺乏“对话-会话”结构，不考察冲突检测、知识更新等对话特有挑战</td>
+</tr>
+<tr>
+<td><strong>记忆机制研究</strong></td>
+<td>A-Mem&lt;br&gt;MemoryOS&lt;br&gt;MemGPT&lt;br&gt;Reflexion</td>
+<td>文本记忆组织、分页、反思、图谱</td>
+<td>未原生支持视觉模态，需借助外部 caption</td>
+</tr>
+</tbody>
+</table>
+<p>综上，Mem-Gallery 是首个<strong>同时满足</strong><br/>
+① 多会话对话结构<br/>
+② 视觉-文本长期耦合<br/>
+③ 覆盖记忆提取-推理-管理全链路<br/>
+的系统性基准，填补了上述两类研究的空白。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过“构建新数据集 + 设计三维评估框架 + 大规模基准测试”三位一体方案，系统解决多模态长期对话记忆缺失评估基准的问题。</p>
+<ol>
+<li>
+<p>构建 Mem-Gallery 数据集<br/>
+   - 240 组多会话对话，平均 198 轮、12 会话、跨 3 个月时间线<br/>
+   - 1 003 张真实场景图像，与文本内容强耦合（非装饰性）<br/>
+   - 1 711 组人工标注 QA，覆盖 9 类记忆任务，附带细粒度证据线索（dialogue turn &amp; image id）</p>
+</li>
+<li>
+<p>设计三维评估框架<br/>
+<strong>① 记忆提取与测试时适配</strong><br/>
+   - 事实检索（FR）<br/>
+   - 视觉中心搜索（VS）<br/>
+   - 测试时学习（TTL）  </p>
+</li>
+</ol>
+<p><strong>② 记忆推理</strong><br/>
+   - 时序推理（TR）<br/>
+   - 视觉中心推理（VR）<br/>
+   - 多实体推理（MR）  </p>
+<p><strong>③ 记忆知识管理</strong><br/>
+   - 知识解析（KR）<br/>
+   - 冲突检测（CD）<br/>
+   - 答案拒识（AR）</p>
+<ol>
+<li>
+<p>统一基准测试管线<br/>
+   - 13 种代表性记忆系统（8 种文本记忆 + 5 种多模态记忆）<br/>
+   - 固定 MLLM 主干（Qwen2.5-VL-7B 等）与检索超参（K=10），保证公平比较<br/>
+   - 多指标评估：F1、EM、BLEU-1、LLM-as-a-Judge + 召回/精度/命中 + 耗时统计</p>
+</li>
+<li>
+<p>关键发现驱动未来研究<br/>
+   - 显式保留视觉信息显著优于纯文本 caption<br/>
+   - 简单多模态 RAG（MuRAG）&gt; 复杂结构化记忆，提示“组织策略”比“架构复杂度”更重要<br/>
+   - 推理与知识管理仍是瓶颈，需新的跨模态关联与冲突消解机制<br/>
+   - 视觉 token 开销大，检索数量 K&gt;10 后精度下降，强调“少而准”的检索策略</p>
+</li>
+</ol>
+<p>通过上述步骤，论文不仅提供了可复现的基准，也揭示了多模态长期对话记忆的核心挑战与改进方向。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文围绕 <strong>5 个研究问题（RQ1–RQ5）</strong> 展开系统实验，覆盖 <strong>13 种记忆模型 × 4 种 MLLM 主干 × 4 组检索规模</strong>，累计 <strong>&gt;1 200 组评测结果</strong>。实验设计如下：</p>
+<hr/>
+<h3>1. RQ1：不同多模态存储方案的有效性</h3>
+<ul>
+<li><strong>对照组</strong>：8 种文本记忆（Full-Text、FIFO、NaiveRAG、MemGPT 等）+ 5 种多模态记忆（MuRAG、UniversalRAG、NGM、AUGUSTUS 等）  </li>
+<li><strong>核心指标</strong>：整体 F1、FR/VS/TTL 子任务 F1  </li>
+<li><strong>结论</strong>：  </li>
+<li>显式保留视觉信息平均提升 <strong>11.9 % F1</strong>（MuRAG vs 最佳文本记忆）  </li>
+<li>简单多模态 RAG &gt; 复杂图/层级记忆，说明“信息保留”优先于“结构复杂”</li>
+</ul>
+<hr/>
+<h3>2. RQ2：记忆组织策略的重要性</h3>
+<ul>
+<li><strong>实验设计</strong>：  </li>
+<li>Full Memory (MM) 全部图像直接塞上下文 vs MuRAG/UniversalRAG 的检索式存储  </li>
+<li>控制 token 预算相等  </li>
+<li><strong>结论</strong>：  </li>
+<li>无组织地堆叠视觉内容导致 <strong>−8.1 % F1</strong>，甚至低于纯文本记忆  </li>
+<li>视觉 token 密度高，需<strong>原则化组织与选择性检索</strong></li>
+</ul>
+<hr/>
+<h3>3. RQ3：不同模型在各任务类型的优劣</h3>
+<ul>
+<li><strong>子实验</strong>：  </li>
+<li>推理任务（TR/VR/MR）：多模态记忆仅略优于文本，<strong>差距&lt;3 % F1</strong> </li>
+<li>知识管理（KR/CD/AR）：<br/>
+    – 强记忆模型（A-Mem、MuRAG）反而<strong>拒识性能下降 5–7 %</strong><br/>
+    – 冲突检测 F1 普遍 &lt; 0.45，说明<strong>更新与冲突机制缺失</strong> </li>
+<li><strong>案例研究</strong>（图 16–18）：  </li>
+<li>测试时学习：文本记忆无法归纳视觉模式  </li>
+<li>视觉推理：检索成功但跨模态融合失败  </li>
+<li>知识修正：缺乏显式版本控制，更新失效</li>
+</ul>
+<hr/>
+<h3>4. RQ4：运行效率特征</h3>
+<ul>
+<li><strong>测量指标</strong>：  </li>
+<li>信息记忆时间（memorization time）  </li>
+<li>检索+生成时间（retrieval &amp; generation time）  </li>
+<li><strong>结论</strong>：  </li>
+<li>多模态记忆普遍 <strong>×10–×100 倍</strong> 耗时 vs 文本记忆  </li>
+<li>简单 MuRAG 已接近复杂文本系统 A-Mem 的延迟，<strong>视觉嵌入与 I/O 成为瓶颈</strong></li>
+</ul>
+<hr/>
+<h3>5. RQ5：检索条目数 K 的影响</h3>
+<ul>
+<li><strong>参数范围</strong>：K ∈ {5, 10, 15, 20}  </li>
+<li><strong>观察指标</strong>：Recall@K、Precision@K、下游任务 F1  </li>
+<li><strong>结论</strong>：  </li>
+<li>K=10 为<strong>最佳折中</strong>；K&gt;10 召回↑ 但 精度↓，F1 饱和甚至下降  </li>
+<li>多模态方法对噪声更敏感，<strong>“少而准”优于“多而杂”</strong></li>
+</ul>
+<hr/>
+<h3>附加实验</h3>
+<ul>
+<li><strong>跨主干稳定性</strong>：Qwen2.5-VL-3B/7B、GPT-4.1-Nano、Gemini-2.5-Flash-Lite  </li>
+<li>更强主干<strong>放大</strong>记忆设计差异，<strong>不弥补</strong>组织缺陷  </li>
+<li><strong>检索行为细粒度分析</strong>：  </li>
+<li>提供 1 711 条证据线索，量化检索失败模式（表 14、图 15）</li>
+</ul>
+<hr/>
+<p>综上，实验从<strong>性能-效率-参数-案例-跨模型</strong>五维展开，全面验证 Mem-Gallery 对多模态长期对话记忆的诊断能力，并指出未来需聚焦<strong>视觉-文本联合推理、动态知识更新、高效检索</strong>三大方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>以下方向可被视为 Mem-Gallery 暴露出的“开放缺口”，均具备独立研究价值，且多数可直接沿用或扩展该基准的 240 组对话与 1 711 条 QA 基础设施。</p>
+<hr/>
+<h3>1. 模态扩展</h3>
+<ul>
+<li><strong>音频与视频流</strong>：将静态图像升级为短视频片段或语音描述，考察“听-看-说”跨模态长期一致性与时间对齐。  </li>
+<li><strong>传感器/具身信号</strong>：引入 ego-centric 视觉、深度、触觉，构建“具身长期记忆”子集，评估机器人或 AR 助手机器人场景。</li>
+</ul>
+<hr/>
+<h3>2. 记忆组织与更新机制</h3>
+<ul>
+<li><strong>动态版本控制</strong>：为每条记忆增加“时间戳+置信度+来源”三元组，设计显式的撤销/回滚操作，缓解知识解析（KR）与冲突检测（CD）性能低的问题。  </li>
+<li><strong>分层遗忘策略</strong>：借鉴人脑“睡眠-巩固”机制，在会话间夜间批量合并、抽象、剪枝，平衡容量与精度。  </li>
+<li><strong>视觉-文本联合索引</strong>：不再分别嵌入图像和 caption，而是采用单塔跨模态编码器，直接生成“图文融合键”，减少模态 gap 导致的检索噪声。</li>
+</ul>
+<hr/>
+<h3>3. 推理增强</h3>
+<ul>
+<li><strong>多模态思维链（CoT）</strong>：强制模型在回答前生成“视觉线索-文本线索-逻辑链”三阶段解释，提升视觉中心推理（VR）与多实体推理（MR）的可解释性与准确率。  </li>
+<li><strong>时间-空间图推理</strong>：把对话中的事件、实体、图像构建成动态时空图谱，支持“何时-何地-何物”联合查询，补全当前时序推理（TR）短板。  </li>
+<li><strong>反事实记忆推理</strong>：人工植入“虚假更新”并评估模型能否在后续对话中自我修正，衡量鲁棒性。</li>
+</ul>
+<hr/>
+<h3>4. 效率与系统优化</h3>
+<ul>
+<li><strong>视觉 Token 压缩</strong>：试用 LLaVA-mini、Perceiver Resampler 等“单图→1 token”方案，降低 MuRAG 类方法 ×10 耗时问题。  </li>
+<li><strong>端-云协同记忆</strong>：热记忆放端侧（NPU 缓存），冷记忆放云端（向量库），并设计自适应迁移策略，满足实时助理需求。  </li>
+<li><strong>检索-生成协同训练</strong>：目前检索器与生成器独立，可引入 REPLUG、RA-DIT 类似范式，以 QA 损失端到端微调检索模型，提高 Precision@K。</li>
+</ul>
+<hr/>
+<h3>5. 安全与伦理</h3>
+<ul>
+<li><strong>记忆隐私泄露评估</strong>：构建“敏感信息泄露”子任务，检测模型是否会在后续对话中无意透露用户住址、密码、健康等隐私。  </li>
+<li><strong>偏见累积监测</strong>：长期对话可能放大早期视觉或文本偏见，设计指标追踪跨会话偏见漂移，并引入遗忘算法进行纠偏。</li>
+</ul>
+<hr/>
+<h3>6. 个性化与持续学习</h3>
+<ul>
+<li><strong>用户画像漂移检测</strong>：利用 Mem-Gallery 的同一用户多会话结构，量化用户兴趣随时间变化的速度，触发记忆重组。  </li>
+<li><strong>联邦记忆框架</strong>：多用户共享通用视觉-文本记忆底座，同时保留本地私有嵌入，探索“全局-个人”混合检索。</li>
+</ul>
+<hr/>
+<h3>7. 任务与评测扩展</h3>
+<ul>
+<li><strong>主动式记忆收集</strong>：模型不仅被动回答问题，还需主动发起追问以补全缺失信息，评估“记忆好奇心”。  </li>
+<li><strong>多语言多模态记忆</strong>：将对话翻译为低资源语言，考察视觉线索是否仍能弥补语言模型的知识不足。  </li>
+<li><strong>长视频+对话混合</strong>：在 10 分钟长视频中插入对话，评估模型能否跨“视频片段-对话回合”进行事件关联。</li>
+</ul>
+<hr/>
+<h3>8. 开源工具链</h3>
+<ul>
+<li><strong>Mem-Gallery-Toolkit</strong>：提供<br/>
+  – 对话流式写入 API<br/>
+  – 自动证据线索标注器<br/>
+  – 可视化记忆回放面板<br/>
+  降低后续研究接入门槛。  </li>
+</ul>
+<hr/>
+<p>简言之，Mem-Gallery 目前完成了“诊断”阶段；后续工作可沿<strong>模态、机制、推理、效率、安全、个性化、工具</strong>七大轴线，将其从基准升级为可落地的多模态长期记忆系统。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><h1>Mem-Gallery 论文核心内容速览</h1>
+<h2>1. 研究动机</h2>
+<ul>
+<li>既有文本多会话基准丢弃视觉信号  </li>
+<li>既有单会话多模态基准缺乏跨会话信息演化<br/>
+→ 无法系统评估 MLLM 智能体在长期对话中的<strong>多模态记忆</strong>能力</li>
+</ul>
+<h2>2. Mem-Gallery 基准</h2>
+<table>
+<thead>
+<tr>
+<th>规模</th>
+<th>240 组多会话对话 / 3 962 轮 / 1 003 张图像</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>1 711 对人工标注问题，含证据线索</td>
+</tr>
+<tr>
+<td>任务</td>
+<td>9 子任务 → 3 维度：&lt;br&gt;① 提取与适配（FR/VS/TTL）&lt;br&gt;② 推理（TR/VR/MR）&lt;br&gt;③ 知识管理（KR/CD/AR）</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 实验设计</h2>
+<ul>
+<li>13 种记忆系统（8 文本 + 5 多模态）× 4 大 MLLM 主干 × 4 检索规模 K  </li>
+<li>指标：F1/EM/BLEU-1/LLM-Judge + Recall/Precision/Hit + 耗时</li>
+</ul>
+<h2>4. 主要发现</h2>
+<ol>
+<li>显式保留视觉信息平均提升 <strong>11.9 % F1</strong>；简单多模态 RAG 优于复杂架构  </li>
+<li>无组织地堆叠视觉 token 导致 <strong>−8 % F1</strong>，需<strong>原则化组织</strong> </li>
+<li>推理与知识管理仍是瓶颈：<br/>
+   - 时序/多实体/视觉推理增益有限<br/>
+   - 冲突检测 F1 &lt; 0.45；强记忆模型<strong>拒识率下降 5–7 %</strong> </li>
+<li>多模态记忆<strong>耗时高 1–2 数量级</strong>；视觉嵌入与 I/O 成瓶颈  </li>
+<li>检索条目 K=10 为最佳折中；继续增大 K 仅提高召回，<strong>精度↓→任务性能饱和或下降</strong></li>
+</ol>
+<h2>5. 贡献</h2>
+<ul>
+<li>首个<strong>多会话-多模态-长期对话记忆</strong>基准与数据集  </li>
+<li>三维九任务评估框架，附带细粒度证据标注  </li>
+<li>大规模诊断实验揭示“保留-组织-推理-效率-安全”五大开放缺口，为未来多模态记忆研究提供路线图。</li>
+</ul></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Mem-Gallery%3A%20Benchmarking%20Multimodal%20Long-Term%20Conversational%20Memory%20for%20MLLM%20Agents，链接是 https://arxiv.org/pdf/2601.03515 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2601.03515 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>Mem-Gallery：长期多模态会话记忆基准</h1><p class="muted">240个多模态会话、3,962轮对话、1,711道带线索的评测题，直接测试长期图文会话记忆。</p><p><strong>4 张独立预览图</strong> · 1 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">非视频数据：以跨会话图文历史衡量记忆跨度，共240会话、3,962轮；视频秒数不适用。</p></div><div class="note"><ul><li>图文会话数据不是视频，不抽取视频帧。</li><li>数据包含合成和重组会话，并经模型与人工质量检查；不等同于连续真实日常录像。</li><li>本页结果来自论文，未在本机复现模型。</li></ul></div><p><a href="https://github.com/YuanchenBei/Mem-Gallery" target="_blank" rel="noopener">官方项目</a> · <a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noopener">论文原文</a></p><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "mem-gallery", "title": "Mem-Gallery：长期多模态会话记忆基准", "category": "长期多模态会话记忆基准", "summary": "240个多模态会话、3,962轮对话、1,711道带线索的评测题，直接测试长期图文会话记忆。", "paper_url": "https://arxiv.org/abs/2601.03515", "repo_url": "https://github.com/YuanchenBei/Mem-Gallery", "project_url": "https://github.com/YuanchenBei/Mem-Gallery", "dataset_urls": [{"label": "官方 Hugging Face 数据", "url": "https://huggingface.co/datasets/Ethan-Bei/Mem-Gallery"}], "duration_summary": "非视频数据：以跨会话图文历史衡量记忆跨度，共240会话、3,962轮；视频秒数不适用。", "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。", "preview_status": "partial", "relation_level": "直接记忆", "limitations": ["图文会话数据不是视频，不抽取视频帧。", "数据包含合成和重组会话，并经模型与人工质量检查；不等同于连续真实日常录像。", "本页结果来自论文，未在本机复现模型。"], "related_links": [{"label": "官方项目", "href": "https://github.com/YuanchenBei/Mem-Gallery"}, {"label": "论文原文", "href": "https://arxiv.org/abs/2601.03515"}], "groups": [{"id": "official_images", "title": "官方任务与数据示例图", "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。", "media_kind": "image", "frames": [{"slug": "mem-gallery", "image": "previews/case_study_ttl.png", "source_url": "https://arxiv.org/html/2601.03515v1/case_study_ttl.png", "source_label": "Test-time learning案例", "size_bytes": 530907, "width": 1574, "height": 2036, "video_id": "not-video", "sha256": "5e09747e7651d6a508a44bd6f6986b322cfb00248bc47e09807b99ad23a5e0d7"}, {"slug": "mem-gallery", "image": "previews/data_toy_example.png", "source_url": "https://arxiv.org/html/2601.03515v1/data_toy_example.png", "source_label": "长期图文会话与记忆题示例", "size_bytes": 862830, "width": 1210, "height": 1749, "video_id": "not-video", "sha256": "5948d9c1504170ede512670167f85bb799a142441d8417c11b4ce33c6a42b700"}, {"slug": "mem-gallery", "image": "previews/case_study_vr.png", "source_url": "https://arxiv.org/html/2601.03515v1/case_study_vr.png", "source_label": "视觉记忆推理案例", "size_bytes": 490932, "width": 1607, "height": 1562, "video_id": "not-video", "sha256": "3f851b185a53929c0eecab1889d6d490a2488d131622766d723b87f6d5d0a195"}, {"slug": "mem-gallery", "image": "previews/main_fig_new.png", "source_url": "https://arxiv.org/html/2601.03515v1/main_fig_new.png", "source_label": "多模态记忆评测维度", "size_bytes": 919957, "width": 2040, "height": 1033, "video_id": "not-video", "sha256": "0f43c0dc872d0787254227ee16e77479ae4c444f186be2e4ee30993be47dda3a"}], "video_cases": [], "contact_sheet": "previews/contact_sheets/official_images.jpg"}], "added_batch": "2026-09-23", "selection_kind": "qualified", "short_video_case_threshold_seconds": 180, "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。", "paper_metadata": {"slug": "mem-gallery", "title": "Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents", "paper_url": "https://arxiv.org/abs/2601.03515", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2601.03515", "arxiv_url": "https://arxiv.org/abs/2601.03515", "arxiv_source_url": "https://arxiv.org/abs/2601.03515", "arxiv_title": "Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents", "arxiv_published_at": "2026-01-07", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 39, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/c69c7ab705735b24903511d62fad8110699f708a", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/YuanchenBei/Mem-Gallery", "github_repo": "YuanchenBei/Mem-Gallery", "github_stars": 110, "github_source_url": "https://api.github.com/repos/YuanchenBei/Mem-Gallery", "github_fetch_status": "ok", "status_label": "ACL 2026 · Main", "status_source": "https://aclanthology.org/2026.acl-long.1892/", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=Mem-Gallery%3A+Benchmarking+Multimodal+Long-Term+Conversational+Memory+for+MLLM+Agents", "papers_cool_detail_url": "https://papers.cool/arxiv/2601.03515", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>该论文旨在解决<strong>多模态大语言模型（MLLM）智能体在长期对话场景中缺乏系统化评估基准的问题<\/strong>。具体而言，现有基准存在以下两类缺陷：<\/p>\n<ol>\n<li>\n<p><strong>文本-only 多轮记忆基准<\/strong>（如 LongMemEval、MemoryAgentBench）<br/>\n   仅评估跨会话的文本记忆，完全丢弃视觉信息，无法衡量模型对图像内容的长期记忆能力。<\/p>\n<\/li>\n<li>\n<p><strong>局部多模态理解基准<\/strong>（如 MMDU、MMRC）<br/>\n   虽引入图像，但仅聚焦单会话、短程上下文，缺乏跨会话信息演化与管理的评估，难以检验模型在“长期-多模态-对话”场景下的记忆能力。<\/p>\n<\/li>\n<\/ol>\n<p>因此，作者提出 <strong>Mem-Gallery<\/strong> 基准，首次系统评估 MLLM 智能体在<strong>长期、多会话、多模态对话<\/strong>中的记忆能力，覆盖三大核心维度：<\/p>\n<ul>\n<li><strong>记忆提取与测试时适配<\/strong>（Memory Extraction &amp; Adaptation）  <\/li>\n<li><strong>记忆推理<\/strong>（Memory Reasoning）  <\/li>\n<li><strong>记忆知识管理<\/strong>（Memory Knowledge Management）<\/li>\n<\/ul>\n<p>通过 1 711 组高质量 QA 对、240 组多会话对话（平均 198 轮、跨 12 会话、含 1 003 张图像），揭示当前多模态记忆系统在信息保留、组织、推理与冲突处理上的关键瓶颈。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>相关研究可划分为两条主线，分别对应“<strong>文本-only 长期对话记忆<\/strong>”与“<strong>局部多模态对话理解<\/strong>”。Mem-Gallery 首次将二者缺陷同时补齐，因此与下列工作形成鲜明对比：<\/p>\n<table>\n<thead>\n<tr>\n<th>类别<\/th>\n<th>代表基准 / 方法<\/th>\n<th>主要特征<\/th>\n<th>与 Mem-Gallery 的差距<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>文本-only 长期对话记忆<\/strong><\/td>\n<td>LoCoMo&lt;br&gt;LongMemEval&lt;br&gt;MemoryAgentBench<\/td>\n<td>多会话、长跨度、文本记忆评测<\/td>\n<td>完全丢弃视觉模态，无法评估跨模态长期依赖<\/td>\n<\/tr>\n<tr>\n<td><strong>局部多模态对话理解<\/strong><\/td>\n<td>MMDU&lt;br&gt;MMRC<\/td>\n<td>单会话、多图像、多轮对话理解<\/td>\n<td>无跨会话信息演化，不具备长期记忆评估能力<\/td>\n<\/tr>\n<tr>\n<td><strong>多模态长期记忆（非对话）<\/strong><\/td>\n<td>M3-Bench&lt;br&gt;ViLoMem<\/td>\n<td>长视频或长文档 QA<\/td>\n<td>缺乏“对话-会话”结构，不考察冲突检测、知识更新等对话特有挑战<\/td>\n<\/tr>\n<tr>\n<td><strong>记忆机制研究<\/strong><\/td>\n<td>A-Mem&lt;br&gt;MemoryOS&lt;br&gt;MemGPT&lt;br&gt;Reflexion<\/td>\n<td>文本记忆组织、分页、反思、图谱<\/td>\n<td>未原生支持视觉模态，需借助外部 caption<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p>综上，Mem-Gallery 是首个<strong>同时满足<\/strong><br/>\n① 多会话对话结构<br/>\n② 视觉-文本长期耦合<br/>\n③ 覆盖记忆提取-推理-管理全链路<br/>\n的系统性基准，填补了上述两类研究的空白。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过“构建新数据集 + 设计三维评估框架 + 大规模基准测试”三位一体方案，系统解决多模态长期对话记忆缺失评估基准的问题。<\/p>\n<ol>\n<li>\n<p>构建 Mem-Gallery 数据集<br/>\n   - 240 组多会话对话，平均 198 轮、12 会话、跨 3 个月时间线<br/>\n   - 1 003 张真实场景图像，与文本内容强耦合（非装饰性）<br/>\n   - 1 711 组人工标注 QA，覆盖 9 类记忆任务，附带细粒度证据线索（dialogue turn &amp; image id）<\/p>\n<\/li>\n<li>\n<p>设计三维评估框架<br/>\n<strong>① 记忆提取与测试时适配<\/strong><br/>\n   - 事实检索（FR）<br/>\n   - 视觉中心搜索（VS）<br/>\n   - 测试时学习（TTL）  <\/p>\n<\/li>\n<\/ol>\n<p><strong>② 记忆推理<\/strong><br/>\n   - 时序推理（TR）<br/>\n   - 视觉中心推理（VR）<br/>\n   - 多实体推理（MR）  <\/p>\n<p><strong>③ 记忆知识管理<\/strong><br/>\n   - 知识解析（KR）<br/>\n   - 冲突检测（CD）<br/>\n   - 答案拒识（AR）<\/p>\n<ol>\n<li>\n<p>统一基准测试管线<br/>\n   - 13 种代表性记忆系统（8 种文本记忆 + 5 种多模态记忆）<br/>\n   - 固定 MLLM 主干（Qwen2.5-VL-7B 等）与检索超参（K=10），保证公平比较<br/>\n   - 多指标评估：F1、EM、BLEU-1、LLM-as-a-Judge + 召回/精度/命中 + 耗时统计<\/p>\n<\/li>\n<li>\n<p>关键发现驱动未来研究<br/>\n   - 显式保留视觉信息显著优于纯文本 caption<br/>\n   - 简单多模态 RAG（MuRAG）&gt; 复杂结构化记忆，提示“组织策略”比“架构复杂度”更重要<br/>\n   - 推理与知识管理仍是瓶颈，需新的跨模态关联与冲突消解机制<br/>\n   - 视觉 token 开销大，检索数量 K&gt;10 后精度下降，强调“少而准”的检索策略<\/p>\n<\/li>\n<\/ol>\n<p>通过上述步骤，论文不仅提供了可复现的基准，也揭示了多模态长期对话记忆的核心挑战与改进方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文围绕 <strong>5 个研究问题（RQ1–RQ5）<\/strong> 展开系统实验，覆盖 <strong>13 种记忆模型 × 4 种 MLLM 主干 × 4 组检索规模<\/strong>，累计 <strong>&gt;1 200 组评测结果<\/strong>。实验设计如下：<\/p>\n<hr/>\n<h3>1. RQ1：不同多模态存储方案的有效性<\/h3>\n<ul>\n<li><strong>对照组<\/strong>：8 种文本记忆（Full-Text、FIFO、NaiveRAG、MemGPT 等）+ 5 种多模态记忆（MuRAG、UniversalRAG、NGM、AUGUSTUS 等）  <\/li>\n<li><strong>核心指标<\/strong>：整体 F1、FR/VS/TTL 子任务 F1  <\/li>\n<li><strong>结论<\/strong>：  <\/li>\n<li>显式保留视觉信息平均提升 <strong>11.9 % F1<\/strong>（MuRAG vs 最佳文本记忆）  <\/li>\n<li>简单多模态 RAG &gt; 复杂图/层级记忆，说明“信息保留”优先于“结构复杂”<\/li>\n<\/ul>\n<hr/>\n<h3>2. RQ2：记忆组织策略的重要性<\/h3>\n<ul>\n<li><strong>实验设计<\/strong>：  <\/li>\n<li>Full Memory (MM) 全部图像直接塞上下文 vs MuRAG/UniversalRAG 的检索式存储  <\/li>\n<li>控制 token 预算相等  <\/li>\n<li><strong>结论<\/strong>：  <\/li>\n<li>无组织地堆叠视觉内容导致 <strong>−8.1 % F1<\/strong>，甚至低于纯文本记忆  <\/li>\n<li>视觉 token 密度高，需<strong>原则化组织与选择性检索<\/strong><\/li>\n<\/ul>\n<hr/>\n<h3>3. RQ3：不同模型在各任务类型的优劣<\/h3>\n<ul>\n<li><strong>子实验<\/strong>：  <\/li>\n<li>推理任务（TR/VR/MR）：多模态记忆仅略优于文本，<strong>差距&lt;3 % F1<\/strong> <\/li>\n<li>知识管理（KR/CD/AR）：<br/>\n    – 强记忆模型（A-Mem、MuRAG）反而<strong>拒识性能下降 5–7 %<\/strong><br/>\n    – 冲突检测 F1 普遍 &lt; 0.45，说明<strong>更新与冲突机制缺失<\/strong> <\/li>\n<li><strong>案例研究<\/strong>（图 16–18）：  <\/li>\n<li>测试时学习：文本记忆无法归纳视觉模式  <\/li>\n<li>视觉推理：检索成功但跨模态融合失败  <\/li>\n<li>知识修正：缺乏显式版本控制，更新失效<\/li>\n<\/ul>\n<hr/>\n<h3>4. RQ4：运行效率特征<\/h3>\n<ul>\n<li><strong>测量指标<\/strong>：  <\/li>\n<li>信息记忆时间（memorization time）  <\/li>\n<li>检索+生成时间（retrieval &amp; generation time）  <\/li>\n<li><strong>结论<\/strong>：  <\/li>\n<li>多模态记忆普遍 <strong>×10–×100 倍<\/strong> 耗时 vs 文本记忆  <\/li>\n<li>简单 MuRAG 已接近复杂文本系统 A-Mem 的延迟，<strong>视觉嵌入与 I/O 成为瓶颈<\/strong><\/li>\n<\/ul>\n<hr/>\n<h3>5. RQ5：检索条目数 K 的影响<\/h3>\n<ul>\n<li><strong>参数范围<\/strong>：K ∈ {5, 10, 15, 20}  <\/li>\n<li><strong>观察指标<\/strong>：Recall@K、Precision@K、下游任务 F1  <\/li>\n<li><strong>结论<\/strong>：  <\/li>\n<li>K=10 为<strong>最佳折中<\/strong>；K&gt;10 召回↑ 但 精度↓，F1 饱和甚至下降  <\/li>\n<li>多模态方法对噪声更敏感，<strong>“少而准”优于“多而杂”<\/strong><\/li>\n<\/ul>\n<hr/>\n<h3>附加实验<\/h3>\n<ul>\n<li><strong>跨主干稳定性<\/strong>：Qwen2.5-VL-3B/7B、GPT-4.1-Nano、Gemini-2.5-Flash-Lite  <\/li>\n<li>更强主干<strong>放大<\/strong>记忆设计差异，<strong>不弥补<\/strong>组织缺陷  <\/li>\n<li><strong>检索行为细粒度分析<\/strong>：  <\/li>\n<li>提供 1 711 条证据线索，量化检索失败模式（表 14、图 15）<\/li>\n<\/ul>\n<hr/>\n<p>综上，实验从<strong>性能-效率-参数-案例-跨模型<\/strong>五维展开，全面验证 Mem-Gallery 对多模态长期对话记忆的诊断能力，并指出未来需聚焦<strong>视觉-文本联合推理、动态知识更新、高效检索<\/strong>三大方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>以下方向可被视为 Mem-Gallery 暴露出的“开放缺口”，均具备独立研究价值，且多数可直接沿用或扩展该基准的 240 组对话与 1 711 条 QA 基础设施。<\/p>\n<hr/>\n<h3>1. 模态扩展<\/h3>\n<ul>\n<li><strong>音频与视频流<\/strong>：将静态图像升级为短视频片段或语音描述，考察“听-看-说”跨模态长期一致性与时间对齐。  <\/li>\n<li><strong>传感器/具身信号<\/strong>：引入 ego-centric 视觉、深度、触觉，构建“具身长期记忆”子集，评估机器人或 AR 助手机器人场景。<\/li>\n<\/ul>\n<hr/>\n<h3>2. 记忆组织与更新机制<\/h3>\n<ul>\n<li><strong>动态版本控制<\/strong>：为每条记忆增加“时间戳+置信度+来源”三元组，设计显式的撤销/回滚操作，缓解知识解析（KR）与冲突检测（CD）性能低的问题。  <\/li>\n<li><strong>分层遗忘策略<\/strong>：借鉴人脑“睡眠-巩固”机制，在会话间夜间批量合并、抽象、剪枝，平衡容量与精度。  <\/li>\n<li><strong>视觉-文本联合索引<\/strong>：不再分别嵌入图像和 caption，而是采用单塔跨模态编码器，直接生成“图文融合键”，减少模态 gap 导致的检索噪声。<\/li>\n<\/ul>\n<hr/>\n<h3>3. 推理增强<\/h3>\n<ul>\n<li><strong>多模态思维链（CoT）<\/strong>：强制模型在回答前生成“视觉线索-文本线索-逻辑链”三阶段解释，提升视觉中心推理（VR）与多实体推理（MR）的可解释性与准确率。  <\/li>\n<li><strong>时间-空间图推理<\/strong>：把对话中的事件、实体、图像构建成动态时空图谱，支持“何时-何地-何物”联合查询，补全当前时序推理（TR）短板。  <\/li>\n<li><strong>反事实记忆推理<\/strong>：人工植入“虚假更新”并评估模型能否在后续对话中自我修正，衡量鲁棒性。<\/li>\n<\/ul>\n<hr/>\n<h3>4. 效率与系统优化<\/h3>\n<ul>\n<li><strong>视觉 Token 压缩<\/strong>：试用 LLaVA-mini、Perceiver Resampler 等“单图→1 token”方案，降低 MuRAG 类方法 ×10 耗时问题。  <\/li>\n<li><strong>端-云协同记忆<\/strong>：热记忆放端侧（NPU 缓存），冷记忆放云端（向量库），并设计自适应迁移策略，满足实时助理需求。  <\/li>\n<li><strong>检索-生成协同训练<\/strong>：目前检索器与生成器独立，可引入 REPLUG、RA-DIT 类似范式，以 QA 损失端到端微调检索模型，提高 Precision@K。<\/li>\n<\/ul>\n<hr/>\n<h3>5. 安全与伦理<\/h3>\n<ul>\n<li><strong>记忆隐私泄露评估<\/strong>：构建“敏感信息泄露”子任务，检测模型是否会在后续对话中无意透露用户住址、密码、健康等隐私。  <\/li>\n<li><strong>偏见累积监测<\/strong>：长期对话可能放大早期视觉或文本偏见，设计指标追踪跨会话偏见漂移，并引入遗忘算法进行纠偏。<\/li>\n<\/ul>\n<hr/>\n<h3>6. 个性化与持续学习<\/h3>\n<ul>\n<li><strong>用户画像漂移检测<\/strong>：利用 Mem-Gallery 的同一用户多会话结构，量化用户兴趣随时间变化的速度，触发记忆重组。  <\/li>\n<li><strong>联邦记忆框架<\/strong>：多用户共享通用视觉-文本记忆底座，同时保留本地私有嵌入，探索“全局-个人”混合检索。<\/li>\n<\/ul>\n<hr/>\n<h3>7. 任务与评测扩展<\/h3>\n<ul>\n<li><strong>主动式记忆收集<\/strong>：模型不仅被动回答问题，还需主动发起追问以补全缺失信息，评估“记忆好奇心”。  <\/li>\n<li><strong>多语言多模态记忆<\/strong>：将对话翻译为低资源语言，考察视觉线索是否仍能弥补语言模型的知识不足。  <\/li>\n<li><strong>长视频+对话混合<\/strong>：在 10 分钟长视频中插入对话，评估模型能否跨“视频片段-对话回合”进行事件关联。<\/li>\n<\/ul>\n<hr/>\n<h3>8. 开源工具链<\/h3>\n<ul>\n<li><strong>Mem-Gallery-Toolkit<\/strong>：提供<br/>\n  – 对话流式写入 API<br/>\n  – 自动证据线索标注器<br/>\n  – 可视化记忆回放面板<br/>\n  降低后续研究接入门槛。  <\/li>\n<\/ul>\n<hr/>\n<p>简言之，Mem-Gallery 目前完成了“诊断”阶段；后续工作可沿<strong>模态、机制、推理、效率、安全、个性化、工具<\/strong>七大轴线，将其从基准升级为可落地的多模态长期记忆系统。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><h1>Mem-Gallery 论文核心内容速览<\/h1>\n<h2>1. 研究动机<\/h2>\n<ul>\n<li>既有文本多会话基准丢弃视觉信号  <\/li>\n<li>既有单会话多模态基准缺乏跨会话信息演化<br/>\n→ 无法系统评估 MLLM 智能体在长期对话中的<strong>多模态记忆<\/strong>能力<\/li>\n<\/ul>\n<h2>2. Mem-Gallery 基准<\/h2>\n<table>\n<thead>\n<tr>\n<th>规模<\/th>\n<th>240 组多会话对话 / 3 962 轮 / 1 003 张图像<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>QA<\/td>\n<td>1 711 对人工标注问题，含证据线索<\/td>\n<\/tr>\n<tr>\n<td>任务<\/td>\n<td>9 子任务 → 3 维度：&lt;br&gt;① 提取与适配（FR/VS/TTL）&lt;br&gt;② 推理（TR/VR/MR）&lt;br&gt;③ 知识管理（KR/CD/AR）<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<h2>3. 实验设计<\/h2>\n<ul>\n<li>13 种记忆系统（8 文本 + 5 多模态）× 4 大 MLLM 主干 × 4 检索规模 K  <\/li>\n<li>指标：F1/EM/BLEU-1/LLM-Judge + Recall/Precision/Hit + 耗时<\/li>\n<\/ul>\n<h2>4. 主要发现<\/h2>\n<ol>\n<li>显式保留视觉信息平均提升 <strong>11.9 % F1<\/strong>；简单多模态 RAG 优于复杂架构  <\/li>\n<li>无组织地堆叠视觉 token 导致 <strong>−8 % F1<\/strong>，需<strong>原则化组织<\/strong> <\/li>\n<li>推理与知识管理仍是瓶颈：<br/>\n   - 时序/多实体/视觉推理增益有限<br/>\n   - 冲突检测 F1 &lt; 0.45；强记忆模型<strong>拒识率下降 5–7 %<\/strong> <\/li>\n<li>多模态记忆<strong>耗时高 1–2 数量级<\/strong>；视觉嵌入与 I/O 成瓶颈  <\/li>\n<li>检索条目 K=10 为最佳折中；继续增大 K 仅提高召回，<strong>精度↓→任务性能饱和或下降<\/strong><\/li>\n<\/ol>\n<h2>5. 贡献<\/h2>\n<ul>\n<li>首个<strong>多会话-多模态-长期对话记忆<\/strong>基准与数据集  <\/li>\n<li>三维九任务评估框架，附带细粒度证据标注  <\/li>\n<li>大规模诊断实验揭示“保留-组织-推理-效率-安全”五大开放缺口，为未来多模态记忆研究提供路线图。<\/li>\n<\/ul><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Mem-Gallery%3A%20Benchmarking%20Multimodal%20Long-Term%20Conversational%20Memory%20for%20MLLM%20Agents，链接是 https://arxiv.org/pdf/2601.03515 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2601.03515 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2601.03515", "kimi_retrieved_at_utc": "2026-09-23T11:28:13+00:00"}, "preview_images": 4, "video_preview_images": 0, "video_cases_count": 0, "video_case_groups_count": 0, "groups_count": 1, "groups_100_count": 0, "overview_html": "datasets/mem-gallery/overview.html", "gallery_html": "datasets/mem-gallery/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

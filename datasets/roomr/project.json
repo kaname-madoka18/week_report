@@ -1,0 +1,59 @@
+{
+  "slug": "roomr",
+  "title": "Visual Room Rearrangement / RoomR",
+  "category": "仿真房间复原 · 交互任务",
+  "summary": "6,000 实例、120 房间、72 类物体；先观察再恢复的记忆任务。",
+  "paper_url": "https://arxiv.org/abs/2103.16544",
+  "repo_url": "https://github.com/allenai/ai2thor-rearrangement",
+  "project_url": "https://ai2thor.allenai.org/rearrangement",
+  "duration_summary": "论文 walkthrough ≤250 动作；当前配置 walkthrough 250 / unshuffle 500 步，无固定视频秒数。",
+  "availability": "任务代码/序列化规格公开；官网 YouTube 演示在本工作区网络不可达。",
+  "preview_status": "partial",
+  "limitations": [
+    "预览仅为 4 张官网静态任务和 RGB/深度示例，不计视频帧。",
+    "2023 Challenge 与原始 2021 论文使用不同环境和数据版本。",
+    "未安装 AI2-THOR 生成 rollout，公开视频的播放长度未核验。"
+  ],
+  "groups": [
+    {
+      "id": "static-examples",
+      "title": "官方静态任务示例",
+      "description": "静态研究图，非视频帧，也非完整数据集抽样。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/rearrangement-cover1.jpg",
+          "source_url": "https://ai2thor.allenai.org/static/4844ccdba50de95a4feff30cf2978ce5/bc8e0/rearrangement-cover1.png",
+          "source_label": "官网任务/传感器静态示例",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/rearrange-cover2.jpg",
+          "source_url": "https://ai2thor.allenai.org/static/0f682c0103df1060810ad214c4668718/2f1b1/rearrange-cover2.jpg",
+          "source_label": "官网任务/传感器静态示例",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/rgb-frame.jpg",
+          "source_url": "https://ai2thor.allenai.org/static/3b1dea7228ed5c3fab03fb5f960173eb/bc8e0/rgb-frame.png",
+          "source_label": "官网任务/传感器静态示例",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/depth-frame.jpg",
+          "source_url": "https://ai2thor.allenai.org/static/73f2a583b1636712a7a7d165ed6d768d/2f1b1/depth-frame.jpg",
+          "source_label": "官网任务/传感器静态示例",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        }
+      ]
+    }
+  ]
+}

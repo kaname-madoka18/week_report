@@ -1,0 +1,48 @@
+{
+  "slug": "neptune",
+  "title": "Neptune",
+  "category": "长视频视听推理 · 跨时间证据",
+  "summary": "2,405段视频、3,268个问题、约100小时；最长15分钟，强调时间顺序、计数、状态变化和跨模态推理。",
+  "paper_url": "https://arxiv.org/abs/2412.09582",
+  "repo_url": "https://github.com/google-deepmind/neptune",
+  "project_url": "https://github.com/google-deepmind/neptune",
+  "dataset_urls": [
+    {
+      "label": "原始Neptune问答与下载说明",
+      "url": "https://github.com/google-deepmind/neptune#neptune"
+    }
+  ],
+  "duration_summary": "单视频16秒–15分钟，平均2.5分钟；约100小时总量。超过12%视频长于5分钟、超过25%长于3分钟（论文统计）。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "当前GitHub首页还包含后续MINERVA/Minerva-Ego/Minerva-cultural，本条仅按2412.09582整理原始Neptune。",
+    "未下载或缓存YouTube完整视频；预览为官方真实视频问答样例图。",
+    "平均2.5分钟不意味着全部视频都适合按短视频处理，最长仍达15分钟。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/examples.png",
+          "source_url": "https://raw.githubusercontent.com/google-deepmind/neptune/main/examples.png",
+          "source_label": "官方视频问答样例（含真实视频截图）"
+        },
+        {
+          "image": "previews/stats.png",
+          "source_url": "https://raw.githubusercontent.com/google-deepmind/neptune/main/stats.png",
+          "source_label": "官方视频时长与任务统计"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

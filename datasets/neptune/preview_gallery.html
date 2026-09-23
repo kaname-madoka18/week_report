@@ -1,0 +1,186 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neptune · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Neptune</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-12-12</strong></div><div><span>引用数</span><strong>27</strong></div><div><span>GitHub stars</span><strong>99</strong></div><div><span>当前状态</span><strong>arXiv 预印本</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2412.09582" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/google-deepmind/neptune" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/f8a55ad541291aef76f709d2ad8ce2f82db842c9" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://arxiv.org/abs/2412.09582" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Neptune%3A+The+Long+Orbit+to+Benchmarking+Long+Video+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的问题是如何为长视频理解任务生成具有挑战性的问题-答案-诱饵集（QADs）。具体来说，论文中提到了以下几个关键问题：</p>
+<ol>
+<li>
+<p><strong>长视频理解数据集的局限性</strong>：许多现有的视频数据集和模型都集中在短视频片段（10-30秒）上。虽然有一些长视频数据集存在，但它们通常可以通过强大的图像模型逐帧（甚至只处理视频中的少数几帧）应用来解决，并且这些数据集通常需要高昂的手动注释成本。</p>
+</li>
+<li>
+<p><strong>长视频理解的挑战</strong>：创建一个真正的长视频理解数据集需要大量的手动工作来选择、观看、理解和注释长视频，这些工作不仅成本高，而且难以保持一致性和多样性。</p>
+</li>
+<li>
+<p><strong>现有评估指标的不足</strong>：对于开放式问题回答，现有的评估指标要么基于规则，要么依赖于专有模型，这些指标可能无法准确衡量模型在长视频理解任务上的性能。</p>
+</li>
+</ol>
+<p>为了解决这些问题，论文提出了一个半自动的数据集创建流程，该流程利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成密集的、时间对齐的视频字幕，并从中自动派生出针对视频片段（最长可达15分钟）的困难QADs。此外，论文还提供了一个新的开源模型基评估指标（GEM），用于在Neptune数据集上评估开放式回答。通过这种方式，论文旨在推动更先进的长视频理解模型的发展。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，相关研究主要涉及以下几个领域：</p>
+<ol>
+<li>
+<p><strong>视频问答（VideoQA）</strong>：
+   - 早期的视频和语言模型，如Flamingo、BLIP2、Video-Llama、GIT2和PALI等，这些模型通常包含强大的视觉和语言编码器/解码器。
+   - Socratic风格的模型，结合了各种专门的冻结模型与精心提示的最新VLMs和LLMs，例如MoreVQA。
+   - 端到端的大型多模态模型，如Gemini和GPT-4，这些模型具有长上下文长度，能够处理包括视频、声音和文本在内的多模态数据。</p>
+</li>
+<li>
+<p><strong>视频QA基准测试</strong>：
+   - 推动评估时间相关问题、长视频以及多样化领域（如指导性和自我中心视频）的关键数据集。
+   - 总结现有的VideoQA基准测试，大多数数据集要么关注短视频（少于100秒），要么是可以仅用几帧解决的短视视频数据集。</p>
+</li>
+<li>
+<p><strong>开放式视频QA的评估指标</strong>：
+   - 早期QA数据集的评估指标，如BLEU、ROUGE和CIDEr等，这些指标主要测量n-gram重叠，并不完全捕捉任务的主观性。
+   - 其他指标包括SPICE（添加动作和对象关系），以及基于模型的指标，如BERT-Score、BERT-Score++、LEIC、NUBIA、TIGEr、CLIPScore和EMScore等。
+   - 特定于答案等价性的指标，如BEM，它在答案等价性数据集上微调BERT，显示出更好的QA评分。</p>
+</li>
+<li>
+<p><strong>长视频理解的数据集创建</strong>：
+   - EgoSchema，它通过提示LLMs生成，但覆盖的领域有限，依赖于现有注释，而Neptune覆盖更广泛的视频类型，其流程适用于任意视频。
+   - 其他通过提示LLMs生成的数据集，如ActivityNet-RTL、CinePile等。</p>
+</li>
+</ol>
+<p>这些相关研究为长视频理解领域的模型开发、数据集创建和评估指标提供了基础和对比。论文通过提出新的数据集Neptune和评估指标GEM，旨在进一步推动这一领域的研究进展。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决长视频理解的问题：</p>
+<ol>
+<li>
+<p><strong>提出半自动数据集创建流程</strong>：
+   - 利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成密集的、时间对齐的视频字幕。
+   - 从这些字幕中自动派生出针对视频片段的问题-答案-诱饵（QAD）集。</p>
+</li>
+<li>
+<p><strong>视频选择和信号提取</strong>：
+   - 从YT-Temporal-1Bn数据集中选择视频，并减少“谈话头”视频，以捕获更有趣的场景、对象和动作。
+   - 提取帧字幕、自动语音识别（ASR）、元数据和每个视频的镜头边界等信号。</p>
+</li>
+<li>
+<p><strong>自动视频字幕生成</strong>：
+   - 将提取的信号（帧字幕、ASR、标题和描述、镜头边界）自动组合，通过多阶段过程创建视频级字幕。</p>
+</li>
+<li>
+<p><strong>QAD生成</strong>：
+   - 通过定制的提示将视频字幕输入到LLMs中，自动生成问题、答案和诱饵。
+   - 采用两阶段方法：首先生成问题和答案，然后基于前一阶段的问题和答案生成六个诱饵。</p>
+</li>
+<li>
+<p><strong>基于LLM的盲过滤QAD</strong>：
+   - 使用LLM对答案候选进行排名，以去除可以通过常识或外部世界知识回答的问题。</p>
+</li>
+<li>
+<p><strong>手动评分者验证</strong>：
+   - 通过人工审核确保质量，评分者根据四个标准评估问题的质量，并标注所需模态。
+   - 评分者接受或修改答案，并从LLM生成的诱饵候选中选择最具挑战性的四个。</p>
+</li>
+<li>
+<p><strong>提供新的评估指标GEM</strong>：
+   - 为了评估开放式问题回答，论文提出了一个新的开源模型基评估指标GEM（Gemma Equivalence Metric）。</p>
+</li>
+<li>
+<p><strong>基准测试</strong>：
+   - 对现有的视频模型进行基准测试，揭示了开源视频模型和专有模型（如Gemini-1.5和GPT-4）之间的性能差距。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文旨在创建一个能够评估长视频理解能力的可扩展数据集，并推动更先进的长视频理解模型的发展。此外，通过开源GEM评估指标，论文为学术界提供了一个可复用的、不受专有模型限制的评估工具。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>根据论文内容，作者进行了以下实验：</p>
+<ol>
+<li>
+<p><strong>Neptune数据集的创建和评估</strong>：
+   - 作者首先介绍了他们创建的Neptune数据集，并提供了两种评估协议：多项选择评估和开放式评估。</p>
+</li>
+<li>
+<p><strong>GEM（Gemma Equivalence Metric）的创建和评估</strong>：
+   - 为了解决开放式问题回答的评估问题，作者手动构建了一个标记的开发集，并在这个集合上评估了多种基于规则和基于模型的指标。
+   - 他们比较了传统的指标（如CIDEr和ROUGE-L）和基于模型的指标（如BERT-Score和BEM）。
+   - 作者还微调了Gemma模型在BEM答案等价性数据集上，并提出了新的评估指标GEM。</p>
+</li>
+<li>
+<p><strong>基准测试</strong>：
+   - 作者对多种视频问答模型进行了基准测试，包括盲基线测试（只使用文本提示）、图像模型（如BLIP2）、短上下文MLLMs（如Video-LLaVA和VideoLLaMA2）、长上下文MLLMs（包括开源和闭源模型，如MA-LMM、MiniGPT4-Video、Gemini 1.5-pro和GPT-4o）。
+   - 他们评估了这些模型在Neptune数据集上的性能，并进行了模态消融研究，比较了仅使用ASR、仅使用视频帧和同时使用两者的性能。</p>
+</li>
+<li>
+<p><strong>Neptune-MMH子集的评估</strong>：
+   - 作者创建了Neptune-MMH子集，该子集包含视觉模态重要的问题，并评估了模型在这个更具挑战性的子集上的性能。</p>
+</li>
+<li>
+<p><strong>与人类提出的问题（HPQ）的比较</strong>：
+   - 为了测试自动数据管道的有效性和效率，作者让评分者完全手动地为数据集中的一个子集提出问题和答案（称为HPQ），并与自动生成的问题进行比较。</p>
+</li>
+<li>
+<p><strong>不同问题类型的性能分析</strong>：
+   - 作者分析了不同模型在Neptune数据集中不同问题类型（如时间排序、计数、状态变化等）上的性能，并指出了未来的研究方向。</p>
+</li>
+</ol>
+<p>这些实验旨在全面评估Neptune数据集的有效性，提出的GEM评估指标的性能，以及当前视频理解模型在长视频问答任务上的能力和局限性。通过这些实验，作者展示了Neptune作为一个评估长视频理解能力的基准测试的价值，并揭示了现有模型的不足。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>改进视频选择和信号提取</strong>：
+   - 研究更先进的视频选择算法，以从YouTube等平台中识别出更丰富、更具代表性的视频内容。
+   - 探索更多种类的视频信号提取技术，例如场景理解、物体检测和情绪分析，以增强视频字幕和QAD生成的上下文信息。</p>
+</li>
+<li>
+<p><strong>增强视频字幕生成</strong>：
+   - 研究如何结合更复杂的自然语言处理技术，以生成更准确和详细的视频字幕。
+   - 考虑引入额外的上下文信息，比如视频的元数据、用户评论和相关文本，以提高字幕生成的质量。</p>
+</li>
+<li>
+<p><strong>优化QAD生成算法</strong>：
+   - 探索不同的提示工程（prompt engineering）技术，以生成更多样化和更具挑战性的QADs。
+   - 研究如何利用强化学习或其他自动化方法来进一步减少人工审核的需求。</p>
+</li>
+<li>
+<p><strong>评估指标的改进</strong>：
+   - 继续优化GEM评估指标，使其能够更准确地衡量模型在开放式问题回答任务上的性能。
+   - 探索结合人类评估和自动评估的混合评估方法，以提高评估的可靠性和效率。</p>
+</li>
+<li>
+<p><strong>长视频理解模型的开发</strong>：
+   - 开发能够处理更长视频上下文和更复杂推理任务的新型视频语言模型。
+   - 研究如何将现有的长视频理解模型迁移到新的领域和数据集上，并评估其泛化能力。</p>
+</li>
+<li>
+<p><strong>减少模型偏见和提高数据集多样性</strong>：
+   - 分析Neptune数据集中潜在的偏见，并探索减少这些偏见的方法。
+   - 增强数据集的多样性，包括视频类型、语言和文化背景，以提高模型的包容性和适用性。</p>
+</li>
+<li>
+<p><strong>跨模态学习</strong>：
+   - 研究如何更有效地整合视觉、音频和文本信息，以提高模型的跨模态理解能力。
+   - 探索新的神经网络架构和学习算法，以增强模型对多模态数据的融合和推理能力。</p>
+</li>
+<li>
+<p><strong>实时视频理解和交互</strong>：
+   - 研究如何使视频理解模型适用于实时视频流，并支持实时交互和问答。
+   - 探索视频理解技术在实际应用中的潜力，如监控、教育和娱乐。</p>
+</li>
+</ol>
+<p>这些探索点可以帮助推动长视频理解领域的研究进展，并为开发更先进的视频问答系统提供新的思路和方法。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>本文介绍了一个名为Neptune的长视频理解基准测试，旨在通过一个半自动流程生成具有挑战性的问题-答案-诱饵集（QADs），以推动长视频理解技术的发展。以下是论文的主要内容总结：</p>
+<ol>
+<li>
+<p><strong>问题陈述</strong>：
+   - 许多现有的视频数据集和模型专注于短视频片段，而长视频数据集要么依赖于图像模型，要么手动注释成本高。</p>
+</li>
+<li>
+<p><strong>Neptune数据集</strong>：
+   - 提出了一个可扩展的数据集创建流程，利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成视频字幕和QADs。
+   - 数据集包含3,268个QAD注释，涵盖2,405个视频，视频长度从16秒到15分钟不等。</p>
+</li>
+<li>
+<p><strong>数据集创建流程</strong>：
+   - 包括视频选择、信号提取、视频字幕生成、QAD生成、基于LLM的盲过滤和手动评分者验证等阶段。</p>
+</li>
+<li>
+<p><strong>评估指标</strong>：
+   - 由于现有的开放式问题回答评估指标存在局限性，论文提出了一个新的开源模型基评估指标GEM（Gemma Equivalence Metric）。</p>
+</li>
+<li>
+<p><strong>实验与基准测试</strong>：
+   - 对多种视频问答模型进行了评估，包括盲基线、图像模型、短上下文MLLMs和长上下文MLLMs。
+   - 揭示了开源视频模型与专有模型（如Gemini-1.5和GPT-4）之间的性能差距。</p>
+</li>
+<li>
+<p><strong>主要贡献</strong>：
+   - 提出了一个可扩展的流程，用于为任何视频生成复杂的QAD注释，相比手动注释减少了一半的评分者时间。
+   - 发布了Neptune评估数据集，包括一个强调多模态推理的挑战性子集NEPTUNE-MMH。
+   - 提供了多项选择和开放式问题回答的评估协议，并提出了GEM这一新的开放式评估指标。
+   - 通过基准测试展示了当前开源长视频模型在Neptune上的性能，并指出了未来发展的方向。</p>
+</li>
+<li>
+<p><strong>未来工作</strong>：
+   - 论文指出了长视频理解领域的一些潜在研究方向，包括改进视频选择和信号提取、优化QAD生成算法、开发新的评估指标和提高模型的长视频理解能力。</p>
+</li>
+</ol>
+<p>总体而言，Neptune基准测试旨在通过提供新的数据集和评估指标，推动长视频理解技术的研究和模型开发。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Neptune%3A%20The%20Long%20Orbit%20to%20Benchmarking%20Long%20Video%20Understanding，链接是 https://arxiv.org/pdf/2412.09582 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2412.09582 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>Neptune</h1><p class="muted">2,405段视频、3,268个问题、约100小时；最长15分钟，强调时间顺序、计数、状态变化和跨模态推理。</p><p><strong>2 张独立预览图</strong> · 1 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">单视频16秒–15分钟，平均2.5分钟；约100小时总量。超过12%视频长于5分钟、超过25%长于3分钟（论文统计）。</p></div><div class="note"><ul><li>当前GitHub首页还包含后续MINERVA/Minerva-Ego/Minerva-cultural，本条仅按2412.09582整理原始Neptune。</li><li>未下载或缓存YouTube完整视频；预览为官方真实视频问答样例图。</li><li>平均2.5分钟不意味着全部视频都适合按短视频处理，最长仍达15分钟。</li></ul></div><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "neptune", "title": "Neptune", "category": "长视频视听推理 · 跨时间证据", "summary": "2,405段视频、3,268个问题、约100小时；最长15分钟，强调时间顺序、计数、状态变化和跨模态推理。", "paper_url": "https://arxiv.org/abs/2412.09582", "repo_url": "https://github.com/google-deepmind/neptune", "project_url": "https://github.com/google-deepmind/neptune", "dataset_urls": [{"label": "原始Neptune问答与下载说明", "url": "https://github.com/google-deepmind/neptune#neptune"}], "duration_summary": "单视频16秒–15分钟，平均2.5分钟；约100小时总量。超过12%视频长于5分钟、超过25%长于3分钟（论文统计）。", "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。", "preview_status": "partial", "limitations": ["当前GitHub首页还包含后续MINERVA/Minerva-Ego/Minerva-cultural，本条仅按2412.09582整理原始Neptune。", "未下载或缓存YouTube完整视频；预览为官方真实视频问答样例图。", "平均2.5分钟不意味着全部视频都适合按短视频处理，最长仍达15分钟。"], "relation_level": "长上下文近邻", "groups": [{"id": "official_examples", "title": "官方数据样例图", "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。", "media_kind": "image", "frames": [{"image": "previews/examples.png", "source_url": "https://raw.githubusercontent.com/google-deepmind/neptune/main/examples.png", "source_label": "官方视频问答样例（含真实视频截图）"}, {"image": "previews/stats.png", "source_url": "https://raw.githubusercontent.com/google-deepmind/neptune/main/stats.png", "source_label": "官方视频时长与任务统计"}], "video_cases": [], "contact_sheet": "previews/contact_sheets/official_examples.jpg"}], "preview_version": "v2-short-video-cases", "added_batch": "2026-09-23", "selection_kind": "qualified", "paper_metadata": {"slug": "neptune", "title": "Neptune: The Long Orbit to Benchmarking Long Video Understanding", "paper_url": "https://arxiv.org/abs/2412.09582", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2412.09582", "arxiv_url": "https://arxiv.org/abs/2412.09582", "arxiv_source_url": "https://arxiv.org/abs/2412.09582", "arxiv_title": "Neptune: The Long Orbit to Benchmarking Long Video Understanding", "arxiv_published_at": "2024-12-12", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 27, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/f8a55ad541291aef76f709d2ad8ce2f82db842c9", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/google-deepmind/neptune", "github_repo": "google-deepmind/neptune", "github_stars": 99, "github_source_url": "https://api.github.com/repos/google-deepmind/neptune", "github_fetch_status": "ok", "status_label": "arXiv 预印本", "status_source": "https://arxiv.org/abs/2412.09582", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=Neptune%3A+The+Long+Orbit+to+Benchmarking+Long+Video+Understanding", "papers_cool_detail_url": "https://papers.cool/arxiv/2412.09582", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文试图解决的问题是如何为长视频理解任务生成具有挑战性的问题-答案-诱饵集（QADs）。具体来说，论文中提到了以下几个关键问题：<\/p>\n<ol>\n<li>\n<p><strong>长视频理解数据集的局限性<\/strong>：许多现有的视频数据集和模型都集中在短视频片段（10-30秒）上。虽然有一些长视频数据集存在，但它们通常可以通过强大的图像模型逐帧（甚至只处理视频中的少数几帧）应用来解决，并且这些数据集通常需要高昂的手动注释成本。<\/p>\n<\/li>\n<li>\n<p><strong>长视频理解的挑战<\/strong>：创建一个真正的长视频理解数据集需要大量的手动工作来选择、观看、理解和注释长视频，这些工作不仅成本高，而且难以保持一致性和多样性。<\/p>\n<\/li>\n<li>\n<p><strong>现有评估指标的不足<\/strong>：对于开放式问题回答，现有的评估指标要么基于规则，要么依赖于专有模型，这些指标可能无法准确衡量模型在长视频理解任务上的性能。<\/p>\n<\/li>\n<\/ol>\n<p>为了解决这些问题，论文提出了一个半自动的数据集创建流程，该流程利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成密集的、时间对齐的视频字幕，并从中自动派生出针对视频片段（最长可达15分钟）的困难QADs。此外，论文还提供了一个新的开源模型基评估指标（GEM），用于在Neptune数据集上评估开放式回答。通过这种方式，论文旨在推动更先进的长视频理解模型的发展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据论文内容，相关研究主要涉及以下几个领域：<\/p>\n<ol>\n<li>\n<p><strong>视频问答（VideoQA）<\/strong>：\n   - 早期的视频和语言模型，如Flamingo、BLIP2、Video-Llama、GIT2和PALI等，这些模型通常包含强大的视觉和语言编码器/解码器。\n   - Socratic风格的模型，结合了各种专门的冻结模型与精心提示的最新VLMs和LLMs，例如MoreVQA。\n   - 端到端的大型多模态模型，如Gemini和GPT-4，这些模型具有长上下文长度，能够处理包括视频、声音和文本在内的多模态数据。<\/p>\n<\/li>\n<li>\n<p><strong>视频QA基准测试<\/strong>：\n   - 推动评估时间相关问题、长视频以及多样化领域（如指导性和自我中心视频）的关键数据集。\n   - 总结现有的VideoQA基准测试，大多数数据集要么关注短视频（少于100秒），要么是可以仅用几帧解决的短视视频数据集。<\/p>\n<\/li>\n<li>\n<p><strong>开放式视频QA的评估指标<\/strong>：\n   - 早期QA数据集的评估指标，如BLEU、ROUGE和CIDEr等，这些指标主要测量n-gram重叠，并不完全捕捉任务的主观性。\n   - 其他指标包括SPICE（添加动作和对象关系），以及基于模型的指标，如BERT-Score、BERT-Score++、LEIC、NUBIA、TIGEr、CLIPScore和EMScore等。\n   - 特定于答案等价性的指标，如BEM，它在答案等价性数据集上微调BERT，显示出更好的QA评分。<\/p>\n<\/li>\n<li>\n<p><strong>长视频理解的数据集创建<\/strong>：\n   - EgoSchema，它通过提示LLMs生成，但覆盖的领域有限，依赖于现有注释，而Neptune覆盖更广泛的视频类型，其流程适用于任意视频。\n   - 其他通过提示LLMs生成的数据集，如ActivityNet-RTL、CinePile等。<\/p>\n<\/li>\n<\/ol>\n<p>这些相关研究为长视频理解领域的模型开发、数据集创建和评估指标提供了基础和对比。论文通过提出新的数据集Neptune和评估指标GEM，旨在进一步推动这一领域的研究进展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个步骤解决长视频理解的问题：<\/p>\n<ol>\n<li>\n<p><strong>提出半自动数据集创建流程<\/strong>：\n   - 利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成密集的、时间对齐的视频字幕。\n   - 从这些字幕中自动派生出针对视频片段的问题-答案-诱饵（QAD）集。<\/p>\n<\/li>\n<li>\n<p><strong>视频选择和信号提取<\/strong>：\n   - 从YT-Temporal-1Bn数据集中选择视频，并减少“谈话头”视频，以捕获更有趣的场景、对象和动作。\n   - 提取帧字幕、自动语音识别（ASR）、元数据和每个视频的镜头边界等信号。<\/p>\n<\/li>\n<li>\n<p><strong>自动视频字幕生成<\/strong>：\n   - 将提取的信号（帧字幕、ASR、标题和描述、镜头边界）自动组合，通过多阶段过程创建视频级字幕。<\/p>\n<\/li>\n<li>\n<p><strong>QAD生成<\/strong>：\n   - 通过定制的提示将视频字幕输入到LLMs中，自动生成问题、答案和诱饵。\n   - 采用两阶段方法：首先生成问题和答案，然后基于前一阶段的问题和答案生成六个诱饵。<\/p>\n<\/li>\n<li>\n<p><strong>基于LLM的盲过滤QAD<\/strong>：\n   - 使用LLM对答案候选进行排名，以去除可以通过常识或外部世界知识回答的问题。<\/p>\n<\/li>\n<li>\n<p><strong>手动评分者验证<\/strong>：\n   - 通过人工审核确保质量，评分者根据四个标准评估问题的质量，并标注所需模态。\n   - 评分者接受或修改答案，并从LLM生成的诱饵候选中选择最具挑战性的四个。<\/p>\n<\/li>\n<li>\n<p><strong>提供新的评估指标GEM<\/strong>：\n   - 为了评估开放式问题回答，论文提出了一个新的开源模型基评估指标GEM（Gemma Equivalence Metric）。<\/p>\n<\/li>\n<li>\n<p><strong>基准测试<\/strong>：\n   - 对现有的视频模型进行基准测试，揭示了开源视频模型和专有模型（如Gemini-1.5和GPT-4）之间的性能差距。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文旨在创建一个能够评估长视频理解能力的可扩展数据集，并推动更先进的长视频理解模型的发展。此外，通过开源GEM评估指标，论文为学术界提供了一个可复用的、不受专有模型限制的评估工具。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>根据论文内容，作者进行了以下实验：<\/p>\n<ol>\n<li>\n<p><strong>Neptune数据集的创建和评估<\/strong>：\n   - 作者首先介绍了他们创建的Neptune数据集，并提供了两种评估协议：多项选择评估和开放式评估。<\/p>\n<\/li>\n<li>\n<p><strong>GEM（Gemma Equivalence Metric）的创建和评估<\/strong>：\n   - 为了解决开放式问题回答的评估问题，作者手动构建了一个标记的开发集，并在这个集合上评估了多种基于规则和基于模型的指标。\n   - 他们比较了传统的指标（如CIDEr和ROUGE-L）和基于模型的指标（如BERT-Score和BEM）。\n   - 作者还微调了Gemma模型在BEM答案等价性数据集上，并提出了新的评估指标GEM。<\/p>\n<\/li>\n<li>\n<p><strong>基准测试<\/strong>：\n   - 作者对多种视频问答模型进行了基准测试，包括盲基线测试（只使用文本提示）、图像模型（如BLIP2）、短上下文MLLMs（如Video-LLaVA和VideoLLaMA2）、长上下文MLLMs（包括开源和闭源模型，如MA-LMM、MiniGPT4-Video、Gemini 1.5-pro和GPT-4o）。\n   - 他们评估了这些模型在Neptune数据集上的性能，并进行了模态消融研究，比较了仅使用ASR、仅使用视频帧和同时使用两者的性能。<\/p>\n<\/li>\n<li>\n<p><strong>Neptune-MMH子集的评估<\/strong>：\n   - 作者创建了Neptune-MMH子集，该子集包含视觉模态重要的问题，并评估了模型在这个更具挑战性的子集上的性能。<\/p>\n<\/li>\n<li>\n<p><strong>与人类提出的问题（HPQ）的比较<\/strong>：\n   - 为了测试自动数据管道的有效性和效率，作者让评分者完全手动地为数据集中的一个子集提出问题和答案（称为HPQ），并与自动生成的问题进行比较。<\/p>\n<\/li>\n<li>\n<p><strong>不同问题类型的性能分析<\/strong>：\n   - 作者分析了不同模型在Neptune数据集中不同问题类型（如时间排序、计数、状态变化等）上的性能，并指出了未来的研究方向。<\/p>\n<\/li>\n<\/ol>\n<p>这些实验旨在全面评估Neptune数据集的有效性，提出的GEM评估指标的性能，以及当前视频理解模型在长视频问答任务上的能力和局限性。通过这些实验，作者展示了Neptune作为一个评估长视频理解能力的基准测试的价值，并揭示了现有模型的不足。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>改进视频选择和信号提取<\/strong>：\n   - 研究更先进的视频选择算法，以从YouTube等平台中识别出更丰富、更具代表性的视频内容。\n   - 探索更多种类的视频信号提取技术，例如场景理解、物体检测和情绪分析，以增强视频字幕和QAD生成的上下文信息。<\/p>\n<\/li>\n<li>\n<p><strong>增强视频字幕生成<\/strong>：\n   - 研究如何结合更复杂的自然语言处理技术，以生成更准确和详细的视频字幕。\n   - 考虑引入额外的上下文信息，比如视频的元数据、用户评论和相关文本，以提高字幕生成的质量。<\/p>\n<\/li>\n<li>\n<p><strong>优化QAD生成算法<\/strong>：\n   - 探索不同的提示工程（prompt engineering）技术，以生成更多样化和更具挑战性的QADs。\n   - 研究如何利用强化学习或其他自动化方法来进一步减少人工审核的需求。<\/p>\n<\/li>\n<li>\n<p><strong>评估指标的改进<\/strong>：\n   - 继续优化GEM评估指标，使其能够更准确地衡量模型在开放式问题回答任务上的性能。\n   - 探索结合人类评估和自动评估的混合评估方法，以提高评估的可靠性和效率。<\/p>\n<\/li>\n<li>\n<p><strong>长视频理解模型的开发<\/strong>：\n   - 开发能够处理更长视频上下文和更复杂推理任务的新型视频语言模型。\n   - 研究如何将现有的长视频理解模型迁移到新的领域和数据集上，并评估其泛化能力。<\/p>\n<\/li>\n<li>\n<p><strong>减少模型偏见和提高数据集多样性<\/strong>：\n   - 分析Neptune数据集中潜在的偏见，并探索减少这些偏见的方法。\n   - 增强数据集的多样性，包括视频类型、语言和文化背景，以提高模型的包容性和适用性。<\/p>\n<\/li>\n<li>\n<p><strong>跨模态学习<\/strong>：\n   - 研究如何更有效地整合视觉、音频和文本信息，以提高模型的跨模态理解能力。\n   - 探索新的神经网络架构和学习算法，以增强模型对多模态数据的融合和推理能力。<\/p>\n<\/li>\n<li>\n<p><strong>实时视频理解和交互<\/strong>：\n   - 研究如何使视频理解模型适用于实时视频流，并支持实时交互和问答。\n   - 探索视频理解技术在实际应用中的潜力，如监控、教育和娱乐。<\/p>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助推动长视频理解领域的研究进展，并为开发更先进的视频问答系统提供新的思路和方法。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>本文介绍了一个名为Neptune的长视频理解基准测试，旨在通过一个半自动流程生成具有挑战性的问题-答案-诱饵集（QADs），以推动长视频理解技术的发展。以下是论文的主要内容总结：<\/p>\n<ol>\n<li>\n<p><strong>问题陈述<\/strong>：\n   - 许多现有的视频数据集和模型专注于短视频片段，而长视频数据集要么依赖于图像模型，要么手动注释成本高。<\/p>\n<\/li>\n<li>\n<p><strong>Neptune数据集<\/strong>：\n   - 提出了一个可扩展的数据集创建流程，利用大型视觉语言模型（VLMs）和大型语言模型（LLMs）自动生成视频字幕和QADs。\n   - 数据集包含3,268个QAD注释，涵盖2,405个视频，视频长度从16秒到15分钟不等。<\/p>\n<\/li>\n<li>\n<p><strong>数据集创建流程<\/strong>：\n   - 包括视频选择、信号提取、视频字幕生成、QAD生成、基于LLM的盲过滤和手动评分者验证等阶段。<\/p>\n<\/li>\n<li>\n<p><strong>评估指标<\/strong>：\n   - 由于现有的开放式问题回答评估指标存在局限性，论文提出了一个新的开源模型基评估指标GEM（Gemma Equivalence Metric）。<\/p>\n<\/li>\n<li>\n<p><strong>实验与基准测试<\/strong>：\n   - 对多种视频问答模型进行了评估，包括盲基线、图像模型、短上下文MLLMs和长上下文MLLMs。\n   - 揭示了开源视频模型与专有模型（如Gemini-1.5和GPT-4）之间的性能差距。<\/p>\n<\/li>\n<li>\n<p><strong>主要贡献<\/strong>：\n   - 提出了一个可扩展的流程，用于为任何视频生成复杂的QAD注释，相比手动注释减少了一半的评分者时间。\n   - 发布了Neptune评估数据集，包括一个强调多模态推理的挑战性子集NEPTUNE-MMH。\n   - 提供了多项选择和开放式问题回答的评估协议，并提出了GEM这一新的开放式评估指标。\n   - 通过基准测试展示了当前开源长视频模型在Neptune上的性能，并指出了未来发展的方向。<\/p>\n<\/li>\n<li>\n<p><strong>未来工作<\/strong>：\n   - 论文指出了长视频理解领域的一些潜在研究方向，包括改进视频选择和信号提取、优化QAD生成算法、开发新的评估指标和提高模型的长视频理解能力。<\/p>\n<\/li>\n<\/ol>\n<p>总体而言，Neptune基准测试旨在通过提供新的数据集和评估指标，推动长视频理解技术的研究和模型开发。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Neptune%3A%20The%20Long%20Orbit%20to%20Benchmarking%20Long%20Video%20Understanding，链接是 https://arxiv.org/pdf/2412.09582 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2412.09582 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2412.09582", "kimi_retrieved_at_utc": "2026-09-23T11:28:14+00:00"}, "preview_images": 2, "video_preview_images": 0, "video_cases_count": 0, "video_case_groups_count": 0, "short_video_case_threshold_seconds": 180, "groups_count": 1, "groups_100_count": 0, "overview_html": "datasets/neptune/overview.html", "gallery_html": "datasets/neptune/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

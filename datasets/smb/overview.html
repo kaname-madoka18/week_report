@@ -1,0 +1,541 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SMB — Spatial Memory Benchmark / LTE · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">SMB — Spatial Memory Benchmark / LTE</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-09-04</strong></div><div><span>引用数</span><strong>0</strong></div><div><span>GitHub stars</span><strong>暂无公开仓库</strong></div><div><span>当前状态</span><strong>arXiv preprint · 未检索到公开会议状态</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2609.04802" target="_blank" rel="noopener">arXiv</a> · <a href="https://www.semanticscholar.org/paper/80e31ccbe3860bdf9e72378705e7a0cf5cbe9b5c" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Linguistic+Trajectory+Encoding+for+Efficient+Long-Horizon+Spatial+Memory+in+Embodied+Agents" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>该论文旨在解决<strong>长时程具身智能体中的动态物体空间记忆问题</strong>，即如何在数小时至数天的连续观察中，构建一种可被自然语言查询的、逐物体（per-object）状态转移时间线。具体而言，论文针对现有方法无法同时满足以下三个检索模式的瓶颈：</p>
+<ul>
+<li><strong>语义状态检索</strong>：用户以自然语言描述物体状态变化（如 "washed apple"），系统需匹配这些语义谓词；</li>
+<li><strong>三维空间检索</strong>：用户询问物体在特定时刻的物理位置（如 "where did I last put it"），系统需在三维空间中进行剪枝与定位；</li>
+<li><strong>长时程时间检索</strong>：查询跨度可达数小时至数天，系统需避免对原始视频进行穷举式扫描。</li>
+</ul>
+<p>现有方案的核心缺陷包括：</p>
+<ol>
+<li><strong>视频-语言模型</strong>（如 EgoVLPv2）在片段级别进行嵌入，丢失了动态物体的细粒度运动轨迹，且缺乏三维空间索引，导致空间查询退化为全时间扫描；</li>
+<li><strong>几何 SLAM</strong> 系统虽能维护持久的三维状态，但将物体记录为原始坐标，无法暴露自然语言接口以查询语义状态（如无法判断苹果是否被清洗过）；</li>
+<li><strong>增强记忆的视频智能体</strong>（如 VideoAgent、AMEGO）围绕事件或即时任务上下文组织记忆，不维护逐物体的独立轨迹，导致物体的个体历史被折叠进更广泛的事件中而丢失。</li>
+</ol>
+<p>为填补上述空白，论文提出 <strong>Linguistic Trajectory Encoding (LTE)</strong>，一种混合表示方法，将每个动态物体的运动历史压缩为：
+- 描述运动相位的自然语言序列；
+- 基于 Douglas-Peucker 简化的稀疏三维空间锚点；
+- 用于身份验证的视觉锚点。</p>
+<p>此外，论文构建了 <strong>Spatial Memory Benchmark (SMB)</strong>，用于评估现有基准中缺失的两种长时程能力：<strong>语义轨迹检索</strong>（Semantic Trajectory Retrieval）与<strong>长时程物体检索</strong>（Long-Horizon Object Retrieval）。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>该论文的相关研究主要分布在三个方向，各方向的核心工作及其与 LTE 的对比关系如下。</p>
+<h3>1. 空间记忆与场景表示（Spatial Memory and Scene Representation）</h3>
+<ul>
+<li><strong>静态–动态分解 SLAM</strong>：如 Kimera [Rosinol et al., 2021] 与 Khronos [Schmid et al., 2024] 将静态背景与动态物体分离以实现鲁棒定位。此类系统维持丰富的空间结构，但将每个物体的语义视为<strong>观测时刻的静态快照</strong>，而非时序上的状态变化序列。</li>
+<li><strong>开放词汇三维场景图</strong>：如 ConceptGraphs [Gu et al., 2024] 与层级开放词汇 3D 场景图 [Werby et al., 2024] 将 VLM 生成的语义属性附加到逐物体节点。然而，这些属性同样不具备<strong>时间维度上的状态转移</strong>记录能力。</li>
+<li><strong>基于关键帧的记忆系统</strong>：如 3D-Mem [Yang et al., 2025c] 与 KARMA [Wang et al., 2025] 按固定间隔或共视驱动间隔对观测进行子采样，导致<strong>时间连续性被破坏</strong>。</li>
+</ul>
+<p>LTE 与上述工作的区别在于：采用八叉树索引静态几何作为辅助，但核心依赖逐物体的语言化轨迹来补全这些工作<strong>未涉及的时序维度</strong>。</p>
+<h3>2. 轨迹表示（Trajectory Representation）</h3>
+<ul>
+<li><strong>几何轨迹压缩</strong>：如 Douglas-Peucker 算法 [Douglas and Peucker, 1973] 将坐标序列简化为路点，但<strong>纯数值操作</strong>缺乏以语言为根基的运动相位抽象。</li>
+<li><strong>语义轨迹挖掘</strong>：如 Yan et al. [2013] 与 Zheng [2015] 将轨迹归纳为“停止–移动”段，但仅使用<strong>分类标签</strong>，同样未与自然语言 grounded 的抽象结合。</li>
+<li><strong>记忆增强的视频智能体</strong>：如 AMEGO [Goletto et al., 2024] 与 VideoAgent [Fan et al., 2024] 将观察组织为时间事件或手–物体交互轨迹，提供的是<strong>事件级</strong>而非逐物体的语言结构。</li>
+</ul>
+<p>LTE 填补的空白在于：提供一种<strong>逐物体时间线</strong>，其连续的运动相位本身即被语言索引，并锚定到稀疏三维位置与视觉裁剪以实现空间落地。</p>
+<h3>3. 长时程视频理解（Long-Horizon Video）</h3>
+<ul>
+<li><strong>短程基准</strong>：Ego4D [Grauman et al., 2022] 提供约 8 分钟的自然语言查询任务，时间跨度不足以评估长时程记忆。</li>
+<li><strong>长程连续记录</strong>：EgoLife [Yang et al., 2025b] 提供累计 300 小时、单会话达 50 小时的连续第一人称记录，为长时程评估提供数据来源。</li>
+<li><strong>视频–语言模型与零样本 VLM</strong>：如 EgoVLPv2 [Pramanick et al., 2023] 与 Qwen3-VL [Bai et al., 2025] 缺乏显式空间结构或轨迹抽象，在顺序剪辑处理中<strong>丢失全局上下文</strong>。</li>
+</ul>
+<p>LTE 通过<strong>空间索引 + 逐物体语言化轨迹</strong>的组合，同时弥补了上述两类方法在空间结构与长程时序抽象上的双重缺失。</p>
+<h3>4. 其他相关范式</h3>
+<ul>
+<li><strong>面向任务的智能体记忆</strong>：如 Sarch et al. [2023] 与 Wang et al., 2025] 将记录围绕当前任务组织，导致与任务无关的偶发物体<strong>不保留可查询记录</strong>。</li>
+<li><strong>视频–语言预训练模型</strong>：如 Lin et al. [2022] 的 EgoVLP 系列在片段级进行文本–视频对齐，但无法回答需要三维空间剪枝的“最后放在哪里”这类查询。</li>
+</ul></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过提出 <strong>Linguistic Trajectory Encoding (LTE)</strong> 及其配套的层次化记忆架构，将长时程动态物体的空间记忆问题分解为<strong>感知建图</strong>、<strong>混合轨迹编码</strong>与<strong>级联查询处理</strong>三个层次加以解决。</p>
+<hr/>
+<h3>1. 问题形式化与系统架构</h3>
+<p>给定连续视频流 
+$$V = {I_t}_{t=1}^T, \quad I_t \in \mathbb{R}^{H \times W \times 3},$$ 
+其中 $T$ 可达 $10^5$ 以上（对应数小时至数天的观测），目标是构建可查询的记忆结构 $M$，同时支持<strong>空间</strong>（3D 区域）、<strong>时间</strong>（区间）与<strong>语义</strong>（自然语言）三类约束。系统整体架构分为三层：</p>
+<ul>
+<li><strong>感知层</strong>：将视频流转换为结构化逐帧观测；</li>
+<li><strong>记忆层</strong>：以 LTE 记录动态物体，并以八叉树索引静态几何，辅以五类互补视图；</li>
+<li><strong>查询层</strong>：通过查询路由器将请求分发至专用流水线。</li>
+</ul>
+<hr/>
+<h3>2. 感知与场景理解</h3>
+<p>视频首先经以下管道处理，为 LTE 提供输入：</p>
+<ul>
+<li><strong>检测与跟踪</strong>：SAM3 维护跨帧实例身份；</li>
+<li><strong>三维重建</strong>：ViPE 执行单目深度估计与视觉里程计，将 2D 检测结果反投影至世界坐标；</li>
+<li><strong>语义标注</strong>：Qwen3-VL 推断房间级语义标签（如 kitchen、bedroom）并生成物体运动描述；</li>
+<li><strong>语音解析</strong>：Whisper 转录音频，Qwen3-8B 从中提取时间化事件。</li>
+</ul>
+<hr/>
+<h3>3. Linguistic Trajectory Encoding（核心方法）</h3>
+<p>动态物体是核心难点。论文提出 LTE，将物体 $o_i$ 的密集轨迹 
+$$\tau_i = {(p_t, t)}_{t=1}^{T_i}$$ 
+压缩为查询导向的混合表示：</p>
+<p>$$\text{LTE}(o_i) = (C, A_{\text{spatial}}, A_{\text{visual}})$$</p>
+<p>其中各通道定义如下：</p>
+<ul>
+<li><strong>语言描述通道</strong> $C = {(c_j, [t_j^{\text{start}}, t_j^{\text{end}}])}$：由 VLM 生成的自然语言运动描述（如 "apple moved from sink to countertop"）及其时间跨度；</li>
+<li><strong>稀疏空间锚点</strong> $A_{\text{spatial}} = {p_k}_{k \in K}$：经 Douglas-Peucker 简化保留的关键 3D 路点；</li>
+<li><strong>视觉锚点</strong> $A_{\text{visual}} = {(I_{t_k}, b_{t_k})}_{k \in K}$：在锚点时刻存储的 RGB 裁剪与边界框，用于身份验证。</li>
+</ul>
+<h4>3.1 自适应构建策略</h4>
+<p>LTE 根据跟踪连续性自适应选择编码方式：</p>
+<ul>
+<li><strong>跟踪间隙（tracking-gap）</strong>：设 $m_t \in {0, 1}$ 表示 $t$ 时刻是否检测到物体，$t^{-}(t) = \max{t' \leq t \mid m_{t'} = 1}$。若间隙满足 $t - t^{-}(t) \geq \theta_{\text{static}}$，则该区间坍缩为<strong>单一锚点</strong>，锚定到最后已知位置 $p_{t^{-}(t)}$；</li>
+<li><strong>运动区间</strong>：对可观测的连续轨迹应用 Douglas-Peucker 简化，保留偏离线性插值超过阈值 $\epsilon$ 的 3D 路点；</li>
+<li><strong>视觉采样</strong>：跟踪间隙仅在边界帧（消失前/重现后）存图；运动区间则在路点及状态转换边界处更密集采样。</li>
+</ul>
+<p>这种自适应机制使 LTE 对简单运动高度压缩，对复杂运动保留足够精度，实现 <strong>$8.7\times$ 到 $26.1\times$</strong> 的轨迹压缩率。</p>
+<h4>3.2 八叉树静态空间索引</h4>
+<p>作为 LTE 的补充，论文以八叉树对观测空间 $\Omega \subset \mathbb{R}^3$ 进行递归划分（最大深度 $d_{\max}$）。每个节点覆盖区域 $\Omega_n$ 并存储落入其中的物体标识。八叉树支持<strong>自顶向下遍历</strong>：对查询区域 $Q$，若 $Q \cap \Omega_n = \varnothing$ 则剪枝，若 $Q \supseteq \Omega_n$ 则收集全部后代，否则继续递归。该结构实现房间级的空间剪枝，使查询复杂度与视频时长解耦。</p>
+<hr/>
+<h3>4. 记忆组织：五视图互补索引</h3>
+<p>为支持多样化的访问模式，系统在 LTE 之上组织为五个双向链接的视图：</p>
+<ul>
+<li><strong>Scene 视图</strong>：八叉树 + VLM 推断的房间标签；</li>
+<li><strong>Object 视图</strong>：实体中心记录（类别、身份、状态）并链接到 LTE；</li>
+<li><strong>Text 视图</strong>：聚合 LTE 运动描述、房间标签与语音转录，建立向量索引；</li>
+<li><strong>Event 视图</strong>：索引由物体运动与语音事件派生的时间区间及活动摘要；</li>
+<li><strong>Image 视图</strong>：存储物体视觉锚点与场景级自适应关键帧。</li>
+</ul>
+<p>视图间的双向链接支持级联过滤：例如 Object 记录链接到八叉树节点、Text 描述与 Event；八叉树节点反向链接到包含的物体。</p>
+<hr/>
+<h3>5. 查询处理：统一级联过滤</h3>
+<p>所有查询遵循 <strong>解析 → 路由 → 过滤 → 聚合</strong> 的统一模式。自然语言查询 $q$ 由 Qwen3-8B 解析为结构化约束：目标物体 $O$、时间 $T$、空间区域 $R$、语义状态 $S$，并路由至以下四类任务：</p>
+<ul>
+<li><strong>NLQ（自然语言查询）</strong>：在 Object 视图中检索实体及其 LTE，利用 $C$ 与 $A_{\text{spatial}}$ 获取时间线与空间历史；Event 视图用于活动约束交叉验证；最终以八叉树和 LTE 时间戳过滤并合并区间。</li>
+<li><strong>VQ2D（视觉查询 2D）</strong>：提取查询图像的 DINOv2 嵌入，与所有物体的 $A_{\text{visual}}$ 进行余弦相似度匹配（阈值 $\geq 0.7$），并在时间约束 $T$ 内取最近发生帧。</li>
+<li><strong>STR（语义轨迹检索）</strong>：将状态描述 $S$ 经 Qwen3-Embedding-8B 嵌入后，与 Text 视图中的 LTE 描述 $C$ 匹配（余弦相似度 $&gt; 0.8$），匹配结果经八叉树按 $R$ 和 $T$ 剪枝，解析为物体 ID、时间跨度与空间证据。</li>
+<li><strong>LOR（长时程物体检索）</strong>：在 Object 视图中过滤在时间窗口 $[T-\Delta t, T]$ 内有活动的实体，可选地通过八叉树遍历施加空间约束 $R$；返回满足 $t^* \leq T$ 的最近 LTE 锚点及其边界框。</li>
+</ul>
+<p>此外，每个响应附带显式置信度标签（HIGH/MEDIUM/LOW），以区分窗口内直接观测、外推的最后已知位置与仅历史数据可用的情形，从而显式暴露“离帧”不确定性。</p>
+<hr/>
+<h3>6. 效率与扩展性</h3>
+<ul>
+<li><strong>查询延迟</strong>：在 24 小时视频上，单次查询延迟为 <strong>0.43 秒</strong>，而强 VLM 基线（Qwen3-VL-235B+Grounding-DINO）需 <strong>98.3 秒</strong>；</li>
+<li><strong>内存增长</strong>：总记忆体随视频时长呈<strong>次线性增长</strong>（24 小时仅 134 MB），因为跟踪间隙随时间延长而增多，LTE 压缩效率进一步提高；</li>
+<li><strong>增量更新</strong>：新增观测物体可在已有 3D 坐标系上直接查表深度，无需重新运行完整三维重建，支持持续部署。</li>
+</ul>
+<p>通过将运动语义显式编码为语言可查询的相位、以稀疏几何锚点保持空间精度、并以视觉锚点维护身份一致性，LTE 使具身智能体首次能够在数小时至数天的时间跨度上，以亚秒级延迟回答融合语义、空间与时间约束的复合查询。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文的实验设计围绕<strong>已建立基准</strong>与<strong>新建长时程基准</strong>展开，涵盖准确率对比、效率评估与细粒度消融三部分。具体实验内容如下。</p>
+<h3>1. 实验设置</h3>
+<h4>数据集与基准</h4>
+<p>实验在两类数据上进行：</p>
+<ul>
+<li><strong>Ego4D</strong> [Grauman et al., 2022]：使用其 NLQ（Natural Language Queries）与 VQ2D（Visual Queries 2D）验证集。NLQ 包含 5,462 条查询覆盖 303 段视频（平均 8.2 分钟）；VQ2D 包含 4,500 条查询覆盖 1,200 段验证片段。</li>
+<li><strong>Spatial Memory Benchmark (SMB)</strong>：基于 EgoLife [Yang et al., 2025b] 构建，利用 300 小时、持续 7 天的多用户家庭环境第一人称记录。SMB 包含两项新任务，各 300 条查询：</li>
+<li><strong>Semantic Trajectory Retrieval (STR)</strong>：在指定时空窗口与语义区域内，根据运动状态定位物体；</li>
+<li><strong>Long-Horizon Object Retrieval (LOR)</strong>：在 2–24 小时的回溯窗口内检索目标物体的最后出现帧。</li>
+</ul>
+<p>评估指标：NLQ 采用 Recall@1 / Recall@5（IoU 阈值 0.3 与 0.5）；VQ2D 采用 spatiotemporal AP (stAP)、temporal AP (tAP)、Success（IoU $\geq$ 0.5）与 Recovery rate；SMB 采用 Success（检索帧落入真实时间跨度且边界框 IoU $\geq$ 0.3）。</p>
+<h4>基线方法</h4>
+<ul>
+<li><strong>NLQ</strong>：监督方法 EgoVLPv2、GroundNLQ、EgoVideo、OSGNet；零样本方法 VideoAgent。</li>
+<li><strong>VQ2D</strong>：监督方法 VQLoC、PRVQL；零样本方法 RELOCATE。</li>
+<li><strong>SMB</strong>：</li>
+<li><strong>VLM 基线</strong>：Qwen3-VL-8B / 235B 配合 Grounding-DINO，以 2 秒滑动窗口在查询时扫描视频；</li>
+<li><strong>结构化记忆基线</strong>：KFMem（3D-Mem 风格的关键帧快照记忆）与 VideoAgent（事件分段记忆）。</li>
+</ul>
+<hr/>
+<h3>2. Ego4D 基准结果</h3>
+<h4>NLQ（自然语言查询定位）</h4>
+<table>
+<thead>
+<tr>
+<th>方法类型</th>
+<th>方法</th>
+<th>IoU=0.3 (R@1 / R@5)</th>
+<th>IoU=0.5 (R@1 / R@5)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监督</td>
+<td>EgoVLPv2</td>
+<td>12.95 / 23.80</td>
+<td>7.91 / 16.11</td>
+</tr>
+<tr>
+<td>监督</td>
+<td>GroundNLQ</td>
+<td>27.20 / 54.42</td>
+<td>18.91 / 39.98</td>
+</tr>
+<tr>
+<td>监督</td>
+<td>EgoVideo</td>
+<td>28.65 / 53.30</td>
+<td>19.73 / 40.42</td>
+</tr>
+<tr>
+<td>监督</td>
+<td>OSGNet</td>
+<td>32.56 / 59.82</td>
+<td>22.74 / 46.35</td>
+</tr>
+<tr>
+<td>零样本</td>
+<td>VideoAgent</td>
+<td>17.39 / 33.05</td>
+<td>7.47 / 15.73</td>
+</tr>
+<tr>
+<td><strong>零样本</strong></td>
+<td><strong>Ours</strong></td>
+<td><strong>28.75 / 55.10</strong></td>
+<td><strong>20.31 / 42.63</strong></td>
+</tr>
+</tbody>
+</table>
+<p>在 IoU=0.3 时，LTE 系统取得 <strong>28.75% / 55.10%</strong> 的 R@1/R@5，较最强视频-语言基线 EgoVLPv2 提升 <strong>+15.80 / +31.30</strong> 个百分点，且显著优于零样本基线 VideoAgent，接近监督方法 OSGNet。</p>
+<h4>VQ2D（视觉查询 2D）</h4>
+<table>
+<thead>
+<tr>
+<th>方法类型</th>
+<th>方法</th>
+<th>stAP</th>
+<th>tAP</th>
+<th>Success</th>
+<th>Rec.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监督</td>
+<td>VQLoC</td>
+<td>0.22</td>
+<td>0.31</td>
+<td>55.9</td>
+<td>47.1</td>
+</tr>
+<tr>
+<td>监督</td>
+<td>PRVQL</td>
+<td>0.27</td>
+<td>0.35</td>
+<td>57.9</td>
+<td>47.9</td>
+</tr>
+<tr>
+<td>零样本</td>
+<td>RELOCATE</td>
+<td>0.33</td>
+<td>0.41</td>
+<td>58.0</td>
+<td>50.5</td>
+</tr>
+<tr>
+<td><strong>零样本</strong></td>
+<td><strong>Ours</strong></td>
+<td><strong>0.36</strong></td>
+<td><strong>0.43</strong></td>
+<td><strong>59.5</strong></td>
+<td><strong>51.2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>LTE 系统在所有四项指标上取得最强零样本表现。物体中心的视觉锚点支持直接身份匹配，避免了逐帧扫描。</p>
+<hr/>
+<h3>3. Spatial Memory Benchmark 结果</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>STR (%)</th>
+<th>LOR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q3VL-8B + GD</td>
+<td>21.5</td>
+<td>25.1</td>
+</tr>
+<tr>
+<td>Q3VL-235B + GD</td>
+<td>31.9</td>
+<td>34.4</td>
+</tr>
+<tr>
+<td>KFMem (3D-Mem 风格)</td>
+<td>19.8</td>
+<td>33.8</td>
+</tr>
+<tr>
+<td>VideoAgent</td>
+<td>24.7</td>
+<td>30.5</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td><strong>45.3</strong></td>
+<td><strong>48.7</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>STR</strong>：LTE 系统达到 <strong>45.3%</strong>，较最强 VLM 基线提升 <strong>+13.4</strong>，较结构化记忆基线 KFMem 提升 <strong>+25.5</strong>。KFMem 因无法表示运动历史而在 STR 上失效（19.8%），验证了轨迹编码对语义状态查询的必要性。</li>
+<li><strong>LOR</strong>：LTE 系统达到 <strong>48.7%</strong>，较最强 VLM 基线提升 <strong>+14.3</strong>。随着回溯窗口从 2 小时增至 24 小时，系统性能仅从 51.2% 微降至 46.8%（降幅 4.4 点），而 VLM 基线降幅达 9.8 点，表明八叉树索引与物体级跟踪使查询复杂度与视频时长解耦。</li>
+</ul>
+<p>在更严格的 IoU $\geq$ 0.5 阈值下，优势依然保持（STR：<strong>+12.4</strong>，LOR：<strong>+13.5</strong>）。</p>
+<hr/>
+<h3>4. 效率分析</h3>
+<p>在单张 A800 GPU 上，系统表现出显著的存储与延迟优势：</p>
+<table>
+<thead>
+<tr>
+<th>视频时长</th>
+<th>密集轨迹存储 (MB)</th>
+<th>LTE 总记忆 (MB)</th>
+<th>压缩率</th>
+<th>查询延迟 (s/q)</th>
+<th>VLM 基线延迟 (s/q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 h</td>
+<td>71</td>
+<td>45</td>
+<td>$8.7\times$</td>
+<td>0.15</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>6 h</td>
+<td>214</td>
+<td>73</td>
+<td>$13.3\times$</td>
+<td>0.24</td>
+<td>24.5</td>
+</tr>
+<tr>
+<td>12 h</td>
+<td>428</td>
+<td>98</td>
+<td>$18.2\times$</td>
+<td>0.32</td>
+<td>49.1</td>
+</tr>
+<tr>
+<td>24 h</td>
+<td>856</td>
+<td>134</td>
+<td>$26.1\times$</td>
+<td><strong>0.43</strong></td>
+<td><strong>98.3</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>内存</strong>：随视频时长呈次线性增长（时长增加 12 倍，内存仅增加约 3 倍），因为跟踪间隙延长使 LTE 压缩效率提高。</li>
+<li><strong>延迟</strong>：24 小时视频上保持 <strong>亚秒级</strong>（0.43 秒），而 VLM 滑动窗口基线呈线性增长至 98.3 秒。处理 300 条 SMB 查询的总时间从 8.2 小时缩短至 2.2 分钟。</li>
+</ul>
+<hr/>
+<h3>5. 消融实验</h3>
+<p>通过逐组件移除验证各模块贡献：</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>NLQ R@5</th>
+<th>VQ2D Succ.</th>
+<th>STR</th>
+<th>LOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完整系统</td>
+<td>55.10</td>
+<td>59.5</td>
+<td>45.3</td>
+<td>48.7</td>
+</tr>
+<tr>
+<td>w/o text captions</td>
+<td>53.40</td>
+<td>58.9</td>
+<td>33.5</td>
+<td>48.7</td>
+</tr>
+<tr>
+<td>w/o spatial anchors</td>
+<td>54.30</td>
+<td>57.1</td>
+<td>41.2</td>
+<td>48.7</td>
+</tr>
+<tr>
+<td>w/o visual anchors</td>
+<td>54.70</td>
+<td>53.4</td>
+<td>43.9</td>
+<td>48.7</td>
+</tr>
+<tr>
+<td>w/o LTE（全移除）</td>
+<td>52.31</td>
+<td>51.8</td>
+<td>28.8</td>
+<td>48.7</td>
+</tr>
+<tr>
+<td>w/o octree</td>
+<td>54.10</td>
+<td>58.7</td>
+<td>42.1</td>
+<td>45.2</td>
+</tr>
+</tbody>
+</table>
+<p>关键发现：
+- <strong>文本描述</strong>是 STR 的主导因素：移除导致 STR 下降 <strong>-11.8</strong>，接近移除全部三个 LTE 通道的降幅（-16.5）。
+- <strong>视觉锚点</strong>主导 VQ2D：移除导致 Success 下降 <strong>-6.1</strong>。
+- <strong>八叉树</strong>主要影响 LOR：移除导致下降 <strong>-3.5</strong>。
+- <strong>通道交互</strong>：三个 LTE 通道呈超加性效应。保留单一通道分别带来 STR +7.4（文本）、+2.7（空间）、+1.3（视觉），总和为 +11.4，而完整 LTE 带来 +16.5，说明各通道在共存时相互增强。</p>
+<hr/>
+<h3>6. 补充分析</h3>
+<ul>
+<li><strong>按回溯时长分解</strong>：LOR 在 2 h / 6 h / 12 h / 24 h 窗口下分别为 51.2% / 49.3% / 47.8% / 46.8%，性能衰减远缓于 VLM 基线。</li>
+<li><strong>按查询类型分解</strong>：STR 中同时包含空间与时间提示的查询性能最高（49.5%），双物体查询因跟踪误差累积而绝对性能略低。</li>
+<li><strong>错误分析</strong>：在 100 个随机采样失败案例中，跟踪失败（ID 切换、丢失）占 STR 错误的 34% 与 LOR 错误的 28%，是首要误差来源；其次是描述歧义（28%）与点云漂移（18–24%）。</li>
+</ul></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>基于论文的局限性讨论与架构设计，以下方向具有明确的进一步探索价值：</p>
+<h3>1. 关节型部件级动态编码</h3>
+<p>当前系统将物体视为<strong>原子化实体</strong>，记录整体轨迹，但未显式建模门角度、抽屉伸缩、工具关节状态等<strong>部件级动态</strong>。将 LTE 的混合表示（语言描述 + 稀疏空间锚点 + 视觉锚点）扩展至<strong>铰接物体（articulated objects）的局部运动相位</strong>，可支持更精细的空间推理查询，例如“橱柜门打开的角度是多少”或“抽屉被拉出了多少”。</p>
+<h3>2. 多相机观测融合</h3>
+<p>现有系统基于<strong>单目第一人称视频</strong>构建记忆。在实际部署中，环境往往存在多视角覆盖（固定摄像头、多用户穿戴设备、机器人平台相机）。探索跨相机的<strong>物体重识别（re-identification）</strong>与<strong>地图对齐（map alignment）</strong>，使 LTE 记录能够在多视角输入下保持时空一致性，是提升系统覆盖范围与鲁棒性的关键步骤。</p>
+<h3>3. 跟踪错误的自动语义校正</h3>
+<p>当前系统的首要误差来源为<strong>跟踪失败</strong>（ID 切换、轨迹丢失，占 STR 错误的 34%）。论文指出，多视图架构已具备进行语义一致性检查的结构基础——例如，当 LTE 描述“苹果移动到了台面”而空间锚点却指向卧室时，可触发异常标记。未来可探索<strong>基于语言-几何一致性的后处理修正机制</strong>，在 LTE 构建完成后自动检测并修复 ID 切换，而无需改动核心架构。</p>
+<h3>4. 跨环境泛化与多场景映射</h3>
+<p>现有长时程评估完全基于 EgoLife 的家庭环境。系统能否在<strong>办公室、仓库、户外</strong>等开放环境中保持同等性能尚属未知。跨环境扩展需要解决：
+- 不同环境的<strong>度量地图对齐</strong>与<strong>坐标系统一</strong>；
+- 跨场景的<strong>物体重识别</strong>（同一物体在不同天、不同房间出现）；
+- 环境特异性运动模式的语言描述迁移。</p>
+<h3>5. 与下游任务规划器的耦合</h3>
+<p>论文将 LTE 定位为<strong>记忆表示层</strong>，尚未与高层任务规划器深度耦合。将语言化的运动相位（如“杯子从洗碗机移动到橱柜”）直接转化为可供规划器使用的<strong>可行动作原语</strong>或<strong>状态转移约束</strong>，可打通“记忆检索 → 决策执行”的闭环，使具身智能体不仅能回答“物体在哪里”，还能基于历史轨迹规划“如何操作”。</p>
+<h3>6. 细粒度连续操作状态捕捉</h3>
+<p>当前 LTE 的文本描述在<strong>运动相位边界</strong>生成，可能遗漏连续操作过程中的<strong>中间状态变化</strong>（如清洗苹果时“浸湿-搓洗-冲洗”的连续状态）。探索更细粒度的事件分割策略，或引入<strong>分层 LTE</strong>（粗粒度整体运动 + 细粒度手部-物体交互相位），可提升对复杂操作序列的语义解析能力。</p>
+<h3>7. 增量式与轻量化记忆构建</h3>
+<p>虽然查询延迟已达亚秒级，但离线建图成本在 24 小时视频上仍达数十 GPU 小时。进一步优化方向包括：
+- <strong>自适应帧跳过</strong>：在静态场景中降低感知模型调用频率；
+- <strong>轻量化感知模型</strong>：针对资源受限的终端设备，用更小型的 VLM 替代当前的大型模型；
+- <strong>流式增量更新</strong>：在已有坐标系上实现完全在线的 LTE 追加，避免任何历史重算。</p>
+<h3>8. 外部传感器与离帧信息融合</h3>
+<p>单目相机无法观测视野外的状态变化。融合<strong>智能家居传感器</strong>（运动检测器、门窗传感器）、<strong>可穿戴设备</strong>或<strong>环境音频</strong>，可在物体离帧时提供状态更新，减少对外推位置（MEDIUM/LOW 置信度响应）的依赖，从而提升长时程检索的准确率与置信度。</p>
+<h3>9. 隐私保护机制的形式化设计</h3>
+<p>长时程空间记忆系统天然涉及敏感的活动记录。未来工作需在架构层面引入<strong>用户可控的数据保留策略</strong>（如基于查询相关性的自动遗忘、差分隐私保护的空间锚点存储），并建立跨用户共享空间中的<strong>显式授权机制</strong>，以支撑在真实共享环境中的负责任部署。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文围绕<strong>长时程具身智能体中的动态物体空间记忆</strong>问题，提出了混合轨迹表示方法与配套评估基准，核心内容可概括如下。</p>
+<h3>1. 研究动机与问题</h3>
+<p>具身智能体在执行长时程任务时，需回答融合语义、空间与时间的复合查询（例如“我最后把洗好的苹果放在哪里了”）。这要求记忆系统同时支持：
+- <strong>语义检索</strong>：匹配自然语言描述的状态变化（如 “washed”）；
+- <strong>空间检索</strong>：在三维空间中定位特定时刻的物体位置；
+- <strong>长时程检索</strong>：跨越数小时至数天的观测历史，避免逐帧穷举。</p>
+<p>现有方案存在明显短板：视频-语言模型丢失细粒度运动且缺乏三维索引；几何 SLAM 保留三维坐标但无法处理自然语言语义；任务导向的智能体记忆仅围绕当前任务组织，不维护逐物体的独立时间线。</p>
+<h3>2. 核心方法：Linguistic Trajectory Encoding (LTE)</h3>
+<p>论文提出 <strong>LTE</strong>，一种逐物体的混合轨迹表示，将动态物体的运动历史压缩为三个互补通道：</p>
+<p>$$\text{LTE}(o_i) = (C, A_{\text{spatial}}, A_{\text{visual}})$$</p>
+<ul>
+<li><strong>语言描述通道</strong> $C$：由 VLM 生成的运动相位自然语言描述（如 “apple moved from sink to countertop”），附带时间区间；</li>
+<li><strong>稀疏空间锚点</strong> $A_{\text{spatial}}$：经 Douglas-Peucker 算法简化保留的关键 3D 路点，仅在轨迹显著偏离线性插值时记录；</li>
+<li><strong>视觉锚点</strong> $A_{\text{visual}}$：在关键帧存储的物体图像裁剪，用于身份验证与视觉查询。</li>
+</ul>
+<p>LTE 的压缩是<strong>自适应</strong>的：跟踪丢失的间隙坍缩为单一锚点；平滑运动保留极少路点；复杂运动保留较多几何细节。相对于密集逐帧存储，压缩比达 <strong>$8.7\times$ 到 $26.1\times$</strong>。</p>
+<p>为支持高效查询，系统还引入：
+- <strong>八叉树静态空间索引</strong>：实现房间级空间剪枝，使查询复杂度与视频时长解耦；
+- <strong>五视图记忆组织</strong>：Scene、Object、Text、Event、Image 五个互补视图，支持级联过滤与多模态访问。</p>
+<h3>3. 查询处理</h3>
+<p>针对四类任务设计统一流水线（解析 $\to$ 路由 $\to$ 过滤 $\to$ 聚合）：
+- <strong>NLQ / VQ2D</strong>：Ego4D 标准任务，分别利用 LTE 的时间线/视觉锚点；
+- <strong>STR（语义轨迹检索）</strong>：通过文本嵌入匹配 LTE 描述，检索满足语义状态与时空约束的物体轨迹；
+- <strong>LOR（长时程物体检索）</strong>：在长达 2–24 小时的回溯窗口内，检索目标物体的最后出现位置。</p>
+<p>所有响应附带显式置信度标签（HIGH/MEDIUM/LOW），以区分直接观测、外推最后已知位置与仅历史可用的情形。</p>
+<h3>4. 实验与评估</h3>
+<p>论文构建了 <strong>Spatial Memory Benchmark (SMB)</strong>，基于 EgoLife 多日至多天的连续记录，包含 600 条人工标注查询，专门评估现有基准缺失的长时程语义轨迹检索与物体检索能力。</p>
+<p>主要结果：
+- <strong>SMB-STR</strong>：成功率 <strong>45.3%</strong>，较最强 VLM 基线提升 <strong>+13.4</strong>，较结构化记忆基线提升 <strong>+25.5</strong>；
+- <strong>SMB-LOR</strong>：成功率 <strong>48.7%</strong>，较最强 VLM 基线提升 <strong>+14.3</strong>；性能随回溯窗口从 2 小时增至 24 小时仅衰减 4.4 个百分点，显著优于 VLM 基线的 9.8 点衰减；
+- <strong>Ego4D NLQ</strong>：在 IoU=0.3 时达到 <strong>28.75% / 55.10%</strong> R@1/R@5，为最强零样本结果，接近监督模型；
+- <strong>Ego4D VQ2D</strong>：零样本设定下取得 <strong>0.36 stAP</strong> 与 <strong>59.5% Success</strong>，均为最佳零样本表现。</p>
+<p>效率方面，系统在 24 小时视频上实现 <strong>0.43 秒</strong> 的亚秒级查询延迟，而强 VLM 基线需 98.3 秒。</p>
+<h3>5. 关键贡献</h3>
+<ul>
+<li><strong>LTE</strong>：首个将动态物体运动历史表示为“语言描述相位 + 稀疏三维锚点 + 视觉锚点”的混合编码，实现高压缩比与多模态查询能力；</li>
+<li><strong>SMB</strong>：首个针对数小时至数天跨度、评估语义轨迹检索与长时程物体检索的空间记忆基准；</li>
+<li><strong>系统性能</strong>：在长时程任务上大幅超越 VLM 与结构化记忆基线，同时在标准 Ego4D 基准上取得领先的零样本表现。</li>
+</ul>
+<h3>6. 局限与未来方向</h3>
+<p>当前系统未显式建模关节型部件动态，依赖单目相机输入，且长时程评估限于家庭环境。论文指出，向<strong>多相机融合</strong>、<strong>部件级 LTE 扩展</strong>、<strong>跨环境泛化</strong>及<strong>与下游规划器耦合</strong>是未来值得探索的方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Linguistic%20Trajectory%20Encoding%20for%20Efficient%20Long-Horizon%20Spatial%20Memory%20in%20Embodied%20Agents，链接是 https://arxiv.org/pdf/2609.04802 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2609.04802 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="smb-linguistic-trajectory-encoding-overview">SMB / Linguistic Trajectory Encoding overview</h1>
+<p>对应 <a href="https://arxiv.org/abs/2609.04802" target="_blank" rel="noopener">Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents</a>（v1，2026-09-04）。核查日期：2026-09-22。论文提出 LTE 记忆表示，并基于 <strong>EgoLife 已有录像</strong>构建 Spatial Memory Benchmark；不是新采集一套 300 小时视频。</p>
+<h2 id="_1">数据规模与长度</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>规模 / 长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semantic Trajectory Retrieval（STR）</td>
+<td>300 条查询，232 个物体实例，检索符合运动状态/轨迹和时空条件的物体</td>
+</tr>
+<tr>
+<td>Long-Horizon Object Retrieval（LOR）</td>
+<td>300 条查询，找物体最后出现位置</td>
+</tr>
+<tr>
+<td>LOR 回溯窗口</td>
+<td>2、6、12、24 小时各 75 条查询；120 条含空间提示</td>
+</tr>
+<tr>
+<td>底层录像</td>
+<td>EgoLife，6 人，7 天，同住一屋；Aria RGB 1408×1408</td>
+</tr>
+<tr>
+<td>底层单文件长度</td>
+<td>公开 EgoLife 切片通常为 30 秒；此前抽测有短尾片段</td>
+</tr>
+<tr>
+<td>SMB 单独采用的视频数量与总时长</td>
+<td>论文未给可核对文件清单，未验证；2–24h 是查询回溯跨度，不是固定文件长度</td>
+</tr>
+</tbody>
+</table>
+<p>论文采用 EgoLife 约 300 小时的摘要口径；本地 <a href="../../overview.html">EgoLife overview</a> 已说明原论文表格 266 小时、公开 32,001 段×30秒为 266.675 标称小时之间的关系。不要将六人的累计小时理解为一个人的连续历史。标注由三位 annotator 完成：STR 共约 60 人时，LOR 共约 45 人时。</p>
+<h2 id="_2">结果与评测条件</h2>
+<p>原论文 Table 3 的成功条件为：检索帧位于目标真值时间跨度，且物体框 IoU≥0.3。以下为论文值，本次未复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">STR success %</th>
+<th style="text-align: right;">LOR success %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen3-VL-8B + Grounding-DINO</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">25.1</td>
+</tr>
+<tr>
+<td>Qwen3-VL-235B + Grounding-DINO</td>
+<td style="text-align: right;">31.9</td>
+<td style="text-align: right;">34.4</td>
+</tr>
+<tr>
+<td>KFMem（3D-Mem 风格）</td>
+<td style="text-align: right;">19.8</td>
+<td style="text-align: right;">33.8</td>
+</tr>
+<tr>
+<td>VideoAgent</td>
+<td style="text-align: right;">24.7</td>
+<td style="text-align: right;">30.5</td>
+</tr>
+<tr>
+<td>LTE 系统</td>
+<td style="text-align: right;"><strong>45.3</strong></td>
+<td style="text-align: right;"><strong>48.7</strong></td>
+</tr>
+</tbody>
+</table>
+<p>VLM 基线查询时按 2 秒窗口扫描；LTE 先离线建立物体轨迹、语言描述及索引。A800 上 24h 输入的在线查询为 0.43 秒，但附录 C 同时报告离线构建约 68.4 GPU 工作小时（顺序）/约 42 小时（并行流水线）；<strong>0.43 秒并不包含从零处理 24 小时视频</strong>。26.1× 压缩比仅比较 LTE 轨迹存储与稠密轨迹存储，不是完整视频压缩比。消融中去除 LTE 的 LOR 仍为 48.7%，表明该项成绩不能单独归因于 LTE。</p>
+<h2 id="_3">发布与真实预览</h2>
+<p>本次核查官方 arXiv 正文及附录，仅发现底层 EgoLife 项目链接，没有找到作者发布的 SMB 标注、逐视频分割清单或官方代码仓库。因此未声称已下载 SMB benchmark。</p>
+<p><a href="preview_gallery.html">本项目图册</a>提供 <strong>100 张现有 EgoLife 真实视频帧</strong>，跨七天取样，只用相对路径引用已有 JPG，不重复下载。这些帧说明底层拍摄视角与场景，<strong>不是 SMB 查询的证据帧，也不能标成 STR/LOR 已标注样本</strong>。两个任务共用一个源数据预览分组。</p>
+<p>来源：<a href="sources/paper.html">论文快照</a>、<a href="https://egolife-ai.github.io/" target="_blank" rel="noopener">EgoLife 官网</a>、<a href="../../preview_gallery.html">EgoLife 完整本地图册</a>。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

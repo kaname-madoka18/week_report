@@ -1,0 +1,268 @@
+{
+  "slug": "halo",
+  "title": "HALO / ReMemBench",
+  "category": "机器人长期记忆 · 仿真/真实控制轨迹",
+  "summary": "四类记忆依赖的仿真任务与五类真实机器人任务；论文考察最长8分钟的历史。底层数据是HDF5轨迹和生成式QA。",
+  "paper_url": "https://arxiv.org/abs/2606.25136",
+  "repo_url": "https://github.com/UT-Austin-RobIn/HALO",
+  "project_url": "https://robin-lab.cs.utexas.edu/HALO/",
+  "dataset_urls": [
+    {
+      "label": "ReMemBench 轨迹",
+      "url": "https://huggingface.co/datasets/Rutav/ReMemBench-Dataset"
+    },
+    {
+      "label": "HALO QA",
+      "url": "https://huggingface.co/datasets/Rutav/HALO_QAs"
+    }
+  ],
+  "duration_summary": "任务需回忆最长8分钟；9段官网演示的精确MP4播放时长见CSV（部分4×加速，不能直接当作原始轨迹长度）。",
+  "availability": "官方代码、ReMemBench HDF5轨迹和HALO生成QA可公开访问；完整轨迹库未下载。",
+  "preview_status": "ready",
+  "limitations": [
+    "900帧来自9段官方展示视频，100帧/主要展示任务；不是全训练库随机抽样。",
+    "8分钟是任务执行/回忆跨度；4x剪辑的播放长度与原始执行长度不同。",
+    "公开HDF5包含原始与渲染等重复表示，文件数不能当作独立轨迹数。",
+    "实测一个1.01GB HDF5的26条轨迹记录数，但控制频率属性未给出，因此未将它们换算成秒。"
+  ],
+  "groups": [
+    {
+      "id": "retrieve_oil-sim",
+      "title": "仿真：空间记忆 / Retrieve Object",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "retrieve_oil-sim",
+          "title": "仿真：空间记忆 / Retrieve Object（官网演示）",
+          "category": "仿真：空间记忆 / Retrieve Object",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/retrieve_oil-sim.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_oil-sim.mp4",
+          "source_label": "仿真：空间记忆 / Retrieve Object（官网演示）",
+          "video_id": "retrieve_oil-sim",
+          "duration_seconds": 21.266666666666666,
+          "frames": 638,
+          "fps": 30.0,
+          "width": 1024,
+          "height": 512,
+          "size_bytes": 3566813,
+          "sha256": "3b7f3df0765438103301e65c46d9522cf44b351ceb0614a509dbd90c93c51411"
+        }
+      ]
+    },
+    {
+      "id": "washandreturn-sim",
+      "title": "仿真：物体关系 / Return to Same Container",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "washandreturn-sim",
+          "title": "仿真：物体关系 / Return to Same Container（官网演示）",
+          "category": "仿真：物体关系 / Return to Same Container",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/washandreturn-sim.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-sim.mp4",
+          "source_label": "仿真：物体关系 / Return to Same Container（官网演示）",
+          "video_id": "washandreturn-sim",
+          "duration_seconds": 15.133333333333333,
+          "frames": 454,
+          "fps": 30.0,
+          "width": 1024,
+          "height": 512,
+          "size_bytes": 2414704,
+          "sha256": "24a85d0bbeef966ac643b77b8e07aa94f41dcf9557613547129de2880633c94d"
+        }
+      ]
+    },
+    {
+      "id": "storeallbreads-sim",
+      "title": "仿真：数量记忆 / Store N Objects",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "storeallbreads-sim",
+          "title": "仿真：数量记忆 / Store N Objects（官网演示）",
+          "category": "仿真：数量记忆 / Store N Objects",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/storeallbreads-sim.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/storeallbreads-sim.mp4",
+          "source_label": "仿真：数量记忆 / Store N Objects（官网演示）",
+          "video_id": "storeallbreads-sim",
+          "duration_seconds": 34.86666666666667,
+          "frames": 1046,
+          "fps": 30.0,
+          "width": 1024,
+          "height": 512,
+          "size_bytes": 4228449,
+          "sha256": "b5a63dbdc4dc4ecb340eb2c069389c7cee5d3a9a138d055e6d7443ce646f27c5"
+        }
+      ]
+    },
+    {
+      "id": "heatpot-sim",
+      "title": "仿真：事件时间 / Heat Stove",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "heatpot-sim",
+          "title": "仿真：事件时间 / Heat Stove（官网演示）",
+          "category": "仿真：事件时间 / Heat Stove",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/heatpot-sim.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-sim.mp4",
+          "source_label": "仿真：事件时间 / Heat Stove（官网演示）",
+          "video_id": "heatpot-sim",
+          "duration_seconds": 37.166666666666664,
+          "frames": 1115,
+          "fps": 30.0,
+          "width": 1024,
+          "height": 512,
+          "size_bytes": 2406743,
+          "sha256": "e25acb93d3ab15da6341911af9889cc4318e8cf785134c6b621206e7d35ce444"
+        }
+      ]
+    },
+    {
+      "id": "retrieve_granola_bar",
+      "title": "真实机器人：空间记忆",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "retrieve_granola_bar",
+          "title": "真实机器人：空间记忆（官网演示）",
+          "category": "真实机器人：空间记忆",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/retrieve_granola_bar.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_granola_bar.mp4",
+          "source_label": "真实机器人：空间记忆（官网演示）",
+          "video_id": "retrieve_granola_bar",
+          "duration_seconds": 19.5,
+          "frames": 585,
+          "fps": 30.0,
+          "width": 256,
+          "height": 256,
+          "size_bytes": 1628738,
+          "sha256": "80d3aa881b3b854f598cf6d97890514caf7ddb1a2d15cd8428400003f6b59a5c"
+        }
+      ]
+    },
+    {
+      "id": "washandreturn-success-left1-4x",
+      "title": "真实机器人：物体关系",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "washandreturn-success-left1-4x",
+          "title": "真实机器人：物体关系（官网演示）",
+          "category": "真实机器人：物体关系",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/washandreturn-success-left1-4x.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-success-left1-4x.mp4",
+          "source_label": "真实机器人：物体关系（官网演示）",
+          "video_id": "washandreturn-success-left1-4x",
+          "duration_seconds": 8.033333333333333,
+          "frames": 241,
+          "fps": 30.0,
+          "width": 3840,
+          "height": 2160,
+          "size_bytes": 9991298,
+          "sha256": "e6ea63598982939174458472c1badb17baead1b12e00ce787bb135c828f7aed4"
+        }
+      ]
+    },
+    {
+      "id": "put_two_chips_packet-1-4x",
+      "title": "真实机器人：数量记忆",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "put_two_chips_packet-1-4x",
+          "title": "真实机器人：数量记忆（官网演示）",
+          "category": "真实机器人：数量记忆",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/put_two_chips_packet-1-4x.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/put_two_chips_packet-1-4x.mp4",
+          "source_label": "真实机器人：数量记忆（官网演示）",
+          "video_id": "put_two_chips_packet-1-4x",
+          "duration_seconds": 29.566666666666666,
+          "frames": 887,
+          "fps": 30.0,
+          "width": 3840,
+          "height": 2160,
+          "size_bytes": 10467198,
+          "sha256": "403348dc092bc1b40c57d13bb682ab768a566f7ea93459333c3766e065c57b34"
+        }
+      ]
+    },
+    {
+      "id": "heatpot-wait-for-8-minutes-4x",
+      "title": "真实机器人：事件时间（8 分钟任务）",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "heatpot-wait-for-8-minutes-4x",
+          "title": "真实机器人：事件时间（8 分钟任务）（官网演示）",
+          "category": "真实机器人：事件时间（8 分钟任务）",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/heatpot-wait-for-8-minutes-4x.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-wait-for-8-minutes-4x.mp4",
+          "source_label": "真实机器人：事件时间（8 分钟任务）（官网演示）",
+          "video_id": "heatpot-wait-for-8-minutes-4x",
+          "duration_seconds": 123.86666666666666,
+          "frames": 3716,
+          "fps": 30.0,
+          "width": 3840,
+          "height": 2160,
+          "size_bytes": 20763298,
+          "sha256": "88785659e574e07d535f4d27486c929d0f8e1a16ffab15d8be50d25d0dabf9ba"
+        }
+      ]
+    },
+    {
+      "id": "store-3-human-1-robot-2-4x",
+      "title": "真实机器人：人机协作计数",
+      "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "store-3-human-1-robot-2-4x",
+          "title": "真实机器人：人机协作计数（官网演示）",
+          "category": "真实机器人：人机协作计数",
+          "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。",
+          "local_video": "samples/store-3-human-1-robot-2-4x.mp4",
+          "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/store-3-human-1-robot-2-4x.mp4",
+          "source_label": "真实机器人：人机协作计数（官网演示）",
+          "video_id": "store-3-human-1-robot-2-4x",
+          "duration_seconds": 12.7,
+          "frames": 381,
+          "fps": 30.0,
+          "width": 3840,
+          "height": 2160,
+          "size_bytes": 9963203,
+          "sha256": "890cea6369d29ac6e05a57d6edec590c8d228cb64b5dbe7bbf2d257b06a9020b"
+        }
+      ]
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "short_video_case_threshold_seconds": 180.0,
+  "short_video_case_policy": "本地完整副本不超过 180 秒且小于 100 MB 时直接展示 video case；其余视频继续抽帧。",
+  "short_video_cases_count": 9
+}

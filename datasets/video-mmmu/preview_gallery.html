@@ -1,0 +1,205 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Video-MMMU：视频知识获取与迁移基准 · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Video-MMMU：视频知识获取与迁移基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-01-23</strong></div><div><span>引用数</span><strong>233</strong></div><div><span>GitHub stars</span><strong>73</strong></div><div><span>当前状态</span><strong>ACL 2026 · Main</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2501.13826" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/EvolvingLMMs-Lab/VideoMMMU" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/4e3d888abc01555feb92a60935c8e537abc4648a" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://videommmu.github.io/" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Video-MMMU%3A+Evaluating+Knowledge+Acquisition+from+Multi-Discipline+Professional+Videos" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的问题是如何系统地评估大型多模态模型（Large Multimodal Models, LMMs）从视频内容中获取和利用知识的能力。具体来说，论文提出了以下几个关键点：</p>
+<ol>
+<li>
+<p><strong>知识获取的三个认知阶段</strong>：人类通过感知信息、理解知识、以及将知识应用于解决新问题这三个基本认知阶段来获取知识。视频作为一种有效的学习媒介，能够帮助人们自然地通过这些认知阶段进行知识获取。</p>
+</li>
+<li>
+<p><strong>现有视频基准测试的局限性</strong>：现有的视频基准测试主要关注视觉理解任务，缺乏对LMMs从教育视频中获取知识能力的系统评估。</p>
+</li>
+<li>
+<p><strong>Video-MMMU基准测试的提出</strong>：为了填补这一空白，论文介绍了Video-MMMU（Massive Multi-discipline Multimodal Understanding），这是一个多模态、多学科的视频基准测试，旨在评估LMMs从教育视频中获取和利用知识的能力。</p>
+</li>
+<li>
+<p><strong>知识获取量化</strong>：论文提出了一个知识获取度量指标∆knowledge，用于量化模型在观看视频后在实践考试问题上的表现提升，从而评估它们如何有效地整合和应用视频中呈现的信息来解决现实世界中的新问题。</p>
+</li>
+<li>
+<p><strong>人与模型知识获取能力的差距</strong>：通过对比人类专家和模型在Video-MMMU上的表现，论文揭示了两者在视频学习中获取和应用知识方面的差距，强调了需要进一步研究以增强LMMs从视频中学习和适应的能力。</p>
+</li>
+</ol>
+<p>综上所述，论文的核心目标是建立一个系统的评估框架，以衡量和提高LMMs从专业教育视频中有效学习知识的能力，并指出了当前模型在这方面的不足，为未来的研究提供了方向。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，相关研究可以分为以下几个领域：</p>
+<ol>
+<li>
+<p><strong>视频问答基准测试（VideoQA Benchmarks）</strong>：
+   - 这些基准测试主要关注视频的视觉理解任务，包括动作理解、时间推理和视频描述。
+   - 例如：KnowIT-VQA [10]、WorldQA [50]、Video-MME [9]、MMBenchVideo [7] 和 MLVU [52]。</p>
+</li>
+<li>
+<p><strong>知识驱动基准测试（Knowledge-driven Benchmarks）</strong>：
+   - 这些基准测试评估AI系统的专业专业知识，包括标准化考试和科学问题。
+   - 例如：AGIEval [51]、ARC [2]、MMLU [13]、MMLU-Pro [36]、ScienceQA [21] 和 MMMU [45]。</p>
+</li>
+<li>
+<p><strong>多模态基准测试（Multi-modal Benchmarks）</strong>：
+   - 这些基准测试扩展了评估模型在文本和图像上的预训练知识和推理能力。
+   - 例如：MMMU-Pro [46]。</p>
+</li>
+<li>
+<p><strong>大型多模态模型（Large Multimodal Models, LMMs）</strong>：
+   - 研究LMMs如何从视频内容中获取和利用知识。
+   - 例如：LLaVA-OneVision [15]、LLaVA-Video [49]、LongVA [48]、VILA-1.5 [19]、Qwen2-VL [33]、InternVL2 [6]、Llama3.2 [23]、MAmmoTH-VL [12]、Aria [16]、GPT-4o [27]、Gemini 1.5 Pro [32] 和 Gemini 1.5 Flash [32]。</p>
+</li>
+<li>
+<p><strong>视频学习研究（Video-based Learning Research）</strong>：
+   - 探索视频作为学习媒介的研究，包括视频在教育中的应用和效果。
+   - 例如：Giannakos [11] 和 Sabli´c et al. [30]。</p>
+</li>
+</ol>
+<p>这些相关研究为理解视频在知识获取中的作用、评估AI系统的专业能力以及开发和评估多模态学习模型提供了理论基础和实证数据。论文提出的Video-MMMU基准测试旨在进一步推动这一领域的研究，特别是在评估LMMs从教育视频中获取和应用知识的能力方面。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决评估大型多模态模型（LMMs）从视频内容中获取和利用知识的能力的问题：</p>
+<ol>
+<li>
+<p><strong>建立多模态多学科基准测试（Video-MMMU）</strong>：
+   - 论文介绍了一个大规模的多模态、多学科的视频基准测试Video-MMMU，它包含300个专家级视频，涵盖六个专业学科（艺术、商业、科学、医学、人文和工程），并包含900个人工标注的问题，这些问题跨越三个认知阶段：感知（Perception）、理解（Comprehension）和适应（Adaptation）。</p>
+</li>
+<li>
+<p><strong>设计基于知识获取的问题</strong>：
+   - 每个视频包含三个与知识获取阶段相对应的问题-答案对，用以评估模型在不同认知阶段的表现。</p>
+</li>
+<li>
+<p><strong>提出知识获取度量指标（∆knowledge）</strong>：
+   - 论文提出了一个名为∆knowledge的度量指标，用于量化模型在观看视频后在实践考试问题上的性能提升，从而评估它们如何有效地整合和应用视频中呈现的信息来解决现实世界中的新问题。</p>
+</li>
+<li>
+<p><strong>评估和比较不同模型的性能</strong>：
+   - 论文评估了一系列开源和专有的LMMs在Video-MMMU上的性能，揭示了模型在不同认知任务上的表现，并与人类专家的表现进行了比较。</p>
+</li>
+<li>
+<p><strong>分析模型错误和性能差异</strong>：
+   - 通过分析模型在不同学科和认知阶段上的错误，论文揭示了模型在视频内容理解和应用方面的局限性，并指出了未来研究的方向。</p>
+</li>
+<li>
+<p><strong>强调人与模型知识获取能力的差距</strong>：
+   - 论文强调了人类与模型在视频学习中获取和应用知识方面的差距，指出了当前模型的挑战，并为未来的研究提供了改进LMMs视频学习能力的见解。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个新的基准测试来评估LMMs的知识获取能力，还揭示了现有模型的不足，并为未来的研究提供了明确的方向，以增强LMMs从视频中学习的能力。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>根据论文内容，作者进行了以下实验来评估和验证Video-MMMU基准测试的有效性以及大型多模态模型（LMMs）的知识获取能力：</p>
+<ol>
+<li>
+<p><strong>模型评估实验</strong>：
+   - <strong>基线模型</strong>：评估了包括开源和专有的LMMs，例如LLaVA-OneVision、LLaVA-Video、LongVA、VILA-1.5、Qwen2-VL、InternVL2、Llama3.2、MAmmoTH-VL、Aria、GPT-4o、Gemini 1.5 Pro等。
+   - <strong>人类专家测试</strong>：招募了高年级本科生作为人类专家，让他们在观看视频前后尝试解答适应性问题（Adaptation questions），以评估人类的表现。</p>
+</li>
+<li>
+<p><strong>输入和评估设置</strong>：
+   - 对于感知（Perception）和理解（Comprehension）轨道，提供视频和问题作为输入。
+   - 对于适应性（Adaptation）轨道，将问题相关的图像附加到视频末尾，并添加提示表明图像出现在最后一帧。</p>
+</li>
+<li>
+<p><strong>自动化评估</strong>：
+   - 使用基于规则的自动化管道来评估模型输出，采用微平均准确率（micro-averaged accuracy）作为评估指标。</p>
+</li>
+<li>
+<p><strong>主要结果分析</strong>：
+   - <strong>不同轨道的性能</strong>：比较人类与模型在感知、理解和适应三个轨道上的性能差异。
+   - <strong>不同学科的性能</strong>：分析模型在艺术、商业、科学、医学、人文和工程等不同学科上的性能差异。</p>
+</li>
+<li>
+<p><strong>音频转录的影响</strong>：
+   - 研究音频转录对模型性能的影响，特别是在理解（Comprehension）轨道上的性能提升。</p>
+</li>
+<li>
+<p><strong>知识获取度量（∆knowledge）实验</strong>：
+   - 定义并应用知识获取度量指标∆knowledge来衡量模型在适应性轨道上从视频内容中获得的知识量。</p>
+</li>
+<li>
+<p><strong>错误分析</strong>：
+   - 对模型在适应性轨道上的错误进行了详细分析，包括方法选择错误、方法适应错误、问题误读错误等。</p>
+</li>
+<li>
+<p><strong>正确至错误（Wrong-to-Right）案例分析</strong>：
+   - 分析模型如何通过视频学习纠正初始错误并正确解答适应性问题。</p>
+</li>
+</ol>
+<p>这些实验全面评估了LMMs在不同认知阶段从视频内容中获取知识的能力，并与人类专家的表现进行了比较。通过这些实验，论文揭示了当前LMMs在视频学习方面的局限性，并为未来的研究方向提供了见解。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>改进模型的视频理解能力</strong>：
+   - 研究和开发新的模型架构，以提高LMMs对视频内容的理解，特别是在复杂场景和专业知识传递方面。</p>
+</li>
+<li>
+<p><strong>音频信息的更有效利用</strong>：
+   - 探索如何更好地整合音频和视觉信息，以提高模型在视频理解任务中的性能。</p>
+</li>
+<li>
+<p><strong>跨学科知识迁移</strong>：
+   - 研究模型如何在不同学科领域之间迁移和应用知识，以及如何设计有效的策略来促进跨学科学习。</p>
+</li>
+<li>
+<p><strong>增强模型的适应性（Adaptation）能力</strong>：
+   - 开发方法来提高模型将学到的知识适应于新场景的能力，特别是在实际应用和问题解决方面。</p>
+</li>
+<li>
+<p><strong>减少模型在视频学习中的错误</strong>：
+   - 深入分析模型在视频学习中的错误类型，并探索减少这些错误的策略，如方法选择错误、方法适应错误和问题误读错误。</p>
+</li>
+<li>
+<p><strong>提高模型的解释能力</strong>：
+   - 增强模型提供解释和推理的能力，使其能够清晰地展示其如何从视频中获取和应用知识。</p>
+</li>
+<li>
+<p><strong>多模态数据融合技术</strong>：
+   - 研究和改进多模态数据融合技术，以便更好地结合视频、音频和文本信息。</p>
+</li>
+<li>
+<p><strong>大规模多模态预训练</strong>：
+   - 探索大规模多模态预训练策略，以提高模型对多模态内容的理解和知识获取能力。</p>
+</li>
+<li>
+<p><strong>人类与模型的学习过程对比</strong>：
+   - 研究人类如何有效地从视频中学习，并尝试将这些认知过程模拟到模型中，以缩小人与模型之间的差距。</p>
+</li>
+<li>
+<p><strong>评估指标的改进与创新</strong>：</p>
+<ul>
+<li>开发新的评估指标，以更全面地衡量模型在视频理解任务中的表现，特别是在知识获取和应用方面。</li>
+</ul>
+</li>
+<li>
+<p><strong>多任务学习与领域适应</strong>：</p>
+<ul>
+<li>研究多任务学习框架，以及如何使模型更好地适应特定领域的知识获取需求。</li>
+</ul>
+</li>
+<li>
+<p><strong>模型的可解释性和透明度</strong>：</p>
+<ul>
+<li>提高模型决策过程的可解释性，以便研究人员和用户能够理解模型是如何做出预测的。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助研究者们更好地理解LMMs在视频学习任务中的性能，并推动相关技术的发展，以实现更接近人类水平的视频理解和知识获取能力。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>论文《Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos》主要内容包括：</p>
+<ol>
+<li>
+<p><strong>问题陈述</strong>：
+   - 论文指出，人类通过三个认知阶段（感知、理解和适应）从视频中获取知识，但现有的视频基准测试未能系统评估大型多模态模型（LMMs）在这一过程中的能力。</p>
+</li>
+<li>
+<p><strong>Video-MMMU基准测试</strong>：
+   - 为了填补这一空白，论文提出了Video-MMMU，一个多模态、多学科的视频基准测试，旨在评估LMMs从教育视频中获取和利用知识的能力。</p>
+</li>
+<li>
+<p><strong>数据集和问题设计</strong>：
+   - Video-MMMU包含300个专家级视频，涵盖六个学科领域，以及900个人工标注的问题，这些问题分布在感知、理解和适应三个认知阶段。</p>
+</li>
+<li>
+<p><strong>知识获取度量指标</strong>：
+   - 论文提出了一个名为∆knowledge的度量指标，用于量化模型在观看视频后在实践考试问题上的性能提升。</p>
+</li>
+<li>
+<p><strong>实验与评估</strong>：
+   - 论文评估了一系列开源和专有的LMMs在Video-MMMU上的性能，并与人类专家的表现进行了比较。</p>
+</li>
+<li>
+<p><strong>主要发现</strong>：
+   - 模型在不同认知阶段的性能逐渐下降，表明更深层次的认知任务需要更高级的能力。
+   - 人类与模型在视频学习中获取和应用知识方面存在显著差距。</p>
+</li>
+<li>
+<p><strong>错误分析</strong>：
+   - 论文对模型在适应性问题上的错误进行了详细分析，包括方法选择错误、方法适应错误和问题误读错误。</p>
+</li>
+<li>
+<p><strong>结论</strong>：
+   - 论文强调了未来研究需要关注如何提高LMMs从视频中有效学习的能力，以缩小与人类学习过程的差距。</p>
+</li>
+</ol>
+<p>总体而言，论文通过引入新的基准测试Video-MMMU，提供了一个评估框架来衡量LMMs从专业教育视频中获取知识的能力，并揭示了当前模型在这方面的局限性，为未来的研究方向提供了指导。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Video-MMMU%3A%20Evaluating%20Knowledge%20Acquisition%20from%20Multi-Discipline%20Professional%20Videos，链接是 https://arxiv.org/pdf/2501.13826 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2501.13826 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>Video-MMMU：视频知识获取与迁移基准</h1><p class="muted">300 个大学/专业教学视频、900 道题，测试感知、理解与知识迁移，并衡量看视频前后的知识增益。</p><p><strong>本项目没有抽帧图片</strong> · 6 个可播放视频 case · 6 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">数据集视频平均 506.2 秒（约8分26秒）；本页短case为官网剪辑，其实测时长单独标注。</p></div><div class="note"><ul><li>官网短case是教学片段，不能把其时长当作完整数据视频长度。</li><li>本页结果来自论文/官方项目页，未在本机复现模型。</li></ul></div><p><a href="https://videommmu.github.io/" target="_blank" rel="noopener">官方项目</a> · <a href="https://arxiv.org/abs/2501.13826" target="_blank" rel="noopener">论文原文</a></p><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "video-mmmu", "title": "Video-MMMU：视频知识获取与迁移基准", "category": "视频知识获取与迁移基准", "summary": "300 个大学/专业教学视频、900 道题，测试感知、理解与知识迁移，并衡量看视频前后的知识增益。", "paper_url": "https://arxiv.org/abs/2501.13826", "repo_url": "https://github.com/EvolvingLMMs-Lab/VideoMMMU", "project_url": "https://videommmu.github.io/", "dataset_urls": [{"label": "官方 Hugging Face 数据", "url": "https://huggingface.co/datasets/lmms-lab/VideoMMMU"}], "duration_summary": "数据集视频平均 506.2 秒（约8分26秒）；本页短case为官网剪辑，其实测时长单独标注。", "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。", "preview_status": "available", "relation_level": "长上下文近邻", "limitations": ["官网短case是教学片段，不能把其时长当作完整数据视频长度。", "本页结果来自论文/官方项目页，未在本机复现模型。"], "related_links": [{"label": "官方项目", "href": "https://videommmu.github.io/"}, {"label": "论文原文", "href": "https://arxiv.org/abs/2501.13826"}], "groups": [{"id": "case_Art_Arttheory_14", "title": "艺术：艺术理论", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Art_Arttheory_14.mp4", "local_video": "samples/Art_Arttheory_14.mp4", "poster": "previews/Art_Arttheory_14_poster.jpg", "size_bytes": 451473, "duration_seconds": 3.6036, "width": 960, "height": 540, "codec": "h264", "fps": 29.97002997002997, "sha256": "a200c0dc0698dd8929a1a9f0b9a36c1b10b7726759257f15ac081e6f25f5db2c", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 451473, "title": "艺术：艺术理论", "source_label": "艺术：艺术理论", "video_id": "Art_Arttheory_14", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}, {"id": "case_Humanities_psychology_15", "title": "人文：心理学", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Humanities_psychology_15.mp4", "local_video": "samples/Humanities_psychology_15.mp4", "poster": "previews/Humanities_psychology_15_poster.jpg", "size_bytes": 3322300, "duration_seconds": 16.249566666666666, "width": 960, "height": 540, "codec": "h264", "fps": 29.97002997002997, "sha256": "6a271a589ef7bd5ced9e5da0f0a4afe43fef391385f894104b0a8ccd474da6e7", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 3322300, "title": "人文：心理学", "source_label": "人文：心理学", "video_id": "Humanities_psychology_15", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}, {"id": "case_Engineering_Computer_Science_1", "title": "工程：计算机科学", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Engineering_Computer_Science_1.mp4", "local_video": "samples/Engineering_Computer_Science_1.mp4", "poster": "previews/Engineering_Computer_Science_1_poster.jpg", "size_bytes": 1336820, "duration_seconds": 12.645966666666666, "width": 960, "height": 540, "codec": "h264", "fps": 29.97002997002997, "sha256": "c4e3127c19d8bffd421c4e96326a258e61d2819afdd144df951a3f85b0ad3fd3", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 1336820, "title": "工程：计算机科学", "source_label": "工程：计算机科学", "video_id": "Engineering_Computer_Science_1", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}, {"id": "case_Science_physics_11", "title": "科学：物理学", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Science_physics_11.mp4", "local_video": "samples/Science_physics_11.mp4", "poster": "previews/Science_physics_11_poster.jpg", "size_bytes": 3598763, "duration_seconds": 13.1131, "width": 960, "height": 540, "codec": "h264", "fps": 29.97002997002997, "sha256": "0707d3affaa06789c5fb742972f4d6713c26052c35781ff032b3d03233ef47c0", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 2550187, "title": "科学：物理学", "source_label": "科学：物理学", "video_id": "Science_physics_11", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}, {"id": "case_Business_Economics_1", "title": "商业：经济学", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Business_Economics_1.mp4", "local_video": "samples/Business_Economics_1.mp4", "poster": "previews/Business_Economics_1_poster.jpg", "size_bytes": 4290949, "duration_seconds": 16.64, "width": 960, "height": 540, "codec": "h264", "fps": 25.0, "sha256": "17d50b457e56016596d02aba03065ffd516d884175679fdb36770f276ae41872", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 4290949, "title": "商业：经济学", "source_label": "商业：经济学", "video_id": "Business_Economics_1", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}, {"id": "case_Medicine_public_health_12", "title": "医学：公共卫生", "description": "官网剪辑 case；不代表该条完整源视频长度。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "video-mmmu", "source_url": "https://videommmu.github.io/assets/samples/Medicine_public_health_12.mp4", "local_video": "samples/Medicine_public_health_12.mp4", "poster": "previews/Medicine_public_health_12_poster.jpg", "size_bytes": 6040584, "duration_seconds": 35.52, "width": 960, "height": 540, "codec": "h264", "fps": 25.0, "sha256": "8c21c9c4f8150668866c9b473a0431f5719247186826ee3ed51b7036015b7835", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 6040584, "title": "医学：公共卫生", "source_label": "医学：公共卫生", "video_id": "Medicine_public_health_12", "category": "官方视频 case", "description": "官网剪辑 case；不代表该条完整源视频长度。"}]}], "added_batch": "2026-09-23", "selection_kind": "qualified", "short_video_case_threshold_seconds": 180, "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。", "paper_metadata": {"slug": "video-mmmu", "title": "Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos", "paper_url": "https://arxiv.org/abs/2501.13826", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2501.13826", "arxiv_url": "https://arxiv.org/abs/2501.13826", "arxiv_source_url": "https://arxiv.org/abs/2501.13826", "arxiv_title": "Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos", "arxiv_published_at": "2025-01-23", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 233, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/4e3d888abc01555feb92a60935c8e537abc4648a", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/EvolvingLMMs-Lab/VideoMMMU", "github_repo": "EvolvingLMMs-Lab/VideoMMMU", "github_stars": 73, "github_source_url": "https://api.github.com/repos/EvolvingLMMs-Lab/VideoMMMU", "github_fetch_status": "ok", "status_label": "ACL 2026 · Main", "status_source": "https://videommmu.github.io/", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=Video-MMMU%3A+Evaluating+Knowledge+Acquisition+from+Multi-Discipline+Professional+Videos", "papers_cool_detail_url": "https://papers.cool/arxiv/2501.13826", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文试图解决的问题是如何系统地评估大型多模态模型（Large Multimodal Models, LMMs）从视频内容中获取和利用知识的能力。具体来说，论文提出了以下几个关键点：<\/p>\n<ol>\n<li>\n<p><strong>知识获取的三个认知阶段<\/strong>：人类通过感知信息、理解知识、以及将知识应用于解决新问题这三个基本认知阶段来获取知识。视频作为一种有效的学习媒介，能够帮助人们自然地通过这些认知阶段进行知识获取。<\/p>\n<\/li>\n<li>\n<p><strong>现有视频基准测试的局限性<\/strong>：现有的视频基准测试主要关注视觉理解任务，缺乏对LMMs从教育视频中获取知识能力的系统评估。<\/p>\n<\/li>\n<li>\n<p><strong>Video-MMMU基准测试的提出<\/strong>：为了填补这一空白，论文介绍了Video-MMMU（Massive Multi-discipline Multimodal Understanding），这是一个多模态、多学科的视频基准测试，旨在评估LMMs从教育视频中获取和利用知识的能力。<\/p>\n<\/li>\n<li>\n<p><strong>知识获取量化<\/strong>：论文提出了一个知识获取度量指标∆knowledge，用于量化模型在观看视频后在实践考试问题上的表现提升，从而评估它们如何有效地整合和应用视频中呈现的信息来解决现实世界中的新问题。<\/p>\n<\/li>\n<li>\n<p><strong>人与模型知识获取能力的差距<\/strong>：通过对比人类专家和模型在Video-MMMU上的表现，论文揭示了两者在视频学习中获取和应用知识方面的差距，强调了需要进一步研究以增强LMMs从视频中学习和适应的能力。<\/p>\n<\/li>\n<\/ol>\n<p>综上所述，论文的核心目标是建立一个系统的评估框架，以衡量和提高LMMs从专业教育视频中有效学习知识的能力，并指出了当前模型在这方面的不足，为未来的研究提供了方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据论文内容，相关研究可以分为以下几个领域：<\/p>\n<ol>\n<li>\n<p><strong>视频问答基准测试（VideoQA Benchmarks）<\/strong>：\n   - 这些基准测试主要关注视频的视觉理解任务，包括动作理解、时间推理和视频描述。\n   - 例如：KnowIT-VQA [10]、WorldQA [50]、Video-MME [9]、MMBenchVideo [7] 和 MLVU [52]。<\/p>\n<\/li>\n<li>\n<p><strong>知识驱动基准测试（Knowledge-driven Benchmarks）<\/strong>：\n   - 这些基准测试评估AI系统的专业专业知识，包括标准化考试和科学问题。\n   - 例如：AGIEval [51]、ARC [2]、MMLU [13]、MMLU-Pro [36]、ScienceQA [21] 和 MMMU [45]。<\/p>\n<\/li>\n<li>\n<p><strong>多模态基准测试（Multi-modal Benchmarks）<\/strong>：\n   - 这些基准测试扩展了评估模型在文本和图像上的预训练知识和推理能力。\n   - 例如：MMMU-Pro [46]。<\/p>\n<\/li>\n<li>\n<p><strong>大型多模态模型（Large Multimodal Models, LMMs）<\/strong>：\n   - 研究LMMs如何从视频内容中获取和利用知识。\n   - 例如：LLaVA-OneVision [15]、LLaVA-Video [49]、LongVA [48]、VILA-1.5 [19]、Qwen2-VL [33]、InternVL2 [6]、Llama3.2 [23]、MAmmoTH-VL [12]、Aria [16]、GPT-4o [27]、Gemini 1.5 Pro [32] 和 Gemini 1.5 Flash [32]。<\/p>\n<\/li>\n<li>\n<p><strong>视频学习研究（Video-based Learning Research）<\/strong>：\n   - 探索视频作为学习媒介的研究，包括视频在教育中的应用和效果。\n   - 例如：Giannakos [11] 和 Sabli´c et al. [30]。<\/p>\n<\/li>\n<\/ol>\n<p>这些相关研究为理解视频在知识获取中的作用、评估AI系统的专业能力以及开发和评估多模态学习模型提供了理论基础和实证数据。论文提出的Video-MMMU基准测试旨在进一步推动这一领域的研究，特别是在评估LMMs从教育视频中获取和应用知识的能力方面。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个步骤解决评估大型多模态模型（LMMs）从视频内容中获取和利用知识的能力的问题：<\/p>\n<ol>\n<li>\n<p><strong>建立多模态多学科基准测试（Video-MMMU）<\/strong>：\n   - 论文介绍了一个大规模的多模态、多学科的视频基准测试Video-MMMU，它包含300个专家级视频，涵盖六个专业学科（艺术、商业、科学、医学、人文和工程），并包含900个人工标注的问题，这些问题跨越三个认知阶段：感知（Perception）、理解（Comprehension）和适应（Adaptation）。<\/p>\n<\/li>\n<li>\n<p><strong>设计基于知识获取的问题<\/strong>：\n   - 每个视频包含三个与知识获取阶段相对应的问题-答案对，用以评估模型在不同认知阶段的表现。<\/p>\n<\/li>\n<li>\n<p><strong>提出知识获取度量指标（∆knowledge）<\/strong>：\n   - 论文提出了一个名为∆knowledge的度量指标，用于量化模型在观看视频后在实践考试问题上的性能提升，从而评估它们如何有效地整合和应用视频中呈现的信息来解决现实世界中的新问题。<\/p>\n<\/li>\n<li>\n<p><strong>评估和比较不同模型的性能<\/strong>：\n   - 论文评估了一系列开源和专有的LMMs在Video-MMMU上的性能，揭示了模型在不同认知任务上的表现，并与人类专家的表现进行了比较。<\/p>\n<\/li>\n<li>\n<p><strong>分析模型错误和性能差异<\/strong>：\n   - 通过分析模型在不同学科和认知阶段上的错误，论文揭示了模型在视频内容理解和应用方面的局限性，并指出了未来研究的方向。<\/p>\n<\/li>\n<li>\n<p><strong>强调人与模型知识获取能力的差距<\/strong>：\n   - 论文强调了人类与模型在视频学习中获取和应用知识方面的差距，指出了当前模型的挑战，并为未来的研究提供了改进LMMs视频学习能力的见解。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文不仅提出了一个新的基准测试来评估LMMs的知识获取能力，还揭示了现有模型的不足，并为未来的研究提供了明确的方向，以增强LMMs从视频中学习的能力。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>根据论文内容，作者进行了以下实验来评估和验证Video-MMMU基准测试的有效性以及大型多模态模型（LMMs）的知识获取能力：<\/p>\n<ol>\n<li>\n<p><strong>模型评估实验<\/strong>：\n   - <strong>基线模型<\/strong>：评估了包括开源和专有的LMMs，例如LLaVA-OneVision、LLaVA-Video、LongVA、VILA-1.5、Qwen2-VL、InternVL2、Llama3.2、MAmmoTH-VL、Aria、GPT-4o、Gemini 1.5 Pro等。\n   - <strong>人类专家测试<\/strong>：招募了高年级本科生作为人类专家，让他们在观看视频前后尝试解答适应性问题（Adaptation questions），以评估人类的表现。<\/p>\n<\/li>\n<li>\n<p><strong>输入和评估设置<\/strong>：\n   - 对于感知（Perception）和理解（Comprehension）轨道，提供视频和问题作为输入。\n   - 对于适应性（Adaptation）轨道，将问题相关的图像附加到视频末尾，并添加提示表明图像出现在最后一帧。<\/p>\n<\/li>\n<li>\n<p><strong>自动化评估<\/strong>：\n   - 使用基于规则的自动化管道来评估模型输出，采用微平均准确率（micro-averaged accuracy）作为评估指标。<\/p>\n<\/li>\n<li>\n<p><strong>主要结果分析<\/strong>：\n   - <strong>不同轨道的性能<\/strong>：比较人类与模型在感知、理解和适应三个轨道上的性能差异。\n   - <strong>不同学科的性能<\/strong>：分析模型在艺术、商业、科学、医学、人文和工程等不同学科上的性能差异。<\/p>\n<\/li>\n<li>\n<p><strong>音频转录的影响<\/strong>：\n   - 研究音频转录对模型性能的影响，特别是在理解（Comprehension）轨道上的性能提升。<\/p>\n<\/li>\n<li>\n<p><strong>知识获取度量（∆knowledge）实验<\/strong>：\n   - 定义并应用知识获取度量指标∆knowledge来衡量模型在适应性轨道上从视频内容中获得的知识量。<\/p>\n<\/li>\n<li>\n<p><strong>错误分析<\/strong>：\n   - 对模型在适应性轨道上的错误进行了详细分析，包括方法选择错误、方法适应错误、问题误读错误等。<\/p>\n<\/li>\n<li>\n<p><strong>正确至错误（Wrong-to-Right）案例分析<\/strong>：\n   - 分析模型如何通过视频学习纠正初始错误并正确解答适应性问题。<\/p>\n<\/li>\n<\/ol>\n<p>这些实验全面评估了LMMs在不同认知阶段从视频内容中获取知识的能力，并与人类专家的表现进行了比较。通过这些实验，论文揭示了当前LMMs在视频学习方面的局限性，并为未来的研究方向提供了见解。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>改进模型的视频理解能力<\/strong>：\n   - 研究和开发新的模型架构，以提高LMMs对视频内容的理解，特别是在复杂场景和专业知识传递方面。<\/p>\n<\/li>\n<li>\n<p><strong>音频信息的更有效利用<\/strong>：\n   - 探索如何更好地整合音频和视觉信息，以提高模型在视频理解任务中的性能。<\/p>\n<\/li>\n<li>\n<p><strong>跨学科知识迁移<\/strong>：\n   - 研究模型如何在不同学科领域之间迁移和应用知识，以及如何设计有效的策略来促进跨学科学习。<\/p>\n<\/li>\n<li>\n<p><strong>增强模型的适应性（Adaptation）能力<\/strong>：\n   - 开发方法来提高模型将学到的知识适应于新场景的能力，特别是在实际应用和问题解决方面。<\/p>\n<\/li>\n<li>\n<p><strong>减少模型在视频学习中的错误<\/strong>：\n   - 深入分析模型在视频学习中的错误类型，并探索减少这些错误的策略，如方法选择错误、方法适应错误和问题误读错误。<\/p>\n<\/li>\n<li>\n<p><strong>提高模型的解释能力<\/strong>：\n   - 增强模型提供解释和推理的能力，使其能够清晰地展示其如何从视频中获取和应用知识。<\/p>\n<\/li>\n<li>\n<p><strong>多模态数据融合技术<\/strong>：\n   - 研究和改进多模态数据融合技术，以便更好地结合视频、音频和文本信息。<\/p>\n<\/li>\n<li>\n<p><strong>大规模多模态预训练<\/strong>：\n   - 探索大规模多模态预训练策略，以提高模型对多模态内容的理解和知识获取能力。<\/p>\n<\/li>\n<li>\n<p><strong>人类与模型的学习过程对比<\/strong>：\n   - 研究人类如何有效地从视频中学习，并尝试将这些认知过程模拟到模型中，以缩小人与模型之间的差距。<\/p>\n<\/li>\n<li>\n<p><strong>评估指标的改进与创新<\/strong>：<\/p>\n<ul>\n<li>开发新的评估指标，以更全面地衡量模型在视频理解任务中的表现，特别是在知识获取和应用方面。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>多任务学习与领域适应<\/strong>：<\/p>\n<ul>\n<li>研究多任务学习框架，以及如何使模型更好地适应特定领域的知识获取需求。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>模型的可解释性和透明度<\/strong>：<\/p>\n<ul>\n<li>提高模型决策过程的可解释性，以便研究人员和用户能够理解模型是如何做出预测的。<\/li>\n<\/ul>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助研究者们更好地理解LMMs在视频学习任务中的性能，并推动相关技术的发展，以实现更接近人类水平的视频理解和知识获取能力。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>论文《Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos》主要内容包括：<\/p>\n<ol>\n<li>\n<p><strong>问题陈述<\/strong>：\n   - 论文指出，人类通过三个认知阶段（感知、理解和适应）从视频中获取知识，但现有的视频基准测试未能系统评估大型多模态模型（LMMs）在这一过程中的能力。<\/p>\n<\/li>\n<li>\n<p><strong>Video-MMMU基准测试<\/strong>：\n   - 为了填补这一空白，论文提出了Video-MMMU，一个多模态、多学科的视频基准测试，旨在评估LMMs从教育视频中获取和利用知识的能力。<\/p>\n<\/li>\n<li>\n<p><strong>数据集和问题设计<\/strong>：\n   - Video-MMMU包含300个专家级视频，涵盖六个学科领域，以及900个人工标注的问题，这些问题分布在感知、理解和适应三个认知阶段。<\/p>\n<\/li>\n<li>\n<p><strong>知识获取度量指标<\/strong>：\n   - 论文提出了一个名为∆knowledge的度量指标，用于量化模型在观看视频后在实践考试问题上的性能提升。<\/p>\n<\/li>\n<li>\n<p><strong>实验与评估<\/strong>：\n   - 论文评估了一系列开源和专有的LMMs在Video-MMMU上的性能，并与人类专家的表现进行了比较。<\/p>\n<\/li>\n<li>\n<p><strong>主要发现<\/strong>：\n   - 模型在不同认知阶段的性能逐渐下降，表明更深层次的认知任务需要更高级的能力。\n   - 人类与模型在视频学习中获取和应用知识方面存在显著差距。<\/p>\n<\/li>\n<li>\n<p><strong>错误分析<\/strong>：\n   - 论文对模型在适应性问题上的错误进行了详细分析，包括方法选择错误、方法适应错误和问题误读错误。<\/p>\n<\/li>\n<li>\n<p><strong>结论<\/strong>：\n   - 论文强调了未来研究需要关注如何提高LMMs从视频中有效学习的能力，以缩小与人类学习过程的差距。<\/p>\n<\/li>\n<\/ol>\n<p>总体而言，论文通过引入新的基准测试Video-MMMU，提供了一个评估框架来衡量LMMs从专业教育视频中获取知识的能力，并揭示了当前模型在这方面的局限性，为未来的研究方向提供了指导。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Video-MMMU%3A%20Evaluating%20Knowledge%20Acquisition%20from%20Multi-Discipline%20Professional%20Videos，链接是 https://arxiv.org/pdf/2501.13826 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2501.13826 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2501.13826", "kimi_retrieved_at_utc": "2026-09-23T11:28:12+00:00"}, "preview_images": 0, "video_preview_images": 0, "video_cases_count": 6, "video_case_groups_count": 6, "groups_count": 6, "groups_100_count": 0, "overview_html": "datasets/video-mmmu/overview.html", "gallery_html": "datasets/video-mmmu/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

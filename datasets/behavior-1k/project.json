@@ -1,0 +1,2456 @@
+{
+  "slug": "behavior-1k",
+  "title": "BEHAVIOR-1K / 2026 Challenge Demonstrations",
+  "category": "仿真家庭活动 · 遥操作轨迹 · RGB-D",
+  "summary": "论文定义 1,000 项家庭活动；当前 2026 示范数据为 100 个任务、20,000 条 episode，已逐条核验时长。",
+  "paper_url": "https://arxiv.org/abs/2403.09227",
+  "repo_url": "https://github.com/StanfordVL/BEHAVIOR-1K",
+  "project_url": "https://behavior.stanford.edu/",
+  "dataset_urls": [
+    {
+      "label": "2026 LeRobot 示范",
+      "url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos"
+    },
+    {
+      "label": "2026 原始回放 HDF5",
+      "url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-rawdata"
+    }
+  ],
+  "duration_summary": "当前 20,000 条 episode：1952.93 小时，平均 351.53 秒，中位数 335.03 秒，范围 4.93–1525.37 秒（meta length / 30fps）。",
+  "availability": "代码/任务定义及 2026 示范元数据可公开访问；完整 LeRobot 数据官方标为 3.27 TB。",
+  "preview_status": "ready",
+  "limitations": [
+    "300 帧来自同一条 turning_on_radio 示范的三个 RGB 相机，100 帧/相机；不代表 1,000 活动或 100 任务的全覆盖。",
+    "原论文基线只评测 3 个活动；不能把其成功率当成当前 2026 的 100 任务成绩。",
+    "大 MP4 是多个 episode 拼接的容器，其总播放长度不等于单条示范长度；本次仅 Range 读取部分。"
+  ],
+  "groups": [
+    {
+      "id": "zed_link",
+      "title": "头部相机 RGB（开收音机，65.2 秒）",
+      "description": "官方 2026 数据的第 0 条示范，均匀抽取 100 帧。只以 HTTP Range 读取大 MP4 中对应 episode 和容器索引，未保存完整大视频；不是 100 个任务的随机抽样。",
+      "media_kind": "video",
+      "frames": [
+        {
+          "image": "previews/zed_link/001.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 0.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/002.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/003.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/004.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/005.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/006.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 3.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/007.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/008.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/009.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 5.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/010.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/011.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/012.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 7.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/013.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/014.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.833333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/015.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 9.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/016.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/017.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/018.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 11.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/019.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/020.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/021.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 13.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/022.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/023.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.7,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/024.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 15.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/025.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/026.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/027.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/028.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/029.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 18.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/030.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/031.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/032.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 20.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/033.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/034.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/035.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 22.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/036.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/037.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/038.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 24.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/039.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/040.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/041.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 26.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/042.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/043.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/044.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 28.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/045.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/046.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/047.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 30.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/048.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/049.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/050.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/051.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/052.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 33.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/053.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/054.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/055.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 35.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/056.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/057.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/058.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 37.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/059.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/060.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/061.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 39.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/062.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/063.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/064.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 41.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/065.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/066.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/067.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 43.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/068.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/069.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/070.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/071.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/072.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 46.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/073.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/074.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/075.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 48.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/076.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/077.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/078.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 50.533333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/079.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/080.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/081.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 52.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/082.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/083.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/084.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 54.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/085.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/086.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/087.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 56.4,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/088.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/089.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/090.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 58.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/091.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/092.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/093.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/094.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/095.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 61.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/096.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/097.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/098.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 63.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/099.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/zed_link/100.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "头部相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.zed_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.9,
+          "duration_seconds": 65.2
+        }
+      ],
+      "duration_label": "episode 时长"
+    },
+    {
+      "id": "left_realsense_link",
+      "title": "左腕相机 RGB（开收音机，65.2 秒）",
+      "description": "官方 2026 数据的第 0 条示范，均匀抽取 100 帧。只以 HTTP Range 读取大 MP4 中对应 episode 和容器索引，未保存完整大视频；不是 100 个任务的随机抽样。",
+      "media_kind": "video",
+      "frames": [
+        {
+          "image": "previews/left_realsense_link/001.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 0.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/002.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/003.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/004.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/005.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/006.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 3.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/007.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/008.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/009.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 5.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/010.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/011.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/012.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 7.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/013.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/014.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.833333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/015.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 9.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/016.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/017.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/018.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 11.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/019.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/020.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/021.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 13.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/022.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/023.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.7,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/024.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 15.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/025.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/026.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/027.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/028.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/029.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 18.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/030.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/031.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/032.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 20.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/033.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/034.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/035.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 22.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/036.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/037.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/038.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 24.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/039.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/040.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/041.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 26.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/042.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/043.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/044.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 28.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/045.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/046.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/047.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 30.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/048.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/049.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/050.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/051.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/052.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 33.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/053.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/054.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/055.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 35.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/056.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/057.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/058.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 37.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/059.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/060.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/061.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 39.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/062.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/063.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/064.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 41.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/065.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/066.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/067.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 43.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/068.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/069.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/070.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/071.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/072.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 46.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/073.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/074.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/075.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 48.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/076.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/077.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/078.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 50.533333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/079.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/080.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/081.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 52.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/082.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/083.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/084.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 54.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/085.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/086.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/087.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 56.4,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/088.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/089.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/090.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 58.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/091.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/092.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/093.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/094.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/095.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 61.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/096.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/097.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/098.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 63.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/099.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/left_realsense_link/100.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "左腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.left_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.9,
+          "duration_seconds": 65.2
+        }
+      ],
+      "duration_label": "episode 时长"
+    },
+    {
+      "id": "right_realsense_link",
+      "title": "右腕相机 RGB（开收音机，65.2 秒）",
+      "description": "官方 2026 数据的第 0 条示范，均匀抽取 100 帧。只以 HTTP Range 读取大 MP4 中对应 episode 和容器索引，未保存完整大视频；不是 100 个任务的随机抽样。",
+      "media_kind": "video",
+      "frames": [
+        {
+          "image": "previews/right_realsense_link/001.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 0.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/002.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/003.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 1.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/004.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/005.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 2.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/006.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 3.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/007.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/008.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 4.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/009.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 5.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/010.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/011.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 6.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/012.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 7.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/013.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/014.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 8.833333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/015.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 9.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/016.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/017.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 10.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/018.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 11.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/019.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/020.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 12.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/021.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 13.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/022.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/023.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 14.7,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/024.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 15.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/025.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/026.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 16.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/027.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/028.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 17.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/029.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 18.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/030.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/031.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 19.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/032.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 20.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/033.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/034.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 21.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/035.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 22.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/036.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/037.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 23.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/038.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 24.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/039.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.133333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/040.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 25.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/041.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 26.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/042.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/043.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 27.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/044.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 28.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/045.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/046.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 29.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/047.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 30.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/048.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.0,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/049.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 31.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/050.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/051.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 32.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/052.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 33.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/053.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/054.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 34.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/055.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 35.566667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/056.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/057.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 36.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/058.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 37.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/059.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/060.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 38.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/061.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 39.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/062.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/063.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 40.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/064.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 41.433333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/065.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/066.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 42.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/067.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 43.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/068.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/069.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 44.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/070.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/071.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 45.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/072.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 46.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/073.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.3,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/074.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 47.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/075.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 48.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/076.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/077.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 49.9,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/078.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 50.533333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/079.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.2,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/080.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 51.866667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/081.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 52.5,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/082.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.166667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/083.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 53.8,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/084.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 54.466667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/085.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.1,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/086.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 55.766667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/087.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 56.4,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/088.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.066667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/089.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 57.733333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/090.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 58.366667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/091.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.033333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/092.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 59.666667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/093.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.333333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/094.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 60.966667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/095.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 61.633333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/096.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.266667,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/097.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 62.933333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/098.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 63.6,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/099.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.233333,
+          "duration_seconds": 65.2
+        },
+        {
+          "image": "previews/right_realsense_link/100.jpg",
+          "source_url": "https://huggingface.co/datasets/behavior-1k/2026-challenge-demos/blob/main/videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4",
+          "source_label": "右腕相机 RGB / turning_on_radio / episode 0",
+          "video_id": "videos/observation.rgb.right_realsense_link_camera_0/chunk-000/file-000.mp4#episode=0",
+          "timestamp_seconds": 64.9,
+          "duration_seconds": 65.2
+        }
+      ],
+      "duration_label": "episode 时长"
+    }
+  ]
+}

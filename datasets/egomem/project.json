@@ -1,0 +1,20 @@
+{
+  "title": "EgoMem — Full-duplex Lifelong Memory Agent",
+  "category": "实时音视频对话记忆",
+  "summary": "面向 RoboEgo 的终身对话记忆系统；主要使用合成用户档案与对话训练，非独立长视频记忆数据集。",
+  "paper_url": "https://arxiv.org/abs/2509.11914",
+  "repo_url": "",
+  "project_url": "https://figshare.com/s/ebd3210db6b0a47149b7",
+  "dataset_urls": [],
+  "duration_summary": "训练 token stream 最长 8,192 步 / 12.5 Hz ≈ 655.36 秒；论文演示约 2 分钟；源视频总时长未公开。",
+  "availability": "论文公开；官方代码及合成训练数据下载入口未找到；Figshare 演示当前不可读取",
+  "preview_status": "unavailable",
+  "limitations": [
+    "不能混淆 VideoLucy 的同名 EgoMem benchmark 或第三方同名机器人库。",
+    "655.36 秒为整个 token stream 的理论时间跨度，含 memory 保留位置，不是每段有效对话或每个视频文件的精确时长。",
+    "论文 Figshare 演示链接在本环境返回空正文，未生成视频帧。"
+  ],
+  "groups": [],
+  "slug": "egomem",
+  "checked_at": "2026-09-22"
+}

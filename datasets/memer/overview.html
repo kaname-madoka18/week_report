@@ -1,0 +1,305 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemER: Scaling Up Memory for Robot Control via Experience Retrieval · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">MemER: Scaling Up Memory for Robot Control via Experience Retrieval</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-10-23</strong></div><div><span>引用数</span><strong>68</strong></div><div><span>GitHub stars</span><strong>60</strong></div><div><span>当前状态</span><strong>ICLR 2026</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2510.20328" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/memer-policy/memer" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/ef682caa44110c17ac939ec31c3f9f7ea61314f6" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://jen-pan.github.io/memer/" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=MemER%3A+Scaling+Up+Memory+for+Robot+Control+via+Experience+Retrieval" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>论文旨在解决现有机器人策略在长程任务中缺乏“长期视觉记忆”能力的问题。<br/>
+具体而言，大多数端到端的视觉-语言-动作（VLA）策略仅依赖当前或极短历史观测，导致在部分可观测环境中无法完成需要跨数分钟、数百帧信息的复杂任务。为此，作者提出 MemER 框架，通过以下方式实现可扩展的记忆：</p>
+<ul>
+<li>让高层策略从完整历史中选出一组紧凑的关键帧，而非暴力地延长上下文；</li>
+<li>将选出的关键帧与最近帧共同输入高层 VLM，生成语言子任务供底层策略执行；</li>
+<li>在推理阶段以 ≈1 Hz 的频率在线更新记忆，保证低延迟与长时依赖兼顾。</li>
+</ul>
+<p>目标是在仅 50 条演示数据、少量语言标注的条件下，使现有开源 VLA 模型具备“回忆”物体位置、已完成动作或计数等能力，从而在三项真实机器人长程操作任务中显著优于无记忆或朴素延长上下文的基线。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>相关研究可归纳为三条主线，均围绕“如何让机器人策略利用历史信息”展开：</p>
+<ol>
+<li>
+<p>短时记忆扩展<br/>
+   - 过去帧辅助损失：Torne et al. (2025) 用“past-token prediction”把上下文从 2–3 帧扩到约 24 帧，仍局限于数十秒。<br/>
+   - 原生记忆架构：Fang et al. (2025) 在 VLA 内部加入记忆缓存，但只保留最近 N=10 帧，无法召回数分钟前的关键画面。</p>
+</li>
+<li>
+<p>视觉压缩与轨迹编码<br/>
+   - 像素级压缩：Li et al. (2025a) 对固定机位视频做帧间聚类，对手腕相机无效。<br/>
+   - 运动迹（Trace）：Zheng et al. (2025a) 把历史压缩成 2D 末端执行器与物体运动热力图，仅保留短期时空线索，难以支持“回忆物体初始位置”等长时依赖。</p>
+</li>
+<li>
+<p>导航领域的显式记忆<br/>
+   - 几何-语义地图：Henry et al. (2012); Yu et al. (2024) 构建室内稠密地图，但操纵任务中环境被持续改动，地图维护代价高。<br/>
+   - API-Based VLM 导航：Chiang et al. (2024); Sharma et al. (2023) 用商用多模态大模型直接读视频选路，推理延迟 10–15 s，无法满足闭环操纵的 ≤1 s 要求。</p>
+</li>
+</ol>
+<p>MemER 与上述工作的区别在于：<br/>
+- 不单纯“加长上下文”，而是训练高层策略主动提名并在线聚类关键帧，实现跨千帧的紧凑记忆；<br/>
+- 兼容现有 VLA  backbone，无需额外轻量级打分模型或离线预计算；<br/>
+- 面向手腕相机、15 Hz 流式输入，在 1 Hz 高层频率下仍保持实时性。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文提出 MemER，通过“分层-关键帧-在线聚类”三步把长程视觉记忆嵌入现有 VLA 体系，具体做法如下：</p>
+<ol>
+<li>
+<p>分层架构<br/>
+   - 高层 π_h：微调 Qwen2.5-VL-7B-Instruct，输入“任务语言 + 最近 N 帧 + 已选关键帧”，输出<br/>
+     – 当前子任务 l′_t（供底层执行）；<br/>
+     – 候选关键帧 J_t ⊆ 最近 N 帧。<br/>
+   - 底层 π_l：微调 π0.5，仅依赖当前图像、本体感受与 l′_t 输出 15 步动作块，保持 2 Hz 控制频率。</p>
+</li>
+<li>
+<p>在线关键帧过滤（1D single-linkage）<br/>
+   把从开始到 t 时刻所有候选帧时序索引聚类，合并间距 ≤d=5 的相邻帧，每类取中位时刻对应图像作为记忆 K_t，保证：<br/>
+   - 覆盖全 episode；<br/>
+   - |K_t|≤8，显存与延迟恒定；<br/>
+   - 无需额外模型，流式更新。</p>
+</li>
+<li>
+<p>训练与部署细节<br/>
+   - 数据：50 条长程演示 + 10-15 条干预，人工只标“每段子任务选首/尾/无帧”规则，自动批量生成关键帧真值。<br/>
+   - 权重合并：θ = 0.2·θ_pre + 0.8·θ_ft，保留预训练鲁棒性。<br/>
+   - 异步闭环：π_h 1 Hz，π_l 2 Hz，队列缓存 2 Hz 图像，推理延迟 &lt;1 s。</p>
+</li>
+</ol>
+<p>通过“主动选择-压缩-回放”机制，MemER 在需要数分钟记忆的三个真实任务上平均提升 34% 以上，同时保持低延迟与即插即用兼容性。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文在真实机器人平台上设计了三项长程操纵任务，系统评估记忆机制的必要性与有效性。实验围绕三个核心问题展开，共包含 20 轮/任务/方法的在线闭环测试，以及补充的离线对比。</p>
+<hr/>
+<h3>1 任务设置与度量</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>关键记忆需求</th>
+<th>评估指标（越高越好，除非注明↓）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Object Search</strong></td>
+<td>跨指令记住已查看的 bin 及其内容</td>
+<td>成功取物次数 + 最优路径次数（满分 6）</td>
+</tr>
+<tr>
+<td><strong>Counting Scoops</strong></td>
+<td>记住两种食材已舀次数</td>
+<td>请求与实得勺数差值绝对值之和（↓，越低越好）</td>
+</tr>
+<tr>
+<td><strong>Dust &amp; Replace</strong></td>
+<td>记住物品原位置 &amp; 哪层货架已除尘</td>
+<td>物品正确归位 0/1 ×2 + 两层除尘 0/1 ×2（满分 4）</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>2 Q1：MemER 是否真正解决“必须靠记忆”的任务？</h3>
+<p><strong>基线</strong><br/>
+- No History：π_h 仅见当前帧<br/>
+- Short History：π_h 见最近 8 帧<br/>
+- Long History：π_h 见最近 32 帧<br/>
+- Human HL：人类在线给出子任务（上限参考）</p>
+<p><strong>结果</strong><br/>
+- No/Short History 在三任务均 &lt;35 % 进度；Long History 平均仍落后 MemER 34 %。<br/>
+- MemER 三任务平均进度 &gt;90 %，与 Human HL 无显著差异，验证其可有效替代人类高级指令。</p>
+<hr/>
+<h3>3 Q2：微调开源 VLM 是否优于直接使用闭源大模型？</h3>
+<p><strong>离线实验</strong><br/>
+- 用同一批低层真实轨迹（含重试、停顿）构建 1000+ 时刻的测试集。<br/>
+- 输入：N=8 最近帧 + 记忆关键帧；输出：子任务标签与候选关键帧。<br/>
+- 对比：零样本 GPT-5、Gemini Robotics-ER 1.5。</p>
+<p><strong>结果</strong><br/>
+| 模型 | Trajectory Acc ↑ | Boundary Acc ↑ |
+|----|-----------------|-----------------|
+| GPT-5 | 0.15–0.67 | 0.16–0.63 |
+| Gemini-ER 1.5 | 0.13–0.21 | 0.14–0.23 |
+| MemER (微调 Qwen2.5-VL) | <strong>0.67–0.87</strong> | <strong>0.65–0.86</strong> |</p>
+<p>闭源模型因无法识别机器人特定关键帧，轨迹准确率最低仅 0.13，凸显微调必要性。</p>
+<hr/>
+<h3>4 Q3：记忆该用图像、文本还是混合？</h3>
+<p><strong>基线</strong><br/>
+- Short History + Text：8 帧 + 对应子任务文本<br/>
+- MemER + Text：图像关键帧 + 文本子任务交错</p>
+<p><strong>结果</strong><br/>
+- 纯视觉 MemER 在三任务均 ≥95 % 进度。<br/>
+- 加入文本后性能下降，Counting 任务误差增大 12 倍；模型过度依赖文本 token，忽视视觉细节。</p>
+<hr/>
+<h3>5 额外分析</h3>
+<ul>
+<li><strong>单任务 vs 多任务</strong>：多任务版本在跨任务物体泛化评估中提升 18 %，验证规模化训练可增强对象-任务组合迁移。  </li>
+<li><strong>模型合并</strong>：权重插值 α=0.8 时，三任务性能持平或+3 %，同时减少底层重试失败率。  </li>
+<li><strong>推理开销</strong>：π_h 单次前向 600 ms，π_l 80 ms，整体 1 Hz 高级更新满足实时闭环。</li>
+</ul>
+<hr/>
+<p>综上，实验覆盖“记忆必要性—模型来源—模态选择—系统开销”全链路，证明 MemER 在真实长程操纵场景下兼具高成功率与部署可行性。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><ul>
+<li>
+<p><strong>可遗忘机制</strong>：当前关键帧只增不减，对需数小时记忆的任务会膨胀。可让高层策略学习“删除”过时或冲突帧，实现可变长、可修改的长期记忆。  </p>
+</li>
+<li>
+<p><strong>多模态记忆</strong>：现仅视觉帧，可引入触觉、音频、本体感受等嵌入同一记忆空间，增强对接触事件、声音提示的召回。  </p>
+</li>
+<li>
+<p><strong>高频推理</strong>：π_h 1 Hz 限制了对突发变化的响应。可结合模型缓存、KV 压缩或蒸馏小模型，把高层频率提升到 5–10 Hz。  </p>
+</li>
+<li>
+<p><strong>跨 embodiment 迁移</strong>：目前单臂桌面设置。扩展到移动操作、多房间场景，需要把视觉记忆与拓扑/度量地图融合，实现“空间-时序”混合记忆。  </p>
+</li>
+<li>
+<p><strong>自监督关键帧</strong>：关键帧仍依赖人工规则监督。可探索自监督信号（信息增益、预测误差、任务奖励）自动发现值得记忆的时刻。  </p>
+</li>
+<li>
+<p><strong>异构任务增量学习</strong>：研究在不停用旧任务的前提下，持续向记忆模块注入新任务的关键帧与语义，避免灾难性遗忘。  </p>
+</li>
+<li>
+<p><strong>记忆解释与可视化</strong>：提供人类可读的“回忆”原因，便于调试和人机共融；同时支持语言指令式查询记忆（“我刚才把螺丝刀放哪了？”）。</p>
+</li>
+</ul></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p><strong>MemER：通过经验检索为机器人控制扩展记忆</strong></p>
+<ol>
+<li>
+<p>问题<br/>
+   现有 VLA 策略仅依赖当前或极短历史观测，无法完成需“数分钟、数百帧”回忆的长程任务（如记住物品位置、已执行动作或计数）。</p>
+</li>
+<li>
+<p>思路<br/>
+   采用分层框架：<br/>
+   - 高层 π_h：微调开源 Qwen2.5-VL-7B-Instruct，输入“任务语言 + 最近 N 帧 + 已选关键帧”，输出子任务 l′_t 并提名候选关键帧 J_t。<br/>
+   - 在线过滤：对累积候选帧做 1D single-linkage 聚类（合并间距 ≤5），每类取中位时刻，得到 ≤8 张持久记忆 K_t，流式更新。<br/>
+   - 底层 π_l：微调 π0.5，仅依据当前图像、本体感受与 l′_t 输出 15 步动作块，2 Hz 闭环控制。</p>
+</li>
+<li>
+<p>训练与部署<br/>
+   - 数据：50 条长程演示 + 10-15 条干预；人工只定“每子任务选首/尾/无帧”规则，自动批量生成关键帧标签。<br/>
+   - 权重合并：θ = 0.2θ_pre + 0.8θ_ft，保留预训练鲁棒性。<br/>
+   - 异步运行：π_h 1 Hz，π_l 2 Hz，整体延迟 &lt;1 s。</p>
+</li>
+<li>
+<p>实验<br/>
+   三项真实机器人任务（Object Search、Counting Scoops、Dust &amp; Replace）每任务 20 轮：<br/>
+   - 无/短/长历史基线平均落后 34–60 %；MemER 进度均 &gt;90 %，媲美人类在线指令。<br/>
+   - 零样本 GPT-5/Gemini-ER 轨迹准确率最低 0.13，凸显微调必要。<br/>
+   - 纯视觉记忆优于文本或图文混合，避免模型过度依赖文本 token。<br/>
+   - 多任务训练提升跨物体泛化 18 %；模型合并保持或提升性能。</p>
+</li>
+<li>
+<p>贡献<br/>
+   提出一种即插即用、低延迟、可扩展到千帧级依赖的分层记忆框架，使现有开源 VLA 在少量演示下即可获得“回忆”能力，为长程机器人操纵提供实用解决方案。</p>
+</li>
+</ol></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是MemER%3A%20Scaling%20Up%20Memory%20for%20Robot%20Control%20via%20Experience%20Retrieval，链接是 https://arxiv.org/pdf/2510.20328 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2510.20328 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="memer">MemER：通过经验检索扩展机器人控制记忆</h1>
+<p>核验日期：2026-09-23。<strong>MemER: Scaling Up Memory for Robot Control via Experience Retrieval</strong>（arXiv:2510.20328，ICLR 2026）提出了面向真实机器人长时操作的分层记忆策略：高层视觉语言模型检索历史中的关键帧 experience，低层策略根据检索到的边界和当前观测执行动作。作者为 Ajay Sridhar、Jennifer Pan、Satvik Sharma、Chelsea Finn。<a href="https://arxiv.org/abs/2510.20328" target="_blank" rel="noopener">论文</a> · <a href="https://github.com/memer-policy/memer" target="_blank" rel="noopener">GitHub</a> · <a href="https://jen-pan.github.io/memer/" target="_blank" rel="noopener">项目官网</a></p>
+<h2 id="_1">这页整理了什么</h2>
+<p>这页是论文与官网演示的可追溯预览，不是把完整训练集复制到本地。官网公开的 6 个 MP4 都小于 100 MB，因此保存了完整副本；第二版页面把它们直接放成可播放的 video case，没有再为短视频生成 100 帧图片。文件的播放时长、帧数、尺寸、字节数和 SHA-256 见 <a href="metadata/video_cases.csv">video_cases.csv</a> 与 <a href="project.json">project.json</a>。</p>
+<table>
+<thead>
+<tr>
+<th>展示分组</th>
+<th style="text-align: right;">视频 case</th>
+<th style="text-align: right;">实测播放时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task Visualizations：Object Search / Counting / Dust &amp; Replace</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">36.333–62.667 秒</td>
+</tr>
+<tr>
+<td>Results：Object Search 三种物体组合</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">17.233–28.367 秒</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;"><strong>6</strong></td>
+<td style="text-align: right;"><strong>17.233–62.667 秒</strong></td>
+</tr>
+</tbody>
+</table>
+<p>这些 MP4 是官网压缩后的精选演示，不能把它们的秒数当作训练集 episode 时长。论文中的任务需要持续数分钟的操作；本页用“官网视频实测时长”和“论文任务跨度”分开表述。</p>
+<h2 id="_2">任务与记忆需求</h2>
+<p>论文在真实机器人上研究三个需要检索经验的长时任务，每个任务有 50 个 demonstrations，并为每个任务加入约 10–15 个 intervention demonstrations：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>记忆问题</th>
+<th>任务概念</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object Search</td>
+<td>找回目标物体及其历史位置</td>
+<td>在 3 个不透明箱子中搜索 3–5 个物体并依次取回</td>
+</tr>
+<tr>
+<td>Counting Scoops</td>
+<td>还需要舀几勺</td>
+<td>对花生或 jelly beans 执行精确数量的舀取</td>
+</tr>
+<tr>
+<td>Dust &amp; Replace</td>
+<td>清扫前物体放在哪里、清扫状态如何</td>
+<td>移出物体、清洁两层架子，再放回原处</td>
+</tr>
+</tbody>
+</table>
+<p>实现上，高层使用 Qwen2.5-VL-7B-Instruct，低层使用 <code>pi_0.5</code>；检索按层次组织 keyframe，并在任务边界处选择可供当前决策使用的历史片段。实验平台是 Franka 机械臂，使用第三人称 ZED 和腕部 miniZED；原始图像为 320×180、15 Hz，输入下采样到 2 Hz，高层约 1 Hz、低层约 2 Hz。</p>
+<h2 id="_3">论文结果</h2>
+<p>Table 1 的每项机器人任务评测 20 次。下表保留论文的原始计数，便于区分“物体找对”“路径最优”“数错”以及 Dust &amp; Replace 的各个子目标：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">Object retrieved /20</th>
+<th style="text-align: right;">Optimal path /20</th>
+<th style="text-align: right;">Wrong scoops /20</th>
+<th style="text-align: right;">Dust bottom /20</th>
+<th style="text-align: right;">Dust top /20</th>
+<th style="text-align: right;">Replace bottom /20</th>
+<th style="text-align: right;">Replace top /20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MemER</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>No history</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>Short history</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>Long history</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>Human high-level</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
+<p>论文按任务汇总时报告 MemER 在三个任务上均超过 90% 的任务完成率；长历史基线约比 MemER 低 34%。离线 API 模型的 trajectory / boundary accuracy（Table 2）为：MemER 在 Object Search 为 0.80 / 0.76、Counting 为 0.67 / 0.65、Dust &amp; Replace 为 0.87 / 0.86。这里的数字都是论文报告，本次没有重新运行机器人或复现实验。</p>
+<h2 id="_4">数据与代码入口</h2>
+<p>GitHub 仓库提供高层训练数据准备和评估代码，公开 README 还列出了 LeRobot 格式的数据入口，例如 <code>ajaysri/dusting_train_50_v3_subtasks_rgb</code> 与 <code>ajaysri/dusting_test_10_v3_subtasks_rgb</code>，以及公开 checkpoint <code>ajaysri/memer-dusting-qwen3vl-4b-step-1500</code>。完整训练/评估数据没有在本页批量下载；本地保留了 <a href="sources/README.md">README 快照</a>、<a href="sources/github_tree.json">GitHub tree 快照</a>、<a href="sources/paper.html">论文 HTML 快照</a> 和 <a href="sources/project.html">官网 HTML 快照</a>，以便核对版本与来源。</p>
+<h2 id="_5">第二版短视频展示规则</h2>
+<p>本目录统一把“本地完整副本不超过 180 秒且小于 100 MB”的视频直接显示为 video case；因此本页每个分组都显示 <code>&lt;video controls&gt;</code> 播放器，只有本地元数据表记录，不生成重复帧卡片。更长或没有安全本地副本的项目仍使用 100 帧均匀抽样；这条规则与本页的 6 个官网短视频都已通过文件校验。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

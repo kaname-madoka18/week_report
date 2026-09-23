@@ -1,0 +1,1125 @@
+{
+  "slug": "video-mmlu",
+  "title": "Video-MMLU：短视频知识理解评测",
+  "category": "短视频知识理解评测",
+  "summary": "1,065 个数学/物理/化学课堂视频，评估详细笔记和讲授内容问答；15,746个推理QA。",
+  "paper_url": "https://arxiv.org/abs/2504.14693",
+  "repo_url": "https://github.com/Espere-1119-Song/Video-MMLU",
+  "project_url": "https://www.enxinsong.com/Video-MMLU-web/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/Enxin/Video-MMLU"
+    }
+  ],
+  "duration_summary": "单视频10–240秒；平均109秒；82.2%不超过180秒。因此本页优先直接播放短case。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "available",
+  "relation_level": "评测近邻",
+  "limitations": [
+    "大多数片段只有数十秒到3分钟；与日/周尺度记忆数据不同。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://www.enxinsong.com/Video-MMLU-web/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2504.14693"
+    }
+  ],
+  "groups": [
+    {
+      "id": "case_xgfYivQt-x0",
+      "title": "讲座理解 case：xgfYivQt-x0",
+      "description": "官网讲座视频 case，按本地文件读取播放时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmlu",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/xgfYivQt-x0.mp4",
+          "local_video": "samples/xgfYivQt-x0.mp4",
+          "poster": "previews/xgfYivQt-x0_poster.jpg",
+          "size_bytes": 1202520,
+          "duration_seconds": 58.233333333333334,
+          "width": 360,
+          "height": 360,
+          "codec": "h264",
+          "fps": 30.0,
+          "sha256": "a8fef04dc03d17c4aef28dc503df6172d72b73ceaa99721ffd3b9b81f3890905",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 1202520,
+          "title": "讲座理解 case：xgfYivQt-x0",
+          "source_label": "讲座理解 case：xgfYivQt-x0",
+          "video_id": "xgfYivQt-x0",
+          "category": "官方视频 case",
+          "description": "官网讲座视频 case，按本地文件读取播放时长。"
+        }
+      ]
+    },
+    {
+      "id": "case_Y_w07A7chnk",
+      "title": "讲座理解 case：Y_w07A7chnk",
+      "description": "官网讲座视频 case，按本地文件读取播放时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmlu",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/Y_w07A7chnk.mp4",
+          "local_video": "samples/Y_w07A7chnk.mp4",
+          "poster": "previews/Y_w07A7chnk_poster.jpg",
+          "size_bytes": 4541042,
+          "duration_seconds": 144.0,
+          "width": 640,
+          "height": 360,
+          "codec": "h264",
+          "fps": 30.0,
+          "sha256": "de5bda006660aa0686c21489c486fba9929f8c7536b1da1ebcc8c32326fa0c73",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 4541042,
+          "title": "讲座理解 case：Y_w07A7chnk",
+          "source_label": "讲座理解 case：Y_w07A7chnk",
+          "video_id": "Y_w07A7chnk",
+          "category": "官方视频 case",
+          "description": "官网讲座视频 case，按本地文件读取播放时长。"
+        }
+      ]
+    },
+    {
+      "id": "frames_6H6nCpGW1nU",
+      "title": "讲座理解 case：6H6nCpGW1nU · 100帧",
+      "description": "官网讲座视频 case，按本地文件读取播放时长。 超过180秒，按全视频时长均匀取100帧；显示实际解码时间戳。",
+      "media_kind": "video",
+      "frames": [
+        {
+          "image": "previews/6H6nCpGW1nU/001.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 1.0343666666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/002.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 3.069733333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/003.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 5.1051,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/004.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 7.1738333333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/005.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 9.2092,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/006.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 11.244566666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/007.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 13.279933333333334,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/008.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 15.3153,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/009.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 17.384033333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/010.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 19.4194,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/011.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 21.454766666666668,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/012.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 23.490133333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/013.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 25.5255,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/014.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 27.560866666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/015.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 29.6296,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/016.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 31.66496666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/017.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 33.70033333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/018.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 35.7357,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/019.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 37.77106666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/020.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 39.8398,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/021.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 41.875166666666665,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/022.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 43.91053333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/023.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 45.9459,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/024.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 47.98126666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/025.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 50.01663333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/026.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 52.085366666666665,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/027.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 54.120733333333334,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/028.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 56.1561,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/029.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 58.19146666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/030.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 60.22683333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/031.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 62.2622,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/032.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 64.33093333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/033.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 66.3663,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/034.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 68.40166666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/035.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 70.43703333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/036.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 72.4724,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/037.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 74.54113333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/038.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 76.5765,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/039.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 78.61186666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/040.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 80.64723333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/041.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 82.6826,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/042.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 84.71796666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/043.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 86.7867,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/044.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 88.82206666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/045.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 90.85743333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/046.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 92.8928,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/047.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 94.92816666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/048.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 96.9969,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/049.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 99.03226666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/050.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 101.06763333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/051.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 103.103,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/052.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 105.13836666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/053.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 107.17373333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/054.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 109.24246666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/055.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 111.27783333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/056.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 113.3132,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/057.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 115.34856666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/058.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 117.38393333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/059.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 119.45266666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/060.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 121.48803333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/061.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 123.5234,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/062.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 125.55876666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/063.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 127.59413333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/064.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 129.6295,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/065.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 131.69823333333332,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/066.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 133.7336,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/067.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 135.76896666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/068.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 137.80433333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/069.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 139.8397,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/070.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 141.90843333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/071.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 143.9438,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/072.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 145.97916666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/073.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 148.01453333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/074.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 150.0499,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/075.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 152.08526666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/076.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 154.154,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/077.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 156.18936666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/078.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 158.22473333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/079.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 160.2601,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/080.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 162.29546666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/081.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 164.33083333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/082.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 166.39956666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/083.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 168.43493333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/084.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 170.4703,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/085.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 172.50566666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/086.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 174.54103333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/087.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 176.60976666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/088.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 178.64513333333332,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/089.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 180.6805,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/090.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 182.71586666666667,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/091.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 184.75123333333335,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/092.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 186.7866,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/093.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 188.85533333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/094.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 190.8907,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/095.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 192.92606666666666,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/096.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 194.96143333333333,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/097.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 196.9968,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/098.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 199.06553333333332,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/099.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 201.1009,
+          "source_video_size_bytes": 4227698
+        },
+        {
+          "image": "previews/6H6nCpGW1nU/100.jpg",
+          "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+          "source_label": "讲座理解 case：6H6nCpGW1nU",
+          "video_id": "6H6nCpGW1nU",
+          "local_video": "samples/6H6nCpGW1nU.mp4",
+          "duration_seconds": 204.137,
+          "timestamp_seconds": 203.13626666666667,
+          "source_video_size_bytes": 4227698
+        }
+      ],
+      "source_video": {
+        "slug": "video-mmlu",
+        "source_url": "https://www.enxinsong.com/Video-MMLU-web/assets/vid/cases/6H6nCpGW1nU.mp4",
+        "local_video": "samples/6H6nCpGW1nU.mp4",
+        "poster": "previews/6H6nCpGW1nU_poster.jpg",
+        "size_bytes": 4227698,
+        "duration_seconds": 204.137,
+        "width": 640,
+        "height": 360,
+        "codec": "h264",
+        "fps": 29.97002997002997,
+        "sha256": "1a6eb477e523feaae5984d639b6dcf2d7d6c42add131f592a56c3ba21423144e",
+        "measurement_tool": "PyAV / FFmpeg libraries",
+        "downloaded_bytes_this_run": 4227698,
+        "title": "讲座理解 case：6H6nCpGW1nU",
+        "source_label": "讲座理解 case：6H6nCpGW1nU",
+        "video_id": "6H6nCpGW1nU",
+        "category": "官方视频 case",
+        "description": "官网讲座视频 case，按本地文件读取播放时长。"
+      }
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

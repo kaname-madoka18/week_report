@@ -1,0 +1,43 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SuperMemory-VQA · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">SuperMemory-VQA</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>未取得</strong></div><div><span>引用数</span><strong>暂未取得</strong></div><div><span>GitHub stars</span><strong>6</strong></div><div><span>当前状态</span><strong>NeurIPS 2026 Datasets &amp; Benchmarks Track · under review</strong></div></div><p class="paper-intel-links">无公开 arXiv 页面 · <a href="https://github.com/AIoT-MLSys-Lab/supermemory-vqa" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://github.com/AIoT-MLSys-Lab/supermemory-vqa/blob/main/README.md" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=SuperMemory-VQA%3A+An+Egocentric+Visual+Question+Answering+Benchmark+for+Long-Horizon+Memory" target="_blank" rel="noopener">papers.cool</a></p><div class="paper-brief paper-brief-empty">Kimi brief：no_arxiv_id</div></section><main class="report"><h1 id="supermemory-vqa-overview">SuperMemory-VQA 数据集 overview</h1>
+<p>核查日期：2026-09-22。<a href="https://github.com/AIoT-MLSys-Lab/supermemory-vqa" target="_blank" rel="noopener">官方仓库</a>自述为 NeurIPS 2026 Datasets and Benchmarks Track 审稿中；未找到可核对的公开 arXiv 正文。下列规模来自 README，<strong>不是本次下载全库后的统计</strong>。</p>
+<h2 id="_1">数据与视频长度</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>已知情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总视频长度</td>
+<td>52.9 小时，README 声明</td>
+</tr>
+<tr>
+<td>QA 数量</td>
+<td>4,853，人工参与核验的选择题</td>
+</tr>
+<tr>
+<td>时间范围</td>
+<td>小时级上下文，记录跨度最多两周；跨度不等于连续录制总时长</td>
+</tr>
+<tr>
+<td>单个视频长度、数量、人物数量</td>
+<td>官方当前 README 未给逐文件清单，未核验</td>
+</tr>
+<tr>
+<td>设备与模态</td>
+<td>第一代 Meta Aria；RGB、音频转写、眼动、IMU、SLAM</td>
+</tr>
+<tr>
+<td>多证据问题</td>
+<td>README 表中声明 34%</td>
+</tr>
+</tbody>
+</table>
+<p>六类任务为物体与位置记忆、对话记忆、视觉场景回忆、上下文检索、时间线重建、意图回忆。选项有正确、模糊、错误、无法回答等层次，用来衡量证据不足时的回答行为。六类是 QA 能力维度；没有依据可将 52.9 小时划分为六组互斥视频。</p>
+<h2 id="_2">论文结果与可复现状态</h2>
+<p>当前公开 README 介绍两阶段标注流水线：先按时间顺序生成视频描述，再构建全局事件记录、生成并核验问题。没有正式模型分数表、训练/验证/测试划分或完整论文，因此本 overview 不填模型准确率。代码中的 <code>chunk_duration=60</code> 是可配置处理窗口，<strong>不能当作源视频固定长度</strong>。</p>
+<h2 id="_3">发布与预览</h2>
+<p>核查提交 <code>8123980820ffa23a3452faa6bd8ce5dff0f03164</code> 的递归 GitHub 树：218 个文件，仅 <code>assets/vqa_samples.png</code> 为样例图；未发现公开视频、完整 benchmark QA 文件或单独数据下载链接。公开的是处理用户本地视频的流水线和人工审核界面，并不等于 52.9 小时数据已经发布。本次没有可验证的源视频，因此没有生成 100 帧预览。</p>
+<p>来源快照：<a href="sources/README.md">README</a>、<a href="sources/github_tree.json">完整仓库树</a>。没有下载视频。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

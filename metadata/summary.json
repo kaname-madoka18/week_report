@@ -1,0 +1,29 @@
+{
+  "access_date_utc": "2026-09-22",
+  "main_clips": 32001,
+  "main_size_bytes": 512225930110,
+  "main_nominal_hours": 266.675,
+  "main_duration_note": "nominal; exact sum of all files not measured",
+  "measured_main_clips": 700,
+  "measured_main_min_seconds": 4.05,
+  "measured_main_max_seconds": 30.05,
+  "eye_clips": 32067,
+  "eye_measured_clips": 100,
+  "third_clips": 133,
+  "third_size_bytes": 1234025738504,
+  "third_duration_status": "unverified: directory access succeeded, direct media metadata unavailable",
+  "website_videos": 57,
+  "unique_preview_frames": 1600,
+  "groups_100_frames": 22,
+  "paper_qa_count": 3000,
+  "public_qa_count": 500,
+  "public_qa_types": {
+    "EntityLog": 125,
+    "RelationMap": 125,
+    "EventRecall": 126,
+    "TaskMaster": 63,
+    "HabitInsight": 61
+  },
+  "caption_training_rows": 9002,
+  "qa_training_rows": 33352
+}

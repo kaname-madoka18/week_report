@@ -1,0 +1,117 @@
+{
+  "slug": "vsi-bench",
+  "title": "VSI-Bench：视觉空间记忆基准",
+  "category": "视觉空间记忆基准",
+  "summary": "288 个第一人称室内扫描视频、5,000+ 问答；要求从连续视角建立、记住并调用空间布局。",
+  "paper_url": "https://arxiv.org/abs/2412.14171",
+  "repo_url": "https://github.com/vision-x-nyu/thinking-in-space",
+  "project_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/nyu-visionx/VSI-Bench"
+    }
+  ],
+  "duration_summary": "288个评测视频；本文本未取得可直接核验的统一平均时长。下方官网case由PyAV实测，官方分布图保留其源集合统计口径，不据图反推288视频的平均长度。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "available",
+  "relation_level": "直接记忆",
+  "limitations": [
+    "官网case为室内扫描视频；并非跨天生活记录。",
+    "当前源数据可能有后续修订；官方说明代码结果与论文表格可能因数据精炼略有差异。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://vision-x-nyu.github.io/thinking-in-space.github.io/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2412.14171"
+    }
+  ],
+  "groups": [
+    {
+      "id": "case_45662987",
+      "title": "室内空间记忆场景：45662987",
+      "description": "官网公开场景 case；实测此发布文件的播放时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "vsi-bench",
+          "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/videos/45662987.mp4",
+          "local_video": "samples/45662987.mp4",
+          "poster": "previews/45662987_poster.jpg",
+          "size_bytes": 7825034,
+          "duration_seconds": 67.33333333333333,
+          "width": 640,
+          "height": 480,
+          "codec": "h264",
+          "fps": 30.0,
+          "sha256": "6ce949efece79979dff55afafd351128df7ed23bca599e75550075d7f61925e7",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 7825034,
+          "title": "室内空间记忆场景：45662987",
+          "source_label": "室内空间记忆场景：45662987",
+          "video_id": "45662987",
+          "category": "官方视频 case",
+          "description": "官网公开场景 case；实测此发布文件的播放时长。"
+        }
+      ]
+    },
+    {
+      "id": "case_scene0663_00",
+      "title": "室内空间记忆场景：scene0663_00",
+      "description": "官网公开场景 case；实测此发布文件的播放时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "vsi-bench",
+          "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/videos/scene0663_00.mp4",
+          "local_video": "samples/scene0663_00.mp4",
+          "poster": "previews/scene0663_00_poster.jpg",
+          "size_bytes": 8928119,
+          "duration_seconds": 122.75,
+          "width": 640,
+          "height": 480,
+          "codec": "h264",
+          "fps": 24.0,
+          "sha256": "2b70048cdd85194eb3728c2f28e9a9966bf3347031b2f497f1ecf684aea38895",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 8928119,
+          "title": "室内空间记忆场景：scene0663_00",
+          "source_label": "室内空间记忆场景：scene0663_00",
+          "video_id": "scene0663_00",
+          "category": "官方视频 case",
+          "description": "官网公开场景 case；实测此发布文件的播放时长。"
+        }
+      ]
+    },
+    {
+      "id": "official_images",
+      "title": "官方任务与数据示例图",
+      "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "slug": "vsi-bench",
+          "image": "previews/benchmark-stats.png",
+          "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/img/benchmark-stats.png",
+          "source_label": "官方任务/视频长度统计图（不同源集合口径）",
+          "size_bytes": 1755598,
+          "width": 4908,
+          "height": 1544,
+          "video_id": "not-video",
+          "sha256": "f467572e9a6751cbc1611556e8f44926113c824ca2acf8c75eb3a495ad404775"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

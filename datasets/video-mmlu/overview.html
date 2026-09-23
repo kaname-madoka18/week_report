@@ -1,0 +1,266 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Video-MMLU：短视频知识理解评测 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Video-MMLU：短视频知识理解评测</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-04-20</strong></div><div><span>引用数</span><strong>43</strong></div><div><span>GitHub stars</span><strong>34</strong></div><div><span>当前状态</span><strong>ICCV 2025 Workshop · Findings</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2504.14693" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/Espere-1119-Song/Video-MMLU" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/9dd42fbd05b1632fbe8332ac1c02fe17707a32aa" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openaccess.thecvf.com/content/ICCV2025W/Findings/papers/Song_Video-MMLU_A_Massive_Multi-Discipline_Lecture_Understanding_Benchmark_ICCVW_2025_paper.pdf" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Video-MMLU%3A+A+Massive+Multi-Discipline+Lecture+Understanding+Benchmark" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文介绍了 <strong>Video-MMLU</strong>，这是一个大规模的多学科讲座理解基准（benchmark），旨在评估大型多模态模型（LMMs）在理解多学科讲座视频方面的能力。具体来说，论文试图解决以下问题：</p>
+<h3>1. 现有多模态模型在复杂讲座理解任务中的局限性</h3>
+<ul>
+<li><strong>背景</strong>：尽管大型多模态模型（LMMs）在视频理解方面取得了显著进展，但在理解涉及复杂知识和推理的多学科讲座视频方面，这些模型的表现尚未得到充分评估。</li>
+<li><strong>问题</strong>：现有的视频理解基准主要关注简单事实性问题或一般视频内容，缺乏对知识密集型或推理要求高的内容的测试。这导致现有模型在处理教育视频，尤其是涉及定理证明和问题解决的讲座视频时，表现不佳。</li>
+</ul>
+<h3>2. 如何构建一个高质量的多学科讲座理解基准</h3>
+<ul>
+<li><strong>背景</strong>：为了填补这一空白，作者提出了 Video-MMLU 基准，该基准包含数学、物理和化学等学科的讲座视频，涵盖了定理证明和问题解决等内容。</li>
+<li><strong>问题</strong>：如何设计一个能够全面评估模型在视觉感知和推理能力方面的基准？这包括生成详细的视频描述（captioning）和回答复杂的推理问题（question-answering）。</li>
+</ul>
+<h3>3. 模型规模和架构对讲座理解的影响</h3>
+<ul>
+<li><strong>背景</strong>：虽然模型规模通常与性能呈正相关，但在多学科讲座理解任务中，这种关系是否依然成立尚不清楚。</li>
+<li><strong>问题</strong>：不同规模和架构的模型在处理多学科讲座视频时的表现如何？是否存在最优的模型规模和架构，能够在保持效率的同时最大化性能？</li>
+</ul>
+<h3>4. 视觉令牌压缩对讲座理解的影响</h3>
+<ul>
+<li><strong>背景</strong>：为了提高模型的效率，许多方法采用了视觉令牌压缩技术。然而，这些技术在处理复杂、动态的讲座视频时的有效性尚未得到充分验证。</li>
+<li><strong>问题</strong>：视觉令牌压缩是否能够在不显著降低性能的情况下提高模型的效率？不同压缩策略对模型性能的影响如何？</li>
+</ul>
+<p>总的来说，这篇论文通过构建 Video-MMLU 基准，系统地评估了现有 LMMs 在多学科讲座理解任务中的表现，并探讨了模型规模、架构和视觉令牌压缩对性能的影响，为未来的研究提供了重要的参考和指导。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>以下是与本文相关的研究，按类别进行分类：</p>
+<h3>视频多模态模型（Video LMMs）</h3>
+<ul>
+<li><strong>早期研究</strong>：早期的视频 LMMs 主要关注短时长（几秒内）的视频理解，采用基于视频的编码器或基于图像的编码器。例如，[41] 和 [162] 探讨了如何利用视频编码器来理解短视频。</li>
+<li><strong>结构扩展</strong>：后续研究 [27, 151] 展示了将类似 LLaVA 的基于图像的 LLMs 结构扩展到视频 LMMs，并结合良好的训练策略和高质量训练数据，可以取得较强的性能。</li>
+<li><strong>长视频理解</strong>：近期的研究 [24, 33, 54, 72, 91, 100, 101, 126, 135, 160] 转向长视频理解，目标是处理时长为数小时的视频或流式场景，方法包括压缩视觉信息 [153] 或扩展 LLM 的上下文窗口 [29]。</li>
+<li><strong>音频融合</strong>：一些研究 [50, 51, 62] 探索了将音频输入纳入视频理解模型，以提升性能。</li>
+<li><strong>视频详细描述</strong>：视频详细描述（captioning）是另一个研究重点 [16, 37, 76, 152]，目标是生成视频内容的精细描述。</li>
+<li><strong>令牌压缩</strong>：为了提高训练和推理效率，一些研究 [22, 52, 58, 60, 68, 178] 探索了在视觉编码器中设计压缩机制 [120]、减少 LLM 中的令牌数量 [164] 或引入额外的压缩模块 [124, 146]。</li>
+<li><strong>视频推理</strong>：视频推理 [17, 59, 109] 也受到关注，方法包括通过时间定位 [57, 98, 128] 来增强理解。</li>
+<li><strong>生成式检索</strong>：Vlog [89] 通过生成性检索层次化的叙述词汇来增强视频理解。</li>
+</ul>
+<h3>视频理解基准（Video Understanding Benchmarks）</h3>
+<ul>
+<li><strong>传统基准</strong>：早期的视频 LMMs 评估主要集中在简短的问答对或简短的视频描述上，关注全局性问题 [138, 139]。然而，随着更强大的 LLMs [19, 144] 的整合，这些简单的基准已不足以评估和区分模型性能。</li>
+<li><strong>长视频和复杂推理</strong>：近期的视频理解基准 [3, 36, 39, 48, 61, 63, 75, 110, 149, 163] 转向更长的视频时长或更复杂的时序推理任务。例如，EgoSchema [103] 涉及 3 分钟的 egocentric 视频的多项选择题，LongVideoBench [133] 扩展到小时级视频理解。</li>
+<li><strong>实时处理</strong>：流式视频理解基准 [88] 对于评估模型的实时处理能力至关重要。</li>
+<li><strong>详细描述</strong>：一些基准 [21, 66] 通过要求模型生成视频内容的详细描述来评估模型。</li>
+<li><strong>多样化场景</strong>：虽然大多数基准 [10, 20, 53, 130] 强调开放世界理解，但其他基准引入了多样化场景 [65, 77, 177]，例如电影片段 [156] 或动态 GUI 交互 [18, 170]。</li>
+<li><strong>讲座理解</strong>：本文贡献了一个针对多学科讲座理解的视频基准，通过精细的描述和复杂的问答任务来评估模型的视觉感知和推理能力。</li>
+</ul>
+<h3>视觉令牌压缩（Visual Token Compression）</h3>
+<ul>
+<li><strong>训练前压缩</strong>：大多数策略在 LLM 之前应用视觉令牌压缩，通过池化 [102, 119]、下采样 [140] 或卷积 [33, 159] 等方法减少计算成本，但可能引入额外的训练成本。</li>
+<li><strong>联合训练</strong>：对于问答任务，一些研究 [34, 68, 99, 142] 与模型联合训练压缩模块，以整合与问题相关的特征。</li>
+<li><strong>无训练压缩</strong>：无训练的方法利用令牌相似性 [21, 69]、与查询的相关性 [167, 175] 或信息内容 [121] 进行压缩。</li>
+<li><strong>特定任务压缩</strong>：Feather [46] 专为定位任务设计，传统压缩方法在这些任务中表现不佳。DyCoke [115] 引入了动态时间令牌合并策略。此外，[174] 探索了在 LLM 层进行基于相似性的令牌合并以进一步优化压缩。KVTP [94] 通过关键帧导向的视觉令牌修剪提高了长形式视频处理的效率。</li>
+</ul>
+<p>这些研究为本文提出的 Video-MMLU 基准提供了背景和基础，特别是在多模态模型的视频理解能力、不同视频理解任务的评估方法，以及提高模型效率的视觉令牌压缩技术方面。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过构建 <strong>Video-MMLU</strong> 基准来解决多学科讲座理解的问题，具体方法如下：</p>
+<h3>1. 构建高质量的多学科讲座视频数据集</h3>
+<ul>
+<li><strong>视频收集与处理</strong>：从 YouTube 收集了 1,065 个涵盖数学、物理和化学的讲座视频，确保视频内容丰富且具有代表性。视频时长控制在 4 分钟以内，以保证注释的可靠性和一致性。</li>
+<li><strong>关键帧提取</strong>：采用自定义方法根据视频运动节奏提取关键帧，确保捕捉到关键视觉信息。</li>
+</ul>
+<h3>2. 设计多阶段注释流程</h3>
+<ul>
+<li><strong>详细描述生成</strong>：采用多阶段注释流程，首先使用 Aria 捕获视频的全局运动，然后结合 GPT-4o 生成详细的关键帧描述，最后通过 Claude-3.5-sonnet 整合这些描述，生成结构化的详细描述。</li>
+<li><strong>自动精炼策略</strong>：利用 YouTube 的字幕信息，通过自动精炼策略纠正 OCR 错误，确保注释的准确性。</li>
+<li><strong>手动审查</strong>：人工审查注释，纠正幻觉（hallucinations）并补充遗漏的视觉元素，确保注释的高质量。</li>
+</ul>
+<h3>3. 设计评估任务</h3>
+<ul>
+<li><strong>详细描述（Notebook）</strong>：评估模型的视觉感知能力，要求模型生成详细的视频描述。</li>
+<li><strong>问答任务（Quiz）</strong>：评估模型的推理能力，通过生成复杂的问答对来测试模型对视频内容的理解。</li>
+</ul>
+<h3>4. 评估现有模型</h3>
+<ul>
+<li><strong>模型选择</strong>：评估了 87 个模型，包括 3 个专有模型（如 Gemini-1.5-Flash、GPT-4o 和 Claude-3.5-sonnet）、78 个开源 LMMs 和 6 个视觉盲基线。</li>
+<li><strong>评估策略</strong>：在所有模型中保持一致的输入帧数，并根据模型的输入限制调整输入帧数。对于视觉 QA 任务，要求模型提供简洁的回答；对于视频描述任务，鼓励生成详细的描述。</li>
+</ul>
+<h3>5. 分析模型性能</h3>
+<ul>
+<li><strong>性能分析</strong>：发现专有模型普遍优于开源模型，且所有模型在 Video-MMLU 上的表现都不尽如人意，准确率大多在 10% 到 50% 之间。</li>
+<li><strong>学科差异</strong>：模型在物理和化学学科上的表现优于数学学科，这表明现有模型更擅长处理文本内容，而在处理数学公式和动态可视化方面存在挑战。</li>
+<li><strong>模型规模与性能</strong>：虽然模型规模与性能呈正相关，但这种关系在 Video-MMLU 上并不明显。一些较小的模型在某些任务上甚至优于较大的模型。</li>
+<li><strong>视觉令牌压缩</strong>：评估了不同视觉令牌压缩策略对模型性能的影响，发现适度的令牌压缩可以在不显著降低性能的情况下提高效率，但过度压缩会导致信息丢失，特别是在推理任务中。</li>
+</ul>
+<h3>6. 提供未来研究方向</h3>
+<ul>
+<li><strong>模型架构优化</strong>：建议未来的研究应关注如何优化模型架构，以更好地处理多学科讲座中的复杂知识和推理任务。</li>
+<li><strong>视觉令牌压缩策略</strong>：提出需要针对不同任务和学科定制视觉令牌压缩策略，而不是采用一刀切的方法。</li>
+<li><strong>训练策略改进</strong>：强调需要改进训练策略，以更好地利用强大的 LLMs，提高模型在大规模 LMMs 中的性能。</li>
+</ul>
+<p>通过这些方法，论文不仅构建了一个高质量的多学科讲座理解基准，还为未来的研究提供了宝贵的见解和方向。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了以下实验：</p>
+<h3>1. 数据集构建与注释</h3>
+<ul>
+<li><strong>视频收集与处理</strong>：从 YouTube 收集了 1,065 个涵盖数学、物理和化学的讲座视频，确保视频内容丰富且具有代表性。视频时长控制在 4 分钟以内，以保证注释的可靠性和一致性。</li>
+<li><strong>关键帧提取</strong>：采用自定义方法根据视频运动节奏提取关键帧，确保捕捉到关键视觉信息。</li>
+<li><strong>详细描述生成</strong>：采用多阶段注释流程，首先使用 Aria 捕获视频的全局运动，然后结合 GPT-4o 生成详细的关键帧描述，最后通过 Claude-3.5-sonnet 整合这些描述，生成结构化的详细描述。</li>
+<li><strong>自动精炼策略</strong>：利用 YouTube 的字幕信息，通过自动精炼策略纠正 OCR 错误，确保注释的准确性。</li>
+<li><strong>手动审查</strong>：人工审查注释，纠正幻觉（hallucinations）并补充遗漏的视觉元素，确保注释的高质量。</li>
+<li><strong>问答对生成</strong>：使用 Claude-3.5-sonnet 生成 15 个开放性问答对，用于评估模型的推理能力。</li>
+</ul>
+<h3>2. 模型评估</h3>
+<ul>
+<li><strong>模型选择</strong>：评估了 87 个模型，包括 3 个专有模型（如 Gemini-1.5-Flash、GPT-4o 和 Claude-3.5-sonnet）、78 个开源 LMMs 和 6 个视觉盲基线。</li>
+<li><strong>评估策略</strong>：在所有模型中保持一致的输入帧数，并根据模型的输入限制调整输入帧数。对于视觉 QA 任务，要求模型提供简洁的回答；对于视频描述任务，鼓励生成详细的描述。</li>
+<li><strong>性能评估</strong>：使用 VDCscore 作为评估指标，将长描述评估转化为多个短问答对的评估。对于每个详细描述，预生成 15 个简洁的开放性问答对，用于评估模型的视觉感知和推理能力。</li>
+</ul>
+<h3>3. 性能分析</h3>
+<ul>
+<li><strong>整体性能</strong>：计算了所有模型在详细描述（Notebook）和问答（Quiz）任务上的平均性能，并分析了不同模型在不同学科（数学、物理、化学）上的表现。</li>
+<li><strong>模型规模与性能</strong>：分析了模型规模与性能之间的关系，发现虽然模型规模与性能呈正相关，但这种关系在 Video-MMLU 上并不明显。一些较小的模型在某些任务上甚至优于较大的模型。</li>
+<li><strong>视觉令牌压缩</strong>：评估了不同视觉令牌压缩策略对模型性能的影响，发现适度的令牌压缩可以在不显著降低性能的情况下提高效率，但过度压缩会导致信息丢失，特别是在推理任务中。</li>
+</ul>
+<h3>4. 变体分析</h3>
+<ul>
+<li><strong>视觉令牌压缩策略</strong>：对 AuroraCap [21] 进行了消融研究，分析了不同视觉令牌保留比例对视频详细描述和推理任务性能的影响。</li>
+<li><strong>模型架构影响</strong>：分析了不同架构的模型在视频详细描述和推理任务上的表现，发现模型架构对性能有显著影响，特别是在推理任务中。</li>
+</ul>
+<h3>5. 结果可视化</h3>
+<ul>
+<li><strong>性能可视化</strong>：通过图表展示了模型在不同任务和学科上的性能分布，包括整体性能、详细描述性能和问答性能。</li>
+<li><strong>文本嵌入空间分布</strong>：通过文本嵌入空间分布图展示了表面感知问题和深层推理问题的区别，验证了两种问题类型的区分度。</li>
+</ul>
+<p>这些实验全面评估了现有 LMMs 在多学科讲座理解任务中的表现，并提供了关于模型规模、架构和视觉令牌压缩策略的深入分析，为未来的研究提供了宝贵的见解和方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>论文提出了 Video-MMLU 基准，为多学科讲座理解提供了一个全面的评估框架。尽管如此，仍有多个方向可以进一步探索和改进，以推动多模态模型在教育领域的应用。以下是一些潜在的研究方向：</p>
+<h3>1. <strong>模型架构优化</strong></h3>
+<ul>
+<li><strong>更强大的推理能力</strong>：当前的 LMMs 在处理复杂的推理任务时表现不佳，特别是在数学和科学领域。未来的研究可以探索如何设计更强大的推理模块，以更好地处理动态视觉信息和符号推理。</li>
+<li><strong>跨学科融合</strong>：当前的模型在不同学科的表现存在差异，特别是在数学领域表现较弱。可以研究如何设计跨学科融合的模型，以更好地处理不同学科的特定需求。</li>
+<li><strong>多模态融合策略</strong>：进一步探索如何更有效地融合视觉和语言模态，特别是在处理动态视觉内容（如动画和公式）时。例如，可以研究如何利用注意力机制或图神经网络来增强多模态融合。</li>
+</ul>
+<h3>2. <strong>数据集扩展和多样化</strong></h3>
+<ul>
+<li><strong>更多学科和主题</strong>：当前的 Video-MMLU 基准主要集中在数学、物理和化学。可以扩展到更多学科，如生物、计算机科学、历史等，以提供更全面的评估。</li>
+<li><strong>多样化视频类型</strong>：除了讲座视频，还可以纳入其他类型的教育视频，如实验演示、模拟和动画，以评估模型在不同视频类型上的表现。</li>
+<li><strong>多语言支持</strong>：目前的数据集主要使用英语。扩展到其他语言可以评估模型在多语言环境中的表现，特别是在处理语言差异和文化背景时。</li>
+</ul>
+<h3>3. <strong>训练策略改进</strong></h3>
+<ul>
+<li><strong>领域适应性训练</strong>：研究如何通过领域适应性训练来提高模型在特定学科领域的表现。例如，可以使用领域特定的数据增强技术或迁移学习方法。</li>
+<li><strong>自监督学习</strong>：探索如何利用自监督学习来提高模型的泛化能力，特别是在数据有限的情况下。例如，可以设计自监督任务来增强模型对视觉和语言模态的理解。</li>
+<li><strong>强化学习</strong>：利用强化学习来优化模型的推理过程，特别是在需要多步推理的任务中。例如，可以通过奖励机制来鼓励模型生成更准确的推理路径。</li>
+</ul>
+<h3>4. <strong>视觉令牌压缩策略</strong></h3>
+<ul>
+<li><strong>动态压缩策略</strong>：当前的视觉令牌压缩策略主要基于静态的相似性或重要性。可以研究动态压缩策略，以更好地适应视频内容的变化，特别是在处理动态视觉信息时。</li>
+<li><strong>任务特定压缩</strong>：探索针对不同任务（如详细描述和推理）的特定压缩策略，以提高模型在特定任务上的效率和性能。</li>
+<li><strong>多尺度压缩</strong>：研究多尺度压缩策略，以更好地处理不同分辨率和复杂度的视频内容。</li>
+</ul>
+<h3>5. <strong>评估指标改进</strong></h3>
+<ul>
+<li><strong>更细粒度的评估指标</strong>：当前的评估指标主要集中在整体准确率和详细描述的质量。可以设计更细粒度的评估指标，如推理深度、逻辑一致性等，以更全面地评估模型的性能。</li>
+<li><strong>多维度评估</strong>：除了准确率，还可以评估模型的生成多样性、流畅性和用户满意度等多维度指标，以提供更全面的评估。</li>
+<li><strong>跨模态评估</strong>：设计跨模态评估指标，以评估模型在视觉和语言模态之间的转换和融合能力。</li>
+</ul>
+<h3>6. <strong>应用和部署</strong></h3>
+<ul>
+<li><strong>教育应用</strong>：探索如何将 LMMs 部署到实际的教育场景中，如在线课程、智能辅导系统等。研究如何通过用户反馈来进一步优化模型。</li>
+<li><strong>实时处理</strong>：研究如何提高模型的实时处理能力，以支持实时视频理解任务，如在线讲座和互动式学习。</li>
+<li><strong>资源优化</strong>：研究如何优化模型的计算资源需求，以支持在资源受限的设备上运行，如移动设备和嵌入式系统。</li>
+</ul>
+<h3>7. <strong>伦理和社会影响</strong></h3>
+<ul>
+<li><strong>公平性和偏见</strong>：研究如何确保模型在不同学科和用户群体中的公平性和无偏见表现，特别是在处理敏感主题和多样化的用户需求时。</li>
+<li><strong>可解释性</strong>：提高模型的可解释性，使教育工作者和学生能够理解模型的决策过程，增强对模型的信任。</li>
+<li><strong>隐私保护</strong>：研究如何在保护用户隐私的前提下，收集和使用教育数据，特别是在涉及个人敏感信息时。</li>
+</ul>
+<p>这些方向不仅有助于推动多模态模型在教育领域的应用，还可以为其他领域的多模态理解任务提供宝贵的参考和指导。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>本文介绍了 <strong>Video-MMLU</strong>，这是一个大规模的多学科讲座理解基准，旨在评估大型多模态模型（LMMs）在理解涉及定理证明和问题解决的多学科讲座视频方面的能力。研究的核心目标是填补现有视频理解基准在处理知识密集型和推理要求高的内容方面的空白，并为未来的研究提供有价值的见解和方向。</p>
+<h3>背景知识</h3>
+<ul>
+<li><strong>多模态模型进展</strong>：尽管大型多模态模型（LMMs）在视频理解方面取得了显著进展，但在理解涉及复杂知识和推理的多学科讲座视频方面，这些模型的表现尚未得到充分评估。</li>
+<li><strong>现有基准局限性</strong>：现有的视频理解基准主要关注简单事实性问题或一般视频内容，缺乏对知识密集型或推理要求高的内容的测试，导致现有模型在处理教育视频，尤其是涉及定理证明和问题解决的讲座视频时，表现不佳。</li>
+</ul>
+<h3>研究方法</h3>
+<ul>
+<li><strong>数据集构建</strong>：</li>
+<li><strong>视频收集</strong>：从 YouTube 收集了 1,065 个涵盖数学、物理和化学的讲座视频，确保视频内容丰富且具有代表性。</li>
+<li><strong>关键帧提取</strong>：采用自定义方法根据视频运动节奏提取关键帧，确保捕捉到关键视觉信息。</li>
+<li><strong>详细描述生成</strong>：采用多阶段注释流程，首先使用 Aria 捕获视频的全局运动，然后结合 GPT-4o 生成详细的关键帧描述，最后通过 Claude-3.5-sonnet 整合这些描述，生成结构化的详细描述。</li>
+<li><strong>自动精炼策略</strong>：利用 YouTube 的字幕信息，通过自动精炼策略纠正 OCR 错误，确保注释的准确性。</li>
+<li><strong>手动审查</strong>：人工审查注释，纠正幻觉（hallucinations）并补充遗漏的视觉元素，确保注释的高质量。</li>
+<li><strong>问答对生成</strong>：使用 Claude-3.5-sonnet 生成 15 个开放性问答对，用于评估模型的推理能力。</li>
+</ul>
+<h3>实验</h3>
+<ul>
+<li><strong>模型评估</strong>：</li>
+<li><strong>模型选择</strong>：评估了 87 个模型，包括 3 个专有模型（如 Gemini-1.5-Flash、GPT-4o 和 Claude-3.5-sonnet）、78 个开源 LMMs 和 6 个视觉盲基线。</li>
+<li><strong>评估策略</strong>：在所有模型中保持一致的输入帧数，并根据模型的输入限制调整输入帧数。对于视觉 QA 任务，要求模型提供简洁的回答；对于视频描述任务，鼓励生成详细的描述。</li>
+<li><strong>性能评估</strong>：使用 VDCscore 作为评估指标，将长描述评估转化为多个短问答对的评估。对于每个详细描述，预生成 15 个简洁的开放性问答对，用于评估模型的视觉感知和推理能力。</li>
+</ul>
+<h3>关键结论</h3>
+<ul>
+<li><strong>模型性能</strong>：发现专有模型普遍优于开源模型，且所有模型在 Video-MMLU 上的表现都不尽如人意，准确率大多在 10% 到 50% 之间。</li>
+<li><strong>学科差异</strong>：模型在物理和化学学科上的表现优于数学学科，这表明现有模型更擅长处理文本内容，而在处理数学公式和动态可视化方面存在挑战。</li>
+<li><strong>模型规模与性能</strong>：虽然模型规模与性能呈正相关，但这种关系在 Video-MMLU 上并不明显。一些较小的模型在某些任务上甚至优于较大的模型。</li>
+<li><strong>视觉令牌压缩</strong>：评估了不同视觉令牌压缩策略对模型性能的影响，发现适度的令牌压缩可以在不显著降低性能的情况下提高效率，但过度压缩会导致信息丢失，特别是在推理任务中。</li>
+</ul>
+<h3>进一步探索的方向</h3>
+<ul>
+<li><strong>模型架构优化</strong>：设计更强大的推理模块，以更好地处理动态视觉信息和符号推理。</li>
+<li><strong>数据集扩展和多样化</strong>：扩展到更多学科和视频类型，以提供更全面的评估。</li>
+<li><strong>训练策略改进</strong>：通过领域适应性训练和自监督学习来提高模型的泛化能力。</li>
+<li><strong>视觉令牌压缩策略</strong>：研究动态压缩策略和任务特定压缩策略，以提高模型的效率和性能。</li>
+<li><strong>评估指标改进</strong>：设计更细粒度的评估指标，以更全面地评估模型的性能。</li>
+<li><strong>应用和部署</strong>：探索如何将 LMMs 部署到实际的教育场景中，并优化模型的计算资源需求。</li>
+<li><strong>伦理和社会影响</strong>：确保模型在不同学科和用户群体中的公平性和无偏见表现，提高模型的可解释性和隐私保护。</li>
+</ul>
+<p>通过这些方法，论文不仅构建了一个高质量的多学科讲座理解基准，还为未来的研究提供了宝贵的见解和方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Video-MMLU%3A%20A%20Massive%20Multi-Discipline%20Lecture%20Understanding%20Benchmark，链接是 https://arxiv.org/pdf/2504.14693 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2504.14693 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="video-mmlu">Video-MMLU：数据集与评测概览</h1>
+<p>1,065 个数学/物理/化学课堂视频，评估详细笔记和讲授内容问答；15,746个推理QA。</p>
+<p><strong>相关性：评测近邻。</strong> 评测近邻：衡量短课堂视频中的知识抽取、理解与使用，不是长时记忆或跨会话记忆benchmark。纳入时显式保留此边界。</p>
+<h2 id="_1">论文与筛选依据</h2>
+<ul>
+<li>标题：Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark</li>
+<li>arXiv首次提交：2025-04-20；<a href="https://arxiv.org/abs/2504.14693" target="_blank" rel="noopener">arXiv</a></li>
+<li>引用：43，Semantic Scholar Graph API，2026-09-23检索；<a href="https://www.semanticscholar.org/paper/9dd42fbd05b1632fbe8332ac1c02fe17707a32aa" target="_blank" rel="noopener">记录</a></li>
+<li>GitHub：34 stars（2026-09-23）；<a href="https://github.com/Espere-1119-Song/Video-MMLU" target="_blank" rel="noopener">官方仓库</a></li>
+<li>状态：ICCV 2025 Workshop · Findings；<a href="https://openaccess.thecvf.com/content/ICCV2025W/Findings/papers/Song_Video-MMLU_A_Massive_Multi-Discipline_Lecture_Understanding_Benchmark_ICCVW_2025_paper.pdf" target="_blank" rel="noopener">核验来源</a></li>
+<li>符合本轮时间范围（2024-09-23之后首次上arXiv）与引用数大于20。</li>
+</ul>
+<h2 id="_2">数据、任务与时长</h2>
+<p><strong>规模：</strong> 1,065视频；1,065详细描述（平均489词）；15,746推理QA；源自10个教育YouTube频道。</p>
+<p><strong>视频长度/上下文跨度：</strong> 单视频10–240秒；平均109秒；82.2%不超过180秒。因此本页优先直接播放短case。</p>
+<p>以“学生看课—记笔记—做测验”组织；动态OCR、公式和动画感知；生成详细描述与根据讲授材料进行开放式推理问答。</p>
+<h2 id="_3">主要结果（论文报告，未本地复现）</h2>
+<p>论文评估90余个模型，指出动态符号/公式识别与进一步推理是主要瓶颈，并分析视觉token数量和语言模型骨干对结果的影响。</p>
+<h2 id="_4">数据入口与预览</h2>
+<ul>
+<li><a href="preview_gallery.html">本地预览页面</a></li>
+<li><a href="https://huggingface.co/datasets/Enxin/Video-MMLU" target="_blank" rel="noopener">官方 Hugging Face 数据</a></li>
+<li><a href="https://www.enxinsong.com/Video-MMLU-web/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p>已取得 3 个官方视频文件：2 个直接播放 case、1 组100帧预览。每个完整视频文件均小于100MB；时长由PyAV读取，来源与SHA256记录在project.json。</p>
+<table>
+<thead>
+<tr>
+<th>本地文件</th>
+<th style="text-align: right;">播放长度</th>
+<th style="text-align: right;">文件大小</th>
+<th>呈现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="samples/xgfYivQt-x0.mp4">xgfYivQt-x0.mp4</a></td>
+<td style="text-align: right;">58.23秒</td>
+<td style="text-align: right;">1.20MB</td>
+<td>直接播放</td>
+</tr>
+<tr>
+<td><a href="samples/Y_w07A7chnk.mp4">Y_w07A7chnk.mp4</a></td>
+<td style="text-align: right;">144.00秒</td>
+<td style="text-align: right;">4.54MB</td>
+<td>直接播放</td>
+</tr>
+<tr>
+<td><a href="samples/6H6nCpGW1nU.mp4">6H6nCpGW1nU.mp4</a></td>
+<td style="text-align: right;">204.14秒</td>
+<td style="text-align: right;">4.23MB</td>
+<td>均匀100帧</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">边界与限制</h2>
+<ul>
+<li>大多数片段只有数十秒到3分钟；与日/周尺度记忆数据不同。</li>
+<li>本页结果来自论文，未在本机复现模型。</li>
+</ul>
+<h2 id="_6">来源</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2504.14693" target="_blank" rel="noopener">论文原文</a></li>
+<li><a href="https://github.com/Espere-1119-Song/Video-MMLU" target="_blank" rel="noopener">官方仓库</a></li>
+<li><a href="https://www.enxinsong.com/Video-MMLU-web/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p><a href="../../index.html" data-catalog-home>← 返回主目录</a></p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

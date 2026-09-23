@@ -1,0 +1,297 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M3-Agent / M3-Bench：机器人与网络视频 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">M3-Agent / M3-Bench：机器人与网络视频</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-08-13</strong></div><div><span>引用数</span><strong>78</strong></div><div><span>GitHub stars</span><strong>1,452</strong></div><div><span>当前状态</span><strong>ICLR 2026</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2508.09736" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/ByteDance-Seed/m3-agent" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/af74d38cd7e170e82191f94beaf22cd287e8ef83" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openreview.net/pdf?id=PMz29A7Muq" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Seeing%2C+Listening%2C+Remembering%2C+and+Reasoning%3A+A+Multimodal+Agent+with+Long-Term+Memory" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决如何为多模态智能体（multimodal agents）构建和利用长期记忆（long-term memory）的问题。具体来说，它旨在实现以下几个目标：</p>
+<ol>
+<li>
+<p><strong>持续感知与记忆构建</strong>：多模态智能体需要能够持续处理实时的视觉和听觉输入，并将这些经验构建为长期记忆。这类似于人类通过日常互动逐渐形成对环境和他人的记忆。</p>
+</li>
+<li>
+<p><strong>知识积累与语义记忆</strong>：除了记录具体事件（episodic memory），智能体还需要能够从经验中提取一般性知识（semantic memory），例如人物偏好、物体属性等，从而随着时间积累对世界的理解。</p>
+</li>
+<li>
+<p><strong>基于记忆的推理</strong>：智能体需要能够利用其长期记忆来执行复杂的指令，这涉及到多轮次、迭代式的推理过程，以及从记忆中检索相关信息。</p>
+</li>
+<li>
+<p><strong>评估多模态智能体的记忆能力</strong>：为了评估智能体在长期记忆和基于记忆的推理方面的表现，论文开发了一个新的长视频问答基准（LVQA benchmark），即 M3-Bench。这个基准包含从机器人视角和网络来源收集的真实世界视频，以及设计用于测试关键能力（如人类理解、一般知识提取和跨模态推理）的问题。</p>
+</li>
+</ol>
+<p>总的来说，这篇论文的目标是推动多模态智能体向更接近人类的长期记忆和推理能力发展，并为这一领域的研究提供一个评估工具。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>论文中提到了多个与多模态智能体长期记忆相关的研究领域，以下是主要的相关研究方向和具体工作：</p>
+<h3>1. <strong>AI智能体的长期记忆</strong></h3>
+<ul>
+<li><strong>记忆存储与管理</strong>：许多研究工作集中在如何存储和管理智能体的长期记忆。例如，一些方法将整个智能体的交互轨迹（如对话或执行轨迹）直接存储在记忆中 [27, 31, 44, 59]。还有一些方法引入了总结 [14, 21, 44, 59]、潜在嵌入 [6, 28, 40, 56] 或结构化知识表示 [33, 50] 来优化记忆管理。</li>
+<li><strong>复杂的记忆架构</strong>：最近的系统进一步构建了复杂的记忆架构，使智能体能够更精细地控制记忆管理 [5, 18, 44]。</li>
+<li><strong>多模态记忆</strong>：与仅处理语言模型的智能体不同，多模态智能体需要处理更广泛的输入，并在记忆中存储更丰富的多模态内容和概念。这引入了新的挑战，尤其是在维持长期记忆的一致性方面 [2, 9, 48, 60]。</li>
+</ul>
+<h3>2. <strong>在线视频理解</strong></h3>
+<ul>
+<li><strong>长视频处理</strong>：在线视频理解是一个挑战性任务，需要实时处理视频流，并基于过去的观察进行决策。传统方法通过扩展多模态模型的上下文窗口 [4, 58] 或压缩视觉标记以增加时间覆盖范围 [19, 47] 来处理长视频，但这些方法在处理无限长视频流时效果不佳。</li>
+<li><strong>记忆增强方法</strong>：一些方法引入了记忆模块，存储编码后的视觉特征以供未来检索 [12, 40, 56, 57]，但这些方法在维持长期一致性方面存在局限性。</li>
+<li><strong>Socratic Models框架</strong>：通过利用多模态模型生成视频描述作为基于语言的记忆，Socratic Models框架 [26, 54, 55] 在在线视频理解方面取得了进展，但仍面临在复杂、动态变化的视频内容中维持长期一致性的挑战。</li>
+</ul>
+<h3>3. <strong>多模态视频描述与理解</strong></h3>
+<ul>
+<li><strong>视频描述生成</strong>：一些研究工作集中在生成视频描述，以帮助智能体更好地理解视频内容 [11, 16, 55]。这些方法通常生成详细的视频描述作为记忆，但往往忽视了高层次的世界知识，导致在长期上下文中出现歧义和不一致性。</li>
+<li><strong>多模态模型</strong>：随着多模态和语言模型的快速发展 [1, 15, 41, 51, 53]，这些模型在视频描述和理解方面取得了显著进展，但仍需进一步改进以处理复杂的多模态输入和长期记忆。</li>
+</ul>
+<h3>4. <strong>多模态问答基准</strong></h3>
+<ul>
+<li><strong>现有基准</strong>：现有的长视频问答基准 [2, 9, 48, 60] 主要关注视觉理解，如动作识别和时空感知，但在评估依赖于长期记忆的高级认知能力方面存在不足。这些能力对于真实世界的应用至关重要，如理解人类、提取一般知识和执行跨模态推理。</li>
+<li><strong>M3-Bench</strong>：为了填补这一空白，论文提出了一个新的长视频问答基准 M3-Bench，包含从机器人视角和网络来源收集的真实世界视频，以及设计用于测试关键能力（如人类理解、一般知识提取和跨模态推理）的问题。</li>
+</ul>
+<p>这些相关研究为本文提出的 M3-Agent 框架和 M3-Bench 基准提供了理论和实践基础，同时也指出了现有方法的不足之处，为本文的创新点提供了明确的方向。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过提出 <strong>M3-Agent</strong> 框架和 <strong>M3-Bench</strong> 基准来解决多模态智能体的长期记忆和基于记忆的推理问题。以下是具体的解决方案：</p>
+<h3>M3-Agent 框架</h3>
+<p>M3-Agent 是一个新型的多模态智能体框架，具备长期记忆能力。它通过两个并行过程运作：记忆（memorization）和控制（control）。</p>
+<h4>1. <strong>记忆（Memorization）</strong></h4>
+<ul>
+<li><strong>持续感知</strong>：M3-Agent 持续处理实时的视频和音频输入，生成两种类型的记忆：</li>
+<li><strong>情景记忆（Episodic Memory）</strong>：记录视频中观察到的具体事件。例如，“Alice 拿起咖啡说，‘我早上离不开这个’”。</li>
+<li><strong>语义记忆（Semantic Memory）</strong>：从视频片段中提取一般性知识。例如，“Alice 早上喜欢喝咖啡”。</li>
+<li><strong>多模态记忆存储</strong>：记忆以多模态图的形式存储，每个节点代表一个记忆项，包含唯一 ID、模态类型、原始内容、权重、嵌入向量和其他元数据。节点通过无向边连接，表示逻辑关系。</li>
+<li><strong>一致的身份表示</strong>：为了保持核心概念（如主要人物和物体）的一致性，M3-Agent 使用面部识别和说话人识别工具，将人物的面部和声音与长期记忆中的身份关联起来。这确保了在长时间跨度内的一致性。</li>
+</ul>
+<h4>2. <strong>控制（Control）</strong></h4>
+<ul>
+<li><strong>基于记忆的推理</strong>：当接收到指令时，M3-Agent 自动执行多轮推理，并调用搜索函数从长期记忆中检索相关信息，最多执行 H 轮。</li>
+<li><strong>强化学习训练</strong>：M3-Agent 使用强化学习（特别是 DAPO 算法）进行训练，以优化其推理和记忆检索能力。这使得智能体能够在多轮交互中逐步构建答案，提高任务成功率。</li>
+</ul>
+<h3>M3-Bench 基准</h3>
+<p>为了评估多模态智能体的长期记忆和基于记忆的推理能力，论文开发了 M3-Bench，一个新的长视频问答基准。M3-Bench 包含两个子集：
+- <strong>M3-Bench-robot</strong>：包含 100 个从机器人视角拍摄的真实世界视频。
+- <strong>M3-Bench-web</strong>：包含 929 个来自网络的视频，涵盖更广泛的内容和场景。</p>
+<p>M3-Bench 定义了五种问题类型，旨在测试不同的记忆推理能力：
+- <strong>多细节推理（Multi-detail Reasoning）</strong>：需要聚合视频中多个位置的信息。
+- <strong>多跳推理（Multi-hop Reasoning）</strong>：需要在不同片段之间进行逐步推理。
+- <strong>跨模态推理（Cross-modal Reasoning）</strong>：需要在视觉和音频内容之间进行推理。
+- <strong>人类理解（Human Understanding）</strong>：需要对人类相关属性（如身份、情感、个性或关系）进行推理。
+- <strong>一般知识提取（General Knowledge Extraction）</strong>：需要从具体事件中提取一般性知识。</p>
+<h3>实验结果</h3>
+<p>论文通过在 M3-Bench-robot、M3-Bench-web 和 VideoMME-long 基准上的实验，展示了 M3-Agent 的性能。实验结果表明，M3-Agent 在所有基准上均优于现有的基线方法，包括基于提示的商业模型（如 Gemini-1.5-Pro 和 GPT-4o）。具体来说：
+- 在 M3-Bench-robot 上，M3-Agent 的准确率比最强基线 MA-LMM 高 6.3%。
+- 在 M3-Bench-web 上，M3-Agent 的准确率比最强基线 Gemini-GPT4o-Hybrid 高 7.7%。
+- 在 VideoMME-long 上，M3-Agent 的准确率比最强基线 Gemini-GPT4o-Hybrid 高 5.3%。</p>
+<p>此外，论文还进行了详细的消融研究，验证了语义记忆、强化学习训练、多轮指令和推理模式对性能的影响。这些实验结果进一步证明了 M3-Agent 在长期记忆和推理方面的优越性。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了以下实验来验证 M3-Agent 的性能和有效性：</p>
+<h3>1. <strong>基准测试</strong></h3>
+<p>论文在三个主要的长视频问答（LVQA）基准数据集上对 M3-Agent 进行了评估：
+- <strong>M3-Bench-robot</strong>：包含 100 个从机器人视角拍摄的真实世界视频。
+- <strong>M3-Bench-web</strong>：包含 929 个来自网络的视频，涵盖更广泛的内容和场景。
+- <strong>VideoMME-long</strong>：一个现有的长视频理解基准。</p>
+<p>这些基准数据集涵盖了多种场景和任务，能够全面评估多模态智能体的长期记忆和推理能力。</p>
+<h3>2. <strong>基线方法对比</strong></h3>
+<p>论文将 M3-Agent 与多种基线方法进行了对比，包括：
+- <strong>Socratic Models</strong>：使用多模态模型生成视频描述作为长期记忆，并通过检索增强生成（RAG）进行问答。
+  - 使用的多模态模型包括 Gemini-1.5-Pro、GPT-4o 和 Qwen2.5-Omni-7b。
+- <strong>在线视频理解方法</strong>：包括 MovieChat、MA-LMM 和 Flash-VStream，这些方法专注于在线视频处理和记忆管理。
+- <strong>基于提示的智能体方法</strong>：包括 Gemini-Agent 和 Gemini-GPT4o-Hybrid，这些方法通过提示商业模型（如 Gemini-1.5-Pro 和 GPT-4o）来实现记忆访问和控制过程。</p>
+<h3>3. <strong>主要结果</strong></h3>
+<p>在 M3-Bench-robot、M3-Bench-web 和 VideoMME-long 基准上的主要结果如下：
+- <strong>M3-Bench-robot</strong>：M3-Agent 的准确率为 30.7%，比最强基线 MA-LMM 高 6.3%。
+- <strong>M3-Bench-web</strong>：M3-Agent 的准确率为 48.9%，比最强基线 Gemini-GPT4o-Hybrid 高 7.7%。
+- <strong>VideoMME-long</strong>：M3-Agent 的准确率为 61.8%，比最强基线 Gemini-GPT4o-Hybrid 高 5.3%。</p>
+<p>此外，论文还对不同问题类型（如多细节推理、多跳推理、跨模态推理、人类理解和一般知识提取）进行了详细的性能分析，结果表明 M3-Agent 在这些方面均优于基线方法。</p>
+<h3>4. <strong>消融研究</strong></h3>
+<p>为了进一步验证 M3-Agent 的各个组件对性能的影响，论文进行了以下消融研究：
+- <strong>记忆生成模型的影响</strong>：将 M3-Agent 的记忆生成模块替换为其他模型（如 memory-gemini-prompt 和 memory-7b-prompt），结果表明 M3-Agent 的记忆生成模块（memory-7b-sft）在所有基准上均优于其他模型。
+- <strong>语义记忆的重要性</strong>：移除语义记忆后，M3-Agent 在所有基准上的性能显著下降，分别降低了 13.6%、9.0% 和 11.0%。
+- <strong>强化学习训练的影响</strong>：将控制模块的训练方法从 DAPO 替换为 GRPO，结果表明 DAPO 训练的模型在所有基准上均优于 GRPO 训练的模型。
+- <strong>多轮指令和推理模式的影响</strong>：移除多轮指令和推理模式后，M3-Agent 的性能显著下降，分别降低了 10.5%、5.8% 和 5.9%。</p>
+<h3>5. <strong>案例研究</strong></h3>
+<p>论文还提供了详细的案例研究，展示了 M3-Agent 在记忆生成和推理过程中的表现。例如：
+- <strong>记忆生成</strong>：展示了 M3-Agent 生成的情景记忆和语义记忆，与基线方法（如 memory-gemini-prompt）相比，M3-Agent 生成的记忆更加详细和一致。
+- <strong>推理过程</strong>：通过一个具体的问答案例，展示了 M3-Agent 如何通过多轮推理和记忆检索来生成最终答案。</p>
+<h3>6. <strong>错误分析</strong></h3>
+<p>论文对 M3-Bench-robot 上的错误进行了详细分析，识别了两类具有代表性的难题：
+- <strong>细粒度细节推理</strong>：需要从记忆中提取精确信息，但保留所有细节在记忆中是不切实际的。M3-Agent 需要发展注意力机制，以便在执行时专注于相关细节。
+- <strong>空间推理</strong>：涉及理解和跟踪空间布局及变化，如“机器人在哪里可以拿到零食？”M3-Agent 的长期记忆需要包含更丰富的视觉内容，以支持空间推理。</p>
+<p>这些实验结果和分析表明，M3-Agent 在长期记忆和基于记忆的推理方面具有显著的优势，并指出了未来研究的方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>论文在结论部分提出了几个未来可以进一步探索的方向，以下是这些方向的详细解释：</p>
+<h3>1. <strong>注意力机制的增强</strong></h3>
+<ul>
+<li><strong>问题</strong>：在处理长视频时，保留所有细节在记忆中是不切实际的，可能会导致认知过载。</li>
+<li><strong>解决方案</strong>：可以探索更高级的注意力机制，使智能体能够根据任务需求选择性地记忆重要信息，同时忽略不重要的细节。这将有助于提高任务执行的效率和准确性。</li>
+</ul>
+<h3>2. <strong>更丰富的视觉记忆</strong></h3>
+<ul>
+<li><strong>问题</strong>：在空间推理任务中，仅依赖语言记忆可能不足以准确地跟踪和理解空间信息。</li>
+<li><strong>解决方案</strong>：可以设计更丰富的视觉记忆，例如在记忆中存储关键帧或快照，以支持更有效的空间推理。这将帮助智能体更好地理解和操作其环境中的空间布局。</li>
+</ul>
+<h3>3. <strong>跨模态融合的改进</strong></h3>
+<ul>
+<li><strong>问题</strong>：尽管 M3-Agent 已经在跨模态推理方面表现出色，但在处理更复杂的多模态输入时，仍可能需要进一步改进跨模态融合的机制。</li>
+<li><strong>解决方案</strong>：可以研究更先进的跨模态融合技术，例如通过联合嵌入空间或注意力机制来更好地整合视觉、听觉和语言信息，从而提高智能体对复杂场景的理解能力。</li>
+</ul>
+<h3>4. <strong>长期记忆的一致性维护</strong></h3>
+<ul>
+<li><strong>问题</strong>：在长时间跨度内保持记忆的一致性是一个挑战，尤其是在处理动态变化的环境和多模态输入时。</li>
+<li><strong>解决方案</strong>：可以探索更强大的一致性维护机制，例如通过引入更复杂的图结构或动态更新策略，来确保记忆中的信息在长时间内保持准确和一致。</li>
+</ul>
+<h3>5. <strong>多智能体交互</strong></h3>
+<ul>
+<li><strong>问题</strong>：在多智能体环境中，每个智能体都需要能够理解和利用其他智能体的记忆和知识。</li>
+<li><strong>解决方案</strong>：可以研究多智能体之间的记忆共享和协作机制，使智能体能够通过交流和合作来共同完成复杂的任务。</li>
+</ul>
+<h3>6. <strong>实时性和效率</strong></h3>
+<ul>
+<li><strong>问题</strong>：在实际应用中，智能体需要在实时环境中快速处理和响应，这对系统的实时性和效率提出了高要求。</li>
+<li><strong>解决方案</strong>：可以优化模型的架构和算法，以提高其在实时处理和推理时的效率，同时保持高性能。</li>
+</ul>
+<h3>7. <strong>情感和动机建模</strong></h3>
+<ul>
+<li><strong>问题</strong>：为了更好地理解和预测人类行为，智能体需要能够建模人类的情感和动机。</li>
+<li><strong>解决方案</strong>：可以引入情感分析和动机建模技术，使智能体能够更全面地理解人类行为背后的动机和情感状态。</li>
+</ul>
+<p>这些方向为未来的研究提供了丰富的可能性，有助于推动多模态智能体技术的发展，使其更加接近人类的认知和行为能力。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>当然，以下是论文的主要内容总结：</p>
+<h3>论文标题</h3>
+<p><strong>Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory</strong></p>
+<h3>作者</h3>
+<p>Lin Long, Yichen He, Wentao Ye, Yiyuan Pan, Yuan Lin, Hang Li, Junbo Zhao, Wei Li</p>
+<h3>机构</h3>
+<p>ByteDance Seed, Zhejiang University, Shanghai Jiao Tong University</p>
+<h3>摘要</h3>
+<p>论文介绍了一个名为 M3-Agent 的新型多模态智能体框架，该框架配备了长期记忆。M3-Agent 能够处理实时的视觉和听觉输入，构建和更新其长期记忆。它不仅记录具体事件（情景记忆），还能从中提取一般性知识（语义记忆）。其记忆以实体为中心，多模态格式存储，支持更深入和一致的环境理解。给定指令时，M3-Agent 能够自主执行多轮推理，并从记忆中检索相关信息以完成任务。为了评估多模态智能体的长期记忆和基于记忆的推理能力，作者开发了一个新的长视频问答基准 M3-Bench，包含从机器人视角和网络来源收集的真实世界视频。实验结果表明，M3-Agent 在多个基准上均优于现有的基线方法。</p>
+<h3>1. 引言</h3>
+<p>论文提出了一个未来家庭机器人能够自主执行家务任务的愿景，强调了持续感知、长期记忆和基于记忆的推理的重要性。M3-Agent 通过两个并行过程运作：记忆（memorization）和控制（control）。记忆过程处理视频流，生成情景记忆和语义记忆；控制过程则利用长期记忆执行指令。</p>
+<h3>2. 相关工作</h3>
+<p>论文回顾了 AI 智能体的长期记忆、在线视频理解和多模态视频描述与理解的相关研究。现有方法在处理无限长输入流和构建世界知识方面存在局限性，M3-Agent 通过实体为中心的记忆结构和多模态信息处理来解决这些问题。</p>
+<h3>3. 数据集</h3>
+<p>作者开发了 M3-Bench，一个新的长视频问答基准，包含两个子集：M3-Bench-robot 和 M3-Bench-web。这些数据集包含长视频和设计用于测试关键能力（如人类理解、一般知识提取和跨模态推理）的问题。</p>
+<h3>4. 方法</h3>
+<p>M3-Agent 由一个多模态大语言模型（MLLM）和一个长期记忆模块组成。长期记忆以多模态图的形式存储，支持文本、图像和音频信息。记忆生成过程中，M3-Agent 使用面部识别和说话人识别工具来保持实体的一致性。控制过程中，M3-Agent 使用强化学习进行多轮推理和记忆检索。</p>
+<h3>5. 实验</h3>
+<p>作者在 M3-Bench-robot、M3-Bench-web 和 VideoMME-long 基准上对 M3-Agent 进行了评估。实验结果表明，M3-Agent 在所有基准上均优于现有的基线方法，包括基于提示的商业模型（如 Gemini-1.5-Pro 和 GPT-4o）。消融研究进一步验证了语义记忆、强化学习训练、多轮指令和推理模式对性能的影响。</p>
+<h3>6. 结论和未来工作</h3>
+<p>论文总结了 M3-Agent 的主要贡献，并指出了未来可以进一步探索的方向，包括增强注意力机制、发展更丰富的视觉记忆、改进跨模态融合、维护长期记忆的一致性、探索多智能体交互、提高实时性和效率，以及建模情感和动机。</p>
+<h3>代码和数据</h3>
+<p>论文提供了模型、代码和数据的链接，方便其他研究者复现和进一步研究。</p>
+<p>希望这个总结能帮助你快速了解论文的核心内容。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Seeing%2C%20Listening%2C%20Remembering%2C%20and%20Reasoning%3A%20A%20Multimodal%20Agent%20with%20Long-Term%20Memory，链接是 https://arxiv.org/pdf/2508.09736 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2508.09736 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="m3-agent-m3-bench-overview">M3-Agent / M3-Bench：数据集 overview</h1>
+<p><a href="../../index.html" data-catalog-home>返回全部论文目录</a> · <a href="preview_gallery.html">700 帧场景图册</a></p>
+<p>这篇论文提出带长期记忆的多模态智能体 <strong>M3-Agent</strong>，并新建问答基准 <strong>M3-Bench</strong>。后者包含机器人视角情景视频与网络视频两个子集；另在 Video-MME Long 上评测。机器人子集由演员按脚本模拟服务机器人及人与机器人的互动，以头戴相机记录，并非真实机器人自主执行任务的轨迹。核对日期：2026-09-22。</p>
+<table>
+<thead>
+<tr>
+<th>数据部分</th>
+<th>视频数 / QA 数</th>
+<th>单视频长度</th>
+<th>总播放长度与发布方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M3-Bench-robot</td>
+<td>100 / 1,276</td>
+<td>论文平均 2,039.9 秒，约 34 分钟；容器实测见下方明细</td>
+<td>由论文舍入均值估计约 56.664 小时；100 个 MP4 公开，125.700 GB</td>
+</tr>
+<tr>
+<td>M3-Bench-web</td>
+<td>920 / 3,214</td>
+<td>论文平均 1,630.7 秒，约 27.2 分钟</td>
+<td>由论文舍入均值估计约 416.734 小时；官方发布 920 个 YouTube 来源链接，未在本仓库托管 MP4</td>
+</tr>
+<tr>
+<td>合计 M3-Bench</td>
+<td>1,020 / 4,490</td>
+<td>包含声音及开放式问答</td>
+<td>上述估计合计约 473.398 小时；不是一天连续记录</td>
+</tr>
+<tr>
+<td>Video-MME Long（外部评测）</td>
+<td>300 / 900</td>
+<td>30–60 分钟</td>
+<td>独立已有基准，不能计入 M3-Bench 新采集视频量</td>
+</tr>
+</tbody>
+</table>
+<p>数量由 <a href="sources/robot.json">官方 robot.json</a>、<a href="sources/web.json">web.json</a>逐项统计；均值来自 <a href="https://arxiv.org/html/2508.09736" target="_blank" rel="noopener">论文表 2</a>。<strong>论文均值×文件数是估算，不是实测总时长。</strong> 本次另外通过 HTTP Range 读取 MP4 容器信息，提供 <a href="metadata/video_inventory.csv">逐文件时长 CSV</a>与<a href="metadata/video_durations.json">探测结果</a>。脚本里的 30 秒切分是记忆构建窗口，不是原视频只有 30 秒。</p>
+<p>本次已完成 <strong>100 / 100 个 robot 视频的容器时长实测</strong>：合计 <strong>204,604.533 秒 / 56.834593 小时</strong>，单个最短 <strong>440.067 秒（7.334 分钟）</strong>、最长 <strong>3,453.533 秒（57.559 分钟）</strong>。这与由论文舍入均值估计的 56.664 小时略有差异，因此文件选择和存储规划请使用实测清单。100 个视频都是 30 FPS；91 个为 1280×720，其余 9 个为约 1578–1580×720。</p>
+<h2 id="100">视频类别与 100 帧预览</h2>
+<p>robot 按官方文件名前缀分为 7 个场景。每个场景选其最小文件作为代表，在视频约 10%、35%、60%、85% 四个位置，各取 25 个实际解码帧（约 0.1 秒间隔），总计 100 帧。这样能观察同一场景在不同时间的内容，但不代表该类别全部视频的随机样本，也不是 100 个独立视频。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th style="text-align: right;">视频数量</th>
+<th>代表视频</th>
+<th style="text-align: right;">实测时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卧室 bedroom</td>
+<td style="text-align: right;">12</td>
+<td>bedroom_04</td>
+<td style="text-align: right;">1,650.633 秒 / 27.511 分钟</td>
+</tr>
+<tr>
+<td>健身房 gym</td>
+<td style="text-align: right;">4</td>
+<td>gym_01</td>
+<td style="text-align: right;">1,883.300 秒 / 31.388 分钟</td>
+</tr>
+<tr>
+<td>厨房 kitchen</td>
+<td style="text-align: right;">23</td>
+<td>kitchen_15</td>
+<td style="text-align: right;">1,845.000 秒 / 30.750 分钟</td>
+</tr>
+<tr>
+<td>客厅 living_room</td>
+<td style="text-align: right;">24</td>
+<td>living_room_20</td>
+<td style="text-align: right;">1,999.667 秒 / 33.328 分钟</td>
+</tr>
+<tr>
+<td>会议室 meeting_room</td>
+<td style="text-align: right;">6</td>
+<td>meeting_room_01</td>
+<td style="text-align: right;">1,820.333 秒 / 30.339 分钟</td>
+</tr>
+<tr>
+<td>办公室 office</td>
+<td style="text-align: right;">8</td>
+<td>office_05</td>
+<td style="text-align: right;">1,872.333 秒 / 31.206 分钟</td>
+</tr>
+<tr>
+<td>书房 study</td>
+<td style="text-align: right;">23</td>
+<td>study_17</td>
+<td style="text-align: right;">1,875.133 秒 / 31.252 分钟</td>
+</tr>
+</tbody>
+</table>
+<p>每帧的源文件、时刻和源文件总长度保存在 <a href="project.json">project.json</a>、<a href="metadata/robot_preview_manifest.json">抽帧清单</a>。本次 <strong>没有保存任何完整 robot MP4</strong>；最小原视频为 298,983,969 字节，最大为 3,362,278,483 字节，均超过 100 MB，所以全部使用有上限的 HTTP Range 读取。</p>
+<p>web 的官方统计包含 46 种视频内容，但当前 <code>web.json</code> 没有逐视频内容类别字段；其中的 <code>type</code> 是问题推理类别，不能直接当作视频类别。此次没有取得这些 YouTube 视频可用的匿名媒体直链，未下载 web 全视频、也未生成声称覆盖 46 类的帧。可从 <a href="metadata/web_sources.csv">920 个 web 来源清单</a>跳转到原视频；<a href="https://www.youtube.com/watch?v=7W0gRqCRMZQ" target="_blank" rel="noopener">官方示例 1</a>、<a href="https://www.youtube.com/watch?v=Efk3K4epEzg" target="_blank" rel="noopener">示例 2</a>、<a href="https://www.youtube.com/watch?v=6Unxpxy-Ct4" target="_blank" rel="noopener">示例 3</a>保留作为在线播放入口。</p>
+<h2 id="_1">标注、模型与结果</h2>
+<p>五种问题能力为多证据推理、多跳推理、跨模态推理、人物理解、一般知识提取；单题可以有多个标签。robot JSON 将“多证据”标签写作 <code>Multi-Detail Reasoning</code>，web 使用 <code>Multi-Evidence Reasoning</code>，汇总标签时需要显式对齐。机器人问题还包含提问时刻、参考推理等字段；提问时刻应在机器人行动/回答前，以免看到答案。</p>
+<p>下表采用本次取得的 <a href="https://arxiv.org/html/2508.09736" target="_blank" rel="noopener">arXiv v4（2025-10-09）表 5</a>；本次没有模型复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">M3-Bench-robot</th>
+<th style="text-align: right;">M3-Bench-web</th>
+<th style="text-align: right;">Video-MME Long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini-GPT4o-Hybrid</td>
+<td style="text-align: right;">24.0</td>
+<td style="text-align: right;">41.2</td>
+<td style="text-align: right;">56.5</td>
+</tr>
+<tr>
+<td>M3-Agent</td>
+<td style="text-align: right;"><strong>30.7</strong></td>
+<td style="text-align: right;"><strong>48.9</strong></td>
+<td style="text-align: right;"><strong>61.8</strong></td>
+</tr>
+<tr>
+<td>差值（百分点）</td>
+<td style="text-align: right;">+6.7</td>
+<td style="text-align: right;">+7.7</td>
+<td style="text-align: right;">+5.3</td>
+</tr>
+</tbody>
+</table>
+<p>仓库 README 摘要仍写 robot 提升 +8.2，本次以所取得论文表 5 的 30.7−24.0=6.7 为准，保留两份快照便于复核。M3-Bench 是开放式 QA，使用 GPT-4o 判断答案正确性；Video-MME 使用官方多选题评价。M3-Agent 分别训练 Qwen2.5-Omni-7B 记忆模型和 Qwen3-32B 控制模型，后者使用强化学习；强基线则由 Gemini-1.5-Pro 建记忆、GPT-4o 控制。论文另外使用 500 个内部训练视频、2,736 个 QA，它们不能混入公开 M3-Bench 的 1,020 个测试视频。</p>
+<h2 id="_2">来源与复用</h2>
+<p><a href="https://m3-agent.github.io/" target="_blank" rel="noopener">官方主页</a> · <a href="https://github.com/ByteDance-Seed/m3-agent" target="_blank" rel="noopener">官方代码</a> · <a href="https://huggingface.co/datasets/ByteDance-Seed/M3-Bench" target="_blank" rel="noopener">公开数据</a>。数据仓库还发布 intermediate outputs 与 memory graphs；它们是衍生文件，不是更多原始视频。</p>
+<p><a href="sources/hf_info.json">sources/hf_info.json</a>保存带大小与固定 revision 的目录；<a href="sources/paper.html">sources/paper.html</a>保存论文快照。<a href="scripts/sample_robot.py">scripts/sample_robot.py</a>记录完整抽帧和时长探测方式，采用有字节预算的 Range 读取，服务端若不返回 206 则终止。图册的 700 帧均为源视频解码 JPEG，没有生成图片或重复一帧凑数。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

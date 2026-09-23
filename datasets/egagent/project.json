@@ -1,0 +1,910 @@
+{
+  "slug": "egagent",
+  "title": "EGAgent：EgoLife 与 Video-MME",
+  "category": "长视频实体图方法",
+  "summary": "复用EgoLife与Video-MME，新增实体图检索方法；附两段官方演示各100帧。",
+  "paper_url": "https://arxiv.org/abs/2601.18157",
+  "repo_url": "https://github.com/facebookresearch/egagent",
+  "project_url": "https://facebookresearch.github.io/egagent/",
+  "dataset_urls": [
+    {
+      "label": "EgoLife",
+      "url": "https://huggingface.co/datasets/lmms-lab/EgoLife"
+    },
+    {
+      "label": "Video-MME",
+      "url": "https://huggingface.co/datasets/lmms-eval/Video-MME"
+    }
+  ],
+  "duration_summary": "EgoLife Jake约50h/7天；Video-MME Long每个30–60min；官网演示21.028s与33.992s。",
+  "availability": "代码和官网演示公开，原数据按各基准入口获取。",
+  "preview_status": "partial",
+  "limitations": [
+    "官网演示含图示与文字，不是200个独立原始数据视频。",
+    "Video-MME此次未生成本地帧。"
+  ],
+  "related_links": [
+    {
+      "label": "EgoLife overview",
+      "href": "../../overview.html"
+    },
+    {
+      "label": "EgoLife完整预览",
+      "href": "../../preview_gallery.html"
+    }
+  ],
+  "groups": [
+    {
+      "id": "egolife_jake",
+      "title": "EgoLife / Jake：100 个片段",
+      "description": "跨7天选取100个不同Jake原视频片段，各取一帧。底层视频被EgoLifeQA和Ego-R1共用；本页未重复下载。",
+      "frames": [
+        {
+          "image": "../../previews/DAY1/006.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_11213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_11213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/012.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_11460000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_11460000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/018.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_12100000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_12100000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/030.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_12590000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_12590000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/036.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_13230000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_13230000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/041.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_13473000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_13473000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/046.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_14120000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_14120000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/052.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_17283000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_17283000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/058.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_17523000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_17523000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/070.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_18413000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_18413000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/075.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_19243000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_19243000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/080.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_19490000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_19490000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/087.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_20133000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_20133000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_20430000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_20430000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/099.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_21533000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_21533000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/010.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_11240000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_11240000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_11503000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_11503000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/020.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_12500000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_12500000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/025.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_13170000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_13170000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_13433000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_13433000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/035.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_16010000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_16010000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/048.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_16543000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_16543000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/055.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_17213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_17213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/061.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_17480000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_17480000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/069.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_18143000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_18143000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/074.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_20593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_20593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/081.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_21260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_21260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_22450000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_22450000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_11310000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_11310000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/008.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_11593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_11593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_12280000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_12280000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/022.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_15060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_15060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/028.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_15340000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_15340000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/042.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_16310000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_16310000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/049.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_16593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_16593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/055.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_17280000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_17280000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/060.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_19363000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_19363000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/064.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_20050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_20050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/081.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_21120000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_21120000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_21403000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_21403000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/091.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_22090000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_22090000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_22373000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_22373000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/002.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_11020000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_11020000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/007.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_11300000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_11300000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/022.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_12260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_12260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/028.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_12540000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_12540000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/034.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_13220000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_13220000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/041.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_15380000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_15380000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/047.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_16060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_16060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/052.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_16340000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_16340000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_17300000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_17300000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/067.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_17580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_17580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/072.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_18260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_18260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_20463000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_20463000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/084.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_21143000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_21143000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/090.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_21423000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_21423000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_11140000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_11140000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/005.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_11420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_11420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_12100000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_12100000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/021.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_12373000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_12373000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_15050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_15050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/033.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_15330000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_15330000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 27.35
+        },
+        {
+          "image": "../../previews/DAY5/049.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_16530000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_16530000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/053.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_18230000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_18230000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_18503000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_18503000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/068.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_19183000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_19183000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/075.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_19460000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_19460000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.05
+        },
+        {
+          "image": "../../previews/DAY5/088.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_20420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_20420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/094.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_22200000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_22200000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/098.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_22480000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_22480000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/100.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_23160000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_23160000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_10050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_10050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/005.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_10363000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_10363000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/019.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_11390000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_11390000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/025.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_12103000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_12103000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/029.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_12420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_12420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/034.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_13133000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_13133000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/044.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_15263000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_15263000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/051.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_15580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_15580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/063.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_17073000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_17073000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/073.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_19240000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_19240000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_19553000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_19553000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_20270000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_20270000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_20580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_20580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_21293000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_21293000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/006.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12270000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12270000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/020.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12473000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12473000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_13083000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_13083000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/043.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_13583000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_13583000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/050.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_14190000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_14190000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_15003000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_15003000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/065.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_15213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_15213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/073.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_17403000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_17403000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18010000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18010000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18220000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18220000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18423000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18423000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/098.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_19243000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_19243000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/099.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_19450000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_19450000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/100.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_20060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_20060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        }
+      ],
+      "video_cases": []
+    },
+    {
+      "id": "egagent_pipeline",
+      "title": "官网演示：egagent_pipeline",
+      "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+      "frames": [],
+      "duration_seconds": 33.99166666666667,
+      "size_bytes": 13267288,
+      "github_blob_sha1_verified": "1932ee7db718de9e5720f237da27c104f6b495b5",
+      "decoded_frame_count": 1327,
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "egagent_pipeline",
+          "title": "EGAgent 官网方法演示（非独立数据集原始视频）",
+          "category": "官网演示：egagent_pipeline",
+          "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+          "local_video": "samples/egagent_pipeline.mp4",
+          "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+          "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+          "video_id": "egagent_pipeline",
+          "duration_seconds": 33.99166666666667,
+          "frames": 1330,
+          "fps": 38.23670340201246,
+          "width": 1380,
+          "height": 1832,
+          "size_bytes": 13267288,
+          "sha256": "dcc0e64fe62554ac9c01126d862196f1bf9052d8dc52bfe8452cf9bed938b5c2"
+        }
+      ]
+    },
+    {
+      "id": "egagent_teaser",
+      "title": "官网演示：egagent_teaser",
+      "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+      "frames": [],
+      "duration_seconds": 21.028333333333332,
+      "size_bytes": 13655088,
+      "github_blob_sha1_verified": "589c905d486149c837d9587634fe4ddd38ccefff",
+      "decoded_frame_count": 898,
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "egagent_teaser",
+          "title": "EGAgent 官网方法演示（非独立数据集原始视频）",
+          "category": "官网演示：egagent_teaser",
+          "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+          "local_video": "samples/egagent_teaser.mp4",
+          "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+          "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+          "video_id": "egagent_teaser",
+          "duration_seconds": 21.028333333333332,
+          "frames": 900,
+          "fps": 37.8416257883672,
+          "width": 2264,
+          "height": 1600,
+          "size_bytes": 13655088,
+          "sha256": "8136da1731b411016e978c7bfcaf93eca5a746318a6c329662bc45bfa57326ea"
+        }
+      ]
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "short_video_case_threshold_seconds": 180.0,
+  "short_video_case_policy": "本地完整副本不超过 180 秒且小于 100 MB 时直接展示 video case；其余视频继续抽帧。",
+  "short_video_cases_count": 2
+}

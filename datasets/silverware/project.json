@@ -1,0 +1,52 @@
+{
+  "slug": "silverware",
+  "title": "Break Out the Silverware / Stored Household Item Challenge",
+  "category": "静态图像 · 隐藏物体存储位置推断",
+  "summary": "6,500 个开发图像-物品对，100 个真实家庭评测对；输入单张厨房图像及物品名，预测容器多边形。",
+  "paper_url": "https://arxiv.org/abs/2512.23739",
+  "repo_url": "",
+  "project_url": "https://sites.google.com/site/dekelreuth/open-projects",
+  "dataset_urls": [],
+  "duration_summary": "不适用：数据单位是静态 RGB 图像，没有视频或 episode 时长。",
+  "availability": "论文和作者项目说明公开；截至本次核验，没有定位到作者明确发布的完整数据/代码下载入口。",
+  "preview_status": "partial",
+  "limitations": [
+    "仅提供论文公开的 3 张静态示例图，并非完整数据集抽样；不计作视频帧。",
+    "没有视频，不生成或复制图像来凑 100 帧。",
+    "未定位到官方完整数据下载入口，不等于断言作者从未发布。"
+  ],
+  "groups": [
+    {
+      "id": "paper-images",
+      "title": "论文静态图像示例（3 张）",
+      "description": "论文 Figure 1、2 的模型预测示例及 Figure 4 的标注界面。不是视频帧，也不是 100 个独立数据样本。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/paper_example_1.jpg",
+          "source_url": "https://arxiv.org/html/2512.23739v1/Gemini_2.5_pro_-_where_is_a_spoon.png",
+          "source_label": "论文 Figure 1，静态示例图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/paper_example_2.jpg",
+          "source_url": "https://arxiv.org/html/2512.23739v1/ChatGPT_-_where_is_a_spoon.png",
+          "source_label": "论文 Figure 2，静态示例图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/paper_example_3.jpg",
+          "source_url": "https://arxiv.org/html/2512.23739v1/annotate.PNG",
+          "source_label": "论文 Figure 4，静态示例图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        }
+      ]
+    }
+  ]
+}

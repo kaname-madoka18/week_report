@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Scaling Memory for Robot Policies with Experience Retrieval">
+  <meta name="keywords" content="Robotics, Memory, Robot Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemER: Scaling Up Memory for Robot Control via Experience Retrieval</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root { --method-col: 360px; --modality-col: 360px; --grid-gap: 1rem; }
+    .method-header, .method-row { grid-template-columns: repeat(4, var(--method-col)) !important; gap: var(--grid-gap) !important; }
+    .modality-header, .modality-row { grid-template-columns: repeat(2, var(--modality-col)) !important; gap: var(--grid-gap) !important; }
+    
+    .method-header > div:first-child,
+    .modality-header > div:first-child {
+      display: none !important;
+    }
+    
+    .method-row > div:nth-child(2),
+    .modality-row > div:nth-child(2) {
+      display: none !important;
+    }
+    
+    .method-row > div:first-child::after {
+      content: attr(data-label);
+      display: block;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .modality-row > div:first-child::after {
+      content: attr(data-label);
+      display: block;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    .video-cell { width: 100% !important; }
+    .comparison-grid { 
+      margin-left: auto; 
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      max-width: 100%;
+    }
+    .comparison-grid p { font-size: 0.8rem; }
+    .method-header > div, .modality-header > div {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 1600px) { 
+      :root { 
+        --method-col: 280px; 
+        --modality-col: 360px; 
+      } 
+    }
+    @media (max-width: 1400px) { 
+      :root { 
+        --method-col: 240px; 
+        --modality-col: 360px;
+      } 
+    }
+    @media (max-width: 1200px) { 
+      :root { 
+        --method-col: 200px; 
+        --modality-col: 360px; 
+      } 
+    }
+    
+    @media (max-width: 1000px) { 
+      :root { 
+        --method-col: 180px;
+        --modality-col: 360px; 
+        --grid-gap: 0.5rem;
+      } 
+    }
+    
+    @media (max-width: 850px) { 
+      :root { 
+        --method-col: clamp(55px, calc(-10px + 22.4vw), 180px);
+        --modality-col: clamp(110px, calc(-20px + 44.8vw), 360px);
+        --grid-gap: clamp(0.25rem, calc(0.1rem + 0.47vw), 0.5rem);
+      } 
+    }
+    
+    @media (max-width: 850px) { 
+      .comparison-grid { 
+        padding-left: clamp(0.5rem, 2vw, 1rem);
+        padding-right: clamp(0.5rem, 2vw, 1rem);
+      } 
+    }
+    
+    @media (max-width: 500px) { 
+      .comparison-grid { 
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      } 
+    }
+    
+    @media (max-width: 600px) { 
+      .method-header > div, .modality-header > div { 
+        font-size: clamp(0.7rem, calc(0.5rem + 1vw), 0.85rem); 
+      } 
+    }
+    
+    @media (max-width: 400px) { 
+      .comparison-grid p { 
+        font-size: clamp(0.66rem, calc(0.5rem + 0.8vw), 0.7rem) !important; 
+      } 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MemER: Scaling Up Memory for Robot Control via Experience Retrieval</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ajaysridhar.com/">Ajay Sridhar</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Jennifer Pan</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://satvik1701.github.io/">Satvik Sharma</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a>
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">Stanford University</span>
+          </div>
+          <p class="is-size-5 has-text-weight-semibold" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">ICLR 2026</p>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2510.20328"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/memer-policy/memer/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-centered">
+          <img src="./static/images/fig1.png" alt="Method Overview" style="width: 100%; max-width: 1200px; margin: 2rem auto; display: block;">
+        </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans rely on memory to perform tasks; our goal is to endow robot policies with the same ability. Naively conditioning on long observation histories is computationally expensive and brittle under covariate shift, while indiscriminate subsampling of history leads to irrelevant or redundant information. We propose a hierarchical policy framework, where the high-level policy is trained to select and track previous task-relevant keyframes from its experience. The high-level policy uses selected keyframes and the most recent frames when generating text instructions for a low-level policy to execute. This design is compatible with existing vision-language-action (VLA) models and enables the system to efficiently reason over long-horizon dependencies. In our experiments, we fine-tune Qwen2.5-VL-3B-Instruct and \(\pi_{0.5}\) as the high-level and low-level policies respectively, using demonstrations supplemented with minimal language annotations. Our approach, <span class="dnerf">MemER</span>, outperforms prior methods on three real-world long-horizon robotic manipulation tasks that require minutes of memory.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Architecture</h2>
+        <div class="content has-text-centered">
+          <img src="./static/images/architecture.png" alt="Method Overview" style="width: 60%; max-width: 1200px; margin: 2rem auto; display: block;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The high-level policy processes task instructions, selected keyframes (if any), and <span style="color: rgb(1, 168, 157);">recent images</span> from base and wrist-mounted cameras to generate low-level language subtasks and candidate keyframes (if any). The low-level policy uses the subtask, <span style="color: rgb(203, 41, 123);">current image</span>, and robot joint states to produce actions. The candidate keyframe(s) are processed by the keyframe filter to obtain the selected keyframes for input during the next step of inference.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/clustering_voting.png" alt="Clustering and Voting" style="width: 100%; max-width: 1200px; margin: 2rem auto; display: block;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            At each timestep, the high-level policy nominates candidate keyframe(s), as highlighted in orange. All candidate keyframes are aggregated across time with 1D single-linkage using a merge distance of \(d=5\) frames, yielding disjoint clusters. For each cluster, the colored bars indicate nominations for the observation at that timestamp, with bar height proportional to the number of nominations received. We select one representative frame per cluster by taking the median keyframe of all the candidates, and add that frame to memory.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Task Visualizations</h2>
+      <h3 class="title is-4" style="margin-top: 2rem;">Object Search</h3>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/search_viz_compress.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h3 class="title is-4">Counting</h3>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/counting_viz_compress.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h3 class="title is-4">Dust & Replace</h3>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="dusting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/dusting_viz_compress.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_pear-milk-corn_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-milk-grapes_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-olive-blue_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-search-memer has-text-centered">
+          <video poster="" id="search-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_4_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-counting-memer has-text-centered">
+          <video poster="" id="counting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_3_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_2_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_1_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_one-jelly-green-three-peanut-blue_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_three-jelly-blue-two-peanut-green_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_three-peanuts-blue-one-jelly-green_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <br>
+      <p class="has-text-centered"><b>MemER</b> successfully completes a range of long-horizon tasks that require memory, using a single policy</p>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Robust to Retries</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_retry_baguette-wooden-eraser_compressed.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Dropped baguette</p>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_retry-grasping_compressed.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple failed grasps on tomato</p>
+        </div>
+        <div class="item item-search-memer has-text-centered">
+          <video poster="" id="search-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_retry_empty-scoop_compressed.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple empty scoops</p>
+        </div>
+        <div class="item item-counting-memer has-text-centered">
+          <video poster="" id="counting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_retry_duster-drop-lots-smiley-drop-twice_compressed.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple missed grasps on duster, smiley face dropped twice</p>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_retry_bottom-shoe-stuck-gripper_compressed.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Shoe stuck on gripper</p>
+        </div>
+      </div>
+      <br>
+      <p class="has-text-centered"><b>MemER</b> successfully completes the tasks despite errors and retries incurred during execution that cause historical context to look out of distribution</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding: 0;">
+  <div class="container" style="max-width: 100%; padding: 0 1rem;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3" style="padding-top: 4rem;">Method Comparisons</h2>
+        
+        <div class="comparison-grid" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
+          
+          <div class="method-header" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center;">
+            <div></div>
+            <div><strong>No History (N=1 frame)</strong></div>
+            <div><strong>Short History (N=8 frames)</strong></div>
+            <div><strong>Long History (N=32 frames)</strong></div>
+            <div><strong>MemER (Ours)</strong></div>
+          </div>
+          
+          <div class="method-row" style="display: grid; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Object Search</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "search for milk carton" → "search for grapes" → "search for blue block"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Object Search</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_no_history_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0/3 objects retrieved<br>0/3 optimal path taken</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_recent_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1/3 objects retrieved<br>1/3 optimal path taken</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_long_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">2/3 objects retrieved<br>2/3 optimal path taken</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_memer_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3/3 objects retrieved<br>3/3 optimal path taken</p>
+            </div>
+          </div>
+          
+          <div class="method-row" style="display: grid; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Counting</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Counting</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_no_history_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">2 scoops of peanuts<br>0 scoops of jelly beans</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_recent_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">2 scoops of peanuts<br>1 scoop of jelly beans</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_long_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">6 scoops of peanuts<br>2 scoops of jelly beans</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_memer_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3 scoops of peanuts<br>3 scoops of jelly beans</p>
+            </div>
+          </div>
+          
+          <div class="method-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Dust & Replace</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Dust & Replace</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_no_history_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0/2 objects replaced<br>0/2 shelves dusted</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_recent_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0/2 objects replaced<br>0/2 shelves dusted</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_long_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0/2 objects replaced<br>2/2 shelves dusted</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_memer_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">2/2 objects replaced<br>2/2 shelves dusted</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <h2 class="title is-3" style="margin-top: 4rem;">Memory Modality Comparisons</h2>
+        
+        <div class="comparison-grid" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
+          
+          <div class="modality-header" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center;">
+            <div></div>
+            <div><strong>Text Memory</strong></div>
+            <div><strong>MemER (Ours)</strong></div>
+          </div>
+          
+          <div class="modality-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Object Search</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "search for milk carton" → "search for grapes" → "search for blue block"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Object Search</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_text_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1/3 objects retrieved<br>1/3 optimal path taken</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_memer_milk-grapes-blueblock_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3/3 objects retrieved<br>3/3 optimal path taken</p>
+            </div>
+          </div>
+          
+          <div class="modality-row" style="display: grid; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Counting</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Counting</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_text_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">3 scoops of peanuts<br>0 scoops of jelly beans</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_memer_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3 scoops of peanuts<br>3 scoops of jelly beans</p>
+            </div>
+          </div>
+          
+          <div class="modality-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
+              <strong>Dust & Replace</strong>
+              <br>
+              <span style="font-size: 0.95rem; font-style: italic;">Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</span>
+            </div>
+            <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem; visibility: hidden;">
+              <strong>Dust & Replace</strong>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_text_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0/2 objects replaced<br>2/2 shelves dusted</p>
+            </div>
+            <div class="video-cell" style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/dusting_memer_purple_shoe_compressed.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">2/2 objects replaced<br>2/2 shelves dusted</p>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 1rem; padding-bottom: 1.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">BibTeX</h2>
+        <div class="content">
+          <pre class="bibtex-block"><code>@inproceedings{sridhar2026memer,
+  title={MemER: Scaling Up Memory for Robot Control via Experience Retrieval},
+  author={Ajay Sridhar and Jennifer Pan and Satvik Sharma and Chelsea Finn},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://arxiv.org/abs/2510.20328},
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding: 0.5rem 0; width: 100%;">
+  <div class="content has-text-centered">
+    <a class="icon-link" href="https://github.com/memer-policy/memer" class="external-link">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="content has-text-centered" style="margin-bottom: 0;">
+    <p style="margin-bottom: 0;">
+      This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

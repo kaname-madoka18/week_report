@@ -1,0 +1,251 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CG-Bench：长视频证据检索与问答基准 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">CG-Bench：长视频证据检索与问答基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-12-16</strong></div><div><span>引用数</span><strong>83</strong></div><div><span>GitHub stars</span><strong>22</strong></div><div><span>当前状态</span><strong>ICLR 2025</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2412.12075" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/CG-Bench/CG-Bench" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/b31335e597a9aa07d8f94b5355fb938548aa2b23" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openreview.net/forum?id=le4IoZZHy1" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=CG-Bench%3A+Clue-grounded+Question+Answering+Benchmark+for+Long+Video+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文介绍了一个名为CG-Bench的新型基准测试，旨在评估和提升多模态大型语言模型（MLLMs）在长视频理解方面的能力。论文主要试图解决的问题包括：</p>
+<ol>
+<li>
+<p><strong>现有基准测试的局限性</strong>：大多数现有的视频理解基准测试只关注短视频，而针对长视频理解的基准测试往往只依赖于多项选择题（MCQs），这限制了对MLLMs性能的全面评估。</p>
+</li>
+<li>
+<p><strong>MCQs评估的不足</strong>：基于MCQs的评估存在固有的局限性，模型可能仅通过结合短视频理解和排除法来给出答案，而没有真正理解视频内容，导致模型的可信度不足。</p>
+</li>
+<li>
+<p><strong>长视频理解的挑战</strong>：长视频包含更丰富的上下文信息，对模型的理解和推理能力提出了更高的要求。现有的MLLMs在长视频理解方面的表现尚待探索和提升。</p>
+</li>
+<li>
+<p><strong>评估方法的创新</strong>：为了更可靠地评估模型性能，论文提出了两种基于线索的评估方法——白盒评估和黑盒评估，以检验模型是否基于对视频的正确理解生成答案。</p>
+</li>
+<li>
+<p><strong>推动MLLMs的发展</strong>：通过构建一个包含丰富视频类别和问题的大规模基准测试，论文希望推动研究社区开发出更可靠、更强大的MLLMs，以更好地理解和处理长视频内容。</p>
+</li>
+</ol>
+<p>综上所述，CG-Bench基准测试的引入旨在通过更全面和严格的评估方法，推动长视频理解领域的发展，并提升MLLMs的性能和可信度。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，相关研究主要集中在以下几个领域：</p>
+<ol>
+<li>
+<p><strong>多模态大型语言模型（MLLMs）</strong>：
+   - 这些模型擅长整合视觉和文本信息，近期的研究进展包括LLaVA-Next-Video、LLaVA-OneVision和InternVL2等，它们通过集成大型语言模型（LLM）主干、视觉编码器和专门的适配器，或创建更高质量的多模态指令数据来增强MLLMs的性能。</p>
+</li>
+<li>
+<p><strong>视频理解模型</strong>：
+   - 大部分现有模型针对短视频进行优化，通常只有几秒钟或最多几分钟，没有探索更长上下文的视觉理解。对此，研究者探索了将视频帧压缩成较少的视觉标记的方法，例如LLaMA-Vid、LVChat、MovieChat、MALMM和Oryx等模型。</p>
+</li>
+<li>
+<p><strong>长视频理解的系统级优化</strong>：
+   - LongVA和LongViLA等研究探索了能够原生支持长视频理解的长上下文MLLMs的系统级优化。</p>
+</li>
+<li>
+<p><strong>MLLM基准测试</strong>：
+   - 随着领域的发展，建立了各种基准测试来评估MLLMs在视频理解任务中的性能。早期的基准测试主要关注短视频，例如TVQA、NextQA和EgoSchema等。最近，一些工作如VideoMME、CinePile、MLVU、LongVideoBench、MoVQA和LVBench引入了长视频基准测试来评估MLLMs。</p>
+</li>
+<li>
+<p><strong>特定领域的视频理解基准测试</strong>：
+   - 包括NextGQA、Ego4D-NLQ、MultiHop-EgoQA、E.T. Bench和RexTime等，这些基准测试主要围绕动作和自我中心领域，视频从学术数据集中采样。</p>
+</li>
+<li>
+<p><strong>短视频QA基准测试</strong>：
+   - 包括TempCompass、MVBench和MMBench-Video等，这些基准测试关注短视频的问答任务。</p>
+</li>
+<li>
+<p><strong>长视频QA基准测试</strong>：
+   - 包括Video-MME和MLVU等，这些基准测试关注长视频的问答任务。</p>
+</li>
+</ol>
+<p>这些相关研究为CG-Bench的提出提供了背景和动机，同时也表明了在长视频理解领域仍存在许多挑战和改进空间。CG-Bench旨在通过提供一个更全面和严格的评估平台，推动MLLMs在长视频理解方面的发展。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个关键步骤解决长视频理解中存在的问题：</p>
+<ol>
+<li>
+<p><strong>创建CG-Bench基准测试</strong>：
+   - 论文介绍了一个名为CG-Bench的新基准测试，它专注于长视频中的线索基础问题回答。这个基准测试包含了1,219个手动策划的视频和12,129个人工标注的问题-答案-线索（QAC）三元组，覆盖了感知、推理和幻觉三种主要问题类型。</p>
+</li>
+<li>
+<p><strong>详细的分类系统</strong>：
+   - CG-Bench使用了一个高度详细的手动分类系统，将每个视频归入14个主要类别、171个次要类别和638个三级类别中，确保了数据内容的广泛多样性。</p>
+</li>
+<li>
+<p><strong>设计新型评估方法</strong>：
+   - 论文设计了两种基于线索的评估方法：白盒评估和黑盒评估，以提供更可靠的模型性能评估。</p>
+<ul>
+<li><strong>白盒评估</strong>要求模型直接提供与问题对应的线索区间，同时选择正确答案。</li>
+<li><strong>黑盒评估</strong>要求模型在整体视频和仅线索级别的多项选择题中保持准确性的一致性。</li>
+</ul>
+</li>
+<li>
+<p><strong>支持开放式问答评估</strong>：
+   - CG-Bench还支持开放式问答（Open-ended QA）评估，通过利用人类标注的线索，为更全面评估结果提供支持。</p>
+</li>
+<li>
+<p><strong>实验评估</strong>：
+   - 论文通过评估多个闭源和开源的MLLMs在CG-Bench上的性能，揭示了现有模型在长视频理解方面的显著不足，并指出了改进空间。</p>
+</li>
+<li>
+<p><strong>数据和代码的公开</strong>：
+   - 论文承诺所有注释和视频数据将被公开，以便研究社区可以使用和进一步开发这个基准测试。</p>
+</li>
+<li>
+<p><strong>推动MLLMs的发展</strong>：
+   - 通过CG-Bench的评估结果，论文希望推动开发更可信和更强大的MLLMs，以更好地理解和处理长视频内容。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个针对长视频理解的全面评估框架，而且通过实验验证了现有模型的局限性，并为未来的研究提供了明确的方向。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了一系列实验来评估CG-Bench基准测试，并测试了多个闭源和开源的多模态大型语言模型（MLLMs）。以下是实验的主要部分：</p>
+<ol>
+<li>
+<p><strong>模型评估</strong>：
+   - 评估了三种主流的商业模型：GPT4o、Gemini-1.5和Claude-3.5及其不同版本。
+   - 评估了代表性的开源视频模型，如LLaVA-OneVision、Qwen2-VL和InternVL2等。</p>
+</li>
+<li>
+<p><strong>帧采样策略</strong>：
+   - 研究了帧采样策略对长视频理解的影响，对于开源MLLMs，尽可能多地使用帧以充分利用计算资源。对于闭源MLLMs，由于计算资源不再是瓶颈，可以使用更多的帧。</p>
+</li>
+<li>
+<p><strong>模态研究</strong>：
+   - 探索了字幕和音频等其他模态对模型性能的影响。对于字幕，采用了统一的采样方法；对于音频，研究了其对Gemini-1.5 Pro模型性能的影响。</p>
+</li>
+<li>
+<p><strong>主要结果</strong>：
+   - 展示了不同MLLMs在CG-Bench上的性能，包括多项选择题（MCQ）的准确性、线索基础的评估（包括白盒和黑盒评估）以及开放式问答（Open-ended QA）的评估结果。
+   - 分析了模型在不同评估标准下的表现，如长视频MCQ准确性（long-acc.）、线索准确性（clue-acc.）、平均时间交集比（mIoU）、召回率@IoU（rec.@IoU）、准确率@IoU（acc.@IoU）和线索恢复率（CRR）。</p>
+</li>
+<li>
+<p><strong>提示和模态的影响</strong>：
+   - 进行了消融研究，探索了不同提示（包括帧时间戳、字幕、字幕时间戳）对GPT4o模型性能的影响，以及音频模态对Gemini-1.5 Pro模型性能的影响。</p>
+</li>
+<li>
+<p><strong>帧数量的影响</strong>：
+   - 分析了不同数量的采样帧对模型性能的影响，包括长视频MCQ准确性、mIoU、Acc@IoU、CRR和开放式问答准确性。</p>
+</li>
+<li>
+<p><strong>开放式问答评估质量</strong>：
+   - 评估了不同MLLMs作为开放式问答评估器的稳定性和准确性，并比较了不同的评估方法，包括仅使用文本答案、视觉信息、文本答案加视觉信息以及论文提出的启发式评估方法。</p>
+</li>
+<li>
+<p><strong>视频时长对性能的影响</strong>：
+   - 根据视频时长对视频进行了分组，并评估了GPT4o-0806在不同视频时长下的长视频MCQ准确性。</p>
+</li>
+<li>
+<p><strong>帧采样策略的影响</strong>：
+   - 研究了不同帧采样策略对GPT4o-0806长视频MCQ准确性的影响，包括低分辨率、高分辨率和关键帧提取策略。</p>
+</li>
+</ol>
+<p>这些实验全面评估了MLLMs在长视频理解任务中的表现，并揭示了现有模型在长视频理解方面的不足，为未来的研究和模型改进提供了指导。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>改进帧采样策略</strong>：
+   - 研究更高效的帧采样策略，以更好地捕捉长视频中的关键信息，并提高模型的性能。</p>
+</li>
+<li>
+<p><strong>增强模型对长视频的理解能力</strong>：
+   - 开发新的方法和技术，以提升MLLMs处理和理解长视频内容的能力，特别是在面对视频内容的稀疏性和复杂性时。</p>
+</li>
+<li>
+<p><strong>多模态信息融合</strong>：
+   - 进一步探索如何有效地融合视觉、文本和音频模态信息，以提高长视频理解任务的性能。</p>
+</li>
+<li>
+<p><strong>减少模型的幻觉（hallucination）</strong>：
+   - 研究如何减少MLLMs在长视频理解中的幻觉现象，提高模型回答的准确性和可靠性。</p>
+</li>
+<li>
+<p><strong>提高开放式问答的评估质量</strong>：
+   - 开发更精确的评估方法，以准确衡量模型在开放式问答任务中的表现，并减少评估过程中的偏差和成本。</p>
+</li>
+<li>
+<p><strong>长视频的细粒度理解</strong>：
+   - 探索模型在长视频中进行细粒度理解的能力，例如在更长的时间尺度上进行事件和动作的检测与识别。</p>
+</li>
+<li>
+<p><strong>模型的可解释性和透明度</strong>：
+   - 提高MLLMs在长视频理解任务中的可解释性，使研究人员和用户能够更好地理解模型的决策过程。</p>
+</li>
+<li>
+<p><strong>跨领域和跨语言的视频理解</strong>：
+   - 扩展CG-Bench到更多领域和语言，以评估MLLMs在不同文化和语言环境中的性能。</p>
+</li>
+<li>
+<p><strong>大规模训练和微调</strong>：
+   - 在更大的数据集上进行训练和微调MLLMs，以提高其在长视频理解任务中的泛化能力。</p>
+</li>
+<li>
+<p><strong>实时视频理解</strong>：</p>
+<ul>
+<li>研究如何使MLLMs能够实时处理和理解视频流数据，这对于许多实际应用（如监控、直播等）非常重要。</li>
+</ul>
+</li>
+<li>
+<p><strong>长视频编辑和摘要</strong>：</p>
+<ul>
+<li>探索MLLMs在长视频编辑和摘要任务中的应用，以自动创建视频的概要或亮点。</li>
+</ul>
+</li>
+<li>
+<p><strong>模型的鲁棒性和安全性</strong>：</p>
+<ul>
+<li>研究提高MLLMs在面对错误信息、误导性内容或攻击时的鲁棒性和安全性。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助推动长视频理解技术的发展，并扩展MLLMs在多媒体分析和理解中的应用范围。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>论文介绍了CG-Bench，这是一个为长视频理解设计的新型基准测试，旨在评估多模态大型语言模型（MLLMs）在长视频问答任务中的表现。以下是论文的主要内容总结：</p>
+<ol>
+<li>
+<p><strong>问题识别</strong>：
+   - 现有视频理解基准测试主要关注短视频，且多依赖于多项选择题（MCQs），这限制了对MLLMs性能的全面评估，尤其是在长视频理解方面。</p>
+</li>
+<li>
+<p><strong>CG-Bench基准测试</strong>：
+   - CG-Bench包含1,219个手动策划的视频和12,129个人工标注的问答-线索（QAC）三元组，覆盖感知、推理和幻觉三种问题类型。
+   - 视频采用三级分类系统，包括14个主类别、171个次类别和638个三级类别，确保了数据内容的多样性。</p>
+</li>
+<li>
+<p><strong>评估方法</strong>：
+   - 提出了两种基于线索的评估方法：白盒评估和黑盒评估，以更可靠地评估模型是否基于对视频的正确理解生成答案。
+   - 白盒评估要求模型直接提供与问题对应的线索区间。
+   - 黑盒评估要求模型在整体视频和仅线索级别的多项选择题中保持准确性的一致性。</p>
+</li>
+<li>
+<p><strong>实验评估</strong>：
+   - 对多个闭源和开源MLLMs进行了评估，发现现有模型在长视频理解方面的表现远不如短视频，表明现有MLLMs在长视频理解方面有很大的改进空间。</p>
+</li>
+<li>
+<p><strong>数据和代码公开</strong>：
+   - 论文承诺将所有注释和视频数据公开，以便研究社区使用和进一步开发。</p>
+</li>
+<li>
+<p><strong>推动MLLMs发展</strong>：
+   - 论文希望CG-Bench能够推动开发更可信和更强大的MLLMs，以更好地理解和处理长视频内容。</p>
+</li>
+</ol>
+<p>总体而言，CG-Bench基准测试的引入旨在通过更全面和严格的评估方法，推动长视频理解领域的发展，并提升MLLMs的性能和可信度。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是CG-Bench%3A%20Clue-grounded%20Question%20Answering%20Benchmark%20for%20Long%20Video%20Understanding，链接是 https://arxiv.org/pdf/2412.12075 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2412.12075 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="cg-bench">CG-Bench：数据集与评测概览</h1>
+<p>1,219 个 10–80 分钟长视频、12,129 组问题/答案/时间线索，要求回答与正确视频证据对齐。</p>
+<p><strong>相关性：长上下文近邻。</strong> 长上下文近邻：适合评估记忆系统是否保留和检索支持答案的时间证据；原始任务本身不强制持续在线记忆。</p>
+<h2 id="_1">论文与筛选依据</h2>
+<ul>
+<li>标题：CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding</li>
+<li>arXiv首次提交：2024-12-16；<a href="https://arxiv.org/abs/2412.12075" target="_blank" rel="noopener">arXiv</a></li>
+<li>引用：83，Semantic Scholar Graph API，2026-09-23检索；<a href="https://www.semanticscholar.org/paper/b31335e597a9aa07d8f94b5355fb938548aa2b23" target="_blank" rel="noopener">记录</a></li>
+<li>GitHub：22 stars（2026-09-23）；<a href="https://github.com/CG-Bench/CG-Bench" target="_blank" rel="noopener">官方仓库</a></li>
+<li>状态：ICLR 2025；<a href="https://openreview.net/forum?id=le4IoZZHy1" target="_blank" rel="noopener">核验来源</a></li>
+<li>符合本轮时间范围（2024-09-23之后首次上arXiv）与引用数大于20。</li>
+</ul>
+<h2 id="_2">数据、任务与时长</h2>
+<p><strong>规模：</strong> 1,219 个视频；12,129 个QAC三元组；14,362 个线索区间；14主类、171二级类、638三级类。</p>
+<p><strong>视频长度/上下文跨度：</strong> 单视频 10–80 分钟；平均约 1,624.4 秒（27.1 分钟）；20–30 分钟最常见；证据片段平均 19.24 秒。</p>
+<p>感知、推理、幻觉三类问答；white-box 要求模型定位证据区间，black-box 利用线索构造长/短视频对照，检验答案是否确实基于正确线索。</p>
+<h2 id="_3">主要结果（论文报告，未本地复现）</h2>
+<p>论文报告长视频理解明显弱于短证据片段理解，且开放与商用模型间有较大差距。GPT-4o-0806 在128帧低分辨率均匀采样下 long-acc 为53.9%，50帧设置为46.7%，说明长上下文取样与证据定位影响评测。</p>
+<h2 id="_4">数据入口与预览</h2>
+<ul>
+<li><a href="preview_gallery.html">本地预览页面</a></li>
+<li><a href="https://huggingface.co/datasets/CG-Bench/CG-Bench" target="_blank" rel="noopener">官方数据入口</a></li>
+<li><a href="https://cg-bench.github.io/leaderboard/" target="_blank" rel="noopener">官方项目与排行榜</a></li>
+<li><a href="https://cg-bench.github.io/leaderboard/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p>另有 3 张官方任务/标注/统计示意图，单独标注为静态图，不计入视频抽帧。</p>
+<h2 id="_5">边界与限制</h2>
+<ul>
+<li>官方 Hugging Face 数据为 gated repository，需登录并同意条件才能读取文件；公开清单中原视频按约4.38–5.32 GB ZIP包发布，线索片段包约2.89–5.35 GB。本次未取得其文件读取权限，无法进行单视频或Range取样；本地提供官方任务与统计示意图。</li>
+<li>短证据片段的平均长度不等于完整视频长度。</li>
+<li>本页结果来自论文，未在本机复现模型。</li>
+</ul>
+<h2 id="_6">来源</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2412.12075" target="_blank" rel="noopener">论文原文</a></li>
+<li><a href="https://github.com/CG-Bench/CG-Bench" target="_blank" rel="noopener">官方仓库</a></li>
+<li><a href="https://cg-bench.github.io/leaderboard/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p><a href="../../index.html" data-catalog-home>← 返回主目录</a></p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

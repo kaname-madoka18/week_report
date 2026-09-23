@@ -1,0 +1,67 @@
+{
+  "slug": "longdocurl",
+  "title": "LongDocURL",
+  "category": "多模态长文档 · 跨页检索与推理",
+  "summary": "396份PDF、33,000余页与2,325个QA；覆盖长文档理解、数值推理和跨元素定位，展示官方文档案例图。",
+  "paper_url": "https://arxiv.org/abs/2412.18424",
+  "repo_url": "https://github.com/dengc2023/LongDocURL",
+  "project_url": "https://longdocurl.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方PDF与QA",
+      "url": "https://huggingface.co/datasets/dengchao/LongDocURL/"
+    }
+  ],
+  "duration_summary": "不适用视频时长：输入是多页PDF与图表/文本/布局元素；规模以页数及上下文长度计。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "没有视频；预览是官方提供的真实文档与QA示例静态图。",
+    "未下载完整PDF库，示例图不代表全数据随机样本。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/case_1.png",
+          "source_url": "https://longdocurl.github.io/static/img/examples/case_1.svg",
+          "source_label": "官方跨元素文档问题样例 1",
+          "original_svg": "previews/case_1.svg"
+        },
+        {
+          "image": "previews/case_2.png",
+          "source_url": "https://longdocurl.github.io/static/img/examples/case_2.svg",
+          "source_label": "官方跨页文档问题样例 2",
+          "original_svg": "previews/case_2.svg"
+        },
+        {
+          "image": "previews/example_1.png",
+          "source_url": "https://longdocurl.github.io/static/img/examples/example_1.svg",
+          "source_label": "官方文档与问答样例 1",
+          "original_svg": "previews/example_1.svg"
+        },
+        {
+          "image": "previews/example_2.png",
+          "source_url": "https://longdocurl.github.io/static/img/examples/example_2.svg",
+          "source_label": "官方文档与问答样例 2",
+          "original_svg": "previews/example_2.svg"
+        },
+        {
+          "image": "previews/example_3.png",
+          "source_url": "https://longdocurl.github.io/static/img/examples/example_3.svg",
+          "source_label": "官方文档与问答样例 3",
+          "original_svg": "previews/example_3.svg"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

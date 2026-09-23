@@ -1,0 +1,1664 @@
+{
+  "slug": "magic-video",
+  "title": "MAGIC-Video：EgoLife 与 MM-Lifelong",
+  "category": "长视频记忆方法",
+  "summary": "图记忆与跨时间叙事链；三套QA共用两类底层视频。",
+  "paper_url": "https://arxiv.org/abs/2605.08271",
+  "repo_url": "https://github.com/lijiazheng0917/MAGIC-video",
+  "dataset_urls": [
+    {
+      "label": "EgoLife",
+      "url": "https://huggingface.co/datasets/lmms-lab/EgoLife"
+    },
+    {
+      "label": "MM-Lifelong 当前入口",
+      "url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong"
+    },
+    {
+      "label": "MAGIC 中间结果",
+      "url": "https://huggingface.co/datasets/jiazhengli7/magic-video-artifacts"
+    }
+  ],
+  "duration_summary": "Jake论文口径51.9h/7天；Month全库105.6h/51天，验证题覆盖14个广播约76.36h。",
+  "availability": "方法和中间结果公开；原视频见EgoLife与MM-Lifelong。",
+  "preview_status": "reused",
+  "limitations": [
+    "MAGIC-Video没有新增原始视频库。",
+    "MM-Lifelong 105.6h指全Month库，14个验证视频并不合计105.6h。",
+    "共享Month100帧含1号广播；该广播不属于本论文14视频验证范围。"
+  ],
+  "related_links": [
+    {
+      "label": "EgoLife overview",
+      "href": "../../overview.html"
+    },
+    {
+      "label": "EgoLife完整图册",
+      "href": "../../preview_gallery.html"
+    },
+    {
+      "label": "MM-Lifelong overview",
+      "href": "../mm-lifelong/overview.html"
+    },
+    {
+      "label": "MM-Lifelong图册",
+      "href": "../mm-lifelong/preview_gallery.html"
+    }
+  ],
+  "groups": [
+    {
+      "id": "egolife_jake",
+      "title": "EgoLife / Jake：100 个片段",
+      "description": "跨7天选取100个不同Jake原视频片段，各取一帧。底层视频被EgoLifeQA和Ego-R1共用；本页未重复下载。",
+      "frames": [
+        {
+          "image": "../../previews/DAY1/006.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_11213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_11213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/012.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_11460000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_11460000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/018.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_12100000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_12100000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/030.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_12590000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_12590000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/036.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_13230000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_13230000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/041.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_13473000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_13473000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/046.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_14120000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_14120000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/052.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_17283000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_17283000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/058.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_17523000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_17523000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/070.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_18413000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_18413000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/075.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_19243000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_19243000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/080.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_19490000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_19490000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/087.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_20133000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_20133000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_20430000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_20430000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY1/099.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY1/DAY1_A1_JAKE_21533000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY1/DAY1_A1_JAKE_21533000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/010.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_11240000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_11240000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_11503000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_11503000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/020.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_12500000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_12500000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/025.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_13170000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_13170000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_13433000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_13433000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/035.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_16010000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_16010000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/048.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_16543000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_16543000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/055.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_17213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_17213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/061.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_17480000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_17480000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/069.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_18143000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_18143000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/074.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_20593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_20593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/081.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_21260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_21260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY2/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY2/DAY2_A1_JAKE_22450000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY2/DAY2_A1_JAKE_22450000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_11310000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_11310000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/008.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_11593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_11593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_12280000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_12280000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/022.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_15060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_15060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/028.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_15340000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_15340000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/042.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_16310000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_16310000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/049.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_16593000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_16593000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/055.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_17280000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_17280000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/060.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_19363000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_19363000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/064.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_20050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_20050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/081.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_21120000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_21120000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_21403000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_21403000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/091.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_22090000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_22090000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY3/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY3/DAY3_A1_JAKE_22373000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY3/DAY3_A1_JAKE_22373000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/002.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_11020000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_11020000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/007.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_11300000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_11300000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/022.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_12260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_12260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/028.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_12540000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_12540000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/034.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_13220000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_13220000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/041.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_15380000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_15380000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/047.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_16060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_16060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/052.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_16340000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_16340000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_17300000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_17300000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/067.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_17580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_17580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/072.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_18260000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_18260000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_20463000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_20463000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/084.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_21143000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_21143000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY4/090.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY4/DAY4_A1_JAKE_21423000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY4/DAY4_A1_JAKE_21423000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_11140000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_11140000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/005.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_11420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_11420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_12100000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_12100000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/021.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_12373000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_12373000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_15050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_15050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/033.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_15330000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_15330000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 27.35
+        },
+        {
+          "image": "../../previews/DAY5/049.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_16530000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_16530000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/053.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_18230000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_18230000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_18503000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_18503000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/068.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_19183000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_19183000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/075.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_19460000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_19460000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.05
+        },
+        {
+          "image": "../../previews/DAY5/088.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_20420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_20420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/094.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_22200000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_22200000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/098.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_22480000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_22480000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY5/100.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY5/DAY5_A1_JAKE_23160000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY5/DAY5_A1_JAKE_23160000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/001.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_10050000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_10050000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/005.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_10363000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_10363000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/019.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_11390000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_11390000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/025.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_12103000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_12103000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/029.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_12420000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_12420000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/034.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_13133000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_13133000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/044.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_15263000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_15263000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/051.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_15580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_15580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/063.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_17073000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_17073000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/073.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_19240000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_19240000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_19553000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_19553000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_20270000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_20270000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_20580000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_20580000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY6/097.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY6/DAY6_A1_JAKE_21293000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY6/DAY6_A1_JAKE_21293000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/006.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/014.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12270000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12270000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/020.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_12473000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_12473000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/027.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_13083000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_13083000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/043.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_13583000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_13583000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/050.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_14190000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_14190000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/062.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_15003000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_15003000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/065.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_15213000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_15213000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/073.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_17403000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_17403000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/079.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18010000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18010000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/086.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18220000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18220000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/092.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_18423000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_18423000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/098.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_19243000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_19243000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/099.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_19450000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_19450000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        },
+        {
+          "image": "../../previews/DAY7/100.jpg",
+          "source_url": "https://huggingface.co/datasets/lmms-lab/EgoLife/resolve/main/A1_JAKE/DAY7/DAY7_A1_JAKE_20060000.mp4",
+          "source_label": "EgoLife A1_JAKE（复用已有真实帧）",
+          "video_id": "A1_JAKE/DAY7/DAY7_A1_JAKE_20060000.mp4",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 30.0
+        }
+      ]
+    },
+    {
+      "id": "mmlifelong_month",
+      "title": "MM-Lifelong Month：共享100帧",
+      "description": "共享MM-Lifelong全库的4个广播样例；1号广播不在MAGIC的14个验证视频中，14/19/23号在验证范围内。预览代表源数据内容，不声称全都来自本论文验证子集。",
+      "frames": [
+        {
+          "image": "../mm-lifelong/previews/month_1/001.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21450.0,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/002.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21450.2,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/003.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21450.4,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/004.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21450.6,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/005.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21450.8,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/006.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21451.0,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/007.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21451.2,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/008.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21451.4,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/009.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21451.6,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/010.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21451.8,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/011.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21452.0,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/012.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21452.2,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/013.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21452.4,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/014.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21452.6,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/015.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21452.8,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/016.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21453.0,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/017.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21453.2,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/018.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21453.4,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/019.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21453.6,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/020.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21453.8,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/021.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21454.0,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/022.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21454.2,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/023.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21454.4,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/024.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21454.6,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_1/025.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/1.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_1",
+          "timestamp_seconds": 21454.8,
+          "duration_seconds": 42899.96666666667
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/001.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11399.833166499833,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/002.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11400.033366700034,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/003.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11400.233566900233,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/004.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11400.433767100434,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/005.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11400.633967300633,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/006.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11400.834167500834,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/007.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11401.034367701035,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/008.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11401.234567901234,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/009.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11401.434768101435,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/010.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11401.634968301634,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/011.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11401.835168501835,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/012.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11402.035368702036,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/013.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11402.235568902235,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/014.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11402.435769102436,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/015.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11402.635969302635,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/016.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11402.836169502836,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/017.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11403.036369703037,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/018.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11403.236569903236,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/019.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11403.436770103437,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/020.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11403.636970303636,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/021.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11403.837170503837,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/022.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11404.037370704038,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/023.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11404.237570904237,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/024.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11404.437771104438,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_14/025.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/14.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_14",
+          "timestamp_seconds": 11404.637971304637,
+          "duration_seconds": 22799.6495662329
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/001.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17388.6,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/002.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17388.8,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/003.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17389.0,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/004.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17389.2,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/005.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17389.4,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/006.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17389.6,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/007.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17389.8,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/008.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17390.0,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/009.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17390.2,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/010.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17390.4,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/011.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17390.6,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/012.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17390.8,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/013.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17391.0,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/014.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17391.2,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/015.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17391.4,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/016.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17391.6,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/017.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17391.8,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/018.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17392.0,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/019.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17392.2,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/020.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17392.4,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/021.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17392.6,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/022.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17392.8,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/023.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17393.0,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/024.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17393.2,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_19/025.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/19.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_19",
+          "timestamp_seconds": 17393.4,
+          "duration_seconds": 34777.166666666664
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/001.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11251.866666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/002.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11252.066666666668,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/003.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11252.266666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/004.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11252.466666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/005.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11252.666666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/006.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11252.866666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/007.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11253.066666666668,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/008.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11253.266666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/009.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11253.466666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/010.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11253.666666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/011.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11253.866666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/012.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11254.066666666668,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/013.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11254.266666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/014.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11254.466666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/015.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11254.666666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/016.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11254.866666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/017.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11255.066666666668,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/018.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11255.266666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/019.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11255.466666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/020.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11255.666666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/021.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11255.866666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/022.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11256.066666666668,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/023.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11256.266666666666,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/024.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11256.466666666667,
+          "duration_seconds": 22503.7
+        },
+        {
+          "image": "../mm-lifelong/previews/month_23/025.jpg",
+          "source_url": "https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong/resolve/248aa82039a574e63a2e524746a7cd8f32330443/videos/month/23.mp4",
+          "source_label": "MM-Lifelong month 官方原视频",
+          "video_id": "month_23",
+          "timestamp_seconds": 11256.666666666666,
+          "duration_seconds": 22503.7
+        }
+      ]
+    }
+  ]
+}

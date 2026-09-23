@@ -1,0 +1,9 @@
+[
+  {
+    "source_url": "https://rmbench.github.io/images/test.mp4",
+    "size_bytes": 3159180,
+    "duration_seconds": 4.041666666666667,
+    "decision": "excluded",
+    "reason": "官网页面未引用；画面为机器人倒可乐，无法关联论文9个任务，未当作benchmark预览。"
+  }
+]

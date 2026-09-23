@@ -1,0 +1,19 @@
+{
+  "title": "SuperMemory-VQA",
+  "category": "长时第一人称视频问答",
+  "summary": "官方声明 52.9 小时、4,853 个问答；当前公开仓库主要为标注流水线，未发现原始视频与完整 QA 下载入口。",
+  "paper_url": "",
+  "repo_url": "https://github.com/AIoT-MLSys-Lab/supermemory-vqa",
+  "project_url": "",
+  "dataset_urls": [],
+  "duration_summary": "总计 52.9 小时（仓库声明）；小时级上下文、跨最多两周；单个视频文件时长未公开。",
+  "availability": "代码公开；数据文件与独立论文入口未核实",
+  "preview_status": "unavailable",
+  "limitations": [
+    "仓库 218 个文件中没有 MP4/WebM/MOV 或完整 QA 发布文件；未用宣传图凑 100 帧。",
+    "仓库其他数据集对比表口径未独立验证，本文只使用其本项目声明。"
+  ],
+  "groups": [],
+  "slug": "supermemory-vqa",
+  "checked_at": "2026-09-22"
+}

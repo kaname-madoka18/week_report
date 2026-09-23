@@ -1,0 +1,86 @@
+{
+  "slug": "mikasa-robo",
+  "title": "MIKASA / MIKASA-Robo",
+  "category": "机器人视觉记忆 · 仿真控制 benchmark",
+  "summary": "论文版 MIKASA-Robo 含 32 项桌面操作记忆任务；当前官方 VLA 版扩展到 90 项、10 类记忆及 22,500 条轨迹。",
+  "paper_url": "https://arxiv.org/abs/2502.10550",
+  "repo_url": "https://github.com/CognitiveAISystems/MIKASA-Robo",
+  "project_url": "https://mikasarobo.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方轨迹数据集合",
+      "url": "https://huggingface.co/mikasa-robo"
+    },
+    {
+      "label": "数据与版本说明",
+      "url": "https://mikasarobo.github.io/datasets.html"
+    },
+    {
+      "label": "任务目录",
+      "url": "https://mikasarobo.github.io/vla_environments/index.html"
+    }
+  ],
+  "duration_summary": "可配置的 episode/延迟长度，按控制步数定义；官方分 Short/Medium/Long 三档。页面短演示仅表示播放时长，不能代替轨迹长度。 本地2段官网案例播放时长 0.50–0.83秒。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "论文版的 32 项任务与当前 VLA 版 90 项任务分别记录，不能混作同一个实验版本。",
+    "官方短演示由 GIF 转为 MP4 播放；不属于对 22,500 条轨迹的随机抽样。",
+    "未下载完整 RLDS/LeRobot 轨迹，未用未知控制频率把步数换算成秒。"
+  ],
+  "relation_level": "直接记忆",
+  "groups": [
+    {
+      "id": "official_short_cases",
+      "title": "官方短视频案例",
+      "description": "直接播放已完整下载且校验的官方小演示；每个源文件小于100MB，播放时长不超过180秒。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "source_url": "https://mikasarobo.github.io/_images/shell_game_touch.gif",
+          "original_size_bytes": 1401736,
+          "local_video": "samples/shell_game_touch.mp4",
+          "size_bytes": 144348,
+          "duration_seconds": 0.8341666666666666,
+          "width": 768,
+          "height": 512,
+          "frames": 10,
+          "fps": 11.988011988011989,
+          "sha256": "aa723a5448eea801f7c2f868ffbff9a4c9572dd682181b239e7038ce5a790dc5",
+          "converted_from_gif": true,
+          "id": "shell_game_touch",
+          "title": "遮挡物体记忆：Shell Game Touch",
+          "category": "机器人视觉记忆 · 仿真控制 benchmark",
+          "description": "官网演示案例；实测时间为播放时间，不代表完整数据轨迹长度。 官方 GIF 转码为 MP4，保持原播放时序。",
+          "source_label": "遮挡物体记忆：Shell Game Touch（官方演示）",
+          "video_id": "shell_game_touch"
+        },
+        {
+          "source_url": "https://mikasarobo.github.io/_images/remember_color.gif",
+          "original_size_bytes": 714996,
+          "local_video": "samples/remember_color.mp4",
+          "size_bytes": 106669,
+          "duration_seconds": 0.5034965034965035,
+          "width": 768,
+          "height": 512,
+          "frames": 6,
+          "fps": 11.916666666666666,
+          "sha256": "0412f747ff640db8f5ee3bac4b17f8e0b1b928b40159dec1b811c1e66b637278",
+          "converted_from_gif": true,
+          "id": "remember_color",
+          "title": "视觉颜色记忆：Remember Color",
+          "category": "机器人视觉记忆 · 仿真控制 benchmark",
+          "description": "官网演示案例；实测时间为播放时间，不代表完整数据轨迹长度。 官方 GIF 转码为 MP4，保持原播放时序。",
+          "source_label": "视觉颜色记忆：Remember Color（官方演示）",
+          "video_id": "remember_color"
+        }
+      ]
+    }
+  ],
+  "short_video_cases_count": 2,
+  "short_video_case_threshold_seconds": 180,
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

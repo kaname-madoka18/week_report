@@ -1,0 +1,378 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ego4D — Episodic Memory · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Ego4D — Episodic Memory</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2021-10-13</strong></div><div><span>引用数</span><strong>2,057</strong></div><div><span>GitHub stars</span><strong>141</strong></div><div><span>当前状态</span><strong>CVPR 2022</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2110.07058" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/EGO4D/episodic-memory" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/848eb8367785910c2fe31372605954ad8f9dfe6c" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://arxiv.org/abs/2110.07058" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Ego4D%3A+Around+the+World+in+3%2C000+Hours+of+Egocentric+Video" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文介绍了一个名为Ego4D的大规模第一人称视角视频数据集和基准测试套件。它试图解决的问题是如何推动第一人称视觉感知研究的前沿，特别是在以下几个方面：</p>
+<ol>
+<li>
+<p><strong>数据集的规模和多样性</strong>：Ego4D提供了一个前所未有的大规模和多样化的第一人称视角视频集合，这些视频涵盖了全球不同地点、不同人群的日常生活活动。</p>
+</li>
+<li>
+<p><strong>第一人称视角的理解</strong>：与互联网上的第三人称视角数据集不同，Ego4D关注于第一人称视角，即通过佩戴摄像头的个体的眼睛看世界，这涉及到对长时间、连续的视频流的理解。</p>
+</li>
+<li>
+<p><strong>3D空间和时间的理解</strong>：第一人称感知要求对摄像头佩戴者周围物理环境的持续3D理解，包括对物体和动作的解释，这些都在人类交互的背景下进行。</p>
+</li>
+<li>
+<p><strong>多模态学习</strong>：Ego4D数据集包括视频、音频、3D网格、视线追踪、立体视觉和多摄像头视角等多模态数据，这为多模态学习提供了丰富的资源。</p>
+</li>
+<li>
+<p><strong>基准测试任务</strong>：论文提出了五个基准测试任务，涵盖了从过去经验的索引、当前交互的分析到未来活动的预测等第一人称视觉体验的关键组成部分。</p>
+</li>
+<li>
+<p><strong>隐私和伦理标准</strong>：在数据收集过程中，强调了隐私和伦理的重要性，确保了参与者的同意和数据的去标识化处理。</p>
+</li>
+<li>
+<p><strong>推动跨学科研究</strong>：Ego4D数据集和基准测试套件旨在促进计算机视觉、机器人学、增强现实、3D传感、多模态学习、语音和语言等领域的研究。</p>
+</li>
+</ol>
+<p>总的来说，Ego4D项目旨在通过提供大规模、多样化的第一人称视角视频数据和具有挑战性的基准测试任务，推动第一人称视觉感知技术的发展。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>Ego4D项目在论文中提到了多个与第一人称视频理解、数据集创建和相关任务基准测试相关的研究工作。以下是一些主要的相关研究领域和具体工作：</p>
+<ol>
+<li>
+<p><strong>大规模第三人称数据集</strong>：如Kinetics、AVA、UCF、ActivityNet、HowTo100M、ImageNet和COCO等，这些数据集专注于从第三人称视角的网络视频数据。</p>
+</li>
+<li>
+<p><strong>第一人称视频理解</strong>：包括人类-物体交互、活动识别、行为预测、视频摘要、手部检测、社交互动解析和摄像机佩戴者身体姿态推断等任务。</p>
+</li>
+<li>
+<p><strong>第一人称视频数据集</strong>：如EPIC-Kitchens、UT Ego、Activities of Daily Living (ADL)和Disney数据集等，这些数据集包含了非剧本化的日常生活活动。</p>
+</li>
+<li>
+<p><strong>音频-视觉联合学习</strong>：涉及音频-视觉检测和跟踪、多模态特征学习、音频空间化、音频源分离等领域的研究。</p>
+</li>
+<li>
+<p><strong>音频-视觉说话人识别</strong>：如VoxCeleb、AVA Speech、AVA Active Speaker、AVDIAR和EasyCom等数据集，这些数据集支持音频-视觉说话人识别和相关任务的研究。</p>
+</li>
+<li>
+<p><strong>社交互动理解</strong>：包括眼接触检测、共同注意估计、凝视跟踪等任务，这些研究有助于理解视频中的社交行为。</p>
+</li>
+<li>
+<p><strong>行为预测</strong>：关于从第一人称视角预测未来事件的研究，包括未来定位、行为预测、下一个活动对象预测和未来事件预测等。</p>
+</li>
+<li>
+<p><strong>视频理解和预测的深度学习方法</strong>：如SlowFast网络、Transformer模型等，这些方法在视频识别和预测任务中取得了显著进展。</p>
+</li>
+<li>
+<p><strong>多模态学习</strong>：涉及结合来自不同感官模式的信息，如结合视觉和音频数据进行更丰富的场景理解。</p>
+</li>
+<li>
+<p><strong>场景理解</strong>：如通过音频和视频数据来推断场景的3D结构和动态变化。</p>
+</li>
+</ol>
+<p>这些相关研究为Ego4D数据集和基准测试任务的设计提供了理论和技术基础，并展示了第一人称视频理解领域的研究进展。Ego4D项目通过提供大规模的多样化数据和挑战性的任务，旨在进一步推动这一领域的研究。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个关键步骤来解决第一人称视觉感知的问题：</p>
+<ol>
+<li>
+<p><strong>创建大规模多样化的数据集</strong>：Ego4D数据集包含了3670小时的视频，这些视频由来自74个全球地点的931名独特参与者捕捉。这些视频覆盖了多种场景，如家庭、户外、工作场所、休闲活动等，确保了数据的地理和人口统计多样性。</p>
+</li>
+<li>
+<p><strong>多模态数据收集</strong>：除了RGB视频，数据集还包括音频、3D环境网格、视线追踪、立体视觉和多摄像头视角等，为研究提供了丰富的数据模态。</p>
+</li>
+<li>
+<p><strong>隐私和伦理标准</strong>：在数据收集过程中，严格遵守隐私和伦理标准，包括获得参与者的知情同意、尊重他人隐私权、遵循去标识化要求等。</p>
+</li>
+<li>
+<p><strong>基准测试任务</strong>：提出了五个基准测试任务，涵盖过去、现在和未来的第一人称视觉体验，包括：
+   - <strong>情景记忆（Episodic Memory）</strong>：通过自然语言查询、视觉查询和时刻查询，定位视频中特定事件的发生位置。
+   - <strong>手和物体（Hands and Objects）</strong>：识别和理解手与物体的交互，特别是物体状态变化的点。
+   - <strong>音频-视觉日记（Audio-Visual Diarization）</strong>：通过视觉和音频数据，识别和跟踪参与者，以及他们的语音活动。
+   - <strong>社交互动（Social Interactions）</strong>：分析第一人称视角下的社交行为，如眼神接触和对话。
+   - <strong>预测（Forecasting）</strong>：预测未来的行动和交互，包括运动预测、手部运动预测、短期物体交互预测和长期行动预测。</p>
+</li>
+<li>
+<p><strong>注释和特征提取</strong>：为数据集提供了丰富的注释，包括时间、空间和语义标签，以及密集的文本叙述，这些注释支持复杂的任务。</p>
+</li>
+<li>
+<p><strong>公开数据集和基准测试</strong>：通过公开分享这个大规模注释的数据集和基准测试套件，激励研究社区推动第一人称感知的边界。</p>
+</li>
+<li>
+<p><strong>跨学科合作</strong>：Ego4D项目由Facebook和全球13所大学共同完成，涉及计算机视觉、机器人学、增强现实、3D传感、多模态学习、语音和语言等领域的专家。</p>
+</li>
+<li>
+<p><strong>基准测试挑战</strong>：通过在2022年6月举行的正式基准测试挑战，邀请研究社区改进基线模型，推动该领域的研究进展。</p>
+</li>
+</ol>
+<p>通过这些步骤，Ego4D项目旨在为第一人称视觉感知提供一个全面的资源，促进相关领域的研究和应用发展。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中提到了多个实验，主要集中在以下几个方面：</p>
+<ol>
+<li>
+<p><strong>数据收集</strong>：通过全球14个团队在9个国家的5个大陆上进行分布式数据收集，共收集了931名独特参与者的3670小时视频数据。</p>
+</li>
+<li>
+<p><strong>叙述（Narrations）</strong>：对所有视频进行了叙述处理，以获得密集的时间对齐文本描述。这包括对视频内容的活动和物体交互进行描述。</p>
+</li>
+<li>
+<p><strong>基准测试（Benchmarks）</strong>：设计了五个基准测试任务，包括情景记忆（Episodic Memory）、手和物体（Hands and Objects）、音频-视觉日记（Audio-Visual Diarization）、社交互动（Social Interactions）和预测（Forecasting）。</p>
+</li>
+<li>
+<p><strong>基准测试实验</strong>：为每个基准测试任务开发了基线模型，并进行了定量评估。这些任务涵盖了从过去经验的索引、分析当前互动到预测未来活动的不同方面。</p>
+</li>
+<li>
+<p><strong>视觉查询（Visual Queries）</strong>：进行了2D和3D的视觉查询实验，以测试模型在定位视频中特定对象的能力。</p>
+</li>
+<li>
+<p><strong>自然语言查询（Natural Language Queries）</strong>：开发了模型来处理自然语言查询，并在视频中检索相关信息。</p>
+</li>
+<li>
+<p><strong>社交互动分析</strong>：进行了社交互动的实验，包括识别社交伙伴是否在看向或与摄像机佩戴者交谈。</p>
+</li>
+<li>
+<p><strong>音频-视觉日记实验</strong>：进行了音频-视觉日记的实验，包括说话人定位、跟踪、检测活跃的说话人以及语音活动的分割。</p>
+</li>
+<li>
+<p><strong>预测实验</strong>：进行了未来运动预测、手部运动预测、短期物体交互预测和长期行动预测的实验。</p>
+</li>
+<li>
+<p><strong>模型评估</strong>：对所有基线模型进行了评估，包括使用不同的评估指标，如平均精度（mAP）、成功率、搜索效率等。</p>
+</li>
+<li>
+<p><strong>数据集分割</strong>：对数据集进行了训练、验证和测试集的分割，以确保模型评估的公正性和一致性。</p>
+</li>
+<li>
+<p><strong>注释分析</strong>：对收集的注释进行了统计分析，以了解数据的分布和多样性。</p>
+</li>
+</ol>
+<p>这些实验的结果和分析为第一人称视觉感知的研究提供了新的见解，并展示了Ego4D数据集和基准测试套件在推动该领域研究方面的潜力。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>Ego4D数据集和基准测试套件为第一人称视觉感知的研究提供了丰富的资源和挑战。尽管论文中已经提出了一系列的任务和实验，但仍有许多可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>多模态融合</strong>：研究如何更有效地结合来自不同模态的信息，例如视频、音频、3D扫描和文本叙述，以提高对场景的理解。</p>
+</li>
+<li>
+<p><strong>时序预测</strong>：探索更复杂的时序预测模型，以更好地预测未来的行动和事件，包括长期和短期的预测。</p>
+</li>
+<li>
+<p><strong>上下文感知</strong>：研究如何让模型更好地理解视频内容的上下文，包括场景、活动和用户意图。</p>
+</li>
+<li>
+<p><strong>个性化模型</strong>：考虑到不同用户的个性化行为和偏好，研究如何定制模型以适应不同用户的数据。</p>
+</li>
+<li>
+<p><strong>实时应用</strong>：优化模型以实现实时或近实时的分析和预测，这对于增强现实和人机交互应用尤为重要。</p>
+</li>
+<li>
+<p><strong>鲁棒性提升</strong>：提高模型对于不同环境、设备和用户行为变化的鲁棒性。</p>
+</li>
+<li>
+<p><strong>细粒度分析</strong>：在现有任务的基础上，进一步细化分析的粒度，例如对特定类型的物体或动作进行更深入的分类和理解。</p>
+</li>
+<li>
+<p><strong>交互式应用</strong>：开发交互式应用，允许用户通过自然语言或其他方式与模型进行交流，以检索或预测信息。</p>
+</li>
+<li>
+<p><strong>跨领域应用</strong>：探索Ego4D数据集在其他领域的应用，如健康监测、教育、安全和监控等。</p>
+</li>
+<li>
+<p><strong>模型可解释性</strong>：提高模型的可解释性，让用户和研究人员更好地理解模型的决策过程。</p>
+</li>
+<li>
+<p><strong>隐私保护技术</strong>：研究和开发新的隐私保护技术，以确保在数据收集和分析过程中用户的隐私安全。</p>
+</li>
+<li>
+<p><strong>数据集扩展</strong>：通过收集更多地区、文化和活动类型的数据，进一步扩展和多样化Ego4D数据集。</p>
+</li>
+<li>
+<p><strong>基准测试挑战</strong>：组织更多的基准测试挑战，鼓励研究社区参与并推动技术的发展。</p>
+</li>
+<li>
+<p><strong>模型泛化能力</strong>：研究模型在不同数据集和任务之间的泛化能力，以及如何提高这种泛化性。</p>
+</li>
+<li>
+<p><strong>硬件集成</strong>：探索如何将这些模型和算法集成到实际的硬件设备中，如智能眼镜、智能手机等。</p>
+</li>
+</ol>
+<p>这些探索点不仅可以推动计算机视觉和机器学习领域的发展，还可能对相关技术的实际应用产生重要影响。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>Ego4D项目的论文主要介绍了以下几个方面的内容：</p>
+<ol>
+<li>
+<p><strong>数据集介绍</strong>：Ego4D是一个大规模的第一人称视角视频数据集，包含了3670小时的视频，由来自74个全球地点的931名独特参与者捕捉。视频内容覆盖了家庭、户外、工作场所、休闲等数百种场景。</p>
+</li>
+<li>
+<p><strong>数据收集方法</strong>：采用了分布式的数据收集策略，由全球14个团队负责，确保了数据的地理和人口统计多样性。</p>
+</li>
+<li>
+<p><strong>多模态数据</strong>：除了视频，Ego4D还提供了音频、3D环境网格、视线追踪、立体视觉和多摄像头视角等数据模态。</p>
+</li>
+<li>
+<p><strong>隐私和伦理</strong>：在数据收集过程中，严格遵守隐私和伦理标准，包括获得知情同意、尊重他人权利、避免敏感区域和活动，以及对个人信息进行去标识化处理。</p>
+</li>
+<li>
+<p><strong>基准测试任务</strong>：提出了五个基准测试任务，涵盖过去经验的索引、当前互动的分析和未来活动的预测。具体包括情景记忆（Episodic Memory）、手和物体（Hands and Objects）、音频-视觉日记（Audio-Visual Diarization）、社交互动（Social Interactions）和预测（Forecasting）。</p>
+</li>
+<li>
+<p><strong>注释和特征提取</strong>：为数据集提供了丰富的注释，包括时间、空间和语义标签，以及密集的文本叙述，支持对复杂任务的研究。</p>
+</li>
+<li>
+<p><strong>公开数据集和基准测试</strong>：通过公开分享大规模注释的数据集和基准测试套件，激励研究社区推动第一人称感知的研究。</p>
+</li>
+<li>
+<p><strong>跨学科合作</strong>：Ego4D项目由Facebook和全球13所大学共同完成，涉及计算机视觉、机器人学、增强现实等多个领域的专家。</p>
+</li>
+<li>
+<p><strong>基准测试挑战</strong>：计划在2022年6月举行正式的Ego4D基准测试挑战，邀请研究社区参与并改进基线模型。</p>
+</li>
+<li>
+<p><strong>研究贡献</strong>：论文详细列出了各个作者在项目实施、数据收集、注释开发、基准测试设计和评估中的贡献。</p>
+</li>
+<li>
+<p><strong>社会影响</strong>：讨论了Ego4D数据集可能带来的积极社会影响，如辅助技术、教育、娱乐等领域的应用，同时也指出了隐私和伦理方面的潜在风险。</p>
+</li>
+</ol>
+<p>Ego4D项目通过提供大规模、多样化的第一人称视角视频数据和具有挑战性的基准测试任务，旨在推动第一人称视觉感知技术的发展，并促进相关领域的研究和应用。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Ego4D%3A%20Around%20the%20World%20in%203%2C000%20Hours%20of%20Egocentric%20Video，链接是 https://arxiv.org/pdf/2110.07058 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2110.07058 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="ego4d-episodic-memory-overview">Ego4D Episodic Memory 数据集 overview</h1>
+<p>核查日期：2026-09-22。来源为 <a href="https://arxiv.org/abs/2110.07058" target="_blank" rel="noopener">Ego4D 原始论文</a>、<a href="https://ego4d-data.org/docs/benchmarks/episodic-memory/" target="_blank" rel="noopener">官方情景记忆文档</a>和<a href="https://github.com/EGO4D/episodic-memory" target="_blank" rel="noopener">官方仓库</a>。本文把原论文规模与本次可读取的官网短视频分开记录。</p>
+<h2 id="_1">全库、任务与长度</h2>
+<p>论文标题为 3,000 Hours，正文描述的全库是 <strong>3,670 小时</strong>，来自九个国家的日常第一人称录像；这是原论文版本，今天的正式下载版本可能有更新。全库并不全属于情景记忆任务。</p>
+<table>
+<thead>
+<tr>
+<th>情景记忆任务</th>
+<th style="text-align: right;">视频小时数</th>
+<th style="text-align: right;">clip 数</th>
+<th style="text-align: right;">平均 clip 长度</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NLQ（自然语言查询）</td>
+<td style="text-align: right;">227.1</td>
+<td style="text-align: right;">1,659</td>
+<td style="text-align: right;">8.2 分钟</td>
+<td>回答可见的时间窗口</td>
+</tr>
+<tr>
+<td>MQ（活动时刻查询）</td>
+<td style="text-align: right;">328.7</td>
+<td style="text-align: right;">2,522</td>
+<td style="text-align: right;">7.9 分钟</td>
+<td>指定活动出现的所有时间区间</td>
+</tr>
+<tr>
+<td>VQ2D（视觉查询）</td>
+<td style="text-align: right;">432.9</td>
+<td style="text-align: right;">5,831</td>
+<td style="text-align: right;">6.1 分钟</td>
+<td>查询物体最后出现的时空轨迹/2D框</td>
+</tr>
+<tr>
+<td>VQ3D</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: right;">4.9 分钟</td>
+<td>增加当前相机到物体的3D位置</td>
+</tr>
+</tbody>
+</table>
+<p>上表为论文 Table 3 的值，子集可重叠，<strong>不能把这些小时相加当作独立总长度</strong>。官方概括情景记忆为约 74K 个查询、覆盖约 800 小时。NLQ 使用 13 类问题模板，MQ 有 110 个活动类别。这里的 clip 已经过基准切分，并不等于摄像设备每个原始文件的长短。</p>
+<p>NLQ 原论文 split 为 train 约136h / val45h / test46h；对应约11.3K / 3.9K / 4.0K queries。后续版本论文的 query 数量可能不同，不能跨版本混合比较。</p>
+<h2 id="_2">原论文基线结果</h2>
+<p>以下引用原论文附录，未进行模型运行或今天排行榜复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法 / 条件</th>
+<th style="text-align: right;">NLQ test R@1 @IoU0.3</th>
+<th style="text-align: right;">R@5 @IoU0.3</th>
+<th style="text-align: right;">R@1 @IoU0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D-TAN</td>
+<td style="text-align: right;">5.80%</td>
+<td style="text-align: right;">13.90%</td>
+<td style="text-align: right;">2.34%</td>
+</tr>
+<tr>
+<td>VSLNet</td>
+<td style="text-align: right;">5.47%</td>
+<td style="text-align: right;">11.21%</td>
+<td style="text-align: right;">2.80%</td>
+</tr>
+</tbody>
+</table>
+<p>NLQ 评价时间定位召回，不是开放式问答正确率。VQ2D 的 Siam-RCNN + KYS（Residual）基线 test Success=41.6%、tAP=0.12、stAP=0.05；这些是另一种物体时空定位指标，不能与 NLQ 的百分比直接比较。</p>
+<h2 id="_3">发布状态与此次预览</h2>
+<p><a href="https://ego4d-data.org/#download" target="_blank" rel="noopener">官方首页下载部分</a>要求先签署 Ego4D 许可才能获取完整视频、元数据和标注。本次只读取公开文档、仓库树和无需登录的官网短演示，没有申请许可，也没有读取受限全库。</p>
+<p>找到官网仓库的 12 个地区演示 MP4，每个都先从 GitHub tree 核验大小小于 100,000,000 bytes，再通过 GitHub blob API 获取并用 Git blob SHA1 核对内容。共 <strong>1,200 张真实视频帧，12 个地区分组各 100 张</strong>。这些显示实际采集环境，不代表 NLQ/MQ/VQ 的已标注样本；由于没有可靠映射，不给演示虚构任务标签。</p>
+<table>
+<thead>
+<tr>
+<th>官方演示</th>
+<th style="text-align: right;">实测时长（秒）</th>
+<th style="text-align: right;">文件大小（MB，十进制）</th>
+<th style="text-align: right;">预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bristol / 英国</td>
+<td style="text-align: right;">10.533</td>
+<td style="text-align: right;">0.436</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>Catania / 意大利</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.317</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>CMU / 美国</td>
+<td style="text-align: right;">9.067</td>
+<td style="text-align: right;">0.421</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>CMU Africa / 卢旺达</td>
+<td style="text-align: right;">10.067</td>
+<td style="text-align: right;">0.317</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>FAIR / 美国</td>
+<td style="text-align: right;">15.133</td>
+<td style="text-align: right;">0.779</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>Georgia Tech / 美国</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.258</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>IIIT Hyderabad / 印度</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>KAUST / 沙特阿拉伯</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>Los Andes / 哥伦比亚</td>
+<td style="text-align: right;">10.267</td>
+<td style="text-align: right;">0.887</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>Minnesota / 美国</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.268</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>NUS / 新加坡</td>
+<td style="text-align: right;">10.067</td>
+<td style="text-align: right;">0.181</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+<tr>
+<td>东京大学 / 日本</td>
+<td style="text-align: right;">10.080</td>
+<td style="text-align: right;">0.221</td>
+<td style="text-align: right;">100帧</td>
+</tr>
+</tbody>
+</table>
+<p>12 段合计 125.213 秒，完整保存 4.380 MB，最大文件仅 0.887 MB。均匀时间采样后保存 JPG；这些是从短演示得到的画面，远少于整个数据集。</p>
+<p><a href="preview_gallery.html">离线预览图册</a> · <a href="metadata/demo_durations.csv">逐演示时长表</a> · <a href="metadata/download_audit.json">下载核验记录</a> · <a href="metadata/media_manifest.json">视频与帧来源清单</a>。</p>
+<p>本地来源快照：<a href="sources/paper.html">论文</a>、<a href="sources/home.html">官网</a>、<a href="sources/episodic.html">官方基准文档</a>、<a href="sources/README.md">官方仓库说明</a>、<a href="sources/site_tree.json">官网媒体树</a>。</p>
+<h2 id="_4">第二版短视频展示</h2>
+<p>本次第二版预览把本地完整副本不超过 <strong>180 秒</strong> 的视频改为直接播放的 video case 卡片，不再为这些短视频重复生成 100 帧图片；较长视频、没有安全本地副本的视频仍保留抽帧预览。当前项目检测到 <strong>12 个</strong>短视频 case，播放文件均小于 100 MB；页面中的时长、大小与 SHA-256 来自本地文件核验。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

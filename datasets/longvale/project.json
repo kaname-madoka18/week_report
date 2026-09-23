@@ -1,0 +1,1137 @@
+{
+  "slug": "longvale",
+  "title": "LongVALE：音视频语言事件基准",
+  "category": "音视频语言事件基准",
+  "summary": "8,411 个视频、105,730 个视觉/声音/语音联合事件；测试带时间边界的全模态事件理解。",
+  "paper_url": "https://arxiv.org/abs/2411.19772",
+  "repo_url": "https://github.com/ttgeng233/LongVALE",
+  "project_url": "https://ttgeng233.github.io/LongVALE/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/ttgeng233/LongVALE"
+    }
+  ],
+  "duration_summary": "训练集 473.8 小时、7,240 视频；评测集 75.6 小时、1,171 视频。总549.4小时，按官方总量计算平均约235.2秒/视频。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "available",
+  "relation_level": "长上下文近邻",
+  "limitations": [
+    "官方HF现提供原始测试/训练ZIP。已通过有界HTTP Range从1.06GB测试ZIP中仅读取两个5.19/5.91MB MP4成员；整包未下载。两个样例不代表全库时长分布。",
+    "平均视频长度为官方小时数除以视频数的计算值，原始长度分布不是固定235秒。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://ttgeng233.github.io/LongVALE/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2411.19772"
+    }
+  ],
+  "groups": [
+    {
+      "id": "case__6D4W48qMQo",
+      "title": "LongVALE 测试视频：_6D4W48qMQo",
+      "description": "从官方测试ZIP只读取该MP4成员，未下载完整ZIP；按单文件大小选择，不代表全库时长分布。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "longvale",
+          "local_video": "samples/_6D4W48qMQo.mp4",
+          "poster": "previews/_6D4W48qMQo_poster.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "mirror_transport_url": "https://hf-mirror.com/datasets/ttgeng233/LongVALE/resolve/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "archive_member": "video_test_1171/_6D4W48qMQo.mp4",
+          "archive_size_bytes": 1063510782,
+          "range_bytes": 6021886,
+          "range_requests": 23,
+          "whole_archive_downloaded": false,
+          "size_bytes": 5189226,
+          "duration_seconds": 59.4,
+          "width": 480,
+          "height": 360,
+          "codec": "h264",
+          "fps": 25.0,
+          "sha256": "ab48cabc48916f3040a0893d0c274587d8d2afa10f0b612c5c2e1f3c5ce5cd25",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "title": "LongVALE 测试视频：_6D4W48qMQo",
+          "source_label": "LongVALE 测试视频：_6D4W48qMQo",
+          "video_id": "_6D4W48qMQo",
+          "category": "官方视频 case",
+          "description": "从官方测试ZIP只读取该MP4成员，未下载完整ZIP；按单文件大小选择，不代表全库时长分布。"
+        }
+      ]
+    },
+    {
+      "id": "frames__JtjTlJ_H8g",
+      "title": "LongVALE 测试视频：_JtjTlJ_H8g · 100帧",
+      "description": "从官方测试ZIP只读取该MP4成员，未下载完整ZIP；按单文件大小选择，不代表全库时长分布。 超过180秒，按全视频时长均匀取100帧；显示实际解码时间戳。",
+      "media_kind": "video",
+      "frames": [
+        {
+          "image": "previews/_JtjTlJ_H8g/001.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 1.0416666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/002.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 3.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/003.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 5.166666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/004.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 7.208333333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/005.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 9.291666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/006.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 11.333333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/007.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 13.416666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/008.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 15.458333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/009.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 17.541666666666668,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/010.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 19.583333333333332,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/011.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 21.625,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/012.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 23.708333333333332,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/013.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 25.75,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/014.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 27.833333333333332,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/015.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 29.875,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/016.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 31.958333333333332,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/017.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 34.0,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/018.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 36.041666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/019.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 38.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/020.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 40.166666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/021.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 42.25,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/022.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 44.291666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/023.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 46.333333333333336,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/024.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 48.416666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/025.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 50.458333333333336,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/026.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 52.541666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/027.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 54.583333333333336,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/028.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 56.666666666666664,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/029.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 58.708333333333336,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/030.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 60.75,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/031.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 62.833333333333336,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/032.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 64.875,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/033.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 66.95833333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/034.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 69.0,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/035.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 71.04166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/036.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 73.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/037.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 75.16666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/038.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 77.25,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/039.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 79.29166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/040.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 81.375,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/041.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 83.41666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/042.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 85.45833333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/043.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 87.54166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/044.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 89.58333333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/045.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 91.66666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/046.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 93.70833333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/047.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 95.79166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/048.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 97.83333333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/049.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 99.875,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/050.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 101.95833333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/051.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 104.0,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/052.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 106.08333333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/053.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 108.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/054.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 110.16666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/055.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 112.25,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/056.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 114.29166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/057.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 116.375,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/058.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 118.41666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/059.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 120.5,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/060.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 122.54166666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/061.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 124.58333333333333,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/062.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 126.66666666666667,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/063.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 128.70833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/064.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 130.79166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/065.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 132.83333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/066.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 134.91666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/067.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 136.95833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/068.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 139.0,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/069.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 141.08333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/070.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 143.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/071.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 145.20833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/072.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 147.25,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/073.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 149.29166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/074.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 151.375,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/075.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 153.41666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/076.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 155.5,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/077.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 157.54166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/078.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 159.625,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/079.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 161.66666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/080.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 163.70833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/081.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 165.79166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/082.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 167.83333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/083.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 169.91666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/084.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 171.95833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/085.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 174.0,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/086.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 176.08333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/087.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 178.125,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/088.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 180.20833333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/089.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 182.25,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/090.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 184.33333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/091.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 186.375,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/092.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 188.41666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/093.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 190.5,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/094.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 192.54166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/095.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 194.625,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/096.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 196.66666666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/097.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 198.75,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/098.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 200.79166666666666,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/099.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 202.83333333333334,
+          "source_video_size_bytes": 5910085
+        },
+        {
+          "image": "previews/_JtjTlJ_H8g/100.jpg",
+          "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+          "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+          "video_id": "_JtjTlJ_H8g",
+          "local_video": "samples/_JtjTlJ_H8g.mp4",
+          "duration_seconds": 205.91666666666666,
+          "timestamp_seconds": 204.91666666666666,
+          "source_video_size_bytes": 5910085
+        }
+      ],
+      "source_video": {
+        "slug": "longvale",
+        "local_video": "samples/_JtjTlJ_H8g.mp4",
+        "poster": "previews/_JtjTlJ_H8g_poster.jpg",
+        "source_url": "https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+        "mirror_transport_url": "https://hf-mirror.com/datasets/ttgeng233/LongVALE/resolve/main/raw_videos_test/LongVALE_test_1171_part_9.zip",
+        "archive_member": "video_test_1171/_JtjTlJ_H8g.mp4",
+        "archive_size_bytes": 1063510782,
+        "range_bytes": 6546174,
+        "range_requests": 25,
+        "whole_archive_downloaded": false,
+        "size_bytes": 5910085,
+        "duration_seconds": 205.91666666666666,
+        "width": 640,
+        "height": 360,
+        "codec": "h264",
+        "fps": 24.0,
+        "sha256": "d82035cee5a0a151245cda8ea44a75197e7afc8c1cff6acdc862fba097e01e4d",
+        "measurement_tool": "PyAV / FFmpeg libraries",
+        "title": "LongVALE 测试视频：_JtjTlJ_H8g",
+        "source_label": "LongVALE 测试视频：_JtjTlJ_H8g",
+        "video_id": "_JtjTlJ_H8g",
+        "category": "官方视频 case",
+        "description": "从官方测试ZIP只读取该MP4成员，未下载完整ZIP；按单文件大小选择，不代表全库时长分布。"
+      }
+    },
+    {
+      "id": "official_images",
+      "title": "官方任务与数据示例图",
+      "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "slug": "longvale",
+          "image": "previews/fig1.jpg",
+          "source_url": "https://ttgeng233.github.io/LongVALE/static/images/fig1.jpg",
+          "source_label": "视觉-音频-语言事件任务",
+          "size_bytes": 747704,
+          "width": 2270,
+          "height": 1044,
+          "video_id": "not-video",
+          "sha256": "16756a1eed4bb288a495b6deefa6cd6176da65bf7a23ebcafc32d371d6339e2e"
+        },
+        {
+          "slug": "longvale",
+          "image": "previews/fig2.jpg",
+          "source_url": "https://ttgeng233.github.io/LongVALE/static/images/fig2.jpg",
+          "source_label": "多模态事件标注与数据统计",
+          "size_bytes": 1406973,
+          "width": 4683,
+          "height": 1908,
+          "video_id": "not-video",
+          "sha256": "ac799fef91d09a511576ef94f81c0392d240defac98013518e78f5f28eb622b8"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

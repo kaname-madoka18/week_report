@@ -1,0 +1,69 @@
+{
+  "slug": "lv-haystack",
+  "title": "LV-Haystack / T*：长视频关键帧检索基准",
+  "category": "长视频关键帧检索基准",
+  "summary": "480小时视频、15,092人工实例，标注回答问题所需的少量关键帧，专门评估长视频时间搜索质量与效率。",
+  "paper_url": "https://arxiv.org/abs/2504.02259",
+  "repo_url": "https://github.com/mll-lab-nu/TStar",
+  "project_url": "https://longvideohaystack.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/MLL-Lab/LongVideoHaystack"
+    }
+  ],
+  "duration_summary": "数据总长480小时；来自Ego4D与长视频问答源，单视频长度不一。官网演示视频长度另行实测，不能替代数据集原视频长度。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "available",
+  "relation_level": "长上下文近邻",
+  "limitations": [
+    "论文同时贡献方法T*与基准LV-Haystack；本页以数据集与检索评测为主。",
+    "官网demo显示搜索过程，不是完整数据集原视频。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://longvideohaystack.github.io/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2504.02259"
+    }
+  ],
+  "groups": [
+    {
+      "id": "case_Framework_0301_demo",
+      "title": "T* 方法演示：Framework_0301_demo",
+      "description": "官网算法演示，非 LV-Haystack 原始数据视频；不能用演示片长代替数据视频时长。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "lv-haystack",
+          "source_url": "https://longvideohaystack.github.io/assets/videos/Framework_0301_demo.mov",
+          "local_video": "samples/Framework_0301_demo.mov",
+          "poster": "previews/Framework_0301_demo_poster.jpg",
+          "size_bytes": 9223779,
+          "duration_seconds": 19.27,
+          "width": 1788,
+          "height": 1080,
+          "codec": "h264",
+          "fps": 30.306175402179555,
+          "sha256": "fd1559ea583d79fbe49761cb1df24ae6b9e3c6a7c5a44b6ad9f90db58b06fb25",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 9223779,
+          "title": "T* 方法演示：Framework_0301_demo",
+          "source_label": "T* 方法演示：Framework_0301_demo",
+          "video_id": "Framework_0301_demo",
+          "category": "方法演示",
+          "description": "官网算法演示，非 LV-Haystack 原始数据视频；不能用演示片长代替数据视频时长。"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "streamingbench",
+  "title": "StreamingBench",
+  "category": "流式视听理解 · 历史上下文",
+  "summary": "900 段视频、4,500 个带提问时间点的人工 QA，18 项任务覆盖实时、全源和上下文理解。",
+  "paper_url": "https://arxiv.org/abs/2411.03628",
+  "repo_url": "https://github.com/THUNLP-MT/StreamingBench",
+  "project_url": "https://streamingbench.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方数据与标注",
+      "url": "https://huggingface.co/datasets/mjuicem/StreamingBench"
+    }
+  ],
+  "duration_summary": "原视频 3 秒–24 分钟（论文数据统计）；另外测试查询前 60 秒上下文。官网演示长度另行实测，不能当作数据集时长。 本地1段官网案例播放时长 12.30–12.30秒。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "页面播放的是官网说明演示，不是从 900 段原视频随机采样。",
+    "完整数据分卷约 203GB，本次未下载。",
+    "60 秒是上下文消融窗口，不是所有原始视频的长度。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_short_cases",
+      "title": "官方短视频案例",
+      "description": "直接播放已完整下载且校验的官方小演示；每个源文件小于100MB，播放时长不超过180秒。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "source_url": "https://streamingbench.github.io/static/images/sv.mp4",
+          "original_size_bytes": 5649924,
+          "local_video": "samples/official_demo.mp4",
+          "size_bytes": 5649924,
+          "duration_seconds": 12.3,
+          "width": 1920,
+          "height": 1080,
+          "frames": 369,
+          "fps": 30.0,
+          "sha256": "17ff7b90cd14e724e2bfa96b927df734968f03d58cdeca34338506fdc43a8377",
+          "converted_from_gif": false,
+          "id": "official_demo",
+          "title": "官方流式理解演示",
+          "category": "流式视听理解 · 历史上下文",
+          "description": "官网演示案例；实测时间为播放时间，不代表完整数据轨迹长度。",
+          "source_label": "官方流式理解演示（官方演示）",
+          "video_id": "official_demo"
+        }
+      ]
+    }
+  ],
+  "short_video_cases_count": 1,
+  "short_video_case_threshold_seconds": 180,
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

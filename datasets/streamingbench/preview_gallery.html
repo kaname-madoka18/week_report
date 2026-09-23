@@ -1,0 +1,200 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StreamingBench · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">StreamingBench</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-11-06</strong></div><div><span>引用数</span><strong>128</strong></div><div><span>GitHub stars</span><strong>172</strong></div><div><span>当前状态</span><strong>ICASSP 2026</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2411.03628" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/THUNLP-MT/StreamingBench" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/958e80006e3b62a0b41e50877d9e554c339615a7" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://www.cmsworkshops.com/ICASSP2026/view_session.php?SessionID=1247&amp;bare=1" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=StreamingBench%3A+Assessing+the+Gap+for+MLLMs+to+Achieve+Streaming+Video+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的问题是评估和提升多模态大型语言模型（MLLMs）在流媒体视频理解方面的能力。具体来说，论文指出了以下几个关键问题：</p>
+<ol>
+<li>
+<p><strong>现有MLLMs的局限性</strong>：大多数现有的多模态大型语言模型主要关注离线视频理解，需要在提出任何查询之前处理所有视频帧。这与人类实时观看、倾听、思考和响应流媒体输入的能力存在显著差距，凸显了当前MLLMs的不足。</p>
+</li>
+<li>
+<p><strong>流媒体视频理解的评估缺口</strong>：尽管流媒体视频理解对MLLMs至关重要，但现有的视频理解基准测试主要设计用于离线评估，无法适应流媒体评估的需求。</p>
+</li>
+<li>
+<p><strong>流媒体视频理解能力的全面评估</strong>：为了弥补现有基准测试的不足，论文提出了第一个全面的基准测试StreamingBench，用于评估MLLMs的流媒体视频理解能力。这个基准测试涵盖了实时视觉理解、多源理解和上下文理解三个核心方面。</p>
+</li>
+<li>
+<p><strong>MLLMs性能与人类水平的差距</strong>：通过在StreamingBench上对13个开源和专有的MLLMs进行实验，论文发现即使是最先进的MLLMs（如Gemini 1.5 Pro和GPT-4o）在流媒体视频理解能力上也显著低于人类水平。</p>
+</li>
+<li>
+<p><strong>MLLMs在流媒体场景下的改进方向</strong>：通过一系列分析实验，论文揭示了当前模型在实时处理、理解和交互流媒体上下文方面的不足，并提出了改进未来MLLMs的潜在方向，以促进更接近人类水平的视频理解和交互。</p>
+</li>
+</ol>
+<p>总的来说，这篇论文旨在通过引入新的基准测试和分析实验，推动MLLMs在更现实的场景中实现接近人类水平的视频理解和交互能力的发展。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，以下是与StreamingBench基准测试相关的一些研究工作：</p>
+<ol>
+<li>
+<p><strong>多模态大型语言模型（MLLMs）的发展</strong>：
+   - 论文提到了多个先进的MLLMs，例如GPT-4o、Gemini 1.5 Pro、Claude 3.5 Sonnet等，这些模型已经在视频理解任务中表现出色，并且有的研究工作专注于提高MLLMs对实时在线视频流的理解和效率。</p>
+</li>
+<li>
+<p><strong>视频理解基准测试</strong>：
+   - MSRVTT-QA、TGIF-QA、MV-Bench、How2QA、ActivityNet-QA等：这些是现有的视频问答基准测试，主要用于评估MLLMs的离线视频理解能力。
+   - InfiniBench、MLVU、LVBench、Video-MME等：这些基准测试主要关注长视频理解能力。
+   - VStream-QA：这是与流媒体视频理解相关的现有基准测试之一，每个问题都分配了一个时间戳，以模拟实时查询。</p>
+</li>
+<li>
+<p><strong>流媒体视频MLLMs</strong>：
+   - VideoLLM-online、Flash-VStream、VideoLLM-MoD：这些是学术领域中的流媒体视频MLLMs，旨在提高对流媒体输入的理解和处理能力。</p>
+</li>
+<li>
+<p><strong>实时视频理解和交互</strong>：
+   - 论文中提到了一些研究工作专注于改进MLLMs在动态环境中的实时视频流理解能力，如OpenAI的GPT-4o展示了类似人类的对流媒体输入的感知和理解。</p>
+</li>
+</ol>
+<p>这些研究工作为StreamingBench基准测试的提出提供了背景和动机，同时也表明了流媒体视频理解领域中存在的挑战和需求。StreamingBench旨在通过提供一个全面的评估框架，进一步推动MLLMs在流媒体视频理解方面的发展。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决流媒体视频理解的评估问题：</p>
+<ol>
+<li>
+<p><strong>建立新的基准测试StreamingBench</strong>：
+   - 论文介绍了第一个全面的基准测试StreamingBench，旨在评估MLLMs的流媒体视频理解能力。这个基准测试包含18个任务，涉及900个视频和4500个人工策划的问答对。</p>
+</li>
+<li>
+<p><strong>定义流媒体视频理解的核心方面</strong>：
+   - 论文确定了流媒体视频理解的三个核心方面：实时视觉理解、多源理解和上下文理解，并基于这些方面设计了相应的任务类别。</p>
+</li>
+<li>
+<p><strong>构建数据集</strong>：
+   - 通过人工策划和自动化流程相结合的方式，生成了涵盖各种任务类别的QA对，确保了数据集的多样性和质量。</p>
+</li>
+<li>
+<p><strong>实验评估</strong>：
+   - 论文对13个最先进的开源和专有MLLMs进行了实验评估，包括GPT-4o、Gemini 1.5 Pro和Claude 3.5 Sonnet等，以衡量它们在流媒体视频理解任务上的性能。</p>
+</li>
+<li>
+<p><strong>分析实验结果</strong>：
+   - 通过对比模型性能和人类水平，论文揭示了MLLMs在流媒体视频理解方面与人类之间的显著差距，并分析了模型在不同任务上的表现，以识别当前模型的不足。</p>
+</li>
+<li>
+<p><strong>提出改进方向</strong>：
+   - 基于分析结果，论文提出了改进MLLMs的潜在方向，包括提高实时处理能力、增强对流媒体上下文的理解以及优化交互能力。</p>
+</li>
+<li>
+<p><strong>促进未来研究</strong>：
+   - 论文希望通过StreamingBench基准测试和分析实验的结果，为未来的研究提供见解，推动MLLMs在更现实的场景中实现接近人类水平的视频理解和交互能力的发展。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个全面的评估框架来衡量MLLMs在流媒体视频理解方面的能力，而且还为如何改进这些模型提供了具体的分析和建议。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了一系列实验来评估多模态大型语言模型（MLLMs）在流媒体视频理解方面的能力。以下是实验的详细内容：</p>
+<ol>
+<li>
+<p><strong>模型评估实验</strong>：
+   - 论文评估了13个最先进的开源和专有MLLMs，包括GPT-4o、Gemini 1.5 Pro和Claude 3.5 Sonnet等，在StreamingBench基准测试上的性能。
+   - 这些模型在18个任务上的表现被详细记录和分析，任务覆盖了实时视觉理解、多源理解和上下文理解三个核心方面。</p>
+</li>
+<li>
+<p><strong>视频长度对模型性能的影响</strong>：
+   - 论文探讨了视频长度对模型性能的影响，将视频分为短于60秒和长于60秒两组，并比较了模型在不同长度视频上的表现。</p>
+</li>
+<li>
+<p><strong>不同时间线索的任务表现</strong>：
+   - 论文根据线索类型对任务进行了分类，并分析了模型在处理先前线索、同时线索和随后线索的任务上的表现。</p>
+</li>
+<li>
+<p><strong>上下文理解任务的分析</strong>：
+   - 论文特别分析了模型在处理包含冗余信息的上下文理解和异常上下文理解任务上的性能，并探讨了冗余信息对模型性能的影响。</p>
+</li>
+<li>
+<p><strong>序列问答任务中问题引用的影响</strong>：
+   - 论文研究了问题间引用对模型在序列问答（SQA）任务中性能的影响，并尝试通过显式解决这些引用来提高模型性能。</p>
+</li>
+<li>
+<p><strong>主动输出任务的处理</strong>：
+   - 论文分析了MLLMs在主动输出（PO）任务上的挑战，并探讨了模型难以适应这种任务格式的原因。</p>
+</li>
+<li>
+<p><strong>额外ASR信息对模型性能的影响</strong>：
+   - 论文还探讨了将自动语音识别（ASR）信息与视频输入结合使用对模型性能的影响。</p>
+</li>
+<li>
+<p><strong>模型的冗余度评估</strong>：
+   - 论文评估了模型在交互式流媒体场景中的响应是否冗余，并以“模型首次被判断为正确的响应中的令牌数量”作为衡量模型冗余度的指标。</p>
+</li>
+<li>
+<p><strong>人类评估</strong>：
+   - 论文邀请了五位参与者对StreamingBench中的任务进行评估，以获得人类在这些任务上的表现基准。</p>
+</li>
+</ol>
+<p>这些实验全面覆盖了MLLMs在流媒体视频理解任务中的多个方面，提供了对当前技术水平的深入分析，并揭示了未来改进的方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>提高实时处理能力</strong>：
+   - 研究和开发新的算法和技术，以提高MLLMs处理实时视频流的能力，减少延迟，并提高响应速度。</p>
+</li>
+<li>
+<p><strong>增强多模态信息融合</strong>：
+   - 探索更有效的机制来整合视觉和音频信息，以改善MLLMs在多源理解任务中的表现。</p>
+</li>
+<li>
+<p><strong>上下文管理机制</strong>：
+   - 开发先进的上下文管理技术，使MLLMs能够更好地处理冗余信息，并在复杂的上下文中保持对话的连贯性和相关性。</p>
+</li>
+<li>
+<p><strong>主动输出和条件响应</strong>：
+   - 研究如何使MLLMs能够根据预定义的条件主动生成输出，并在正确的时间提供响应。</p>
+</li>
+<li>
+<p><strong>长视频内容理解</strong>：
+   - 针对长视频内容，研究如何提高MLLMs的记忆力和注意力，使其能够跟踪和理解长时间跨度内的视频内容。</p>
+</li>
+<li>
+<p><strong>交互式场景适应性</strong>：
+   - 研究MLLMs如何更好地适应交互式场景，包括处理用户输入、维持对话状态和提供准确的反馈。</p>
+</li>
+<li>
+<p><strong>鲁棒性和抗干扰能力</strong>：
+   - 提高MLLMs在面对视觉和听觉干扰时的鲁棒性，特别是在包含大量冗余或误导性信息的场景中。</p>
+</li>
+<li>
+<p><strong>模型训练和数据增强</strong>：
+   - 探索新的训练策略和数据增强技术，以提高MLLMs在流媒体视频理解任务中的性能和泛化能力。</p>
+</li>
+<li>
+<p><strong>模型解释性和透明度</strong>：
+   - 提高MLLMs的解释性，使研究人员和用户能够更好地理解模型的决策过程和潜在的偏差。</p>
+</li>
+<li>
+<p><strong>跨模态注意力机制</strong>：</p>
+<ul>
+<li>研究如何改进跨模态注意力机制，以便更有效地关联视频的视觉内容和音频信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>个性化和用户适应性</strong>：</p>
+<ul>
+<li>探索MLLMs如何根据用户的行为和偏好进行个性化调整，以提供更符合用户需求的服务。</li>
+</ul>
+</li>
+<li>
+<p><strong>多任务和多领域适应性</strong>：</p>
+<ul>
+<li>研究MLLMs如何在多个任务和不同领域之间进行有效的知识和技能迁移。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助推动MLLMs在流媒体视频理解领域的发展，提高其在现实世界应用中的有效性和实用性。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文的主要内容概括如下：</p>
+<ol>
+<li>
+<p><strong>问题陈述</strong>：
+   - 论文指出了现有多模态大型语言模型（MLLMs）在流媒体视频理解方面的不足，尤其是在实时处理和交互能力上与人类存在显著差距。</p>
+</li>
+<li>
+<p><strong>StreamingBench基准测试</strong>：
+   - 论文介绍了StreamingBench，这是首个全面评估MLLMs流媒体视频理解能力的基准测试。它包含18个任务、900个视频和4500个人工策划的问答对，覆盖实时视觉理解、多源理解和上下文理解三个核心方面。</p>
+</li>
+<li>
+<p><strong>实验评估</strong>：
+   - 论文对13个最先进的开源和专有MLLMs进行了评估，发现即使是性能最好的模型也显著低于人类水平，揭示了MLLMs在流媒体视频理解方面与人类之间的性能差距。</p>
+</li>
+<li>
+<p><strong>分析实验</strong>：
+   - 通过一系列分析实验，论文探讨了MLLMs在实时处理、多模态信息融合和上下文管理等方面的不足，并提出了可能的改进方向。</p>
+</li>
+<li>
+<p><strong>主要发现</strong>：
+   - MLLMs在实时视觉理解任务上表现良好，但在需要音频信息的多源理解和需要考虑上下文信息的上下文理解任务上表现较差。
+   - 冗余信息对模型性能有显著影响，当前模型在处理冗余信息和主动输出方面存在挑战。</p>
+</li>
+<li>
+<p><strong>未来研究方向</strong>：
+   - 论文提出了未来研究的方向，包括提高MLLMs的实时处理能力、增强多模态信息融合、改进上下文管理机制、提高模型的鲁棒性和交互适应性等。</p>
+</li>
+<li>
+<p><strong>贡献</strong>：
+   - 论文希望通过StreamingBench基准测试和分析实验的结果，促进MLLMs在更现实场景中的视频理解和交互能力的发展，推动下一代多模态系统的进步。</p>
+</li>
+</ol>
+<p>总的来说，这篇论文通过提出新的基准测试和深入的分析，揭示了MLLMs在流媒体视频理解领域的现状和挑战，并为未来的研究提供了方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是StreamingBench%3A%20Assessing%20the%20Gap%20for%20MLLMs%20to%20Achieve%20Streaming%20Video%20Understanding，链接是 https://arxiv.org/pdf/2411.03628 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2411.03628 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>StreamingBench</h1><p class="muted">900 段视频、4,500 个带提问时间点的人工 QA，18 项任务覆盖实时、全源和上下文理解。</p><p><strong>本项目没有抽帧图片</strong> · 1 个可播放视频 case · 1 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">原视频 3 秒–24 分钟（论文数据统计）；另外测试查询前 60 秒上下文。官网演示长度另行实测，不能当作数据集时长。 本地1段官网案例播放时长 12.30–12.30秒。</p></div><div class="note"><ul><li>页面播放的是官网说明演示，不是从 900 段原视频随机采样。</li><li>完整数据分卷约 203GB，本次未下载。</li><li>60 秒是上下文消融窗口，不是所有原始视频的长度。</li></ul></div><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "streamingbench", "title": "StreamingBench", "category": "流式视听理解 · 历史上下文", "summary": "900 段视频、4,500 个带提问时间点的人工 QA，18 项任务覆盖实时、全源和上下文理解。", "paper_url": "https://arxiv.org/abs/2411.03628", "repo_url": "https://github.com/THUNLP-MT/StreamingBench", "project_url": "https://streamingbench.github.io/", "dataset_urls": [{"label": "官方数据与标注", "url": "https://huggingface.co/datasets/mjuicem/StreamingBench"}], "duration_summary": "原视频 3 秒–24 分钟（论文数据统计）；另外测试查询前 60 秒上下文。官网演示长度另行实测，不能当作数据集时长。 本地1段官网案例播放时长 12.30–12.30秒。", "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。", "preview_status": "partial", "limitations": ["页面播放的是官网说明演示，不是从 900 段原视频随机采样。", "完整数据分卷约 203GB，本次未下载。", "60 秒是上下文消融窗口，不是所有原始视频的长度。"], "relation_level": "长上下文近邻", "groups": [{"id": "official_short_cases", "title": "官方短视频案例", "description": "直接播放已完整下载且校验的官方小演示；每个源文件小于100MB，播放时长不超过180秒。", "media_kind": "video_case", "frames": [], "video_cases": [{"source_url": "https://streamingbench.github.io/static/images/sv.mp4", "original_size_bytes": 5649924, "local_video": "samples/official_demo.mp4", "size_bytes": 5649924, "duration_seconds": 12.3, "width": 1920, "height": 1080, "frames": 369, "fps": 30.0, "sha256": "17ff7b90cd14e724e2bfa96b927df734968f03d58cdeca34338506fdc43a8377", "converted_from_gif": false, "id": "official_demo", "title": "官方流式理解演示", "category": "流式视听理解 · 历史上下文", "description": "官网演示案例；实测时间为播放时间，不代表完整数据轨迹长度。", "source_label": "官方流式理解演示（官方演示）", "video_id": "official_demo"}]}], "short_video_cases_count": 1, "short_video_case_threshold_seconds": 180, "preview_version": "v2-short-video-cases", "added_batch": "2026-09-23", "selection_kind": "qualified", "paper_metadata": {"slug": "streamingbench", "title": "StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding", "paper_url": "https://arxiv.org/abs/2411.03628", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2411.03628", "arxiv_url": "https://arxiv.org/abs/2411.03628", "arxiv_source_url": "https://arxiv.org/abs/2411.03628", "arxiv_title": "StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding", "arxiv_published_at": "2024-11-06", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 128, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/958e80006e3b62a0b41e50877d9e554c339615a7", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/THUNLP-MT/StreamingBench", "github_repo": "THUNLP-MT/StreamingBench", "github_stars": 172, "github_source_url": "https://api.github.com/repos/THUNLP-MT/StreamingBench", "github_fetch_status": "ok", "status_label": "ICASSP 2026", "status_source": "https://www.cmsworkshops.com/ICASSP2026/view_session.php?SessionID=1247&bare=1", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=StreamingBench%3A+Assessing+the+Gap+for+MLLMs+to+Achieve+Streaming+Video+Understanding", "papers_cool_detail_url": "https://papers.cool/arxiv/2411.03628", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文试图解决的问题是评估和提升多模态大型语言模型（MLLMs）在流媒体视频理解方面的能力。具体来说，论文指出了以下几个关键问题：<\/p>\n<ol>\n<li>\n<p><strong>现有MLLMs的局限性<\/strong>：大多数现有的多模态大型语言模型主要关注离线视频理解，需要在提出任何查询之前处理所有视频帧。这与人类实时观看、倾听、思考和响应流媒体输入的能力存在显著差距，凸显了当前MLLMs的不足。<\/p>\n<\/li>\n<li>\n<p><strong>流媒体视频理解的评估缺口<\/strong>：尽管流媒体视频理解对MLLMs至关重要，但现有的视频理解基准测试主要设计用于离线评估，无法适应流媒体评估的需求。<\/p>\n<\/li>\n<li>\n<p><strong>流媒体视频理解能力的全面评估<\/strong>：为了弥补现有基准测试的不足，论文提出了第一个全面的基准测试StreamingBench，用于评估MLLMs的流媒体视频理解能力。这个基准测试涵盖了实时视觉理解、多源理解和上下文理解三个核心方面。<\/p>\n<\/li>\n<li>\n<p><strong>MLLMs性能与人类水平的差距<\/strong>：通过在StreamingBench上对13个开源和专有的MLLMs进行实验，论文发现即使是最先进的MLLMs（如Gemini 1.5 Pro和GPT-4o）在流媒体视频理解能力上也显著低于人类水平。<\/p>\n<\/li>\n<li>\n<p><strong>MLLMs在流媒体场景下的改进方向<\/strong>：通过一系列分析实验，论文揭示了当前模型在实时处理、理解和交互流媒体上下文方面的不足，并提出了改进未来MLLMs的潜在方向，以促进更接近人类水平的视频理解和交互。<\/p>\n<\/li>\n<\/ol>\n<p>总的来说，这篇论文旨在通过引入新的基准测试和分析实验，推动MLLMs在更现实的场景中实现接近人类水平的视频理解和交互能力的发展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据论文内容，以下是与StreamingBench基准测试相关的一些研究工作：<\/p>\n<ol>\n<li>\n<p><strong>多模态大型语言模型（MLLMs）的发展<\/strong>：\n   - 论文提到了多个先进的MLLMs，例如GPT-4o、Gemini 1.5 Pro、Claude 3.5 Sonnet等，这些模型已经在视频理解任务中表现出色，并且有的研究工作专注于提高MLLMs对实时在线视频流的理解和效率。<\/p>\n<\/li>\n<li>\n<p><strong>视频理解基准测试<\/strong>：\n   - MSRVTT-QA、TGIF-QA、MV-Bench、How2QA、ActivityNet-QA等：这些是现有的视频问答基准测试，主要用于评估MLLMs的离线视频理解能力。\n   - InfiniBench、MLVU、LVBench、Video-MME等：这些基准测试主要关注长视频理解能力。\n   - VStream-QA：这是与流媒体视频理解相关的现有基准测试之一，每个问题都分配了一个时间戳，以模拟实时查询。<\/p>\n<\/li>\n<li>\n<p><strong>流媒体视频MLLMs<\/strong>：\n   - VideoLLM-online、Flash-VStream、VideoLLM-MoD：这些是学术领域中的流媒体视频MLLMs，旨在提高对流媒体输入的理解和处理能力。<\/p>\n<\/li>\n<li>\n<p><strong>实时视频理解和交互<\/strong>：\n   - 论文中提到了一些研究工作专注于改进MLLMs在动态环境中的实时视频流理解能力，如OpenAI的GPT-4o展示了类似人类的对流媒体输入的感知和理解。<\/p>\n<\/li>\n<\/ol>\n<p>这些研究工作为StreamingBench基准测试的提出提供了背景和动机，同时也表明了流媒体视频理解领域中存在的挑战和需求。StreamingBench旨在通过提供一个全面的评估框架，进一步推动MLLMs在流媒体视频理解方面的发展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个步骤解决流媒体视频理解的评估问题：<\/p>\n<ol>\n<li>\n<p><strong>建立新的基准测试StreamingBench<\/strong>：\n   - 论文介绍了第一个全面的基准测试StreamingBench，旨在评估MLLMs的流媒体视频理解能力。这个基准测试包含18个任务，涉及900个视频和4500个人工策划的问答对。<\/p>\n<\/li>\n<li>\n<p><strong>定义流媒体视频理解的核心方面<\/strong>：\n   - 论文确定了流媒体视频理解的三个核心方面：实时视觉理解、多源理解和上下文理解，并基于这些方面设计了相应的任务类别。<\/p>\n<\/li>\n<li>\n<p><strong>构建数据集<\/strong>：\n   - 通过人工策划和自动化流程相结合的方式，生成了涵盖各种任务类别的QA对，确保了数据集的多样性和质量。<\/p>\n<\/li>\n<li>\n<p><strong>实验评估<\/strong>：\n   - 论文对13个最先进的开源和专有MLLMs进行了实验评估，包括GPT-4o、Gemini 1.5 Pro和Claude 3.5 Sonnet等，以衡量它们在流媒体视频理解任务上的性能。<\/p>\n<\/li>\n<li>\n<p><strong>分析实验结果<\/strong>：\n   - 通过对比模型性能和人类水平，论文揭示了MLLMs在流媒体视频理解方面与人类之间的显著差距，并分析了模型在不同任务上的表现，以识别当前模型的不足。<\/p>\n<\/li>\n<li>\n<p><strong>提出改进方向<\/strong>：\n   - 基于分析结果，论文提出了改进MLLMs的潜在方向，包括提高实时处理能力、增强对流媒体上下文的理解以及优化交互能力。<\/p>\n<\/li>\n<li>\n<p><strong>促进未来研究<\/strong>：\n   - 论文希望通过StreamingBench基准测试和分析实验的结果，为未来的研究提供见解，推动MLLMs在更现实的场景中实现接近人类水平的视频理解和交互能力的发展。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文不仅提出了一个全面的评估框架来衡量MLLMs在流媒体视频理解方面的能力，而且还为如何改进这些模型提供了具体的分析和建议。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文中进行了一系列实验来评估多模态大型语言模型（MLLMs）在流媒体视频理解方面的能力。以下是实验的详细内容：<\/p>\n<ol>\n<li>\n<p><strong>模型评估实验<\/strong>：\n   - 论文评估了13个最先进的开源和专有MLLMs，包括GPT-4o、Gemini 1.5 Pro和Claude 3.5 Sonnet等，在StreamingBench基准测试上的性能。\n   - 这些模型在18个任务上的表现被详细记录和分析，任务覆盖了实时视觉理解、多源理解和上下文理解三个核心方面。<\/p>\n<\/li>\n<li>\n<p><strong>视频长度对模型性能的影响<\/strong>：\n   - 论文探讨了视频长度对模型性能的影响，将视频分为短于60秒和长于60秒两组，并比较了模型在不同长度视频上的表现。<\/p>\n<\/li>\n<li>\n<p><strong>不同时间线索的任务表现<\/strong>：\n   - 论文根据线索类型对任务进行了分类，并分析了模型在处理先前线索、同时线索和随后线索的任务上的表现。<\/p>\n<\/li>\n<li>\n<p><strong>上下文理解任务的分析<\/strong>：\n   - 论文特别分析了模型在处理包含冗余信息的上下文理解和异常上下文理解任务上的性能，并探讨了冗余信息对模型性能的影响。<\/p>\n<\/li>\n<li>\n<p><strong>序列问答任务中问题引用的影响<\/strong>：\n   - 论文研究了问题间引用对模型在序列问答（SQA）任务中性能的影响，并尝试通过显式解决这些引用来提高模型性能。<\/p>\n<\/li>\n<li>\n<p><strong>主动输出任务的处理<\/strong>：\n   - 论文分析了MLLMs在主动输出（PO）任务上的挑战，并探讨了模型难以适应这种任务格式的原因。<\/p>\n<\/li>\n<li>\n<p><strong>额外ASR信息对模型性能的影响<\/strong>：\n   - 论文还探讨了将自动语音识别（ASR）信息与视频输入结合使用对模型性能的影响。<\/p>\n<\/li>\n<li>\n<p><strong>模型的冗余度评估<\/strong>：\n   - 论文评估了模型在交互式流媒体场景中的响应是否冗余，并以“模型首次被判断为正确的响应中的令牌数量”作为衡量模型冗余度的指标。<\/p>\n<\/li>\n<li>\n<p><strong>人类评估<\/strong>：\n   - 论文邀请了五位参与者对StreamingBench中的任务进行评估，以获得人类在这些任务上的表现基准。<\/p>\n<\/li>\n<\/ol>\n<p>这些实验全面覆盖了MLLMs在流媒体视频理解任务中的多个方面，提供了对当前技术水平的深入分析，并揭示了未来改进的方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>提高实时处理能力<\/strong>：\n   - 研究和开发新的算法和技术，以提高MLLMs处理实时视频流的能力，减少延迟，并提高响应速度。<\/p>\n<\/li>\n<li>\n<p><strong>增强多模态信息融合<\/strong>：\n   - 探索更有效的机制来整合视觉和音频信息，以改善MLLMs在多源理解任务中的表现。<\/p>\n<\/li>\n<li>\n<p><strong>上下文管理机制<\/strong>：\n   - 开发先进的上下文管理技术，使MLLMs能够更好地处理冗余信息，并在复杂的上下文中保持对话的连贯性和相关性。<\/p>\n<\/li>\n<li>\n<p><strong>主动输出和条件响应<\/strong>：\n   - 研究如何使MLLMs能够根据预定义的条件主动生成输出，并在正确的时间提供响应。<\/p>\n<\/li>\n<li>\n<p><strong>长视频内容理解<\/strong>：\n   - 针对长视频内容，研究如何提高MLLMs的记忆力和注意力，使其能够跟踪和理解长时间跨度内的视频内容。<\/p>\n<\/li>\n<li>\n<p><strong>交互式场景适应性<\/strong>：\n   - 研究MLLMs如何更好地适应交互式场景，包括处理用户输入、维持对话状态和提供准确的反馈。<\/p>\n<\/li>\n<li>\n<p><strong>鲁棒性和抗干扰能力<\/strong>：\n   - 提高MLLMs在面对视觉和听觉干扰时的鲁棒性，特别是在包含大量冗余或误导性信息的场景中。<\/p>\n<\/li>\n<li>\n<p><strong>模型训练和数据增强<\/strong>：\n   - 探索新的训练策略和数据增强技术，以提高MLLMs在流媒体视频理解任务中的性能和泛化能力。<\/p>\n<\/li>\n<li>\n<p><strong>模型解释性和透明度<\/strong>：\n   - 提高MLLMs的解释性，使研究人员和用户能够更好地理解模型的决策过程和潜在的偏差。<\/p>\n<\/li>\n<li>\n<p><strong>跨模态注意力机制<\/strong>：<\/p>\n<ul>\n<li>研究如何改进跨模态注意力机制，以便更有效地关联视频的视觉内容和音频信息。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>个性化和用户适应性<\/strong>：<\/p>\n<ul>\n<li>探索MLLMs如何根据用户的行为和偏好进行个性化调整，以提供更符合用户需求的服务。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>多任务和多领域适应性<\/strong>：<\/p>\n<ul>\n<li>研究MLLMs如何在多个任务和不同领域之间进行有效的知识和技能迁移。<\/li>\n<\/ul>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助推动MLLMs在流媒体视频理解领域的发展，提高其在现实世界应用中的有效性和实用性。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>这篇论文的主要内容概括如下：<\/p>\n<ol>\n<li>\n<p><strong>问题陈述<\/strong>：\n   - 论文指出了现有多模态大型语言模型（MLLMs）在流媒体视频理解方面的不足，尤其是在实时处理和交互能力上与人类存在显著差距。<\/p>\n<\/li>\n<li>\n<p><strong>StreamingBench基准测试<\/strong>：\n   - 论文介绍了StreamingBench，这是首个全面评估MLLMs流媒体视频理解能力的基准测试。它包含18个任务、900个视频和4500个人工策划的问答对，覆盖实时视觉理解、多源理解和上下文理解三个核心方面。<\/p>\n<\/li>\n<li>\n<p><strong>实验评估<\/strong>：\n   - 论文对13个最先进的开源和专有MLLMs进行了评估，发现即使是性能最好的模型也显著低于人类水平，揭示了MLLMs在流媒体视频理解方面与人类之间的性能差距。<\/p>\n<\/li>\n<li>\n<p><strong>分析实验<\/strong>：\n   - 通过一系列分析实验，论文探讨了MLLMs在实时处理、多模态信息融合和上下文管理等方面的不足，并提出了可能的改进方向。<\/p>\n<\/li>\n<li>\n<p><strong>主要发现<\/strong>：\n   - MLLMs在实时视觉理解任务上表现良好，但在需要音频信息的多源理解和需要考虑上下文信息的上下文理解任务上表现较差。\n   - 冗余信息对模型性能有显著影响，当前模型在处理冗余信息和主动输出方面存在挑战。<\/p>\n<\/li>\n<li>\n<p><strong>未来研究方向<\/strong>：\n   - 论文提出了未来研究的方向，包括提高MLLMs的实时处理能力、增强多模态信息融合、改进上下文管理机制、提高模型的鲁棒性和交互适应性等。<\/p>\n<\/li>\n<li>\n<p><strong>贡献<\/strong>：\n   - 论文希望通过StreamingBench基准测试和分析实验的结果，促进MLLMs在更现实场景中的视频理解和交互能力的发展，推动下一代多模态系统的进步。<\/p>\n<\/li>\n<\/ol>\n<p>总的来说，这篇论文通过提出新的基准测试和深入的分析，揭示了MLLMs在流媒体视频理解领域的现状和挑战，并为未来的研究提供了方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是StreamingBench%3A%20Assessing%20the%20Gap%20for%20MLLMs%20to%20Achieve%20Streaming%20Video%20Understanding，链接是 https://arxiv.org/pdf/2411.03628 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2411.03628 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2411.03628", "kimi_retrieved_at_utc": "2026-09-23T11:28:13+00:00"}, "preview_images": 0, "video_preview_images": 0, "video_cases_count": 1, "video_case_groups_count": 1, "groups_count": 1, "groups_100_count": 0, "overview_html": "datasets/streamingbench/overview.html", "gallery_html": "datasets/streamingbench/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

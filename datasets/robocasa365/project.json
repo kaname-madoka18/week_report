@@ -1,0 +1,240 @@
+{
+  "slug": "robocasa365",
+  "title": "RoboCasa365",
+  "category": "仿真厨房操作 · 原子/复合任务 · 示范轨迹",
+  "summary": "365 种仿真任务；官方当前数据说明合计约2,290小时。整理了365任务的官网 episode 中位数及演示实测时长。",
+  "paper_url": "https://arxiv.org/abs/2603.04356",
+  "repo_url": "https://github.com/robocasa/robocasa",
+  "project_url": "https://robocasa.ai/",
+  "dataset_urls": [
+    {
+      "label": "官方数据说明",
+      "url": "https://robocasa.ai/docs/datasets/datasets_overview.html"
+    },
+    {
+      "label": "下载与格式说明",
+      "url": "https://robocasa.ai/docs/datasets/using_datasets.html"
+    }
+  ],
+  "duration_summary": "论文：多数人工示范10–60秒，部分超过3分钟。官网365任务的取整episode中位数：原子任务5–46秒、复合任务10–166秒；不是所有episode的最短/最长范围。",
+  "availability": "代码、数据下载脚本及示范公开；未安装模拟器、未下载完整轨迹包。",
+  "preview_status": "ready",
+  "limitations": [
+    "400帧：新版OpenCabinet与ArrangeBreadBasket各100帧，另加平台早期基础技能/复合任务合辑各100帧。",
+    "官网任务中位数、eval horizon与演示MP4播放长度是三个不同量。",
+    "当前公开数据registry列317个有注册路径的任务；不是365仿真定义全部已有相同规模数据。",
+    "当前文档的482/1615/193小时，与论文v1 Table7的404/1615/208小时不同，保留版本口径。"
+  ],
+  "groups": [
+    {
+      "id": "rc365-OpenCabinet",
+      "title": "RoboCasa365 原子任务：打开柜门",
+      "description": "RoboCasa365 当前任务文档所引用的官方单任务演示；均匀抽100帧，不代表完整训练集随机抽样。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "rc365-OpenCabinet",
+          "title": "RoboCasa365 原子任务：打开柜门（官网演示）",
+          "category": "RoboCasa365 原子任务：打开柜门",
+          "description": "RoboCasa365 当前任务文档所引用的官方单任务演示；均匀抽100帧，不代表完整训练集随机抽样。",
+          "local_video": "samples/rc365-OpenCabinet.mp4",
+          "source_url": "https://pub-4433dcd10060475196ea5832312785f9.r2.dev/OpenCabinet.mp4",
+          "source_label": "RoboCasa365 原子任务：打开柜门（官网演示）",
+          "video_id": "rc365-OpenCabinet",
+          "duration_seconds": 21.9,
+          "frames": 438,
+          "fps": 20.0,
+          "width": 2304,
+          "height": 512,
+          "size_bytes": 4342531,
+          "sha256": "169c547df9f8996cba85accb00ed5f486e7d8da4cc36921e0e9931b44412c567"
+        }
+      ]
+    },
+    {
+      "id": "rc365-ArrangeBreadBasket",
+      "title": "RoboCasa365 复合任务：布置面包篮",
+      "description": "RoboCasa365 当前任务文档所引用的官方单任务演示；均匀抽100帧，不代表完整训练集随机抽样。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "rc365-ArrangeBreadBasket",
+          "title": "RoboCasa365 复合任务：布置面包篮（官网演示）",
+          "category": "RoboCasa365 复合任务：布置面包篮",
+          "description": "RoboCasa365 当前任务文档所引用的官方单任务演示；均匀抽100帧，不代表完整训练集随机抽样。",
+          "local_video": "samples/rc365-ArrangeBreadBasket.mp4",
+          "source_url": "https://pub-4433dcd10060475196ea5832312785f9.r2.dev/ArrangeBreadBasket.mp4",
+          "source_label": "RoboCasa365 复合任务：布置面包篮（官网演示）",
+          "video_id": "rc365-ArrangeBreadBasket",
+          "duration_seconds": 59.9,
+          "frames": 1198,
+          "fps": 20.0,
+          "width": 2304,
+          "height": 512,
+          "size_bytes": 20397071,
+          "sha256": "85b7be65cd946c253a0fa5ba5f49887fddf35888c4d0271e87c6fd4fbd370a9c"
+        }
+      ]
+    },
+    {
+      "id": "platform-atomic",
+      "title": "平台基础技能合辑（5 段官网演示）",
+      "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "basic_skills-pnp-github",
+          "title": "基础技能：抓取放置（官网演示）",
+          "category": "平台基础技能合辑（5 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/basic_skills-pnp-github.mp4",
+          "source_url": "https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/pnp.mp4",
+          "source_label": "基础技能：抓取放置（官网演示）",
+          "video_id": "basic_skills-pnp-github",
+          "duration_seconds": 6.033333333333333,
+          "frames": 181,
+          "fps": 30.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 613427,
+          "sha256": "9ecc38a8f78f6884c5301dbb7f89e139bf8cae0aec805403feef5a19084452c4"
+        },
+        {
+          "id": "basic_skills-door",
+          "title": "基础技能：门（官网演示）",
+          "category": "平台基础技能合辑（5 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/basic_skills-door.mp4",
+          "source_url": "https://robocasa.ai/assets/videos/basic_skills/door.mp4",
+          "source_label": "基础技能：门（官网演示）",
+          "video_id": "basic_skills-door",
+          "duration_seconds": 3.8,
+          "frames": 114,
+          "fps": 30.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 368924,
+          "sha256": "20c7896b39c9ff72372f7abbec6854370da23fe32b7166c4db8618a3a9b27df6"
+        },
+        {
+          "id": "basic_skills-lever-github",
+          "title": "基础技能：拨杆（官网演示）",
+          "category": "平台基础技能合辑（5 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/basic_skills-lever-github.mp4",
+          "source_url": "https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/lever.mp4",
+          "source_label": "基础技能：拨杆（官网演示）",
+          "video_id": "basic_skills-lever-github",
+          "duration_seconds": 2.75,
+          "frames": 66,
+          "fps": 24.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 177469,
+          "sha256": "a50f736c5a6794ef975696785b97e64445a272205a232030099fd461fe53c35b"
+        },
+        {
+          "id": "basic_skills-knob-github",
+          "title": "基础技能：旋钮（官网演示）",
+          "category": "平台基础技能合辑（5 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/basic_skills-knob-github.mp4",
+          "source_url": "https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/knob.mp4",
+          "source_label": "基础技能：旋钮（官网演示）",
+          "video_id": "basic_skills-knob-github",
+          "duration_seconds": 7.333333333333333,
+          "frames": 176,
+          "fps": 24.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 269196,
+          "sha256": "dc812c43760fa8421315628936b88ae600dcf78a6b606ceede1ba7dcdf51141e"
+        },
+        {
+          "id": "basic_skills-button",
+          "title": "基础技能：按钮（官网演示）",
+          "category": "平台基础技能合辑（5 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：抓取放置、门、拨杆、旋钮、按钮；每段抽20帧。不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/basic_skills-button.mp4",
+          "source_url": "https://robocasa.ai/assets/videos/basic_skills/button.mp4",
+          "source_label": "基础技能：按钮（官网演示）",
+          "video_id": "basic_skills-button",
+          "duration_seconds": 1.8666666666666667,
+          "frames": 56,
+          "fps": 30.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 211613,
+          "sha256": "bdcf631695e7808ec98e7174cc51c59bbd00fff4eb09776bfbcdb8a8b6096417"
+        }
+      ]
+    },
+    {
+      "id": "platform-composite",
+      "title": "平台复合任务合辑（3 段官网演示）",
+      "description": "RoboCasa 平台早期官网演示：蒸蔬菜34帧、补货33帧、煮咖啡33帧；不是RoboCasa365完整数据集抽样。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "id": "composite_tasks-steaming_veg",
+          "title": "复合任务：蒸蔬菜（官网演示）",
+          "category": "平台复合任务合辑（3 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：蒸蔬菜34帧、补货33帧、煮咖啡33帧；不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/composite_tasks-steaming_veg.mp4",
+          "source_url": "https://robocasa.ai/assets/videos/composite_tasks/steaming_veg.mp4",
+          "source_label": "复合任务：蒸蔬菜（官网演示）",
+          "video_id": "composite_tasks-steaming_veg",
+          "duration_seconds": 12.875,
+          "frames": 309,
+          "fps": 24.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 1653291,
+          "sha256": "4f5270a0dc2fdfc92db4d054bfd931e7eb80202e90f22c51d7873963fe49a977"
+        },
+        {
+          "id": "composite_tasks-restock",
+          "title": "复合任务：补充存货（官网演示）",
+          "category": "平台复合任务合辑（3 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：蒸蔬菜34帧、补货33帧、煮咖啡33帧；不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/composite_tasks-restock.mp4",
+          "source_url": "https://robocasa.ai/assets/videos/composite_tasks/restock.mp4",
+          "source_label": "复合任务：补充存货（官网演示）",
+          "video_id": "composite_tasks-restock",
+          "duration_seconds": 6.25,
+          "frames": 150,
+          "fps": 24.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 566454,
+          "sha256": "ce553daeb91ea0f8f542fe585c670089eb951664270f6e9ff92f2e2b6cc8463b"
+        },
+        {
+          "id": "composite_tasks-brewing_coffee",
+          "title": "复合任务：煮咖啡（官网演示）",
+          "category": "平台复合任务合辑（3 段官网演示）",
+          "description": "RoboCasa 平台早期官网演示：蒸蔬菜34帧、补货33帧、煮咖啡33帧；不是RoboCasa365完整数据集抽样。",
+          "local_video": "samples/composite_tasks-brewing_coffee.mp4",
+          "source_url": "https://robocasa.ai/assets/videos/composite_tasks/brewing_coffee.mp4",
+          "source_label": "复合任务：煮咖啡（官网演示）",
+          "video_id": "composite_tasks-brewing_coffee",
+          "duration_seconds": 13.041666666666666,
+          "frames": 313,
+          "fps": 24.0,
+          "width": 1920,
+          "height": 1080,
+          "size_bytes": 1710098,
+          "sha256": "e48e39b7ade5062560a1d1cdfe60c50dec19005665510eee85ab8b1968bbbd12"
+        }
+      ]
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "short_video_case_threshold_seconds": 180.0,
+  "short_video_case_policy": "本地完整副本不超过 180 秒且小于 100 MB 时直接展示 video case；其余视频继续抽帧。",
+  "short_video_cases_count": 10
+}

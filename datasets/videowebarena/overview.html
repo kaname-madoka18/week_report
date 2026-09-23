@@ -1,0 +1,220 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VideoWebArena：视频记忆与网页智能体基准 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">VideoWebArena：视频记忆与网页智能体基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-10-24</strong></div><div><span>引用数</span><strong>42</strong></div><div><span>GitHub stars</span><strong>14</strong></div><div><span>当前状态</span><strong>ICLR 2025</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2410.19100" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/ljang0/videowebarena" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/90462ced637ddc6c9e3b6033a447c287efe2928d" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/5b555804d495321df2e3208cc27f4fbc-Abstract-Conference.html" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=VideoWebArena%3A+Evaluating+Long+Context+Multimodal+Agents+with+Video+Understanding+Web+Tasks" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的问题是如何评估和提升多模态智能代理（agents）在处理和理解长时间视频内容方面的能力。具体来说，论文中提出了以下几个关键点：</p>
+<ol>
+<li>
+<p><strong>长视频理解的缺失</strong>：许多现有的智能代理评估基准测试忽略了长视频理解，而是更多地关注文本或静态图像输入。但视频能够提供不同于文本和静态图像的信息，尤其是在完成某些任务时。</p>
+</li>
+<li>
+<p><strong>多模态模型的挑战</strong>：将视频输入整合到多模态模型中引入了与时间连贯性、上下文保持和在长序列上高效检索信息相关的挑战。</p>
+</li>
+<li>
+<p><strong>自主代理的复杂环境适应性</strong>：在复杂环境中部署的模型需要具备长期记忆、信息检索和不断适应新信息的能力，这对于需要持续参与的任务至关重要。</p>
+</li>
+<li>
+<p><strong>现有基准测试的局限性</strong>：现有的基准测试往往只关注多模态模型的一个方面，如只测试长期记忆保持或多模态整合，而没有全面评估模型作为代理在多样化的多模态场景中的能力。</p>
+</li>
+</ol>
+<p>为了解决这些问题，论文介绍了一个名为VideoWebArena（VideoWA）的新基准测试，旨在评估多模态模型作为代理处理、理解和利用长视频序列以完成各种任务的能力。这个基准测试包括基于手动制作的2021个网络代理任务，涵盖了近4小时的视频内容，专注于测试模型在视频信息检索、视频理解和更多方面的能力。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，相关研究主要涉及以下几个方面：</p>
+<ol>
+<li>
+<p><strong>大型视觉语言模型（Large Vision Language Models, VLMs）</strong>：
+   - 这类模型通过结合视觉和语言输入来处理多模态数据。一些流行的最先进模型，例如GPT-4系列、Claude和Gemini，能够处理文本、视觉甚至音频输入。</p>
+</li>
+<li>
+<p><strong>自主代理（Agents &amp; Tools）</strong>：
+   - 近期的研究工作集中在将大型多模态模型如VLMs适配为自主代理，利用它们在视觉问题回答和高级推理方面的能力。</p>
+</li>
+<li>
+<p><strong>代理基准测试（Agent Benchmarks）</strong>：
+   - 许多基准测试专注于评估代理在各种环境中的性能，例如网页浏览、移动操作系统模拟、操作系统或计算环境模拟等。</p>
+</li>
+<li>
+<p><strong>长视频理解基准测试（Long-Context Video Benchmarks）</strong>：
+   - 这些基准测试专注于视频理解，包括短时间和长时间视频输入，以及涉及空间推理、因果推理和时间推理的视频理解任务。</p>
+</li>
+</ol>
+<p>具体到论文中提及的一些研究和模型，包括但不限于：</p>
+<ul>
+<li>GPT-4系列模型（OpenAI, 2024）：能够处理文本、视觉和音频输入的先进模型。</li>
+<li>Claude（AI Anthropic, 2024）：由AI Anthropic开发的能够处理多种输入的模型。</li>
+<li>Gemini（Google, 2023）：Google开发的多模态模型。</li>
+<li>LLaVA及其变体（Liu et al., 2023）：采用联合编码器-解码器架构的编码器-解码器VLM。</li>
+<li>VILA及其变体（Lin et al., 2023; Fang et al., 2024; Ye et al., 2024）：采用解码器风格的模型，依赖于仅解码器的LLM来处理原始输入。</li>
+</ul>
+<p>此外，论文还提到了一些基准测试和环境，例如WebArena、VisualWebArena、Windows Agent Arena、WorkArena、AndroidWorld、OSWorld等，这些环境用于评估代理在网页浏览、移动环境和操作系统环境中的性能。这些基准测试提供了不同场景下评估代理能力的框架。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤来解决长视频理解在多模态代理任务中的评估问题：</p>
+<ol>
+<li>
+<p><strong>建立新的基准测试VideoWebArena (VideoWA)</strong>：
+   - 作者提出了一个新的基准测试VideoWA，它专注于评估多模态模型处理长视频序列以及文本和图像以完成任务的能力。这个基准测试包含了2021个基于手动制作的视频教程的网络代理任务，总时长接近四小时。</p>
+</li>
+<li>
+<p><strong>定义任务分类</strong>：
+   - 论文定义了一个长视频基础的代理任务分类体系，主要分为两个关注领域：技能保持（skill retention）和事实保持（factual retention）。技能保持任务评估代理是否能够使用给定的人类演示来高效完成任务，而事实保持任务评估代理是否能够从视频中检索与指令相关的信息以完成任务。</p>
+</li>
+<li>
+<p><strong>创建视频和任务</strong>：
+   - 作者制作了74个独特的视频教程，并基于这些视频创建了相应的技能保持和事实保持任务。这些任务覆盖了多种真实世界的应用场景，并包含了详细的中间意图和评估函数。</p>
+</li>
+<li>
+<p><strong>评估现有的视频能力模型</strong>：
+   - 论文评估了几个现有的视频能力大型语言模型（LLMs），例如GPT-4o和Gemini 1.5 Pro，在新基准测试上的性能。通过这些评估，作者揭示了当前模型在信息检索和代理能力方面与人类水平相比还存在很大差距。</p>
+</li>
+<li>
+<p><strong>分析失败模式</strong>：
+   - 论文详细分析了基线代理在执行任务时的失败模式，包括幻觉、行动接地、高级规划错误等，并指出了在长视频处理中特有的失败模式，如未能遵循提示指令生成动作等。</p>
+</li>
+<li>
+<p><strong>讨论和未来工作</strong>：
+   - 论文讨论了目前的结果，并指出了未来工作的方向，包括分析失败案例、探索更好的视频代理架构以及使用不同的LLMs在这个基准测试上进行实验。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个全面的测试平台来评估和提升多模态代理处理长视频的能力，还揭示了目前技术的局限性，并为未来的研究提供了方向。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>根据论文内容，作者进行了一系列实验来评估提出的VideoWebArena（VideoWA）基准测试以及现有模型在长视频理解任务上的性能。具体实验包括：</p>
+<ol>
+<li>
+<p><strong>模型性能评估</strong>：
+   - 使用不同的基线代理模型（如Gemini 1.5 Pro和GPT-4o）在VideoWA上进行测试，包括视频输入代理、视频帧输入代理和视频摘要输入代理。
+   - 对比这些模型在技能保持（skill retention）任务和事实保持（factual retention）任务上的最终得分和中间意图得分。</p>
+</li>
+<li>
+<p><strong>人类性能测试</strong>：
+   - 让人类参与者尝试VideoWA中的任务，记录他们完成任务的成功率和平均步骤数。
+   - 对比人类参与者在有无教程的情况下的表现，以评估教程对任务完成的效率和成功率的影响。</p>
+</li>
+<li>
+<p><strong>任务失败模式分析</strong>：
+   - 分析基线代理模型在执行VideoWA任务时的常见失败模式，如幻觉、行动接地错误、高级规划错误等。
+   - 特别关注长视频理解任务中特有的失败模式，例如未能遵循提示指令生成动作，以及视频内容接地问题。</p>
+</li>
+<li>
+<p><strong>不同任务类别和难度的表现</strong>：
+   - 评估基线代理模型在不同类型的事实保持任务（如视觉感知、音频感知、完整视频理解和时间推理）上的性能差异。
+   - 分析模型在不同难度级别（易、中、难）的任务上的表现。</p>
+</li>
+<li>
+<p><strong>平均步骤数的比较</strong>：
+   - 统计和比较不同模型在完成任务时所需的平均步骤数，以评估模型的效率。</p>
+</li>
+</ol>
+<p>这些实验旨在全面评估多模态模型在长视频理解任务上的能力，揭示现有技术的局限性，并为未来的研究提供方向。通过这些实验，作者得出结论，尽管现有的视频能力模型在某些任务上表现出一定的潜力，但与人类水平相比，它们在信息检索和代理能力方面仍有较大差距。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>改进视频处理和理解</strong>：
+   - 开发更先进的视频处理技术，提高模型对视频内容的理解和接地能力。
+   - 研究如何更好地整合视频、音频和文本信息，以提高多模态模型的性能。</p>
+</li>
+<li>
+<p><strong>增强记忆和规划能力</strong>：
+   - 探索新的记忆增强技术，使模型能够更好地处理和记忆长视频内容。
+   - 研究如何改进模型的规划能力，尤其是在需要长期记忆和信息检索的任务中。</p>
+</li>
+<li>
+<p><strong>优化模型架构</strong>：
+   - 设计和评估专门针对长视频理解任务的模型架构。
+   - 探索不同的编码器-解码器或解码器-仅架构，以找到最适合长视频任务的结构。</p>
+</li>
+<li>
+<p><strong>提高信息检索能力</strong>：
+   - 研究如何提高模型在长视频内容中检索相关信息的能力。
+   - 开发新的检索策略，使模型能够更有效地从大量视频数据中提取所需信息。</p>
+</li>
+<li>
+<p><strong>减少幻觉和错误动作</strong>：
+   - 分析和理解导致模型产生幻觉和错误动作的原因。
+   - 开发新的训练技术和策略，以减少这些错误并提高模型的鲁棒性。</p>
+</li>
+<li>
+<p><strong>多模态融合方法</strong>：
+   - 研究不同的多模态融合方法，以改善模型对视频、音频和文本的综合理解。
+   - 探索如何通过融合不同模态的信息来提高任务的成功率和效率。</p>
+</li>
+<li>
+<p><strong>长视频任务的基准测试开发</strong>：
+   - 开发新的基准测试，以全面评估模型在更复杂和多样化的长视频任务上的性能。
+   - 设计新的测试，以更好地模拟现实世界中的长视频理解任务。</p>
+</li>
+<li>
+<p><strong>自适应和动态调整策略</strong>：
+   - 研究如何使模型在执行任务时能够自适应地调整其策略和行为。
+   - 探索模型如何根据环境反馈和新信息动态调整其决策过程。</p>
+</li>
+<li>
+<p><strong>解释性和透明度</strong>：
+   - 提高模型的解释性，使其决策过程更加透明和可解释。
+   - 研究如何向用户清晰地解释模型的行动和决策依据。</p>
+</li>
+<li>
+<p><strong>伦理和安全考量</strong>：</p>
+<ul>
+<li>在开发和部署长视频理解模型时，考虑伦理和安全问题。</li>
+<li>确保模型的应用不会侵犯隐私，且在处理敏感内容时遵循适当的伦理准则。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助研究社区进一步提高长视频理解模型的性能，使其更接近人类水平，并在实际应用中发挥更大的作用。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>论文的主要内容概括如下：</p>
+<ol>
+<li>
+<p><strong>问题陈述</strong>：
+   - 论文指出，尽管视频是学习和提取必要信息以完成任务的重要来源，但许多现有的代理基准测试忽略了长视频理解，而更多地关注文本或静态图像输入。</p>
+</li>
+<li>
+<p><strong>VideoWebArena基准测试的提出</strong>：
+   - 为了弥补现有基准测试的不足，作者提出了VideoWebArena（VideoWA），这是一个评估长视频多模态代理能力的基准测试。
+   - VideoWA包含2021个基于手动制作视频教程的网络代理任务，总时长接近四小时。</p>
+</li>
+<li>
+<p><strong>任务分类</strong>：
+   - 论文定义了长视频基础的代理任务分类体系，主要分为技能保持（skill retention）和事实保持（factual retention）两大类。
+   - 技能保持任务评估代理使用给定人类演示来高效完成任务的能力，而事实保持任务评估代理从视频中检索与指令相关的信息以完成任务的能力。</p>
+</li>
+<li>
+<p><strong>实验设计和评估</strong>：
+   - 作者使用几种基线模型（如GPT-4o和Gemini 1.5 Pro）在VideoWA上进行测试，并与人类参与者的表现进行对比。
+   - 实验结果显示，当前模型在信息检索和代理能力方面与人类相比还有很大差距。</p>
+</li>
+<li>
+<p><strong>失败模式分析</strong>：
+   - 论文分析了基线代理模型在执行任务时的常见失败模式，包括幻觉、行动接地错误、高级规划错误等。
+   - 特别指出了长视频理解任务中特有的失败模式，如未能遵循提示指令生成动作和视频内容接地问题。</p>
+</li>
+<li>
+<p><strong>讨论和未来工作</strong>：
+   - 论文讨论了实验结果，并指出了未来研究的方向，包括分析失败案例、探索更好的视频代理架构以及使用不同的大型语言模型（LLMs）在该基准测试上进行实验。</p>
+</li>
+</ol>
+<p>总体而言，论文通过提出新的基准测试VideoWebArena，评估了现有多模态模型在长视频理解任务上的性能，并揭示了这些模型与人类水平相比存在的差距，为未来的研究提供了方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是VideoWebArena%3A%20Evaluating%20Long%20Context%20Multimodal%20Agents%20with%20Video%20Understanding%20Web%20Tasks，链接是 https://arxiv.org/pdf/2410.19100 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2410.19100 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="videowebarena">VideoWebArena：数据集与评测概览</h1>
+<p>74 个视频教程、2,021 个网页任务，分别测试技能保持与事实保持；把看过的视频转化为后续网页操作。</p>
+<p><strong>相关性：直接记忆。</strong> 直接测试视频信息在后续智能体行动中的事实/技能保持；属于本轮较直接的多模态记忆基准。</p>
+<h2 id="_1">论文与筛选依据</h2>
+<ul>
+<li>标题：VideoWebArena: Evaluating Long Context Multimodal Agents with Video Understanding Web Tasks</li>
+<li>arXiv首次提交：2024-10-24；<a href="https://arxiv.org/abs/2410.19100" target="_blank" rel="noopener">arXiv</a></li>
+<li>引用：42，Semantic Scholar Graph API，2026-09-23检索；<a href="https://www.semanticscholar.org/paper/90462ced637ddc6c9e3b6033a447c287efe2928d" target="_blank" rel="noopener">记录</a></li>
+<li>GitHub：14 stars（2026-09-23）；<a href="https://github.com/ljang0/videowebarena" target="_blank" rel="noopener">官方仓库</a></li>
+<li>状态：ICLR 2025；<a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/5b555804d495321df2e3208cc27f4fbc-Abstract-Conference.html" target="_blank" rel="noopener">核验来源</a></li>
+<li>符合本轮时间范围（2024-09-23之后首次上arXiv）与引用数大于20。</li>
+</ul>
+<h2 id="_2">数据、任务与时长</h2>
+<p><strong>规模：</strong> 74 个教程；2,021 个任务 = 400 个事实保持任务 + 1,621 个技能保持任务；6 类网页域。</p>
+<p><strong>视频长度/上下文跨度：</strong> 74 个教程总长 3:48:19；单视频最短 1:16、最长 10:41、平均 3:05（论文表2）。</p>
+<p>技能保持：看教程后执行同类网页任务；事实保持：从视频中找出操作需要的事实，再在网页中完成任务。覆盖购物、后台管理、Reddit、分类广告、GitLab、地图。</p>
+<h2 id="_3">主要结果（论文报告，未本地复现）</h2>
+<p>论文报告最优模型在事实保持任务上的成功率为 13.3%，人类为 73.9%；事实保持 QA 为 45.8% 对 79.3%。给定教程后，长上下文模型的技能任务表现反而下降，说明看到信息并不等同于可靠保持和调用。</p>
+<h2 id="_4">数据入口与预览</h2>
+<ul>
+<li><a href="preview_gallery.html">本地预览页面</a></li>
+<li><a href="https://github.com/ljang0/videowebarena" target="_blank" rel="noopener">官方任务配置与评测代码</a></li>
+<li><a href="https://drive.google.com/file/d/17DwmsM7KzBWyz1BN1aq7NHDvgcTIrCgx/view" target="_blank" rel="noopener">官方视频打包入口</a></li>
+<li><a href="https://videowebarena.github.io/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p>另有 1 张官方任务/标注/统计示意图，单独标注为静态图，不计入视频抽帧。</p>
+<h2 id="_5">边界与限制</h2>
+<ul>
+<li>原始视频以官方 Google Drive 打包发布；为避免下载超过 100MB 的整包，本页先提供官方概览图与入口。</li>
+<li>本页结果来自论文，未在本机复现模型。</li>
+</ul>
+<h2 id="_6">来源</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2410.19100" target="_blank" rel="noopener">论文原文</a></li>
+<li><a href="https://github.com/ljang0/videowebarena" target="_blank" rel="noopener">官方仓库</a></li>
+<li><a href="https://videowebarena.github.io/" target="_blank" rel="noopener">官方项目</a></li>
+</ul>
+<p><a href="../../index.html" data-catalog-home>← 返回主目录</a></p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

@@ -1,0 +1,62 @@
+{
+  "slug": "ovo-bench",
+  "title": "OVO-Bench",
+  "category": "在线视频理解 · 情节记忆/回溯",
+  "summary": "644 段视频、2,814 个 QA、12 项任务，包含情节记忆、动作顺序回溯、实时理解和未来主动响应。",
+  "paper_url": "https://arxiv.org/abs/2501.05510",
+  "repo_url": "https://github.com/JoeLeelyf/OVO-Bench",
+  "project_url": "https://joeleelyf.github.io/OVO-Bench/",
+  "dataset_urls": [
+    {
+      "label": "官方视频与标注",
+      "url": "https://huggingface.co/datasets/JoeLeelyf/OVO-Bench"
+    }
+  ],
+  "duration_summary": "正文描述主体视频为数分钟至半小时；平均查询时点 428.89 秒。附录 CRR 子任务平均原视频长度 6,857 秒（约114.3分钟），不能将全库统一写成≤30分钟。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "展示官网真实视频截图与问题图；未解包约44GB source-video或约144GB chunked-video分卷。",
+    "平均查询时点、原视频长度、给定查询的可见上下文长度是三种不同量。"
+  ],
+  "relation_level": "直接记忆",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/example_1.png",
+          "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_1.png",
+          "source_label": "官方任务示例 1（含视频截图与问题）"
+        },
+        {
+          "image": "previews/example_4.png",
+          "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_4.png",
+          "source_label": "官方任务示例 4（含视频截图与问题）"
+        },
+        {
+          "image": "previews/example_5.png",
+          "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_5.png",
+          "source_label": "官方任务示例 5（含视频截图与问题）"
+        },
+        {
+          "image": "previews/example_6.png",
+          "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_6.png",
+          "source_label": "官方任务示例 6（含视频截图与问题）"
+        },
+        {
+          "image": "previews/example_7.png",
+          "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_7.png",
+          "source_label": "官方任务示例 7（含视频截图与问题）"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

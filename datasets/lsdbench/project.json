@@ -1,0 +1,46 @@
+{
+  "slug": "lsdbench",
+  "title": "LSDBench",
+  "category": "小时级第一人称视频 · 稀有动作检索",
+  "summary": "1,304 个高必要采样密度的长视频问答；原视频平均 45.39 分钟，关键目标片段平均 3 分钟。",
+  "paper_url": "https://arxiv.org/abs/2503.12496",
+  "repo_url": "https://github.com/JIA-Lab-research/LSDBench",
+  "project_url": "https://github.com/JIA-Lab-research/LSDBench",
+  "dataset_urls": [
+    {
+      "label": "标注数据",
+      "url": "https://huggingface.co/datasets/TainU/LSDBench"
+    },
+    {
+      "label": "Ego4D 原视频访问",
+      "url": "https://ego4ddataset.com/ego4d-license/"
+    }
+  ],
+  "duration_summary": "原视频 20.32–115.32 分钟，平均 45.39 分钟；目标片段平均 3 分钟（官方 README）。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "当前只展示官方样例图；未获取许可证保护的 Ego4D 原视频，未声称完成 100 帧抽样。",
+    "目标片段平均 3 分钟与原视频平均 45.39 分钟是不同口径。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/teaser.png",
+          "source_url": "https://raw.githubusercontent.com/JIA-Lab-research/LSDBench/main/assets/teaser.png",
+          "source_label": "官方任务示例与采样难题示意"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

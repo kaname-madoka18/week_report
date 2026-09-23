@@ -1,0 +1,5 @@
+id,source_url,size_bytes,duration_seconds,duration_status,preview_frames,full_download
+influence_battle,https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4,66574375,101.5,PyAV stream metadata measured during Range read,100,False
+leadership_quest,https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4,102232940,123.4,PyAV stream metadata measured during Range read,28,False
+method,https://umass-embodied-agi.github.io/Ella/assets/method.mp4,13266291,63.833333333333336,PyAV stream metadata measured during Range read,100,False
+teaser,https://umass-embodied-agi.github.io/Ella/assets/teaser.mp4,85150490,,not_verified,0,False

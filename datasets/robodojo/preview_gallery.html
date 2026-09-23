@@ -1,0 +1,407 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RoboDojo · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">RoboDojo</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-07-05</strong></div><div><span>引用数</span><strong>19</strong></div><div><span>GitHub stars</span><strong>611</strong></div><div><span>当前状态</span><strong>arXiv preprint · official benchmark release</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2607.04434" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/RoboDojo-Benchmark/RoboDojo" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/697fee3831e3bebd5052c607383bd42a0b50e9dd" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://github.com/RoboDojo-Benchmark/RoboDojo" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=RoboDojo%3A+A+Unified+Sim-and-Real+Benchmark+for+Comprehensive+Evaluation+of+Generalist+Robot+Manipulation+Policies" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文旨在解决通用机器人操作策略评估中存在的<strong>系统性不足</strong>与<strong>仿真-真实割裂</strong>问题，具体体现在以下三个方面：</p>
+<h3>1. 现有基准测试缺乏全面性与诊断性</h3>
+<p>当前机器人操作基准测试主要存在以下局限：
+- <strong>任务设计单一</strong>：多数基准依赖于简单、短程或技能狭窄的任务，任务变化通常仅通过对象、布局或语言表达的变动引入，导致底层操作模式高度相似
+- <strong>能力覆盖不足</strong>：缺乏对通用操作关键能力的系统性诊断，如跨场景泛化、长程记忆依赖、精细空间精度、长时序执行以及开放语义理解等维度
+- <strong>评估粒度粗糙</strong>：现有方法多关注总体成功率，难以揭示策略在具体能力维度上的缺陷与失败模式</p>
+<h3>2. 仿真与真实世界评估的严重脱节</h3>
+<ul>
+<li><strong>仿真评估的局限</strong>：虽具备高效、可扩展的优势，但无法充分捕捉物理部署中的关键挑战，包括接触丰富的动力学、执行器误差、感知噪声及环境时变特性</li>
+<li><strong>真实评估的不可复现性</strong>：真实世界测试虽提供直接证据，但受硬件配置、场景重置程序、光照条件、相机位姿等偶然因素影响，导致跨站点、跨会话的评估难以复现</li>
+<li><strong>缺乏统一接口</strong>：现有工作多为仿真或真实环境单独设计，缺乏共享的策略接口与评估流程，阻碍了策略在两种环境下的无缝迁移与对比分析</li>
+</ul>
+<h3>3. 统一评估基础设施的缺失</h3>
+<ul>
+<li><strong>策略集成碎片化</strong>：不同策略依赖异构的数据格式、预处理流程与运行时环境，增加了大规模对比评估的工程负担</li>
+<li><strong>物理测试标准化不足</strong>：缺乏标准化的硬件配置、场景重置协议与远程评估机制，使得公平、可复现的物理世界基准测试难以实现</li>
+</ul>
+<p>为应对上述挑战，论文提出了<strong>RoboDojo</strong>——一个统一的仿真-真实基准测试平台，通过42个仿真任务（覆盖5个能力维度）与18个真实世界任务（跨3种机器人本体），结合异构并行仿真、标准化真实世界评估系统（RoboDojo-RealEval）与统一策略开发框架（XPolicyLab），实现对通用机器人操作策略的高效、全面、可复现评估。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文第2节（Related Work）及附录B的内容，相关研究可分为以下两个主要方向：</p>
+<h2>1. 机器人操作学习（Robot Learning in Manipulation）</h2>
+<h3>经典模仿学习方法</h3>
+<p>代表性工作包括 ACT、Diffusion Policy 等，通过从专家演示中学习实现视觉-运动操作：
+- <strong>ACT</strong> (Zhao et al., 2023)：基于 Transformer 的模仿学习
+- <strong>Diffusion Policy</strong> (Chi et al., 2024)：通过动作扩散进行策略学习
+- <strong>3D Diffusion Policy</strong> (Ze et al., 2024)：基于简单3D表示的可泛化策略
+- <strong>RDT-1B</strong> (Liu et al., 2025a)：双手操作的扩散基础模型</p>
+<h3>视觉-语言-动作（VLA）基础模型</h3>
+<p>近期研究致力于开发通用机器人策略，提升开放词汇指令跟随与跨任务泛化能力：
+- <strong>π0.5</strong> (Intelligence et al., 2025)：具备开放世界泛化能力的 VLA 模型
+- <strong>Hy-Embodied-0.5-VLA</strong> (Zhang et al., 2026a)：从 VLA 模型到真实机器人学习栈
+- <strong>RDT2</strong> (Team, 2025)：通过扩展 UMI 数据实现零样本跨本体泛化
+- <strong>JoyAI-RA</strong> (Zhang et al., 2026d)：机器人自主性的基础模型
+- <strong>LDA-1B</strong> (Lyu et al., 2026)：通过通用具身数据摄取扩展潜在动态动作模型
+- <strong>Motus</strong> (Bi et al., 2026a)：统一的潜在动作世界模型
+- <strong>G0.5</strong> (Galaxea Team, 2026)、<strong>MotuBrain</strong> (Team et al., 2026)、<strong>Qwen-RobotManip</strong> (Yuan et al., 2026a) 等</p>
+<h3>特定能力研究</h3>
+<p>针对具体瓶颈的探索：
+- <strong>记忆增强操作</strong>：MemoryVLA (Shi et al., 2025)、MEM (Torne et al., 2026)
+- <strong>动态操作</strong>：相关研究 (Cai et al., 2026b)
+- <strong>世界模型控制</strong>：π0.7 (Intelligence et al., 2026a)、基于世界模型的策略 (Ye et al., 2026c)</p>
+<h2>2. 机器人操作评估（Evaluation for Robot Manipulation）</h2>
+<h3>仿真基准测试</h3>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>核心特点</th>
+<th>局限性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CALVIN</strong> (Mees et al., 2022)</td>
+<td>语言条件长程操作</td>
+<td>任务多样性有限</td>
+</tr>
+<tr>
+<td><strong>LIBERO</strong> (Liu et al., 2023)</td>
+<td>终身学习（空间/对象/目标/长程套件）</td>
+<td>不支持双手操作</td>
+</tr>
+<tr>
+<td><strong>RoboTwin</strong> (Chen et al., 2025a)</td>
+<td>双手操作与结构化域随机化</td>
+<td>泛化测试场景较简单</td>
+</tr>
+<tr>
+<td><strong>RMBench</strong> (Chen et al., 2026b)</td>
+<td>记忆依赖操作评估</td>
+<td>仅聚焦单一能力维度</td>
+</tr>
+<tr>
+<td><strong>GarmentLab</strong> (Lu et al., 2024)</td>
+<td>服装操作仿真</td>
+<td>领域特定</td>
+</tr>
+<tr>
+<td><strong>SimplerEnv</strong> (Li et al., 2024a)</td>
+<td>与真实性能相关的仿真环境</td>
+<td>任务规模较小</td>
+</tr>
+<tr>
+<td><strong>RoboLab</strong> (Yang et al., 2026b)</td>
+<td>任务通用策略分析</td>
+<td>仅120个任务，无真实世界验证</td>
+</tr>
+<tr>
+<td><strong>EBench</strong> (Gao et al., 2026)</td>
+<td>移动操作基础模型评估</td>
+<td>不包含真实世界部署</td>
+</tr>
+</tbody>
+</table>
+<h3>真实世界基准测试</h3>
+<ul>
+<li><strong>ManipulationNet</strong> (Chen et al., 2026c)：物理技能挑战与具身多模态推理基础设施</li>
+<li><strong>RoboChallenge</strong> (Yakefu et al., 2025)：大规模真实机器人策略评估</li>
+<li><strong>RoboArena</strong> (Atreya et al., 2025)：分布式真实世界通用策略评估</li>
+</ul>
+<h2>3. 与现有研究的对比总结</h2>
+<p>如论文附录表8所示，现有基准普遍存在以下局限：
+- <strong>能力覆盖单一</strong>：多数基准专注特定技能（如 CALVIN 侧重长程，LIBERO 侧重终身学习）
+- <strong>仿真-真实割裂</strong>：现有工作多为仿真或真实环境单独设计（如 RoboTwin、RMBench 仅仿真；RoboArena、RoboChallenge 仅真实）
+- <strong>异构并行支持不足</strong>：除 RoboDojo 外，现有仿真基准不支持异构并行仿真（Heterogeneous Parallelism）
+- <strong>可复现性差异</strong>：真实世界基准缺乏标准化硬件配置与远程评估协议</p>
+<p>RoboDojo 通过统一仿真与真实评估、覆盖五大能力维度（泛化、记忆、长程、精度、开放语义）、支持异构并行仿真及标准化真实世界评估平台（RoboDojo-RealEval），弥补了上述研究在系统性评估与可复现性方面的不足。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过构建 <strong>RoboDojo</strong> 这一统一评估平台，从<strong>基准设计</strong>、<strong>技术基础设施</strong>与<strong>评估协议</strong>三个层面系统性地解决了通用机器人操作策略评估中的关键挑战。具体解决方案如下：</p>
+<hr/>
+<h3>1. 构建统一仿真-真实评估系统</h3>
+<p>针对仿真与真实评估割裂的问题，RoboDojo 建立了共享的策略接口与评估流程：</p>
+<ul>
+<li><strong>共享策略接口（XPolicyLab）</strong>：定义标准化的观察-动作接口（<code>update_obs</code>、<code>get_action</code>、<code>reset</code>），使策略只需集成一次即可在仿真与真实环境中无缝部署（第4.3节，附录H）</li>
+<li><strong>统一评估流程</strong>：从数据格式、训练模板到部署协议的标准化，支持策略在仿真中快速迭代后，直接迁移至真实世界进行标准化测试（第4节）</li>
+<li><strong>远程评估支持</strong>：通过 WebSocket/MessagePack 协议，支持策略以远程服务器形式接入官方评估系统，无需暴露代码即可参与评估（第3.3节）</li>
+</ul>
+<hr/>
+<h3>2. 设计全面的 capability-oriented 基准测试</h3>
+<p>针对现有基准任务单一、能力覆盖不足的问题，RoboDojo 构建了覆盖五大能力维度的任务体系：</p>
+<h4>仿真基准（42个任务，第3.1节）</h4>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>任务数</th>
+<th>核心挑战</th>
+<th>代表性任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generalization</strong></td>
+<td>12</td>
+<td>背景、光照、 clutter（多达25个干扰物）、目标对象的变化</td>
+<td><code>cover_blocks</code>, <code>push_T</code></td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>6</td>
+<td>长程观察建模、关键帧记忆、非马尔可夫决策</td>
+<td><code>match_and_pick_from_conveyor</code>, <code>imitate_sorting_sequence</code></td>
+</tr>
+<tr>
+<td><strong>Long-Horizon</strong></td>
+<td>8</td>
+<td>任务结构推理、进度保持、多步依赖执行</td>
+<td><code>classify_objects</code>, <code>organize_table</code></td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>8</td>
+<td>细粒度定位、轨迹平滑度、接触稳定控制</td>
+<td><code>insert_tubes</code>, <code>insert_key</code></td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>8</td>
+<td>开放语义理解、技能重组、语言条件迁移</td>
+<td><code>general_pickup</code>, <code>solve_equation</code></td>
+</tr>
+</tbody>
+</table>
+<h4>真实世界基准（18个任务，第3.2节）</h4>
+<ul>
+<li>跨三种双手机器人本体（ARX X5、Piper、Piper X），评估策略在<strong>接触丰富交互</strong>、<strong>感知噪声</strong>、<strong>执行器误差</strong>等物理部署挑战下的表现</li>
+<li>通过标准化硬件配置与场景重置程序，确保评估可复现（第4.2节）</li>
+</ul>
+<hr/>
+<h3>3. 实现高效异构并行仿真</h3>
+<p>针对大规模评估效率问题，RoboDojo 在 Isaac Sim 中实现了<strong>异构并行仿真</strong>（Heterogeneous Parallelism，第4.1.3节）：</p>
+<ul>
+<li><strong>技术方案</strong>：突破传统同质化环境克隆的限制，允许并行环境中存在不同的对象类别、几何形状、clutter 布局与任务配置</li>
+<li><strong>性能提升</strong>：在 8×RTX 4090 上，相比非异构并行实现，零动作推演的吞吐率提升 <strong>1.94×</strong>（77.4 vs 40.0 interactions/s）；结合 π0.5 策略推理时，效率提升 <strong>1.63×</strong>（表4，第6.3.1节）</li>
+<li><strong>多 GPU 分片</strong>：支持跨多 GPU 的任务分片与结果聚合，实现可扩展的大规模评估</li>
+</ul>
+<hr/>
+<h3>4. 建立可复现的真实世界评估平台（RoboDojo-RealEval）</h3>
+<p>针对真实评估不可复现、成本高昂的问题，设计了标准化物理评估系统（第4.2节，图7）：</p>
+<ul>
+<li><strong>硬件标准化</strong>：固定机器人臂、相机、照明单元与工作台的相对位姿，通过 3D 打印夹具与线性 LED 光源消除配置漂移</li>
+<li><strong>场景重置协议</strong>：通过触摸屏界面叠加透明参考布局图像，实现一致的初始条件重置（平均14秒完成5个物体的场景恢复）</li>
+<li><strong>云端远程评估</strong>：支持用户提交策略至云端，在标准化物理条件下进行远程测试，降低参与门槛</li>
+<li><strong>安全与评分机制</strong>：集成紧急停止功能与三评估员双盲评分协议，确保安全性与评分公正性（附录E.2）</li>
+</ul>
+<hr/>
+<h3>5. 建立评估完整性与防作弊协议</h3>
+<p>针对 leaderboard 游戏的潜在风险，建立了严格的治理机制（第3.3节，附录A.2）：</p>
+<ul>
+<li><strong>非营利治理</strong>：由 AI MMLab Club（非营利基金会）与全球学术机构联合维护，禁止商业赞助参与官方评估</li>
+<li><strong>隐藏验证集</strong>：除公开布局外，使用隐藏验证布局检测过拟合与手工调参</li>
+<li><strong>可复现性要求</strong>：官方 leaderboard 发布需提交训练/部署代码、检查点与配置文件，确保结果可独立复现</li>
+<li><strong>多轮次稳定性验证</strong>：仿真评估跨3个随机种子，真实评估跨3种本体，报告均值与标准差（表6、表7，第6.4节）</li>
+</ul>
+<hr/>
+<h3>6. 统一策略开发基础设施（XPolicyLab）</h3>
+<p>降低策略集成工程负担，支持30余种异构策略（扩散模型、VLA、世界模型等）的统一评估（第4.3节）：</p>
+<ul>
+<li><strong>数据格式转换</strong>：自动将原始轨迹转换为各策略所需的训练格式（HDF5、LeRobot 等）</li>
+<li><strong>批量评估接口</strong>：支持 <code>update_obs_batch</code> 与 <code>get_action_batch</code>，适配异构并行仿真</li>
+<li><strong>离线调试模式</strong>：提供预生成的观察数据，支持策略加载与动作维度验证，减少完整评估前的调试成本</li>
+</ul>
+<hr/>
+<h3>总结</h3>
+<p>通过上述设计，RoboDojo 将<strong>高效仿真诊断</strong>（通过异构并行与五维能力覆盖）与<strong>标准化真实验证</strong>（通过 RoboDojo-RealEval）相结合，辅以<strong>统一的基础设施</strong>（XPolicyLab）与<strong>严格的评估协议</strong>，解决了通用机器人操作策略评估中<strong>能力覆盖不全</strong>、<strong>仿真-真实割裂</strong>与<strong>可复现性不足</strong>的核心问题。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文通过<strong>大规模策略评估</strong>、<strong>能力维度分析</strong>、<strong>系统效率验证</strong>与<strong>可复现性测试</strong>四个层面的实验，全面验证了 RoboDojo 的有效性并揭示了当前通用机器人策略的局限性。具体实验内容如下：</p>
+<hr/>
+<h3>1. 大规模策略评估实验（第5节）</h3>
+<h4>仿真基准 Leaderboard（第5.1节，表1）</h4>
+<ul>
+<li><strong>规模</strong>：评估 <strong>30个</strong> 代表性机器人操作策略（包括 Hy-Embodied-0.5-VLA、π0.5、Spatial Forcing、X-VLA、GR00T-N1.7 等）</li>
+<li><strong>设置</strong>：每个策略使用 <strong>3个随机种子</strong> 训练，每个任务评估 <strong>50个 episode</strong>（Generalization 维度分为25个标准+25个随机场景）</li>
+<li><strong>维度</strong>：覆盖 5 大能力维度（Generalization、Memory、Long-Horizon、Precision、Open），共 <strong>42个仿真任务</strong></li>
+<li><strong>人类基线</strong>：邀请3名专家级 VR 遥操作员（每人&gt;1000小时仿真经验）作为人类水平参考</li>
+</ul>
+<h4>真实世界 Leaderboard（第5.2节，表2）</h4>
+<ul>
+<li><strong>规模</strong>：评估 <strong>10个</strong> 代表性策略（包括 π0.5、InternVLA-A1、GalaxeaVLA、Xiaomi-Robotics-0 等）</li>
+<li><strong>设置</strong>：在 <strong>3种机器人本体</strong>（ARX X5、Piper、Piper X）的 <strong>18个任务</strong> 上各执行 <strong>10个 trial</strong></li>
+<li><strong>协议</strong>：通过 RoboDojo-RealEval 标准化平台执行，采用双盲三评估员评分机制</li>
+<li><strong>人类基线</strong>：邀请专家级真实世界遥操作员（每人&gt;1500小时经验）执行相同任务</li>
+</ul>
+<hr/>
+<h3>2. 能力维度诊断分析（第6.1-6.2节）</h3>
+<h4>仿真性能深度分析（第6.1节）</h4>
+<p>基于 Leaderboard 数据，系统分析了当前策略的<strong>六类关键局限</strong>：
+- <strong>Finding 1</strong>：揭示策略与人类专家的显著差距（最佳策略成功率 <strong>8.80%</strong> vs 人类 <strong>76.03%</strong>），且能力发展不均衡
+- <strong>Finding 2</strong>：验证场景级随机化导致性能崩溃（多数策略在随机场景下相对下降 <strong>&gt;70%</strong>），但显式空间定位（如 Spatial Forcing）可部分缓解
+- <strong>Finding 3</strong>：长程任务虽有进展（最佳 <strong>14.92%</strong>），但技能组合与错误恢复仍不可靠
+- <strong>Finding 4</strong>：精度任务暴露细粒度控制瓶颈（最佳 <strong>12.00%</strong>），存在开环执行与动作抖动问题
+- <strong>Finding 5</strong>：记忆机制（如 Hy-Embodied-0.5-VLA 的预训练、EventVLA 的 KEM）可提升性能，但记忆条件执行仍困难
+- <strong>Finding 6</strong>：开放语义任务（Open）几乎未解决（最佳 <strong>1.67%</strong>），暴露语义到动作映射的脆弱性</p>
+<h4>真实世界性能分析（第6.2节）</h4>
+<p>通过物理部署实验揭示<strong>三类部署挑战</strong>：
+- <strong>Finding 1</strong>：真实世界成功率极低（最佳 <strong>12.8%</strong>），部分进展难以转化为完整任务完成
+- <strong>Finding 2</strong>：仿真与真实性能仅<strong>部分对齐</strong>（如 InternVLA-A1、GalaxeaVLA 在真实世界表现优于仿真排名预期），验证了两个环境的互补性
+- <strong>Finding 3</strong>：暴露仿真无法捕捉的<strong>执行不稳定性</strong>（动作抖动、振荡运动）与<strong>安全关键行为</strong>（如 DM0 的不稳定控制信号）</p>
+<hr/>
+<h3>3. 系统效率验证（第6.3节）</h3>
+<h4>仿真评估效率（第6.3.1节，表4）</h4>
+<p>对比测试异构并行仿真的吞吐率提升（使用 8×RTX 4090）：
+- <strong>零动作推演</strong>：异构并行达 <strong>77.4 interactions/s</strong>，较非异构并行（40.0）提升 <strong>1.94×</strong>
+- <strong>带策略推理</strong>（π0.5）：异构并行达 <strong>64.0 interactions/s</strong>，较非异构并行（39.2）提升 <strong>1.63×</strong>
+- 验证了基础设施对大规模快速策略迭代的支持能力</p>
+<h4>真实世界评估效率（第6.3.2节，表5）</h4>
+<p>测量 π0.5 在 RoboDojo-RealEval 上的完整评估时间：
+- <strong>总时长</strong>：18个任务共 <strong>202分钟</strong>（约3.4小时）完成 180个物理 trial
+- <strong>平均任务耗时</strong>：每任务 <strong>11.2分钟</strong>（含场景重置、策略推理与机器人执行）
+- 验证了标准化流程对物理评估效率的优化</p>
+<hr/>
+<h3>4. 可复现性与稳定性测试（第6.4节）</h3>
+<h4>仿真评估稳定性（第6.4.1节，表6）</h4>
+<p>验证跨 GPU 设备的一致性：
+- 在 <strong>3个 RTX 4090</strong> 上测试 π0.5、Xiaomi-Robotics-0、GalaxeaVLA
+- 跨 GPU 成功率标准差 <strong>≤1.1个百分点</strong>，得分标准差 <strong>≤1.07</strong>
+- 证明在标准化布局下，仿真评估具有<strong>跨设备稳定性</strong></p>
+<h4>真实世界评估稳定性（第6.4.2节，表7与附录表9）</h4>
+<p>验证跨轮次评估的重复性：
+- 对 π0.5、InternVLA-A1、GalaxeaVLA 进行 <strong>3轮独立运行</strong>
+- 总体成功率标准差 <strong>≤1.3个百分点</strong>，得分标准差 <strong>≤1.2</strong>
+- 个别接触丰富任务存在较高方差，但聚合层面的<strong>可重复性</strong>得到验证</p>
+<hr/>
+<h3>5. 消融与对比实验（隐含于分析中）</h3>
+<ul>
+<li><strong>域随机化影响</strong>（表3）：对比 12个策略在 Standard vs Random 场景下的性能衰减，量化视觉-空间鲁棒性差异</li>
+<li><strong>能力维度对比</strong>：通过五维性能雷达图（隐含于表1分析），展示不同策略的相对优势与短板（如 X-VLA 在 Precision 领先但总体落后，Hy-Embodied-0.5-VLA 在 Long-Horizon 与 Memory 领先）</li>
+</ul>
+<p>这些实验共同证明了 RoboDojo 作为<strong>诊断工具</strong>（揭示策略局限）、<strong>基础设施</strong>（高效并行评估）与<strong>标准化平台</strong>（可复现实世界测试）的综合价值。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>基于论文揭示的当前策略局限性与技术趋势，以下从<strong>算法改进</strong>、<strong>基准扩展</strong>、<strong>物理交互</strong>、<strong>数据与训练范式</strong>及<strong>系统基础设施</strong>五个维度，梳理可进一步探索的研究方向：</p>
+<hr/>
+<h3>1. 算法与策略架构改进</h3>
+<p>针对 RoboDojo 暴露的<strong>特定能力瓶颈</strong>，可深入探索：</p>
+<ul>
+<li>
+<p><strong>开放语义到动作的鲁棒映射（Open-Vocabulary Grounding）</strong><br/>
+  当前策略在 Open 维度几近失效（最佳成功率仅 1.67%）。需探索<strong>组合式技能学习</strong>（compositional skill learning）、<strong> affordance 基础模型</strong>与<strong>视觉-语言-动作的深度对齐机制</strong>，使策略能将开放指令分解为可执行的原语序列，而非依赖记忆化映射。</p>
+</li>
+<li>
+<p><strong>记忆增强的闭环控制（Memory-Conditioned Closed-Loop Control）</strong><br/>
+  论文指出记忆机制（如 EventVLA 的 KEM）虽能存储历史信息，但<strong>记忆到执行的转换</strong>仍脆弱。可研究<strong>显式工作记忆模块</strong>与<strong>状态条件化策略</strong>的结合，确保策略能基于记忆证据动态调整动作，而非仅依赖观测历史。</p>
+</li>
+<li>
+<p><strong>接触感知的精细操作（Contact-Aware Precision Manipulation）</strong><br/>
+  针对 Precision 维度的开环执行与动作抖动问题，需开发<strong>力-视觉融合策略</strong>、<strong>触觉反馈集成</strong>与<strong>基于物理的轨迹优化</strong>，提升插入、拧紧等任务的接触稳定性与容差适应能力。</p>
+</li>
+<li>
+<p><strong>长程任务的分层规划与错误恢复（Hierarchical Planning &amp; Recovery）</strong><br/>
+  当前策略在长程任务中缺乏<strong>阶段级决策</strong>与<strong>错误恢复机制</strong>。可探索<strong>任务分解框架</strong>（将高层指令转化为子目标序列）与<strong>异常检测-重试机制</strong>，解决技能组合时的误差累积问题。</p>
+</li>
+</ul>
+<hr/>
+<h3>2. 基准测试与评估方法扩展</h3>
+<p>论文第 7 节已明确未来扩展方向，可进一步细化：</p>
+<ul>
+<li>
+<p><strong>多模态感知扩展</strong><br/>
+  引入<strong>触觉传感器</strong>（如 GelSight）、<strong>力/力矩反馈</strong>与<strong>听觉反馈</strong>（如操作产生的声音），构建多模态 RoboDojo 版本，评估策略在接触状态估计与材质识别上的能力。</p>
+</li>
+<li>
+<p><strong>动态与移动操作（Mobile Manipulation）</strong><br/>
+  将基准从固定双平台扩展至<strong>移动底盘+机械臂</strong>配置，引入导航-操作耦合任务（如“从房间另一端取物并放置”），评估跨空间移动中的任务记忆与动作连贯性。</p>
+</li>
+<li>
+<p><strong>人形机器人全身控制（Humanoid Whole-Body Manipulation）</strong><br/>
+  针对人形机器人，设计需协调<strong>平衡</strong>、<strong>全身姿态</strong>与<strong>双手操作</strong>的任务（如高处取物、推-拉 heavy 物体），评估策略在复杂运动学约束下的操作能力。</p>
+</li>
+<li>
+<p><strong>对抗性与对抗鲁棒性评估</strong><br/>
+  引入<strong>对抗性干扰</strong>（adversarial perturbations）与<strong>极端光照/遮挡条件</strong>，系统性评估策略的<strong>鲁棒性边界</strong>（robustness boundary），而非仅测试随机域偏移。</p>
+</li>
+</ul>
+<hr/>
+<h3>3. 仿真-真实迁移（Sim-to-Real）深化</h3>
+<p>针对论文发现的<strong>仿真-真实性能不完全对齐</strong>问题：</p>
+<ul>
+<li>
+<p><strong>物理一致性仿真（Physically Grounded Simulation）</strong><br/>
+  改进仿真器以更好模拟<strong>延迟</strong>、<strong>关节摩擦</strong>、<strong>相机噪声</strong>与<strong>软体动力学</strong>（deformable objects），缩小仿真与真实的动力学鸿沟。可探索基于真实数据自动校准仿真参数的<strong>系统辨识</strong>方法。</p>
+</li>
+<li>
+<p><strong>基于物理的域随机化（Physics-Based Domain Randomization）</strong><br/>
+  当前域随机化多关注视觉外观，需加强对<strong>物理属性</strong>（质量、摩擦系数、关节阻尼）与<strong>动作执行噪声</strong>的随机化，提升策略对真实硬件不确定性的适应能力。</p>
+</li>
+<li>
+<p><strong>实时仿真-真实协同训练（Sim-to-Real Co-Training）</strong><br/>
+  开发<strong>在线自适应算法</strong>，允许策略在真实部署时利用仿真模型进行<strong>实时规划</strong>或<strong>残差学习</strong>（residual learning），结合两者的优势。</p>
+</li>
+</ul>
+<hr/>
+<h3>4. 数据与训练范式创新</h3>
+<p>基于论文中 30+ 策略的对比观察：</p>
+<ul>
+<li>
+<p><strong>跨本体数据融合（Cross-Embodiment Data Sharing）</strong><br/>
+  探索如何利用异构机器人（单臂/双臂/不同自由度）的数据联合训练通用策略，解决特定本体数据稀缺问题（如 Piper X 数据少于 ARX X5）。</p>
+</li>
+<li>
+<p><strong>数据质量与筛选（Data Quality Curation）</strong><br/>
+  论文提到部分策略（如 Spirit v1.5）提出"Clean data is the enemy"。可系统性研究<strong>数据筛选策略</strong>（filtering）、<strong>困难样本挖掘</strong>与<strong>自动数据增强</strong>对泛化性能的影响。</p>
+</li>
+<li>
+<p><strong>强化学习微调（RL Fine-Tuning）</strong><br/>
+  当前 Leaderboard 多为模仿学习。可探索在 RoboDojo 仿真环境中进行<strong>离线强化学习</strong>或<strong>在线 RL 微调</strong>，利用仿真的高效性优化策略的鲁棒性与错误恢复能力。</p>
+</li>
+</ul>
+<hr/>
+<h3>5. 系统基础设施优化</h3>
+<p>针对 XPolicyLab 与 RoboDojo-RealEval 的潜在升级：</p>
+<ul>
+<li>
+<p><strong>分布式评估架构</strong><br/>
+  扩展异构并行仿真至<strong>跨地域分布式集群</strong>，支持全球研究机构的策略同时提交与评估，进一步提升基准的社区参与度。</p>
+</li>
+<li>
+<p><strong>自动重置与持续学习（Continual Evaluation）</strong><br/>
+  开发<strong>自动场景重置机制</strong>（如使用第二台机器人或自动化传送带），实现真实世界评估的<strong>24/7 连续运行</strong>，支持持续学习（continual learning）与终身学习（lifelong learning）算法的评估。</p>
+</li>
+<li>
+<p><strong>策略可解释性工具</strong><br/>
+  集成<strong>注意力可视化</strong>、<strong>特征归因</strong>与<strong>失败模式自动聚类</strong>工具，帮助研究者理解策略在特定能力维度（如 Memory 或 Precision）失败的根本原因。</p>
+</li>
+</ul>
+<hr/>
+<h3>总结</h3>
+<p>RoboDojo 不仅是一个评估平台，更是一个<strong>诊断工具</strong>，其揭示的<strong>开放语义理解</strong>、<strong>接触感知控制</strong>与<strong>长程错误恢复</strong>三大瓶颈，构成了下一代通用机器人策略亟需攻克的核心挑战。未来工作可围绕<strong>多模态感知扩展</strong>、<strong>物理一致性提升</strong>与<strong>分层架构设计</strong>展开，逐步缩小仿真性能与真实部署之间的差距。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>RoboDojo 是一个面向通用机器人操作策略的统一仿真-真实基准测试平台，旨在解决现有评估体系在<strong>任务覆盖全面性</strong>、<strong>仿真-真实一致性</strong>及<strong>评估可复现性</strong>方面的关键局限。以下是论文的核心内容总结：</p>
+<hr/>
+<h3>1. 研究背景与问题</h3>
+<p>当前通用机器人操作策略（如 VLA 模型）快速发展，但现有基准测试存在显著不足：
+- <strong>能力覆盖单一</strong>：多数基准依赖简单、短程或技能重复的任务，缺乏对<strong>泛化</strong>、<strong>记忆依赖</strong>、<strong>长程执行</strong>、<strong>精细操作</strong>及<strong>开放语义理解</strong>等关键维度的系统诊断。
+- <strong>仿真-真实割裂</strong>：仿真评估高效但无法捕捉物理部署中的接触动力学与感知噪声；真实评估昂贵且因硬件配置、场景重置程序差异而难以复现。
+- <strong>缺乏统一接口</strong>：策略与环境的异构性导致跨平台对比困难。</p>
+<hr/>
+<h3>2. RoboDojo 基准设计</h3>
+<p>构建了一个覆盖仿真与真实世界的综合评估体系：</p>
+<h4>仿真基准（42 个任务）</h4>
+<p>基于 ARX X5 双机器人平台，按<strong>五维能力</strong>分类设计：
+- <strong>Generalization（12 任务）</strong>：评估对背景、光照、clutter（最多 25 个干扰物）及目标对象变化的鲁棒性。
+- <strong>Memory（6 任务）</strong>：测试长程历史依赖与非马尔可夫决策（如传送带物体匹配、序列模仿）。
+- <strong>Long-Horizon（8 任务）</strong>：评估多步依赖执行与技能组合（如整理桌面、分类对象）。
+- <strong>Precision（8 任务）</strong>：测试细粒度空间定位与接触稳定控制（如插管、拧螺丝、插钥匙）。
+- <strong>Open（8 任务）</strong>：评估开放词汇指令跟随与技能重组（如基于语言或图像的未见任务执行）。</p>
+<h4>真实世界基准（18 个任务）</h4>
+<p>跨越三种双手机器人本体（ARX X5、Piper、Piper X），测试物理部署中的<strong>接触丰富交互</strong>、<strong>执行器误差</strong>与<strong>跨本体迁移</strong>能力。</p>
+<hr/>
+<h3>3. 技术实现与基础设施</h3>
+<p>为实现高效、可复现的评估，论文提出三项核心技术：</p>
+<h4>异构并行仿真（Heterogeneous Parallelism）</h4>
+<p>突破传统同质化环境克隆限制，支持并行环境中运行<strong>不同任务配置</strong>（对象类别、clutter 布局、场景结构）。在 8×RTX 4090 上，评估吞吐率较非异构实现提升 <strong>1.94×</strong>（零动作）与 <strong>1.63×</strong>（带策略推理）。</p>
+<h4>RoboDojo-RealEval</h4>
+<p>标准化真实世界评估平台，通过固定机器人-相机-照明相对位姿、3D 打印夹具与触摸屏重置界面，实现<strong>可复现的物理测试</strong>。支持远程云端评估，单轮 18 任务评估可在约 <strong>3.4 小时</strong> 内完成。</p>
+<h4>XPolicyLab</h4>
+<p>统一策略开发框架，标准化观察-动作接口（<code>update_obs</code>、<code>get_action</code> 等），支持扩散模型、VLA、世界模型等 <strong>30+ 异构策略</strong> 的无缝集成与跨环境部署。</p>
+<hr/>
+<h3>4. 主要实验发现</h3>
+<p>基于大规模策略评估（仿真 30+ 策略，真实 10+ 策略），揭示当前通用策略的<strong>关键瓶颈</strong>：</p>
+<ul>
+<li><strong>整体性能差距巨大</strong>：最佳策略（Hy-Embodied-0.5-VLA）在仿真中成功率仅 <strong>8.80%</strong>，远低于人类专家的 <strong>76.03%</strong>；真实世界最佳（π0.5）成功率仅 <strong>12.8%</strong>。</li>
+<li><strong>开放语义几乎未解决</strong>：Open 维度最佳成功率仅 <strong>1.67%</strong>，暴露语义到动作映射的脆弱性。</li>
+<li><strong>场景级泛化脆弱</strong>：域随机化导致多数策略性能崩溃（相对下降 &gt;70%），显式空间定位（如 Spatial Forcing）可部分缓解但绝对性能仍低。</li>
+<li><strong>精度控制依赖开环执行</strong>：存在动作抖动与弱状态条件校正，缺乏接触感知反馈。</li>
+<li><strong>记忆机制与执行脱节</strong>：记忆增强模型（如 EventVLA）虽能存储历史信息，但<strong>记忆到动作的转换</strong>仍不可靠。</li>
+<li><strong>仿真-真实不完全对齐</strong>：部分策略在真实世界表现优于仿真预期，验证了两环境评估的互补必要性。</li>
+</ul>
+<hr/>
+<h3>5. 评估治理与开源</h3>
+<ul>
+<li><strong>非营利治理</strong>：由 AI MMLab Club 与全球学术机构联合维护，禁止商业赞助参与，确保评估中立性。</li>
+<li><strong>防作弊机制</strong>：采用隐藏验证布局检测过拟合，要求发布可复现代码与检查点。</li>
+<li><strong>持续更新</strong>：建立公开排行榜（RoboDojo-Benchmark.com），支持社区提交与持续迭代。</li>
+</ul>
+<hr/>
+<h3>6. 结论</h3>
+<p>RoboDojo 通过<strong>统一仿真-真实接口</strong>、<strong>五维能力诊断</strong>与<strong>标准化物理评估</strong>，为通用机器人操作策略提供了<strong>高效、全面、可复现</strong>的评估平台。实验表明，当前策略在<strong>开放语义理解</strong>、<strong>接触感知精细控制</strong>与<strong>长程错误恢复</strong>方面存在显著不足，为未来研究指明了关键方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是RoboDojo%3A%20A%20Unified%20Sim-and-Real%20Benchmark%20for%20Comprehensive%20Evaluation%20of%20Generalist%20Robot%20Manipulation%20Policies，链接是 https://arxiv.org/pdf/2607.04434 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2607.04434 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>RoboDojo</h1><p class="muted">42个仿真和18个真实机器人任务；五个仿真能力轴含6个Memory与8个Long-Horizon任务。保存18个官网短视频case，覆盖五维能力及三种真实机器人。</p><p><strong>1 张独立预览图</strong> · 18 个可播放视频 case · 7 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">论文仿真训练3500条/20.66小时，平均21.25秒；真实1800条/17.91小时，平均35.82秒（25Hz）。18个本地官网演示实测6.72–65.72秒，直接播放。</p></div><div class="note"><ul><li>18个视频是官网精选任务演示，不是完整训练/测试库随机样本，不能从演示推断策略成功率。</li><li>论文25Hz训练序列时长与官网MP4播放时长分别记录，官网剪辑或加速率未统一声明，不相互替代。</li><li>论文结果为arXiv v3表格快照，官网排行榜会继续更新；其Score和Success Rate具有不同含义。</li><li>全部短视频直接播放；另1张官方整体图不计入视频帧数。</li><li>时长由PyAV/FFmpeg libavformat读取本地容器；此环境无独立ffprobe程序。</li></ul></div><p><a href="https://arxiv.org/html/2607.04434v3" target="_blank" rel="noopener">论文</a> · <a href="https://robodojo-benchmark.com/" target="_blank" rel="noopener">官网</a> · <a href="https://robodojo-benchmark.com/leaderboard" target="_blank" rel="noopener">排行榜</a> · <a href="metadata/video_cases.csv">视频元数据CSV</a></p><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "robodojo", "title": "RoboDojo", "category": "机器人多模态记忆 · 仿真与真实长程 benchmark", "summary": "42个仿真和18个真实机器人任务；五个仿真能力轴含6个Memory与8个Long-Horizon任务。保存18个官网短视频case，覆盖五维能力及三种真实机器人。", "paper_url": "https://arxiv.org/abs/2607.04434", "repo_url": "https://github.com/RoboDojo-Benchmark/RoboDojo", "project_url": "https://robodojo-benchmark.com/", "dataset_urls": [{"label": "RoboDojo数据", "url": "https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo"}, {"label": "仿真任务说明", "url": "https://robodojo-benchmark.com/doc/sim-tasks/"}, {"label": "真实机器人任务说明", "url": "https://robodojo-benchmark.com/doc/real-tasks/"}], "duration_summary": "论文仿真训练3500条/20.66小时，平均21.25秒；真实1800条/17.91小时，平均35.82秒（25Hz）。18个本地官网演示实测6.72–65.72秒，直接播放。", "availability": "官方代码、任务文档、数据入口及排行榜公开；本地仅保存官网小型MP4和静态图，未下载完整训练库或仿真资产。", "preview_status": "ready", "preview_version": "v3-benchmark-expansion", "short_video_case_threshold_seconds": 180, "short_video_case_policy": "官网MP4经HEAD确认单文件小于100MB且实测不超过180秒时直接播放，不重复抽帧。", "added_batch": "2026-09-23", "selection_kind": "requested", "relation_level": "直接记忆", "limitations": ["18个视频是官网精选任务演示，不是完整训练/测试库随机样本，不能从演示推断策略成功率。", "论文25Hz训练序列时长与官网MP4播放时长分别记录，官网剪辑或加速率未统一声明，不相互替代。", "论文结果为arXiv v3表格快照，官网排行榜会继续更新；其Score和Success Rate具有不同含义。", "全部短视频直接播放；另1张官方整体图不计入视频帧数。", "时长由PyAV/FFmpeg libavformat读取本地容器；此环境无独立ffprobe程序。"], "related_links": [{"label": "论文", "href": "https://arxiv.org/html/2607.04434v3"}, {"label": "官网", "href": "https://robodojo-benchmark.com/"}, {"label": "排行榜", "href": "https://robodojo-benchmark.com/leaderboard"}, {"label": "视频元数据CSV", "href": "metadata/video_cases.csv"}], "groups": [{"id": "memory", "title": "Memory · 历史观察与顺序记忆", "description": "6个官方Memory任务，涉及遮挡、消失目标、摆放/朝向、计数和示范顺序。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "sim-v2-cover_blocks", "task": "cover_blocks", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/cover_blocks.mp4", "head_content_length": 288343, "title": "cover blocks · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-cover_blocks.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-cover_blocks", "duration_seconds": 22.24, "duration_label": "官网演示播放时长", "frames": 556, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 288343, "sha256": "e56cf06d872ae8110b1f0aba0c474c7b08401fd6d9e507ec363e93d097195061", "retrieved_at_utc": "2026-09-23T11:32:01.756649+00:00", "status": "ready"}, {"id": "sim-v2-match_and_pick_from_conveyor", "task": "match_and_pick_from_conveyor", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/match_and_pick_from_conveyor.mp4", "head_content_length": 89379, "title": "match and pick from conveyor · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-match_and_pick_from_conveyor.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-match_and_pick_from_conveyor", "duration_seconds": 19.0, "duration_label": "官网演示播放时长", "frames": 475, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 89379, "sha256": "729ea44065a2c246ccad55b63c331ac938f818e585145482845d012f9ff30994", "retrieved_at_utc": "2026-09-23T11:32:01.771551+00:00", "status": "ready"}, {"id": "sim-v2-swap_blocks", "task": "swap_blocks", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/swap_blocks.mp4", "head_content_length": 197493, "title": "swap blocks · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-swap_blocks.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-swap_blocks", "duration_seconds": 17.8, "duration_label": "官网演示播放时长", "frames": 445, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 197493, "sha256": "4afffd9d496e989cfb70c597e315e0c2b2e9260b8eb9f925ea06c2a387ae546c", "retrieved_at_utc": "2026-09-23T11:32:01.737947+00:00", "status": "ready"}, {"id": "sim-v2-swap_T", "task": "swap_T", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/swap_T.mp4", "head_content_length": 164887, "title": "swap T · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-swap_T.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-swap_T", "duration_seconds": 10.92, "duration_label": "官网演示播放时长", "frames": 273, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 164887, "sha256": "a49db38369dfe21080438949f7e7b1fb5c140f5fda809542e80e55ce94c5bd56", "retrieved_at_utc": "2026-09-23T11:32:01.760130+00:00", "status": "ready"}, {"id": "sim-v2-press_by_number", "task": "press_by_number", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/press_by_number.mp4", "head_content_length": 178118, "title": "press by number · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-press_by_number.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-press_by_number", "duration_seconds": 15.12, "duration_label": "官网演示播放时长", "frames": 378, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 178118, "sha256": "ce59619707cf85be7044dc87e88e35115ff16631424507a5337a0c4b2785da23", "retrieved_at_utc": "2026-09-23T11:32:02.165259+00:00", "status": "ready"}, {"id": "sim-v2-imitate_sorting_sequence", "task": "imitate_sorting_sequence", "group_id": "memory", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/imitate_sorting_sequence.mp4", "head_content_length": 513844, "title": "imitate sorting sequence · 仿真", "category": "Memory · 历史观察与顺序记忆", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-imitate_sorting_sequence.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-imitate_sorting_sequence", "duration_seconds": 47.52, "duration_label": "官网演示播放时长", "frames": 1188, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 513844, "sha256": "6cd49504520a7acaeaaae6de55028d6c7eb6cc5e6aff4868dbf5af967fb9e018", "retrieved_at_utc": "2026-09-23T11:32:02.142674+00:00", "status": "ready"}]}, {"id": "long_horizon", "title": "Long-Horizon · 多步长程执行", "description": "物体分类、整理桌面和井字棋；展示跨步骤协调与进度维护。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "sim-v2-classify_objects", "task": "classify_objects", "group_id": "long_horizon", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/classify_objects.mp4", "head_content_length": 388071, "title": "classify objects · 仿真", "category": "Long-Horizon · 多步长程执行", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-classify_objects.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-classify_objects", "duration_seconds": 29.92, "duration_label": "官网演示播放时长", "frames": 748, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 388071, "sha256": "15719835b6c4a919c07bfa116f0172e133289dac0e440f54d3490dbc81cda64d", "retrieved_at_utc": "2026-09-23T11:32:02.216074+00:00", "status": "ready"}, {"id": "sim-v2-organize_table", "task": "organize_table", "group_id": "long_horizon", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/organize_table.mp4", "head_content_length": 336860, "title": "organize table · 仿真", "category": "Long-Horizon · 多步长程执行", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-organize_table.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-organize_table", "duration_seconds": 33.56, "duration_label": "官网演示播放时长", "frames": 839, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 336860, "sha256": "0d727ceb40db9a9e6e0046614200fd9e0853a692992e6418e9adb9ccaba7086f", "retrieved_at_utc": "2026-09-23T11:32:02.236993+00:00", "status": "ready"}, {"id": "sim-v2-play_tic_tac_toe", "task": "play_tic_tac_toe", "group_id": "long_horizon", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/play_tic_tac_toe.mp4", "head_content_length": 346891, "title": "play tic tac toe · 仿真", "category": "Long-Horizon · 多步长程执行", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-play_tic_tac_toe.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-play_tic_tac_toe", "duration_seconds": 35.36, "duration_label": "官网演示播放时长", "frames": 884, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 346891, "sha256": "a0161f83db99d4892c2ff863d2180ee8ecb5e836d16e8310f9c8ffb7aa05bb99", "retrieved_at_utc": "2026-09-23T11:32:02.445409+00:00", "status": "ready"}]}, {"id": "generalization", "title": "Generalization · 场景泛化", "description": "堆碗与叠衣；官网精选案例不代表完整随机化分布。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "sim-v2-stack_bowls", "task": "stack_bowls", "group_id": "generalization", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/stack_bowls.mp4", "head_content_length": 171217, "title": "stack bowls · 仿真", "category": "Generalization · 场景泛化", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-stack_bowls.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-stack_bowls", "duration_seconds": 16.56, "duration_label": "官网演示播放时长", "frames": 414, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 171217, "sha256": "4993f5f38645136652b717bebbbc5a34b1a1310b72e630024883df4619180872", "retrieved_at_utc": "2026-09-23T11:32:02.471663+00:00", "status": "ready"}, {"id": "sim-v2-fold_clothes", "task": "fold_clothes", "group_id": "generalization", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/fold_clothes.mp4", "head_content_length": 181726, "title": "fold clothes · 仿真", "category": "Generalization · 场景泛化", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-fold_clothes.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-fold_clothes", "duration_seconds": 12.04, "duration_label": "官网演示播放时长", "frames": 301, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 181726, "sha256": "d13dd27ed0c1d76cc666c738e7a6ac65180688a3b7d5ebd86f647a2993b97c7e", "retrieved_at_utc": "2026-09-23T11:32:02.583512+00:00", "status": "ready"}]}, {"id": "precision", "title": "Precision · 精细接触操控", "description": "插管与拧螺丝；强调精细定位和接触动作。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "sim-v2-insert_tubes", "task": "insert_tubes", "group_id": "precision", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/insert_tubes.mp4", "head_content_length": 165747, "title": "insert tubes · 仿真", "category": "Precision · 精细接触操控", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-insert_tubes.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-insert_tubes", "duration_seconds": 12.8, "duration_label": "官网演示播放时长", "frames": 320, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 165747, "sha256": "020a954ec4c33b2c67e00455486f8f291137c974f8906ee13b012f37efb7c0d2", "retrieved_at_utc": "2026-09-23T11:32:02.606726+00:00", "status": "ready"}, {"id": "sim-v2-fasten_screws", "task": "fasten_screws", "group_id": "precision", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/fasten_screws.mp4", "head_content_length": 512800, "title": "fasten screws · 仿真", "category": "Precision · 精细接触操控", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-fasten_screws.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-fasten_screws", "duration_seconds": 60.44, "duration_label": "官网演示播放时长", "frames": 1511, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 512800, "sha256": "ca05cbf30518b2c308ceb22be80bc16cf1474633fbbc3b5992347ecbb100a236", "retrieved_at_utc": "2026-09-23T11:32:02.862574+00:00", "status": "ready"}]}, {"id": "open", "title": "Open · 开放语言与技能重组", "description": "按语言分类物体与按语言倒液体；开放目标在训练中没有专用任务示范。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "sim-v2-classify_objects_by_language", "task": "classify_objects_by_language", "group_id": "open", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/classify_objects_by_language.mp4", "head_content_length": 787827, "title": "classify objects by language · 仿真", "category": "Open · 开放语言与技能重组", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-classify_objects_by_language.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-classify_objects_by_language", "duration_seconds": 65.72, "duration_label": "官网演示播放时长", "frames": 1643, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 787827, "sha256": "58b42c121b5707ec1a1a59515add43d883dfa6f4b19ebc2a50ab27d493e8455c", "retrieved_at_utc": "2026-09-23T11:32:02.836562+00:00", "status": "ready"}, {"id": "sim-v2-pour_by_language", "task": "pour_by_language", "group_id": "open", "source_url": "https://media.luminis-sim.com/media/home/sim-v2/pour_by_language.mp4", "head_content_length": 66943, "title": "pour by language · 仿真", "category": "Open · 开放语言与技能重组", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/sim-v2-pour_by_language.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "sim-v2-pour_by_language", "duration_seconds": 6.72, "duration_label": "官网演示播放时长", "frames": 168, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 66943, "sha256": "e4efd98e6d725277a255cf434d5008c0d4d5e0b570a52563c6f1869311251e90", "retrieved_at_utc": "2026-09-23T11:32:02.952804+00:00", "status": "ready"}]}, {"id": "real", "title": "真实机器人 · 三种双臂形态", "description": "ARX X5/Cover Blocks、Piper X/Classify Objects、Piper/Stack Bowls。 视频来自官网展示列表，全部直接播放；实测为播放时长，可能与原始控制时长不同。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "real-v2-cover_blocks", "task": "cover_blocks", "group_id": "real", "source_url": "https://media.luminis-sim.com/media/home/real-v2/cover_blocks.mp4", "head_content_length": 433479, "title": "cover blocks · 真实机器人", "category": "真实机器人 · 三种双臂形态", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/real-v2-cover_blocks.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "real-v2-cover_blocks", "duration_seconds": 32.86666666666667, "duration_label": "官网演示播放时长", "frames": 986, "fps": 30.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 433479, "sha256": "a50cbbded06ea7e96cd12920f6d677152390f75de0e25f4ae8e4d8e14d464d49", "retrieved_at_utc": "2026-09-23T11:32:02.968453+00:00", "status": "ready"}, {"id": "real-v2-classify_objects", "task": "classify_objects", "group_id": "real", "source_url": "https://media.luminis-sim.com/media/home/real-v2/classify_objects.mp4", "head_content_length": 530393, "title": "classify objects · 真实机器人", "category": "真实机器人 · 三种双臂形态", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/real-v2-classify_objects.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "real-v2-classify_objects", "duration_seconds": 42.84, "duration_label": "官网演示播放时长", "frames": 1071, "fps": 25.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 530393, "sha256": "60600c42e1275eda879a70443dd43af368d2bb5782377d61acc42f2a78a98b18", "retrieved_at_utc": "2026-09-23T11:32:03.237908+00:00", "status": "ready"}, {"id": "real-v2-stack_bowls", "task": "stack_bowls", "group_id": "real", "source_url": "https://media.luminis-sim.com/media/home/real-v2/stack_bowls.mp4", "head_content_length": 206619, "title": "stack bowls · 真实机器人", "category": "真实机器人 · 三种双臂形态", "description": "官网精选任务演示；播放时间由本地媒体容器实测，不代表原始数据集所有轨迹的时长分布。", "local_video": "samples/real-v2-stack_bowls.mp4", "source_label": "RoboDojo 官方网站任务视频", "video_id": "real-v2-stack_bowls", "duration_seconds": 22.066666666666666, "duration_label": "官网演示播放时长", "frames": 662, "fps": 30.0, "width": 480, "height": 360, "probe_method": "PyAV (FFmpeg libavformat; ffprobe unavailable in this environment)", "size_bytes": 206619, "sha256": "2641faf58b9849083e4063bf8ac28e93d98fef1f2b2c8c94e3a8e9433c68a322", "retrieved_at_utc": "2026-09-23T11:32:03.213435+00:00", "status": "ready"}]}, {"id": "official_figure", "title": "官方静态整体图 · 非视频帧", "description": "RoboDojo官网整体示意图，非视频采样帧。", "media_kind": "image", "frames": [{"image": "previews/teaser.png", "source_url": "https://media.luminis-sim.com/media/home/teaser.png", "source_label": "官方整体图", "video_id": "", "timestamp_seconds": null, "duration_seconds": null}], "video_cases": [], "contact_sheet": "previews/contact_sheets/official_figure.jpg"}], "short_video_cases_count": 18, "paper_metadata": {"slug": "robodojo", "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies", "paper_url": "https://arxiv.org/abs/2607.04434", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2607.04434", "arxiv_url": "https://arxiv.org/abs/2607.04434", "arxiv_source_url": "https://arxiv.org/abs/2607.04434", "arxiv_title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies", "arxiv_published_at": "2026-07-05", "arxiv_updated_at": "2026-07-08", "arxiv_fetch_status": "ok", "citation_count": 19, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/697fee3831e3bebd5052c607383bd42a0b50e9dd", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23T11:29:08+00:00", "github_url": "https://github.com/RoboDojo-Benchmark/RoboDojo", "github_repo": "RoboDojo-Benchmark/RoboDojo", "github_stars": 611, "github_source_url": "https://api.github.com/repos/RoboDojo-Benchmark/RoboDojo", "github_fetch_status": "ok", "status_label": "arXiv preprint · official benchmark release", "status_source": "https://github.com/RoboDojo-Benchmark/RoboDojo", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=RoboDojo%3A+A+Unified+Sim-and-Real+Benchmark+for+Comprehensive+Evaluation+of+Generalist+Robot+Manipulation+Policies", "papers_cool_detail_url": "https://papers.cool/arxiv/2607.04434", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文旨在解决通用机器人操作策略评估中存在的<strong>系统性不足<\/strong>与<strong>仿真-真实割裂<\/strong>问题，具体体现在以下三个方面：<\/p>\n<h3>1. 现有基准测试缺乏全面性与诊断性<\/h3>\n<p>当前机器人操作基准测试主要存在以下局限：\n- <strong>任务设计单一<\/strong>：多数基准依赖于简单、短程或技能狭窄的任务，任务变化通常仅通过对象、布局或语言表达的变动引入，导致底层操作模式高度相似\n- <strong>能力覆盖不足<\/strong>：缺乏对通用操作关键能力的系统性诊断，如跨场景泛化、长程记忆依赖、精细空间精度、长时序执行以及开放语义理解等维度\n- <strong>评估粒度粗糙<\/strong>：现有方法多关注总体成功率，难以揭示策略在具体能力维度上的缺陷与失败模式<\/p>\n<h3>2. 仿真与真实世界评估的严重脱节<\/h3>\n<ul>\n<li><strong>仿真评估的局限<\/strong>：虽具备高效、可扩展的优势，但无法充分捕捉物理部署中的关键挑战，包括接触丰富的动力学、执行器误差、感知噪声及环境时变特性<\/li>\n<li><strong>真实评估的不可复现性<\/strong>：真实世界测试虽提供直接证据，但受硬件配置、场景重置程序、光照条件、相机位姿等偶然因素影响，导致跨站点、跨会话的评估难以复现<\/li>\n<li><strong>缺乏统一接口<\/strong>：现有工作多为仿真或真实环境单独设计，缺乏共享的策略接口与评估流程，阻碍了策略在两种环境下的无缝迁移与对比分析<\/li>\n<\/ul>\n<h3>3. 统一评估基础设施的缺失<\/h3>\n<ul>\n<li><strong>策略集成碎片化<\/strong>：不同策略依赖异构的数据格式、预处理流程与运行时环境，增加了大规模对比评估的工程负担<\/li>\n<li><strong>物理测试标准化不足<\/strong>：缺乏标准化的硬件配置、场景重置协议与远程评估机制，使得公平、可复现的物理世界基准测试难以实现<\/li>\n<\/ul>\n<p>为应对上述挑战，论文提出了<strong>RoboDojo<\/strong>——一个统一的仿真-真实基准测试平台，通过42个仿真任务（覆盖5个能力维度）与18个真实世界任务（跨3种机器人本体），结合异构并行仿真、标准化真实世界评估系统（RoboDojo-RealEval）与统一策略开发框架（XPolicyLab），实现对通用机器人操作策略的高效、全面、可复现评估。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据论文第2节（Related Work）及附录B的内容，相关研究可分为以下两个主要方向：<\/p>\n<h2>1. 机器人操作学习（Robot Learning in Manipulation）<\/h2>\n<h3>经典模仿学习方法<\/h3>\n<p>代表性工作包括 ACT、Diffusion Policy 等，通过从专家演示中学习实现视觉-运动操作：\n- <strong>ACT<\/strong> (Zhao et al., 2023)：基于 Transformer 的模仿学习\n- <strong>Diffusion Policy<\/strong> (Chi et al., 2024)：通过动作扩散进行策略学习\n- <strong>3D Diffusion Policy<\/strong> (Ze et al., 2024)：基于简单3D表示的可泛化策略\n- <strong>RDT-1B<\/strong> (Liu et al., 2025a)：双手操作的扩散基础模型<\/p>\n<h3>视觉-语言-动作（VLA）基础模型<\/h3>\n<p>近期研究致力于开发通用机器人策略，提升开放词汇指令跟随与跨任务泛化能力：\n- <strong>π0.5<\/strong> (Intelligence et al., 2025)：具备开放世界泛化能力的 VLA 模型\n- <strong>Hy-Embodied-0.5-VLA<\/strong> (Zhang et al., 2026a)：从 VLA 模型到真实机器人学习栈\n- <strong>RDT2<\/strong> (Team, 2025)：通过扩展 UMI 数据实现零样本跨本体泛化\n- <strong>JoyAI-RA<\/strong> (Zhang et al., 2026d)：机器人自主性的基础模型\n- <strong>LDA-1B<\/strong> (Lyu et al., 2026)：通过通用具身数据摄取扩展潜在动态动作模型\n- <strong>Motus<\/strong> (Bi et al., 2026a)：统一的潜在动作世界模型\n- <strong>G0.5<\/strong> (Galaxea Team, 2026)、<strong>MotuBrain<\/strong> (Team et al., 2026)、<strong>Qwen-RobotManip<\/strong> (Yuan et al., 2026a) 等<\/p>\n<h3>特定能力研究<\/h3>\n<p>针对具体瓶颈的探索：\n- <strong>记忆增强操作<\/strong>：MemoryVLA (Shi et al., 2025)、MEM (Torne et al., 2026)\n- <strong>动态操作<\/strong>：相关研究 (Cai et al., 2026b)\n- <strong>世界模型控制<\/strong>：π0.7 (Intelligence et al., 2026a)、基于世界模型的策略 (Ye et al., 2026c)<\/p>\n<h2>2. 机器人操作评估（Evaluation for Robot Manipulation）<\/h2>\n<h3>仿真基准测试<\/h3>\n<table>\n<thead>\n<tr>\n<th>基准<\/th>\n<th>核心特点<\/th>\n<th>局限性<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>CALVIN<\/strong> (Mees et al., 2022)<\/td>\n<td>语言条件长程操作<\/td>\n<td>任务多样性有限<\/td>\n<\/tr>\n<tr>\n<td><strong>LIBERO<\/strong> (Liu et al., 2023)<\/td>\n<td>终身学习（空间/对象/目标/长程套件）<\/td>\n<td>不支持双手操作<\/td>\n<\/tr>\n<tr>\n<td><strong>RoboTwin<\/strong> (Chen et al., 2025a)<\/td>\n<td>双手操作与结构化域随机化<\/td>\n<td>泛化测试场景较简单<\/td>\n<\/tr>\n<tr>\n<td><strong>RMBench<\/strong> (Chen et al., 2026b)<\/td>\n<td>记忆依赖操作评估<\/td>\n<td>仅聚焦单一能力维度<\/td>\n<\/tr>\n<tr>\n<td><strong>GarmentLab<\/strong> (Lu et al., 2024)<\/td>\n<td>服装操作仿真<\/td>\n<td>领域特定<\/td>\n<\/tr>\n<tr>\n<td><strong>SimplerEnv<\/strong> (Li et al., 2024a)<\/td>\n<td>与真实性能相关的仿真环境<\/td>\n<td>任务规模较小<\/td>\n<\/tr>\n<tr>\n<td><strong>RoboLab<\/strong> (Yang et al., 2026b)<\/td>\n<td>任务通用策略分析<\/td>\n<td>仅120个任务，无真实世界验证<\/td>\n<\/tr>\n<tr>\n<td><strong>EBench<\/strong> (Gao et al., 2026)<\/td>\n<td>移动操作基础模型评估<\/td>\n<td>不包含真实世界部署<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<h3>真实世界基准测试<\/h3>\n<ul>\n<li><strong>ManipulationNet<\/strong> (Chen et al., 2026c)：物理技能挑战与具身多模态推理基础设施<\/li>\n<li><strong>RoboChallenge<\/strong> (Yakefu et al., 2025)：大规模真实机器人策略评估<\/li>\n<li><strong>RoboArena<\/strong> (Atreya et al., 2025)：分布式真实世界通用策略评估<\/li>\n<\/ul>\n<h2>3. 与现有研究的对比总结<\/h2>\n<p>如论文附录表8所示，现有基准普遍存在以下局限：\n- <strong>能力覆盖单一<\/strong>：多数基准专注特定技能（如 CALVIN 侧重长程，LIBERO 侧重终身学习）\n- <strong>仿真-真实割裂<\/strong>：现有工作多为仿真或真实环境单独设计（如 RoboTwin、RMBench 仅仿真；RoboArena、RoboChallenge 仅真实）\n- <strong>异构并行支持不足<\/strong>：除 RoboDojo 外，现有仿真基准不支持异构并行仿真（Heterogeneous Parallelism）\n- <strong>可复现性差异<\/strong>：真实世界基准缺乏标准化硬件配置与远程评估协议<\/p>\n<p>RoboDojo 通过统一仿真与真实评估、覆盖五大能力维度（泛化、记忆、长程、精度、开放语义）、支持异构并行仿真及标准化真实世界评估平台（RoboDojo-RealEval），弥补了上述研究在系统性评估与可复现性方面的不足。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过构建 <strong>RoboDojo<\/strong> 这一统一评估平台，从<strong>基准设计<\/strong>、<strong>技术基础设施<\/strong>与<strong>评估协议<\/strong>三个层面系统性地解决了通用机器人操作策略评估中的关键挑战。具体解决方案如下：<\/p>\n<hr/>\n<h3>1. 构建统一仿真-真实评估系统<\/h3>\n<p>针对仿真与真实评估割裂的问题，RoboDojo 建立了共享的策略接口与评估流程：<\/p>\n<ul>\n<li><strong>共享策略接口（XPolicyLab）<\/strong>：定义标准化的观察-动作接口（<code>update_obs<\/code>、<code>get_action<\/code>、<code>reset<\/code>），使策略只需集成一次即可在仿真与真实环境中无缝部署（第4.3节，附录H）<\/li>\n<li><strong>统一评估流程<\/strong>：从数据格式、训练模板到部署协议的标准化，支持策略在仿真中快速迭代后，直接迁移至真实世界进行标准化测试（第4节）<\/li>\n<li><strong>远程评估支持<\/strong>：通过 WebSocket/MessagePack 协议，支持策略以远程服务器形式接入官方评估系统，无需暴露代码即可参与评估（第3.3节）<\/li>\n<\/ul>\n<hr/>\n<h3>2. 设计全面的 capability-oriented 基准测试<\/h3>\n<p>针对现有基准任务单一、能力覆盖不足的问题，RoboDojo 构建了覆盖五大能力维度的任务体系：<\/p>\n<h4>仿真基准（42个任务，第3.1节）<\/h4>\n<table>\n<thead>\n<tr>\n<th>能力维度<\/th>\n<th>任务数<\/th>\n<th>核心挑战<\/th>\n<th>代表性任务<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>Generalization<\/strong><\/td>\n<td>12<\/td>\n<td>背景、光照、 clutter（多达25个干扰物）、目标对象的变化<\/td>\n<td><code>cover_blocks<\/code>, <code>push_T<\/code><\/td>\n<\/tr>\n<tr>\n<td><strong>Memory<\/strong><\/td>\n<td>6<\/td>\n<td>长程观察建模、关键帧记忆、非马尔可夫决策<\/td>\n<td><code>match_and_pick_from_conveyor<\/code>, <code>imitate_sorting_sequence<\/code><\/td>\n<\/tr>\n<tr>\n<td><strong>Long-Horizon<\/strong><\/td>\n<td>8<\/td>\n<td>任务结构推理、进度保持、多步依赖执行<\/td>\n<td><code>classify_objects<\/code>, <code>organize_table<\/code><\/td>\n<\/tr>\n<tr>\n<td><strong>Precision<\/strong><\/td>\n<td>8<\/td>\n<td>细粒度定位、轨迹平滑度、接触稳定控制<\/td>\n<td><code>insert_tubes<\/code>, <code>insert_key<\/code><\/td>\n<\/tr>\n<tr>\n<td><strong>Open<\/strong><\/td>\n<td>8<\/td>\n<td>开放语义理解、技能重组、语言条件迁移<\/td>\n<td><code>general_pickup<\/code>, <code>solve_equation<\/code><\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<h4>真实世界基准（18个任务，第3.2节）<\/h4>\n<ul>\n<li>跨三种双手机器人本体（ARX X5、Piper、Piper X），评估策略在<strong>接触丰富交互<\/strong>、<strong>感知噪声<\/strong>、<strong>执行器误差<\/strong>等物理部署挑战下的表现<\/li>\n<li>通过标准化硬件配置与场景重置程序，确保评估可复现（第4.2节）<\/li>\n<\/ul>\n<hr/>\n<h3>3. 实现高效异构并行仿真<\/h3>\n<p>针对大规模评估效率问题，RoboDojo 在 Isaac Sim 中实现了<strong>异构并行仿真<\/strong>（Heterogeneous Parallelism，第4.1.3节）：<\/p>\n<ul>\n<li><strong>技术方案<\/strong>：突破传统同质化环境克隆的限制，允许并行环境中存在不同的对象类别、几何形状、clutter 布局与任务配置<\/li>\n<li><strong>性能提升<\/strong>：在 8×RTX 4090 上，相比非异构并行实现，零动作推演的吞吐率提升 <strong>1.94×<\/strong>（77.4 vs 40.0 interactions/s）；结合 π0.5 策略推理时，效率提升 <strong>1.63×<\/strong>（表4，第6.3.1节）<\/li>\n<li><strong>多 GPU 分片<\/strong>：支持跨多 GPU 的任务分片与结果聚合，实现可扩展的大规模评估<\/li>\n<\/ul>\n<hr/>\n<h3>4. 建立可复现的真实世界评估平台（RoboDojo-RealEval）<\/h3>\n<p>针对真实评估不可复现、成本高昂的问题，设计了标准化物理评估系统（第4.2节，图7）：<\/p>\n<ul>\n<li><strong>硬件标准化<\/strong>：固定机器人臂、相机、照明单元与工作台的相对位姿，通过 3D 打印夹具与线性 LED 光源消除配置漂移<\/li>\n<li><strong>场景重置协议<\/strong>：通过触摸屏界面叠加透明参考布局图像，实现一致的初始条件重置（平均14秒完成5个物体的场景恢复）<\/li>\n<li><strong>云端远程评估<\/strong>：支持用户提交策略至云端，在标准化物理条件下进行远程测试，降低参与门槛<\/li>\n<li><strong>安全与评分机制<\/strong>：集成紧急停止功能与三评估员双盲评分协议，确保安全性与评分公正性（附录E.2）<\/li>\n<\/ul>\n<hr/>\n<h3>5. 建立评估完整性与防作弊协议<\/h3>\n<p>针对 leaderboard 游戏的潜在风险，建立了严格的治理机制（第3.3节，附录A.2）：<\/p>\n<ul>\n<li><strong>非营利治理<\/strong>：由 AI MMLab Club（非营利基金会）与全球学术机构联合维护，禁止商业赞助参与官方评估<\/li>\n<li><strong>隐藏验证集<\/strong>：除公开布局外，使用隐藏验证布局检测过拟合与手工调参<\/li>\n<li><strong>可复现性要求<\/strong>：官方 leaderboard 发布需提交训练/部署代码、检查点与配置文件，确保结果可独立复现<\/li>\n<li><strong>多轮次稳定性验证<\/strong>：仿真评估跨3个随机种子，真实评估跨3种本体，报告均值与标准差（表6、表7，第6.4节）<\/li>\n<\/ul>\n<hr/>\n<h3>6. 统一策略开发基础设施（XPolicyLab）<\/h3>\n<p>降低策略集成工程负担，支持30余种异构策略（扩散模型、VLA、世界模型等）的统一评估（第4.3节）：<\/p>\n<ul>\n<li><strong>数据格式转换<\/strong>：自动将原始轨迹转换为各策略所需的训练格式（HDF5、LeRobot 等）<\/li>\n<li><strong>批量评估接口<\/strong>：支持 <code>update_obs_batch<\/code> 与 <code>get_action_batch<\/code>，适配异构并行仿真<\/li>\n<li><strong>离线调试模式<\/strong>：提供预生成的观察数据，支持策略加载与动作维度验证，减少完整评估前的调试成本<\/li>\n<\/ul>\n<hr/>\n<h3>总结<\/h3>\n<p>通过上述设计，RoboDojo 将<strong>高效仿真诊断<\/strong>（通过异构并行与五维能力覆盖）与<strong>标准化真实验证<\/strong>（通过 RoboDojo-RealEval）相结合，辅以<strong>统一的基础设施<\/strong>（XPolicyLab）与<strong>严格的评估协议<\/strong>，解决了通用机器人操作策略评估中<strong>能力覆盖不全<\/strong>、<strong>仿真-真实割裂<\/strong>与<strong>可复现性不足<\/strong>的核心问题。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文通过<strong>大规模策略评估<\/strong>、<strong>能力维度分析<\/strong>、<strong>系统效率验证<\/strong>与<strong>可复现性测试<\/strong>四个层面的实验，全面验证了 RoboDojo 的有效性并揭示了当前通用机器人策略的局限性。具体实验内容如下：<\/p>\n<hr/>\n<h3>1. 大规模策略评估实验（第5节）<\/h3>\n<h4>仿真基准 Leaderboard（第5.1节，表1）<\/h4>\n<ul>\n<li><strong>规模<\/strong>：评估 <strong>30个<\/strong> 代表性机器人操作策略（包括 Hy-Embodied-0.5-VLA、π0.5、Spatial Forcing、X-VLA、GR00T-N1.7 等）<\/li>\n<li><strong>设置<\/strong>：每个策略使用 <strong>3个随机种子<\/strong> 训练，每个任务评估 <strong>50个 episode<\/strong>（Generalization 维度分为25个标准+25个随机场景）<\/li>\n<li><strong>维度<\/strong>：覆盖 5 大能力维度（Generalization、Memory、Long-Horizon、Precision、Open），共 <strong>42个仿真任务<\/strong><\/li>\n<li><strong>人类基线<\/strong>：邀请3名专家级 VR 遥操作员（每人&gt;1000小时仿真经验）作为人类水平参考<\/li>\n<\/ul>\n<h4>真实世界 Leaderboard（第5.2节，表2）<\/h4>\n<ul>\n<li><strong>规模<\/strong>：评估 <strong>10个<\/strong> 代表性策略（包括 π0.5、InternVLA-A1、GalaxeaVLA、Xiaomi-Robotics-0 等）<\/li>\n<li><strong>设置<\/strong>：在 <strong>3种机器人本体<\/strong>（ARX X5、Piper、Piper X）的 <strong>18个任务<\/strong> 上各执行 <strong>10个 trial<\/strong><\/li>\n<li><strong>协议<\/strong>：通过 RoboDojo-RealEval 标准化平台执行，采用双盲三评估员评分机制<\/li>\n<li><strong>人类基线<\/strong>：邀请专家级真实世界遥操作员（每人&gt;1500小时经验）执行相同任务<\/li>\n<\/ul>\n<hr/>\n<h3>2. 能力维度诊断分析（第6.1-6.2节）<\/h3>\n<h4>仿真性能深度分析（第6.1节）<\/h4>\n<p>基于 Leaderboard 数据，系统分析了当前策略的<strong>六类关键局限<\/strong>：\n- <strong>Finding 1<\/strong>：揭示策略与人类专家的显著差距（最佳策略成功率 <strong>8.80%<\/strong> vs 人类 <strong>76.03%<\/strong>），且能力发展不均衡\n- <strong>Finding 2<\/strong>：验证场景级随机化导致性能崩溃（多数策略在随机场景下相对下降 <strong>&gt;70%<\/strong>），但显式空间定位（如 Spatial Forcing）可部分缓解\n- <strong>Finding 3<\/strong>：长程任务虽有进展（最佳 <strong>14.92%<\/strong>），但技能组合与错误恢复仍不可靠\n- <strong>Finding 4<\/strong>：精度任务暴露细粒度控制瓶颈（最佳 <strong>12.00%<\/strong>），存在开环执行与动作抖动问题\n- <strong>Finding 5<\/strong>：记忆机制（如 Hy-Embodied-0.5-VLA 的预训练、EventVLA 的 KEM）可提升性能，但记忆条件执行仍困难\n- <strong>Finding 6<\/strong>：开放语义任务（Open）几乎未解决（最佳 <strong>1.67%<\/strong>），暴露语义到动作映射的脆弱性<\/p>\n<h4>真实世界性能分析（第6.2节）<\/h4>\n<p>通过物理部署实验揭示<strong>三类部署挑战<\/strong>：\n- <strong>Finding 1<\/strong>：真实世界成功率极低（最佳 <strong>12.8%<\/strong>），部分进展难以转化为完整任务完成\n- <strong>Finding 2<\/strong>：仿真与真实性能仅<strong>部分对齐<\/strong>（如 InternVLA-A1、GalaxeaVLA 在真实世界表现优于仿真排名预期），验证了两个环境的互补性\n- <strong>Finding 3<\/strong>：暴露仿真无法捕捉的<strong>执行不稳定性<\/strong>（动作抖动、振荡运动）与<strong>安全关键行为<\/strong>（如 DM0 的不稳定控制信号）<\/p>\n<hr/>\n<h3>3. 系统效率验证（第6.3节）<\/h3>\n<h4>仿真评估效率（第6.3.1节，表4）<\/h4>\n<p>对比测试异构并行仿真的吞吐率提升（使用 8×RTX 4090）：\n- <strong>零动作推演<\/strong>：异构并行达 <strong>77.4 interactions/s<\/strong>，较非异构并行（40.0）提升 <strong>1.94×<\/strong>\n- <strong>带策略推理<\/strong>（π0.5）：异构并行达 <strong>64.0 interactions/s<\/strong>，较非异构并行（39.2）提升 <strong>1.63×<\/strong>\n- 验证了基础设施对大规模快速策略迭代的支持能力<\/p>\n<h4>真实世界评估效率（第6.3.2节，表5）<\/h4>\n<p>测量 π0.5 在 RoboDojo-RealEval 上的完整评估时间：\n- <strong>总时长<\/strong>：18个任务共 <strong>202分钟<\/strong>（约3.4小时）完成 180个物理 trial\n- <strong>平均任务耗时<\/strong>：每任务 <strong>11.2分钟<\/strong>（含场景重置、策略推理与机器人执行）\n- 验证了标准化流程对物理评估效率的优化<\/p>\n<hr/>\n<h3>4. 可复现性与稳定性测试（第6.4节）<\/h3>\n<h4>仿真评估稳定性（第6.4.1节，表6）<\/h4>\n<p>验证跨 GPU 设备的一致性：\n- 在 <strong>3个 RTX 4090<\/strong> 上测试 π0.5、Xiaomi-Robotics-0、GalaxeaVLA\n- 跨 GPU 成功率标准差 <strong>≤1.1个百分点<\/strong>，得分标准差 <strong>≤1.07<\/strong>\n- 证明在标准化布局下，仿真评估具有<strong>跨设备稳定性<\/strong><\/p>\n<h4>真实世界评估稳定性（第6.4.2节，表7与附录表9）<\/h4>\n<p>验证跨轮次评估的重复性：\n- 对 π0.5、InternVLA-A1、GalaxeaVLA 进行 <strong>3轮独立运行<\/strong>\n- 总体成功率标准差 <strong>≤1.3个百分点<\/strong>，得分标准差 <strong>≤1.2<\/strong>\n- 个别接触丰富任务存在较高方差，但聚合层面的<strong>可重复性<\/strong>得到验证<\/p>\n<hr/>\n<h3>5. 消融与对比实验（隐含于分析中）<\/h3>\n<ul>\n<li><strong>域随机化影响<\/strong>（表3）：对比 12个策略在 Standard vs Random 场景下的性能衰减，量化视觉-空间鲁棒性差异<\/li>\n<li><strong>能力维度对比<\/strong>：通过五维性能雷达图（隐含于表1分析），展示不同策略的相对优势与短板（如 X-VLA 在 Precision 领先但总体落后，Hy-Embodied-0.5-VLA 在 Long-Horizon 与 Memory 领先）<\/li>\n<\/ul>\n<p>这些实验共同证明了 RoboDojo 作为<strong>诊断工具<\/strong>（揭示策略局限）、<strong>基础设施<\/strong>（高效并行评估）与<strong>标准化平台<\/strong>（可复现实世界测试）的综合价值。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>基于论文揭示的当前策略局限性与技术趋势，以下从<strong>算法改进<\/strong>、<strong>基准扩展<\/strong>、<strong>物理交互<\/strong>、<strong>数据与训练范式<\/strong>及<strong>系统基础设施<\/strong>五个维度，梳理可进一步探索的研究方向：<\/p>\n<hr/>\n<h3>1. 算法与策略架构改进<\/h3>\n<p>针对 RoboDojo 暴露的<strong>特定能力瓶颈<\/strong>，可深入探索：<\/p>\n<ul>\n<li>\n<p><strong>开放语义到动作的鲁棒映射（Open-Vocabulary Grounding）<\/strong><br/>\n  当前策略在 Open 维度几近失效（最佳成功率仅 1.67%）。需探索<strong>组合式技能学习<\/strong>（compositional skill learning）、<strong> affordance 基础模型<\/strong>与<strong>视觉-语言-动作的深度对齐机制<\/strong>，使策略能将开放指令分解为可执行的原语序列，而非依赖记忆化映射。<\/p>\n<\/li>\n<li>\n<p><strong>记忆增强的闭环控制（Memory-Conditioned Closed-Loop Control）<\/strong><br/>\n  论文指出记忆机制（如 EventVLA 的 KEM）虽能存储历史信息，但<strong>记忆到执行的转换<\/strong>仍脆弱。可研究<strong>显式工作记忆模块<\/strong>与<strong>状态条件化策略<\/strong>的结合，确保策略能基于记忆证据动态调整动作，而非仅依赖观测历史。<\/p>\n<\/li>\n<li>\n<p><strong>接触感知的精细操作（Contact-Aware Precision Manipulation）<\/strong><br/>\n  针对 Precision 维度的开环执行与动作抖动问题，需开发<strong>力-视觉融合策略<\/strong>、<strong>触觉反馈集成<\/strong>与<strong>基于物理的轨迹优化<\/strong>，提升插入、拧紧等任务的接触稳定性与容差适应能力。<\/p>\n<\/li>\n<li>\n<p><strong>长程任务的分层规划与错误恢复（Hierarchical Planning &amp; Recovery）<\/strong><br/>\n  当前策略在长程任务中缺乏<strong>阶段级决策<\/strong>与<strong>错误恢复机制<\/strong>。可探索<strong>任务分解框架<\/strong>（将高层指令转化为子目标序列）与<strong>异常检测-重试机制<\/strong>，解决技能组合时的误差累积问题。<\/p>\n<\/li>\n<\/ul>\n<hr/>\n<h3>2. 基准测试与评估方法扩展<\/h3>\n<p>论文第 7 节已明确未来扩展方向，可进一步细化：<\/p>\n<ul>\n<li>\n<p><strong>多模态感知扩展<\/strong><br/>\n  引入<strong>触觉传感器<\/strong>（如 GelSight）、<strong>力/力矩反馈<\/strong>与<strong>听觉反馈<\/strong>（如操作产生的声音），构建多模态 RoboDojo 版本，评估策略在接触状态估计与材质识别上的能力。<\/p>\n<\/li>\n<li>\n<p><strong>动态与移动操作（Mobile Manipulation）<\/strong><br/>\n  将基准从固定双平台扩展至<strong>移动底盘+机械臂<\/strong>配置，引入导航-操作耦合任务（如“从房间另一端取物并放置”），评估跨空间移动中的任务记忆与动作连贯性。<\/p>\n<\/li>\n<li>\n<p><strong>人形机器人全身控制（Humanoid Whole-Body Manipulation）<\/strong><br/>\n  针对人形机器人，设计需协调<strong>平衡<\/strong>、<strong>全身姿态<\/strong>与<strong>双手操作<\/strong>的任务（如高处取物、推-拉 heavy 物体），评估策略在复杂运动学约束下的操作能力。<\/p>\n<\/li>\n<li>\n<p><strong>对抗性与对抗鲁棒性评估<\/strong><br/>\n  引入<strong>对抗性干扰<\/strong>（adversarial perturbations）与<strong>极端光照/遮挡条件<\/strong>，系统性评估策略的<strong>鲁棒性边界<\/strong>（robustness boundary），而非仅测试随机域偏移。<\/p>\n<\/li>\n<\/ul>\n<hr/>\n<h3>3. 仿真-真实迁移（Sim-to-Real）深化<\/h3>\n<p>针对论文发现的<strong>仿真-真实性能不完全对齐<\/strong>问题：<\/p>\n<ul>\n<li>\n<p><strong>物理一致性仿真（Physically Grounded Simulation）<\/strong><br/>\n  改进仿真器以更好模拟<strong>延迟<\/strong>、<strong>关节摩擦<\/strong>、<strong>相机噪声<\/strong>与<strong>软体动力学<\/strong>（deformable objects），缩小仿真与真实的动力学鸿沟。可探索基于真实数据自动校准仿真参数的<strong>系统辨识<\/strong>方法。<\/p>\n<\/li>\n<li>\n<p><strong>基于物理的域随机化（Physics-Based Domain Randomization）<\/strong><br/>\n  当前域随机化多关注视觉外观，需加强对<strong>物理属性<\/strong>（质量、摩擦系数、关节阻尼）与<strong>动作执行噪声<\/strong>的随机化，提升策略对真实硬件不确定性的适应能力。<\/p>\n<\/li>\n<li>\n<p><strong>实时仿真-真实协同训练（Sim-to-Real Co-Training）<\/strong><br/>\n  开发<strong>在线自适应算法<\/strong>，允许策略在真实部署时利用仿真模型进行<strong>实时规划<\/strong>或<strong>残差学习<\/strong>（residual learning），结合两者的优势。<\/p>\n<\/li>\n<\/ul>\n<hr/>\n<h3>4. 数据与训练范式创新<\/h3>\n<p>基于论文中 30+ 策略的对比观察：<\/p>\n<ul>\n<li>\n<p><strong>跨本体数据融合（Cross-Embodiment Data Sharing）<\/strong><br/>\n  探索如何利用异构机器人（单臂/双臂/不同自由度）的数据联合训练通用策略，解决特定本体数据稀缺问题（如 Piper X 数据少于 ARX X5）。<\/p>\n<\/li>\n<li>\n<p><strong>数据质量与筛选（Data Quality Curation）<\/strong><br/>\n  论文提到部分策略（如 Spirit v1.5）提出\"Clean data is the enemy\"。可系统性研究<strong>数据筛选策略<\/strong>（filtering）、<strong>困难样本挖掘<\/strong>与<strong>自动数据增强<\/strong>对泛化性能的影响。<\/p>\n<\/li>\n<li>\n<p><strong>强化学习微调（RL Fine-Tuning）<\/strong><br/>\n  当前 Leaderboard 多为模仿学习。可探索在 RoboDojo 仿真环境中进行<strong>离线强化学习<\/strong>或<strong>在线 RL 微调<\/strong>，利用仿真的高效性优化策略的鲁棒性与错误恢复能力。<\/p>\n<\/li>\n<\/ul>\n<hr/>\n<h3>5. 系统基础设施优化<\/h3>\n<p>针对 XPolicyLab 与 RoboDojo-RealEval 的潜在升级：<\/p>\n<ul>\n<li>\n<p><strong>分布式评估架构<\/strong><br/>\n  扩展异构并行仿真至<strong>跨地域分布式集群<\/strong>，支持全球研究机构的策略同时提交与评估，进一步提升基准的社区参与度。<\/p>\n<\/li>\n<li>\n<p><strong>自动重置与持续学习（Continual Evaluation）<\/strong><br/>\n  开发<strong>自动场景重置机制<\/strong>（如使用第二台机器人或自动化传送带），实现真实世界评估的<strong>24/7 连续运行<\/strong>，支持持续学习（continual learning）与终身学习（lifelong learning）算法的评估。<\/p>\n<\/li>\n<li>\n<p><strong>策略可解释性工具<\/strong><br/>\n  集成<strong>注意力可视化<\/strong>、<strong>特征归因<\/strong>与<strong>失败模式自动聚类<\/strong>工具，帮助研究者理解策略在特定能力维度（如 Memory 或 Precision）失败的根本原因。<\/p>\n<\/li>\n<\/ul>\n<hr/>\n<h3>总结<\/h3>\n<p>RoboDojo 不仅是一个评估平台，更是一个<strong>诊断工具<\/strong>，其揭示的<strong>开放语义理解<\/strong>、<strong>接触感知控制<\/strong>与<strong>长程错误恢复<\/strong>三大瓶颈，构成了下一代通用机器人策略亟需攻克的核心挑战。未来工作可围绕<strong>多模态感知扩展<\/strong>、<strong>物理一致性提升<\/strong>与<strong>分层架构设计<\/strong>展开，逐步缩小仿真性能与真实部署之间的差距。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>RoboDojo 是一个面向通用机器人操作策略的统一仿真-真实基准测试平台，旨在解决现有评估体系在<strong>任务覆盖全面性<\/strong>、<strong>仿真-真实一致性<\/strong>及<strong>评估可复现性<\/strong>方面的关键局限。以下是论文的核心内容总结：<\/p>\n<hr/>\n<h3>1. 研究背景与问题<\/h3>\n<p>当前通用机器人操作策略（如 VLA 模型）快速发展，但现有基准测试存在显著不足：\n- <strong>能力覆盖单一<\/strong>：多数基准依赖简单、短程或技能重复的任务，缺乏对<strong>泛化<\/strong>、<strong>记忆依赖<\/strong>、<strong>长程执行<\/strong>、<strong>精细操作<\/strong>及<strong>开放语义理解<\/strong>等关键维度的系统诊断。\n- <strong>仿真-真实割裂<\/strong>：仿真评估高效但无法捕捉物理部署中的接触动力学与感知噪声；真实评估昂贵且因硬件配置、场景重置程序差异而难以复现。\n- <strong>缺乏统一接口<\/strong>：策略与环境的异构性导致跨平台对比困难。<\/p>\n<hr/>\n<h3>2. RoboDojo 基准设计<\/h3>\n<p>构建了一个覆盖仿真与真实世界的综合评估体系：<\/p>\n<h4>仿真基准（42 个任务）<\/h4>\n<p>基于 ARX X5 双机器人平台，按<strong>五维能力<\/strong>分类设计：\n- <strong>Generalization（12 任务）<\/strong>：评估对背景、光照、clutter（最多 25 个干扰物）及目标对象变化的鲁棒性。\n- <strong>Memory（6 任务）<\/strong>：测试长程历史依赖与非马尔可夫决策（如传送带物体匹配、序列模仿）。\n- <strong>Long-Horizon（8 任务）<\/strong>：评估多步依赖执行与技能组合（如整理桌面、分类对象）。\n- <strong>Precision（8 任务）<\/strong>：测试细粒度空间定位与接触稳定控制（如插管、拧螺丝、插钥匙）。\n- <strong>Open（8 任务）<\/strong>：评估开放词汇指令跟随与技能重组（如基于语言或图像的未见任务执行）。<\/p>\n<h4>真实世界基准（18 个任务）<\/h4>\n<p>跨越三种双手机器人本体（ARX X5、Piper、Piper X），测试物理部署中的<strong>接触丰富交互<\/strong>、<strong>执行器误差<\/strong>与<strong>跨本体迁移<\/strong>能力。<\/p>\n<hr/>\n<h3>3. 技术实现与基础设施<\/h3>\n<p>为实现高效、可复现的评估，论文提出三项核心技术：<\/p>\n<h4>异构并行仿真（Heterogeneous Parallelism）<\/h4>\n<p>突破传统同质化环境克隆限制，支持并行环境中运行<strong>不同任务配置<\/strong>（对象类别、clutter 布局、场景结构）。在 8×RTX 4090 上，评估吞吐率较非异构实现提升 <strong>1.94×<\/strong>（零动作）与 <strong>1.63×<\/strong>（带策略推理）。<\/p>\n<h4>RoboDojo-RealEval<\/h4>\n<p>标准化真实世界评估平台，通过固定机器人-相机-照明相对位姿、3D 打印夹具与触摸屏重置界面，实现<strong>可复现的物理测试<\/strong>。支持远程云端评估，单轮 18 任务评估可在约 <strong>3.4 小时<\/strong> 内完成。<\/p>\n<h4>XPolicyLab<\/h4>\n<p>统一策略开发框架，标准化观察-动作接口（<code>update_obs<\/code>、<code>get_action<\/code> 等），支持扩散模型、VLA、世界模型等 <strong>30+ 异构策略<\/strong> 的无缝集成与跨环境部署。<\/p>\n<hr/>\n<h3>4. 主要实验发现<\/h3>\n<p>基于大规模策略评估（仿真 30+ 策略，真实 10+ 策略），揭示当前通用策略的<strong>关键瓶颈<\/strong>：<\/p>\n<ul>\n<li><strong>整体性能差距巨大<\/strong>：最佳策略（Hy-Embodied-0.5-VLA）在仿真中成功率仅 <strong>8.80%<\/strong>，远低于人类专家的 <strong>76.03%<\/strong>；真实世界最佳（π0.5）成功率仅 <strong>12.8%<\/strong>。<\/li>\n<li><strong>开放语义几乎未解决<\/strong>：Open 维度最佳成功率仅 <strong>1.67%<\/strong>，暴露语义到动作映射的脆弱性。<\/li>\n<li><strong>场景级泛化脆弱<\/strong>：域随机化导致多数策略性能崩溃（相对下降 &gt;70%），显式空间定位（如 Spatial Forcing）可部分缓解但绝对性能仍低。<\/li>\n<li><strong>精度控制依赖开环执行<\/strong>：存在动作抖动与弱状态条件校正，缺乏接触感知反馈。<\/li>\n<li><strong>记忆机制与执行脱节<\/strong>：记忆增强模型（如 EventVLA）虽能存储历史信息，但<strong>记忆到动作的转换<\/strong>仍不可靠。<\/li>\n<li><strong>仿真-真实不完全对齐<\/strong>：部分策略在真实世界表现优于仿真预期，验证了两环境评估的互补必要性。<\/li>\n<\/ul>\n<hr/>\n<h3>5. 评估治理与开源<\/h3>\n<ul>\n<li><strong>非营利治理<\/strong>：由 AI MMLab Club 与全球学术机构联合维护，禁止商业赞助参与，确保评估中立性。<\/li>\n<li><strong>防作弊机制<\/strong>：采用隐藏验证布局检测过拟合，要求发布可复现代码与检查点。<\/li>\n<li><strong>持续更新<\/strong>：建立公开排行榜（RoboDojo-Benchmark.com），支持社区提交与持续迭代。<\/li>\n<\/ul>\n<hr/>\n<h3>6. 结论<\/h3>\n<p>RoboDojo 通过<strong>统一仿真-真实接口<\/strong>、<strong>五维能力诊断<\/strong>与<strong>标准化物理评估<\/strong>，为通用机器人操作策略提供了<strong>高效、全面、可复现<\/strong>的评估平台。实验表明，当前策略在<strong>开放语义理解<\/strong>、<strong>接触感知精细控制<\/strong>与<strong>长程错误恢复<\/strong>方面存在显著不足，为未来研究指明了关键方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是RoboDojo%3A%20A%20Unified%20Sim-and-Real%20Benchmark%20for%20Comprehensive%20Evaluation%20of%20Generalist%20Robot%20Manipulation%20Policies，链接是 https://arxiv.org/pdf/2607.04434 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2607.04434 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2607.04434", "kimi_retrieved_at_utc": "2026-09-23T11:28:14+00:00"}, "preview_images": 1, "video_preview_images": 0, "video_cases_count": 18, "video_case_groups_count": 6, "groups_count": 7, "groups_100_count": 0, "overview_html": "datasets/robodojo/overview.html", "gallery_html": "datasets/robodojo/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

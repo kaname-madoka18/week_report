@@ -1,0 +1,2981 @@
+{
+  "slug": "ella",
+  "title": "Ella — Embodied Social Agents with Lifelong Memory",
+  "category": "开放世界仿真社会与长期记忆",
+  "summary": "15个模拟人物、3个城市社区；提供100张官方仿真RGB观察图及方法/任务视频的有限预览。",
+  "paper_url": "https://arxiv.org/abs/2506.24019",
+  "repo_url": "https://github.com/UMass-Embodied-AGI/Ella",
+  "project_url": "https://umass-embodied-agi.github.io/Ella/",
+  "dataset_urls": [
+    {
+      "label": "官方可交互日常观察演示",
+      "url": "https://umass-embodied-agi.github.io/Ella/demo/"
+    }
+  ],
+  "duration_summary": "仿真熟悉阶段9h，Influence Battle约6h，Leadership Quest3h；官网MP4实测63.833s /101.5s /123.4s，teaser未核验。",
+  "availability": "代码与交互演示公开；不是固定总小时数的实拍视频数据集",
+  "preview_status": "partial",
+  "limitations": [
+    "100张主预览来自原生仿真RGB观察图，不是实拍人物录像，也不是解码视频帧。",
+    "Leadership Quest任务MP4仅有有限帧，未达到100帧；teaser时长尚未核验。",
+    "仿真时间、计算墙钟时间、演示MP4播放时间不可互换。"
+  ],
+  "groups": [
+    {
+      "id": "observations",
+      "title": "日常第一人称仿真观察（100 图）",
+      "media_kind": "image",
+      "description": "作者交互式 demo 原生 RGB 观察图；跨15个模拟人物与仿真步骤取样，不是从MP4解码的100帧。步骤到秒的对应关系未核验。",
+      "frames": [
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_000730.png",
+          "source_bytes": 184014,
+          "source_sha": "3e514fc151dddf8bf4ae3b96308d68359abe2cd6",
+          "image": "previews/observations/001.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_000730.png",
+          "source_bytes": 236026,
+          "source_sha": "7a8bbd41a524d55bc19115bf9abc82a13fb13978",
+          "image": "previews/observations/002.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_000730.png",
+          "source_bytes": 164708,
+          "source_sha": "1561390c2de5266aa982a6bc403e637b1dca4aaa",
+          "image": "previews/observations/003.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_000730.png",
+          "source_bytes": 227035,
+          "source_sha": "0261a2a953ae9917d7bd10728c5f0869601341c3",
+          "image": "previews/observations/004.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_000730.png",
+          "source_bytes": 293642,
+          "source_sha": "41143f30cc950ffa321fcf9ffa84b9b6f8344b17",
+          "image": "previews/observations/005.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_000730.png",
+          "source_bytes": 128865,
+          "source_sha": "5b099af354c2792bd568dd03da2cf5711fd5bf16",
+          "image": "previews/observations/006.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_000730.png",
+          "source_bytes": 258326,
+          "source_sha": "5f798db114b3a44b3216e4ec0835abacdefd573a",
+          "image": "previews/observations/007.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_000730.png",
+          "source_bytes": 173890,
+          "source_sha": "79a65b02e3cfda11787124331a6a9fba19031838",
+          "image": "previews/observations/008.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_000730.png",
+          "source_bytes": 164654,
+          "source_sha": "88919bb73b1d7491968a963d54f55beb6526e80b",
+          "image": "previews/observations/009.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_000730.png",
+          "source_bytes": 283880,
+          "source_sha": "2412dbc70c2650a6e606db801414950683702a07",
+          "image": "previews/observations/010.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_000730.png",
+          "source_bytes": 83296,
+          "source_sha": "190007d593b65647b7126c3b8af760e8d6b2a78e",
+          "image": "previews/observations/011.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_000730.png",
+          "source_bytes": 218992,
+          "source_sha": "283e03aa65ad89b4eea9443f9360f6871771d9ba",
+          "image": "previews/observations/012.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_000730.png",
+          "source_bytes": 278748,
+          "source_sha": "d0ce154ad7ad037e0256fff288fe3900a6233cf8",
+          "image": "previews/observations/013.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_000730.png",
+          "source_bytes": 251097,
+          "source_sha": "1b1e4e7f43ed8cf0abda54b9be4c65cb2b757596",
+          "image": "previews/observations/014.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_000730.png",
+          "source_bytes": 161025,
+          "source_sha": "abe36452e1467af0439aab734aa5a11e9099aa31",
+          "image": "previews/observations/015.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_000730.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_002200.png",
+          "source_bytes": 166255,
+          "source_sha": "8b91e598245303551818fd3a58cbca4a40497447",
+          "image": "previews/observations/016.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_002200.png",
+          "source_bytes": 220634,
+          "source_sha": "45acc180f6381f776900711a4e4a9334eb7947ce",
+          "image": "previews/observations/017.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_002200.png",
+          "source_bytes": 77451,
+          "source_sha": "fde47d8576d5532c823ff06dffa6f1523a37d16a",
+          "image": "previews/observations/018.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_002200.png",
+          "source_bytes": 202683,
+          "source_sha": "b90031e0ca451cde08262ab09ffce3a6db2e2744",
+          "image": "previews/observations/019.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_002200.png",
+          "source_bytes": 242730,
+          "source_sha": "e15cdd3ab188ff0399f16a8353429c4e7eff7efe",
+          "image": "previews/observations/020.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_002200.png",
+          "source_bytes": 247079,
+          "source_sha": "023acc89edb4fd506c6a4b04afac921549b58e8b",
+          "image": "previews/observations/021.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_002200.png",
+          "source_bytes": 218628,
+          "source_sha": "62cd500a18e734990f18c348ca8115f151fb292e",
+          "image": "previews/observations/022.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_002200.png",
+          "source_bytes": 163013,
+          "source_sha": "45adaa51a15f293abd8a352d06672b3bffd53f36",
+          "image": "previews/observations/023.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_002200.png",
+          "source_bytes": 195585,
+          "source_sha": "eaee174a389c9bec2d206a9e80327451254061e6",
+          "image": "previews/observations/024.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_002200.png",
+          "source_bytes": 181000,
+          "source_sha": "62cde2c3cfd5bdccaabc02b827469e420387867b",
+          "image": "previews/observations/025.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_002200.png",
+          "source_bytes": 130028,
+          "source_sha": "eed4262730a0eb09fb4a067f0a8a12b8f7d19da5",
+          "image": "previews/observations/026.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_002200.png",
+          "source_bytes": 118073,
+          "source_sha": "09b924030a1463916041890792f83b7c3696a552",
+          "image": "previews/observations/027.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_002200.png",
+          "source_bytes": 56690,
+          "source_sha": "f331a782bf3a15c1ef8f582a710c6193a959be3d",
+          "image": "previews/observations/028.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_002200.png",
+          "source_bytes": 203754,
+          "source_sha": "4d7adcc048e685c8a747b25ce3b961060d849baf",
+          "image": "previews/observations/029.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_002200.png",
+          "source_bytes": 22790,
+          "source_sha": "c614c68b07428ef894ae0d6b6bb79cd62a3f340b",
+          "image": "previews/observations/030.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_002200.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_003670.png",
+          "source_bytes": 166255,
+          "source_sha": "67c1712d494d88cf9b63238f059a24637e887605",
+          "image": "previews/observations/031.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_003670.png",
+          "source_bytes": 119921,
+          "source_sha": "f7d31bfc70b872dee005e529c042dbca2bd98b85",
+          "image": "previews/observations/032.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_003670.png",
+          "source_bytes": 77278,
+          "source_sha": "a7aaef75e3cc1ae372929763c81442976717f1dd",
+          "image": "previews/observations/033.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_003670.png",
+          "source_bytes": 208067,
+          "source_sha": "2e635c76174dd20bad10a323ca9afaacbcf6609e",
+          "image": "previews/observations/034.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_003670.png",
+          "source_bytes": 58769,
+          "source_sha": "ffb51e41d34463490bfaed4035bd31a2e1533bbc",
+          "image": "previews/observations/035.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_003670.png",
+          "source_bytes": 250757,
+          "source_sha": "d014b2026b5c1b4c110f289448cd57c775e94d60",
+          "image": "previews/observations/036.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_003670.png",
+          "source_bytes": 229650,
+          "source_sha": "cc64adcb3f0b9358b8540186035228c0972f9bd7",
+          "image": "previews/observations/037.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_003670.png",
+          "source_bytes": 154396,
+          "source_sha": "3f466b395f9a6fc4f8515b260acd8af52e807be5",
+          "image": "previews/observations/038.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_003900.png",
+          "source_bytes": 51703,
+          "source_sha": "e9eb4b55f37f2cbeaf753fc60823560682295d06",
+          "image": "previews/observations/039.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_003900.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_003670.png",
+          "source_bytes": 125974,
+          "source_sha": "527bd845a94560a212c139ffa69fe41eb10298bd",
+          "image": "previews/observations/040.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_003670.png",
+          "source_bytes": 129428,
+          "source_sha": "79becc4f12b6af1c4969bc78161e241350ec95e9",
+          "image": "previews/observations/041.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_003670.png",
+          "source_bytes": 118071,
+          "source_sha": "eac53a992aeae9a13216e521e529bc1c3b70bf6c",
+          "image": "previews/observations/042.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_003670.png",
+          "source_bytes": 139135,
+          "source_sha": "f627b1f41faf4207aac22a48e1679c592e40f480",
+          "image": "previews/observations/043.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_003670.png",
+          "source_bytes": 203447,
+          "source_sha": "649870edb29a6a15e0eb6e0f9b3d6f5e137eef87",
+          "image": "previews/observations/044.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_003670.png",
+          "source_bytes": 174776,
+          "source_sha": "25d16732c563713d8a591dea01b06a7bf3117c89",
+          "image": "previews/observations/045.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_003670.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_005140.png",
+          "source_bytes": 65985,
+          "source_sha": "2fe399fa8a17c80ab9543d2c8c9593935c24a95c",
+          "image": "previews/observations/046.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_005140.png",
+          "source_bytes": 163468,
+          "source_sha": "5603debc7eab994b3e133f63def8033b62cb811e",
+          "image": "previews/observations/047.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_005140.png",
+          "source_bytes": 196504,
+          "source_sha": "5fd96fa9d7e9129998f452bafe64bba599a95414",
+          "image": "previews/observations/048.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_005140.png",
+          "source_bytes": 120753,
+          "source_sha": "67498fa80e3a7c9ba68e7bc82479d00705e3ff78",
+          "image": "previews/observations/049.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_005140.png",
+          "source_bytes": 10579,
+          "source_sha": "f8af28f861d2b3765e3e5e90620c9a3f20d9ca80",
+          "image": "previews/observations/050.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_005140.png",
+          "source_bytes": 127359,
+          "source_sha": "9076da5f6f21511a2af2e824d183b502515d8f94",
+          "image": "previews/observations/051.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_005140.png",
+          "source_bytes": 185179,
+          "source_sha": "ad55f0ecb82cb5106909a7036964c90c0a859e27",
+          "image": "previews/observations/052.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_005140.png",
+          "source_bytes": 165265,
+          "source_sha": "05f7a10d5bae550fc4c46f4a229058ad4cab135e",
+          "image": "previews/observations/053.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_005150.png",
+          "source_bytes": 126860,
+          "source_sha": "f8018c8a9481e86d33155404ca6542b0d3a117e8",
+          "image": "previews/observations/054.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_005150.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_005140.png",
+          "source_bytes": 96741,
+          "source_sha": "7ee72834222149d75c25b3c6b2c341e30b77ea4b",
+          "image": "previews/observations/055.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_005140.png",
+          "source_bytes": 37272,
+          "source_sha": "d9fff78f4cf384f8b86ce6ceb6a1bd471a005786",
+          "image": "previews/observations/056.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_005140.png",
+          "source_bytes": 135829,
+          "source_sha": "0a3a54c37e05bbf0539e767c40d8e79c5bb45565",
+          "image": "previews/observations/057.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_005140.png",
+          "source_bytes": 121664,
+          "source_sha": "d10c135724b0b928aefd784e7c597aad32d40fb4",
+          "image": "previews/observations/058.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_005140.png",
+          "source_bytes": 202629,
+          "source_sha": "18fb9fbeab51d50e9060fa5a6c98303c65f73e1c",
+          "image": "previews/observations/059.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_005140.png",
+          "source_bytes": 17169,
+          "source_sha": "3a4d5d53149fb5c7a84fe3466c3125afc45fba22",
+          "image": "previews/observations/060.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_005140.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_006610.png",
+          "source_bytes": 46127,
+          "source_sha": "3296e96914077d887f50af4ff450a34c08a12b5b",
+          "image": "previews/observations/061.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_006610.png",
+          "source_bytes": 192246,
+          "source_sha": "1d7d04f550e2c2cfe37e1dce24c87f79047e3c5b",
+          "image": "previews/observations/062.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_006610.png",
+          "source_bytes": 93726,
+          "source_sha": "42437da6d776254c595fcc1884ae7ace2c7d0add",
+          "image": "previews/observations/063.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_006610.png",
+          "source_bytes": 222724,
+          "source_sha": "281aa09b79ff92f88cfc66dba31d46c6e99ce2fd",
+          "image": "previews/observations/064.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_006610.png",
+          "source_bytes": 146288,
+          "source_sha": "63c427f9cf0096e26bb5d628e738b608748ce2c1",
+          "image": "previews/observations/065.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_006610.png",
+          "source_bytes": 159889,
+          "source_sha": "5ef926a9e2ab34d9732966f3ac3950a1b514bc08",
+          "image": "previews/observations/066.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_006610.png",
+          "source_bytes": 174675,
+          "source_sha": "ef0ee13fdce9c06b8cec6927cb79bd2d0089cb14",
+          "image": "previews/observations/067.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_006610.png",
+          "source_bytes": 166276,
+          "source_sha": "db9449708b6f6d546e3edbd6270ee29fee3a4ce1",
+          "image": "previews/observations/068.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_006610.png",
+          "source_bytes": 121120,
+          "source_sha": "fb0a269256d36ee5964b5d17bf8db451e58a5908",
+          "image": "previews/observations/069.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_006610.png",
+          "source_bytes": 199117,
+          "source_sha": "ec6d8a1570732cbc58f39c53f25a6908f7dd8be6",
+          "image": "previews/observations/070.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_006610.png",
+          "source_bytes": 9613,
+          "source_sha": "09c5ed206c2cefc0c5f856da014ca143c1647ff2",
+          "image": "previews/observations/071.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_006610.png",
+          "source_bytes": 177613,
+          "source_sha": "105f4530f66b3c933a781692bcbbbd4544e1d170",
+          "image": "previews/observations/072.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_006610.png",
+          "source_bytes": 181120,
+          "source_sha": "414e5f13686b991ab24aecf7bbd6aaeb4c1a0d47",
+          "image": "previews/observations/073.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_006610.png",
+          "source_bytes": 186903,
+          "source_sha": "8c0a7e74222d0398188a4aba4e2d62389f467540",
+          "image": "previews/observations/074.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_006610.png",
+          "source_bytes": 106344,
+          "source_sha": "68ce53cfd94b24893c11b5d40990e0c7646701dc",
+          "image": "previews/observations/075.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_006610.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_008080.png",
+          "source_bytes": 166664,
+          "source_sha": "0b6b4686d02792371777d48527417cf59e6c5893",
+          "image": "previews/observations/076.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_008080.png",
+          "source_bytes": 145577,
+          "source_sha": "514b6705ff9fbb506a5706ddbe3c943ba3f94294",
+          "image": "previews/observations/077.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_008080.png",
+          "source_bytes": 134987,
+          "source_sha": "9790ab37421b649dd35215ff1eb39bfddc03f0fe",
+          "image": "previews/observations/078.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_008080.png",
+          "source_bytes": 165274,
+          "source_sha": "85cd31cc0e4a74e44802708c639070a335ece3b4",
+          "image": "previews/observations/079.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_008080.png",
+          "source_bytes": 39758,
+          "source_sha": "7b52bbd44fef56b69371a315000dc43ed23fa0bf",
+          "image": "previews/observations/080.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_008080.png",
+          "source_bytes": 164815,
+          "source_sha": "15c26c7808c6f6b80af262de9a1656ad4dbed8d6",
+          "image": "previews/observations/081.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_008080.png",
+          "source_bytes": 167018,
+          "source_sha": "5e0aead9aff4cf2a9e731045a83fa187e36d5cd0",
+          "image": "previews/observations/082.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_008080.png",
+          "source_bytes": 98165,
+          "source_sha": "66bcd18580a1026ff4a60286c63ddb263579c342",
+          "image": "previews/observations/083.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_008080.png",
+          "source_bytes": 163909,
+          "source_sha": "edf4aac2b11e2e2d655dc71f447a5be69759f3ae",
+          "image": "previews/observations/084.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_008080.png",
+          "source_bytes": 4199,
+          "source_sha": "536f35645e90772ed34d8ae1bae3d154e5c6f3ff",
+          "image": "previews/observations/085.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Lionel%20Messi/rgb_008080.png",
+          "source_bytes": 17284,
+          "source_sha": "fdf6feab5171ffdd835125ee6c49b15910b28d00",
+          "image": "previews/observations/086.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Lionel Messi/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Louise%20Roberts/rgb_008080.png",
+          "source_bytes": 165467,
+          "source_sha": "440d947636e3926d1efa29a7843d5bef62b6406e",
+          "image": "previews/observations/087.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Louise Roberts/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Megan%20Carter/rgb_008080.png",
+          "source_bytes": 158891,
+          "source_sha": "5d332e23dbc529ea9c0b4628fd37cab65a81d9c4",
+          "image": "previews/observations/088.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Megan Carter/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Roth%20Miller/rgb_008080.png",
+          "source_bytes": 190627,
+          "source_sha": "b2f073e700e85b9350144e2391a31316d6b6304e",
+          "image": "previews/observations/089.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Roth Miller/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Taylor%20Swift/rgb_008080.png",
+          "source_bytes": 93818,
+          "source_sha": "6e3a33739adce1e2260391da44914eae15e09a5e",
+          "image": "previews/observations/090.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Taylor Swift/rgb_008080.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Alex%20Jefferson/rgb_009550.png",
+          "source_bytes": 166242,
+          "source_sha": "ac31fb159f23e065a2d74b3c6c4a7259008752fa",
+          "image": "previews/observations/091.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Alex Jefferson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Andrew%20Ng/rgb_009550.png",
+          "source_bytes": 203548,
+          "source_sha": "60652ac7c6f091bc14cb07207ebcb7bd460f20b3",
+          "image": "previews/observations/092.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Andrew Ng/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Chad%20Thompson/rgb_009550.png",
+          "source_bytes": 176157,
+          "source_sha": "b22d4ccc21fe068500e476ebedbe7918fc671d2a",
+          "image": "previews/observations/093.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Chad Thompson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elizabeth%20Mensah/rgb_009550.png",
+          "source_bytes": 278334,
+          "source_sha": "88abbd5ce956c4e342ebbcb8a1b9d288f8e14c46",
+          "image": "previews/observations/094.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elizabeth Mensah/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Elon%20Musk/rgb_009550.png",
+          "source_bytes": 34621,
+          "source_sha": "288f648ff861752cd49c09a0deb089ace6b0337c",
+          "image": "previews/observations/095.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Elon Musk/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emily%20Johnson/rgb_009550.png",
+          "source_bytes": 118430,
+          "source_sha": "d754bf5f986bd473e6bb284e09aa6b0bf98cdee7",
+          "image": "previews/observations/096.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emily Johnson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Emma%20Watson/rgb_009550.png",
+          "source_bytes": 128180,
+          "source_sha": "a65264ef2de195c2d2657fffa996e5ebed1682d8",
+          "image": "previews/observations/097.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Emma Watson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/James%20Thompson/rgb_009550.png",
+          "source_bytes": 195950,
+          "source_sha": "8800a78d7a71602684aa99b139eded4902c24f12",
+          "image": "previews/observations/098.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/James Thompson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Joe%20Anderson/rgb_009550.png",
+          "source_bytes": 65106,
+          "source_sha": "ea89142adf8a1f02da8b5ffceb49ea18b96070a6",
+          "image": "previews/observations/099.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Joe Anderson/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        },
+        {
+          "source_url": "https://umass-embodied-agi.github.io/Ella/demo/ego/Leonard%20Park/rgb_009550.png",
+          "source_bytes": 54559,
+          "source_sha": "72f274de578f6432a4a7a1f9478371e208e403a0",
+          "image": "previews/observations/100.jpg",
+          "source_label": "Ella 官方交互演示观察；仿真 step，非视频秒",
+          "video_id": "demo/ego/Leonard Park/rgb_009550.png",
+          "timestamp_seconds": null,
+          "duration_seconds": null,
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "id": "influence_battle",
+      "title": "Influence Battle 任务演示（100帧）",
+      "media_kind": "video",
+      "description": "从官网 Influence Battle 演示30–40秒区间抽100帧；只读HTTP Range，没有保存完整视频。",
+      "frames": [
+        {
+          "image": "previews/influence_battle/001.jpg",
+          "timestamp_seconds": 30.0,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/002.jpg",
+          "timestamp_seconds": 30.133333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/003.jpg",
+          "timestamp_seconds": 30.233333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/004.jpg",
+          "timestamp_seconds": 30.333333333333332,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/005.jpg",
+          "timestamp_seconds": 30.433333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/006.jpg",
+          "timestamp_seconds": 30.533333333333335,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/007.jpg",
+          "timestamp_seconds": 30.633333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/008.jpg",
+          "timestamp_seconds": 30.733333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/009.jpg",
+          "timestamp_seconds": 30.833333333333332,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/010.jpg",
+          "timestamp_seconds": 30.933333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/011.jpg",
+          "timestamp_seconds": 31.033333333333335,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/012.jpg",
+          "timestamp_seconds": 31.133333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/013.jpg",
+          "timestamp_seconds": 31.233333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/014.jpg",
+          "timestamp_seconds": 31.333333333333332,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/015.jpg",
+          "timestamp_seconds": 31.433333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/016.jpg",
+          "timestamp_seconds": 31.533333333333335,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/017.jpg",
+          "timestamp_seconds": 31.633333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/018.jpg",
+          "timestamp_seconds": 31.733333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/019.jpg",
+          "timestamp_seconds": 31.833333333333332,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/020.jpg",
+          "timestamp_seconds": 31.933333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/021.jpg",
+          "timestamp_seconds": 32.03333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/022.jpg",
+          "timestamp_seconds": 32.13333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/023.jpg",
+          "timestamp_seconds": 32.233333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/024.jpg",
+          "timestamp_seconds": 32.333333333333336,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/025.jpg",
+          "timestamp_seconds": 32.43333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/026.jpg",
+          "timestamp_seconds": 32.53333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/027.jpg",
+          "timestamp_seconds": 32.63333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/028.jpg",
+          "timestamp_seconds": 32.733333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/029.jpg",
+          "timestamp_seconds": 32.833333333333336,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/030.jpg",
+          "timestamp_seconds": 32.93333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/031.jpg",
+          "timestamp_seconds": 33.03333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/032.jpg",
+          "timestamp_seconds": 33.13333333333333,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/033.jpg",
+          "timestamp_seconds": 33.233333333333334,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/034.jpg",
+          "timestamp_seconds": 33.333333333333336,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/035.jpg",
+          "timestamp_seconds": 33.46666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/036.jpg",
+          "timestamp_seconds": 33.56666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/037.jpg",
+          "timestamp_seconds": 33.666666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/038.jpg",
+          "timestamp_seconds": 33.766666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/039.jpg",
+          "timestamp_seconds": 33.86666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/040.jpg",
+          "timestamp_seconds": 33.96666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/041.jpg",
+          "timestamp_seconds": 34.06666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/042.jpg",
+          "timestamp_seconds": 34.166666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/043.jpg",
+          "timestamp_seconds": 34.266666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/044.jpg",
+          "timestamp_seconds": 34.36666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/045.jpg",
+          "timestamp_seconds": 34.46666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/046.jpg",
+          "timestamp_seconds": 34.56666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/047.jpg",
+          "timestamp_seconds": 34.666666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/048.jpg",
+          "timestamp_seconds": 34.766666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/049.jpg",
+          "timestamp_seconds": 34.86666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/050.jpg",
+          "timestamp_seconds": 34.96666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/051.jpg",
+          "timestamp_seconds": 35.06666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/052.jpg",
+          "timestamp_seconds": 35.166666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/053.jpg",
+          "timestamp_seconds": 35.266666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/054.jpg",
+          "timestamp_seconds": 35.36666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/055.jpg",
+          "timestamp_seconds": 35.46666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/056.jpg",
+          "timestamp_seconds": 35.56666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/057.jpg",
+          "timestamp_seconds": 35.666666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/058.jpg",
+          "timestamp_seconds": 35.766666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/059.jpg",
+          "timestamp_seconds": 35.86666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/060.jpg",
+          "timestamp_seconds": 35.96666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/061.jpg",
+          "timestamp_seconds": 36.06666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/062.jpg",
+          "timestamp_seconds": 36.166666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/063.jpg",
+          "timestamp_seconds": 36.266666666666666,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/064.jpg",
+          "timestamp_seconds": 36.36666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/065.jpg",
+          "timestamp_seconds": 36.46666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/066.jpg",
+          "timestamp_seconds": 36.56666666666667,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/067.jpg",
+          "timestamp_seconds": 36.666666666666664,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/068.jpg",
+          "timestamp_seconds": 36.8,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/069.jpg",
+          "timestamp_seconds": 36.9,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/070.jpg",
+          "timestamp_seconds": 37.0,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/071.jpg",
+          "timestamp_seconds": 37.1,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/072.jpg",
+          "timestamp_seconds": 37.2,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/073.jpg",
+          "timestamp_seconds": 37.3,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/074.jpg",
+          "timestamp_seconds": 37.4,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/075.jpg",
+          "timestamp_seconds": 37.5,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/076.jpg",
+          "timestamp_seconds": 37.6,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/077.jpg",
+          "timestamp_seconds": 37.7,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/078.jpg",
+          "timestamp_seconds": 37.8,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/079.jpg",
+          "timestamp_seconds": 37.9,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/080.jpg",
+          "timestamp_seconds": 38.0,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/081.jpg",
+          "timestamp_seconds": 38.1,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/082.jpg",
+          "timestamp_seconds": 38.2,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/083.jpg",
+          "timestamp_seconds": 38.3,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/084.jpg",
+          "timestamp_seconds": 38.4,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/085.jpg",
+          "timestamp_seconds": 38.5,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/086.jpg",
+          "timestamp_seconds": 38.6,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/087.jpg",
+          "timestamp_seconds": 38.7,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/088.jpg",
+          "timestamp_seconds": 38.8,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/089.jpg",
+          "timestamp_seconds": 38.9,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/090.jpg",
+          "timestamp_seconds": 39.0,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/091.jpg",
+          "timestamp_seconds": 39.1,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/092.jpg",
+          "timestamp_seconds": 39.2,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/093.jpg",
+          "timestamp_seconds": 39.3,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/094.jpg",
+          "timestamp_seconds": 39.4,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/095.jpg",
+          "timestamp_seconds": 39.5,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/096.jpg",
+          "timestamp_seconds": 39.6,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/097.jpg",
+          "timestamp_seconds": 39.7,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/098.jpg",
+          "timestamp_seconds": 39.8,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/099.jpg",
+          "timestamp_seconds": 39.9,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        },
+        {
+          "image": "previews/influence_battle/100.jpg",
+          "timestamp_seconds": 40.0,
+          "duration_seconds": 101.5,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+          "source_label": "Ella 官网 influence_battle",
+          "video_id": "influence_battle"
+        }
+      ]
+    },
+    {
+      "id": "leadership_quest",
+      "title": "Leadership Quest 任务演示（28帧）",
+      "media_kind": "video",
+      "description": "官网任务视频的有限 Range 预览，传输中断前已解码帧。重试发生在不同区间，未保存完整逐帧时间日志，因此精确时间戳留空。",
+      "frames": [
+        {
+          "image": "previews/leadership_quest/001.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/002.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/003.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/004.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/005.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/006.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/007.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/008.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/009.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/010.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/011.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/012.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/013.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/014.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/015.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/016.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/017.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/018.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/019.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/020.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/021.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/022.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/023.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/024.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/025.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/026.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/027.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        },
+        {
+          "image": "previews/leadership_quest/028.jpg",
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+          "source_label": "Ella Leadership Quest 任务演示（部分Range帧）",
+          "video_id": "leadership_quest",
+          "timestamp_seconds": null,
+          "duration_seconds": 123.4
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "title": "方法讲解动画（100帧）",
+      "media_kind": "video",
+      "description": "从官网方法讲解 MP4 前20秒抽100帧；包含方法动画，非日常观察数据抽样。",
+      "frames": [
+        {
+          "image": "previews/method/001.jpg",
+          "timestamp_seconds": 0.0,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/002.jpg",
+          "timestamp_seconds": 0.23333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/003.jpg",
+          "timestamp_seconds": 0.43333333333333335,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/004.jpg",
+          "timestamp_seconds": 0.6333333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/005.jpg",
+          "timestamp_seconds": 0.8333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/006.jpg",
+          "timestamp_seconds": 1.0333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/007.jpg",
+          "timestamp_seconds": 1.2333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/008.jpg",
+          "timestamp_seconds": 1.4333333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/009.jpg",
+          "timestamp_seconds": 1.6333333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/010.jpg",
+          "timestamp_seconds": 1.8333333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/011.jpg",
+          "timestamp_seconds": 2.033333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/012.jpg",
+          "timestamp_seconds": 2.2333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/013.jpg",
+          "timestamp_seconds": 2.433333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/014.jpg",
+          "timestamp_seconds": 2.6333333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/015.jpg",
+          "timestamp_seconds": 2.8333333333333335,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/016.jpg",
+          "timestamp_seconds": 3.033333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/017.jpg",
+          "timestamp_seconds": 3.2333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/018.jpg",
+          "timestamp_seconds": 3.466666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/019.jpg",
+          "timestamp_seconds": 3.6666666666666665,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/020.jpg",
+          "timestamp_seconds": 3.8666666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/021.jpg",
+          "timestamp_seconds": 4.066666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/022.jpg",
+          "timestamp_seconds": 4.266666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/023.jpg",
+          "timestamp_seconds": 4.466666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/024.jpg",
+          "timestamp_seconds": 4.666666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/025.jpg",
+          "timestamp_seconds": 4.866666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/026.jpg",
+          "timestamp_seconds": 5.066666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/027.jpg",
+          "timestamp_seconds": 5.266666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/028.jpg",
+          "timestamp_seconds": 5.466666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/029.jpg",
+          "timestamp_seconds": 5.666666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/030.jpg",
+          "timestamp_seconds": 5.866666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/031.jpg",
+          "timestamp_seconds": 6.066666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/032.jpg",
+          "timestamp_seconds": 6.266666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/033.jpg",
+          "timestamp_seconds": 6.466666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/034.jpg",
+          "timestamp_seconds": 6.666666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/035.jpg",
+          "timestamp_seconds": 6.9,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/036.jpg",
+          "timestamp_seconds": 7.1,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/037.jpg",
+          "timestamp_seconds": 7.3,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/038.jpg",
+          "timestamp_seconds": 7.5,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/039.jpg",
+          "timestamp_seconds": 7.7,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/040.jpg",
+          "timestamp_seconds": 7.9,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/041.jpg",
+          "timestamp_seconds": 8.1,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/042.jpg",
+          "timestamp_seconds": 8.3,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/043.jpg",
+          "timestamp_seconds": 8.5,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/044.jpg",
+          "timestamp_seconds": 8.7,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/045.jpg",
+          "timestamp_seconds": 8.9,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/046.jpg",
+          "timestamp_seconds": 9.1,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/047.jpg",
+          "timestamp_seconds": 9.3,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/048.jpg",
+          "timestamp_seconds": 9.5,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/049.jpg",
+          "timestamp_seconds": 9.7,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/050.jpg",
+          "timestamp_seconds": 9.9,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/051.jpg",
+          "timestamp_seconds": 10.133333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/052.jpg",
+          "timestamp_seconds": 10.333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/053.jpg",
+          "timestamp_seconds": 10.533333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/054.jpg",
+          "timestamp_seconds": 10.733333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/055.jpg",
+          "timestamp_seconds": 10.933333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/056.jpg",
+          "timestamp_seconds": 11.133333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/057.jpg",
+          "timestamp_seconds": 11.333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/058.jpg",
+          "timestamp_seconds": 11.533333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/059.jpg",
+          "timestamp_seconds": 11.733333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/060.jpg",
+          "timestamp_seconds": 11.933333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/061.jpg",
+          "timestamp_seconds": 12.133333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/062.jpg",
+          "timestamp_seconds": 12.333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/063.jpg",
+          "timestamp_seconds": 12.533333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/064.jpg",
+          "timestamp_seconds": 12.733333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/065.jpg",
+          "timestamp_seconds": 12.933333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/066.jpg",
+          "timestamp_seconds": 13.133333333333333,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/067.jpg",
+          "timestamp_seconds": 13.333333333333334,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/068.jpg",
+          "timestamp_seconds": 13.566666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/069.jpg",
+          "timestamp_seconds": 13.766666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/070.jpg",
+          "timestamp_seconds": 13.966666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/071.jpg",
+          "timestamp_seconds": 14.166666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/072.jpg",
+          "timestamp_seconds": 14.366666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/073.jpg",
+          "timestamp_seconds": 14.566666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/074.jpg",
+          "timestamp_seconds": 14.766666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/075.jpg",
+          "timestamp_seconds": 14.966666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/076.jpg",
+          "timestamp_seconds": 15.166666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/077.jpg",
+          "timestamp_seconds": 15.366666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/078.jpg",
+          "timestamp_seconds": 15.566666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/079.jpg",
+          "timestamp_seconds": 15.766666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/080.jpg",
+          "timestamp_seconds": 15.966666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/081.jpg",
+          "timestamp_seconds": 16.166666666666668,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/082.jpg",
+          "timestamp_seconds": 16.366666666666667,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/083.jpg",
+          "timestamp_seconds": 16.566666666666666,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/084.jpg",
+          "timestamp_seconds": 16.8,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/085.jpg",
+          "timestamp_seconds": 17.0,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/086.jpg",
+          "timestamp_seconds": 17.2,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/087.jpg",
+          "timestamp_seconds": 17.4,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/088.jpg",
+          "timestamp_seconds": 17.6,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/089.jpg",
+          "timestamp_seconds": 17.8,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/090.jpg",
+          "timestamp_seconds": 18.0,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/091.jpg",
+          "timestamp_seconds": 18.2,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/092.jpg",
+          "timestamp_seconds": 18.4,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/093.jpg",
+          "timestamp_seconds": 18.6,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/094.jpg",
+          "timestamp_seconds": 18.8,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/095.jpg",
+          "timestamp_seconds": 19.0,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/096.jpg",
+          "timestamp_seconds": 19.2,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/097.jpg",
+          "timestamp_seconds": 19.4,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/098.jpg",
+          "timestamp_seconds": 19.6,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/099.jpg",
+          "timestamp_seconds": 19.8,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        },
+        {
+          "image": "previews/method/100.jpg",
+          "timestamp_seconds": 20.0,
+          "duration_seconds": 63.833333333333336,
+          "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+          "source_label": "Ella 官网 method",
+          "video_id": "method"
+        }
+      ]
+    }
+  ]
+}

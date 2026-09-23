@@ -1,0 +1,10 @@
+{
+  "episodes": 20000,
+  "tasks": 100,
+  "total_hours": 1952.9330925925926,
+  "mean_seconds": 351.5279566666667,
+  "median_seconds": 335.03333333333336,
+  "min_seconds": 4.933333333333334,
+  "max_seconds": 1525.3666666666666,
+  "errors": []
+}

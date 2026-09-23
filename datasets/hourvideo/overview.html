@@ -1,0 +1,281 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HourVideo · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">HourVideo</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-11-07</strong></div><div><span>引用数</span><strong>140</strong></div><div><span>GitHub stars</span><strong>145</strong></div><div><span>当前状态</span><strong>NeurIPS 2024 · Datasets and Benchmarks</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2411.04998" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/keshik6/HourVideo" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/043f80aadcafb06ce393ad7f8621f0b79753f55f" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://arxiv.org/abs/2411.04998" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=HourVideo%3A+1-Hour+Video-Language+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文介绍了一个名为HourVideo的基准数据集，旨在解决长视频语言理解的问题。具体来说，它试图解决以下几个关键问题：</p>
+<ol>
+<li>
+<p><strong>长期视觉处理能力</strong>：人类能够在长时间内处理视觉刺激，例如在烹饪等日常活动中识别和使用食材、监控菜肴状态变化，并根据视觉线索调整烹饪时间和技巧。HourVideo旨在评估自主代理是否具备类似的持续视觉处理能力。</p>
+</li>
+<li>
+<p><strong>长视频理解的挑战</strong>：现有的视频语言理解基准数据集通常限制在单张图片或短视频片段上，而HourVideo旨在深入探索长视频语言理解，这对于开发能够理解长时间视觉数据的多模态系统至关重要。</p>
+</li>
+<li>
+<p><strong>长程依赖性任务设计</strong>：评估长视频语言理解能力的一个主要挑战是设计需要长期综合理解的任务，即那些需要跨多个时间段落识别和综合信息的任务。HourVideo提出了一个新的任务套件，包括总结、感知（回忆、跟踪）、视觉推理（空间、时间、预测、因果、反事实）和导航（房间到房间、目标检索）任务。</p>
+</li>
+<li>
+<p><strong>多模态模型的性能评估</strong>：HourVideo通过综合评估多模态模型在长视频理解方面的能力，揭示了现有模型与人类专家之间的显著差距，推动了多模态社区在这一领域的进一步研究。</p>
+</li>
+<li>
+<p><strong>长视频数据集的构建和评估</strong>：HourVideo提供了一个包含500个从Ego4D数据集中精选的第一人称视频的数据集，这些视频覆盖了77种独特的日常活动，持续时间为20至120分钟，并包含了12,976个高质量的五选一选择题。这个数据集为评估多模态模型提供了一个严格的框架。</p>
+</li>
+</ol>
+<p>总的来说，HourVideo通过提供一个新颖的、面向长视频的任务套件和数据集，旨在推动长视频语言理解领域的发展，并为未来自主代理和交互式视频平台等应用奠定基础。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据提供的论文内容，以下是一些与HourVideo基准数据集相关的研究工作：</p>
+<ol>
+<li>
+<p><strong>大型多模态模型</strong>：近年来，大型多模态模型如[1–3]被提出用于处理视觉和语言数据，HourVideo旨在评估这些模型在长视频理解方面的能力。</p>
+</li>
+<li>
+<p><strong>视频理解基准数据集</strong>：包括MSRVTT-QA [23]、ActivityNet-QA [11]、TVQA [25]、How2QA [26]、NExT-QA [35]、EgoSchema [12]等，这些数据集主要用于评估视频理解能力，但它们主要关注特定领域或短视频，与HourVideo关注长视频理解的目标不同。</p>
+</li>
+<li>
+<p><strong>视觉推理和视频问答模型</strong>：包括VQA [6–8]、Visual Reasoning [55–62]、时空视频数据推理 [63–70]等，这些研究关注于提升视觉语言模型的视觉推理能力，尤其是跨复杂时空视频数据的推理能力。</p>
+</li>
+<li>
+<p><strong>长视频理解模型</strong>：包括使用记忆库来存储历史信息的模型 [84–89]、压缩时空标记减少冗余的模型 [38, 80, 90–96]，以及利用语言作为桥梁的模型 [97, 98]，这些方法旨在提高模型对长视频的编码效率和理解能力。</p>
+</li>
+<li>
+<p><strong>诊断性基准测试</strong>：如Perception Test [41] 提出了一个针对多模态模型的诊断性基准测试，用于探测模型的记忆、抽象、物理和语义能力。</p>
+</li>
+<li>
+<p><strong>视频描述模型</strong>：如Tarsier [101]，这是一个最近发布的模型，它在多个短视频理解基准测试中报告了最先进的结果。</p>
+</li>
+</ol>
+<p>这些研究工作提供了不同的视角和方法来理解和评估多模态模型在视频语言任务上的性能，HourVideo通过提供一个长视频理解的挑战，进一步推动了这一领域的研究进展。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决长视频语言理解的问题：</p>
+<ol>
+<li>
+<p><strong>设计任务套件</strong>：
+   - 论文提出了一个新颖的任务套件，包括总结、感知（回忆、跟踪）、视觉推理（空间、时间、预测、因果、反事实）和导航（房间到房间、目标检索）任务。这些任务需要对长视频内容进行深入理解和长期依赖性分析。</p>
+</li>
+<li>
+<p><strong>构建数据集</strong>：
+   - 从Ego4D数据集中手动筛选了500个第一人称视角的视频，覆盖77种独特的日常活动，视频时长从20到120分钟不等。
+   - 利用训练有素的人类标注者和大型语言模型（LLMs），开发了一个问答生成流水线，产生了12,976个高质量的五选一选择题（MCQs）。</p>
+</li>
+<li>
+<p><strong>自动化和手动生成问题</strong>：
+   - 通过多阶段流水线自动化生成问题，包括视频筛选、问题模板开发、利用LLM生成候选问题（MCQ2），以及通过人类反馈进行问题精炼（MCQ3）。
+   - 对于因果、反事实和导航任务，由于它们与自动化流水线的契合度不高，选择由人类专家直接生成问题。</p>
+</li>
+<li>
+<p><strong>评估协议</strong>：
+   - 开发了一个评估协议，以任务和子任务为单位评估多模态模型，减少信息泄露并降低独立评估每个问题的成本。</p>
+</li>
+<li>
+<p><strong>基准测试</strong>：
+   - 对包括GPT-4、LLaVA-NeXT和Gemini Pro 1.5在内的最先进多模态模型进行了零样本（zero-shot）评估，揭示了这些模型与人类专家表现之间的显著差距。</p>
+</li>
+<li>
+<p><strong>对比分析</strong>：
+   - 通过与人类专家的表现对比，论文强调了当前多模态模型在长视频理解方面的不足，并指出了未来研究的方向。</p>
+</li>
+<li>
+<p><strong>发布和共享资源</strong>：
+   - 论文提供了HourVideo数据集的发布版本，包括JSON文件、PyTorch数据加载器以及相应的文档和许可证信息，以促进社区进一步的研究和开发。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个针对长视频语言理解的挑战性数据集，还为评估和推进多模态模型在这一领域的能力提供了一个平台。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了一系列实验来评估和测试多模态模型在长视频语言理解方面的表现。以下是实验的详细内容：</p>
+<ol>
+<li>
+<p><strong>评估协议</strong>：
+   - 论文提出了一个基于任务和子任务的评估协议，以最小化信息泄露，并减少了独立评估每个问题的成本。</p>
+</li>
+<li>
+<p><strong>基线模型评估</strong>：
+   - 论文比较了不同类别的模型在HourVideo数据集上的性能，包括盲语言模型（Blind LLMs）、苏格拉底模型（Socratic Models）和原生多模态模型（Native Multimodal Models）。</p>
+</li>
+<li>
+<p><strong>盲语言模型（Blind LLMs）</strong>：
+   - 使用GPT-4模型作为盲语言模型的基线，评估了模型在没有考虑任何视频内容的情况下回答多项选择题的能力。</p>
+</li>
+<li>
+<p><strong>苏格拉底模型（Socratic Models）</strong>：
+   - 苏格拉底模型通过将长视频分割成一分钟的片段，独立生成每个片段的字幕，然后将这些字幕聚合成一个综合性的视频语言表示，用于问题回答。
+   - 使用GPT-4和LLaVA-NeXT-34B-DPO作为视频字幕生成器，并用GPT-4进行实际的问题回答。</p>
+</li>
+<li>
+<p><strong>原生多模态模型（Native Multimodal Models）</strong>：
+   - 评估了如Gemini 1.5 Pro这样的多模态视频模型，这些模型能够直接处理长达一小时的视频作为输入，并进行问题回答。</p>
+</li>
+<li>
+<p><strong>人类表现评估</strong>：
+   - 为了衡量人类专家的表现，论文选取了14个视频样本，包含超过18种场景，让三位人类专家对11.2小时的视频内容进行了评估，涵盖了总共213个多项选择题。</p>
+</li>
+<li>
+<p><strong>独立与任务级评估方法的比较</strong>：
+   - 进行了消融研究，比较了独立评估每个多项选择题（MCQ）与基于任务/子任务评估方法的性能和成本。</p>
+</li>
+<li>
+<p><strong>额外的基线实验</strong>：
+   - 使用最近发布的Tarsier模型进行了额外的实验，该模型在多个短视频理解基准测试中报告了最先进的结果。</p>
+</li>
+<li>
+<p><strong>模型拒绝率分析</strong>：
+   - 报告了不同模型在回答多项选择题时的拒绝率，分析了模型拒绝回答特定问题的原因。</p>
+</li>
+</ol>
+<p>这些实验旨在全面评估多模态模型在长视频语言理解任务上的性能，并与人类专家的表现进行比较，以揭示现有技术的局限性，并推动未来研究的发展。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>更全面的视频数据集</strong>：
+   - 尽管HourVideo是目前最大的长视频语言理解基准数据集之一，但可以探索包含更多样化视频源的数据集，例如体育赛事、YouTube视频等。</p>
+</li>
+<li>
+<p><strong>音频模态的融合</strong>：
+   - 目前HourVideo主要关注视觉模态。将音频模态融入评估中，可以更全面地评估多模态模型的性能。</p>
+</li>
+<li>
+<p><strong>更高级的提示策略</strong>：
+   - 论文中提到了使用简单的通用提示进行模型评估。研究更先进的提示策略，可能有助于提高模型的性能和基准测试的难度。</p>
+</li>
+<li>
+<p><strong>模型的可解释性和透明度</strong>：
+   - 提高模型在长视频理解任务中的可解释性，帮助研究人员和开发者更好地理解模型的决策过程。</p>
+</li>
+<li>
+<p><strong>模型的鲁棒性和安全性</strong>：
+   - 考虑到视频数据的敏感性，研究如何提高模型对误导性或有害输入的鲁棒性，并确保模型的安全使用。</p>
+</li>
+<li>
+<p><strong>多模态世界模型</strong>：
+   - 探索构建能够从大量数据中学习综合、多模态世界表示的AI系统，这些系统能够跨越时间和整合多个抽象层次。</p>
+</li>
+<li>
+<p><strong>长视频理解在特定领域的应用</strong>：
+   - 研究长视频理解技术在特定领域（如监控、健康监测、教育等）的应用，并针对这些领域开发专门的模型和算法。</p>
+</li>
+<li>
+<p><strong>模型的计算效率</strong>：
+   - 考虑到长视频处理的计算成本，研究如何提高模型的计算效率，使其能够在资源受限的环境中使用。</p>
+</li>
+<li>
+<p><strong>跨模态迁移学习</strong>：
+   - 探索跨模态迁移学习策略，使模型在一个模态上训练得到的知识能够迁移到另一个模态上，提高模型的泛化能力。</p>
+</li>
+<li>
+<p><strong>伦理和隐私问题</strong>：</p>
+<ul>
+<li>随着视频理解技术的发展，研究如何在保护个人隐私和确保数据安全的前提下，负责任地开发和部署这些技术。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助推动长视频语言理解技术的发展，并确保其在实际应用中的有效性和安全性。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文介绍了HourVideo，这是一个针对长时间视频语言理解的基准数据集。以下是论文的主要内容总结：</p>
+<ol>
+<li>
+<p><strong>动机与目标</strong>：
+   - 论文旨在推动长视频语言理解的研究，以提升自主代理在真实世界中的视觉处理能力。
+   - 强调了长视频理解在发展未来自主代理和助理中的重要性。</p>
+</li>
+<li>
+<p><strong>HourVideo数据集</strong>：
+   - 包含500个从Ego4D数据集中精选的第一人称视频，覆盖77种日常活动，视频时长从20至120分钟不等。
+   - 提供了12,976个高质量的五选一多项选择题（MCQs），覆盖总结、感知、视觉推理和导航等多种任务。</p>
+</li>
+<li>
+<p><strong>任务套件设计</strong>：
+   - 提出了一个包含18个子任务的全面任务套件，旨在评估模型在长视频理解中的多种能力。</p>
+</li>
+<li>
+<p><strong>数据集构建流程</strong>：
+   - 描述了一个多阶段的数据生成流水线，结合了人类标注者的努力和大型语言模型（LLMs）的使用。</p>
+</li>
+<li>
+<p><strong>模型评估</strong>：
+   - 对包括GPT-4、LLaVA-NeXT和Gemini Pro 1.5在内的多个多模态模型进行了评估。
+   - 发现即使是最先进的模型，其性能也远低于人类专家，显示出当前技术的显著差距。</p>
+</li>
+<li>
+<p><strong>实验结果</strong>：
+   - 通过与人类专家的比较，强调了长视频理解领域的研究挑战。
+   - 提出了一种基于任务/子任务的评估方法，以减少信息泄露并降低评估成本。</p>
+</li>
+<li>
+<p><strong>未来工作与局限性</strong>：
+   - 讨论了数据集的潜在局限性，并提出了未来可能的研究方向，包括支持更多样化的视频源、音频模态的融合等。</p>
+</li>
+<li>
+<p><strong>社会影响</strong>：
+   - 讨论了长视频理解技术对社会的潜在正面和负面影响，强调了负责任地发展AI技术的重要性。</p>
+</li>
+</ol>
+<p>总体而言，HourVideo数据集为长视频语言理解领域提供了一个新的挑战，并为评估和推进多模态模型在这一领域的能力提供了一个平台。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是HourVideo%3A%201-Hour%20Video-Language%20Understanding，链接是 https://arxiv.org/pdf/2411.04998 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2411.04998 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="hourvideo">HourVideo</h1>
+<p>500 段 Ego4D 长视频与 12,976 个问题，涵盖事实回忆、追踪、跨事件推理与物体找回；直接播放官网短案例。</p>
+<h2 id="_1">与多模态记忆的关系</h2>
+<p>直接记忆：事实回忆、物体检索、目标追踪及跨事件推理都要求保持小时级视觉经历。</p>
+<h2 id="_2">数据规模与任务</h2>
+<p>500 段第一人称视频、12,976 个五选一问题；官方开发集为50段视频、1,182个问题、39.3小时。</p>
+<p>总结、感知（事实回忆和追踪）、视觉推理（空间、时间、预测、因果、反事实）、导航（房间间导航、物体检索）。</p>
+<h2 id="_3">视频长度 / 上下文长度</h2>
+<p>原视频 20–120 分钟；开发集 50 段共39.3小时。官网示例是压缩/剪辑后的问答演示，播放秒数单列。</p>
+<p>来源：<a href="https://github.com/keshik6/HourVideo" target="_blank" rel="noopener">官方时长依据</a>。</p>
+<h2 id="_4">论文结果</h2>
+<p>论文报告人类专家正确率 85.0%，Gemini 1.5 Pro 为37.3%；GPT-4与LLaVA-NeXT等模型相对随机猜测的提升有限。本页仅整理论文数字，未复现实验。</p>
+<h2 id="_5">数据入口</h2>
+<ul>
+<li><a href="https://huggingface.co/datasets/HourVideo/HourVideo" target="_blank" rel="noopener">官方数据与标注</a></li>
+<li><a href="https://huggingface.co/datasets/HourVideo/HourVideo/blob/main/v1.0_release/json/dev_v1.0_annotations.json" target="_blank" rel="noopener">开发集标注</a></li>
+</ul>
+<h2 id="_6">预览与限制</h2>
+<ul>
+<li>可播放案例来自 HourVideo 官方项目页，属于经过剪辑的案例展示，不是完整20–120分钟源视频。</li>
+<li>未使用泛 Ego4D 样本冒充 HourVideo 问答证据；完整底层视频遵循 Ego4D 访问流程。</li>
+</ul>
+<h2 id="_7">首发与筛选记录</h2>
+<ul>
+<li>arXiv v1：2024-11-07；<a href="https://arxiv.org/abs/2411.04998" target="_blank" rel="noopener">论文</a>。</li>
+<li>检索日期：2026-09-23；Semantic Scholar 引用数 140，满足 &gt;20；<a href="https://www.semanticscholar.org/paper/043f80aadcafb06ce393ad7f8621f0b79753f55f" target="_blank" rel="noopener">引用来源</a>。</li>
+<li>状态：NeurIPS 2024 · Datasets and Benchmarks；<a href="https://arxiv.org/abs/2411.04998" target="_blank" rel="noopener">状态来源</a>。</li>
+<li><a href="https://github.com/keshik6/HourVideo" target="_blank" rel="noopener">官方GitHub</a>：145 stars（2026-09-23）。</li>
+</ul>
+<h2 id="_8">来源</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2411.04998" target="_blank" rel="noopener">论文与首次提交记录</a></li>
+<li><a href="https://hourvideo.stanford.edu/" target="_blank" rel="noopener">官方项目/数据说明</a></li>
+<li><a href="https://github.com/keshik6/HourVideo" target="_blank" rel="noopener">官方代码与版本说明</a></li>
+</ul>
+<h2 id="_9">本地可播放案例</h2>
+<p>下表为官网演示的实测播放长度，全部文件小于100MB，并通过完整解码检查。</p>
+<table>
+<thead>
+<tr>
+<th>案例</th>
+<th style="text-align: right;">播放秒数</th>
+<th style="text-align: right;">本地大小（MB）</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总结案例</td>
+<td style="text-align: right;">26.07</td>
+<td style="text-align: right;">7.82</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/summarization.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+<tr>
+<td>感知与追踪案例</td>
+<td style="text-align: right;">26.07</td>
+<td style="text-align: right;">6.67</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/perception_tracking_final.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+<tr>
+<td>反事实推理案例</td>
+<td style="text-align: right;">26.07</td>
+<td style="text-align: right;">7.51</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/counterfactual.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+<tr>
+<td>房间导航案例</td>
+<td style="text-align: right;">29.07</td>
+<td style="text-align: right;">7.16</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/navigation.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+<tr>
+<td>事实回忆案例</td>
+<td style="text-align: right;">26.07</td>
+<td style="text-align: right;">5.57</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/factual_recall.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+<tr>
+<td>因果推理案例</td>
+<td style="text-align: right;">26.07</td>
+<td style="text-align: right;">6.21</td>
+<td><a href="https://hourvideo.stanford.edu/static/videos/causal.m4v" target="_blank" rel="noopener">官方原文件</a></td>
+</tr>
+</tbody>
+</table><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

@@ -1,0 +1,574 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WorldMM：五个既有长视频基准 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">WorldMM：五个既有长视频基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-12-02</strong></div><div><span>引用数</span><strong>43</strong></div><div><span>GitHub stars</span><strong>119</strong></div><div><span>当前状态</span><strong>CVPR 2026 · Highlight</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2512.02425" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/wgcyeo/WorldMM" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/261926854c8f4b5d1535b6d9dd46144068961e41" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=WorldMM%3A+Dynamic+Multimodal+Memory+Agent+for+Long+Video+Reasoning" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>论文旨在解决“超长视频推理”任务中两大核心瓶颈：</p>
+<ol>
+<li>
+<p>上下文容量受限<br/>
+   现有视频大模型只能处理分钟级片段，对数小时乃至数天的连续视频会因帧数爆炸（&gt;80 k帧）而超出上下文窗口，导致无法直接端到端推理。</p>
+</li>
+<li>
+<p>固定、单模态记忆机制的局限<br/>
+   - 文本中心：现有记忆方法几乎完全依赖字幕/摘要，丢失视觉细节（颜色、纹理、空间关系）。<br/>
+   - 固定时长检索：无论问题跨度是几秒还是几小时，都返回固定数量、固定长度的片段，无法按需缩放。<br/>
+   - 模态耦合：视觉-文本成对存储，检索时必须同时加载，无关帧成为噪声，干扰推理。</p>
+</li>
+</ol>
+<p>为此，作者提出 WorldMM——一个<strong>动态多模态记忆智能体</strong>，通过以下手段实现超长视频的高效、精准推理：</p>
+<ul>
+<li>
+<p>构建三种互补记忆<br/>
+  – 情景记忆：多粒度（秒-分-时）知识图谱，记录事件事实。<br/>
+  – 语义记忆：持续更新的长期关系/习惯图谱。<br/>
+  – 视觉记忆：双路（特征+时间戳）索引，保留关键帧与视觉嵌入。</p>
+</li>
+<li>
+<p>自适应检索代理<br/>
+  迭代决定“去哪类记忆、以何种粒度、用何种模态”查询，直到信息足够再生成答案，避免一次性堆砌无关内容。</p>
+</li>
+</ul>
+<p>实验在5个小时-周级别视频问答基准上平均提升8.4%，验证了该方法对超长视频推理的有效性与效率。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>论文将相关研究归为两条主线，并在第2节系统回顾。以下按<strong>“长视频理解”</strong>与<strong>“基于记忆的视频大模型”</strong>两大方向梳理代表性工作。</p>
+<hr/>
+<h3>1. 长视频理解（Long Video Understanding）</h3>
+<table>
+<thead>
+<tr>
+<th>技术路线</th>
+<th>代表文献</th>
+<th>核心思路</th>
+<th>主要局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>扩展上下文</strong></td>
+<td>GPT-5 [16]、Gemini 2.5 [3]</td>
+<td>直接利用超长上下文窗口处理数小时视频</td>
+<td>计算成本高，均匀采样易淹没稀疏事件</td>
+</tr>
+<tr>
+<td><strong>视觉Token压缩</strong></td>
+<td>LongVu [20]、MA-LMM [8]、VideoChat-Flash [11]</td>
+<td>时空剪枝或池化，减少帧/令牌数</td>
+<td>丢失细粒度细节，对稀有事件敏感</td>
+</tr>
+<tr>
+<td><strong>关键帧选择</strong></td>
+<td>AKS [22]、VideoTree [30]</td>
+<td>基于重要性或自适应树结构选帧</td>
+<td>超长视频下关键帧难以召回，时序连续性差</td>
+</tr>
+<tr>
+<td><strong>推理-centric训练</strong></td>
+<td>Time-R1 [28]、Video-RTS [29]</td>
+<td>强化学习或测试时缩放提升时序定位</td>
+<td>仍受限于10h左右，无法应对天级视频</td>
+</tr>
+<tr>
+<td><strong>连续流记忆</strong></td>
+<td>∞-Video [19]</td>
+<td>无训练、连续时间记忆整合</td>
+<td>仅概念验证，未与LLM深度耦合</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>2. 基于记忆的视频大模型（Memory-based Video LLMs）</h3>
+<table>
+<thead>
+<tr>
+<th>方法类别</th>
+<th>代表文献</th>
+<th>记忆形式</th>
+<th>模态与检索方式</th>
+<th>主要不足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>朴素RAG</strong></td>
+<td>VideoRAG [10]、E-ViRAG [31]</td>
+<td>帧/片段级文本或视觉索引</td>
+<td>单模态相似度检索</td>
+<td>无结构化，难做多跳推理</td>
+</tr>
+<tr>
+<td><strong>图增强RAG</strong></td>
+<td>VGent [21]、AdaVideoRAG [32]</td>
+<td>帧-帧关系图</td>
+<td>图游走检索</td>
+<td>仍以文本边权为主，视觉未深度参与</td>
+</tr>
+<tr>
+<td><strong>分层文本记忆</strong></td>
+<td>EgoRAG [33]</td>
+<td>30s-片段→小时-事件→天-摘要 三级文本记忆</td>
+<td>仅文本，固定3×30s检索</td>
+<td>视觉缺失，时长固定</td>
+</tr>
+<tr>
+<td><strong>工具增强记忆</strong></td>
+<td>Ego-R1 [23]</td>
+<td>文本记忆+OCR/ASR工具链</td>
+<td>迭代调用外部工具</td>
+<td>视觉信息仅通过工具间接获取，无统一视觉记忆</td>
+</tr>
+<tr>
+<td><strong>多模态记忆</strong></td>
+<td>M3-Agent [13]</td>
+<td>实体中心多模态记忆</td>
+<td>实体链接+文本检索</td>
+<td>视觉特征仅用于建库，推理阶段仍纯文本</td>
+</tr>
+<tr>
+<td><strong>双过程记忆</strong></td>
+<td>HippoMM [12]</td>
+<td>情节+语义双文本图</td>
+<td>文本检索</td>
+<td>无原生视觉记忆，时长固定</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>3. 与WorldMM的差异小结</h3>
+<ul>
+<li><strong>多模态</strong>：WorldMM首次将<strong>视觉记忆</strong>（特征+时间戳双路）与<strong>文本记忆</strong>（情节+语义）<strong>分离建库</strong>，并在推理阶段<strong>自适应选择单模态或多模态组合</strong>，避免成对噪声。  </li>
+<li><strong>多时间尺度</strong>：情景记忆显式构建<strong>秒-分-时</strong>多级图谱，检索代理可<strong>动态缩放</strong>所需时长，而非固定3×30s。  </li>
+<li><strong>迭代式检索</strong>：通过<strong>多轮决策</strong>逐步细化记忆源、模态与粒度，直至信息足够再回答，区别于单步检索或固定工具链。</li>
+</ul>
+<p>因此，WorldMM在“超长、多模态、可变时长”推理场景下填补了上述方法的空白。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文提出 <strong>WorldMM</strong> 框架，把“超长视频推理”拆解为<strong>三阶段流水线</strong>，分别解决<strong>存什么</strong>、<strong>怎么取</strong>、<strong>如何答</strong>三个关键问题。核心思想是：<strong>先建多模态、多尺度的互补记忆，再用自适应代理迭代地只取与问题相关的记忆，最后由独立生成器给出答案</strong>。</p>
+<hr/>
+<h3>1. 多模态记忆构建（Multimodal Memory Construction）</h3>
+<h4>1.1 情景记忆 Episodic Memory</h4>
+<ul>
+<li><strong>多时间粒度</strong>：将视频按 $t_0&lt;t_1&lt;…&lt;t_N$ 切分成不重叠段，分别生成字幕→事实三元组 $(e_1,r,e_2)$，构建<strong>多级知识图谱</strong><br/>
+  $$M_e={G_{t_0},G_{t_1},…,G_{t_N}}$$  </li>
+<li>作用：秒级细节到小时级叙事全覆盖，支持<strong>可变时长检索</strong>。</li>
+</ul>
+<h4>1.2 语义记忆 Semantic Memory</h4>
+<ul>
+<li><strong>持续更新图谱</strong>：每段粗粒度字幕提取语义三元组，用<strong>LLM+嵌入相似度</strong>做冲突合并/去重<br/>
+  $$M_s=\text{Consolidate}(G^k_{t_s},T^{k+1}_{t_s})$$  </li>
+<li>作用：记录长期关系、习惯、偏好，弥补独立事件图的断档。</li>
+</ul>
+<h4>1.3 视觉记忆 Visual Memory</h4>
+<ul>
+<li><strong>双路索引</strong>：<br/>
+  – 特征路：每小段 $t_v$ 抽视觉嵌入 $f^i_v$，组成 $M^f_v={f^i_v}$，支持<strong>开放词查询</strong>。<br/>
+  – 时间戳路：保存 $(t_i,I_i)$ 映射 $M^I_v$，支持<strong>精准时态定位</strong>。  </li>
+<li>作用：保留文本无法描述的外观、空间、动作细节，<strong>按需调取</strong>避免一次性灌入噪声帧。</li>
+</ul>
+<hr/>
+<h3>2. 自适应记忆检索（Adaptive Memory Retrieval）</h3>
+<h4>2.1 检索代理 Retrieval Agent</h4>
+<ul>
+<li><strong>迭代策略函数</strong>：<br/>
+  $$R(q, r_{&lt;i})→\begin{cases}
+  (m_i,q_i) &amp; \text{if insufficient} \
+  \text{STOP} &amp; \text{otherwise}
+  \end{cases}$$<br/>
+  其中 $m_i\in{M_e,M_s,M_v}$，最多 $N=5$ 轮。  </li>
+<li><strong>决策空间</strong>：每轮自主决定<br/>
+  – 记忆类型（情节/语义/视觉）<br/>
+  – 查询关键词或时间区间<br/>
+  – 是否已足够并停止</li>
+</ul>
+<h4>2.2 模态专用检索器</h4>
+<ul>
+<li><strong>情节检索</strong>：多级图谱→PPR 打分→LLM 跨尺度重排，选出最相关时段。  </li>
+<li><strong>语义检索</strong>：边级 PPR（边得分=两端节点得分和）取 Top-k 关系三元组。  </li>
+<li><strong>视觉检索</strong>：<br/>
+  – 特征模式：文本查询→嵌入，与 $M^f_v$ 余弦相似度取 Top 段。<br/>
+  – 时间戳模式：若前序检索已锁定时段，直拉 $M^I_v$ 对应帧。</li>
+</ul>
+<hr/>
+<h3>3. 响应生成（Response Generation）</h3>
+<ul>
+<li><strong>分离式架构</strong>：检索历史 ${r_1,…,r_n}$ 与原始问题 $q$ 一并交给<strong>独立响应代理</strong>，仅基于已召回内容作答，避免再访问全视频。  </li>
+<li><strong>好处</strong>：检索与生成目标解耦，降低幻觉；推理成本只与召回量成正比，与视频长度亚线性。</li>
+</ul>
+<hr/>
+<h3>4. 训练与推理细节（Efficiency &amp; Scalability）</h3>
+<ul>
+<li><strong>全流水线可在线更新</strong>：视频流每 $t_v$（10 s）完成一次字幕→三元组→图谱增量合并，无需从头重建。  </li>
+<li><strong>早停机制</strong>：代理可在任意轮次输出 STOP，实现<strong>问题相关的时间-计算弹性</strong>。  </li>
+<li><strong>实验验证</strong>：在小时-周级5个基准上，WorldMM-GPT 平均提升 <strong>8.4%</strong>，延迟-准确率 Pareto 优于现有长视频LLM与RAG方案。</li>
+</ul>
+<hr/>
+<h3>总结</h3>
+<p>WorldMM 通过“<strong>多模态分离存储 + 多尺度图谱 + 迭代式自适应检索</strong>”三位一体方案，从根本上克服了<br/>
+1. 纯文本记忆丢失视觉细节<br/>
+2. 固定片段长度无法匹配事件真实跨度<br/>
+3. 一次性堆砌信息导致噪声淹没信号  </p>
+<p>三大痛点，实现了对<strong>任意时长视频</strong>的<strong>精准、高效、可扩展推理</strong>。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文在 <strong>5 个覆盖小时到周级别</strong>的长视频问答基准上开展系统实验，从<strong>主结果、消融、分析、效率</strong>四个维度验证 WorldMM 的有效性。主要实验一览如下（均使用标准<strong>准确率</strong>指标）。</p>
+<hr/>
+<h3>1. 主实验：与 15 个强基线对比</h3>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>平均时长</th>
+<th>任务特色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EgoLifeQA</td>
+<td>44.3 h</td>
+<td>周级第一视角生活问答，5 大类（Entity/Habit/Relation…）</td>
+</tr>
+<tr>
+<td>Ego-R1 Bench</td>
+<td>44.3 h</td>
+<td>同视频但侧重多步工具推理</td>
+</tr>
+<tr>
+<td>HippoVlog</td>
+<td>0.45 h</td>
+<td>日常 vlog，需融合音频+视觉</td>
+</tr>
+<tr>
+<td>LVBench</td>
+<td>1.14 h</td>
+<td>通用长视频，短/中/长三种跨度</td>
+</tr>
+<tr>
+<td>Video-MME (long)</td>
+<td>0.69 h</td>
+<td>&gt;30 min 子集，12 类细粒度感知推理</td>
+</tr>
+</tbody>
+</table>
+<p><strong>结果</strong><br/>
+- WorldMM-GPT 平均 <strong>69.5%</strong>，超最强基线（HippoRAG 57.0%）<strong>↑12.5%</strong>。<br/>
+- WorldMM-8B 平均 <strong>59.9%</strong>，超同规模基线（M3-Agent 55.1%）<strong>↑4.8%</strong>。<br/>
+- 在<strong>视觉依赖大</strong>的 EntityLog、EventRecall、A+V 等子类，领先幅度<strong>&gt;10%</strong>。</p>
+<hr/>
+<h3>2. 消融实验：三记忆贡献</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>平均准确率</th>
+<th>较全模型差距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅用 Episodic (E)</td>
+<td>64.9</td>
+<td>−4.6</td>
+</tr>
+<tr>
+<td>仅用 Visual (V)</td>
+<td>44.9</td>
+<td>−24.6</td>
+</tr>
+<tr>
+<td>E + S</td>
+<td>66.8</td>
+<td>−2.7</td>
+</tr>
+<tr>
+<td>E + V</td>
+<td>66.9</td>
+<td>−2.6</td>
+</tr>
+<tr>
+<td><strong>E + S + V</strong></td>
+<td><strong>69.5</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>视觉记忆</strong>在 EntityLog、EventRecall、Visual 类平均提升 <strong>4.2%</strong>。  </li>
+<li><strong>语义记忆</strong>在 HabitInsight、RelationMap 提升 <strong>23%</strong>（76.9 vs 53.9）。  </li>
+<li>图3/图8 显示代理对三类记忆的<strong>调用比例与任务需求高度匹配</strong>，验证自适应有效性。</li>
+</ul>
+<hr/>
+<h3>3. 动态时间跨度检索（tIoU 评估）</h3>
+<ul>
+<li>指标：<strong>temporal Intersection over Union</strong>，衡量召回片段与真值时段的重合度。  </li>
+<li>WorldMM 平均 tIoU <strong>9.57%</strong>，是强基线（最佳 4.54%）的 <strong>2.1×</strong>。  </li>
+<li>在 LVBench-Long（&gt;5 min）子集，tIoU <strong>10.02%</strong>，对应 QA 准确率 <strong>72.1%</strong>，显著高于固定尺度方法。</li>
+</ul>
+<hr/>
+<h3>4. 多轮检索深度分析</h3>
+<ul>
+<li>限制最大迭代次数 <strong>1→5</strong>，观察性能变化。  </li>
+<li>EgoLifeQA 上 <strong>+9.3%</strong>（60.0→69.3）。  </li>
+<li>图7 显示 <strong>3 轮后增益趋于饱和</strong>，但允许 5 轮可纠正早期误检索。</li>
+</ul>
+<hr/>
+<h3>5. 效率与延迟对比</h3>
+<ul>
+<li>端到端 100 条随机查询平均延迟 <strong>~40 s</strong>，低于同准确率级模型（GPT-5 需 &gt;100 s）。  </li>
+<li>图6 展示 WorldMM 在<strong>延迟-准确率 Pareto 前沿</strong>占据左上角，验证“只取所需”的自适应策略。</li>
+</ul>
+<hr/>
+<h3>6. 模块替换消融（表4）</h3>
+<table>
+<thead>
+<tr>
+<th>替换方案</th>
+<th>相对下降</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>情景记忆固定单粒度</td>
+<td>−6.1%</td>
+</tr>
+<tr>
+<td>情景记忆改用纯嵌入检索</td>
+<td>−4.4%</td>
+</tr>
+<tr>
+<td>语义记忆去掉 Consolidation</td>
+<td>−7.0%（长程推理类）</td>
+</tr>
+<tr>
+<td>视觉记忆仅保留特征或时间戳单路</td>
+<td>−3.0%</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>7. 定性示例</h3>
+<ul>
+<li>图4a：仅文本无法判断“烤的是红薯”，代理<strong>第二轮调用视觉记忆</strong>后正确识别。  </li>
+<li>图4b：习惯类问题“擦碗后用什么擦”需跨多段归纳，代理<strong>主动切换语义记忆</strong>得出“厨房湿巾”。  </li>
+<li>表14：多轮检索逐步扩大关键词“air conditioning”→最终拉取对应帧，确认当时“在吃火锅”。</li>
+</ul>
+<hr/>
+<h3>总结</h3>
+<p>实验覆盖<strong>精度、消融、时序定位、轮次深度、延迟、定性案例</strong>六大维度，一致表明：<br/>
+1. 多模态分离记忆显著提升视觉/习惯类表现；<br/>
+2. 多尺度情景记忆实现<strong>可变时长精准定位</strong>；<br/>
+3. 迭代自适应检索在<strong>准确率-效率</strong>间取得最佳平衡。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>以下展望按“<strong>技术深度</strong> → <strong>场景宽度</strong> → <strong>系统规模</strong>”三个层次归纳，可作为后续研究的直接切入点。</p>
+<hr/>
+<h3>1. 技术深度</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>可探索点</th>
+<th>可能方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>记忆表征</strong></td>
+<td>视觉记忆仍用全局帧特征，缺乏对象级/3D 场景表征</td>
+<td>引入开放词汇检测+NERF/3DGS，构建“<strong>对象-位置-外观</strong>”统一图</td>
+</tr>
+<tr>
+<td><strong>记忆压缩</strong></td>
+<td>图谱随时间线性增长，周级视频已产生百万级三元组</td>
+<td>① 重要性遗忘机制（Hippo-inspired forgetting）&lt;br&gt;② 向量-符号混合检索（先向量粗筛，再图精排）</td>
+</tr>
+<tr>
+<td><strong>跨模态对齐</strong></td>
+<td>文本-视觉检索仅用余弦相似度，存在语义鸿沟</td>
+<td>① 细粒度对齐预训练（VLM2Vec→video-level contrastive）&lt;br&gt;② 视觉-语言双向注意力重排</td>
+</tr>
+<tr>
+<td><strong>在线学习</strong></td>
+<td>当前语义 consolidation 为离线 LLM 调用</td>
+<td>① 增量式小模型更新（LoRA/adapter）&lt;br&gt;② 强化学习直接优化“合并/删除”决策</td>
+</tr>
+<tr>
+<td><strong>推理策略</strong></td>
+<td>检索代理为提示工程，无梯度信号</td>
+<td>用强化学习（RLVF）让“<strong>STOP/继续</strong>”决策可微，直接优化下游 QA 奖励</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>2. 场景宽度</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>可探索点</th>
+<th>挑战</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>多摄像机</strong></td>
+<td>家庭/商场多路视频融合，需解决<strong>时空对齐</strong>与<strong>视角冗余</strong></td>
+<td>跨相机对象重识别 + 统一时间轴图谱</td>
+</tr>
+<tr>
+<td><strong>流媒体</strong></td>
+<td>真实 7×24 小时<strong>连续推流</strong>，内存与延迟双约束</td>
+<td>① 滑动窗口记忆+云端分层存储&lt;br&gt;② 边缘-云协同检索（小模型本地过滤，大模型云端精排）</td>
+</tr>
+<tr>
+<td><strong>具身智能</strong></td>
+<td>机器人实时问答“<strong>我左手拿的是什么</strong>”</td>
+<td>① 手-眼标定→ ego 坐标系视觉记忆&lt;br&gt;② 动作记忆（proprioception）与视觉记忆联合建图</td>
+</tr>
+<tr>
+<td><strong>多语言/方言</strong></td>
+<td>现有字幕仅英文/中文，方言或跨语言对话丢失</td>
+<td>① 方言 ASR + 字幕对齐&lt;br&gt;② 跨语言实体链接（“Pad Thai”≈“泰式炒河粉”）</td>
+</tr>
+<tr>
+<td><strong>隐私保护</strong></td>
+<td>连续记忆积累敏感信息（门锁密码、银行卡）</td>
+<td>① 差分隐私图嵌入&lt;br&gt;② 本地可编辑记忆（用户可一键删除/改写事实）</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>3. 系统规模与评测</h3>
+<table>
+<thead>
+<tr>
+<th>主题</th>
+<th>可探索点</th>
+<th>建议指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>十小时级视频</strong></td>
+<td>现有最长 44 h，需<strong>月级</strong>真实生活流</td>
+<td>建立“<strong>MonthLife</strong>”基准：含 30 天连续录像+10 k 问答，标注长周期习惯、罕见事件</td>
+</tr>
+<tr>
+<td><strong>事件因果</strong></td>
+<td>当前仅事实三元组，缺乏<strong>因果边</strong></td>
+<td>引入因果发现算法（PC/FCI）生成“$(e_1\rightarrow e_2)$”因果边，评测反事实问答</td>
+</tr>
+<tr>
+<td><strong>记忆可解释</strong></td>
+<td>代理决策过程黑箱</td>
+<td>① 检索链可视化（时间轴+记忆类型+置信度）&lt;br&gt;② 事后反事实解释（若去掉某帧，答案是否改变）</td>
+</tr>
+<tr>
+<td><strong>低资源场景</strong></td>
+<td>标注成本高昂，需<strong>无监督/弱监督</strong>记忆构建</td>
+<td>利用视频-文本对比预训练直接生成伪三元组，再自训练迭代</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>4. 短期可落地的“小步快跑”</h3>
+<ol>
+<li><strong>替换视觉编码器</strong>：将 VLM2Vec-V2 升级为 InternVideo2-1B，观察视觉记忆检索 tIoU 是否再提升。  </li>
+<li><strong>引入遗忘机制</strong>：对语义图按“访问频率+时间衰减”删除 10 % 长尾三元组，测试周级视频 QA 是否下降。  </li>
+<li><strong>多相机对齐</strong>：用同一房间两路 GoPro 数据，验证跨相机对象 ID 一致后，WorldMM 能否回答“我在客厅把遥控器放哪了”。  </li>
+<li><strong>RL 微调 STOP 决策</strong>：用 REINFORCE 把“回答正确率”作为奖励，训练 2-epoch，比较迭代轮次分布与延迟。</li>
+</ol>
+<hr/>
+<h3>结语</h3>
+<p>WorldMM 打开了“<strong>超长视频-多模态-可变时长</strong>”推理的通路，但在<strong>对象级记忆、在线压缩、隐私-解释性、多机流融合</strong>等方向仍留白。上述点均可作为下一步论文或工程落地的切入口。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><ul>
+<li><strong>问题</strong>：超长视频（小时-周级）问答因帧数爆炸、文本记忆丢视觉细节、固定片段检索而性能受限。  </li>
+<li><strong>方法</strong>：提出 WorldMM，构建<strong>情景+语义+视觉</strong>三类互补记忆，由<strong>自适应代理迭代决定“去哪类记忆、以何种粒度、用何模态”</strong>检索，直至信息足够再生成答案。  </li>
+<li><strong>结果</strong>：5 个基准平均准确率 69.5%，超现有最佳 8.4%；消融显示三记忆互补，动态多尺度检索 tIoU 达 9.6%（2× 基线），多轮迭代与效率亦占优。  </li>
+<li><strong>结论</strong>：通过“多模态分离存储+多尺度图谱+迭代式自适应检索”实现超长视频精准高效推理，为 egocentric/ embodied 智能体提供可扩展记忆框架。</li>
+</ul></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是WorldMM%3A%20Dynamic%20Multimodal%20Memory%20Agent%20for%20Long%20Video%20Reasoning，链接是 https://arxiv.org/pdf/2512.02425 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2512.02425 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="worldmm">WorldMM：数据集与视频预览</h1>
+<p><a href="../../index.html" data-catalog-home>返回全部论文目录</a> · <a href="preview_gallery.html">本页预览图册</a> · <a href="../../overview.html">EgoLife 完整 overview</a></p>
+<p>WorldMM 是长视频记忆与检索方法，<strong>没有另建名为 WorldMM 的原始视频数据集</strong>。它使用 EgoLifeQA、Ego-R1 Bench、HippoVlog、LVBench 和 Video-MME Long 五个已有基准，另公开 EgoLife 的预构建记忆元数据。以下区分原始视频、问题集合和衍生记忆文件。核对日期：2026-09-22。</p>
+<table>
+<thead>
+<tr>
+<th>数据来源 / 使用范围</th>
+<th>视频与问题数量</th>
+<th>单段 / 总播放长度</th>
+<th>本地预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EgoLifeQA</td>
+<td>Jake 一人的一周记录；500 道四选一题</td>
+<td>发布片段通常 30 秒；论文将该流写为 44.3 小时，本地 6,266 个 Jake 文件按 30 秒估算为 52.217 小时；实际文件总时长未逐一核验</td>
+<td>复用已采集的 100 个 Jake 片段，各取一帧</td>
+</tr>
+<tr>
+<td>Ego-R1 Bench</td>
+<td>本论文表 3 使用 300 道题；底层复用 EgoLife</td>
+<td>同一批一周视频，不应重复累计视频总量；论文表 3 平均 44.3 小时</td>
+<td>同一份 EgoLife 预览</td>
+</tr>
+<tr>
+<td>HippoVlog</td>
+<td>25 个日常 vlog、1,000 道题</td>
+<td>论文表 3 平均 0.45 小时（27 分钟）；由舍入均值推算合计约 11.25 小时，非逐文件实测</td>
+<td>未采集</td>
+</tr>
+<tr>
+<td>LVBench</td>
+<td>103 个长视频；原始 1,549 题，剔除 15 道无片段标签题后评测 1,534 题</td>
+<td>平均 1.14 小时（68.4 分钟）；推算约 117.42 小时，非精确总时长</td>
+<td>未采集</td>
+</tr>
+<tr>
+<td>Video-MME Long</td>
+<td>300 个视频、900 道题</td>
+<td>每个 30–60 分钟；本论文平均 0.69 小时（41.4 分钟），推算约 207 小时；Video-MME 全集另为 900 视频、254 小时</td>
+<td>未采集</td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="https://arxiv.org/html/2512.02425v2" target="_blank" rel="noopener">WorldMM 论文表 3 与数据集附录</a>、<a href="https://github.com/MME-Benchmarks/Video-MME" target="_blank" rel="noopener">Video-MME 官方仓库</a>、<a href="../../metadata/video_inventory.csv">EgoLife 本地文件清单</a>。<strong>44.3 小时是 WorldMM 论文采用的记载口径，不能与另两篇论文的 Jake 51.9 小时或按发布文件数得到的标称值混写为同一个实测值。</strong></p>
+<h2 id="_1">发布和访问</h2>
+<ul>
+<li><a href="https://github.com/wgcyeo/WorldMM" target="_blank" rel="noopener">官方代码</a>提供 EgoLife 和 Video-MME 的预处理、记忆构建与评测流程。</li>
+<li><a href="https://huggingface.co/datasets/wgcyeo/WorldMM-EgoLife" target="_blank" rel="noopener">WorldMM-EgoLife</a>是预构建记忆元数据。此次 API 返回 32 个仓库文件，没有 MP4；不能据此当成 32 个新视频。仓库快照保存在 <a href="sources/hf_info.json">sources/hf_info.json</a>。</li>
+<li>EgoLife 原视频、密集字幕和逐人转写可访问；更完整的七天、六人、视角和眼动预览见 <a href="../../preview_gallery.html">EgoLife 图册</a>。</li>
+<li>本页的预览仅覆盖论文实际使用的 Jake 视角。HippoVlog、LVBench、Video-MME 的全量视频此次未采集，不能由这 100 帧推断它们的内容分布。</li>
+</ul>
+<h2 id="_2">论文结果与评测条件</h2>
+<p>下表为 <a href="https://arxiv.org/html/2512.02425v2" target="_blank" rel="noopener">arXiv v2 表 1</a>的多选题准确率（%），本次未运行模型复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">EgoLifeQA</th>
+<th style="text-align: right;">Ego-R1</th>
+<th style="text-align: right;">HippoVlog</th>
+<th style="text-align: right;">LVBench</th>
+<th style="text-align: right;">Video-MME Long</th>
+<th style="text-align: right;">五项平均</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-5 基础模型</td>
+<td style="text-align: right;">48.6</td>
+<td style="text-align: right;">46.3</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">60.4</td>
+<td style="text-align: right;">74.3</td>
+<td style="text-align: right;">61.1</td>
+</tr>
+<tr>
+<td>WorldMM-8B</td>
+<td style="text-align: right;">56.4</td>
+<td style="text-align: right;">52.0</td>
+<td style="text-align: right;">69.7</td>
+<td style="text-align: right;">55.4</td>
+<td style="text-align: right;">66.0</td>
+<td style="text-align: right;">59.9</td>
+</tr>
+<tr>
+<td>WorldMM-GPT</td>
+<td style="text-align: right;">65.6</td>
+<td style="text-align: right;">65.3</td>
+<td style="text-align: right;">78.3</td>
+<td style="text-align: right;">61.9</td>
+<td style="text-align: right;">76.6</td>
+<td style="text-align: right;">69.5</td>
+</tr>
+</tbody>
+</table>
+<p>WorldMM-GPT 相对表内 GPT-5 基线的五项平均提高 8.4 个百分点。GPT-5-mini 构建情节/语义记忆，VLM2Vec-V2 建立视觉索引；检索和回答分别配置 GPT-5 或 Qwen3-VL-8B 版本。检索最多 5 轮。EgoLife 使用 30 秒、3 分钟、10 分钟、1 小时等多种记忆粒度；这是算法分段长度，不是原始录制时长。不同论文的模型、问题子集和输入预算不同，不能将本表直接与 EGAgent 或 MAGIC-Video 的数字排序。</p>
+<h2 id="_3">本地文件</h2>
+<ul>
+<li><a href="project.json">project.json</a>：图册分组、帧时间戳、原视频来源；100 帧复用 <code>../../previews/</code>，没有重复下载视频。</li>
+<li><a href="sources/README.md">sources/README.md</a>、<a href="sources/paper.html">sources/paper.html</a>、<a href="sources/repo_tree.json">sources/repo_tree.json</a>：官方来源快照。</li>
+<li><a href="../mm-lifelong/overview.html">MM-Lifelong</a>、<a href="../egagent/overview.html">EGAgent</a>、<a href="../magic-video/overview.html">MAGIC-Video</a>：相关方法与数据口径对照。</li>
+</ul><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

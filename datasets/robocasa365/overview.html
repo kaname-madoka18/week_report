@@ -1,0 +1,408 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RoboCasa365 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">RoboCasa365</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-03-04</strong></div><div><span>引用数</span><strong>76</strong></div><div><span>GitHub stars</span><strong>1,751</strong></div><div><span>当前状态</span><strong>ICLR 2026</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2603.04356" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/robocasa/robocasa" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/3462a6063dbf86ffd82c567b21879fb7080363ab" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=RoboCasa365%3A+A+Large-Scale+Simulation+Framework+for+Training+and+Benchmarking+Generalist+Robots" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>该论文旨在解决<strong>通用机器人（generalist robots）在多样化日常任务中缺乏可复现、大规模基准测试</strong>的问题，以及<strong>现有模拟框架在任务覆盖、环境多样性和数据规模方面的不足</strong>。</p>
+<p>具体而言，论文识别并针对以下核心挑战：</p>
+<p><strong>1. 真实世界数据收集与评估的瓶颈</strong>
+- 训练通用机器人需要海量多样化的机器人交互数据，但现有真实世界数据集在任务多样性和环境覆盖上仍然有限，制约了鲁棒通用策略的训练。
+- 真实世界评估资源密集、耗时且易受实验噪声干扰，难以进行可复现的跨方法系统比较。</p>
+<p><strong>2. 现有模拟框架的局限性</strong>
+- 当前模拟工具多局限于简单物体操作或单房间场景，任务和环境分布狭窄。
+- 生成的数据集规模相对较小，无法涵盖真实世界机器人挑战的复杂性和多样性。
+- 缺乏对任务多样性、环境变化和数据规模如何影响策略泛化的系统性研究支持。</p>
+<p><strong>3. 通用机器人能力的系统性评估缺失</strong>
+- 领域缺乏涵盖多种学习范式（多任务学习、基础模型训练、终身学习）的综合基准测试。
+- 难以量化评估通用机器人在长时程规划、语义推理、移动操作等高阶能力上的表现。</p>
+<p>为填补这些空白，论文提出<strong>RoboCasa365</strong>——一个大规模家庭移动操作模拟基准，包含：
+- $365$个日常任务（涵盖$60$种厨房活动）
+- $2,500$个多样化厨房场景<br/>
+- 超过$2,000$小时的演示数据（$600+$小时真人演示，$1,600+$小时合成数据）
+- 针对多任务学习、基础模型训练和终身学习的系统性评估协议</p>
+<p>通过该框架，论文系统研究了任务多样性、数据集规模和环境变化对策略泛化的影响，为通用机器人学习提供了可复现的实验平台和新的研究洞察。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>该论文的相关研究主要涵盖以下三个方向：</p>
+<h2>1. 机器人模拟框架（Robot Simulation Frameworks）</h2>
+<p>现有工作可根据场景规模分为两类：</p>
+<p><strong>桌面级环境</strong><br/>
+- <strong>Robosuite</strong> (Zhu et al., 2020)、<strong>LIBERO</strong> (Liu et al., 2023)、<strong>RLBench</strong> (James et al., 2020) 等框架专注于桌面操作场景，支持抓取、放置等基础技能训练，但环境范围受限。</p>
+<p><strong>房间级环境</strong><br/>
+- <strong>AI2-THOR</strong> (Kolve et al., 2017)、<strong>Habitat 2.0</strong> (Szot et al., 2021)、<strong>BEHAVIOR-1K</strong> (Li et al., 2023) 和 <strong>RoboCasa</strong> (Nasiriany et al., 2024) 扩展至房间级场景模拟。其中 BEHAVIOR-1K 提供了大规模环境和任务多样性，但缺乏 accompanying 的大规模演示数据集；RoboCasa 包含 100k 演示覆盖 30 个任务和 100 个场景。</p>
+<p><strong>与 RoboCasa365 的区别</strong><br/>
+RoboCasa365 是首个同时满足以下条件的模拟框架：数百个任务（365 个）、数千个独特场景（2,500 个）、大规模高质量演示数据集（50 万+轨迹、2,200+小时），以及支持通用机器人模型训练和评估的完整基准套件。</p>
+<h2>2. 通用机器人的数据集与基准（Datasets and Benchmarks for Generalist Robots）</h2>
+<p><strong>真实世界数据集</strong><br/>
+- <strong>RT-1</strong> (Brohan et al., 2022)、<strong>BridgeData</strong> (Walke et al., 2023)、<strong>DROID</strong> (Khazatsky et al., 2024) 和 <strong>Open X-Embodiment</strong> (Open X-Embodiment Collaboration et al., 2023) 等推动了真实世界机器人数据集的规模化。然而，真实世界评估面临资源密集、难以复现和系统对比受限等挑战 (Atreya et al., 2025; Zhou et al., 2025)。</p>
+<p><strong>模拟基准的局限性</strong><br/>
+现有模拟基准通常局限于狭窄的任务和环境分布（如 Mandlekar et al., 2021; Zhu et al., 2020; Liu et al., 2023），难以支持对任务多样性、环境变化和泛化能力的系统研究。</p>
+<p><strong>规模对比</strong><br/>
+RoboCasa365 显著扩展了数据规模：包含 50 万+演示（相较于 RoboCasa 的 10 万），覆盖 300+ 任务（相较于以往的 30 个任务）和 2,500 个独特场景（相较于以往的 100 个）。</p>
+<h2>3. 通用机器人训练（Training Generalist Robots）</h2>
+<p><strong>视觉-语言-动作模型（VLAs）</strong><br/>
+近期研究聚焦于从大规模多样化数据集中学习通用策略，代表性工作包括：
+- <strong>RT-2</strong> (Brohan et al., 2023)
+- <strong>Octo</strong> (Octo Model Team et al., 2024)<br/>
+- <strong>OpenVLA</strong> (Kim et al., 2024)
+- <strong>GR00T N1.5</strong> (NVIDIA et al., 2025)
+- <strong>π0 / π0.5</strong> (Black et al., 2024; Physical Intelligence et al., 2025)</p>
+<p><strong>RoboCasa365 的定位</strong><br/>
+不同于提出特定模型架构，RoboCasa365 致力于创建<strong>模型无关的基准</strong>，用于系统评估上述模型在多任务训练、基础模型预训练-微调以及终身学习等不同设置下的能力，特别关注任务多样性、数据规模和环境变化对泛化性能的影响。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过构建 <strong>RoboCasa365</strong> 这一大规模模拟框架来解决上述问题，其核心解决方案围绕以下四个维度展开：</p>
+<h2>1. 构建全面的任务体系（Comprehensive Tasks）</h2>
+<p>为解决<strong>任务覆盖不足</strong>和<strong>缺乏多样化技能评估</strong>的问题，论文定义了 <strong>365 个日常任务</strong>，涵盖 60 种不同的厨房活动：</p>
+<ul>
+<li><strong>任务类型分层</strong>：</li>
+<li><strong>65 个原子任务（Atomic Tasks）</strong>：涵盖基础技能，如拾取放置（pick-and-place）、开关门窗/抽屉、旋转旋钮、按下按钮、插入操作和导航等</li>
+<li>
+<p><strong>300 个复合任务（Composite Tasks）</strong>：需要序列化执行多个技能的长时程任务，涉及语义推理、记忆依赖和长程规划</p>
+</li>
+<li>
+<p><strong>任务生成方法</strong>：利用大语言模型（LLM）生成任务蓝图（task blueprints），包括任务名称、高级描述、涉及物体/装置以及所需技能序列，确保任务多样性和语义丰富性</p>
+</li>
+<li>
+<p><strong>移动操作支持</strong>：其中 220 个任务需要移动操作（mobile manipulation），145 个可在固定位置完成，覆盖从简单到复杂的各种场景</p>
+</li>
+</ul>
+<h2>2. 创建高度多样化的环境（Diverse Environments）</h2>
+<p>为解决<strong>环境泛化能力评估困难</strong>的问题，论文构建了 <strong>2,500 个独特的厨房场景</strong>：</p>
+<ul>
+<li><strong>场景构成</strong>：每个场景由<strong>布局（layout）</strong>和<strong>风格（style）</strong>组合而成</li>
+<li><strong>预训练场景</strong>：50 个新布局（基于美国各地 50 套真实房源的 Zillow 数据构建）× 50 种风格 = 2,500 个预训练场景</li>
+<li>
+<p><strong>目标场景</strong>：10 个固定布局 × 10 种风格 = 10 个目标评估场景，确保与预训练场景无重叠</p>
+</li>
+<li>
+<p><strong>资产库扩展</strong>：</p>
+</li>
+<li>新增 57 个物体类别的高质量 3D 资产（总计 3,200+ 物体）</li>
+<li>扩展可交互装置至 456 个实例，涵盖 12 个类别（搅拌机、洗碗机、电热水壶、烤面包机等），其中冰箱、烤箱、洗碗机等首次实现关节化建模</li>
+</ul>
+<h2>3. 提供大规模多样化数据集（Large-Scale Data）</h2>
+<p>为解决<strong>数据规模不足</strong>和<strong>收集成本高昂</strong>的问题，论文提供了超过 <strong>2,200 小时</strong>的机器人交互数据：</p>
+<ul>
+<li><strong>人工演示数据（600+ 小时）</strong>：</li>
+<li>预训练阶段：300 个任务 × 100 次演示 = 30,000 条轨迹（404 小时）</li>
+<li>
+<p>目标阶段：50 个代表性任务 × 500 次演示 = 25,000 条轨迹（208 小时）</p>
+</li>
+<li>
+<p><strong>合成数据生成（1,600+ 小时）</strong>：</p>
+</li>
+<li>
+<p>使用 <strong>MimicGen</strong> 数据生成工具，以 100 条人工演示为种子，为 60 个原子任务各生成 10,000 条合成演示，实现数据规模 100 倍扩展</p>
+</li>
+<li>
+<p><strong>数据覆盖策略</strong>：</p>
+</li>
+<li>预训练数据覆盖 300 个任务（235 个复合 + 65 个原子）</li>
+<li>目标数据分为三个评估集：原子任务（18 个）、已见复合任务（16 个）、未见复合任务（16 个），用于测试零样本泛化能力</li>
+</ul>
+<h2>4. 建立系统性基准测试协议（Systematic Benchmarking）</h2>
+<p>为解决<strong>缺乏可复现评估标准</strong>的问题，论文设计了覆盖三种关键学习范式的评估框架：</p>
+<h3>（1）大规模多任务学习（Massively Multi-Task Training）</h3>
+<ul>
+<li>在 300 个任务的混合数据上训练语言条件的视觉策略</li>
+<li>评估在已见任务（Atomic、Composite-Seen）和未见任务（Composite-Unseen）上的零样本泛化能力</li>
+</ul>
+<h3>（2）基础模型训练与微调（Foundation Model Training）</h3>
+<ul>
+<li><strong>两阶段范式</strong>：先在 2,500 个场景的预训练数据上预训练，再在 10 个目标场景的特定任务上微调</li>
+<li>测试不同数据量（10%、30%、100% 目标数据）下的数据效率，证明预训练可实现约 <strong>3 倍数据效率提升</strong></li>
+</ul>
+<h3>（3）终身学习（Lifelong Learning）</h3>
+<ul>
+<li>设计四阶段渐进式学习协议：</li>
+<li>阶段 1：65 个原子任务</li>
+<li>阶段 2：20 个 2-3 步子任务</li>
+<li>阶段 3：20 个 4-5 步子任务  </li>
+<li>阶段 4：20 个 6+ 步子任务</li>
+<li>评估模型在学习新长时程任务时保持旧任务能力的<strong>灾难性遗忘</strong>问题</li>
+</ul>
+<h2>5. 真实世界验证（Real-World Validation）</h2>
+<p>为验证模拟到现实的迁移能力，论文还建立了<strong>仿真-现实协同训练</strong>（Sim-and-Real Co-Training）流程：
+- 在模拟数据上进行中间训练（mid-training），再联合真实世界数据微调
+- 在真实厨房环境中，使用 Panda 机器人臂测试 4 个真实任务，证明加入模拟数据后比仅用真实数据训练平均成功率提升 <strong>18.1%</strong>（61.8% → 79.8%）</p>
+<p>通过上述系统性设计，RoboCasa365 提供了一个<strong>可复现、可扩展、多维度</strong>的研究平台，使研究者能够系统分析任务多样性、数据规模、环境变化等因素对通用机器人策略泛化性能的影响。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文进行了系统性的实验研究，围绕<strong>多任务学习</strong>、<strong>基础模型训练</strong>、<strong>终身学习</strong>、<strong>数据组成分析</strong>和<strong>真实世界验证</strong>五个维度展开。具体实验内容如下：</p>
+<h2>1. 大规模多任务学习（Multi-Task Training）</h2>
+<p><strong>实验设置</strong>：
+- 在包含 <strong>300 个预训练任务</strong> 的人工演示数据集上训练（每个任务 100 次演示，总计 30,000 次）
+- 使用语言条件的视觉策略，输入包括第三人称相机图像、腕部相机图像、本体感知信息和语言指令
+- 评估在 <strong>50 个目标任务</strong> 上的表现，分为三类：
+  - <strong>Atomic（18 个）</strong>：原子技能任务
+  - <strong>Composite-Seen（16 个）</strong>：预训练阶段见过的复合任务
+  - <strong>Composite-Unseen（16 个）</strong>：预训练阶段未见的复合任务（零样本测试）</p>
+<p><strong>对比方法</strong>：
+- <strong>Diffusion Policy</strong>（扩散策略）
+- <strong>π0</strong> 与 <strong>π0.5</strong>（基于 Flow Matching 的 VLA 模型）
+- <strong>GR00T N1.5</strong>（NVIDIA 的 System1-System2 架构模型）</p>
+<p><strong>主要发现</strong>：
+- GR00T N1.5 表现最优（平均成功率 20.0%），显著优于 Diffusion Policy（6.1%）
+- 原子任务最容易（GR00T N1.5 达 43.0%），复合任务困难，未见复合任务最具挑战性（仅 4.4%）
+- 高容量视觉-语言-动作模型比传统模仿学习方法更适合大规模多任务学习</p>
+<h2>2. 基础模型训练与微调（Foundation Model Training）</h2>
+<p><strong>实验设置</strong>：
+- <strong>预训练阶段</strong>：使用 300 个任务的人工数据（404 小时）+ 60 个原子任务的 MimicGen 合成数据（1,615 小时）
+- <strong>微调阶段</strong>：在 50 个目标任务上分别使用 <strong>10%、30%、100%</strong> 的数据量（即每任务 50、150、500 次演示）进行后训练
+- 评估在目标场景（10 个固定厨房）中的性能</p>
+<p><strong>对比条件</strong>：
+- 仅预训练（Pretraining Only）
+- 仅目标数据训练（Target Only）
+- 预训练 + 目标数据微调（Pretraining + Target）</p>
+<p><strong>主要发现</strong>：
+- 预训练显著提高了数据效率，实现约 <strong>3 倍数据效率提升</strong>（即使用 10% 目标数据达到接近仅目标数据 30% 的性能）
+- 对 <strong>Composite-Unseen</strong> 任务提升最明显（从 33.3% 提升至 42.1%，使用 100% 目标数据时）
+- 预训练模型在原子任务上表现强劲（68.5%），但在长时程复合任务上仍有提升空间</p>
+<h2>3. 终身学习（Lifelong Learning）</h2>
+<p><strong>实验设置</strong>：
+- 设计 <strong>四阶段渐进式学习协议</strong>，模拟机器人持续学习新技能的场景：
+  - <strong>阶段 1</strong>：65 个原子任务（基础技能）
+  - <strong>阶段 2</strong>：20 个新的 2-3 步复合任务
+  - <strong>阶段 3</strong>：20 个新的 4-5 步复合任务<br/>
+  - <strong>阶段 4</strong>：20 个新的 6+ 步长时程任务
+- 每阶段在前一阶段模型基础上微调，仅使用当前阶段数据
+- 每阶段结束后评估<strong>所有已见任务</strong>（当前及之前阶段）的性能</p>
+<p><strong>主要发现</strong>：
+- <strong>灾难性遗忘</strong>：随着学习阶段推进，旧任务性能持续下降（阶段 1 任务从 41.5% 降至阶段 4 后的 10.6%）
+- <strong>长时程任务学习困难</strong>：阶段 4 的 6+ 步任务成功率仅 4.3%，且学习新长时程任务会进一步损害旧任务性能
+- 当前方法在平衡新知识获取与旧知识保持方面存在显著挑战</p>
+<h2>4. 预训练数据组成分析（Pretraining Data Composition Study）</h2>
+<p><strong>实验设置</strong>：
+- 研究预训练数据的<strong>任务多样性</strong>和<strong>数据类型</strong>对下游性能的影响
+- 在 <strong>10% 和 100%</strong> 目标数据两种情况下测试
+- 对比四种预训练数据配置：
+  - <strong>无预训练</strong>（No Pretraining）
+  - <strong>Human50</strong>：50 个任务的人工数据
+  - <strong>Human300</strong>：300 个任务的人工数据
+  - <strong>Human300 + MG60</strong>：300 个人工任务 + 60 个 MimicGen 合成任务</p>
+<p><strong>主要发现</strong>：
+- <strong>合成数据质量</strong>：仅使用人工数据（Human300）比混合 MimicGen 合成数据（Human300 + MG60）表现更好，表明合成数据质量参差不齐，需要更有效的利用方法
+- <strong>任务多样性的价值</strong>：从 50 个任务扩展到 300 个任务，在低数据情况下（10% 目标数据）平均成功率从 34.7% 提升至 40.0%，尤其对未见复合任务（Composite-Unseen）提升显著（23.8% → 32.3%）</p>
+<h2>5. 真实世界验证（Real-World Experiments）</h2>
+<p><strong>实验设置</strong>：
+- 在真实厨房环境中使用 <strong>DROID Panda 机械臂</strong>和三台相机
+- 测试 4 个真实任务：
+  - <strong>CloseElectricKettleLid</strong>（关闭电热水壶盖）
+  - <strong>PickPlaceToasterOvenToCounter</strong>（从烤面包机取物放到台面）
+  - <strong>PickPlaceCounterToCabinet</strong>（从台面取物放到橱柜）
+  - <strong>PlaceOnDishRack</strong>（长时程任务：将两个物品从水槽放到碗碟架）
+- 收集 140 次真实演示（前三个任务各 30 次，最后一个 50 次）</p>
+<p><strong>对比条件</strong>：
+- <strong>Real Only</strong>：仅用真实数据训练
+- <strong>Sim-and-Real (Ours)</strong>：先在模拟数据上预训练（使用模拟中表现最好的 150 个任务），再联合真实数据与对应任务的模拟数据进行协同微调（co-finetune），并重新渲染模拟图像以匹配真实相机视角</p>
+<p><strong>主要发现</strong>：
+- <strong>Sim-and-Real</strong> 训练平均成功率达 <strong>79.8%</strong>，显著优于仅真实数据训练的 <strong>61.8%</strong>（提升 18.1%）
+- 在 <strong>PickPlaceToasterOvenToCounter</strong> 和 <strong>PickPlaceCounterToCabinet</strong> 任务上提升最为明显（分别提升 30% 和 32%）
+- 验证了模拟数据对真实世界策略学习的有效迁移价值</p>
+<h2>6. 补充实验（附录）</h2>
+<p><strong>预训练场景多样性（Appendix H.1）</strong>：
+- 比较在 5、25、2,500 个不同预训练场景上训练的效果
+- 发现场景多样性对零样本泛化和微调性能均有显著影响（2,500 场景 vs 5 场景：零样本 44.7% vs 29.6%）</p>
+<p><strong>鲁棒性评估（Appendix H.2）</strong>：
+- 测试模型对以下扰动的鲁棒性：
+  - 新颖语言表达（Novel Language）
+  - 相机位姿扰动（Camera Pose Perturbations）
+  - 初始关节角度噪声（Initial Joint Noise）
+  - 初始基座位姿噪声（Initial Base Pose Noise）
+- 发现模型对语言变化相对鲁棒，但对相机视角、初始构型变化敏感</p>
+<p><strong>训练策略对比（Appendix H.3-H.4）</strong>：
+- <strong>联合训练 vs 两阶段训练</strong>：联合训练所有数据（22.5%）显著劣于预训练+微调的两阶段策略（51.1%）
+- <strong>LoRA 微调 vs 全参数微调</strong>：LoRA 微调性能极差（平均 1.2%），全参数微调对高性能至关重要（平均 20.0%）</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>基于论文的实验结果与局限性，未来研究可从以下维度进一步探索：</p>
+<h2>1. 算法与模型架构改进</h2>
+<p><strong>长时程任务规划与执行</strong><br/>
+当前模型在 6+ 步长时程任务上成功率极低（阶段 4 仅 4.3%）。可探索：
+- 分层强化学习（Hierarchical RL）或任务分解方法，将长序列分解为可复用的子技能
+- 显式记忆机制与状态跟踪，处理跨长时间窗口的依赖关系
+- 结合符号规划与神经网络策略的混合方法</p>
+<p><strong>终身学习与灾难性遗忘缓解</strong><br/>
+实验显示阶段 1 任务性能从 41.5% 衰减至 10.6%（阶段 4 后）。可研究：
+- 经验回放（Experience Replay）与弹性权重巩固（EWC）等正则化技术
+- 模块化架构（如专家混合 MoE），为新任务动态分配子网络
+- 元学习方法，使模型快速适应新任务同时保留旧知识</p>
+<p><strong>高效微调与适配技术</strong><br/>
+论文发现 LoRA 微调性能极差（1.2% vs 全参数微调 20.0%）。需开发：
+- 更适合机器人策略学习的参数高效微调（PEFT）方法
+- 适配器（Adapter）或提示微调（Prompt Tuning）在 VLA 模型中的应用
+- 降低计算成本的渐进式微调策略</p>
+<h2>2. 数据生成与合成</h2>
+<p><strong>高质量合成数据生成</strong><br/>
+MimicGen 生成的数据质量参差不齐，混合后反而降低性能。改进方向：
+- 基于物理的轨迹优化或基于模型的数据增强
+- 利用生成式模型（如视频扩散模型）生成更真实的演示
+- 人机协同数据生成，结合人工纠正与自动扩展</p>
+<p><strong>多模态数据扩展</strong><br/>
+当前数据主要依赖视觉与本体感知。可扩展至：
+- 触觉与力反馈数据，提升精细操作（如关闭水壶盖、翻转锅中食物）
+- 音频模态（如听水壶沸腾声、烤箱定时器提示）
+- 多视角动态相机策略，而非固定相机位姿</p>
+<h2>3. 环境多样性扩展</h2>
+<p><strong>跨场景泛化</strong><br/>
+论文明确指出当前局限在厨房环境。未来可：
+- 扩展至卧室、客厅、浴室、办公室等多样化场景
+- 建立跨房间的任务序列（如从卧室取物到厨房使用）
+- 引入户外或半结构化环境（如阳台、车库）</p>
+<p><strong>动态与交互式环境</strong><br/>
+当前环境相对静态。可探索：
+- 多智能体交互（人机协作任务）
+- 动态环境变化（如烹饪过程中食物状态变化、溢出锅具处理）
+- 可变形物体操作（如揉面团、铺床叠被）</p>
+<h2>4. 鲁棒性与泛化能力提升</h2>
+<p><strong>视觉与几何鲁棒性</strong><br/>
+实验显示模型对相机位姿、初始关节角度和基座位姿敏感。改进方向：
+- 域随机化（Domain Randomization）在相机参数和初始状态上的系统应用
+- 视角不变性表征学习（View-invariant Representation Learning）
+- 主动感知策略，允许机器人移动以获取更好视角</p>
+<p><strong>语言与指令泛化</strong><br/>
+测试模型对新颖语言表达（Novel Language）的鲁棒性：
+- 组合泛化：将已见动词与新宾语组合
+- 多语言指令理解与跨语言迁移
+- 模糊或隐含指令的推理（如"准备早餐"需自动推断子步骤）</p>
+<h2>5. 模拟到现实迁移（Sim-to-Real）</h2>
+<p><strong>更紧密的仿真-现实对齐</strong><br/>
+虽然论文展示了初步的 sim-and-real 协同训练效果，仍可深入：
+- 基于神经渲染（NeRF/Gaussian Splatting）的照片级场景重建
+- 物理参数辨识与自适应，处理仿真中未建模的摩擦、接触动力学
+- 零样本迁移技术，减少对真实世界微调的依赖</p>
+<p><strong>真实世界持续学习</strong><br/>
+结合模拟预训练与真实世界主动学习：
+- 不确定性引导的数据收集，针对失败案例自动采样
+- 人在回路中的高效纠正机制
+- 联邦学习框架，聚合多机器人真实世界经验</p>
+<h2>6. 评估协议与基准扩展</h2>
+<p><strong>细粒度能力分析</strong><br/>
+当前评估基于二元成功率。可建立：
+- 子任务完成度指标（Partial Completion Metrics）
+- 效率评估（路径长度、执行时间 vs 人类演示）
+- 安全性与社交合规性评估（避免碰撞、保持安全距离）</p>
+<p><strong>开放世界学习</strong><br/>
+从封闭的任务集合转向开放世界：
+- 自主任务发现与技能获取
+- 基于互联网视频的任务学习与模仿
+- 终身自主改进与自我监督学习框架</p>
+<p>这些方向既可解决论文中暴露的具体技术瓶颈（如长时程规划、灾难性遗忘），也可扩展基准的适用范围（跨场景、多模态、开放世界），推动通用机器人向更复杂、更真实的应用场景迈进。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>该论文提出 <strong>RoboCasa365</strong>，一个面向通用机器人训练与评估的大规模模拟框架，并基于该框架系统研究了影响机器人泛化能力的关键因素。</p>
+<h2>1. 研究背景与动机</h2>
+<p>通用机器人学习领域面临两大核心挑战：
+- <strong>数据瓶颈</strong>：真实世界机器人数据收集成本高昂，现有数据集在任务多样性和环境覆盖上受限，制约了通用策略的训练
+- <strong>评估困境</strong>：真实世界评估资源密集、难以复现，而现有模拟框架多局限于狭窄的任务分布（如简单桌面操作或单房间场景），缺乏对任务多样性、环境变化与数据规模如何影响泛化的系统性研究支持</p>
+<h2>2. RoboCasa365 框架</h2>
+<p>基于 RoboCasa 平台扩展，RoboCasa365 构建了目前规模最大、多样性最丰富的家庭移动操作模拟环境，包含四个核心组件：</p>
+<h3>任务体系（365 个日常任务）</h3>
+<ul>
+<li><strong>65 个原子任务</strong>：基础技能（拾取放置、开关抽屉/门窗、旋转旋钮、导航等）</li>
+<li><strong>300 个复合任务</strong>：通过大语言模型生成的长时程任务蓝图，涵盖 60 种厨房活动（烹饪、清洁、食材准备、餐具整理等），需序列化执行多步骤技能，涉及语义推理与记忆依赖</li>
+<li>其中 220 个任务需要移动操作（Mobile Manipulation），145 个为固定位置操作</li>
+</ul>
+<h3>环境多样性（2,500 个厨房场景）</h3>
+<ul>
+<li><strong>预训练场景</strong>：基于美国 50 套真实房源（Zillow 数据）构建 50 种布局 × 50 种风格 = 2,500 个独特场景</li>
+<li><strong>目标场景</strong>：10 个固定评估场景（10 布局 × 10 风格），与预训练场景无重叠</li>
+<li><strong>资产库</strong>：3,200+ 物体（153+57 类别），456 个可交互装置实例（洗碗机、冰箱、烤箱、搅拌机等 12 类别），其中大型家电首次实现关节化建模</li>
+</ul>
+<h3>大规模数据集（2,200+ 小时）</h3>
+<ul>
+<li><strong>人工演示</strong>：612 小时（预训练 300 任务 × 100 次演示 + 目标 50 任务 × 500 次演示）</li>
+<li><strong>合成数据</strong>：使用 MimicGen 生成 1,615 小时数据（60 个原子任务各 10,000 条轨迹），实现数据规模 100 倍扩展</li>
+</ul>
+<h3>系统性基准协议</h3>
+<p>支持三种关键学习范式的评估：
+- <strong>大规模多任务学习</strong>：在 300 任务混合数据上训练，测试已见与零样本未见任务
+- <strong>基础模型训练</strong>：预训练（2,500 场景）+ 微调（10 场景目标数据），评估数据效率与迁移能力
+- <strong>终身学习</strong>：四阶段渐进学习（原子任务 → 2-3 步复合 → 4-5 步复合 → 6+ 步长时程），评估持续学习能力与灾难性遗忘</p>
+<h2>3. 主要实验发现</h2>
+<h3>多任务学习性能</h3>
+<p>在 300 任务数据集上对比 Diffusion Policy、$\pi 0$、$\pi 0.5$ 和 GR00T N1.5 发现：
+- GR00T N1.5 表现最优（平均成功率 20.0%），显著优于 Diffusion Policy（6.1%），表明高容量视觉-语言-动作模型更适合大规模多任务学习
+- 原子任务最容易（43.0%），复合任务困难，<strong>未见复合任务</strong>最具挑战性（4.4%），揭示零样本任务泛化仍为重大挑战</p>
+<h3>基础模型训练的价值</h3>
+<ul>
+<li><strong>数据效率</strong>：预训练可实现约 <strong>3 倍数据效率</strong>（使用 10% 目标数据达到无预训练时 30% 数据的性能）</li>
+<li><strong>任务多样性关键</strong>：预训练任务从 50 个增至 300 个，在低数据情况下对未见复合任务提升显著（23.8% → 32.3%）</li>
+<li><strong>合成数据质量</strong>：MimicGen 合成数据质量参差不齐，混合使用反而降低性能，需开发更有效的合成数据利用方法</li>
+</ul>
+<h3>终身学习的挑战</h3>
+<p>四阶段渐进学习实验显示：
+- <strong>灾难性遗忘严重</strong>：阶段 1 任务性能从 41.5% 衰减至阶段 4 后的 10.6%
+- <strong>长时程任务困难</strong>：6+ 步任务成功率仅 4.3%，且学习新长时程任务会进一步损害旧任务性能</p>
+<h3>真实世界迁移</h3>
+<p>通过 Sim-and-Real 协同训练（模拟预训练 + 真实微调）在 4 个真实厨房任务中验证：
+- 相比仅用真实数据（61.8%），加入模拟数据后成功率达 <strong>79.8%</strong>（提升 18.1%），验证了框架对真实世界策略学习的有效支持</p>
+<h2>4. 结论与局限性</h2>
+<p>RoboCasa365 提供了目前最全面的通用机器人模拟基准，通过系统实验揭示了：
+- 任务多样性、数据规模与场景多样性对泛化的定量影响
+- 当前方法在长时程规划、终身学习和零样本任务泛化上的显著不足</p>
+<p><strong>当前局限</strong>：
+- 环境仅限于厨房场景，未涵盖其他家庭区域或户外环境
+- 模拟环境的物理与感官复杂度仍不及真实世界，存在 sim-to-real 差距</p>
+<p>该框架为通用机器人算法开发、可复现评估及模拟-现实迁移研究提供了重要基础设施。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是RoboCasa365%3A%20A%20Large-Scale%20Simulation%20Framework%20for%20Training%20and%20Benchmarking%20Generalist%20Robots，链接是 https://arxiv.org/pdf/2603.04356 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2603.04356 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="robocasa365">RoboCasa365：仿真任务、示范轨迹与视频预览</h1>
+<p>核验日期：2026-09-22。RoboCasa365（ICLR 2026，arXiv:2603.04356）在 MuJoCo / RoboSuite 中定义 <strong>365 项厨房任务：65 原子任务、300 复合任务</strong>，覆盖约 2,500 个厨房环境。训练数据包含 RGB 相机、动作、本体状态、任务语言，以及可回放的仿真状态；它不是持续一天的真实人类视频库。<a href="https://arxiv.org/html/2603.04356v1" target="_blank" rel="noopener">论文</a>、<a href="https://robocasa.ai/" target="_blank" rel="noopener">项目</a>、<a href="https://github.com/robocasa/robocasa" target="_blank" rel="noopener">官方仓库</a></p>
+<table>
+<thead>
+<tr>
+<th>当前官方数据说明</th>
+<th>任务 / 场景</th>
+<th style="text-align: right;">每任务示范</th>
+<th style="text-align: right;">官方时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人工预训练数据</td>
+<td>300 任务 / 2,500 场景</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">482 小时</td>
+</tr>
+<tr>
+<td>MimicGen 合成预训练数据</td>
+<td>60 原子任务 / 2,500 场景</td>
+<td style="text-align: right;">约 10,000</td>
+<td style="text-align: right;">1,615 小时</td>
+</tr>
+<tr>
+<td>人工目标任务数据</td>
+<td>50 任务 / 10 个独立目标厨房</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">193 小时</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>不将任务数当作互不重叠类别相加</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;"><strong>约 2,290 小时</strong></td>
+</tr>
+</tbody>
+</table>
+<p>以上为<a href="https://robocasa.ai/docs/datasets/datasets_overview.html" target="_blank" rel="noopener">当前官方文档</a>的发布规模，未下载全部轨迹逐一计数。论文 v1 Table 7 对应为 404 / 1,615 / 208 小时，当前文档有更新，故没有把这两种口径拼成一个数字。目标任务划分为 18 atomic-seen、16 composite-seen、16 composite-unseen。</p>
+<p><strong>视频与 episode 的长度</strong>：论文 Figure 4 讨论 55,000 条人工示范，称大多数在 <strong>10–60 秒</strong>，存在超过 <strong>3 分钟</strong>的长尾。当前数据采用 LeRobot 格式，一条 episode 有多个相机 MP4，以及逐步动作/状态记录；环境与控制器为 <strong>20 Hz</strong>。相机并行观察不能乘到独立任务执行时长中。</p>
+<p>本次还取得官方网页用于显示的 <strong>365 项任务的 episode 时长中位数</strong>，整理为 <a href="metadata/task_episode_medians.csv">task_episode_medians.csv</a>。这些数已取整：65 原子任务的中位数分布在 <strong>5–46 秒</strong>，300 复合任务在 <strong>10–166 秒</strong>。例如 OpenCabinet 为 35 秒，ArrangeBreadBasket 83 秒，PrepareCoffee 39 秒，DivideBuffetTrays 166 秒。这是<strong>各任务的中位数范围</strong>，不是全体 episode 的最短/最长范围，也不是本次完整下载后重新统计的结果。<a href="https://github.com/robocasa/robocasa-web/blob/main/docs/atomic_tasks/atomic_episode_lengths.js" target="_blank" rel="noopener">官方原子统计脚本</a>、<a href="https://github.com/robocasa/robocasa-web/blob/main/docs/composite_tasks/composite_episode_lengths.js" target="_blank" rel="noopener">复合统计脚本</a></p>
+<p>上述脚本的 <code>mean_seconds</code> 字段与 <code>median_seconds</code> 相同，文件注释说明其来自取整后的 median 数据；因此这里按中位数记录。脚本分成 61 个基本原子项和 304 个其余项，其中含 4 个多步骤原子项；CSV 按正式 65 / 300 任务分类另列 <code>benchmark_class</code>，同时保留原始来源类别。</p>
+<p>另一个容易混淆的量是 <strong>evaluation horizon</strong>。当前 <code>dataset_registry.py</code> 注册 317 个带数据路径的任务（65 原子、252 复合），控制上限为 <strong>300–7,200 步</strong>，按 20 Hz 相当于 <strong>15–360 秒的标称执行预算</strong>，并非真实示范时长。官网在 v1.0.1 将 horizon 统一增加为原来的 1.5 倍；运行评测应记录版本。<a href="metadata/task_horizons.csv">每个已注册任务的 horizon</a>、<a href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py" target="_blank" rel="noopener">官方 registry</a></p>
+<p>本地预览共展示 <strong>4 组 × 100 = 400 帧</strong>，均解码自官方公开视频：</p>
+<table>
+<thead>
+<tr>
+<th>预览组</th>
+<th>来源</th>
+<th>实测 MP4 播放长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoboCasa365 原子任务</td>
+<td>当前任务文档：OpenCabinet</td>
+<td>21.9 秒</td>
+</tr>
+<tr>
+<td>RoboCasa365 复合任务</td>
+<td>当前任务文档：ArrangeBreadBasket</td>
+<td>59.900 秒（不是统计中位数 83 秒）</td>
+</tr>
+<tr>
+<td>平台基础技能合辑</td>
+<td>平台早期官网演示：抓放、门、拨杆、旋钮、按钮，各 20 帧</td>
+<td>6.033、3.8、2.75、7.333、1.867 秒</td>
+</tr>
+<tr>
+<td>平台复合任务合辑</td>
+<td>平台早期官网演示：蒸蔬菜 34 帧、补货 33 帧、煮咖啡 33 帧</td>
+<td>12.875、6.25、13.042 秒</td>
+</tr>
+</tbody>
+</table>
+<p>当前两个任务视频来自任务文档脚本引用的官方 R2 地址，是三个相机视角的并排演示。后两组明确标为平台旧演示；它们能展示动作类型，但不代表 365 任务最新数据的随机样本。按钮和拨杆原片不足 100 个真实帧，因此按合辑均匀取样，没有复制单帧补数。</p>
+<p>所有 10 个保存的视频在下载前均确认单文件严格小于 <strong>100,000,000 bytes</strong>；最大为 20.40 MB，总计约 <strong>30.31 MB</strong>。8 个静态站点媒体还与官方网站 Git 仓库 blob SHA 逐个核对一致。本次没有下载完整训练数据或安装模拟器。<a href="metadata/demo_durations.csv">全部演示实测长度 CSV</a>、<a href="project.json">逐帧来源</a>、<a href="metadata/demo_integrity.json">媒体一致性核验</a></p>
+<p>论文模型结果按 arXiv v1 的评测条件记录，本次未运行模型。Table 1 用 300 任务的人工预训练数据进行多任务训练，GR00T N1.5 平均成功率 <strong>20.0%</strong>，Diffusion Policy 为 <strong>6.1%</strong>；GR00T 在 atomic、composite-seen、composite-unseen 上分别为 43.0%、9.6%、4.4%。Table 2 的基础模型训练实验中，完整目标数据下“预训练 + 目标后训练”为 <strong>51.1%</strong>，只训练目标数据为 <strong>43.7%</strong>。这两个表的训练数据设置不同，51.1% 不能直接当作对 Table 1 中 20.0% 的同条件模型提升。<a href="https://arxiv.org/html/2603.04356v1#S4" target="_blank" rel="noopener">原始结果表</a></p>
+<p>文件清单：<a href="overview.md">overview</a>、<a href="project.json">project.json</a>、<a href="sources/README.md">官方源码/文档快照</a>。下载与使用说明见 <a href="https://robocasa.ai/docs/datasets/using_datasets.html" target="_blank" rel="noopener">官方数据文档</a>。</p>
+<h2 id="_1">第二版短视频展示</h2>
+<p>本次第二版预览把本地完整副本不超过 <strong>180 秒</strong> 的视频改为直接播放的 video case 卡片，不再为这些短视频重复生成 100 帧图片；较长视频、没有安全本地副本的视频仍保留抽帧预览。当前项目检测到 <strong>10 个</strong>短视频 case，播放文件均小于 100 MB；页面中的时长、大小与 SHA-256 来自本地文件核验。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

@@ -1,0 +1,10 @@
+url,size_bytes,duration_seconds,fps,width,height,full_download,sha256
+https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_oil-sim.mp4,3566813,21.266666666666666,30.0,1024,512,True,3b7f3df0765438103301e65c46d9522cf44b351ceb0614a509dbd90c93c51411
+https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-sim.mp4,2414704,15.133333333333333,30.0,1024,512,True,24a85d0bbeef966ac643b77b8e07aa94f41dcf9557613547129de2880633c94d
+https://robin-lab.cs.utexas.edu/HALO/videos/storeallbreads-sim.mp4,4228449,34.86666666666667,30.0,1024,512,True,b5a63dbdc4dc4ecb340eb2c069389c7cee5d3a9a138d055e6d7443ce646f27c5
+https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-sim.mp4,2406743,37.166666666666664,30.0,1024,512,True,e25acb93d3ab15da6341911af9889cc4318e8cf785134c6b621206e7d35ce444
+https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_granola_bar.mp4,1628738,19.5,30.0,256,256,True,80d3aa881b3b854f598cf6d97890514caf7ddb1a2d15cd8428400003f6b59a5c
+https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-success-left1-4x.mp4,9991298,8.033333333333333,30.0,3840,2160,True,e6ea63598982939174458472c1badb17baead1b12e00ce787bb135c828f7aed4
+https://robin-lab.cs.utexas.edu/HALO/videos/put_two_chips_packet-1-4x.mp4,10467198,29.566666666666666,30.0,3840,2160,True,403348dc092bc1b40c57d13bb682ab768a566f7ea93459333c3766e065c57b34
+https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-wait-for-8-minutes-4x.mp4,20763298,123.86666666666666,30.0,3840,2160,True,88785659e574e07d535f4d27486c929d0f8e1a16ffab15d8be50d25d0dabf9ba
+https://robin-lab.cs.utexas.edu/HALO/videos/store-3-human-1-robot-2-4x.mp4,9963203,12.7,30.0,3840,2160,True,890cea6369d29ac6e05a57d6edec590c8d228cb64b5dbe7bbf2d257b06a9020b

@@ -1,0 +1,60 @@
+{
+  "website_revision": "2f3217831cf5e80b209173b1874495cf89d7de45",
+  "files": [
+    {
+      "path": "samples/demo1_blur_middle_section.mp4",
+      "source_git_blob_sha1": "5f21ecd0a64388e1d878efb8f786576f74d83cf6",
+      "verified": true
+    },
+    {
+      "path": "samples/demo1_blur_bottom_section.mp4",
+      "source_git_blob_sha1": "112df941c7760ff38d5b0de1704f2c483afef938",
+      "verified": true
+    },
+    {
+      "path": "samples/demo1_blur_top_section.mp4",
+      "source_git_blob_sha1": "cfce2c7218533ba182cc4817207a47a51e80caf1",
+      "verified": true
+    },
+    {
+      "path": "samples/demo2_blur_middle_section.mp4",
+      "source_git_blob_sha1": "27be529e67dd276ed21cb89433077fdc7a256bd6",
+      "verified": true
+    },
+    {
+      "path": "samples/demo2_blur_bottom_section.mp4",
+      "source_git_blob_sha1": "e9eb06a7a77f49890731230ebcba9da11b271c13",
+      "verified": true
+    },
+    {
+      "path": "samples/demo2_blur_top_section.mp4",
+      "source_git_blob_sha1": "c221343eaf1120273ac511a838f1e2238b7f5fcb",
+      "verified": true
+    },
+    {
+      "path": "samples/EntityLog.mp4",
+      "source_git_blob_sha1": "20c507c4f9b0573bd7214aa34f33b87831ccea0d",
+      "verified": true
+    },
+    {
+      "path": "samples/EventRecall.mp4",
+      "source_git_blob_sha1": "5455573f45ae869c86a345d4a5610da68d8e9747",
+      "verified": true
+    },
+    {
+      "path": "samples/TaskMaster.mp4",
+      "source_git_blob_sha1": "6935e03f91bb9e4d0ee6700b5b5cab6cbf813c03",
+      "verified": true
+    },
+    {
+      "path": "samples/RelationMap.mp4",
+      "source_git_blob_sha1": "8cc0fc874fcb3f8ee167a5e3a0f0ed97d7eb46f3",
+      "verified": true
+    },
+    {
+      "path": "samples/HabitInsight.mp4",
+      "source_git_blob_sha1": "e0bcb78a2b9d830d17fb4fe5a28ae33d1e8812f5",
+      "verified": true
+    }
+  ]
+}

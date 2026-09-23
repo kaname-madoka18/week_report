@@ -1,0 +1,50 @@
+[
+  {
+    "file": "samples/basic_skills-pnp-github.mp4",
+    "bytes": 613427,
+    "git_blob_sha": "7fb08e0f3d483f6781bcd957ed552fc68f769955",
+    "verified": true
+  },
+  {
+    "file": "samples/basic_skills-door.mp4",
+    "bytes": 368924,
+    "git_blob_sha": "4e230e281a30145060ffd2b4aeaef9c39a6fc66f",
+    "verified": true
+  },
+  {
+    "file": "samples/basic_skills-lever-github.mp4",
+    "bytes": 177469,
+    "git_blob_sha": "92957b18b31fd270d380d1a52284245d9101f033",
+    "verified": true
+  },
+  {
+    "file": "samples/basic_skills-knob-github.mp4",
+    "bytes": 269196,
+    "git_blob_sha": "adb7b8846d45913e3b12fdb23fddf9e8e316514f",
+    "verified": true
+  },
+  {
+    "file": "samples/basic_skills-button.mp4",
+    "bytes": 211613,
+    "git_blob_sha": "3001f208ad39211200862f71c3c6543b1f49725e",
+    "verified": true
+  },
+  {
+    "file": "samples/composite_tasks-steaming_veg.mp4",
+    "bytes": 1653291,
+    "git_blob_sha": "3bb17b70b3dc0b41ace5d34958ea885e3bdd8a89",
+    "verified": true
+  },
+  {
+    "file": "samples/composite_tasks-restock.mp4",
+    "bytes": 566454,
+    "git_blob_sha": "51faaf50a095b9ccbc46ade7cee56eee5d712ede",
+    "verified": true
+  },
+  {
+    "file": "samples/composite_tasks-brewing_coffee.mp4",
+    "bytes": 1710098,
+    "git_blob_sha": "f5a648a67d6cc00c5cc77e90160ff311b22934ab",
+    "verified": true
+  }
+]

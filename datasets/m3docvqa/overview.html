@@ -1,0 +1,236 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M3DocVQA / M3DocRAG · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">M3DocVQA / M3DocRAG</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-11-07</strong></div><div><span>引用数</span><strong>128</strong></div><div><span>GitHub stars</span><strong>70</strong></div><div><span>当前状态</span><strong>ICCV 2025 Workshop · Findings（M3DocVQA）</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2411.04952" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/bloomberg/m3docrag" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/226787d438bc47f986f82625d6b74fa6f733ef60" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openaccess.thecvf.com/content/ICCV2025W/Findings/html/Cho_M3DocVQA_Multi-modal_Multi-page_Multi-document_Understanding_ICCVW_2025_paper.html" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=M3DocRAG%3A+Multi-modal+Retrieval+is+What+You+Need+for+Multi-page+Multi-document+Understanding" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的主要问题是现有文档视觉问答（DocVQA）方法在处理多页或多文档理解时面临的挑战。具体来说，这些挑战包括：</p>
+<ol>
+<li>
+<p><strong>跨页面或文档的信息需求</strong>：在现实世界的应用场景中，很多问题需要跨越不同页面或文档的信息，而现有的基于单页文档的方法无法有效处理这种长文档。</p>
+</li>
+<li>
+<p><strong>视觉元素中的重要信息</strong>：许多文档包含图表、图形等视觉元素，这些元素包含了重要信息，但传统的文本提取工具（如光学字符识别OCR）往往忽略了这些视觉信息。</p>
+</li>
+</ol>
+<p>为了克服这些限制，论文提出了一个名为M3DOCRAG的多模态检索增强生成框架，它能够灵活地适应不同的文档上下文（封闭领域和开放领域）、问题跳数（单跳和多跳）以及证据模态（文本、图表、图形等）。M3DOCRAG通过多模态检索模型找到相关文档页面，并使用多模态语言模型生成问题的答案，从而有效地处理单个或多个文档，同时保留视觉信息。此外，论文还介绍了一个新的基准数据集M3DOCVQA，用于评估在大型文档语料库上进行开放领域DocVQA的能力。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文内容，相关研究主要集中在以下几个领域：</p>
+<ol>
+<li>
+<p><strong>文档视觉问答（DocVQA）</strong>：
+   - Mathew et al. [42] 提出了文档视觉问答（DocVQA）任务，要求模型从文档图像中提取信息。
+   - 后续研究主要关注处理单页文档的DocVQA [22, 23, 30, 34, 41, 42, 55, 58, 63]。</p>
+</li>
+<li>
+<p><strong>多页文档的DocVQA</strong>：
+   - 近期有研究开始探索在多页文档上的MLMs应用 [31, 40, 57]。</p>
+</li>
+<li>
+<p><strong>检索增强生成（RAG）</strong>：
+   - RAG结合了检索系统和生成模型，以提高生成内容的质量和相关性 [19]。
+   - 在开放领域问答中，RAG已被广泛研究 [2, 21, 24, 28, 39, 65]。</p>
+</li>
+<li>
+<p><strong>视觉问答（VQA）中的RAG</strong>：
+   - 一些VQA研究探讨了需要世界知识的视觉上的RAG [11, 44, 51, 62]。</p>
+</li>
+<li>
+<p><strong>多模态文档理解</strong>：
+   - 有研究探索了多模态文档理解，包括文本、表格和视觉信息 [14, 40]。</p>
+</li>
+<li>
+<p><strong>长文档理解</strong>：
+   - 有研究专注于长文档理解，挑战模型处理大量页面的能力 [40]。</p>
+</li>
+<li>
+<p><strong>多模态语言模型（MLMs）</strong>：
+   - 近年来，多模态语言模型在多模态任务中得到了广泛应用 [7, 12, 20, 32, 46, 59]。</p>
+</li>
+</ol>
+<p>这些相关研究为M3DOCRAG框架和M3DOCVQA数据集的提出提供了理论基础和技术背景。M3DOCRAG框架旨在通过结合多模态检索和多模态语言模型，提高对多页和多文档环境中复杂问题的理解和回答能力。同时，M3DOCVQA数据集为评估模型在开放领域多模态文档理解方面的能力提供了新的挑战。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个关键步骤解决了多页多文档理解的问题：</p>
+<ol>
+<li>
+<p><strong>提出M3DOCRAG框架</strong>：
+   - 论文提出了M3DOCRAG（Multi-modal Multipage Multi-Document Retrieval-Augmented Generation），一个新颖的多模态RAG框架。该框架能够灵活适应不同的文档上下文（如封闭领域和开放领域）、问题跳数（单跳和多跳）以及证据模态（文本、图表、图形等）。</p>
+</li>
+<li>
+<p><strong>多模态检索</strong>：
+   - M3DOCRAG使用多模态检索模型（如ColPali）来从单个或多个文档中检索相关页面。这一步通过将文档页面转换为RGB图像并提取视觉嵌入，然后在共享的多模态嵌入空间中计算文本查询和页面图像之间的相关性，以识别与问题最相关的文档页面。</p>
+</li>
+<li>
+<p><strong>多模态语言模型</strong>：
+   - 检索到的相关页面随后被送入多模态语言模型（如Qwen2-VL），以生成问题的答案。这种模型包含视觉编码器和语言模型，能够处理视觉嵌入和文本嵌入，以输出最终答案。</p>
+</li>
+<li>
+<p><strong>处理不同文档设置</strong>：
+   - M3DOCRAG能够灵活处理封闭领域（单个文档）和开放领域（大型文档语料库）设置。</p>
+</li>
+<li>
+<p><strong>创建M3DOCVQA数据集</strong>：
+   - 由于现有的DocVQA数据集不适合评估开放领域设置，论文介绍了M3DOCVQA（Multi-modal Multi-page Multi-Document Visual Question Answering），一个新的基准数据集。这个数据集包含2,441个多跳问题，跨越3,368个PDF文档，超过41,005页，涵盖了文本、图像和表格等多种模态。</p>
+</li>
+<li>
+<p><strong>实验验证</strong>：
+   - 论文在M3DOCVQA、MMLongBench-Doc和MP-DocVQA三个数据集上进行了实验，验证了M3DOCRAG相较于现有方法的优越性能，包括在MP-DocVQA上达到最新性能。</p>
+</li>
+<li>
+<p><strong>分析和案例研究</strong>：
+   - 论文还提供了对不同索引策略、多模态LMs和检索模型的深入分析，并通过定性案例展示了M3DOCRAG处理多模态问题答案的能力。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个新的框架来解决多页多文档理解的问题，还通过新的数据集推动了这一领域的研究进展。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>根据论文内容，作者进行了以下实验：</p>
+<ol>
+<li>
+<p><strong>性能对比实验</strong>：
+   - 在三个不同的PDF文档理解数据集上评估M3DOCRAG的性能，包括M3DOCVQA（开放领域DocVQA）、MMLongBench-Doc（封闭领域DocVQA）和MP-DocVQA（封闭领域DocVQA）。</p>
+</li>
+<li>
+<p><strong>开放领域DocVQA实验（M3DOCVQA）</strong>：
+   - 评估了多模态RAG与纯文本RAG在处理需要从3,000多个PDF文档中检索信息的问题时的性能差异。
+   - 比较了不同数量的检索页面（1页、2页和4页）对模型性能的影响。</p>
+</li>
+<li>
+<p><strong>封闭领域DocVQA实验（MMLongBench-Doc）</strong>：
+   - 测试了M3DOCRAG在处理长达120页的长文档时的性能，并与先前的方法进行了比较。
+   - 分析了不同证据源模态（文本、布局、图表、表格和图像）和证据位置（单页、跨页和无法回答）对模型性能的影响。</p>
+</li>
+<li>
+<p><strong>封闭领域DocVQA实验（MP-DocVQA）</strong>：
+   - 比较了M3DOCRAG与其他顶尖方法在处理最多包含20页PDF文档的问题时的性能。
+   - 特别关注了M3DOCRAG在MP-DocVQA测试集上的表现，并与文本RAG方法进行了对比。</p>
+</li>
+<li>
+<p><strong>索引策略分析</strong>：
+   - 研究了不同的文档嵌入索引方法（如FlatIP、IVFFlat和IVFPQ）在速度和准确性之间的权衡。</p>
+</li>
+<li>
+<p><strong>多模态语言模型（MLMs）比较</strong>：
+   - 在三个数据集上评估了不同的多模态语言模型（如Idefics2、Idefics3、InternVL2和Qwen2-VL）在M3DOCRAG框架中的表现。</p>
+</li>
+<li>
+<p><strong>多模态检索模型比较</strong>：
+   - 比较了两种多模态检索模型（ColPali和ColQwen）在M3DOCRAG框架中的性能。</p>
+</li>
+<li>
+<p><strong>定性案例分析</strong>：
+   - 提供了M3DOCRAG处理不同问题（如跨多页/文档的问题、仅图像中存在答案证据的问题）的定性示例。</p>
+</li>
+</ol>
+<p>这些实验旨在全面评估M3DOCRAG框架的性能，并与现有方法进行比较，同时分析不同组件对整体性能的影响。通过这些实验，作者展示了M3DOCRAG在多模态文档理解任务中的有效性和灵活性。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>多语言和跨语言支持</strong>：
+   - 考虑到模型主要使用英文数据集训练，探索模型在非英语文档上的表现和改进方法。</p>
+</li>
+<li>
+<p><strong>模型泛化能力</strong>：
+   - 研究M3DOCRAG框架在不同类型的文档（如医学报告、法律文件等）和更多样化的问题上的表现。</p>
+</li>
+<li>
+<p><strong>模型解释性</strong>：
+   - 提高模型的可解释性，以便更好地理解其决策过程，尤其是在选择相关文档页面时。</p>
+</li>
+<li>
+<p><strong>模型偏见和公平性</strong>：
+   - 分析和减少模型可能存在的偏见，确保在实际应用中的公平性。</p>
+</li>
+<li>
+<p><strong>更大规模的检索任务</strong>：
+   - 利用更大的训练集和文档集合，探索模型在更大规模数据上的表现和性能。</p>
+</li>
+<li>
+<p><strong>多模态融合策略</strong>：
+   - 研究和开发更先进的多模态融合技术，以改善模型对文本、图像和结构化数据的理解。</p>
+</li>
+<li>
+<p><strong>实时性能优化</strong>：
+   - 针对实际应用中的实时需求，进一步优化模型的检索和生成速度。</p>
+</li>
+<li>
+<p><strong>增强学习与检索结合</strong>：
+   - 探索结合增强学习或其他先进的学习策略来提升检索增强生成框架的效果。</p>
+</li>
+<li>
+<p><strong>更复杂的推理能力</strong>：
+   - 开发能够处理更复杂推理和长程依赖问题的新模型。</p>
+</li>
+<li>
+<p><strong>跨模态检索的改进</strong>：</p>
+<ul>
+<li>研究新的或改进的跨模态检索技术，以提高检索到的文档页面与问题的相关性。</li>
+</ul>
+</li>
+<li>
+<p><strong>鲁棒性和错误分析</strong>：</p>
+<ul>
+<li>对模型进行鲁棒性测试，并进行错误分析，以识别模型的弱点并进行针对性改进。</li>
+</ul>
+</li>
+<li>
+<p><strong>交互式文档理解系统</strong>：</p>
+<ul>
+<li>开发交互式系统，允许用户与模型进行更自然的交流，以探索和利用文档内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>文档理解的可扩展性</strong>：</p>
+<ul>
+<li>研究如何使文档理解系统更易于扩展，以适应不断增长的文档数量和类型。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助研究社区进一步提升多模态文档理解技术的性能和实用性，推动相关技术在现实世界应用中的落地。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文的主要内容包括以下几个方面：</p>
+<ol>
+<li>
+<p><strong>问题陈述</strong>：
+   - 论文指出了现有文档视觉问答（DocVQA）方法在处理多页或多文档场景时面临的挑战，尤其是在处理跨页面信息和视觉元素信息时的局限性。</p>
+</li>
+<li>
+<p><strong>M3DOCRAG框架</strong>：
+   - 论文提出了M3DOCRAG（Multi-modal Multipage Multi-Document Retrieval-Augmented Generation），一个新颖的多模态检索增强生成框架，用于灵活处理不同文档上下文、问题跳数和证据模态。</p>
+</li>
+<li>
+<p><strong>M3DOCVQA数据集</strong>：
+   - 为了评估开放领域DocVQA能力，论文介绍了M3DOCVQA，一个包含3,000多个PDF文档和40,000多页的大规模数据集，包含多模态内容，如文本、图像和表格。</p>
+</li>
+<li>
+<p><strong>实验评估</strong>：
+   - 论文在M3DOCVQA、MMLongBench-Doc和MP-DocVQA三个数据集上对M3DOCRAG进行了广泛的实验评估，并与多个强基线模型进行了比较，展示了M3DOCRAG的优越性能。</p>
+</li>
+<li>
+<p><strong>分析与讨论</strong>：
+   - 论文提供了对不同索引策略、多模态语言模型（MLMs）和检索模型的深入分析，并展示了M3DOCRAG处理多模态问题答案的能力。</p>
+</li>
+<li>
+<p><strong>结论与展望</strong>：
+   - 论文总结了M3DOCRAG框架的贡献，并讨论了其在多模态文档理解领域的潜在影响，同时指出了未来可能的研究方向和改进空间。</p>
+</li>
+</ol>
+<p>总体而言，这篇论文通过提出一个新的框架和数据集，推动了多模态文档理解领域的发展，特别是在处理多页和多文档场景方面，为未来的研究和应用提供了新的方向和工具。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是M3DocRAG%3A%20Multi-modal%20Retrieval%20is%20What%20You%20Need%20for%20Multi-page%20Multi-document%20Understanding，链接是 https://arxiv.org/pdf/2411.04952 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2411.04952 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="m3docvqa-m3docrag">M3DocVQA / M3DocRAG</h1>
+<p>M3DocVQA 在3,000余份PDF、40,000余页中执行开放域跨页/跨文档问答；M3DocRAG提供视觉检索基线。</p>
+<h2 id="_1">与多模态记忆的关系</h2>
+<p>长上下文近邻：把页面嵌入索引视为外部视觉记忆，检索与推理紧密耦合；不是流式或跨天情节记忆任务。</p>
+<h2 id="_2">数据规模与任务</h2>
+<p>3,000 余份 PDF、40,000 余页，支持单跳与多跳的开放域多模态文档问答。</p>
+<p>从整个PDF文档集合中检索相关页面，整合文本、图表与图像证据进行单跳或多跳问答；证据可跨不同文档。</p>
+<h2 id="_3">视频长度 / 上下文长度</h2>
+<p>不适用视频时长：内容为PDF页面和文档证据，范围以文档数/页数描述。</p>
+<h2 id="_4">论文结果</h2>
+<p>论文报告 ColPali+Qwen2-VL 7B 的 M3DocRAG 在 M3DocVQA、MMLongBench-Doc、MP-DocVQA 的比较中表现较强，但开放域跨文档理解仍有很大空间。本页未复现实验。</p>
+<h2 id="_5">数据入口</h2>
+<ul>
+<li><a href="https://github.com/bloomberg/m3docrag/tree/main/m3docvqa" target="_blank" rel="noopener">官方数据准备说明</a></li>
+<li><a href="https://openaccess.thecvf.com/content/ICCV2025W/Findings/html/Cho_M3DocVQA_Multi-modal_Multi-page_Multi-document_Understanding_ICCVW_2025_paper.html" target="_blank" rel="noopener">M3DocVQA正式出版论文</a></li>
+</ul>
+<h2 id="_6">预览与限制</h2>
+<ul>
+<li>没有视频；展示官方文档与检索问答样例。</li>
+<li>arXiv首发和引用数对应 M3DocRAG（2411.04952），正式 benchmark 版本以 M3DocVQA 标题发表于 ICCV 2025 Workshop。</li>
+<li>官方 GitHub 仓库已于2026-07归档为只读；数据准备说明仍公开。</li>
+</ul>
+<h2 id="_7">首发与筛选记录</h2>
+<ul>
+<li>arXiv v1：2024-11-07；<a href="https://arxiv.org/abs/2411.04952" target="_blank" rel="noopener">论文</a>。</li>
+<li>检索日期：2026-09-23；Semantic Scholar 引用数 128，满足 &gt;20；<a href="https://www.semanticscholar.org/paper/226787d438bc47f986f82625d6b74fa6f733ef60" target="_blank" rel="noopener">引用来源</a>。</li>
+<li>状态：ICCV 2025 Workshop · Findings（M3DocVQA）；<a href="https://openaccess.thecvf.com/content/ICCV2025W/Findings/html/Cho_M3DocVQA_Multi-modal_Multi-page_Multi-document_Understanding_ICCVW_2025_paper.html" target="_blank" rel="noopener">状态来源</a>。</li>
+<li><a href="https://github.com/bloomberg/m3docrag" target="_blank" rel="noopener">官方GitHub</a>：70 stars（2026-09-23）。</li>
+</ul>
+<h2 id="_8">来源</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2411.04952" target="_blank" rel="noopener">论文与首次提交记录</a></li>
+<li><a href="https://m3docrag.github.io/" target="_blank" rel="noopener">官方项目/数据说明</a></li>
+<li><a href="https://github.com/bloomberg/m3docrag" target="_blank" rel="noopener">官方代码与版本说明</a></li>
+</ul><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

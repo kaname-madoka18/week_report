@@ -1,0 +1,1824 @@
+[
+  {
+    "id": "egagent_pipeline",
+    "title": "官网演示：egagent_pipeline",
+    "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+    "frames": [
+      {
+        "image": "previews/egagent_pipeline/001.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 0.0,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/002.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 0.21666666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/003.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 0.4666666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/004.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 0.7,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/005.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 0.95,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/006.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 1.8333333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/007.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 2.066666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/008.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 2.3,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/009.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 2.533333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/010.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 3.1166666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/011.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 3.3333333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/012.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 3.566666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/013.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 3.816666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/014.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 4.733333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/015.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 4.983333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/016.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 5.2,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/017.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 5.433333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/018.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 6.183333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/019.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 6.45,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/020.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 6.75,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/021.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 7.0,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/022.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 7.216666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/023.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 7.466666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/024.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 7.7,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/025.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 7.933333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/026.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 8.2,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/027.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 8.416666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/028.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 8.666666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/029.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 8.916666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/030.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 9.9,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/031.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 10.15,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/032.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 10.383333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/033.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 10.616666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/034.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 11.366666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/035.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 11.6,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/036.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 11.85,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/037.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 12.066666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/038.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 12.316666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/039.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 12.883333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/040.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 13.116666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/041.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 13.35,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/042.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 13.583333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/043.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 14.033333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/044.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 14.25,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/045.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 14.483333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/046.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 14.75,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/047.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 14.966666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/048.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 15.216666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/049.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 15.45,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/050.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 15.7,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/051.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 15.95,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/052.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 16.183333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/053.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 16.416666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/054.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 16.666666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/055.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 17.283333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/056.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 17.566666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/057.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 17.816666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/058.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 18.05,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/059.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 18.833333333333332,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/060.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 19.066666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/061.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 19.316666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/062.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 19.533333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/063.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 20.3,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/064.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 20.55,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/065.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 20.883333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/066.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 21.183333333333334,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/067.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 21.45,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/068.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 21.75,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/069.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 22.0,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/070.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 22.216666666666665,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/071.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 22.466666666666665,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/072.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 22.7,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/073.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 22.916666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/074.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 23.166666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/075.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 23.916666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/076.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 24.166666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/077.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 24.383333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/078.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 24.616666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/079.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 24.866666666666667,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/080.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 25.416666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/081.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 25.666666666666668,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/082.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 25.9,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/083.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 26.15,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/084.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 26.4,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/085.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 26.633333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/086.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 26.85,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/087.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 27.1,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/088.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 27.333333333333332,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/089.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 27.583333333333332,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/090.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 27.8,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/091.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 28.033333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/092.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 28.883333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/093.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 29.1,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/094.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 29.35,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/095.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 29.566666666666666,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/096.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 29.8,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/097.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 30.05,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/098.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 30.283333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/099.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 30.533333333333335,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      },
+      {
+        "image": "previews/egagent_pipeline/100.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_pipeline.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_pipeline",
+        "timestamp_seconds": 33.63333333333333,
+        "duration_seconds": 33.99166666666667,
+        "local_video": "samples/egagent_pipeline.mp4"
+      }
+    ],
+    "duration_seconds": 33.99166666666667,
+    "size_bytes": 13267288,
+    "github_blob_sha1_verified": "1932ee7db718de9e5720f237da27c104f6b495b5",
+    "decoded_frame_count": 1327
+  },
+  {
+    "id": "egagent_teaser",
+    "title": "官网演示：egagent_teaser",
+    "description": "按实际解码帧序号均匀取100个不同帧（视频帧率可变且含停顿）；含图示、文字和EgoLife视频画面，代表官网方法演示。",
+    "frames": [
+      {
+        "image": "previews/egagent_teaser/001.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/002.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.15,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/003.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.3,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/004.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.4666666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/005.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.6166666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/006.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 0.7666666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/007.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 1.7333333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/008.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 1.9,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/009.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.05,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/010.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.216666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/011.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.3833333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/012.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.533333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/013.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.683333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/014.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 2.85,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/015.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/016.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.15,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/017.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.35,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/018.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.5,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/019.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.65,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/020.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.816666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/021.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 3.966666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/022.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 4.133333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/023.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 4.283333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/024.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 4.433333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/025.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 4.6,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/026.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 5.166666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/027.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 5.5,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/028.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 5.7,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/029.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 5.85,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/030.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/031.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.166666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/032.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.316666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/033.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.483333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/034.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.7,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/035.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 6.85,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/036.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/037.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.166666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/038.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.316666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/039.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.483333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/040.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.633333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/041.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.8,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/042.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 7.95,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/043.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 8.133333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/044.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 8.5,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/045.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 8.65,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/046.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 8.816666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/047.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 8.966666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/048.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 9.133333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/049.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 9.283333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/050.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 9.433333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/051.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 9.6,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/052.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 9.75,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/053.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.1,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/054.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.266666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/055.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.416666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/056.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.583333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/057.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.733333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/058.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 10.9,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/059.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 11.066666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/060.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 11.233333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/061.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 11.383333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/062.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 11.533333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/063.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.1,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/064.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.25,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/065.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.416666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/066.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.566666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/067.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.716666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/068.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 12.883333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/069.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 13.033333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/070.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 13.183333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/071.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 13.35,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/072.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 13.85,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/073.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/074.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.15,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/075.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.316666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/076.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.483333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/077.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.65,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/078.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.8,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/079.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 14.95,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/080.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 15.116666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/081.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 15.266666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/082.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 15.683333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/083.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 15.833333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/084.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.0,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/085.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.15,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/086.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.3,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/087.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.466666666666665,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/088.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.616666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/089.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.766666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/090.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 16.933333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/091.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 17.383333333333333,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/092.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 17.55,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/093.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 17.716666666666665,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/094.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 17.866666666666667,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/095.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 18.016666666666666,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/096.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 18.183333333333334,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/097.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 18.333333333333332,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/098.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 18.5,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/099.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 18.65,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      },
+      {
+        "image": "previews/egagent_teaser/100.jpg",
+        "source_url": "https://facebookresearch.github.io/egagent/assets/egagent_teaser.mp4",
+        "source_label": "EGAgent 官网方法演示（非独立数据集原始视频）",
+        "video_id": "egagent_teaser",
+        "timestamp_seconds": 20.6,
+        "duration_seconds": 21.028333333333332,
+        "local_video": "samples/egagent_teaser.mp4"
+      }
+    ],
+    "duration_seconds": 21.028333333333332,
+    "size_bytes": 13655088,
+    "github_blob_sha1_verified": "589c905d486149c837d9587634fe4ddd38ccefff",
+    "decoded_frame_count": 898
+  }
+]

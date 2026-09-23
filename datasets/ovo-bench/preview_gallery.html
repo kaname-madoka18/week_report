@@ -1,0 +1,194 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OVO-Bench · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">OVO-Bench</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-01-09</strong></div><div><span>引用数</span><strong>135</strong></div><div><span>GitHub stars</span><strong>164</strong></div><div><span>当前状态</span><strong>CVPR 2025</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2501.05510" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/JoeLeelyf/OVO-Bench" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/6f00bdbb2082ec80ce0ae701f4c8c4ed52607a41" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://arxiv.org/abs/2501.05510" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=OVO-Bench%3A+How+Far+is+Your+Video-LLMs+from+Real-World+Online+Video+Understanding%3F" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决的问题是如何评估和提升视频大型语言模型（Video-LLMs）在真实世界在线视频理解（online video understanding）方面的能力。具体来说，论文指出了现有视频理解基准测试与现实世界视频理解任务之间的显著领域差异，并提出了一个新的基准测试——OVO-Bench（Online-VideO-Benchmark），以填补现有评估中缺乏对时间意识（Temporal Awareness）考量的空白。这个基准测试旨在系统地评估视频LLMs在三个不同场景下对特定时间戳发生的事件进行推理和响应的能力：</p>
+<ol>
+<li><strong>回溯追踪（Backward tracing）</strong>：追溯过去事件以回答问题的能力。</li>
+<li><strong>实时理解（Real-time understanding）</strong>：理解和响应当前时间戳下发生的事件的能力。</li>
+<li><strong>前向主动响应（Forward active responding）</strong>：延迟响应直到有足够的未来信息来准确回答问题的能力。</li>
+</ol>
+<p>论文通过构建包含12个任务的OVO-Bench，涵盖了644个独特视频和约2800个人工精细标注的元数据（带有精确时间戳），旨在推动视频LLMs的发展，并激发未来在线视频推理研究的进展。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>论文中提到了多个与视频大型语言模型（Video-LLMs）和在线视频理解相关的研究工作。以下是一些关键的相关研究：</p>
+<ol>
+<li>
+<p><strong>VideoLLM-online</strong> [5] 和 <strong>Flash-VStream</strong> [58]：这两个工作是早期尝试将预训练的视觉编码器与大型语言模型（LLMs）结合起来，以实现类似J.A.R.V.I.S.的现实世界视频助手的先驱。</p>
+</li>
+<li>
+<p><strong>Ego4D</strong> [15] 和 <strong>MovieNet</strong> [17]：这两个数据集被用来评估视频流理解，它们提供了从第一人称视角和电影场景中的视频数据。</p>
+</li>
+<li>
+<p><strong>StreamingBench</strong> [26]：这是一个最近的工作，扩展了评估Video-LLMs的规模，特别是在视频流场景下。</p>
+</li>
+<li>
+<p><strong>VStream-QA</strong> [58]：这是评估流媒体理解的先驱性基准测试之一，利用Ego4D和MovieNet的视频源。</p>
+</li>
+<li>
+<p><strong>Video Large Language Models (VLLMs)</strong>：包括 <strong>VideoChat</strong> [23]、<strong>Video-LLaMA</strong> [57] 和 <strong>Video-ChatGPT</strong> [34] 等项目，这些项目通过将视频帧的CLIP-ViT嵌入通过MLP投影到LLM嵌入空间，并与文本嵌入连接，以增强视频理解。</p>
+</li>
+<li>
+<p><strong>Chat-UniVi</strong> [21]、<strong>MovieChat</strong> [43] 和 <strong>MA-LLM</strong> [16]：这些工作关注视频特征压缩和关键帧选择，以解决MLLMs在理解长视频时的上下文长度限制问题。</p>
+</li>
+<li>
+<p><strong>Video-MME</strong> [12]、<strong>LVBench</strong> [48] 和 <strong>LongVideoBench</strong> [51]：这些基准测试涵盖了从20分钟到超过一小时的视频，评估了一系列视频理解能力。</p>
+</li>
+<li>
+<p><strong>HourVideo</strong> [4]：以第一人称视频为主，视频时长延长至2小时，并伴有超过12,976个多项选择题。</p>
+</li>
+<li>
+<p><strong>LIVE</strong> [5]：介绍了一个全面的框架，用于在视频流中进行学习，包括训练目标、数据生成模式和专为在线视频理解定制的推理管道。</p>
+</li>
+</ol>
+<p>这些研究工作构成了在线视频理解领域的研究基础，并为OVO-Bench的提出提供了理论和实践上的参考。论文通过这些相关工作，展示了现有研究的局限性，并提出了新的挑战和研究方向。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决在线视频理解的评估问题：</p>
+<ol>
+<li>
+<p><strong>定义在线视频理解模式</strong>：
+   - 论文首先定义了三种在线视频理解模式：回溯追踪（Backward Tracing）、实时视觉感知（Real-Time Visual Perception）和前向主动响应（Forward Active Responding）。这些模式覆盖了从依赖过去信息、当前信息到未来信息的不同视频理解任务。</p>
+</li>
+<li>
+<p><strong>构建OVO-Bench基准测试</strong>：
+   - 为了评估Video-LLMs在这三种模式下的能力，论文提出了OVO-Bench（Online-VideO-Benchmark），一个包含644个独特视频和2814个高质量样本（元标注）的新基准测试。这些视频和标注覆盖了多个领域，包括体育、视频游戏、第一人称视角等。</p>
+</li>
+<li>
+<p><strong>混合生成流程</strong>：
+   - 论文采用了结合自动化生成流程和人工审核的方法来创建高质量样本。这包括从现有数据集中重用标注、半自动生成标注以及基于人类审核的元标注。</p>
+</li>
+<li>
+<p><strong>开发评估流程</strong>：
+   - 基于人工审核的元标注，论文开发了一个评估流程，该流程沿着视频时间轴密集地查询Video-LLMs，以模拟连续信息处理。对于回溯追踪和实时视觉感知任务，采用了多项选择评估，将视频转换为从开始到查询时间的片段，以适应离线模型。</p>
+</li>
+<li>
+<p><strong>评估现有模型</strong>：
+   - 论文评估了九种Video-LLMs，包括专有模型和最新的开源模型，揭示了尽管这些模型在传统基准测试上表现出色，但在在线视频理解任务上仍存在显著差距。</p>
+</li>
+<li>
+<p><strong>推动研究进展</strong>：
+   - 通过展示当前模型的局限性，论文希望OVO-Bench能够激发未来研究，推动视频LLMs的发展，以实现更接近人类水平的在线视频理解能力。</p>
+</li>
+<li>
+<p><strong>提供资源和代码</strong>：
+   - 论文提供了OVO-Bench的基准测试和代码，以便研究社区可以访问和使用这些资源，进一步推动在线视频理解领域的研究。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提出了一个新的基准测试来评估在线视频理解能力，而且还通过实验揭示了现有模型的不足，为未来的研究方向提供了指导。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了一系列的实验，以评估和分析OVO-Bench基准测试的有效性以及当前视频大型语言模型（Video-LLMs）在在线视频理解任务上的性能。以下是实验的具体内容：</p>
+<h3>1. 模型和评估策略</h3>
+<ul>
+<li><strong>模型选择</strong>：评估了四种类型的模型，包括离线多模态模型、在线多模态模型、盲目大型语言模型（LLMs）和人类代理。</li>
+<li><strong>一致性原则</strong>：为了公平比较模型性能，所有模型保持相同的帧数或每秒帧数（fps）。</li>
+<li><strong>视频输入方法</strong>：对于离线Video-LLMs，采用了专门的视频输入方法，将视频根据问题的提问时间戳分割成片段，模拟在线视频理解中的流式问答场景。</li>
+</ul>
+<h3>2. 主要结果</h3>
+<ul>
+<li><strong>性能报告</strong>：提供了不同设置下（实时视觉感知、回溯追踪和前向主动响应）的十一种模型的性能报告。</li>
+<li><strong>重要发现</strong>：</li>
+<li>离线Video-LLMs的视频理解能力可以有效地转移到实时视频理解任务。</li>
+<li>现有的Video-LLMs在处理视频问答任务时缺乏时间优先级。</li>
+<li>强大的LLMs主干是实现高性能视频理解的关键。</li>
+<li>Video-LLMs普遍存在幻觉问题。</li>
+</ul>
+<h3>3. 在线Video-LLMs与离线Video-LLMs的比较</h3>
+<ul>
+<li><strong>性能对比</strong>：比较了代表在线Video-LLMs的Flash-VStream-7B和代表离线Video-LLMs的Gemini 1.5 Pro和Qwen2-VL-72B的性能，揭示了实时处理能力和深度视觉理解之间的潜在权衡。</li>
+</ul>
+<h3>4. 前向主动响应</h3>
+<ul>
+<li><strong>评估管道设计</strong>：提出了一个沿时间轴密集查询Video-LLMs的评估管道，特别是围绕感兴趣事件的查询。</li>
+<li><strong>离线模型用于在线视频理解</strong>：尽管离线模型在回溯追踪和实时视觉感知任务中表现出色，但在前向主动响应任务中表现有限，显示出对在线视频内容的理解不足。</li>
+</ul>
+<h3>5. 结论和未来工作</h3>
+<ul>
+<li><strong>OVO-Bench的价值</strong>：强调了OVO-Bench作为研究社区的宝贵资源，指导Video-LLMs向实际应用发展，并激发未来致力于在线视频理解和人工智能系统人类水平理解的研究。</li>
+</ul>
+<p>这些实验不仅验证了OVO-Bench基准测试的有效性，还揭示了当前Video-LLMs在在线视频理解任务中的挑战和局限性，为未来的研究方向提供了指导。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>改进在线视频理解模型</strong>：
+   - 研究和开发更有效的在线视频理解模型，特别是那些能够更好地处理前向主动响应任务的模型。</p>
+</li>
+<li>
+<p><strong>数据集和标注的扩展</strong>：
+   - 扩展OVO-Bench数据集，增加更多领域的视频和更多样化的问题，以提高模型的泛化能力。
+   - 提高自动问答生成的质量和多样性，减少人工标注的成本和偏差。</p>
+</li>
+<li>
+<p><strong>减少幻觉问题</strong>：
+   - 研究和开发减少Video-LLMs幻觉问题的技术，提高模型在现实世界应用中的可靠性和准确性。</p>
+</li>
+<li>
+<p><strong>模型架构的优化</strong>：
+   - 探索更强大的LLMs主干架构，以提高视频理解任务的性能。</p>
+</li>
+<li>
+<p><strong>上下文和时间信息的更好利用</strong>：
+   - 研究如何更好地利用视频的上下文和时间信息来提高模型对视频内容的理解。</p>
+</li>
+<li>
+<p><strong>实时处理与深度理解的平衡</strong>：
+   - 研究如何在保持实时处理能力的同时，提高模型对视频内容深度理解的能力。</p>
+</li>
+<li>
+<p><strong>多模态学习</strong>：
+   - 探索如何结合视觉、语言和声音等多种模态的信息来提升视频理解的性能。</p>
+</li>
+<li>
+<p><strong>长视频理解</strong>：
+   - 针对长视频内容，研究如何有效地处理和理解视频的长期依赖关系。</p>
+</li>
+<li>
+<p><strong>交互式视频理解</strong>：
+   - 研究如何使Video-LLMs能够与用户进行更自然的交互，以提供更个性化的视频理解服务。</p>
+</li>
+<li>
+<p><strong>评估指标的改进</strong>：</p>
+<ul>
+<li>开发更精细的评估指标，以更全面地评估模型在不同视频理解任务上的性能。</li>
+</ul>
+</li>
+<li>
+<p><strong>跨领域适应性</strong>：</p>
+<ul>
+<li>研究模型在不同领域间的适应性和迁移学习能力，特别是在面对领域差异时的性能保持。</li>
+</ul>
+</li>
+<li>
+<p><strong>模型解释性</strong>：</p>
+<ul>
+<li>提高模型的可解释性，让用户能够理解模型的决策过程和推理链。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助研究社区进一步推动视频理解技术的发展，并使Video-LLMs更接近于人类水平的视频理解能力。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文的主要内容包括以下几个方面：</p>
+<ol>
+<li>
+<p><strong>问题阐述</strong>：
+   - 论文指出了现有视频理解模型在处理真实世界在线视频任务时存在的显著差距，特别是在时间意识（Temporal Awareness）方面。</p>
+</li>
+<li>
+<p><strong>在线视频理解模式</strong>：
+   - 提出了三种在线视频理解模式：回溯追踪（Backward Tracing）、实时视觉感知（Real-Time Visual Perception）和前向主动响应（Forward Active Responding）。</p>
+</li>
+<li>
+<p><strong>OVO-Bench基准测试</strong>：
+   - 介绍了OVO-Bench（Online-VideO-Benchmark），一个新构建的视频基准测试，用于评估视频LLMs在上述三种模式下的能力。</p>
+</li>
+<li>
+<p><strong>数据集构建</strong>：
+   - OVO-Bench包含644个独特视频和2814个人工精细标注的元数据（带有精确时间戳），覆盖多个领域。</p>
+</li>
+<li>
+<p><strong>评估流程</strong>：
+   - 开发了一个评估流程，沿着视频时间轴密集查询Video-LLMs，模拟连续信息处理。</p>
+</li>
+<li>
+<p><strong>模型评估</strong>：
+   - 评估了九种Video-LLMs，包括专有模型和最新的开源模型，揭示了这些模型在在线视频理解任务上的挑战和局限性。</p>
+</li>
+<li>
+<p><strong>实验结果</strong>：
+   - 实验结果显示，尽管现有模型在传统基准测试上表现出色，但在在线视频理解任务上与人类代理相比存在显著差距。</p>
+</li>
+<li>
+<p><strong>未来研究方向</strong>：
+   - 论文提出了未来研究的方向，包括改进在线视频理解模型、数据集和标注的扩展、减少幻觉问题、模型架构优化等。</p>
+</li>
+<li>
+<p><strong>资源和代码共享</strong>：
+   - 提供了OVO-Bench的基准测试和代码，以便研究社区可以访问和使用这些资源，进一步推动在线视频理解领域的研究。</p>
+</li>
+</ol>
+<p>总的来说，这篇论文通过提出新的基准测试OVO-Bench，不仅评估了现有视频LLMs在在线视频理解任务上的性能，而且为未来的研究提供了新的方向和资源。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是OVO-Bench%3A%20How%20Far%20is%20Your%20Video-LLMs%20from%20Real-World%20Online%20Video%20Understanding%3F，链接是 https://arxiv.org/pdf/2501.05510 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2501.05510 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>OVO-Bench</h1><p class="muted">644 段视频、2,814 个 QA、12 项任务，包含情节记忆、动作顺序回溯、实时理解和未来主动响应。</p><p><strong>5 张独立预览图</strong> · 1 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">正文描述主体视频为数分钟至半小时；平均查询时点 428.89 秒。附录 CRR 子任务平均原视频长度 6,857 秒（约114.3分钟），不能将全库统一写成≤30分钟。</p></div><div class="note"><ul><li>展示官网真实视频截图与问题图；未解包约44GB source-video或约144GB chunked-video分卷。</li><li>平均查询时点、原视频长度、给定查询的可见上下文长度是三种不同量。</li></ul></div><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "ovo-bench", "title": "OVO-Bench", "category": "在线视频理解 · 情节记忆/回溯", "summary": "644 段视频、2,814 个 QA、12 项任务，包含情节记忆、动作顺序回溯、实时理解和未来主动响应。", "paper_url": "https://arxiv.org/abs/2501.05510", "repo_url": "https://github.com/JoeLeelyf/OVO-Bench", "project_url": "https://joeleelyf.github.io/OVO-Bench/", "dataset_urls": [{"label": "官方视频与标注", "url": "https://huggingface.co/datasets/JoeLeelyf/OVO-Bench"}], "duration_summary": "正文描述主体视频为数分钟至半小时；平均查询时点 428.89 秒。附录 CRR 子任务平均原视频长度 6,857 秒（约114.3分钟），不能将全库统一写成≤30分钟。", "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。", "preview_status": "partial", "limitations": ["展示官网真实视频截图与问题图；未解包约44GB source-video或约144GB chunked-video分卷。", "平均查询时点、原视频长度、给定查询的可见上下文长度是三种不同量。"], "relation_level": "直接记忆", "groups": [{"id": "official_examples", "title": "官方数据样例图", "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。", "media_kind": "image", "frames": [{"image": "previews/example_1.png", "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_1.png", "source_label": "官方任务示例 1（含视频截图与问题）"}, {"image": "previews/example_4.png", "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_4.png", "source_label": "官方任务示例 4（含视频截图与问题）"}, {"image": "previews/example_5.png", "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_5.png", "source_label": "官方任务示例 5（含视频截图与问题）"}, {"image": "previews/example_6.png", "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_6.png", "source_label": "官方任务示例 6（含视频截图与问题）"}, {"image": "previews/example_7.png", "source_url": "https://joeleelyf.github.io/OVO-Bench/static/examples/example_7.png", "source_label": "官方任务示例 7（含视频截图与问题）"}], "video_cases": [], "contact_sheet": "previews/contact_sheets/official_examples.jpg"}], "preview_version": "v2-short-video-cases", "added_batch": "2026-09-23", "selection_kind": "qualified", "paper_metadata": {"slug": "ovo-bench", "title": "OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?", "paper_url": "https://arxiv.org/abs/2501.05510", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2501.05510", "arxiv_url": "https://arxiv.org/abs/2501.05510", "arxiv_source_url": "https://arxiv.org/abs/2501.05510", "arxiv_title": "OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?", "arxiv_published_at": "2025-01-09", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 135, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/6f00bdbb2082ec80ce0ae701f4c8c4ed52607a41", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/JoeLeelyf/OVO-Bench", "github_repo": "JoeLeelyf/OVO-Bench", "github_stars": 164, "github_source_url": "https://api.github.com/repos/JoeLeelyf/OVO-Bench", "github_fetch_status": "ok", "status_label": "CVPR 2025", "status_source": "https://arxiv.org/abs/2501.05510", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=OVO-Bench%3A+How+Far+is+Your+Video-LLMs+from+Real-World+Online+Video+Understanding%3F", "papers_cool_detail_url": "https://papers.cool/arxiv/2501.05510", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文试图解决的问题是如何评估和提升视频大型语言模型（Video-LLMs）在真实世界在线视频理解（online video understanding）方面的能力。具体来说，论文指出了现有视频理解基准测试与现实世界视频理解任务之间的显著领域差异，并提出了一个新的基准测试——OVO-Bench（Online-VideO-Benchmark），以填补现有评估中缺乏对时间意识（Temporal Awareness）考量的空白。这个基准测试旨在系统地评估视频LLMs在三个不同场景下对特定时间戳发生的事件进行推理和响应的能力：<\/p>\n<ol>\n<li><strong>回溯追踪（Backward tracing）<\/strong>：追溯过去事件以回答问题的能力。<\/li>\n<li><strong>实时理解（Real-time understanding）<\/strong>：理解和响应当前时间戳下发生的事件的能力。<\/li>\n<li><strong>前向主动响应（Forward active responding）<\/strong>：延迟响应直到有足够的未来信息来准确回答问题的能力。<\/li>\n<\/ol>\n<p>论文通过构建包含12个任务的OVO-Bench，涵盖了644个独特视频和约2800个人工精细标注的元数据（带有精确时间戳），旨在推动视频LLMs的发展，并激发未来在线视频推理研究的进展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>论文中提到了多个与视频大型语言模型（Video-LLMs）和在线视频理解相关的研究工作。以下是一些关键的相关研究：<\/p>\n<ol>\n<li>\n<p><strong>VideoLLM-online<\/strong> [5] 和 <strong>Flash-VStream<\/strong> [58]：这两个工作是早期尝试将预训练的视觉编码器与大型语言模型（LLMs）结合起来，以实现类似J.A.R.V.I.S.的现实世界视频助手的先驱。<\/p>\n<\/li>\n<li>\n<p><strong>Ego4D<\/strong> [15] 和 <strong>MovieNet<\/strong> [17]：这两个数据集被用来评估视频流理解，它们提供了从第一人称视角和电影场景中的视频数据。<\/p>\n<\/li>\n<li>\n<p><strong>StreamingBench<\/strong> [26]：这是一个最近的工作，扩展了评估Video-LLMs的规模，特别是在视频流场景下。<\/p>\n<\/li>\n<li>\n<p><strong>VStream-QA<\/strong> [58]：这是评估流媒体理解的先驱性基准测试之一，利用Ego4D和MovieNet的视频源。<\/p>\n<\/li>\n<li>\n<p><strong>Video Large Language Models (VLLMs)<\/strong>：包括 <strong>VideoChat<\/strong> [23]、<strong>Video-LLaMA<\/strong> [57] 和 <strong>Video-ChatGPT<\/strong> [34] 等项目，这些项目通过将视频帧的CLIP-ViT嵌入通过MLP投影到LLM嵌入空间，并与文本嵌入连接，以增强视频理解。<\/p>\n<\/li>\n<li>\n<p><strong>Chat-UniVi<\/strong> [21]、<strong>MovieChat<\/strong> [43] 和 <strong>MA-LLM<\/strong> [16]：这些工作关注视频特征压缩和关键帧选择，以解决MLLMs在理解长视频时的上下文长度限制问题。<\/p>\n<\/li>\n<li>\n<p><strong>Video-MME<\/strong> [12]、<strong>LVBench<\/strong> [48] 和 <strong>LongVideoBench<\/strong> [51]：这些基准测试涵盖了从20分钟到超过一小时的视频，评估了一系列视频理解能力。<\/p>\n<\/li>\n<li>\n<p><strong>HourVideo<\/strong> [4]：以第一人称视频为主，视频时长延长至2小时，并伴有超过12,976个多项选择题。<\/p>\n<\/li>\n<li>\n<p><strong>LIVE<\/strong> [5]：介绍了一个全面的框架，用于在视频流中进行学习，包括训练目标、数据生成模式和专为在线视频理解定制的推理管道。<\/p>\n<\/li>\n<\/ol>\n<p>这些研究工作构成了在线视频理解领域的研究基础，并为OVO-Bench的提出提供了理论和实践上的参考。论文通过这些相关工作，展示了现有研究的局限性，并提出了新的挑战和研究方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个步骤解决在线视频理解的评估问题：<\/p>\n<ol>\n<li>\n<p><strong>定义在线视频理解模式<\/strong>：\n   - 论文首先定义了三种在线视频理解模式：回溯追踪（Backward Tracing）、实时视觉感知（Real-Time Visual Perception）和前向主动响应（Forward Active Responding）。这些模式覆盖了从依赖过去信息、当前信息到未来信息的不同视频理解任务。<\/p>\n<\/li>\n<li>\n<p><strong>构建OVO-Bench基准测试<\/strong>：\n   - 为了评估Video-LLMs在这三种模式下的能力，论文提出了OVO-Bench（Online-VideO-Benchmark），一个包含644个独特视频和2814个高质量样本（元标注）的新基准测试。这些视频和标注覆盖了多个领域，包括体育、视频游戏、第一人称视角等。<\/p>\n<\/li>\n<li>\n<p><strong>混合生成流程<\/strong>：\n   - 论文采用了结合自动化生成流程和人工审核的方法来创建高质量样本。这包括从现有数据集中重用标注、半自动生成标注以及基于人类审核的元标注。<\/p>\n<\/li>\n<li>\n<p><strong>开发评估流程<\/strong>：\n   - 基于人工审核的元标注，论文开发了一个评估流程，该流程沿着视频时间轴密集地查询Video-LLMs，以模拟连续信息处理。对于回溯追踪和实时视觉感知任务，采用了多项选择评估，将视频转换为从开始到查询时间的片段，以适应离线模型。<\/p>\n<\/li>\n<li>\n<p><strong>评估现有模型<\/strong>：\n   - 论文评估了九种Video-LLMs，包括专有模型和最新的开源模型，揭示了尽管这些模型在传统基准测试上表现出色，但在在线视频理解任务上仍存在显著差距。<\/p>\n<\/li>\n<li>\n<p><strong>推动研究进展<\/strong>：\n   - 通过展示当前模型的局限性，论文希望OVO-Bench能够激发未来研究，推动视频LLMs的发展，以实现更接近人类水平的在线视频理解能力。<\/p>\n<\/li>\n<li>\n<p><strong>提供资源和代码<\/strong>：\n   - 论文提供了OVO-Bench的基准测试和代码，以便研究社区可以访问和使用这些资源，进一步推动在线视频理解领域的研究。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文不仅提出了一个新的基准测试来评估在线视频理解能力，而且还通过实验揭示了现有模型的不足，为未来的研究方向提供了指导。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文中进行了一系列的实验，以评估和分析OVO-Bench基准测试的有效性以及当前视频大型语言模型（Video-LLMs）在在线视频理解任务上的性能。以下是实验的具体内容：<\/p>\n<h3>1. 模型和评估策略<\/h3>\n<ul>\n<li><strong>模型选择<\/strong>：评估了四种类型的模型，包括离线多模态模型、在线多模态模型、盲目大型语言模型（LLMs）和人类代理。<\/li>\n<li><strong>一致性原则<\/strong>：为了公平比较模型性能，所有模型保持相同的帧数或每秒帧数（fps）。<\/li>\n<li><strong>视频输入方法<\/strong>：对于离线Video-LLMs，采用了专门的视频输入方法，将视频根据问题的提问时间戳分割成片段，模拟在线视频理解中的流式问答场景。<\/li>\n<\/ul>\n<h3>2. 主要结果<\/h3>\n<ul>\n<li><strong>性能报告<\/strong>：提供了不同设置下（实时视觉感知、回溯追踪和前向主动响应）的十一种模型的性能报告。<\/li>\n<li><strong>重要发现<\/strong>：<\/li>\n<li>离线Video-LLMs的视频理解能力可以有效地转移到实时视频理解任务。<\/li>\n<li>现有的Video-LLMs在处理视频问答任务时缺乏时间优先级。<\/li>\n<li>强大的LLMs主干是实现高性能视频理解的关键。<\/li>\n<li>Video-LLMs普遍存在幻觉问题。<\/li>\n<\/ul>\n<h3>3. 在线Video-LLMs与离线Video-LLMs的比较<\/h3>\n<ul>\n<li><strong>性能对比<\/strong>：比较了代表在线Video-LLMs的Flash-VStream-7B和代表离线Video-LLMs的Gemini 1.5 Pro和Qwen2-VL-72B的性能，揭示了实时处理能力和深度视觉理解之间的潜在权衡。<\/li>\n<\/ul>\n<h3>4. 前向主动响应<\/h3>\n<ul>\n<li><strong>评估管道设计<\/strong>：提出了一个沿时间轴密集查询Video-LLMs的评估管道，特别是围绕感兴趣事件的查询。<\/li>\n<li><strong>离线模型用于在线视频理解<\/strong>：尽管离线模型在回溯追踪和实时视觉感知任务中表现出色，但在前向主动响应任务中表现有限，显示出对在线视频内容的理解不足。<\/li>\n<\/ul>\n<h3>5. 结论和未来工作<\/h3>\n<ul>\n<li><strong>OVO-Bench的价值<\/strong>：强调了OVO-Bench作为研究社区的宝贵资源，指导Video-LLMs向实际应用发展，并激发未来致力于在线视频理解和人工智能系统人类水平理解的研究。<\/li>\n<\/ul>\n<p>这些实验不仅验证了OVO-Bench基准测试的有效性，还揭示了当前Video-LLMs在在线视频理解任务中的挑战和局限性，为未来的研究方向提供了指导。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文内容和实验结果，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>改进在线视频理解模型<\/strong>：\n   - 研究和开发更有效的在线视频理解模型，特别是那些能够更好地处理前向主动响应任务的模型。<\/p>\n<\/li>\n<li>\n<p><strong>数据集和标注的扩展<\/strong>：\n   - 扩展OVO-Bench数据集，增加更多领域的视频和更多样化的问题，以提高模型的泛化能力。\n   - 提高自动问答生成的质量和多样性，减少人工标注的成本和偏差。<\/p>\n<\/li>\n<li>\n<p><strong>减少幻觉问题<\/strong>：\n   - 研究和开发减少Video-LLMs幻觉问题的技术，提高模型在现实世界应用中的可靠性和准确性。<\/p>\n<\/li>\n<li>\n<p><strong>模型架构的优化<\/strong>：\n   - 探索更强大的LLMs主干架构，以提高视频理解任务的性能。<\/p>\n<\/li>\n<li>\n<p><strong>上下文和时间信息的更好利用<\/strong>：\n   - 研究如何更好地利用视频的上下文和时间信息来提高模型对视频内容的理解。<\/p>\n<\/li>\n<li>\n<p><strong>实时处理与深度理解的平衡<\/strong>：\n   - 研究如何在保持实时处理能力的同时，提高模型对视频内容深度理解的能力。<\/p>\n<\/li>\n<li>\n<p><strong>多模态学习<\/strong>：\n   - 探索如何结合视觉、语言和声音等多种模态的信息来提升视频理解的性能。<\/p>\n<\/li>\n<li>\n<p><strong>长视频理解<\/strong>：\n   - 针对长视频内容，研究如何有效地处理和理解视频的长期依赖关系。<\/p>\n<\/li>\n<li>\n<p><strong>交互式视频理解<\/strong>：\n   - 研究如何使Video-LLMs能够与用户进行更自然的交互，以提供更个性化的视频理解服务。<\/p>\n<\/li>\n<li>\n<p><strong>评估指标的改进<\/strong>：<\/p>\n<ul>\n<li>开发更精细的评估指标，以更全面地评估模型在不同视频理解任务上的性能。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>跨领域适应性<\/strong>：<\/p>\n<ul>\n<li>研究模型在不同领域间的适应性和迁移学习能力，特别是在面对领域差异时的性能保持。<\/li>\n<\/ul>\n<\/li>\n<li>\n<p><strong>模型解释性<\/strong>：<\/p>\n<ul>\n<li>提高模型的可解释性，让用户能够理解模型的决策过程和推理链。<\/li>\n<\/ul>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助研究社区进一步推动视频理解技术的发展，并使Video-LLMs更接近于人类水平的视频理解能力。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>这篇论文的主要内容包括以下几个方面：<\/p>\n<ol>\n<li>\n<p><strong>问题阐述<\/strong>：\n   - 论文指出了现有视频理解模型在处理真实世界在线视频任务时存在的显著差距，特别是在时间意识（Temporal Awareness）方面。<\/p>\n<\/li>\n<li>\n<p><strong>在线视频理解模式<\/strong>：\n   - 提出了三种在线视频理解模式：回溯追踪（Backward Tracing）、实时视觉感知（Real-Time Visual Perception）和前向主动响应（Forward Active Responding）。<\/p>\n<\/li>\n<li>\n<p><strong>OVO-Bench基准测试<\/strong>：\n   - 介绍了OVO-Bench（Online-VideO-Benchmark），一个新构建的视频基准测试，用于评估视频LLMs在上述三种模式下的能力。<\/p>\n<\/li>\n<li>\n<p><strong>数据集构建<\/strong>：\n   - OVO-Bench包含644个独特视频和2814个人工精细标注的元数据（带有精确时间戳），覆盖多个领域。<\/p>\n<\/li>\n<li>\n<p><strong>评估流程<\/strong>：\n   - 开发了一个评估流程，沿着视频时间轴密集查询Video-LLMs，模拟连续信息处理。<\/p>\n<\/li>\n<li>\n<p><strong>模型评估<\/strong>：\n   - 评估了九种Video-LLMs，包括专有模型和最新的开源模型，揭示了这些模型在在线视频理解任务上的挑战和局限性。<\/p>\n<\/li>\n<li>\n<p><strong>实验结果<\/strong>：\n   - 实验结果显示，尽管现有模型在传统基准测试上表现出色，但在在线视频理解任务上与人类代理相比存在显著差距。<\/p>\n<\/li>\n<li>\n<p><strong>未来研究方向<\/strong>：\n   - 论文提出了未来研究的方向，包括改进在线视频理解模型、数据集和标注的扩展、减少幻觉问题、模型架构优化等。<\/p>\n<\/li>\n<li>\n<p><strong>资源和代码共享<\/strong>：\n   - 提供了OVO-Bench的基准测试和代码，以便研究社区可以访问和使用这些资源，进一步推动在线视频理解领域的研究。<\/p>\n<\/li>\n<\/ol>\n<p>总的来说，这篇论文通过提出新的基准测试OVO-Bench，不仅评估了现有视频LLMs在在线视频理解任务上的性能，而且为未来的研究提供了新的方向和资源。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是OVO-Bench%3A%20How%20Far%20is%20Your%20Video-LLMs%20from%20Real-World%20Online%20Video%20Understanding%3F，链接是 https://arxiv.org/pdf/2501.05510 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2501.05510 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2501.05510", "kimi_retrieved_at_utc": "2026-09-23T11:28:13+00:00"}, "preview_images": 5, "video_preview_images": 0, "video_cases_count": 0, "video_case_groups_count": 0, "short_video_case_threshold_seconds": 180, "groups_count": 1, "groups_100_count": 0, "overview_html": "datasets/ovo-bench/overview.html", "gallery_html": "datasets/ovo-bench/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

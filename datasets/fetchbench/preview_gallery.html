@@ -1,0 +1,169 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FetchBench · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">FetchBench</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-06-17</strong></div><div><span>引用数</span><strong>11</strong></div><div><span>GitHub stars</span><strong>35</strong></div><div><span>当前状态</span><strong>CoRL 2024</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2406.11793" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/princeton-vl/FetchBench-CORL2024" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/6a79233f5139b6a855cfad3f07e8e11a6c723a00" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=FetchBench%3A+A+Simulation+Benchmark+for+Robot+Fetching" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文提出了一个新的基准测试（FetchBench），旨在评估和改进机器人在复杂环境中抓取未知物体的能力。具体来说，论文试图解决的问题包括：</p>
+<ol>
+<li>
+<p><strong>现有方法的局限性</strong>：当前的机器人抓取方法主要集中在桌面等有限的环境设置中，这些方法并没有充分捕捉到真实世界环境中的复杂性，例如从架子、橱柜、抽屉等位置抓取物体。</p>
+</li>
+<li>
+<p><strong>真实世界场景与研究场景之间的差距</strong>：现实世界中的日常场景与当前研究中通常处理的场景之间的复杂性存在差距，这使得现有方法在处理未知物体和新环境时的有效性不明确。</p>
+</li>
+<li>
+<p><strong>集成抓取预测与运动规划的方法评估</strong>：论文提出FetchBench基准测试，专门用于评估那些将抓取预测与运动规划相结合的方法，这些方法在复杂日常场景中的表现尚不清楚。</p>
+</li>
+<li>
+<p><strong>系统性分析与改进建议</strong>：通过对现有方法的系统性分析，论文揭示了关键瓶颈，并提出了基于分析的改进建议，以推动机器人抓取技术的发展。</p>
+</li>
+<li>
+<p><strong>数据生成与模仿学习方法</strong>：FetchBench还包括一个数据生成管道，用于收集成功的抓取轨迹，以支持模仿学习方法，并通过实证分析揭示了现有方法在这一领域的挑战和失败案例。</p>
+</li>
+</ol>
+<p>总的来说，论文的目标是推动机器人抓取技术在更广泛的应用场景中的发展，特别是在那些需要同时考虑抓取和规划的复杂环境中。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>论文中提到了多个与机器人抓取和操作相关的研究工作，以下是一些主要的相关研究：</p>
+<ol>
+<li>
+<p><strong>桌面和二进制场景的抓取方法</strong>：这些研究主要关注于在桌面或二进制环境中对未知物体进行抓取，例如 [1, 2, 3, 4, 5]。</p>
+</li>
+<li>
+<p><strong>运动规划算法</strong>：这些研究涉及到运动规划，用于指导机器人到达抓取位置并从复杂环境中取出物体，例如 [12, 13, 42, 43, 44]。</p>
+</li>
+<li>
+<p><strong>抓取姿态预测模型</strong>：这些研究集中于预测适合抓取的姿态，例如 [1, 3, 2, 34, 35]。</p>
+</li>
+<li>
+<p><strong>端到端策略学习</strong>：一些研究尝试通过模仿学习直接学习从感知到动作的端到端策略，例如 [36, 37]。</p>
+</li>
+<li>
+<p><strong>机器人操作基准测试</strong>：这些研究提供了不同的基准测试和模拟环境，用于评估机器人操作算法，例如 [14, 17, 18, 22, 24, 27, 29, 31]。</p>
+</li>
+<li>
+<p><strong>物体分割和追踪</strong>：这些技术用于提供机器人操作中所需的物体和场景的准确信息，例如 [38, 39]。</p>
+</li>
+<li>
+<p><strong>其他抓取和操作数据集</strong>：例如 ACRONYM 数据集 [41] 提供了大量的抓取姿态标注。</p>
+</li>
+<li>
+<p><strong>仿真环境和合成数据</strong>：例如 Isaac-Sim [8] 和 Infinigen [10]，用于生成逼真的室内环境和物体。</p>
+</li>
+<li>
+<p><strong>其他相关的机器学习和机器人学习研究</strong>：例如 [11, 15, 16, 19, 20, 21, 23, 25, 26, 30, 33]。</p>
+</li>
+</ol>
+<p>这些研究为FetchBench基准测试提供了背景和基础，同时也展示了现有方法的局限性，特别是在处理复杂和未知环境时。论文通过这些相关工作，强调了开发新的评估工具和方法来提高机器人在真实世界环境中的抓取能力的重要性。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个关键步骤来解决机器人在复杂环境中抓取未知物体的问题：</p>
+<ol>
+<li>
+<p><strong>创建FetchBench基准测试</strong>：提出了一个新的基准测试，专门用于评估机器人在复杂日常场景中抓取和检索物体的能力。</p>
+</li>
+<li>
+<p><strong>生成多样化的场景</strong>：使用程序化方法生成多样化的抓取查询场景，这些场景模拟了现实世界中的环境，如架子、橱柜、抽屉和篮子等。</p>
+</li>
+<li>
+<p><strong>集成抓取和运动规划挑战</strong>：FetchBench不仅关注抓取物体，还涉及到从复杂环境中规划无碰撞路径将物体移动到指定位置的挑战。</p>
+</li>
+<li>
+<p><strong>实现和评估基线方法</strong>：在FetchBench上实现了多种基线方法，包括传统的感知-规划-行动（Sense-Plan-Act）流水线和端到端的行为模型。</p>
+</li>
+<li>
+<p><strong>数据生成管道</strong>：开发了一个数据生成管道，用于收集成功的抓取轨迹，这些数据可以用于模仿学习方法。</p>
+</li>
+<li>
+<p><strong>系统性分析和瓶颈识别</strong>：通过实证分析，论文揭示了现有方法在FetchBench上的表现，识别了关键瓶颈，并提出了改进建议。</p>
+</li>
+<li>
+<p><strong>推荐策略</strong>：基于系统性分析，论文推荐了结合传统流水线和端到端行为模型的策略，以提高抓取任务的成功率。</p>
+</li>
+<li>
+<p><strong>真实世界实验验证</strong>：在真实世界环境中进行了实验，以展示FetchBench中提出的挑战在现实世界中同样存在。</p>
+</li>
+<li>
+<p><strong>讨论和未来工作</strong>：论文讨论了FetchBench的局限性，并提出了未来工作的方向，包括扩展到不同的机器人系统和增加对象类别的覆盖范围。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅提供了一个评估和改进机器人抓取方法的基准测试，而且还为未来的研究提供了明确的方向和建议。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了以下实验来评估和分析FetchBench基准测试以及所提出的各种方法：</p>
+<ol>
+<li>
+<p><strong>基线比较实验</strong>：评估了多种基线方法在FetchBench上的性能，包括基于感知-规划-行动（Sense-Plan-Act）流水线的方法和端到端行为克隆方法。这些方法在基准测试上的成功率最高只有20%，表明任务远未解决。</p>
+</li>
+<li>
+<p><strong>跨场景类别的性能比较</strong>：比较了不同场景类别（桌面、架子、篮子、抽屉）中方法的性能，发现从架子、板子和篮子中抓取物体比从桌面和抽屉中更具挑战性。</p>
+</li>
+<li>
+<p><strong>流水线方法的消融研究</strong>：对基于流水线的方法进行了消融研究，使用理想化的抓取注释和完美的场景网格作为输入，以确定流水线中哪些组件在抓取任务中存在瓶颈。</p>
+</li>
+<li>
+<p><strong>部分点云数据的影响分析</strong>：研究了使用部分点云数据进行运动规划对成功率的影响，发现这会导致执行期间的碰撞问题，从而降低成功率。</p>
+</li>
+<li>
+<p><strong>抓取姿态预测质量的影响分析</strong>：评估了抓取姿态预测模型的质量对流水线方法性能的影响，发现预测不准确会导致成功率下降。</p>
+</li>
+<li>
+<p><strong>重复执行流水线的效果分析</strong>：分析了通过重复执行抓取程序来解决失败的可能性，发现虽然重复执行可以提高成功率，但这是一种低效的策略。</p>
+</li>
+<li>
+<p><strong>真实机器人实验</strong>：在真实世界环境中使用CGN-RRTConnect基线进行了实验，验证了在复杂环境中抓取未知物体的挑战性，并分析了失败案例。</p>
+</li>
+<li>
+<p><strong>失败案例分析</strong>：对真实机器人实验中的失败案例进行了详细分析，将其归类为无抓取姿态、运动规划失败、无效抓取姿态、碰撞失败等类型，并探讨了每种失败类型的原因。</p>
+</li>
+</ol>
+<p>这些实验提供了对FetchBench基准测试和当前机器人抓取方法性能的深入理解，并揭示了需要进一步研究和改进的关键领域。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文的讨论和局限性部分，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>模拟到现实世界的转换</strong>：虽然FetchBench是一个基于模拟的基准测试，但存在从模拟到现实世界性能转换的挑战。未来的工作可以探索如何减少sim-to-real差异，特别是在物理模拟和接触方面。</p>
+</li>
+<li>
+<p><strong>处理部分可观测性</strong>：论文指出，使用部分点云数据进行运动规划是一个挑战。研究如何改进算法以更好地处理部分可观测性和环境的不确定性是一个有价值的方向。</p>
+</li>
+<li>
+<p><strong>抓取姿态预测模型的改进</strong>：尽管ContactGraspNet用于抓取姿态预测，但模型在复杂环境中的性能仍有提升空间。研究如何提高抓取姿态预测的准确性和多样性是一个重要的研究方向。</p>
+</li>
+<li>
+<p><strong>运动规划方法的增强</strong>：现有的运动规划算法在处理复杂环境时存在局限性。开发能够更好地处理环境中的障碍物和动态变化的算法是一个关键的探索领域。</p>
+</li>
+<li>
+<p><strong>模仿学习与端到端方法的结合</strong>：论文中提到结合模仿学习和传统流水线方法可以提高性能。进一步探索这种结合的策略和架构，以及如何优化端到端行为模型，是一个有前景的研究方向。</p>
+</li>
+<li>
+<p><strong>多模态输入的处理</strong>：在现实世界中，机器人需要处理来自不同传感器的多种输入。研究如何有效地融合和利用这些多模态输入进行抓取任务是一个挑战。</p>
+</li>
+<li>
+<p><strong>鲁棒性和适应性</strong>：提高机器人抓取系统在面对未知物体和环境变化时的鲁棒性和适应性是至关重要的。研究如何使系统更加灵活和鲁棒是一个长期目标。</p>
+</li>
+<li>
+<p><strong>更广泛的机器人系统和对象类别</strong>：论文的评估主要集中在特定的机器人臂和夹爪上。将基准测试扩展到不同的机器人系统和更广泛的对象类别，以增加任务的普遍性和适用性。</p>
+</li>
+<li>
+<p><strong>实时性能和计算效率</strong>：在现实世界的应用中，实时性能和计算效率是关键因素。研究如何优化算法以满足实时要求，同时保持高效性。</p>
+</li>
+<li>
+<p><strong>用户交互和自主性</strong>：提高机器人在与人类用户交互时的自主性和智能性，使其能够理解和响应用户的需求和指令。</p>
+</li>
+</ol>
+<p>这些探索点可以帮助推动机器人抓取技术的发展，使其更接近实际应用，并提高在复杂环境中的性能和可靠性。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文主要内容可以总结如下：</p>
+<ol>
+<li>
+<p><strong>问题提出</strong>：论文指出了现有机器人抓取方法主要集中在桌面等简单环境，而真实世界中抓取任务远更复杂，需要同时考虑抓取和规划。</p>
+</li>
+<li>
+<p><strong>FetchBench基准测试</strong>：为了评估和改进机器人在复杂环境中的抓取能力，作者提出了FetchBench，这是一个模拟基准测试，专门针对日常场景中抓取和检索物体的任务。</p>
+</li>
+<li>
+<p><strong>多样化场景生成</strong>：FetchBench使用程序化方法生成多样化的抓取场景，包括架子、橱柜、抽屉等，以模拟真实世界环境。</p>
+</li>
+<li>
+<p><strong>数据和基线实现</strong>：论文提供了一个数据生成管道，用于收集成功的抓取轨迹，支持模仿学习方法。同时，实现了多种基线方法，包括感知-规划-行动流水线和端到端行为模型。</p>
+</li>
+<li>
+<p><strong>实证分析</strong>：通过在FetchBench上的实验，论文发现即使是最佳方法，成功率也仅有20%，揭示了现有方法的局限性，并识别了关键瓶颈。</p>
+</li>
+<li>
+<p><strong>系统性分析与改进建议</strong>：论文通过消融实验和使用理想化组件（如完美抓取姿态和场景网格）的分析，指出了部分可观测性、抓取姿态预测不准确和无效重试策略等问题。</p>
+</li>
+<li>
+<p><strong>真实世界实验</strong>：为了证明FetchBench中提出的挑战在现实世界中同样存在，作者在真实环境中使用CGN-RRTConnect基线进行了实验，展示了复杂环境中抓取任务的困难。</p>
+</li>
+<li>
+<p><strong>讨论与未来工作</strong>：论文讨论了FetchBench的局限性，并提出了未来工作的方向，如扩展到不同的机器人系统、处理多模态输入、提高鲁棒性和适应性等。</p>
+</li>
+<li>
+<p><strong>贡献总结</strong>：论文的主要贡献包括FetchBench基准测试的提出、对现有方法的系统性分析和挑战的识别，以及为机器人抓取任务提供的数据生成器和基线实现。</p>
+</li>
+</ol>
+<p>总的来说，这篇论文通过提出FetchBench基准测试，不仅评估了现有机器人抓取方法在复杂环境中的性能，还揭示了这些方法的局限性，并为未来的研究提供了明确的方向和建议。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是FetchBench%3A%20A%20Simulation%20Benchmark%20for%20Robot%20Fetching，链接是 https://arxiv.org/pdf/2406.11793 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2406.11793 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>FetchBench</h1><p class="muted">6,000 测试实例；论文生成 27,500 条训练轨迹。公开视频媒体入口未定位到，提供静态任务示例。</p><p><strong>3 张独立预览图</strong> · 1 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">轨迹库逐条秒数未公开核验；控制步上限与算法计算时间不能等同 MP4 时长。</p></div><div class="note"><ul><li>未找到可逐视频访问的官方训练轨迹发布清单；未下载大型资产包。</li><li>预览仅为论文静态研究图，不计视频帧，不补齐 100 张。</li><li>正文与表 4 对 drawer / basket 的数量有不一致。</li></ul></div><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "fetchbench", "title": "FetchBench", "category": "仿真抓取与取出 · 任务规格和轨迹", "summary": "6,000 测试实例；论文生成 27,500 条训练轨迹。公开视频媒体入口未定位到，提供静态任务示例。", "paper_url": "https://arxiv.org/abs/2406.11793", "repo_url": "https://github.com/princeton-vl/FetchBench-CORL2024", "project_url": "https://sites.google.com/view/fetchbench/home", "duration_summary": "轨迹库逐条秒数未公开核验；控制步上限与算法计算时间不能等同 MP4 时长。", "availability": "官方代码/资产入口公开；README 仍写 baseline dataset 将后续发布。", "preview_status": "partial", "limitations": ["未找到可逐视频访问的官方训练轨迹发布清单；未下载大型资产包。", "预览仅为论文静态研究图，不计视频帧，不补齐 100 张。", "正文与表 4 对 drawer / basket 的数量有不一致。"], "groups": [{"id": "static-examples", "title": "官方静态任务示例", "description": "静态研究图，非视频帧，也非完整数据集抽样。", "media_kind": "image", "frames": [{"image": "previews/S1-F1.jpg", "source_url": "https://arxiv.org/html/2406.11793v2/task_examples.png", "source_label": "论文 S1.F1 静态图", "video_id": "", "timestamp_seconds": null, "duration_seconds": null}, {"image": "previews/S2-F2.jpg", "source_url": "https://arxiv.org/html/2406.11793v2/images/task_def3.png", "source_label": "论文 S2.F2 静态图", "video_id": "", "timestamp_seconds": null, "duration_seconds": null}, {"image": "previews/S4-F3.jpg", "source_url": "https://arxiv.org/html/2406.11793v2/procedural_examples.png", "source_label": "论文 S4.F3 静态图", "video_id": "", "timestamp_seconds": null, "duration_seconds": null}], "video_cases": [], "contact_sheet": "previews/contact_sheets/static-examples.jpg"}], "paper_metadata": {"slug": "fetchbench", "title": "FetchBench: A Simulation Benchmark for Robot Fetching", "paper_url": "https://arxiv.org/abs/2406.11793", "retrieved_at_utc": "2026-09-23T09:45:11+00:00", "arxiv_id": "2406.11793", "arxiv_url": "https://arxiv.org/abs/2406.11793", "arxiv_title": "FetchBench: A Simulation Benchmark for Robot Fetching", "arxiv_published_at": "2024/06/17", "arxiv_updated_at": "2024/10/18", "arxiv_journal_reference": null, "arxiv_fetch_status": "ok", "arxiv_source_url": "https://arxiv.org/abs/2406.11793", "citation_count": 11, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/6a79233f5139b6a855cfad3f07e8e11a6c723a00", "citation_fetch_status": "ok", "citation_title": "FetchBench: A Simulation Benchmark for Robot Fetching", "github_repo": "princeton-vl/FetchBench-CORL2024", "github_url": "https://github.com/princeton-vl/FetchBench-CORL2024", "github_stars": 35, "github_forks": 4, "github_updated_at": "2026-08-11T07:30:55Z", "github_fetch_status": "ok", "github_source_url": "https://api.github.com/repos/princeton-vl/FetchBench-CORL2024", "status_label": "CoRL 2024", "status_source": "overview.md", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=FetchBench%3A+A+Simulation+Benchmark+for+Robot+Fetching", "papers_cool_detail_url": "https://papers.cool/arxiv/2406.11793", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文提出了一个新的基准测试（FetchBench），旨在评估和改进机器人在复杂环境中抓取未知物体的能力。具体来说，论文试图解决的问题包括：<\/p>\n<ol>\n<li>\n<p><strong>现有方法的局限性<\/strong>：当前的机器人抓取方法主要集中在桌面等有限的环境设置中，这些方法并没有充分捕捉到真实世界环境中的复杂性，例如从架子、橱柜、抽屉等位置抓取物体。<\/p>\n<\/li>\n<li>\n<p><strong>真实世界场景与研究场景之间的差距<\/strong>：现实世界中的日常场景与当前研究中通常处理的场景之间的复杂性存在差距，这使得现有方法在处理未知物体和新环境时的有效性不明确。<\/p>\n<\/li>\n<li>\n<p><strong>集成抓取预测与运动规划的方法评估<\/strong>：论文提出FetchBench基准测试，专门用于评估那些将抓取预测与运动规划相结合的方法，这些方法在复杂日常场景中的表现尚不清楚。<\/p>\n<\/li>\n<li>\n<p><strong>系统性分析与改进建议<\/strong>：通过对现有方法的系统性分析，论文揭示了关键瓶颈，并提出了基于分析的改进建议，以推动机器人抓取技术的发展。<\/p>\n<\/li>\n<li>\n<p><strong>数据生成与模仿学习方法<\/strong>：FetchBench还包括一个数据生成管道，用于收集成功的抓取轨迹，以支持模仿学习方法，并通过实证分析揭示了现有方法在这一领域的挑战和失败案例。<\/p>\n<\/li>\n<\/ol>\n<p>总的来说，论文的目标是推动机器人抓取技术在更广泛的应用场景中的发展，特别是在那些需要同时考虑抓取和规划的复杂环境中。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>论文中提到了多个与机器人抓取和操作相关的研究工作，以下是一些主要的相关研究：<\/p>\n<ol>\n<li>\n<p><strong>桌面和二进制场景的抓取方法<\/strong>：这些研究主要关注于在桌面或二进制环境中对未知物体进行抓取，例如 [1, 2, 3, 4, 5]。<\/p>\n<\/li>\n<li>\n<p><strong>运动规划算法<\/strong>：这些研究涉及到运动规划，用于指导机器人到达抓取位置并从复杂环境中取出物体，例如 [12, 13, 42, 43, 44]。<\/p>\n<\/li>\n<li>\n<p><strong>抓取姿态预测模型<\/strong>：这些研究集中于预测适合抓取的姿态，例如 [1, 3, 2, 34, 35]。<\/p>\n<\/li>\n<li>\n<p><strong>端到端策略学习<\/strong>：一些研究尝试通过模仿学习直接学习从感知到动作的端到端策略，例如 [36, 37]。<\/p>\n<\/li>\n<li>\n<p><strong>机器人操作基准测试<\/strong>：这些研究提供了不同的基准测试和模拟环境，用于评估机器人操作算法，例如 [14, 17, 18, 22, 24, 27, 29, 31]。<\/p>\n<\/li>\n<li>\n<p><strong>物体分割和追踪<\/strong>：这些技术用于提供机器人操作中所需的物体和场景的准确信息，例如 [38, 39]。<\/p>\n<\/li>\n<li>\n<p><strong>其他抓取和操作数据集<\/strong>：例如 ACRONYM 数据集 [41] 提供了大量的抓取姿态标注。<\/p>\n<\/li>\n<li>\n<p><strong>仿真环境和合成数据<\/strong>：例如 Isaac-Sim [8] 和 Infinigen [10]，用于生成逼真的室内环境和物体。<\/p>\n<\/li>\n<li>\n<p><strong>其他相关的机器学习和机器人学习研究<\/strong>：例如 [11, 15, 16, 19, 20, 21, 23, 25, 26, 30, 33]。<\/p>\n<\/li>\n<\/ol>\n<p>这些研究为FetchBench基准测试提供了背景和基础，同时也展示了现有方法的局限性，特别是在处理复杂和未知环境时。论文通过这些相关工作，强调了开发新的评估工具和方法来提高机器人在真实世界环境中的抓取能力的重要性。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个关键步骤来解决机器人在复杂环境中抓取未知物体的问题：<\/p>\n<ol>\n<li>\n<p><strong>创建FetchBench基准测试<\/strong>：提出了一个新的基准测试，专门用于评估机器人在复杂日常场景中抓取和检索物体的能力。<\/p>\n<\/li>\n<li>\n<p><strong>生成多样化的场景<\/strong>：使用程序化方法生成多样化的抓取查询场景，这些场景模拟了现实世界中的环境，如架子、橱柜、抽屉和篮子等。<\/p>\n<\/li>\n<li>\n<p><strong>集成抓取和运动规划挑战<\/strong>：FetchBench不仅关注抓取物体，还涉及到从复杂环境中规划无碰撞路径将物体移动到指定位置的挑战。<\/p>\n<\/li>\n<li>\n<p><strong>实现和评估基线方法<\/strong>：在FetchBench上实现了多种基线方法，包括传统的感知-规划-行动（Sense-Plan-Act）流水线和端到端的行为模型。<\/p>\n<\/li>\n<li>\n<p><strong>数据生成管道<\/strong>：开发了一个数据生成管道，用于收集成功的抓取轨迹，这些数据可以用于模仿学习方法。<\/p>\n<\/li>\n<li>\n<p><strong>系统性分析和瓶颈识别<\/strong>：通过实证分析，论文揭示了现有方法在FetchBench上的表现，识别了关键瓶颈，并提出了改进建议。<\/p>\n<\/li>\n<li>\n<p><strong>推荐策略<\/strong>：基于系统性分析，论文推荐了结合传统流水线和端到端行为模型的策略，以提高抓取任务的成功率。<\/p>\n<\/li>\n<li>\n<p><strong>真实世界实验验证<\/strong>：在真实世界环境中进行了实验，以展示FetchBench中提出的挑战在现实世界中同样存在。<\/p>\n<\/li>\n<li>\n<p><strong>讨论和未来工作<\/strong>：论文讨论了FetchBench的局限性，并提出了未来工作的方向，包括扩展到不同的机器人系统和增加对象类别的覆盖范围。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文不仅提供了一个评估和改进机器人抓取方法的基准测试，而且还为未来的研究提供了明确的方向和建议。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文中进行了以下实验来评估和分析FetchBench基准测试以及所提出的各种方法：<\/p>\n<ol>\n<li>\n<p><strong>基线比较实验<\/strong>：评估了多种基线方法在FetchBench上的性能，包括基于感知-规划-行动（Sense-Plan-Act）流水线的方法和端到端行为克隆方法。这些方法在基准测试上的成功率最高只有20%，表明任务远未解决。<\/p>\n<\/li>\n<li>\n<p><strong>跨场景类别的性能比较<\/strong>：比较了不同场景类别（桌面、架子、篮子、抽屉）中方法的性能，发现从架子、板子和篮子中抓取物体比从桌面和抽屉中更具挑战性。<\/p>\n<\/li>\n<li>\n<p><strong>流水线方法的消融研究<\/strong>：对基于流水线的方法进行了消融研究，使用理想化的抓取注释和完美的场景网格作为输入，以确定流水线中哪些组件在抓取任务中存在瓶颈。<\/p>\n<\/li>\n<li>\n<p><strong>部分点云数据的影响分析<\/strong>：研究了使用部分点云数据进行运动规划对成功率的影响，发现这会导致执行期间的碰撞问题，从而降低成功率。<\/p>\n<\/li>\n<li>\n<p><strong>抓取姿态预测质量的影响分析<\/strong>：评估了抓取姿态预测模型的质量对流水线方法性能的影响，发现预测不准确会导致成功率下降。<\/p>\n<\/li>\n<li>\n<p><strong>重复执行流水线的效果分析<\/strong>：分析了通过重复执行抓取程序来解决失败的可能性，发现虽然重复执行可以提高成功率，但这是一种低效的策略。<\/p>\n<\/li>\n<li>\n<p><strong>真实机器人实验<\/strong>：在真实世界环境中使用CGN-RRTConnect基线进行了实验，验证了在复杂环境中抓取未知物体的挑战性，并分析了失败案例。<\/p>\n<\/li>\n<li>\n<p><strong>失败案例分析<\/strong>：对真实机器人实验中的失败案例进行了详细分析，将其归类为无抓取姿态、运动规划失败、无效抓取姿态、碰撞失败等类型，并探讨了每种失败类型的原因。<\/p>\n<\/li>\n<\/ol>\n<p>这些实验提供了对FetchBench基准测试和当前机器人抓取方法性能的深入理解，并揭示了需要进一步研究和改进的关键领域。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文的讨论和局限性部分，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>模拟到现实世界的转换<\/strong>：虽然FetchBench是一个基于模拟的基准测试，但存在从模拟到现实世界性能转换的挑战。未来的工作可以探索如何减少sim-to-real差异，特别是在物理模拟和接触方面。<\/p>\n<\/li>\n<li>\n<p><strong>处理部分可观测性<\/strong>：论文指出，使用部分点云数据进行运动规划是一个挑战。研究如何改进算法以更好地处理部分可观测性和环境的不确定性是一个有价值的方向。<\/p>\n<\/li>\n<li>\n<p><strong>抓取姿态预测模型的改进<\/strong>：尽管ContactGraspNet用于抓取姿态预测，但模型在复杂环境中的性能仍有提升空间。研究如何提高抓取姿态预测的准确性和多样性是一个重要的研究方向。<\/p>\n<\/li>\n<li>\n<p><strong>运动规划方法的增强<\/strong>：现有的运动规划算法在处理复杂环境时存在局限性。开发能够更好地处理环境中的障碍物和动态变化的算法是一个关键的探索领域。<\/p>\n<\/li>\n<li>\n<p><strong>模仿学习与端到端方法的结合<\/strong>：论文中提到结合模仿学习和传统流水线方法可以提高性能。进一步探索这种结合的策略和架构，以及如何优化端到端行为模型，是一个有前景的研究方向。<\/p>\n<\/li>\n<li>\n<p><strong>多模态输入的处理<\/strong>：在现实世界中，机器人需要处理来自不同传感器的多种输入。研究如何有效地融合和利用这些多模态输入进行抓取任务是一个挑战。<\/p>\n<\/li>\n<li>\n<p><strong>鲁棒性和适应性<\/strong>：提高机器人抓取系统在面对未知物体和环境变化时的鲁棒性和适应性是至关重要的。研究如何使系统更加灵活和鲁棒是一个长期目标。<\/p>\n<\/li>\n<li>\n<p><strong>更广泛的机器人系统和对象类别<\/strong>：论文的评估主要集中在特定的机器人臂和夹爪上。将基准测试扩展到不同的机器人系统和更广泛的对象类别，以增加任务的普遍性和适用性。<\/p>\n<\/li>\n<li>\n<p><strong>实时性能和计算效率<\/strong>：在现实世界的应用中，实时性能和计算效率是关键因素。研究如何优化算法以满足实时要求，同时保持高效性。<\/p>\n<\/li>\n<li>\n<p><strong>用户交互和自主性<\/strong>：提高机器人在与人类用户交互时的自主性和智能性，使其能够理解和响应用户的需求和指令。<\/p>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助推动机器人抓取技术的发展，使其更接近实际应用，并提高在复杂环境中的性能和可靠性。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>这篇论文主要内容可以总结如下：<\/p>\n<ol>\n<li>\n<p><strong>问题提出<\/strong>：论文指出了现有机器人抓取方法主要集中在桌面等简单环境，而真实世界中抓取任务远更复杂，需要同时考虑抓取和规划。<\/p>\n<\/li>\n<li>\n<p><strong>FetchBench基准测试<\/strong>：为了评估和改进机器人在复杂环境中的抓取能力，作者提出了FetchBench，这是一个模拟基准测试，专门针对日常场景中抓取和检索物体的任务。<\/p>\n<\/li>\n<li>\n<p><strong>多样化场景生成<\/strong>：FetchBench使用程序化方法生成多样化的抓取场景，包括架子、橱柜、抽屉等，以模拟真实世界环境。<\/p>\n<\/li>\n<li>\n<p><strong>数据和基线实现<\/strong>：论文提供了一个数据生成管道，用于收集成功的抓取轨迹，支持模仿学习方法。同时，实现了多种基线方法，包括感知-规划-行动流水线和端到端行为模型。<\/p>\n<\/li>\n<li>\n<p><strong>实证分析<\/strong>：通过在FetchBench上的实验，论文发现即使是最佳方法，成功率也仅有20%，揭示了现有方法的局限性，并识别了关键瓶颈。<\/p>\n<\/li>\n<li>\n<p><strong>系统性分析与改进建议<\/strong>：论文通过消融实验和使用理想化组件（如完美抓取姿态和场景网格）的分析，指出了部分可观测性、抓取姿态预测不准确和无效重试策略等问题。<\/p>\n<\/li>\n<li>\n<p><strong>真实世界实验<\/strong>：为了证明FetchBench中提出的挑战在现实世界中同样存在，作者在真实环境中使用CGN-RRTConnect基线进行了实验，展示了复杂环境中抓取任务的困难。<\/p>\n<\/li>\n<li>\n<p><strong>讨论与未来工作<\/strong>：论文讨论了FetchBench的局限性，并提出了未来工作的方向，如扩展到不同的机器人系统、处理多模态输入、提高鲁棒性和适应性等。<\/p>\n<\/li>\n<li>\n<p><strong>贡献总结<\/strong>：论文的主要贡献包括FetchBench基准测试的提出、对现有方法的系统性分析和挑战的识别，以及为机器人抓取任务提供的数据生成器和基线实现。<\/p>\n<\/li>\n<\/ol>\n<p>总的来说，这篇论文通过提出FetchBench基准测试，不仅评估了现有机器人抓取方法在复杂环境中的性能，还揭示了这些方法的局限性，并为未来的研究提供了明确的方向和建议。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是FetchBench%3A%20A%20Simulation%20Benchmark%20for%20Robot%20Fetching，链接是 https://arxiv.org/pdf/2406.11793 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2406.11793 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2406.11793", "citation_retrieved_at_utc": "2026-09-23T11:24:44+00:00"}, "preview_images": 3, "video_preview_images": 0, "video_cases_count": 0, "video_case_groups_count": 0, "short_video_case_threshold_seconds": 180, "groups_count": 1, "groups_100_count": 0, "overview_html": "datasets/fetchbench/overview.html", "gallery_html": "datasets/fetchbench/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

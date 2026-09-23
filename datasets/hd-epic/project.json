@@ -1,0 +1,923 @@
+{
+  "slug": "hd-epic",
+  "title": "HD-EPIC",
+  "category": "多日厨房第一人称视频",
+  "summary": "9 人、156 段、41.3167 小时；已保存全部逐视频长度和 100 帧官方动态概览，另保留少量原 MP4 Range 帧。",
+  "paper_url": "https://arxiv.org/abs/2502.04144",
+  "repo_url": "https://github.com/hd-epic/hd-epic-annotations",
+  "project_url": "https://hd-epic.github.io/site/",
+  "dataset_urls": [
+    {
+      "label": "官方数据下载",
+      "url": "https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47"
+    },
+    {
+      "label": "逐视频 YouTube 与时长",
+      "url": "https://github.com/hd-epic/hd-epic-annotations/blob/main/youtube-links/HD_EPIC_YouTube_URLs.csv"
+    }
+  ],
+  "duration_summary": "156 段共 41.3167h；单段 9.7 秒–74.7522 分钟，均值15.8910分钟；官方完整时长CSV。",
+  "availability": "原始视频与丰富标注公开；本环境 Bristol Range 传输不稳定，未下载完整 MP4",
+  "preview_status": "partial",
+  "limitations": [
+    "100 帧主预览来自官网 10.2 秒动态 GIF，不是156段原视频的均匀抽样。",
+    "原视频只取得少量 Range 帧，未达到9位参与者每人100帧。",
+    "完整原视频逐文件字节数未读取；时长来自官方 CSV，不能当作本次对156个容器逐一解码实测。"
+  ],
+  "groups": [
+    {
+      "id": "official_overview",
+      "title": "官方动态概览（100 帧）",
+      "description": "从 10.2 秒官方 GIF 抽取真实录像拼图与标注展示；不是 156 段原视频的随机抽样。",
+      "frames": [
+        {
+          "image": "previews/official_overview/001.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/002.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.1,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/003.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.2,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/004.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.3,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/005.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.4,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/006.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.5,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/007.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.6,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/008.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.7,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/009.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.8,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/010.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 0.9,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/011.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.0,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/012.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.1,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/013.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.2,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/014.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.33,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/015.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.43,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/016.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.53,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/017.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.63,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/018.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.73,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/019.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.83,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/020.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 1.93,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/021.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.03,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/022.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.13,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/023.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.23,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/024.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.33,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/025.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.43,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/026.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.57,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/027.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.67,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/028.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.77,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/029.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.87,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/030.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 2.9699999999999998,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/031.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.07,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/032.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.17,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/033.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.27,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/034.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.37,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/035.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.4699999999999998,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/036.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.57,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/037.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.67,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/038.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.77,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/039.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 3.9,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/040.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.0,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/041.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.1,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/042.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.2,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/043.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.3,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/044.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.4,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/045.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.5,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/046.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.6,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/047.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.7,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/048.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.8,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/049.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 4.9,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/050.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.0,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/051.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.13,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/052.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.2299999999999995,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/053.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.33,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/054.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.43,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/055.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.53,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/056.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.63,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/057.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.7299999999999995,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/058.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.83,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/059.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 5.93,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/060.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.03,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/061.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.13,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/062.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.2299999999999995,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/063.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.37,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/064.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.47,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/065.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.57,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/066.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.67,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/067.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.77,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/068.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.87,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/069.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 6.97,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/070.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.07,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/071.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.17,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/072.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.27,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/073.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.37,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/074.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.47,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/075.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.57,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/076.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.7,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/077.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.8,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/078.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 7.8999999999999995,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/079.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.0,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/080.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.1,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/081.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.2,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/082.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.3,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/083.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.4,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/084.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.5,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/085.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.6,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/086.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.7,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/087.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.8,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/088.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 8.93,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/089.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.03,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/090.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.129999999999999,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/091.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.23,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/092.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.33,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/093.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.43,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/094.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.53,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/095.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.629999999999999,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/096.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.73,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/097.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.83,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/098.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 9.93,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/099.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 10.03,
+          "duration_seconds": 10.2
+        },
+        {
+          "image": "previews/official_overview/100.jpg",
+          "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+          "source_label": "HD-EPIC 官方动态概览 GIF：真实视频与标注拼图",
+          "video_id": "opening.gif",
+          "timestamp_seconds": 10.17,
+          "duration_seconds": 10.2
+        }
+      ]
+    },
+    {
+      "id": "P01_partial",
+      "title": "P01 原视频（10 帧，部分）",
+      "description": "Bristol Range 传输很慢，仅保留已成功解码的真实帧；本次提前结束有限预览，未保存完整 MP4。时间戳日志未完成，所以不填精确秒。",
+      "frames": [
+        {
+          "image": "previews/P01/001.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/002.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/003.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/004.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/005.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/006.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/007.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/008.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/009.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        },
+        {
+          "image": "previews/P01/010.jpg",
+          "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+          "source_label": "HD-EPIC P01 原 MP4 的 Range 抽帧（有限预览）",
+          "video_id": "P01-20240202-110250",
+          "timestamp_seconds": null,
+          "duration_seconds": 396.266667
+        }
+      ]
+    }
+  ]
+}

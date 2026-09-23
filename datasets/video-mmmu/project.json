@@ -1,0 +1,213 @@
+{
+  "slug": "video-mmmu",
+  "title": "Video-MMMU：视频知识获取与迁移基准",
+  "category": "视频知识获取与迁移基准",
+  "summary": "300 个大学/专业教学视频、900 道题，测试感知、理解与知识迁移，并衡量看视频前后的知识增益。",
+  "paper_url": "https://arxiv.org/abs/2501.13826",
+  "repo_url": "https://github.com/EvolvingLMMs-Lab/VideoMMMU",
+  "project_url": "https://videommmu.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/lmms-lab/VideoMMMU"
+    }
+  ],
+  "duration_summary": "数据集视频平均 506.2 秒（约8分26秒）；本页短case为官网剪辑，其实测时长单独标注。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "available",
+  "relation_level": "长上下文近邻",
+  "limitations": [
+    "官网短case是教学片段，不能把其时长当作完整数据视频长度。",
+    "本页结果来自论文/官方项目页，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://videommmu.github.io/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2501.13826"
+    }
+  ],
+  "groups": [
+    {
+      "id": "case_Art_Arttheory_14",
+      "title": "艺术：艺术理论",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Art_Arttheory_14.mp4",
+          "local_video": "samples/Art_Arttheory_14.mp4",
+          "poster": "previews/Art_Arttheory_14_poster.jpg",
+          "size_bytes": 451473,
+          "duration_seconds": 3.6036,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 29.97002997002997,
+          "sha256": "a200c0dc0698dd8929a1a9f0b9a36c1b10b7726759257f15ac081e6f25f5db2c",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 451473,
+          "title": "艺术：艺术理论",
+          "source_label": "艺术：艺术理论",
+          "video_id": "Art_Arttheory_14",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    },
+    {
+      "id": "case_Humanities_psychology_15",
+      "title": "人文：心理学",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Humanities_psychology_15.mp4",
+          "local_video": "samples/Humanities_psychology_15.mp4",
+          "poster": "previews/Humanities_psychology_15_poster.jpg",
+          "size_bytes": 3322300,
+          "duration_seconds": 16.249566666666666,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 29.97002997002997,
+          "sha256": "6a271a589ef7bd5ced9e5da0f0a4afe43fef391385f894104b0a8ccd474da6e7",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 3322300,
+          "title": "人文：心理学",
+          "source_label": "人文：心理学",
+          "video_id": "Humanities_psychology_15",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    },
+    {
+      "id": "case_Engineering_Computer_Science_1",
+      "title": "工程：计算机科学",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Engineering_Computer_Science_1.mp4",
+          "local_video": "samples/Engineering_Computer_Science_1.mp4",
+          "poster": "previews/Engineering_Computer_Science_1_poster.jpg",
+          "size_bytes": 1336820,
+          "duration_seconds": 12.645966666666666,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 29.97002997002997,
+          "sha256": "c4e3127c19d8bffd421c4e96326a258e61d2819afdd144df951a3f85b0ad3fd3",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 1336820,
+          "title": "工程：计算机科学",
+          "source_label": "工程：计算机科学",
+          "video_id": "Engineering_Computer_Science_1",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    },
+    {
+      "id": "case_Science_physics_11",
+      "title": "科学：物理学",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Science_physics_11.mp4",
+          "local_video": "samples/Science_physics_11.mp4",
+          "poster": "previews/Science_physics_11_poster.jpg",
+          "size_bytes": 3598763,
+          "duration_seconds": 13.1131,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 29.97002997002997,
+          "sha256": "0707d3affaa06789c5fb742972f4d6713c26052c35781ff032b3d03233ef47c0",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 2550187,
+          "title": "科学：物理学",
+          "source_label": "科学：物理学",
+          "video_id": "Science_physics_11",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    },
+    {
+      "id": "case_Business_Economics_1",
+      "title": "商业：经济学",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Business_Economics_1.mp4",
+          "local_video": "samples/Business_Economics_1.mp4",
+          "poster": "previews/Business_Economics_1_poster.jpg",
+          "size_bytes": 4290949,
+          "duration_seconds": 16.64,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 25.0,
+          "sha256": "17d50b457e56016596d02aba03065ffd516d884175679fdb36770f276ae41872",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 4290949,
+          "title": "商业：经济学",
+          "source_label": "商业：经济学",
+          "video_id": "Business_Economics_1",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    },
+    {
+      "id": "case_Medicine_public_health_12",
+      "title": "医学：公共卫生",
+      "description": "官网剪辑 case；不代表该条完整源视频长度。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "slug": "video-mmmu",
+          "source_url": "https://videommmu.github.io/assets/samples/Medicine_public_health_12.mp4",
+          "local_video": "samples/Medicine_public_health_12.mp4",
+          "poster": "previews/Medicine_public_health_12_poster.jpg",
+          "size_bytes": 6040584,
+          "duration_seconds": 35.52,
+          "width": 960,
+          "height": 540,
+          "codec": "h264",
+          "fps": 25.0,
+          "sha256": "8c21c9c4f8150668866c9b473a0431f5719247186826ee3ed51b7036015b7835",
+          "measurement_tool": "PyAV / FFmpeg libraries",
+          "downloaded_bytes_this_run": 6040584,
+          "title": "医学：公共卫生",
+          "source_label": "医学：公共卫生",
+          "video_id": "Medicine_public_health_12",
+          "category": "官方视频 case",
+          "description": "官网剪辑 case；不代表该条完整源视频长度。"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

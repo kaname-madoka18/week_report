@@ -1,0 +1,38 @@
+[
+  {
+    "id": "influence_battle",
+    "source_url": "https://umass-embodied-agi.github.io/Ella/assets/influence_battle.mp4",
+    "size_bytes": 66574375,
+    "duration_seconds": 101.5,
+    "duration_status": "PyAV stream metadata measured during Range read",
+    "preview_frames": 100,
+    "full_download": false
+  },
+  {
+    "id": "leadership_quest",
+    "source_url": "https://umass-embodied-agi.github.io/Ella/assets/leadership_quest.mp4",
+    "size_bytes": 102232940,
+    "duration_seconds": 123.4,
+    "duration_status": "PyAV stream metadata measured during Range read",
+    "preview_frames": 28,
+    "full_download": false
+  },
+  {
+    "id": "method",
+    "source_url": "https://umass-embodied-agi.github.io/Ella/assets/method.mp4",
+    "size_bytes": 13266291,
+    "duration_seconds": 63.833333333333336,
+    "duration_status": "PyAV stream metadata measured during Range read",
+    "preview_frames": 100,
+    "full_download": false
+  },
+  {
+    "id": "teaser",
+    "source_url": "https://umass-embodied-agi.github.io/Ella/assets/teaser.mp4",
+    "size_bytes": 85150490,
+    "duration_seconds": null,
+    "duration_status": "not_verified",
+    "preview_frames": 0,
+    "full_download": false
+  }
+]

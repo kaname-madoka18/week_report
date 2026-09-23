@@ -1,0 +1,275 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HALO / ReMemBench · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">HALO / ReMemBench</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-06-23</strong></div><div><span>引用数</span><strong>6</strong></div><div><span>GitHub stars</span><strong>7</strong></div><div><span>当前状态</span><strong>RSS 2026 · accepted</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2606.25136" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/UT-Austin-RobIn/HALO" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/18ec164b9df262023023b44214fbbca250cf535d" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://robin-lab.cs.utexas.edu/news/" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Memory+Retrieval+in+Visuomotor+Policies+for+Long-Horizon+Robot+Control" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文研究的是<strong>部分可观测环境下长程机器人模仿学习中的记忆检索问题</strong>。具体而言，论文试图解决视觉运动策略（visuomotor policies）在利用历史信息执行长程家庭操作任务时面临的两个核心挑战：</p>
+<p><strong>1. 虚假相关性（Spurious Correlations）</strong>
+在离线模仿学习中，基于注意力的记忆检索机制可能学习并依赖训练数据中与专家动作相关、但非因果性的历史信息。这类相关性在测试时往往不成立，导致策略错误地关注与任务无关的历史细节，从而泛化失败。</p>
+<p><strong>2. 误差累积与模型漂移（Error Accumulation and Model Drift）</strong>
+在闭环执行过程中，策略的预测误差会随时间累积，并污染存储在记忆中的历史表征。若策略在每一步都条件化于大量过去观测，这种噪声会被反复引入决策过程，导致长程控制中的模型漂移和级联故障。</p>
+<p>为此，论文提出 <strong>HALO</strong>（History-Aware visuomotor policy for LOng-horizon control），旨在通过以下方式实现可靠的长程控制：
+- 利用视觉语言模型（VLM）先验，通过自动生成的视频问答（VQA）监督来引导检索机制关注任务相关信息；
+- 采用 <strong>top-k 稀疏注意力</strong> 限制策略在每一步仅能访问历史中最相关的少量记忆条目，从而降低噪声累积的影响。</p>
+<p>最终目标是使机器人能够从长达约八分钟的过去经验中，灵活检索包括空间位置、物体关系、数量计数和事件时间等多样化信息，以完成长程家庭操作任务。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据论文第 II 节（Related Work），相关研究可归纳为以下三个方向：</p>
+<hr/>
+<h3>1. 部分可观测环境下的模仿学习（Imitation Learning under Partial Observability）</h3>
+<p>标准模仿学习通常假设观测具有马尔可夫性，导致纯反应式（reactive）视觉运动策略在部分可观测环境中失效。现有研究主要沿着以下路径引入显式记忆：</p>
+<ul>
+<li><strong>信念状态空间方法</strong>：通过显式建模任务状态来解决部分可观测性，但需要任务特定的表示与更新规则 [4]。</li>
+<li><strong>对象中心表示</strong>：将记忆限制为存储对象中心像素坐标，以减少视觉输入中的冗余信息，但往往只能检索空间信息，难以处理其他模态 [16]。</li>
+<li><strong>语义嵌入检索</strong>：利用学习得到的语义嵌入相似度，有选择地检索过去观测 [14, 29]。</li>
+<li><strong>手工设计规则</strong>：依据人工先验决定存储或丢弃哪些观测 [40]。</li>
+<li><strong>学习紧凑的历史压缩</strong>：将长程历史压缩为固定尺寸的潜在表示，支持长程推理，但可能丢弃低级动作序列等细粒度信息 [17, 36]。</li>
+</ul>
+<p>这些方法的共同局限在于：它们依赖于特定任务或模态的表示/规则，难以泛化到需要灵活访问多样化历史信息的长程任务。</p>
+<hr/>
+<h3>2. 基础模型的知识蒸馏（Knowledge Distillation from Foundation Models）</h3>
+<p>视觉语言基础模型（VLM）从大规模多模态数据中学习并编码了丰富的场景、物体与活动知识，已被广泛用于机器人的感知、规划、可供性（affordance）学习与语义推理 [37, 38, 1, 22, 30, 34]。</p>
+<ul>
+<li><strong>参数化记忆增强</strong>：部分工作将基础模型知识蒸馏到机器人系统中，以改进参数化记忆（如模型权重） [48, 15]。</li>
+<li><strong>非参数化记忆检索</strong>：较少有研究探索利用基础模型来引导<strong>非参数化记忆</strong>的检索——即从过去交互的原始记录中检索特定情节细节（如某物体被放置的位置或某事件发生的时刻） [28]。</li>
+</ul>
+<p>本文工作即属于后者：将 VLM 中关于“何种历史信息对任务相关”的先验蒸馏到策略中，同时通过动作模仿学习保证这些检索到的信息能够支撑低级控制。</p>
+<hr/>
+<h3>3. 长上下文推理的记忆机制（Memory Mechanisms for Long-Context Reasoning）</h3>
+<p>建模长程时间依赖是序列决策的核心挑战：</p>
+<ul>
+<li><strong>循环与状态空间模型</strong>：如 LSTM [25]、Mamba [21] 等，通过压缩的潜在状态维护记忆，但在长程 horizon 上面临选择性回忆困难与信用分配问题 [7]。</li>
+<li><strong>基于 Transformer 的注意力机制</strong>：允许直接访问过去输入，避免了信息压缩带来的损失 [44]。</li>
+<li><strong>密集注意力的缺陷</strong>：在长上下文中，密集注意力会使无关或噪声信息过度影响当前预测 [26]；在机器人闭环控制中，这一问题尤为严重，因为预测误差会与物理环境发生复合交互，导致模型漂移和级联故障。</li>
+</ul>
+<p>为调节长上下文信息流，已有研究提出：
+- 将注意力与循环机制结合（如 Transformer-XL） [12]；
+- 引入门控注意力（Gated Attention） [31]；
+- 在 Transformer 架构中诱导稀疏性（如 Big Bird） [47]。</p>
+<p>这些机制在语言与视觉领域已有广泛研究，但它们在<strong>长程闭环视觉运动控制</strong>中的有效性尚未得到充分验证。本文发现，简单的 <strong>top-k 稀疏注意力</strong> 即可有效减少模型预测误差在记忆中的累积。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>针对长程部分可观测机器人模仿学习中的记忆检索问题，论文提出 <strong>HALO</strong>（History-Aware visuomotor policy for LOng-horizon control）。该方法通过两项核心设计，分别应对<strong>虚假相关性</strong>与<strong>误差累积导致的模型漂移</strong>：</p>
+<hr/>
+<h3>1. 整体架构与问题设定</h3>
+<p>该方法将交互历史定义为</p>
+<p>$$\tau_t = {(o_1, a_1), \dots, (o_{t-1}, a_{t-1}), o_t},$$</p>
+<p>其中 $o_t$ 为当前观测，$a_t$ 为动作，$l$ 为自然语言任务指令。策略网络 $\pi_\theta(a_t \mid \tau_t, l)$ 由三部分组成：
+- <strong>模态编码器</strong>：观测编码器 $g_\theta^{\text{obs}}$ 与动作编码器 $g_\theta^{\text{act}}$；
+- <strong>策略主干</strong> $f_\theta$：基于 Transformer 的检索模块，负责从历史记忆 $M_t$ 中检索相关信息；
+- <strong>预测头</strong>：动作预测头 $h_\theta^{\text{act}}$ 与文本问答头 $h_\theta^{\text{text}}$。</p>
+<p>记忆 $M_t$ 由编码后的历史观测与动作组成：</p>
+<p>$$M_t = {(x_1, e_1), \dots, (x_{t-1}, e_{t-1})},$$</p>
+<p>其中 $x_i = g_\theta^{\text{obs}}(o_i)$，$e_i = g_\theta^{\text{act}}(a_i)$。</p>
+<hr/>
+<h3>2. 通过视频问答蒸馏视觉语言模型先验</h3>
+<p>为抑制策略学习历史观测与当前动作之间的虚假相关性，该方法利用视觉语言模型（VLM）中关于“何种信息对任务相关”的先验，通过自动生成的视频问答（VQA）对检索过程施加直接监督。</p>
+<h4>(a) VQA 作为检索监督</h4>
+<p>从历史轨迹中自动生成问题-答案对 $(u, v)$，其中问题 $u$ 探询任务相关信息（如物体位置、数量、事件顺序、子目标进度等），答案 $v$ 基于历史记录。策略主干 $f_\theta$ 在输入记忆 $M_t$、当前观测嵌入 $x_t$ 和问题 $u$ 后，通过文本头预测答案：</p>
+<p>$$\hat{v} \sim \pi_\theta^{\text{vqa}}(v \mid M_t, x_t, u).$$</p>
+<p>正确回答这些问题要求检索模块必须准确定位并提取历史中的特定任务相关事件，从而将 VLM 的先验偏差注入到记忆检索中。</p>
+<h4>(b) 联合训练目标</h4>
+<p>策略同时接受动作模仿学习与 VQA 辅助监督，共享编码器与检索主干，仅在预测头分离：</p>
+<ul>
+<li><strong>模仿学习损失</strong>：</li>
+</ul>
+<p>$$\mathcal{L}<em>{\text{IL}}(\theta) = \mathbb{E}</em>{(\tau_t, a_t^<em>) \sim \mathcal{D}} \left[ -\log \pi_\theta^{\text{act}}(a_t^</em> \mid \tau_t, l) \right]$$</p>
+<ul>
+<li><strong>VQA 损失</strong>：</li>
+</ul>
+<p>$$\mathcal{L}<em>{\text{VQA}}(\theta) = \mathbb{E}</em>{(\tau_t, u, v) \sim \tilde{\mathcal{D}}} \left[ -\log \pi_\theta^{\text{vqa}}(v \mid \tau_t, u) \right]$$</p>
+<ul>
+<li><strong>总损失</strong>：</li>
+</ul>
+<p>$$\mathcal{L}(\theta) = \mathcal{L}<em>{\text{IL}}(\theta) + \lambda \mathcal{L}</em>{\text{VQA}}(\theta)$$</p>
+<p>联合训练确保 VQA 引导检索关注任务相关信息，而模仿学习保证这些信息被实际用于低层控制。</p>
+<h4>(c) 多阶段 VQA 生成流水线</h4>
+<p>为应对长视频直接生成 VQA 易出错的问题，该方法采用三阶段流水线：
+1. <strong>轨迹文本化</strong>：结合对象检测与 VLM 将轨迹转为包含场景元素与活动描述的文本摘要；
+2. <strong>问答合成</strong>：由大语言模型基于文本摘要生成问题，并随机采样帧索引以避免对初始片段的偏见；
+3. <strong>自动过滤</strong>：使用语言模型评判生成的问答对，滤除错误、不相关或无法回答的样本（约过滤 20%）。</p>
+<hr/>
+<h3>3. 通过 Top-K 稀疏注意力减少模型漂移</h3>
+<p>在闭环长程执行中，策略预测误差会累积并污染记忆表征。为降低噪声历史对决策的干扰，该方法限制策略在每一步只能访问最相关的少数记忆条目。</p>
+<h4>稀疏注意力机制</h4>
+<p>令 $m_i \in M_t$ 为历史条目，其键与值分别为 $k_i = f_k(m_i)$、$v_i = f_v(m_i)$，查询向量为 $q_t = f_q(x_t, l)$。标准注意力计算相似度 $s_i = \langle q_t, k_i \rangle$ 后加权所有值。HALO 采用 <strong>Top-K 稀疏化</strong>：</p>
+<p>$$\mathcal{I}<em>k = \text{TopK}\left({s_i}</em>{i=1}^{|M_t|}, k\right)$$</p>
+<p>仅保留相似度最高的 $k$ 个索引，注意力输出为：</p>
+<p>$$c_t = \sum_{i \in \mathcal{I}<em>k} \frac{\exp(s_i)}{\sum</em>{j \in \mathcal{I}_k} \exp(s_j)} v_i$$</p>
+<p>其余条目权重置零。由于 Top-K 操作不可微，训练时使用 <strong>straight-through estimator</strong> 传递梯度。该设计强制模型仅依赖少数关键历史片段做决策，显著减少无关或噪声信息在闭环中的累积，从而缓解长程控制中的模型漂移与级联故障。</p>
+<hr/>
+<h3>4. 方法协同效应</h3>
+<ul>
+<li><strong>VQA 先验</strong> 回答了“应该检索什么”，通过任务相关的监督信号减少注意力分散到虚假相关区域；</li>
+<li><strong>Top-K 稀疏化</strong> 回答了“应该检索多少”，通过硬性限制历史上下文规模，降低噪声注入与误差累积。</li>
+</ul>
+<p>两者共用检索主干与权重，使得为 VQA 学习的任务相关表示自然迁移到动作预测，最终实现对长达八分钟历史的高效、可靠检索。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文在第四部分（Experiments）及附录中进行了系统的模拟与真实世界实验，评估 HALO 在长程部分可观测任务中的性能。实验内容可归纳为以下几个维度：</p>
+<hr/>
+<h3>1. 评估任务</h3>
+<p>实验在 <strong>REMEMBENCH</strong> 模拟基准 [2] 以及 <strong>真实世界</strong> 的两个机器人平台（固定基座机械臂与移动机械臂）上开展，涵盖五种需要不同类型记忆的长程操作任务：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>所需信息类型</th>
+<th>任务描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Retrieve Object</strong></td>
+<td>空间信息</td>
+<td>回忆并抓取先前在厨房台面上观察到、但当前不可见的物体</td>
+</tr>
+<tr>
+<td><strong>Return to Same Container</strong></td>
+<td>物体关系</td>
+<td>将碗放回最初取出的盘子上，需回忆物体间关系</td>
+</tr>
+<tr>
+<td><strong>Store N Objects</strong></td>
+<td>数值信息</td>
+<td>将 $N$ 袋薯片放入抽屉后关闭，需持续计数</td>
+</tr>
+<tr>
+<td><strong>Heat Stove for $T$ mins.</strong></td>
+<td>事件-时间信息</td>
+<td>加热炉灶指定时长，需回忆开始时间以判断经过时间</td>
+</tr>
+<tr>
+<td><strong>Store N Objects (Human-Robot)</strong></td>
+<td>数值信息 + 人机协作</td>
+<td>人类先放置部分紫色杯子，机器人补充至总数三，再放入绿色杯子，需跟踪动态计数</td>
+</tr>
+</tbody>
+</table>
+<p>这些任务跨度长达八分钟，要求策略从完整交互历史中检索多样化信息。</p>
+<hr/>
+<h3>2. 对比基线</h3>
+<p>实验与以下六类代表性方法进行比较：</p>
+<ul>
+<li><strong>Standard Transformer</strong>：直接在完整历史上做密集注意力，无显式稀疏化或先验引导。</li>
+<li><strong>SAM2Act++</strong> [16]：存储对象中心像素坐标，引入强空间先验并减少记忆噪声。</li>
+<li><strong>ReMemBer</strong> [3]：使用 VLM 生成过去观测的文本摘要作为记忆，引入语义压缩。</li>
+<li><strong>Hand-Designed Features</strong> [40]：依据人工规则选择并存储任务相关特征，保持记忆紧凑。</li>
+<li><strong>Scene Memory Transformer (SMT)</strong> [17]：通过注意力将整个历史压缩为单一场景级嵌入。</li>
+<li><strong>Token Merging</strong> [36]：合并时序相邻的相似 token，以固定预算压缩历史。</li>
+</ul>
+<p>此外，在消融实验中还对比了 LSTM、Mamba、Transformer-XL、Window Attention、Strided Attention、Hierarchical Attention 及 Gated Attention 等替代记忆与稀疏化机制（Table III）。</p>
+<hr/>
+<h3>3. 核心实验结果</h3>
+<h4>(a) 模拟基准（REMEMBENCH，每任务 50 次 rollout）</h4>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>关键结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>vs. 对象中心记忆</strong></td>
+<td>HALO 较 SAM2Act++ 平均提升 <strong>21%</strong>。SAM2Act++ 在计数任务上表现尚可，但在事件-时间任务中失败（0.04），暴露单一先验的局限。</td>
+</tr>
+<tr>
+<td><strong>vs. 文本摘要</strong></td>
+<td>HALO 较 ReMemBer 平均提升 <strong>23%</strong>。文本摘要虽捕获语义信息，但常缺失低层控制所需的细节（如物体精确位置、动作信息）。</td>
+</tr>
+<tr>
+<td><strong>vs. 手工设计规则</strong></td>
+<td>HALO 较 Hand-Designed Features 平均提升 <strong>12%</strong>。手工特征在部分空间任务上持平，但在非空间任务中明显落后。</td>
+</tr>
+<tr>
+<td><strong>vs. 压缩记忆</strong></td>
+<td>HALO 较 SMT 提升 <strong>7%</strong>，较 Token Merging 提升 <strong>12%</strong>。压缩虽减少冗余，但会丢失低层动作等细粒度信息。</td>
+</tr>
+<tr>
+<td><strong>HALO 平均成功率</strong></td>
+<td>在四项任务上达到 <strong>0.41</strong>，显著优于所有基线。</td>
+</tr>
+</tbody>
+</table>
+<h4>(b) 真实世界任务（每任务 20 次 rollout）</h4>
+<ul>
+<li>HALO 在真实环境中 consistently 优于 Standard Transformer，平均提升 <strong>19%</strong>（Table II）。</li>
+<li>在要求最长的 <strong>Heat Stove</strong> 任务（加热八分钟）及 <strong>人机协作</strong> 的计数任务中，HALO 仍保持优势（0.60 与 0.65）。</li>
+<li>在 <strong>Retrieve Object</strong> 任务中，HALO 较全注意力基线将操作失败降低 <strong>8%</strong>，记忆失败降低 <strong>25%</strong>，支持了“稀疏化减少模型漂移”的假设。</li>
+</ul>
+<hr/>
+<h3>4. 消融实验与设计选择分析</h3>
+<h4>(a) VLM 先验（VQA 监督）的有效性</h4>
+<ul>
+<li><strong>HALO w/o VQA</strong>（仅模仿学习）平均成功率 <strong>0.31</strong>。</li>
+<li><strong>完整 HALO</strong>（加入 VQA）平均成功率 <strong>0.41</strong>，提升 <strong>10%</strong>。</li>
+<li>表明 VQA 监督能有效引导检索机制关注任务相关历史，减少虚假相关。</li>
+</ul>
+<h4>(b) Top-K 稀疏注意力的有效性</h4>
+<ul>
+<li>相比全注意力（Full Attention），Top-K 稀疏化带来 <strong>9%</strong> 的绝对性能提升。</li>
+<li>限制了每步用于决策的历史信息量，显著减少噪声与累积误差的影响。</li>
+</ul>
+<h4>(c) 检索数量 $k$ 的消融</h4>
+<ul>
+<li>$k=8$ 时性能最优（52%）。</li>
+<li>$k$ 过小（如 $k=4$，40%）会丢失有用上下文；$k$ 过大（如 $k=16$，33%；$k=24$，44%）则重新引入无关历史，导致性能下降。</li>
+</ul>
+<h4>(d) 联合训练 vs. 预训练-微调</h4>
+<ul>
+<li><strong>联合训练</strong>（co-training）成功率 <strong>64%</strong>。</li>
+<li><strong>先预训练 VQA 再微调动作</strong>（pretrain-finetune）仅 <strong>44%</strong>，与无 VQA 的 <strong>42%</strong> 接近。</li>
+<li>说明分阶段预训练易导致 VQA 知识遗忘，而联合训练可持续塑造检索表示。</li>
+</ul>
+<h4>(e) VQA 生成流水线的有效性</h4>
+<ul>
+<li><strong>HALO 多阶段流水线</strong>（轨迹文本化 → 问答合成 → 过滤）较<strong>单视频提示生成</strong>基线，问答准确率提升 <strong>60%</strong>，幻觉减少 <strong>20%</strong>。</li>
+<li>验证了长视频直接生成 VQA 易出错，分阶段处理对数据质量至关重要。</li>
+</ul>
+<hr/>
+<h3>5. 诊断与定性分析</h3>
+<p>论文附录还包含多项补充分析：</p>
+<ul>
+<li><strong>检索信息可视化</strong>（Fig. 6）：展示 HALO 在 Retrieve Object 任务中检索目标物体可见帧及“其他可能位置”帧；在 Return to Same Container 任务中同时检索历史动作与进展帧，说明学习到的检索策略超越了手工规则。</li>
+<li><strong>虚假相关性可视化</strong>（Fig. 7）：基于 Grad-CAM 的对比显示，HALO 聚焦于任务相关目标（如橄榄油瓶），而标准 Transformer 易受无关干扰物（如纸巾卷位置）影响。</li>
+<li><strong>模型漂移定量分析</strong>：使用 Jensen-Shannon 散度（JSD）衡量 rollout 与专家动作分布的距离。Top-K 注意力将 JSD 从 0.07 降至 0.06，验证了其在减少漂移上的作用。</li>
+<li><strong>信息需求与 $k$ 的关系</strong>：在受控 toy 数据集上，发现最优 $k$ 应取决于任务所需信息量，而非单纯与上下文长度 $N$ 成正比。</li>
+</ul></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>基于论文内容，以下是可以进一步探索的研究方向：</p>
+<hr/>
+<h3>1. 从固定查询到主动查询机制</h3>
+<p>论文采用固定格式的 VQA 监督来引导检索，但不同任务阶段对历史信息的需求是动态变化的。未来可探索<strong>主动查询（active querying）</strong>机制：使策略能够根据当前决策的不确定性或任务阶段，自适应地生成针对性的检索请求，而非依赖预先生成的固定问题。例如，在需要确认物体数量的阶段主动发起计数查询，在需要定位时发起空间查询。</p>
+<hr/>
+<h3>2. 跨片段（Cross-Episodic）记忆与失败学习</h3>
+<p>当前 HALO 的记忆仅局限于单个片段（episode）内部的历史。一个自然的扩展是让机器人能够访问<strong>跨片段记忆</strong>，利用过去多个任务执行的经验来指导当前决策。特别地，可以利用记忆存储先前的失败案例（如错误的物体放置或错误计数），并在后续任务中检索这些经验以避免重复错误。这要求记忆机制不仅支持检索，还需支持有效的写入、索引和遗忘。</p>
+<hr/>
+<h3>3. 检索延迟与推测性检索优化</h3>
+<p>随着任务时长增加，记忆规模 $|M_t|$ 可能显著增长（论文中高达 3840 个条目），而每次前向传播中的 Top-K 检索与注意力计算会引入不可忽视的推理延迟。未来可以探索<strong>推测性检索（speculative retrieval）</strong>：在当前时间步并行预计算未来可能需要的历史条目，或利用分层检索（如先快速过滤再精确计算相似度）来隐藏延迟，从而支持更长时限的实时控制。</p>
+<hr/>
+<h3>4. 自适应稀疏检索预算</h3>
+<p>论文采用固定的检索数量 $k$（如 $k=8$），但消融实验显示，$k$ 的最优值取决于任务所需的信息量，而非上下文长度 $N$。未来可设计<strong>自适应的稀疏检索预算</strong>：让策略根据当前查询的复杂度或任务上下文，动态决定需要检索的记忆条目数 $k_t$。例如，简单导航可能仅需 $k=2$ 的关键帧，而复杂的多物体关系推理可能需要 $k&gt;10$。这可以通过在策略中引入额外的门控或分类器来实现。</p>
+<hr/>
+<h3>5. 多模态记忆的扩展与融合</h3>
+<p>当前的记忆主要编码视觉观测与低层动作。对于更复杂的家庭操作，机器人还需要整合力觉、触觉、听觉等模态信息。未来可探索如何将这些异构模态统一编码进记忆 $M_t$，并设计模态无关的检索键 $k_i$ 与值 $v_i$，使策略在部分模态缺失时仍能完成检索。同时，不同模态的记忆可能具有不同的时间尺度，需要探索多速率记忆存储机制。</p>
+<hr/>
+<h3>6. 记忆写入与遗忘机制</h3>
+<p>论文聚焦于<strong>读取</strong>（检索）机制，但记忆的<strong>写入</strong>（如何选择性存储）和<strong>遗忘</strong>（如何淘汰过时信息）同样关键。未来可以探索可学习的记忆写入门控，例如仅在发生重大状态变化（如物体被移动、事件发生）时才写入新条目，而非固定间隔存储。此外，引入显式的遗忘机制，使策略能够丢弃已被判定为不再相关的历史信息（如已完成子目标的中间状态），有助于在长程交互中保持记忆的紧凑与准确。</p>
+<hr/>
+<h3>7. 可解释性与安全性验证</h3>
+<p>随着记忆检索成为闭环控制的核心环节，检索结果的可解释性和安全性变得重要。未来可以探索如何显式量化检索置信度，例如利用查询-键相似度分布 $s_i$ 的熵来判断模型是否“知道”应该回忆什么。当检索不确定性高时，系统可以主动请求外部监督（如人类提示）或切换到安全模式。此外，检索内容的可视化与审计（如生成自然语言解释说明“为什么检索这一帧”）将有助于提升人机协作中的透明度与信任。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文研究<strong>部分可观测环境下的长程机器人模仿学习</strong>，提出了一种名为 <strong>HALO</strong>（History-Aware visuomotor policy for LOng-horizon control）的视觉运动策略，旨在通过可靠的记忆检索机制支持长达八分钟的复杂家庭操作任务。</p>
+<h3>研究背景与核心挑战</h3>
+<p>通用机器人在家庭等部分可观测环境中执行长程任务时，必须依赖历史记忆来补偿当前感知的缺失，例如回忆物体位置、数量计数、事件时间或任务进度。然而，将基于注意力的记忆检索直接应用于离线模仿学习面临两个根本性挑战：</p>
+<ol>
+<li><strong>虚假相关性（Spurious Correlations）</strong>：策略可能在训练数据中学习历史观测与专家动作之间的非因果相关，导致测试时因环境变化而失效；</li>
+<li><strong>误差累积与模型漂移（Error Accumulation and Model Drift）</strong>：闭环执行中，小的预测误差会随时间复合，污染记忆表征；若策略条件化于大量历史信息，噪声会被反复放大，引发长程级联故障。</li>
+</ol>
+<h3>方法概述</h3>
+<p>HALO 的核心思想是：注意力提供了通用的检索机制，但必须<strong>被引导至任务相关信息</strong>，且<strong>被约束以限制噪声历史的影响</strong>。为此，HALO 引入两个关键组件：</p>
+<h4>1. 通过视觉语言模型（VLM）先验引导检索</h4>
+<p>HALO 利用 VLM 编码的丰富语义先验，自动生成<strong>视频问答（VQA）监督</strong>来直接训练检索模块。具体流程包括：</p>
+<ul>
+<li>将专家轨迹通过多阶段流水线（轨迹文本化、问答合成、自动过滤）转换为高质量 VQA 对 $(u, v)$，探询任务相关的空间、数值、事件等信息；</li>
+<li>策略共享编码器与检索主干，同时优化两个目标：</li>
+</ul>
+<p>$$\mathcal{L}(\theta) = \mathcal{L}<em>{\text{IL}}(\theta) + \lambda \mathcal{L}</em>{\text{VQA}}(\theta)$$</p>
+<p>其中 $\mathcal{L}<em>{\text{IL}}$ 为动作模仿损失，$\mathcal{L}</em>{\text{VQA}}$ 为视频问答交叉熵损失。</p>
+<p>VQA 监督强制检索模块定位历史中支持答案的特定事件，从而将 VLM 先验蒸馏为策略的检索偏差，减少其对无关历史细节的依赖。</p>
+<h4>2. Top-K 稀疏注意力抑制模型漂移</h4>
+<p>为降低闭环执行中记忆噪声的累积，HALO 限制策略每步只能访问最相关的 $k$ 条历史记录。给定查询 $q_t$ 与记忆键 ${k_i}$，计算相似度 $s_i = \langle q_t, k_i \rangle$ 后，仅保留得分最高的 $k$ 个索引 $\mathcal{I}_k$，注意力输出为：</p>
+<p>$$c_t = \sum_{i \in \mathcal{I}<em>k} \frac{\exp(s_i)}{\sum</em>{j \in \mathcal{I}_k} \exp(s_j)} v_i$$</p>
+<p>非 Top-K 条目权重置零。该稀疏化通过 straight-through estimator 进行训练，强制模型仅依赖少数关键历史片段做决策，从而显著减少噪声注入与长程漂移。</p>
+<h3>实验与结果</h3>
+<p>论文在 <strong>REMEMBENCH</strong> 模拟基准及<strong>真实世界</strong>（固定基座机械臂与移动机械臂）的五个长程任务上进行了系统评估，任务涵盖空间信息、物体关系、数值计数、事件时间以及人机协作等多样化记忆需求。</p>
+<ul>
+<li><strong>与基线对比</strong>：HALO 平均优于对象中心记忆方法（SAM2Act++）<strong>21%</strong>、文本摘要方法（ReMemBer）<strong>23%</strong>、手工设计特征方法 <strong>12%</strong> 及压缩记忆方法（SMT/Token Merging）<strong>7%–12%</strong>；</li>
+<li><strong>真实世界验证</strong>：在长达八分钟的加热任务及动态人机协作任务中，HALO 较标准 Transformer 平均提升 <strong>19%</strong>；</li>
+<li><strong>消融实验</strong>：VQA 监督带来 <strong>10%</strong> 性能提升；Top-K 稀疏化带来 <strong>9%</strong> 提升并降低操作与记忆失败率；联合训练（co-training）显著优于预训练-微调策略；多阶段 VQA 生成较单视频提示准确率提升 <strong>60%</strong>。</li>
+</ul>
+<h3>结论与贡献</h3>
+<p>HALO 证明了在视觉运动策略中，<strong>存储全部历史并学习选择性检索</strong>优于依赖任务特定的压缩或手工规则。论文的核心贡献在于：通过 VQA 将 VLM 先验蒸馏为检索监督，同时以稀疏注意力约束记忆访问，实现了从长达数分钟的历史中可靠提取多样化任务信息。实验表明，VLM 先验对识别任务相关信息至关重要，但需与动作模仿学习相结合才能有效支撑低层控制；而稀疏检索则是抑制长程闭环漂移的关键。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Memory%20Retrieval%20in%20Visuomotor%20Policies%20for%20Long-Horizon%20Robot%20Control，链接是 https://arxiv.org/pdf/2606.25136 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2606.25136 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>HALO / ReMemBench</h1><p class="muted">四类记忆依赖的仿真任务与五类真实机器人任务；论文考察最长8分钟的历史。底层数据是HDF5轨迹和生成式QA。</p><p><strong>本项目没有抽帧图片</strong> · 9 个可播放视频 case · 9 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">任务需回忆最长8分钟；9段官网演示的精确MP4播放时长见CSV（部分4×加速，不能直接当作原始轨迹长度）。</p></div><div class="note"><ul><li>900帧来自9段官方展示视频，100帧/主要展示任务；不是全训练库随机抽样。</li><li>8分钟是任务执行/回忆跨度；4x剪辑的播放长度与原始执行长度不同。</li><li>公开HDF5包含原始与渲染等重复表示，文件数不能当作独立轨迹数。</li><li>实测一个1.01GB HDF5的26条轨迹记录数，但控制频率属性未给出，因此未将它们换算成秒。</li></ul></div><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "halo", "title": "HALO / ReMemBench", "category": "机器人长期记忆 · 仿真/真实控制轨迹", "summary": "四类记忆依赖的仿真任务与五类真实机器人任务；论文考察最长8分钟的历史。底层数据是HDF5轨迹和生成式QA。", "paper_url": "https://arxiv.org/abs/2606.25136", "repo_url": "https://github.com/UT-Austin-RobIn/HALO", "project_url": "https://robin-lab.cs.utexas.edu/HALO/", "dataset_urls": [{"label": "ReMemBench 轨迹", "url": "https://huggingface.co/datasets/Rutav/ReMemBench-Dataset"}, {"label": "HALO QA", "url": "https://huggingface.co/datasets/Rutav/HALO_QAs"}], "duration_summary": "任务需回忆最长8分钟；9段官网演示的精确MP4播放时长见CSV（部分4×加速，不能直接当作原始轨迹长度）。", "availability": "官方代码、ReMemBench HDF5轨迹和HALO生成QA可公开访问；完整轨迹库未下载。", "preview_status": "ready", "limitations": ["900帧来自9段官方展示视频，100帧/主要展示任务；不是全训练库随机抽样。", "8分钟是任务执行/回忆跨度；4x剪辑的播放长度与原始执行长度不同。", "公开HDF5包含原始与渲染等重复表示，文件数不能当作独立轨迹数。", "实测一个1.01GB HDF5的26条轨迹记录数，但控制频率属性未给出，因此未将它们换算成秒。"], "groups": [{"id": "retrieve_oil-sim", "title": "仿真：空间记忆 / Retrieve Object", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "retrieve_oil-sim", "title": "仿真：空间记忆 / Retrieve Object（官网演示）", "category": "仿真：空间记忆 / Retrieve Object", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/retrieve_oil-sim.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_oil-sim.mp4", "source_label": "仿真：空间记忆 / Retrieve Object（官网演示）", "video_id": "retrieve_oil-sim", "duration_seconds": 21.266666666666666, "frames": 638, "fps": 30.0, "width": 1024, "height": 512, "size_bytes": 3566813, "sha256": "3b7f3df0765438103301e65c46d9522cf44b351ceb0614a509dbd90c93c51411"}]}, {"id": "washandreturn-sim", "title": "仿真：物体关系 / Return to Same Container", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "washandreturn-sim", "title": "仿真：物体关系 / Return to Same Container（官网演示）", "category": "仿真：物体关系 / Return to Same Container", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/washandreturn-sim.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-sim.mp4", "source_label": "仿真：物体关系 / Return to Same Container（官网演示）", "video_id": "washandreturn-sim", "duration_seconds": 15.133333333333333, "frames": 454, "fps": 30.0, "width": 1024, "height": 512, "size_bytes": 2414704, "sha256": "24a85d0bbeef966ac643b77b8e07aa94f41dcf9557613547129de2880633c94d"}]}, {"id": "storeallbreads-sim", "title": "仿真：数量记忆 / Store N Objects", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "storeallbreads-sim", "title": "仿真：数量记忆 / Store N Objects（官网演示）", "category": "仿真：数量记忆 / Store N Objects", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/storeallbreads-sim.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/storeallbreads-sim.mp4", "source_label": "仿真：数量记忆 / Store N Objects（官网演示）", "video_id": "storeallbreads-sim", "duration_seconds": 34.86666666666667, "frames": 1046, "fps": 30.0, "width": 1024, "height": 512, "size_bytes": 4228449, "sha256": "b5a63dbdc4dc4ecb340eb2c069389c7cee5d3a9a138d055e6d7443ce646f27c5"}]}, {"id": "heatpot-sim", "title": "仿真：事件时间 / Heat Stove", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "heatpot-sim", "title": "仿真：事件时间 / Heat Stove（官网演示）", "category": "仿真：事件时间 / Heat Stove", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/heatpot-sim.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-sim.mp4", "source_label": "仿真：事件时间 / Heat Stove（官网演示）", "video_id": "heatpot-sim", "duration_seconds": 37.166666666666664, "frames": 1115, "fps": 30.0, "width": 1024, "height": 512, "size_bytes": 2406743, "sha256": "e25acb93d3ab15da6341911af9889cc4318e8cf785134c6b621206e7d35ce444"}]}, {"id": "retrieve_granola_bar", "title": "真实机器人：空间记忆", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "retrieve_granola_bar", "title": "真实机器人：空间记忆（官网演示）", "category": "真实机器人：空间记忆", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/retrieve_granola_bar.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/retrieve_granola_bar.mp4", "source_label": "真实机器人：空间记忆（官网演示）", "video_id": "retrieve_granola_bar", "duration_seconds": 19.5, "frames": 585, "fps": 30.0, "width": 256, "height": 256, "size_bytes": 1628738, "sha256": "80d3aa881b3b854f598cf6d97890514caf7ddb1a2d15cd8428400003f6b59a5c"}]}, {"id": "washandreturn-success-left1-4x", "title": "真实机器人：物体关系", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "washandreturn-success-left1-4x", "title": "真实机器人：物体关系（官网演示）", "category": "真实机器人：物体关系", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/washandreturn-success-left1-4x.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/washandreturn-success-left1-4x.mp4", "source_label": "真实机器人：物体关系（官网演示）", "video_id": "washandreturn-success-left1-4x", "duration_seconds": 8.033333333333333, "frames": 241, "fps": 30.0, "width": 3840, "height": 2160, "size_bytes": 9991298, "sha256": "e6ea63598982939174458472c1badb17baead1b12e00ce787bb135c828f7aed4"}]}, {"id": "put_two_chips_packet-1-4x", "title": "真实机器人：数量记忆", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "put_two_chips_packet-1-4x", "title": "真实机器人：数量记忆（官网演示）", "category": "真实机器人：数量记忆", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/put_two_chips_packet-1-4x.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/put_two_chips_packet-1-4x.mp4", "source_label": "真实机器人：数量记忆（官网演示）", "video_id": "put_two_chips_packet-1-4x", "duration_seconds": 29.566666666666666, "frames": 887, "fps": 30.0, "width": 3840, "height": 2160, "size_bytes": 10467198, "sha256": "403348dc092bc1b40c57d13bb682ab768a566f7ea93459333c3766e065c57b34"}]}, {"id": "heatpot-wait-for-8-minutes-4x", "title": "真实机器人：事件时间（8 分钟任务）", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "heatpot-wait-for-8-minutes-4x", "title": "真实机器人：事件时间（8 分钟任务）（官网演示）", "category": "真实机器人：事件时间（8 分钟任务）", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/heatpot-wait-for-8-minutes-4x.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/heatpot-wait-for-8-minutes-4x.mp4", "source_label": "真实机器人：事件时间（8 分钟任务）（官网演示）", "video_id": "heatpot-wait-for-8-minutes-4x", "duration_seconds": 123.86666666666666, "frames": 3716, "fps": 30.0, "width": 3840, "height": 2160, "size_bytes": 20763298, "sha256": "88785659e574e07d535f4d27486c929d0f8e1a16ffab15d8be50d25d0dabf9ba"}]}, {"id": "store-3-human-1-robot-2-4x", "title": "真实机器人：人机协作计数", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"id": "store-3-human-1-robot-2-4x", "title": "真实机器人：人机协作计数（官网演示）", "category": "真实机器人：人机协作计数", "description": "官方项目页单段演示，均匀抽取 100 个不同时刻；不代表完整训练集抽样。4x 文件的时间为播放时间，非原始执行时长。", "local_video": "samples/store-3-human-1-robot-2-4x.mp4", "source_url": "https://robin-lab.cs.utexas.edu/HALO/videos/store-3-human-1-robot-2-4x.mp4", "source_label": "真实机器人：人机协作计数（官网演示）", "video_id": "store-3-human-1-robot-2-4x", "duration_seconds": 12.7, "frames": 381, "fps": 30.0, "width": 3840, "height": 2160, "size_bytes": 9963203, "sha256": "890cea6369d29ac6e05a57d6edec590c8d228cb64b5dbe7bbf2d257b06a9020b"}]}], "preview_version": "v2-short-video-cases", "short_video_case_threshold_seconds": 180.0, "short_video_case_policy": "本地完整副本不超过 180 秒且小于 100 MB 时直接展示 video case；其余视频继续抽帧。", "short_video_cases_count": 9, "paper_metadata": {"slug": "halo", "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control", "paper_url": "https://arxiv.org/abs/2606.25136", "retrieved_at_utc": "2026-09-23T09:45:11+00:00", "arxiv_id": "2606.25136", "arxiv_url": "https://arxiv.org/abs/2606.25136", "arxiv_title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control", "arxiv_published_at": "2026/06/23", "arxiv_updated_at": "2026/06/23", "arxiv_journal_reference": null, "arxiv_fetch_status": "ok", "arxiv_source_url": "https://arxiv.org/abs/2606.25136", "citation_count": 6, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/18ec164b9df262023023b44214fbbca250cf535d", "citation_fetch_status": "ok", "github_repo": "UT-Austin-RobIn/HALO", "github_url": "https://github.com/UT-Austin-RobIn/HALO", "github_stars": 7, "github_forks": 1, "github_updated_at": "2026-09-08T08:01:06Z", "github_fetch_status": "ok", "github_source_url": "https://api.github.com/repos/UT-Austin-RobIn/HALO", "status_label": "RSS 2026 · accepted", "status_source": "https://robin-lab.cs.utexas.edu/news/", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=Memory+Retrieval+in+Visuomotor+Policies+for+Long-Horizon+Robot+Control", "papers_cool_detail_url": "https://papers.cool/arxiv/2606.25136", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文研究的是<strong>部分可观测环境下长程机器人模仿学习中的记忆检索问题<\/strong>。具体而言，论文试图解决视觉运动策略（visuomotor policies）在利用历史信息执行长程家庭操作任务时面临的两个核心挑战：<\/p>\n<p><strong>1. 虚假相关性（Spurious Correlations）<\/strong>\n在离线模仿学习中，基于注意力的记忆检索机制可能学习并依赖训练数据中与专家动作相关、但非因果性的历史信息。这类相关性在测试时往往不成立，导致策略错误地关注与任务无关的历史细节，从而泛化失败。<\/p>\n<p><strong>2. 误差累积与模型漂移（Error Accumulation and Model Drift）<\/strong>\n在闭环执行过程中，策略的预测误差会随时间累积，并污染存储在记忆中的历史表征。若策略在每一步都条件化于大量过去观测，这种噪声会被反复引入决策过程，导致长程控制中的模型漂移和级联故障。<\/p>\n<p>为此，论文提出 <strong>HALO<\/strong>（History-Aware visuomotor policy for LOng-horizon control），旨在通过以下方式实现可靠的长程控制：\n- 利用视觉语言模型（VLM）先验，通过自动生成的视频问答（VQA）监督来引导检索机制关注任务相关信息；\n- 采用 <strong>top-k 稀疏注意力<\/strong> 限制策略在每一步仅能访问历史中最相关的少量记忆条目，从而降低噪声累积的影响。<\/p>\n<p>最终目标是使机器人能够从长达约八分钟的过去经验中，灵活检索包括空间位置、物体关系、数量计数和事件时间等多样化信息，以完成长程家庭操作任务。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据论文第 II 节（Related Work），相关研究可归纳为以下三个方向：<\/p>\n<hr/>\n<h3>1. 部分可观测环境下的模仿学习（Imitation Learning under Partial Observability）<\/h3>\n<p>标准模仿学习通常假设观测具有马尔可夫性，导致纯反应式（reactive）视觉运动策略在部分可观测环境中失效。现有研究主要沿着以下路径引入显式记忆：<\/p>\n<ul>\n<li><strong>信念状态空间方法<\/strong>：通过显式建模任务状态来解决部分可观测性，但需要任务特定的表示与更新规则 [4]。<\/li>\n<li><strong>对象中心表示<\/strong>：将记忆限制为存储对象中心像素坐标，以减少视觉输入中的冗余信息，但往往只能检索空间信息，难以处理其他模态 [16]。<\/li>\n<li><strong>语义嵌入检索<\/strong>：利用学习得到的语义嵌入相似度，有选择地检索过去观测 [14, 29]。<\/li>\n<li><strong>手工设计规则<\/strong>：依据人工先验决定存储或丢弃哪些观测 [40]。<\/li>\n<li><strong>学习紧凑的历史压缩<\/strong>：将长程历史压缩为固定尺寸的潜在表示，支持长程推理，但可能丢弃低级动作序列等细粒度信息 [17, 36]。<\/li>\n<\/ul>\n<p>这些方法的共同局限在于：它们依赖于特定任务或模态的表示/规则，难以泛化到需要灵活访问多样化历史信息的长程任务。<\/p>\n<hr/>\n<h3>2. 基础模型的知识蒸馏（Knowledge Distillation from Foundation Models）<\/h3>\n<p>视觉语言基础模型（VLM）从大规模多模态数据中学习并编码了丰富的场景、物体与活动知识，已被广泛用于机器人的感知、规划、可供性（affordance）学习与语义推理 [37, 38, 1, 22, 30, 34]。<\/p>\n<ul>\n<li><strong>参数化记忆增强<\/strong>：部分工作将基础模型知识蒸馏到机器人系统中，以改进参数化记忆（如模型权重） [48, 15]。<\/li>\n<li><strong>非参数化记忆检索<\/strong>：较少有研究探索利用基础模型来引导<strong>非参数化记忆<\/strong>的检索——即从过去交互的原始记录中检索特定情节细节（如某物体被放置的位置或某事件发生的时刻） [28]。<\/li>\n<\/ul>\n<p>本文工作即属于后者：将 VLM 中关于“何种历史信息对任务相关”的先验蒸馏到策略中，同时通过动作模仿学习保证这些检索到的信息能够支撑低级控制。<\/p>\n<hr/>\n<h3>3. 长上下文推理的记忆机制（Memory Mechanisms for Long-Context Reasoning）<\/h3>\n<p>建模长程时间依赖是序列决策的核心挑战：<\/p>\n<ul>\n<li><strong>循环与状态空间模型<\/strong>：如 LSTM [25]、Mamba [21] 等，通过压缩的潜在状态维护记忆，但在长程 horizon 上面临选择性回忆困难与信用分配问题 [7]。<\/li>\n<li><strong>基于 Transformer 的注意力机制<\/strong>：允许直接访问过去输入，避免了信息压缩带来的损失 [44]。<\/li>\n<li><strong>密集注意力的缺陷<\/strong>：在长上下文中，密集注意力会使无关或噪声信息过度影响当前预测 [26]；在机器人闭环控制中，这一问题尤为严重，因为预测误差会与物理环境发生复合交互，导致模型漂移和级联故障。<\/li>\n<\/ul>\n<p>为调节长上下文信息流，已有研究提出：\n- 将注意力与循环机制结合（如 Transformer-XL） [12]；\n- 引入门控注意力（Gated Attention） [31]；\n- 在 Transformer 架构中诱导稀疏性（如 Big Bird） [47]。<\/p>\n<p>这些机制在语言与视觉领域已有广泛研究，但它们在<strong>长程闭环视觉运动控制<\/strong>中的有效性尚未得到充分验证。本文发现，简单的 <strong>top-k 稀疏注意力<\/strong> 即可有效减少模型预测误差在记忆中的累积。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>针对长程部分可观测机器人模仿学习中的记忆检索问题，论文提出 <strong>HALO<\/strong>（History-Aware visuomotor policy for LOng-horizon control）。该方法通过两项核心设计，分别应对<strong>虚假相关性<\/strong>与<strong>误差累积导致的模型漂移<\/strong>：<\/p>\n<hr/>\n<h3>1. 整体架构与问题设定<\/h3>\n<p>该方法将交互历史定义为<\/p>\n<p>$$\\tau_t = {(o_1, a_1), \\dots, (o_{t-1}, a_{t-1}), o_t},$$<\/p>\n<p>其中 $o_t$ 为当前观测，$a_t$ 为动作，$l$ 为自然语言任务指令。策略网络 $\\pi_\\theta(a_t \\mid \\tau_t, l)$ 由三部分组成：\n- <strong>模态编码器<\/strong>：观测编码器 $g_\\theta^{\\text{obs}}$ 与动作编码器 $g_\\theta^{\\text{act}}$；\n- <strong>策略主干<\/strong> $f_\\theta$：基于 Transformer 的检索模块，负责从历史记忆 $M_t$ 中检索相关信息；\n- <strong>预测头<\/strong>：动作预测头 $h_\\theta^{\\text{act}}$ 与文本问答头 $h_\\theta^{\\text{text}}$。<\/p>\n<p>记忆 $M_t$ 由编码后的历史观测与动作组成：<\/p>\n<p>$$M_t = {(x_1, e_1), \\dots, (x_{t-1}, e_{t-1})},$$<\/p>\n<p>其中 $x_i = g_\\theta^{\\text{obs}}(o_i)$，$e_i = g_\\theta^{\\text{act}}(a_i)$。<\/p>\n<hr/>\n<h3>2. 通过视频问答蒸馏视觉语言模型先验<\/h3>\n<p>为抑制策略学习历史观测与当前动作之间的虚假相关性，该方法利用视觉语言模型（VLM）中关于“何种信息对任务相关”的先验，通过自动生成的视频问答（VQA）对检索过程施加直接监督。<\/p>\n<h4>(a) VQA 作为检索监督<\/h4>\n<p>从历史轨迹中自动生成问题-答案对 $(u, v)$，其中问题 $u$ 探询任务相关信息（如物体位置、数量、事件顺序、子目标进度等），答案 $v$ 基于历史记录。策略主干 $f_\\theta$ 在输入记忆 $M_t$、当前观测嵌入 $x_t$ 和问题 $u$ 后，通过文本头预测答案：<\/p>\n<p>$$\\hat{v} \\sim \\pi_\\theta^{\\text{vqa}}(v \\mid M_t, x_t, u).$$<\/p>\n<p>正确回答这些问题要求检索模块必须准确定位并提取历史中的特定任务相关事件，从而将 VLM 的先验偏差注入到记忆检索中。<\/p>\n<h4>(b) 联合训练目标<\/h4>\n<p>策略同时接受动作模仿学习与 VQA 辅助监督，共享编码器与检索主干，仅在预测头分离：<\/p>\n<ul>\n<li><strong>模仿学习损失<\/strong>：<\/li>\n<\/ul>\n<p>$$\\mathcal{L}<em>{\\text{IL}}(\\theta) = \\mathbb{E}<\/em>{(\\tau_t, a_t^<em>) \\sim \\mathcal{D}} \\left[ -\\log \\pi_\\theta^{\\text{act}}(a_t^<\/em> \\mid \\tau_t, l) \\right]$$<\/p>\n<ul>\n<li><strong>VQA 损失<\/strong>：<\/li>\n<\/ul>\n<p>$$\\mathcal{L}<em>{\\text{VQA}}(\\theta) = \\mathbb{E}<\/em>{(\\tau_t, u, v) \\sim \\tilde{\\mathcal{D}}} \\left[ -\\log \\pi_\\theta^{\\text{vqa}}(v \\mid \\tau_t, u) \\right]$$<\/p>\n<ul>\n<li><strong>总损失<\/strong>：<\/li>\n<\/ul>\n<p>$$\\mathcal{L}(\\theta) = \\mathcal{L}<em>{\\text{IL}}(\\theta) + \\lambda \\mathcal{L}<\/em>{\\text{VQA}}(\\theta)$$<\/p>\n<p>联合训练确保 VQA 引导检索关注任务相关信息，而模仿学习保证这些信息被实际用于低层控制。<\/p>\n<h4>(c) 多阶段 VQA 生成流水线<\/h4>\n<p>为应对长视频直接生成 VQA 易出错的问题，该方法采用三阶段流水线：\n1. <strong>轨迹文本化<\/strong>：结合对象检测与 VLM 将轨迹转为包含场景元素与活动描述的文本摘要；\n2. <strong>问答合成<\/strong>：由大语言模型基于文本摘要生成问题，并随机采样帧索引以避免对初始片段的偏见；\n3. <strong>自动过滤<\/strong>：使用语言模型评判生成的问答对，滤除错误、不相关或无法回答的样本（约过滤 20%）。<\/p>\n<hr/>\n<h3>3. 通过 Top-K 稀疏注意力减少模型漂移<\/h3>\n<p>在闭环长程执行中，策略预测误差会累积并污染记忆表征。为降低噪声历史对决策的干扰，该方法限制策略在每一步只能访问最相关的少数记忆条目。<\/p>\n<h4>稀疏注意力机制<\/h4>\n<p>令 $m_i \\in M_t$ 为历史条目，其键与值分别为 $k_i = f_k(m_i)$、$v_i = f_v(m_i)$，查询向量为 $q_t = f_q(x_t, l)$。标准注意力计算相似度 $s_i = \\langle q_t, k_i \\rangle$ 后加权所有值。HALO 采用 <strong>Top-K 稀疏化<\/strong>：<\/p>\n<p>$$\\mathcal{I}<em>k = \\text{TopK}\\left({s_i}<\/em>{i=1}^{|M_t|}, k\\right)$$<\/p>\n<p>仅保留相似度最高的 $k$ 个索引，注意力输出为：<\/p>\n<p>$$c_t = \\sum_{i \\in \\mathcal{I}<em>k} \\frac{\\exp(s_i)}{\\sum<\/em>{j \\in \\mathcal{I}_k} \\exp(s_j)} v_i$$<\/p>\n<p>其余条目权重置零。由于 Top-K 操作不可微，训练时使用 <strong>straight-through estimator<\/strong> 传递梯度。该设计强制模型仅依赖少数关键历史片段做决策，显著减少无关或噪声信息在闭环中的累积，从而缓解长程控制中的模型漂移与级联故障。<\/p>\n<hr/>\n<h3>4. 方法协同效应<\/h3>\n<ul>\n<li><strong>VQA 先验<\/strong> 回答了“应该检索什么”，通过任务相关的监督信号减少注意力分散到虚假相关区域；<\/li>\n<li><strong>Top-K 稀疏化<\/strong> 回答了“应该检索多少”，通过硬性限制历史上下文规模，降低噪声注入与误差累积。<\/li>\n<\/ul>\n<p>两者共用检索主干与权重，使得为 VQA 学习的任务相关表示自然迁移到动作预测，最终实现对长达八分钟历史的高效、可靠检索。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>论文在第四部分（Experiments）及附录中进行了系统的模拟与真实世界实验，评估 HALO 在长程部分可观测任务中的性能。实验内容可归纳为以下几个维度：<\/p>\n<hr/>\n<h3>1. 评估任务<\/h3>\n<p>实验在 <strong>REMEMBENCH<\/strong> 模拟基准 [2] 以及 <strong>真实世界<\/strong> 的两个机器人平台（固定基座机械臂与移动机械臂）上开展，涵盖五种需要不同类型记忆的长程操作任务：<\/p>\n<table>\n<thead>\n<tr>\n<th>任务<\/th>\n<th>所需信息类型<\/th>\n<th>任务描述<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>Retrieve Object<\/strong><\/td>\n<td>空间信息<\/td>\n<td>回忆并抓取先前在厨房台面上观察到、但当前不可见的物体<\/td>\n<\/tr>\n<tr>\n<td><strong>Return to Same Container<\/strong><\/td>\n<td>物体关系<\/td>\n<td>将碗放回最初取出的盘子上，需回忆物体间关系<\/td>\n<\/tr>\n<tr>\n<td><strong>Store N Objects<\/strong><\/td>\n<td>数值信息<\/td>\n<td>将 $N$ 袋薯片放入抽屉后关闭，需持续计数<\/td>\n<\/tr>\n<tr>\n<td><strong>Heat Stove for $T$ mins.<\/strong><\/td>\n<td>事件-时间信息<\/td>\n<td>加热炉灶指定时长，需回忆开始时间以判断经过时间<\/td>\n<\/tr>\n<tr>\n<td><strong>Store N Objects (Human-Robot)<\/strong><\/td>\n<td>数值信息 + 人机协作<\/td>\n<td>人类先放置部分紫色杯子，机器人补充至总数三，再放入绿色杯子，需跟踪动态计数<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p>这些任务跨度长达八分钟，要求策略从完整交互历史中检索多样化信息。<\/p>\n<hr/>\n<h3>2. 对比基线<\/h3>\n<p>实验与以下六类代表性方法进行比较：<\/p>\n<ul>\n<li><strong>Standard Transformer<\/strong>：直接在完整历史上做密集注意力，无显式稀疏化或先验引导。<\/li>\n<li><strong>SAM2Act++<\/strong> [16]：存储对象中心像素坐标，引入强空间先验并减少记忆噪声。<\/li>\n<li><strong>ReMemBer<\/strong> [3]：使用 VLM 生成过去观测的文本摘要作为记忆，引入语义压缩。<\/li>\n<li><strong>Hand-Designed Features<\/strong> [40]：依据人工规则选择并存储任务相关特征，保持记忆紧凑。<\/li>\n<li><strong>Scene Memory Transformer (SMT)<\/strong> [17]：通过注意力将整个历史压缩为单一场景级嵌入。<\/li>\n<li><strong>Token Merging<\/strong> [36]：合并时序相邻的相似 token，以固定预算压缩历史。<\/li>\n<\/ul>\n<p>此外，在消融实验中还对比了 LSTM、Mamba、Transformer-XL、Window Attention、Strided Attention、Hierarchical Attention 及 Gated Attention 等替代记忆与稀疏化机制（Table III）。<\/p>\n<hr/>\n<h3>3. 核心实验结果<\/h3>\n<h4>(a) 模拟基准（REMEMBENCH，每任务 50 次 rollout）<\/h4>\n<table>\n<thead>\n<tr>\n<th>对比维度<\/th>\n<th>关键结果<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>vs. 对象中心记忆<\/strong><\/td>\n<td>HALO 较 SAM2Act++ 平均提升 <strong>21%<\/strong>。SAM2Act++ 在计数任务上表现尚可，但在事件-时间任务中失败（0.04），暴露单一先验的局限。<\/td>\n<\/tr>\n<tr>\n<td><strong>vs. 文本摘要<\/strong><\/td>\n<td>HALO 较 ReMemBer 平均提升 <strong>23%<\/strong>。文本摘要虽捕获语义信息，但常缺失低层控制所需的细节（如物体精确位置、动作信息）。<\/td>\n<\/tr>\n<tr>\n<td><strong>vs. 手工设计规则<\/strong><\/td>\n<td>HALO 较 Hand-Designed Features 平均提升 <strong>12%<\/strong>。手工特征在部分空间任务上持平，但在非空间任务中明显落后。<\/td>\n<\/tr>\n<tr>\n<td><strong>vs. 压缩记忆<\/strong><\/td>\n<td>HALO 较 SMT 提升 <strong>7%<\/strong>，较 Token Merging 提升 <strong>12%<\/strong>。压缩虽减少冗余，但会丢失低层动作等细粒度信息。<\/td>\n<\/tr>\n<tr>\n<td><strong>HALO 平均成功率<\/strong><\/td>\n<td>在四项任务上达到 <strong>0.41<\/strong>，显著优于所有基线。<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<h4>(b) 真实世界任务（每任务 20 次 rollout）<\/h4>\n<ul>\n<li>HALO 在真实环境中 consistently 优于 Standard Transformer，平均提升 <strong>19%<\/strong>（Table II）。<\/li>\n<li>在要求最长的 <strong>Heat Stove<\/strong> 任务（加热八分钟）及 <strong>人机协作<\/strong> 的计数任务中，HALO 仍保持优势（0.60 与 0.65）。<\/li>\n<li>在 <strong>Retrieve Object<\/strong> 任务中，HALO 较全注意力基线将操作失败降低 <strong>8%<\/strong>，记忆失败降低 <strong>25%<\/strong>，支持了“稀疏化减少模型漂移”的假设。<\/li>\n<\/ul>\n<hr/>\n<h3>4. 消融实验与设计选择分析<\/h3>\n<h4>(a) VLM 先验（VQA 监督）的有效性<\/h4>\n<ul>\n<li><strong>HALO w/o VQA<\/strong>（仅模仿学习）平均成功率 <strong>0.31<\/strong>。<\/li>\n<li><strong>完整 HALO<\/strong>（加入 VQA）平均成功率 <strong>0.41<\/strong>，提升 <strong>10%<\/strong>。<\/li>\n<li>表明 VQA 监督能有效引导检索机制关注任务相关历史，减少虚假相关。<\/li>\n<\/ul>\n<h4>(b) Top-K 稀疏注意力的有效性<\/h4>\n<ul>\n<li>相比全注意力（Full Attention），Top-K 稀疏化带来 <strong>9%<\/strong> 的绝对性能提升。<\/li>\n<li>限制了每步用于决策的历史信息量，显著减少噪声与累积误差的影响。<\/li>\n<\/ul>\n<h4>(c) 检索数量 $k$ 的消融<\/h4>\n<ul>\n<li>$k=8$ 时性能最优（52%）。<\/li>\n<li>$k$ 过小（如 $k=4$，40%）会丢失有用上下文；$k$ 过大（如 $k=16$，33%；$k=24$，44%）则重新引入无关历史，导致性能下降。<\/li>\n<\/ul>\n<h4>(d) 联合训练 vs. 预训练-微调<\/h4>\n<ul>\n<li><strong>联合训练<\/strong>（co-training）成功率 <strong>64%<\/strong>。<\/li>\n<li><strong>先预训练 VQA 再微调动作<\/strong>（pretrain-finetune）仅 <strong>44%<\/strong>，与无 VQA 的 <strong>42%<\/strong> 接近。<\/li>\n<li>说明分阶段预训练易导致 VQA 知识遗忘，而联合训练可持续塑造检索表示。<\/li>\n<\/ul>\n<h4>(e) VQA 生成流水线的有效性<\/h4>\n<ul>\n<li><strong>HALO 多阶段流水线<\/strong>（轨迹文本化 → 问答合成 → 过滤）较<strong>单视频提示生成<\/strong>基线，问答准确率提升 <strong>60%<\/strong>，幻觉减少 <strong>20%<\/strong>。<\/li>\n<li>验证了长视频直接生成 VQA 易出错，分阶段处理对数据质量至关重要。<\/li>\n<\/ul>\n<hr/>\n<h3>5. 诊断与定性分析<\/h3>\n<p>论文附录还包含多项补充分析：<\/p>\n<ul>\n<li><strong>检索信息可视化<\/strong>（Fig. 6）：展示 HALO 在 Retrieve Object 任务中检索目标物体可见帧及“其他可能位置”帧；在 Return to Same Container 任务中同时检索历史动作与进展帧，说明学习到的检索策略超越了手工规则。<\/li>\n<li><strong>虚假相关性可视化<\/strong>（Fig. 7）：基于 Grad-CAM 的对比显示，HALO 聚焦于任务相关目标（如橄榄油瓶），而标准 Transformer 易受无关干扰物（如纸巾卷位置）影响。<\/li>\n<li><strong>模型漂移定量分析<\/strong>：使用 Jensen-Shannon 散度（JSD）衡量 rollout 与专家动作分布的距离。Top-K 注意力将 JSD 从 0.07 降至 0.06，验证了其在减少漂移上的作用。<\/li>\n<li><strong>信息需求与 $k$ 的关系<\/strong>：在受控 toy 数据集上，发现最优 $k$ 应取决于任务所需信息量，而非单纯与上下文长度 $N$ 成正比。<\/li>\n<\/ul><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>基于论文内容，以下是可以进一步探索的研究方向：<\/p>\n<hr/>\n<h3>1. 从固定查询到主动查询机制<\/h3>\n<p>论文采用固定格式的 VQA 监督来引导检索，但不同任务阶段对历史信息的需求是动态变化的。未来可探索<strong>主动查询（active querying）<\/strong>机制：使策略能够根据当前决策的不确定性或任务阶段，自适应地生成针对性的检索请求，而非依赖预先生成的固定问题。例如，在需要确认物体数量的阶段主动发起计数查询，在需要定位时发起空间查询。<\/p>\n<hr/>\n<h3>2. 跨片段（Cross-Episodic）记忆与失败学习<\/h3>\n<p>当前 HALO 的记忆仅局限于单个片段（episode）内部的历史。一个自然的扩展是让机器人能够访问<strong>跨片段记忆<\/strong>，利用过去多个任务执行的经验来指导当前决策。特别地，可以利用记忆存储先前的失败案例（如错误的物体放置或错误计数），并在后续任务中检索这些经验以避免重复错误。这要求记忆机制不仅支持检索，还需支持有效的写入、索引和遗忘。<\/p>\n<hr/>\n<h3>3. 检索延迟与推测性检索优化<\/h3>\n<p>随着任务时长增加，记忆规模 $|M_t|$ 可能显著增长（论文中高达 3840 个条目），而每次前向传播中的 Top-K 检索与注意力计算会引入不可忽视的推理延迟。未来可以探索<strong>推测性检索（speculative retrieval）<\/strong>：在当前时间步并行预计算未来可能需要的历史条目，或利用分层检索（如先快速过滤再精确计算相似度）来隐藏延迟，从而支持更长时限的实时控制。<\/p>\n<hr/>\n<h3>4. 自适应稀疏检索预算<\/h3>\n<p>论文采用固定的检索数量 $k$（如 $k=8$），但消融实验显示，$k$ 的最优值取决于任务所需的信息量，而非上下文长度 $N$。未来可设计<strong>自适应的稀疏检索预算<\/strong>：让策略根据当前查询的复杂度或任务上下文，动态决定需要检索的记忆条目数 $k_t$。例如，简单导航可能仅需 $k=2$ 的关键帧，而复杂的多物体关系推理可能需要 $k&gt;10$。这可以通过在策略中引入额外的门控或分类器来实现。<\/p>\n<hr/>\n<h3>5. 多模态记忆的扩展与融合<\/h3>\n<p>当前的记忆主要编码视觉观测与低层动作。对于更复杂的家庭操作，机器人还需要整合力觉、触觉、听觉等模态信息。未来可探索如何将这些异构模态统一编码进记忆 $M_t$，并设计模态无关的检索键 $k_i$ 与值 $v_i$，使策略在部分模态缺失时仍能完成检索。同时，不同模态的记忆可能具有不同的时间尺度，需要探索多速率记忆存储机制。<\/p>\n<hr/>\n<h3>6. 记忆写入与遗忘机制<\/h3>\n<p>论文聚焦于<strong>读取<\/strong>（检索）机制，但记忆的<strong>写入<\/strong>（如何选择性存储）和<strong>遗忘<\/strong>（如何淘汰过时信息）同样关键。未来可以探索可学习的记忆写入门控，例如仅在发生重大状态变化（如物体被移动、事件发生）时才写入新条目，而非固定间隔存储。此外，引入显式的遗忘机制，使策略能够丢弃已被判定为不再相关的历史信息（如已完成子目标的中间状态），有助于在长程交互中保持记忆的紧凑与准确。<\/p>\n<hr/>\n<h3>7. 可解释性与安全性验证<\/h3>\n<p>随着记忆检索成为闭环控制的核心环节，检索结果的可解释性和安全性变得重要。未来可以探索如何显式量化检索置信度，例如利用查询-键相似度分布 $s_i$ 的熵来判断模型是否“知道”应该回忆什么。当检索不确定性高时，系统可以主动请求外部监督（如人类提示）或切换到安全模式。此外，检索内容的可视化与审计（如生成自然语言解释说明“为什么检索这一帧”）将有助于提升人机协作中的透明度与信任。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>这篇论文研究<strong>部分可观测环境下的长程机器人模仿学习<\/strong>，提出了一种名为 <strong>HALO<\/strong>（History-Aware visuomotor policy for LOng-horizon control）的视觉运动策略，旨在通过可靠的记忆检索机制支持长达八分钟的复杂家庭操作任务。<\/p>\n<h3>研究背景与核心挑战<\/h3>\n<p>通用机器人在家庭等部分可观测环境中执行长程任务时，必须依赖历史记忆来补偿当前感知的缺失，例如回忆物体位置、数量计数、事件时间或任务进度。然而，将基于注意力的记忆检索直接应用于离线模仿学习面临两个根本性挑战：<\/p>\n<ol>\n<li><strong>虚假相关性（Spurious Correlations）<\/strong>：策略可能在训练数据中学习历史观测与专家动作之间的非因果相关，导致测试时因环境变化而失效；<\/li>\n<li><strong>误差累积与模型漂移（Error Accumulation and Model Drift）<\/strong>：闭环执行中，小的预测误差会随时间复合，污染记忆表征；若策略条件化于大量历史信息，噪声会被反复放大，引发长程级联故障。<\/li>\n<\/ol>\n<h3>方法概述<\/h3>\n<p>HALO 的核心思想是：注意力提供了通用的检索机制，但必须<strong>被引导至任务相关信息<\/strong>，且<strong>被约束以限制噪声历史的影响<\/strong>。为此，HALO 引入两个关键组件：<\/p>\n<h4>1. 通过视觉语言模型（VLM）先验引导检索<\/h4>\n<p>HALO 利用 VLM 编码的丰富语义先验，自动生成<strong>视频问答（VQA）监督<\/strong>来直接训练检索模块。具体流程包括：<\/p>\n<ul>\n<li>将专家轨迹通过多阶段流水线（轨迹文本化、问答合成、自动过滤）转换为高质量 VQA 对 $(u, v)$，探询任务相关的空间、数值、事件等信息；<\/li>\n<li>策略共享编码器与检索主干，同时优化两个目标：<\/li>\n<\/ul>\n<p>$$\\mathcal{L}(\\theta) = \\mathcal{L}<em>{\\text{IL}}(\\theta) + \\lambda \\mathcal{L}<\/em>{\\text{VQA}}(\\theta)$$<\/p>\n<p>其中 $\\mathcal{L}<em>{\\text{IL}}$ 为动作模仿损失，$\\mathcal{L}<\/em>{\\text{VQA}}$ 为视频问答交叉熵损失。<\/p>\n<p>VQA 监督强制检索模块定位历史中支持答案的特定事件，从而将 VLM 先验蒸馏为策略的检索偏差，减少其对无关历史细节的依赖。<\/p>\n<h4>2. Top-K 稀疏注意力抑制模型漂移<\/h4>\n<p>为降低闭环执行中记忆噪声的累积，HALO 限制策略每步只能访问最相关的 $k$ 条历史记录。给定查询 $q_t$ 与记忆键 ${k_i}$，计算相似度 $s_i = \\langle q_t, k_i \\rangle$ 后，仅保留得分最高的 $k$ 个索引 $\\mathcal{I}_k$，注意力输出为：<\/p>\n<p>$$c_t = \\sum_{i \\in \\mathcal{I}<em>k} \\frac{\\exp(s_i)}{\\sum<\/em>{j \\in \\mathcal{I}_k} \\exp(s_j)} v_i$$<\/p>\n<p>非 Top-K 条目权重置零。该稀疏化通过 straight-through estimator 进行训练，强制模型仅依赖少数关键历史片段做决策，从而显著减少噪声注入与长程漂移。<\/p>\n<h3>实验与结果<\/h3>\n<p>论文在 <strong>REMEMBENCH<\/strong> 模拟基准及<strong>真实世界<\/strong>（固定基座机械臂与移动机械臂）的五个长程任务上进行了系统评估，任务涵盖空间信息、物体关系、数值计数、事件时间以及人机协作等多样化记忆需求。<\/p>\n<ul>\n<li><strong>与基线对比<\/strong>：HALO 平均优于对象中心记忆方法（SAM2Act++）<strong>21%<\/strong>、文本摘要方法（ReMemBer）<strong>23%<\/strong>、手工设计特征方法 <strong>12%<\/strong> 及压缩记忆方法（SMT/Token Merging）<strong>7%–12%<\/strong>；<\/li>\n<li><strong>真实世界验证<\/strong>：在长达八分钟的加热任务及动态人机协作任务中，HALO 较标准 Transformer 平均提升 <strong>19%<\/strong>；<\/li>\n<li><strong>消融实验<\/strong>：VQA 监督带来 <strong>10%<\/strong> 性能提升；Top-K 稀疏化带来 <strong>9%<\/strong> 提升并降低操作与记忆失败率；联合训练（co-training）显著优于预训练-微调策略；多阶段 VQA 生成较单视频提示准确率提升 <strong>60%<\/strong>。<\/li>\n<\/ul>\n<h3>结论与贡献<\/h3>\n<p>HALO 证明了在视觉运动策略中，<strong>存储全部历史并学习选择性检索<\/strong>优于依赖任务特定的压缩或手工规则。论文的核心贡献在于：通过 VQA 将 VLM 先验蒸馏为检索监督，同时以稀疏注意力约束记忆访问，实现了从长达数分钟的历史中可靠提取多样化任务信息。实验表明，VLM 先验对识别任务相关信息至关重要，但需与动作模仿学习相结合才能有效支撑低层控制；而稀疏检索则是抑制长程闭环漂移的关键。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Memory%20Retrieval%20in%20Visuomotor%20Policies%20for%20Long-Horizon%20Robot%20Control，链接是 https://arxiv.org/pdf/2606.25136 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2606.25136 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2606.25136", "semantic_scholar_citation_count": null, "citation_title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control", "citation_retrieved_at_utc": "2026-09-23T11:24:44+00:00"}, "preview_images": 0, "video_preview_images": 0, "video_cases_count": 9, "video_case_groups_count": 9, "groups_count": 9, "groups_100_count": 0, "overview_html": "datasets/halo/overview.html", "gallery_html": "datasets/halo/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

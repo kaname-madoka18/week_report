@@ -1,0 +1,59 @@
+{
+  "slug": "vrbench",
+  "title": "VRBench：长叙事视频多步推理基准",
+  "category": "长叙事视频多步推理基准",
+  "summary": "当前公开版960个长叙事视频、8,243道多步题，平均1.6小时，并给每步推理标记时间证据。",
+  "paper_url": "https://arxiv.org/abs/2506.10857",
+  "repo_url": "https://github.com/OpenGVLab/VRBench",
+  "project_url": "https://vrbench.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/OpenGVLab/VRBench"
+    }
+  ],
+  "duration_summary": "平均约1.6小时/视频；视频筛选设最短20分钟；题目依赖分散在时间线上的多段证据。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "partial",
+  "relation_level": "长上下文近邻",
+  "limitations": [
+    "使用当前公开仓库960视频版本，并明确区分早期预印本统计。",
+    "原视频在官方HF以分卷ZIP发布（v001_360p.z01等，每卷约10.7GB），未整段下载；本页保留官方标注样例图及数据入口。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://vrbench.github.io/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2506.10857"
+    }
+  ],
+  "groups": [
+    {
+      "id": "official_images",
+      "title": "官方任务与数据示例图",
+      "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "slug": "vrbench",
+          "image": "previews/teaser_cr.png",
+          "source_url": "https://vrbench.github.io/assets/vrbench/images/teaser_cr.png",
+          "source_label": "长叙事多步推理任务",
+          "size_bytes": 811941,
+          "width": 1759,
+          "height": 697,
+          "video_id": "not-video",
+          "sha256": "e4c7ca1591143342543509dacee0a346fe7310998811b4c611095c7715d74b30"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

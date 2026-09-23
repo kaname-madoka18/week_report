@@ -1,0 +1,66 @@
+{
+  "main_range_bytes": 152625547,
+  "eye_range_bytes": 10385846,
+  "website_successful_probe_bytes": 9054665,
+  "retained_whole_demo_files": [
+    {
+      "path": "samples/EntityLog.mp4",
+      "size_bytes": 7774717,
+      "sha256": "d4159b68f297ccf13089997c96941d2ab2b82c930f3b96dfdef54c1c028f4055"
+    },
+    {
+      "path": "samples/EventRecall.mp4",
+      "size_bytes": 7900186,
+      "sha256": "80ee69ecc9213b3867ab1854fc5312a89cfff4e6c72766cb2e003f8a7042fadd"
+    },
+    {
+      "path": "samples/HabitInsight.mp4",
+      "size_bytes": 7572412,
+      "sha256": "0b573aee1362026282abeb566891d0ee296818c9239d236c60354acbf3b0cb0b"
+    },
+    {
+      "path": "samples/RelationMap.mp4",
+      "size_bytes": 10946843,
+      "sha256": "7b16f195852709a9a805308930b04859833b07fcf80e7ced046f50f70074fe3d"
+    },
+    {
+      "path": "samples/TaskMaster.mp4",
+      "size_bytes": 7578952,
+      "sha256": "916aa9aa5951c9a4bc6d01b9c4bc39653dadf5e01ea53ceafa78cd82abdb60d8"
+    },
+    {
+      "path": "samples/demo1_blur_bottom_section.mp4",
+      "size_bytes": 3945454,
+      "sha256": "186692c4b85c9110adeead953ec02427e620647ce76376a008c1fd8ab6260b6e"
+    },
+    {
+      "path": "samples/demo1_blur_middle_section.mp4",
+      "size_bytes": 6653980,
+      "sha256": "bff6912dfb1f5bbf4a518caaf7894fa897247e2e3ab4ef9665ede89d4ba19c8c"
+    },
+    {
+      "path": "samples/demo1_blur_top_section.mp4",
+      "size_bytes": 2467476,
+      "sha256": "687239e0b34cdcfb7081213b62d69696f91292ad9c443e3eb7281c9948450da6"
+    },
+    {
+      "path": "samples/demo2_blur_bottom_section.mp4",
+      "size_bytes": 1320520,
+      "sha256": "604d31059050c152e4ca8aff3e18f5ec8c14fbffe6780d3ef34ef2e368dd48fe"
+    },
+    {
+      "path": "samples/demo2_blur_middle_section.mp4",
+      "size_bytes": 4982090,
+      "sha256": "472c13875630d1f4d59d3366a314d3eb7934c60bbf87501e9835517fd57d70a4"
+    },
+    {
+      "path": "samples/demo2_blur_top_section.mp4",
+      "size_bytes": 1709111,
+      "sha256": "782e47f656706122c3177de107061fa92bd6dec03b07c7ac127956b2077bf852"
+    }
+  ],
+  "full_third_person_videos_downloaded": 0,
+  "full_main_videos_saved": 0,
+  "full_eye_videos_saved": 0,
+  "note": "Byte counters cover successful recorded Range reads. Discovery tests, failed partial requests, metadata, and demo retries are not included; these are not total network-traffic figures."
+}

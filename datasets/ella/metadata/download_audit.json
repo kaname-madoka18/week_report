@@ -1,0 +1,11 @@
+{
+  "full_video_downloads": 0,
+  "image_source_files": 100,
+  "image_source_bytes": 15016835,
+  "all_observation_source_git_sha_verified": true,
+  "range_total_bytes": null,
+  "range_note": "Method success used 2256243 bytes and Influence Battle success used 6674471 bytes; partial/retried video requests do not have a complete transfer ledger.",
+  "observations": 100,
+  "video_frames": 228,
+  "large_video_rule": "leadership_quest.mp4 is 102232940 bytes; only HTTP Range read, never fully saved."
+}

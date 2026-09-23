@@ -1,0 +1,13 @@
+id,source_url,source_bytes,duration_seconds,fps,preview_frames
+bristol,https://ego4d-data.org/assets/videos/bristol/1.mp4,435829,10.533333333333333,30.0,100
+catania,https://ego4d-data.org/assets/videos/catania/1.mp4,316506,10.0,30.0,100
+cmu,https://ego4d-data.org/assets/videos/cmu/1.mp4,421149,9.066666666666666,30.0,100
+cmuafrica,https://ego4d-data.org/assets/videos/cmuafrica/1.mp4,316706,10.066666666666666,30.0,100
+fair,https://ego4d-data.org/assets/videos/fair/1.mp4,778557,15.133333333333333,30.0,100
+georgiatech,https://ego4d-data.org/assets/videos/georgiatech/1.mp4,257780,10.0,30.0,100
+iiith,https://ego4d-data.org/assets/videos/iiith/1.mp4,193312,10.0,30.0,100
+kaust,https://ego4d-data.org/assets/videos/kaust/1.mp4,102619,10.0,30.0,100
+losandes,https://ego4d-data.org/assets/videos/losandes/1.mp4,887325,10.266666666666667,30.0,100
+minnesota,https://ego4d-data.org/assets/videos/minnesota/1.mp4,267942,10.0,30.0,100
+nus,https://ego4d-data.org/assets/videos/nus/1.mp4,181288,10.066666666666666,30.0,100
+tokyo,https://ego4d-data.org/assets/videos/tokyo/1.mp4,221270,10.08,25.0,100

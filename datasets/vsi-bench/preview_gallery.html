@@ -1,0 +1,188 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VSI-Bench：视觉空间记忆基准 · 视频预览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">VSI-Bench：视觉空间记忆基准</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2024-12-18</strong></div><div><span>引用数</span><strong>756</strong></div><div><span>GitHub stars</span><strong>743</strong></div><div><span>当前状态</span><strong>CVPR 2025 · Oral</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2412.14171" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/vision-x-nyu/thinking-in-space" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/376461a2c049f6fa51a4303853fdc672e4d07a0d" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://github.com/vision-x-nyu/thinking-in-space" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Thinking+in+Space%3A+How+Multimodal+Large+Language+Models+See%2C+Remember%2C+and+Recall+Spaces" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文探讨了多模态大型语言模型（MLLMs）是否能够“在空间中思考”，即是否能够通过视频理解、记忆布局，并在需要时检索这些空间信息来回答问题。具体来说，论文试图解决的问题包括：</p>
+<ol>
+<li>
+<p><strong>空间视觉智能的挑战</strong>：人类能够通过连续的视觉观察记忆空间，但MLLMs是否也能从视频中“思考空间”？这涉及到视觉空间智能，包括感知、理解和操作空间关系的能力。</p>
+</li>
+<li>
+<p><strong>构建认知地图</strong>：人类在观察空间时能够构建心智地图，MLLMs是否也能构建这样的内部空间模型，并利用这些模型回答关于空间的问题？</p>
+</li>
+<li>
+<p><strong>MLLMs的空间推理能力</strong>：尽管MLLMs在开放对话和实际任务中表现出强大的思考和推理能力，但它们在空间推理方面的能力如何，是否存在瓶颈？</p>
+</li>
+<li>
+<p><strong>评估和分析MLLMs的空间智能</strong>：通过建立一个基于视频的视觉空间智能基准（VSI-Bench），包含超过5000个问题-答案对，评估MLLMs的空间智能，并分析它们在空间理解、记忆和回忆方面的表现。</p>
+</li>
+<li>
+<p><strong>提高MLLMs的空间推理性能</strong>：探索不同的技术和方法，如生成认知地图，以提高MLLMs在空间距离问题上的回答能力。</p>
+</li>
+</ol>
+<p>总结来说，这篇论文试图深入理解MLLMs在视觉空间智能方面的能力与局限，并探索如何提升它们在这一领域的性能。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>根据提供的论文内容，以下是一些与本研究相关的领域和具体工作：</p>
+<ol>
+<li>
+<p><strong>视觉空间智能</strong>：
+   - 论文引用了关于视觉空间智能的理论和实验研究，例如[11]、[26]、[55]、[60]，这些文献探讨了人类如何感知、理解和操作空间关系。</p>
+</li>
+<li>
+<p><strong>多模态大型语言模型（MLLMs）</strong>：
+   - 论文提到了多个MLLMs的研究，如[1]、[4]、[15]、[33]、[41]、[47]、[76]，这些研究展示了MLLMs在整合语言和视觉信息方面的能力，并在开放对话和实际任务中表现出强大的思考和推理能力。</p>
+</li>
+<li>
+<p><strong>视频理解基准</strong>：
+   - 论文中提到了几个视频理解基准，如[24]、[42]、[43]、[49]、[53]、[61]、[62]、[93]，这些基准用于评估MLLMs的视频内容理解能力，包括视频识别、感知和多学科任务。</p>
+</li>
+<li>
+<p><strong>视觉空间推理</strong>：
+   - 论文中提到了一些与视觉空间推理相关的研究，如[68]、[74]、[87]、[90]，这些研究探讨了前沿模型是否能够在没有明确空间认知能力的情况下展现出空间推理能力。</p>
+</li>
+<li>
+<p><strong>视觉语言模型的地面化</strong>：
+   - 论文引用了[10]、[13]、[16]、[40]、[46]、[91]、[102]等文献，这些研究致力于将MLLMs与现实世界连接起来，提高模型对空间信息的理解能力。</p>
+</li>
+<li>
+<p><strong>认知地图和规划</strong>：
+   - 论文中提到了[56]、[58]、[78]等文献，这些研究探讨了人类和模型如何在空间环境中构建和使用认知地图进行导航和规划。</p>
+</li>
+<li>
+<p><strong>视觉空间工作记忆</strong>：
+   - 论文引用了[2]、[20]、[54]等文献，这些研究关注于视觉空间工作记忆，即如何在心智中保持和操作空间信息。</p>
+</li>
+</ol>
+<p>这些相关研究为理解MLLMs在视觉空间智能方面的表现提供了理论基础和实证研究，同时也指出了当前模型的局限性和未来可能的改进方向。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过以下几个步骤解决提出的问题：</p>
+<ol>
+<li>
+<p><strong>建立视频基准测试（VSI-Bench）</strong>：
+   - 论文介绍了一个基于视频的视觉空间智能基准测试（VSI-Bench），包含超过5000个问题-答案对，覆盖了近290个真实室内场景视频。这个基准测试旨在定量评估MLLMs从第一人称视频输入中的视觉空间智能。</p>
+</li>
+<li>
+<p><strong>评估MLLMs的性能</strong>：
+   - 论文综合评估了15种支持视频的MLLMs，包括不同的模型家族、参数规模和训练方式。通过VSI-Bench测试，揭示了MLLMs在视频理解和空间推理方面的表现，并与人类水平进行比较。</p>
+</li>
+<li>
+<p><strong>分析模型行为</strong>：
+   - 论文通过自我解释（self-explanations）和认知地图（cognitive maps）两种方式分析MLLMs是如何在空间中“思考”的。自我解释用于分析模型的语言推理能力，而认知地图用于评估模型的视觉空间记忆和内部空间模型。</p>
+</li>
+<li>
+<p><strong>识别性能瓶颈</strong>：
+   - 通过错误分析，论文发现空间推理是MLLMs在VSI-Bench上性能的主要瓶颈，特别是关系推理和自我中心到环境中心的转换能力。</p>
+</li>
+<li>
+<p><strong>探索改进方法</strong>：
+   - 论文探索了标准的语言学推理技术（例如链式思考、自我一致性和思维树）在视觉空间任务中的有效性，并发现这些技术并未提高性能。相反，明确生成和使用认知地图可以改善MLLMs在空间距离问题上的回答能力。</p>
+</li>
+<li>
+<p><strong>讨论和未来工作</strong>：
+   - 论文讨论了当前MLLMs在视觉空间智能方面的优势和限制，并提出了未来可能的改进方向，包括任务特定的微调、为空间推理开发自监督学习目标，或为MLLMs定制的视觉空间提示技术。</p>
+</li>
+</ol>
+<p>通过这些步骤，论文不仅评估了MLLMs在视觉空间智能方面的能力，还揭示了它们的局限性，并为如何提升这些能力提供了见解。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>根据提供的论文内容，以下是论文中进行的实验：</p>
+<ol>
+<li>
+<p><strong>VSI-Bench基准测试评估</strong>：
+   - 论文构建了一个包含超过5000个问题-答案对的视频基准测试VSI-Bench，并使用它来评估15种不同的视频支持的多模态大型语言模型（MLLMs）的性能。</p>
+</li>
+<li>
+<p><strong>模型性能比较</strong>：
+   - 对比了闭源模型和开源模型在VSI-Bench上的性能，包括准确率和与其他基线（如随机选择和频率选择）的比较。</p>
+</li>
+<li>
+<p><strong>人类水平性能评估</strong>：
+   - 通过让人类评估者独立回答VSI-Bench（tiny）子集中的400个问题，并使用相同的评估指标来衡量人类的表现。</p>
+</li>
+<li>
+<p><strong>自我解释分析</strong>：
+   - 通过让表现最佳的MLLM（Gemini-1.5 Pro）为预测的答案提供逐步解释，分析了模型在空间推理中的语言思考过程。</p>
+</li>
+<li>
+<p><strong>错误分析</strong>：
+   - 对Gemini-1.5 Pro在VSI-Bench（tiny）中的错误进行了分类分析，以识别MLLMs在视觉空间智能方面的主要瓶颈。</p>
+</li>
+<li>
+<p><strong>语言学推理技术的有效性测试</strong>：
+   - 测试了零样本链式思考（Zero-Shot CoT）、自我一致性（Self-Consistency）和思维树（Tree-of-Thoughts）等语言学推理技术在视觉空间任务中的有效性。</p>
+</li>
+<li>
+<p><strong>认知地图生成和评估</strong>：
+   - 通过让Gemini-1.5 Pro基于视频输入预测对象的中心位置，生成认知地图，并评估这些地图的准确性。</p>
+</li>
+<li>
+<p><strong>使用认知地图改善空间推理</strong>：
+   - 探索了生成和使用认知地图是否可以帮助MLLMs改善在相对距离任务上的空间推理能力。</p>
+</li>
+</ol>
+<p>这些实验旨在全面评估MLLMs在视觉空间智能方面的能力，并探索提高它们性能的方法。通过这些实验，论文揭示了MLLMs在空间推理、视觉感知和记忆方面的强项和局限性，并提出了相应的改进方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>根据论文的讨论和未来工作部分，以下是一些可以进一步探索的点：</p>
+<ol>
+<li>
+<p><strong>任务特定的微调（Task-Specific Fine-Tuning）</strong>：
+   - 针对特定的视觉空间任务，对MLLMs进行微调可能提高其在这些任务上的性能。</p>
+</li>
+<li>
+<p><strong>自监督学习目标（Self-Supervised Learning Objectives）</strong>：
+   - 开发针对空间推理的自监督学习目标，可能有助于提高MLLMs的空间智能。</p>
+</li>
+<li>
+<p><strong>为MLLMs定制的视觉空间提示技术（Visuospatial-Tailored Prompting Techniques）</strong>：
+   - 设计专门针对视觉空间任务的提示技术，可能提升MLLMs在这些任务上的表现。</p>
+</li>
+<li>
+<p><strong>更复杂的空间关系理解（Understanding More Complex Spatial Relationships）</strong>：
+   - 探索MLLMs如何处理更复杂的空间关系，如多层次的空间布局和动态环境中的空间变化。</p>
+</li>
+<li>
+<p><strong>跨模态一致性（Cross-Modal Consistency）</strong>：
+   - 研究如何提高MLLMs在视觉和语言模态之间的一致性，以增强其对空间信息的整体理解。</p>
+</li>
+<li>
+<p><strong>长时记忆和规划（Long-Term Memory and Planning）</strong>：
+   - 研究MLLMs如何在长时间跨度上记忆空间信息，并使用这些信息进行规划和决策。</p>
+</li>
+<li>
+<p><strong>多步骤空间推理（Multi-Step Spatial Reasoning）</strong>：
+   - 探索MLLMs是否能够进行多步骤的空间推理，例如路径规划和导航。</p>
+</li>
+<li>
+<p><strong>结合3D建模和空间理解（Combining 3D Modeling and Spatial Understanding）</strong>：
+   - 研究如何将3D建模技术与MLLMs的空间理解能力结合起来，以更准确地理解和重现复杂场景。</p>
+</li>
+<li>
+<p><strong>可解释性和透明度（Explainability and Transparency）</strong>：
+   - 提高MLLMs在视觉空间任务中的可解释性，使研究人员和用户能够更好地理解模型的决策过程。</p>
+</li>
+<li>
+<p><strong>鲁棒性和泛化能力（Robustness and Generalization）</strong>：</p>
+<ul>
+<li>研究MLLMs在不同环境和条件下的鲁棒性和泛化能力，特别是在面对异常值和不确定性时。</li>
+</ul>
+</li>
+</ol>
+<p>这些探索点可以帮助研究者们更好地理解MLLMs在视觉空间智能方面的能力，并推动相关技术的发展。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>这篇论文的主要内容概括如下：</p>
+<ol>
+<li>
+<p><strong>研究问题</strong>：
+   - 论文探讨了多模态大型语言模型（MLLMs）是否能够“在空间中思考”，即通过视频理解、记忆空间布局，并在需要时检索空间信息来回答问题。</p>
+</li>
+<li>
+<p><strong>VSI-Bench基准测试</strong>：
+   - 为了评估MLLMs的视觉空间智能，作者构建了一个包含超过5000个问题-答案对的视频基准测试VSI-Bench，覆盖了近290个真实室内场景视频。</p>
+</li>
+<li>
+<p><strong>模型评估</strong>：
+   - 论文评估了15种不同的视频支持MLLMs在VSI-Bench上的性能，并与人类水平进行了比较，发现尽管MLLMs展现出一定的视觉空间智能，但与人类相比仍有较大差距。</p>
+</li>
+<li>
+<p><strong>分析模型行为</strong>：
+   - 通过自我解释和认知地图分析，论文揭示了MLLMs在空间推理、视觉感知、语言理解和记忆方面的能力与局限。</p>
+</li>
+<li>
+<p><strong>性能瓶颈</strong>：
+   - 研究发现空间推理是MLLMs性能的主要瓶颈，尤其是关系推理和自我中心到环境中心的转换能力。</p>
+</li>
+<li>
+<p><strong>改进方法</strong>：
+   - 论文探索了语言学推理技术对视觉空间任务的影响，并发现生成和使用认知地图可以改善MLLMs在空间距离问题上的回答能力。</p>
+</li>
+<li>
+<p><strong>未来方向</strong>：
+   - 论文提出了未来改进MLLMs视觉空间智能的可能方向，包括任务特定的微调、自监督学习目标的开发，以及为MLLMs定制的视觉空间提示技术。</p>
+</li>
+</ol>
+<p>总结来说，这篇论文深入分析了MLLMs在视觉空间智能方面的能力，通过构建新的基准测试、评估模型性能、分析模型行为，并探索了提升性能的方法，为未来在这一领域的研究提供了有价值的见解和方向。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Thinking%20in%20Space%3A%20How%20Multimodal%20Large%20Language%20Models%20See%2C%20Remember%2C%20and%20Recall%20Spaces，链接是 https://arxiv.org/pdf/2412.14171 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2412.14171 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="wrap"><div class="gallery-head"><div class="eyebrow">DATASET PREVIEW</div><h1>VSI-Bench：视觉空间记忆基准</h1><p class="muted">288 个第一人称室内扫描视频、5,000+ 问答；要求从连续视角建立、记住并调用空间布局。</p><p><strong>1 张独立预览图</strong> · 2 个可播放视频 case · 3 个分组 · <a href="overview.html">完整数据概览</a></p><p class="muted">288个评测视频；本文本未取得可直接核验的统一平均时长。下方官网case由PyAV实测，官方分布图保留其源集合统计口径，不据图反推288视频的平均长度。</p></div><div class="note"><ul><li>官网case为室内扫描视频；并非跨天生活记录。</li><li>当前源数据可能有后续修订；官方说明代码结果与论文表格可能因数据精炼略有差异。</li><li>本页结果来自论文，未在本机复现模型。</li></ul></div><p><a href="https://vision-x-nyu.github.io/thinking-in-space.github.io/" target="_blank" rel="noopener">官方项目</a> · <a href="https://arxiv.org/abs/2412.14171" target="_blank" rel="noopener">论文原文</a></p><div id="gallery-controls" class="gallery-controls"><label for="group-select">预览分组</label><select id="group-select"></select><span id="group-count" class="muted"></span><a id="contact-sheet" hidden target="_blank">打开拼图</a></div><h2 id="group-title"></h2><p id="group-description" class="muted"></p><div id="gallery-grid" class="gallery-grid"></div><footer>短视频 case 直接使用本地 video 播放器；抽帧图片会显示来源、视频时长及实际取帧时间。页面与图片可离线浏览，外部来源链接需要联网。<br><a href="../../index.html" data-catalog-home>← 返回主目录</a></footer></main><dialog id="frame-dialog"><div class="lightbox-nav"><button id="frame-prev">← 上一张</button><button id="frame-close">关闭 ×</button><button id="frame-next">下一张 →</button></div><img id="large-frame" class="large-frame" alt="预览原图"><div id="frame-detail" class="frame-detail"></div></dialog><script id="dataset-data" type="application/json">{"slug": "vsi-bench", "title": "VSI-Bench：视觉空间记忆基准", "category": "视觉空间记忆基准", "summary": "288 个第一人称室内扫描视频、5,000+ 问答；要求从连续视角建立、记住并调用空间布局。", "paper_url": "https://arxiv.org/abs/2412.14171", "repo_url": "https://github.com/vision-x-nyu/thinking-in-space", "project_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/", "dataset_urls": [{"label": "官方 Hugging Face 数据", "url": "https://huggingface.co/datasets/nyu-visionx/VSI-Bench"}], "duration_summary": "288个评测视频；本文本未取得可直接核验的统一平均时长。下方官网case由PyAV实测，官方分布图保留其源集合统计口径，不据图反推288视频的平均长度。", "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。", "preview_status": "available", "relation_level": "直接记忆", "limitations": ["官网case为室内扫描视频；并非跨天生活记录。", "当前源数据可能有后续修订；官方说明代码结果与论文表格可能因数据精炼略有差异。", "本页结果来自论文，未在本机复现模型。"], "related_links": [{"label": "官方项目", "href": "https://vision-x-nyu.github.io/thinking-in-space.github.io/"}, {"label": "论文原文", "href": "https://arxiv.org/abs/2412.14171"}], "groups": [{"id": "case_45662987", "title": "室内空间记忆场景：45662987", "description": "官网公开场景 case；实测此发布文件的播放时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "vsi-bench", "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/videos/45662987.mp4", "local_video": "samples/45662987.mp4", "poster": "previews/45662987_poster.jpg", "size_bytes": 7825034, "duration_seconds": 67.33333333333333, "width": 640, "height": 480, "codec": "h264", "fps": 30.0, "sha256": "6ce949efece79979dff55afafd351128df7ed23bca599e75550075d7f61925e7", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 7825034, "title": "室内空间记忆场景：45662987", "source_label": "室内空间记忆场景：45662987", "video_id": "45662987", "category": "官方视频 case", "description": "官网公开场景 case；实测此发布文件的播放时长。"}]}, {"id": "case_scene0663_00", "title": "室内空间记忆场景：scene0663_00", "description": "官网公开场景 case；实测此发布文件的播放时长。", "media_kind": "video_case", "frames": [], "video_cases": [{"slug": "vsi-bench", "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/videos/scene0663_00.mp4", "local_video": "samples/scene0663_00.mp4", "poster": "previews/scene0663_00_poster.jpg", "size_bytes": 8928119, "duration_seconds": 122.75, "width": 640, "height": 480, "codec": "h264", "fps": 24.0, "sha256": "2b70048cdd85194eb3728c2f28e9a9966bf3347031b2f497f1ecf684aea38895", "measurement_tool": "PyAV / FFmpeg libraries", "downloaded_bytes_this_run": 8928119, "title": "室内空间记忆场景：scene0663_00", "source_label": "室内空间记忆场景：scene0663_00", "video_id": "scene0663_00", "category": "官方视频 case", "description": "官网公开场景 case；实测此发布文件的播放时长。"}]}, {"id": "official_images", "title": "官方任务与数据示例图", "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。", "media_kind": "image", "frames": [{"slug": "vsi-bench", "image": "previews/benchmark-stats.png", "source_url": "https://vision-x-nyu.github.io/thinking-in-space.github.io/static/img/benchmark-stats.png", "source_label": "官方任务/视频长度统计图（不同源集合口径）", "size_bytes": 1755598, "width": 4908, "height": 1544, "video_id": "not-video", "sha256": "f467572e9a6751cbc1611556e8f44926113c824ca2acf8c75eb3a495ad404775"}], "video_cases": [], "contact_sheet": "previews/contact_sheets/official_images.jpg"}], "added_batch": "2026-09-23", "selection_kind": "qualified", "short_video_case_threshold_seconds": 180, "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。", "paper_metadata": {"slug": "vsi-bench", "title": "Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces", "paper_url": "https://arxiv.org/abs/2412.14171", "retrieved_at_utc": "2026-09-23T11:51:26+00:00", "arxiv_id": "2412.14171", "arxiv_url": "https://arxiv.org/abs/2412.14171", "arxiv_source_url": "https://arxiv.org/abs/2412.14171", "arxiv_title": "Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces", "arxiv_published_at": "2024-12-18", "arxiv_updated_at": null, "arxiv_fetch_status": "ok", "citation_count": 756, "citation_source": "Semantic Scholar", "citation_source_url": "https://www.semanticscholar.org/paper/376461a2c049f6fa51a4303853fdc672e4d07a0d", "citation_fetch_status": "ok", "citation_retrieved_at_utc": "2026-09-23", "github_url": "https://github.com/vision-x-nyu/thinking-in-space", "github_repo": "vision-x-nyu/thinking-in-space", "github_stars": 743, "github_source_url": "https://api.github.com/repos/vision-x-nyu/thinking-in-space", "github_fetch_status": "ok", "status_label": "CVPR 2025 · Oral", "status_source": "https://github.com/vision-x-nyu/thinking-in-space", "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=Thinking+in+Space%3A+How+Multimodal+Large+Language+Models+See%2C+Remember%2C+and+Recall+Spaces", "papers_cool_detail_url": "https://papers.cool/arxiv/2412.14171", "kimi_brief_html": "<section class=\"kimi-faq\"><h3>Q1 : 这篇论文试图解决什么问题？<\/h3><p>这篇论文探讨了多模态大型语言模型（MLLMs）是否能够“在空间中思考”，即是否能够通过视频理解、记忆布局，并在需要时检索这些空间信息来回答问题。具体来说，论文试图解决的问题包括：<\/p>\n<ol>\n<li>\n<p><strong>空间视觉智能的挑战<\/strong>：人类能够通过连续的视觉观察记忆空间，但MLLMs是否也能从视频中“思考空间”？这涉及到视觉空间智能，包括感知、理解和操作空间关系的能力。<\/p>\n<\/li>\n<li>\n<p><strong>构建认知地图<\/strong>：人类在观察空间时能够构建心智地图，MLLMs是否也能构建这样的内部空间模型，并利用这些模型回答关于空间的问题？<\/p>\n<\/li>\n<li>\n<p><strong>MLLMs的空间推理能力<\/strong>：尽管MLLMs在开放对话和实际任务中表现出强大的思考和推理能力，但它们在空间推理方面的能力如何，是否存在瓶颈？<\/p>\n<\/li>\n<li>\n<p><strong>评估和分析MLLMs的空间智能<\/strong>：通过建立一个基于视频的视觉空间智能基准（VSI-Bench），包含超过5000个问题-答案对，评估MLLMs的空间智能，并分析它们在空间理解、记忆和回忆方面的表现。<\/p>\n<\/li>\n<li>\n<p><strong>提高MLLMs的空间推理性能<\/strong>：探索不同的技术和方法，如生成认知地图，以提高MLLMs在空间距离问题上的回答能力。<\/p>\n<\/li>\n<\/ol>\n<p>总结来说，这篇论文试图深入理解MLLMs在视觉空间智能方面的能力与局限，并探索如何提升它们在这一领域的性能。<\/p><\/section><section class=\"kimi-faq\"><h3>Q2 : 有哪些相关研究？<\/h3><p>根据提供的论文内容，以下是一些与本研究相关的领域和具体工作：<\/p>\n<ol>\n<li>\n<p><strong>视觉空间智能<\/strong>：\n   - 论文引用了关于视觉空间智能的理论和实验研究，例如[11]、[26]、[55]、[60]，这些文献探讨了人类如何感知、理解和操作空间关系。<\/p>\n<\/li>\n<li>\n<p><strong>多模态大型语言模型（MLLMs）<\/strong>：\n   - 论文提到了多个MLLMs的研究，如[1]、[4]、[15]、[33]、[41]、[47]、[76]，这些研究展示了MLLMs在整合语言和视觉信息方面的能力，并在开放对话和实际任务中表现出强大的思考和推理能力。<\/p>\n<\/li>\n<li>\n<p><strong>视频理解基准<\/strong>：\n   - 论文中提到了几个视频理解基准，如[24]、[42]、[43]、[49]、[53]、[61]、[62]、[93]，这些基准用于评估MLLMs的视频内容理解能力，包括视频识别、感知和多学科任务。<\/p>\n<\/li>\n<li>\n<p><strong>视觉空间推理<\/strong>：\n   - 论文中提到了一些与视觉空间推理相关的研究，如[68]、[74]、[87]、[90]，这些研究探讨了前沿模型是否能够在没有明确空间认知能力的情况下展现出空间推理能力。<\/p>\n<\/li>\n<li>\n<p><strong>视觉语言模型的地面化<\/strong>：\n   - 论文引用了[10]、[13]、[16]、[40]、[46]、[91]、[102]等文献，这些研究致力于将MLLMs与现实世界连接起来，提高模型对空间信息的理解能力。<\/p>\n<\/li>\n<li>\n<p><strong>认知地图和规划<\/strong>：\n   - 论文中提到了[56]、[58]、[78]等文献，这些研究探讨了人类和模型如何在空间环境中构建和使用认知地图进行导航和规划。<\/p>\n<\/li>\n<li>\n<p><strong>视觉空间工作记忆<\/strong>：\n   - 论文引用了[2]、[20]、[54]等文献，这些研究关注于视觉空间工作记忆，即如何在心智中保持和操作空间信息。<\/p>\n<\/li>\n<\/ol>\n<p>这些相关研究为理解MLLMs在视觉空间智能方面的表现提供了理论基础和实证研究，同时也指出了当前模型的局限性和未来可能的改进方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q3 : 论文如何解决这个问题？<\/h3><p>论文通过以下几个步骤解决提出的问题：<\/p>\n<ol>\n<li>\n<p><strong>建立视频基准测试（VSI-Bench）<\/strong>：\n   - 论文介绍了一个基于视频的视觉空间智能基准测试（VSI-Bench），包含超过5000个问题-答案对，覆盖了近290个真实室内场景视频。这个基准测试旨在定量评估MLLMs从第一人称视频输入中的视觉空间智能。<\/p>\n<\/li>\n<li>\n<p><strong>评估MLLMs的性能<\/strong>：\n   - 论文综合评估了15种支持视频的MLLMs，包括不同的模型家族、参数规模和训练方式。通过VSI-Bench测试，揭示了MLLMs在视频理解和空间推理方面的表现，并与人类水平进行比较。<\/p>\n<\/li>\n<li>\n<p><strong>分析模型行为<\/strong>：\n   - 论文通过自我解释（self-explanations）和认知地图（cognitive maps）两种方式分析MLLMs是如何在空间中“思考”的。自我解释用于分析模型的语言推理能力，而认知地图用于评估模型的视觉空间记忆和内部空间模型。<\/p>\n<\/li>\n<li>\n<p><strong>识别性能瓶颈<\/strong>：\n   - 通过错误分析，论文发现空间推理是MLLMs在VSI-Bench上性能的主要瓶颈，特别是关系推理和自我中心到环境中心的转换能力。<\/p>\n<\/li>\n<li>\n<p><strong>探索改进方法<\/strong>：\n   - 论文探索了标准的语言学推理技术（例如链式思考、自我一致性和思维树）在视觉空间任务中的有效性，并发现这些技术并未提高性能。相反，明确生成和使用认知地图可以改善MLLMs在空间距离问题上的回答能力。<\/p>\n<\/li>\n<li>\n<p><strong>讨论和未来工作<\/strong>：\n   - 论文讨论了当前MLLMs在视觉空间智能方面的优势和限制，并提出了未来可能的改进方向，包括任务特定的微调、为空间推理开发自监督学习目标，或为MLLMs定制的视觉空间提示技术。<\/p>\n<\/li>\n<\/ol>\n<p>通过这些步骤，论文不仅评估了MLLMs在视觉空间智能方面的能力，还揭示了它们的局限性，并为如何提升这些能力提供了见解。<\/p><\/section><section class=\"kimi-faq\"><h3>Q4 : 论文做了哪些实验？<\/h3><p>根据提供的论文内容，以下是论文中进行的实验：<\/p>\n<ol>\n<li>\n<p><strong>VSI-Bench基准测试评估<\/strong>：\n   - 论文构建了一个包含超过5000个问题-答案对的视频基准测试VSI-Bench，并使用它来评估15种不同的视频支持的多模态大型语言模型（MLLMs）的性能。<\/p>\n<\/li>\n<li>\n<p><strong>模型性能比较<\/strong>：\n   - 对比了闭源模型和开源模型在VSI-Bench上的性能，包括准确率和与其他基线（如随机选择和频率选择）的比较。<\/p>\n<\/li>\n<li>\n<p><strong>人类水平性能评估<\/strong>：\n   - 通过让人类评估者独立回答VSI-Bench（tiny）子集中的400个问题，并使用相同的评估指标来衡量人类的表现。<\/p>\n<\/li>\n<li>\n<p><strong>自我解释分析<\/strong>：\n   - 通过让表现最佳的MLLM（Gemini-1.5 Pro）为预测的答案提供逐步解释，分析了模型在空间推理中的语言思考过程。<\/p>\n<\/li>\n<li>\n<p><strong>错误分析<\/strong>：\n   - 对Gemini-1.5 Pro在VSI-Bench（tiny）中的错误进行了分类分析，以识别MLLMs在视觉空间智能方面的主要瓶颈。<\/p>\n<\/li>\n<li>\n<p><strong>语言学推理技术的有效性测试<\/strong>：\n   - 测试了零样本链式思考（Zero-Shot CoT）、自我一致性（Self-Consistency）和思维树（Tree-of-Thoughts）等语言学推理技术在视觉空间任务中的有效性。<\/p>\n<\/li>\n<li>\n<p><strong>认知地图生成和评估<\/strong>：\n   - 通过让Gemini-1.5 Pro基于视频输入预测对象的中心位置，生成认知地图，并评估这些地图的准确性。<\/p>\n<\/li>\n<li>\n<p><strong>使用认知地图改善空间推理<\/strong>：\n   - 探索了生成和使用认知地图是否可以帮助MLLMs改善在相对距离任务上的空间推理能力。<\/p>\n<\/li>\n<\/ol>\n<p>这些实验旨在全面评估MLLMs在视觉空间智能方面的能力，并探索提高它们性能的方法。通过这些实验，论文揭示了MLLMs在空间推理、视觉感知和记忆方面的强项和局限性，并提出了相应的改进方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q5 : 有什么可以进一步探索的点？<\/h3><p>根据论文的讨论和未来工作部分，以下是一些可以进一步探索的点：<\/p>\n<ol>\n<li>\n<p><strong>任务特定的微调（Task-Specific Fine-Tuning）<\/strong>：\n   - 针对特定的视觉空间任务，对MLLMs进行微调可能提高其在这些任务上的性能。<\/p>\n<\/li>\n<li>\n<p><strong>自监督学习目标（Self-Supervised Learning Objectives）<\/strong>：\n   - 开发针对空间推理的自监督学习目标，可能有助于提高MLLMs的空间智能。<\/p>\n<\/li>\n<li>\n<p><strong>为MLLMs定制的视觉空间提示技术（Visuospatial-Tailored Prompting Techniques）<\/strong>：\n   - 设计专门针对视觉空间任务的提示技术，可能提升MLLMs在这些任务上的表现。<\/p>\n<\/li>\n<li>\n<p><strong>更复杂的空间关系理解（Understanding More Complex Spatial Relationships）<\/strong>：\n   - 探索MLLMs如何处理更复杂的空间关系，如多层次的空间布局和动态环境中的空间变化。<\/p>\n<\/li>\n<li>\n<p><strong>跨模态一致性（Cross-Modal Consistency）<\/strong>：\n   - 研究如何提高MLLMs在视觉和语言模态之间的一致性，以增强其对空间信息的整体理解。<\/p>\n<\/li>\n<li>\n<p><strong>长时记忆和规划（Long-Term Memory and Planning）<\/strong>：\n   - 研究MLLMs如何在长时间跨度上记忆空间信息，并使用这些信息进行规划和决策。<\/p>\n<\/li>\n<li>\n<p><strong>多步骤空间推理（Multi-Step Spatial Reasoning）<\/strong>：\n   - 探索MLLMs是否能够进行多步骤的空间推理，例如路径规划和导航。<\/p>\n<\/li>\n<li>\n<p><strong>结合3D建模和空间理解（Combining 3D Modeling and Spatial Understanding）<\/strong>：\n   - 研究如何将3D建模技术与MLLMs的空间理解能力结合起来，以更准确地理解和重现复杂场景。<\/p>\n<\/li>\n<li>\n<p><strong>可解释性和透明度（Explainability and Transparency）<\/strong>：\n   - 提高MLLMs在视觉空间任务中的可解释性，使研究人员和用户能够更好地理解模型的决策过程。<\/p>\n<\/li>\n<li>\n<p><strong>鲁棒性和泛化能力（Robustness and Generalization）<\/strong>：<\/p>\n<ul>\n<li>研究MLLMs在不同环境和条件下的鲁棒性和泛化能力，特别是在面对异常值和不确定性时。<\/li>\n<\/ul>\n<\/li>\n<\/ol>\n<p>这些探索点可以帮助研究者们更好地理解MLLMs在视觉空间智能方面的能力，并推动相关技术的发展。<\/p><\/section><section class=\"kimi-faq\"><h3>Q6 : 总结一下论文的主要内容<\/h3><p>这篇论文的主要内容概括如下：<\/p>\n<ol>\n<li>\n<p><strong>研究问题<\/strong>：\n   - 论文探讨了多模态大型语言模型（MLLMs）是否能够“在空间中思考”，即通过视频理解、记忆空间布局，并在需要时检索空间信息来回答问题。<\/p>\n<\/li>\n<li>\n<p><strong>VSI-Bench基准测试<\/strong>：\n   - 为了评估MLLMs的视觉空间智能，作者构建了一个包含超过5000个问题-答案对的视频基准测试VSI-Bench，覆盖了近290个真实室内场景视频。<\/p>\n<\/li>\n<li>\n<p><strong>模型评估<\/strong>：\n   - 论文评估了15种不同的视频支持MLLMs在VSI-Bench上的性能，并与人类水平进行了比较，发现尽管MLLMs展现出一定的视觉空间智能，但与人类相比仍有较大差距。<\/p>\n<\/li>\n<li>\n<p><strong>分析模型行为<\/strong>：\n   - 通过自我解释和认知地图分析，论文揭示了MLLMs在空间推理、视觉感知、语言理解和记忆方面的能力与局限。<\/p>\n<\/li>\n<li>\n<p><strong>性能瓶颈<\/strong>：\n   - 研究发现空间推理是MLLMs性能的主要瓶颈，尤其是关系推理和自我中心到环境中心的转换能力。<\/p>\n<\/li>\n<li>\n<p><strong>改进方法<\/strong>：\n   - 论文探索了语言学推理技术对视觉空间任务的影响，并发现生成和使用认知地图可以改善MLLMs在空间距离问题上的回答能力。<\/p>\n<\/li>\n<li>\n<p><strong>未来方向<\/strong>：\n   - 论文提出了未来改进MLLMs视觉空间智能的可能方向，包括任务特定的微调、自监督学习目标的开发，以及为MLLMs定制的视觉空间提示技术。<\/p>\n<\/li>\n<\/ol>\n<p>总结来说，这篇论文深入分析了MLLMs在视觉空间智能方面的能力，通过构建新的基准测试、评估模型性能、分析模型行为，并探索了提升性能的方法，为未来在这一领域的研究提供了有价值的见解和方向。<\/p><\/section><section class=\"kimi-faq\"><h3>Q7 : 想要进一步了解论文<\/h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href=\"http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Thinking%20in%20Space%3A%20How%20Multimodal%20Large%20Language%20Models%20See%2C%20Remember%2C%20and%20Recall%20Spaces，链接是 https://arxiv.org/pdf/2412.14171 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2412.14171 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true\" rel=\"noopener\" target=\"_blank\"><strong>这里 <i class=\"fa fa-external-link\"><\/i><\/strong><\/a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。<\/p><\/section>", "kimi_brief_status": "ok", "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2412.14171", "kimi_retrieved_at_utc": "2026-09-23T11:28:12+00:00"}, "preview_images": 1, "video_preview_images": 0, "video_cases_count": 2, "video_case_groups_count": 2, "groups_count": 3, "groups_100_count": 0, "overview_html": "datasets/vsi-bench/overview.html", "gallery_html": "datasets/vsi-bench/preview_gallery.html"}</script><script src="../../assets/dataset_gallery.js"></script><script src="../../assets/page_navigation.js"></script></body></html>

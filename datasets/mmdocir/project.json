@@ -1,0 +1,56 @@
+{
+  "slug": "mmdocir",
+  "title": "MMDocIR",
+  "category": "多模态长文档检索 · 页级/布局级记忆近邻",
+  "summary": "1,685个专家标注评测问题与173,843个训练问题；评估长文档中的页级、段落/图表等布局级检索。",
+  "paper_url": "https://arxiv.org/abs/2501.08828",
+  "repo_url": "https://github.com/MMDocRAG/MMDocIR",
+  "project_url": "https://mmdocrag.github.io/MMDocIR/",
+  "dataset_urls": [
+    {
+      "label": "官方评测集",
+      "url": "https://huggingface.co/datasets/MMDocIR/MMDocIR_Evaluation_Dataset"
+    },
+    {
+      "label": "官方训练集",
+      "url": "https://huggingface.co/datasets/MMDocIR/MMDocIR_Train_Dataset"
+    }
+  ],
+  "duration_summary": "不适用视频时长：输入是文档页图像、文本、图表和布局，按页及布局元素检索。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "没有视频；显示官方文档页面、布局和数据说明图。",
+    "专家评测问题数与训练自举问题数分别展示，不能相加当成人工标注规模。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/top_figure1.png",
+          "source_url": "https://mmdocrag.github.io/MMDocIR/static/images/top_figure1.png",
+          "source_label": "官方文档页与布局检索样例"
+        },
+        {
+          "image": "previews/dataset_overview1.png",
+          "source_url": "https://mmdocrag.github.io/MMDocIR/static/images/dataset_overview1.png",
+          "source_label": "官方文档样例与标注概览"
+        },
+        {
+          "image": "previews/dataset_overview2.png",
+          "source_url": "https://mmdocrag.github.io/MMDocIR/static/images/dataset_overview2.png",
+          "source_label": "官方数据分布概览"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}

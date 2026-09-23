@@ -1,0 +1,493 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MM-Lifelong / ReMA：日、周、月 · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">MM-Lifelong / ReMA：日、周、月</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2026-03-05</strong></div><div><span>引用数</span><strong>8</strong></div><div><span>GitHub stars</span><strong>20</strong></div><div><span>当前状态</span><strong>arXiv preprint · 未检索到公开会议状态</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2603.05484" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/cg1177/Recursive-Multimodal-Agent" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/ab5c040b75765fa805190fc1e74425fb0545ba0d" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Towards+Multimodal+Lifelong+Understanding%3A+A+Dataset+and+Agentic+Baseline" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>该论文旨在解决<strong>多模态终身理解（Multimodal Lifelong Understanding）</strong>中的关键挑战，具体包括以下几个方面：</p>
+<h3>1. 现有数据集与真实世界的时间结构错位</h3>
+<p>传统视频理解数据集（如Ego4D、HowTo100M）通常由<strong>密集拼接的短片段</strong>构成，其物理时间跨度（$T_{span}$）与观察时长（$T_{dur}$）几乎相等（$T_{span} \approx T_{dur}$）。然而，真实的终身连续体验具有<strong>高度时间稀疏性</strong>（$T_{span} \gg T_{dur}$），包含大量未观察的间隔（如睡眠、日常间隙）。现有数据集未能捕捉这种跨天、跨月的非连续时间结构，导致模型无法学习如何在真实的时间孤岛间进行推理。</p>
+<h3>2. 当前技术范式的双重失效模式</h3>
+<p>通过系统性评估，论文揭示了现有方法在处理超长、稀疏时间线时的根本性缺陷：</p>
+<ul>
+<li>
+<p><strong>端到端MLLMs的工作记忆瓶颈（Working Memory Bottleneck）</strong>：随着上下文窗口扩展，模型性能不仅无法持续提升，反而因上下文饱和和噪声累积而出现<strong>振荡甚至急剧下降</strong>（如图2所示）。线性处理范式限制了MLLMs的推理能力。</p>
+</li>
+<li>
+<p><strong>智能体基线的全局定位崩溃（Global Localization Collapse）</strong>：现有代表性智能体方法（如VideoMind、LongVT）在导航稀疏的月级时间线时，依赖全局视频定位的策略会失效，无法处理跨日、跨周的事件关联。</p>
+</li>
+</ul>
+<h3>3. 动态记忆管理的缺失</h3>
+<p>现有方法将视频视为静态输入流，缺乏<strong>主动的知识库管理</strong>能力。在终身尺度（100+小时）下，模型需要：
+- 维护跨日/月的持久信念状态（persistent belief state）
+- 处理概念漂移（concept drift）和主体演化（如角色技能获取、环境变化）
+- 在语言空间中进行递归记忆压缩与检索，而非直接处理原始像素</p>
+<h3>4. 提出的解决方案</h3>
+<p>为应对上述挑战，论文构建了<strong>MM-Lifelong数据集</strong>（涵盖日、周、月三个尺度，共181.1小时），并提出了<strong>递归多模态智能体（ReMA）</strong>。ReMA通过动态记忆管理将连续视觉流转换为离散的语言增强信念状态，采用递归策略迭代更新记忆，从而突破了端到端模型的"上下文天花板"，实现了对稀疏、超长多模态流的有效推理。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>该论文在<strong>第2节（Related Work）</strong>中系统梳理了相关研究，主要涵盖以下四个方向：</p>
+<h3>1. 多模态理解基准测试（Multimodal Understanding Benchmarks）</h3>
+<p><strong>静态与短时下理解</strong>
+- 静态单图像任务：MMMU（Yue et al., 2024）、MMBench（Liu et al., 2024b）
+- 早期视频基准：MVBench（Li et al., 2024a）、Video-Bench（Ning et al., 2023）——聚焦短时识别</p>
+<p><strong>长视频理解</strong>
+- 小时级时长基准：VideoMME（Fu et al., 2024）、LongVideoBench（Wu et al., 2024）、M3-Bench（Long et al., 2025）
+- <strong>局限性</strong>：现有跨视频基准（MVUEval, CVBench）通常聚合<strong>不连续的片段</strong>，缺乏连续生命周期的时间因果关联</p>
+<p><strong>第一人称与纵向数据</strong>
+- 先驱工作：Ego4D（Grauman et al., 2022）、EgoExoLearn（Huang et al., 2024）、EgoThinker（Pei et al., 2025）
+- 近期纵向数据集：EgoLife（Yang et al., 2025b）——聚焦单房间数天交互；TeleEgo（Yan et al., 2025）——野外第一人称AI助手
+- <strong>对比</strong>：MM-Lifelong通过<strong>显式建模时间稀疏性</strong>（$T_{span} \gg T_{dur}$）和提供<strong>手动线索标注</strong>来填补上述空白</p>
+<h3>2. 长上下文记忆基准（Benchmarks for Long-Context Memory）</h3>
+<p><strong>文本领域</strong>
+- LongBench（Bai et al., 2024）、BABILong（Kuratov et al., 2024）：使用大规模上下文进行状态跟踪，但缺乏视觉维度</p>
+<p><strong>多模态记忆</strong>
+- 离散图像：Mem-Gallery（Bei et al., 2026）
+- 短期流式响应：SVBench（Yang et al., 2025c）
+- <strong>差距</strong>：现有基准未能模拟终身多模态流的连续熵变。MM-Lifelong通过"Needle-in-a-Lifestream"和多跳任务填补此空白</p>
+<h3>3. 工作记忆与架构压缩（Working Memory and Architectural Compression）</h3>
+<p><strong>优化技术</strong>
+- Token压缩与驱逐：Eagle-2.5（Chen et al., 2025b）、Attention Sinks（Xiao et al., 2023）</p>
+<p><strong>基础架构变革</strong>
+- 线性注意力与混合架构：Qwen3-Next（Yang et al., 2025a）、Nemotron-H（Blakeman et al., 2025）——旨在解耦内存占用与序列长度
+- 潜在压缩与稀疏性：
+  - DeepSeek-V3的MLA（Multi-head Latent Attention）（Liu et al., 2024a）
+  - Engram的条件记忆（Cheng et al., 2026）</p>
+<p><strong>作用</strong>：MM-Lifelong作为这些架构的<strong>压力测试</strong>，检验其在100+小时多模态流极端噪声下的工作记忆瓶颈</p>
+<h3>4. 智能体系统与持久记忆（Agentic Systems and Persistent Memory）</h3>
+<p><strong>System 2智能体与工具使用</strong>
+- 递归推理：Gemini（Anil et al., 2023a）、OpenAI Deep Research（Google, 2025）</p>
+<p><strong>记忆编排层</strong>
+- 向量存储与检索：Mem0（Chhikara et al., 2025）
+- 多模态检索：ColPali（Faysse et al., 2024）、MMGraphRAG（Wan &amp; Yu, 2025）</p>
+<p><strong>视频智能体</strong>
+- 精确帧选择与时间视觉记忆：VideoMind（Liu et al., 2025）、LongVT（Yang et al., 2025d）、DeepVideoDiscovery（Zhang et al., 2025）、VideoMem（Jin et al., 2025）、TeleMem（Chen et al., 2026a）、O-Mem（Wang et al., 2025a）
+- 实时第一人称系统：VINCI（Huang et al., 2025）</p>
+<p><strong>关键区别</strong>：现有智能体基准仍以文本为中心或限于离散视觉任务。MM-Lifelong提供了动态环境，验证智能体系统（如ReMA）能否从无限流中有效策划高价值记忆。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过<strong>构建专门的数据集</strong>和<strong>提出新型智能体架构</strong>两个层面来解决多模态终身理解问题：</p>
+<h2>1. MM-Lifelong数据集：定义终身理解的评估标准</h2>
+<h3>多尺度时间结构设计</h3>
+<p>数据集横跨三个时间尺度，模拟真实世界的时间稀疏性（$T_{span} \gg T_{dur}$）：</p>
+<table>
+<thead>
+<tr>
+<th>尺度</th>
+<th>领域</th>
+<th>观察时长 $T_{dur}$</th>
+<th>物理跨度 $T_{span}$</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>日</strong></td>
+<td>Gamer's Journey</td>
+<td>23.6h</td>
+<td>$\sim$24h</td>
+<td>连续高密度观察（RPG游戏流程）</td>
+</tr>
+<tr>
+<td><strong>周</strong></td>
+<td>Egocentric Life</td>
+<td>51.9h</td>
+<td>$\sim$7d</td>
+<td>第一人称日常生活记录</td>
+</tr>
+<tr>
+<td><strong>月</strong></td>
+<td>Live Stream</td>
+<td>105.6h</td>
+<td>$\sim$51d</td>
+<td><strong>高度稀疏的未脚本化直播</strong>，包含跨天间隙</td>
+</tr>
+</tbody>
+</table>
+<h3>线索标注与任务设计</h3>
+<p>采用<strong>Clue-Grounded Annotation Strategy</strong>，标注因果线索（Causal Clues）的具体时间区间，支持两类核心任务：
+- <strong>Type I: Needle-in-a-Lifestream</strong>：在100+小时流中定位稀有、短暂事件
+- <strong>Type II: Multi-Hop Reasoning</strong>：聚合跨小时/跨天间隔的离散信息，强制要求持久状态维护</p>
+<h3>严格的数据划分协议</h3>
+<ul>
+<li><strong>域泛化</strong>：日/周尺度仅用于测试，评估跨域泛化</li>
+<li><strong>时间分区</strong>：月尺度按时间顺序排序（前30%训练，后70%验证），强制模型从早期经验泛化到未来未见片段，防止局部环境记忆作弊</li>
+</ul>
+<h2>2. ReMA（Recursive Multimodal Agent）：动态记忆管理架构</h2>
+<p>ReMA采用<strong>离线两阶段架构</strong>，将视频流转换为结构化语言增强信念状态：</p>
+<h3>感知阶段（Perception Phase）</h3>
+<pre><code>输入视频 → 分段（Clip Length Δt=5min）→ MMInspect提取多模态摘要 → MemManage增量整合至记忆库B
+</code></pre>
+<ul>
+<li><strong>MMInspect</strong>：使用MLLM（如Qwen3-VL）将原始像素转换为带时间戳的文本描述</li>
+<li><strong>MemManage</strong>：动态记忆合并策略——当新观察与现有记忆时间重叠时，自动合并为统一摘要，防止记忆爆炸</li>
+</ul>
+<h3>控制阶段（Control Phase）</h3>
+<p>基于累积记忆$B$和用户查询，LLM控制器（如GPT-5）执行<strong>递归推理循环</strong>：
+1. <strong>MemSearch</strong>：检索相关记忆条目
+2. <strong>MMInspect</strong>：针对特定时间区间进行细粒度视觉重检
+3. <strong>Answer</strong>：终止并输出最终答案</p>
+<p>关键创新在于<strong>递归信念状态更新</strong>：每次工具调用的结果（$O_i$）通过<code>MemManage</code>重新整合进全局记忆库$B$，实现渐进式证据精炼。</p>
+<h3>核心机制与优势</h3>
+<table>
+<thead>
+<tr>
+<th>机制</th>
+<th>解决的问题</th>
+<th>具体实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>语言空间记忆压缩</strong></td>
+<td>工作记忆瓶颈</td>
+<td>将视觉流转换为紧凑文本摘要，避免KV缓存指数增长</td>
+</tr>
+<tr>
+<td><strong>时间感知的记忆合并</strong></td>
+<td>记忆爆炸</td>
+<td>重叠区间自动合并（Algorithm 3），保持记忆库紧凑</td>
+</tr>
+<tr>
+<td><strong>递归检索-验证</strong></td>
+<td>全局定位崩溃</td>
+<td>支持多轮工具调用（平均4-5轮），逐步缩小定位范围</td>
+</tr>
+<tr>
+<td><strong>细粒度线索定位</strong></td>
+<td>时间稀疏性</td>
+<td>Ref@N指标评估离散时间桶的交并比，适应月级跨度</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 实证效果</h2>
+<p>实验表明该方案有效克服了前述技术瓶颈：</p>
+<ul>
+<li>
+<p><strong>突破上下文天花板</strong>：相比端到端MLLMs随帧数增加性能振荡下降（图2），ReMA随递归轮数增加<strong>稳定提升</strong>，在Val@Month上达到<strong>18.62%准确率</strong>（GPT-5仅14.87%，Qwen3-VL-A22B仅14.33%）</p>
+</li>
+<li>
+<p><strong>精准时间定位</strong>：Ref@300 grounding指标达<strong>15.46%</strong>，显著优于DeepVideoDiscovery（4.48%）等智能体基线，解决了月级时间线的全局定位崩溃问题</p>
+</li>
+<li>
+<p><strong>多尺度泛化</strong>：在未见过的日/周测试集上保持<strong>16.75%和18.82%</strong>的准确率，证明动态记忆管理具有跨域迁移能力</p>
+</li>
+</ul>
+<p>简言之，论文通过<strong>构建时间稀疏的多尺度基准</strong>和<strong>设计递归记忆增强的智能体架构</strong>，将视频从"静态输入"转化为"主动知识库"，从而突破了传统方法在终身尺度下的记忆瓶颈与定位失效问题。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文在<strong>第5节</strong>及<strong>附录C、D</strong>中开展了系统性实验，涵盖性能基准测试、消融研究、评估协议验证及定性分析四个维度：</p>
+<h2>1. 主实验：端到端与智能体方法对比</h2>
+<p>在<strong>MM-Lifelong的三个数据划分</strong>（Val@Month、Test@Week、Test@Day）上对比了以下基线：</p>
+<table>
+<thead>
+<tr>
+<th>方法类别</th>
+<th>具体模型</th>
+<th>关键配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>端到端MLLMs</strong></td>
+<td>GPT-5, Qwen3-VL-235B-A22B, Qwen3-VL-30B-A3B, Video-XL-2-8B, Eagle-2.5-8B, Nemotron-v2-12B</td>
+<td>帧数从32到2048不等，最大上下文长度</td>
+</tr>
+<tr>
+<td><strong>智能体方法</strong></td>
+<td>VideoMind-7B, LongVT-7B, DeepVideoDiscovery (DVD)</td>
+<td>完整视频流（Full）</td>
+</tr>
+<tr>
+<td><strong>ReMA (Ours)</strong></td>
+<td>GPT-5 / Qwen3-VL-A22B作为控制器</td>
+<td>完整视频流，递归推理</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心发现</strong>（见Table 4、Table 15）：
+- <strong>端到端MLLMs遭遇工作记忆瓶颈</strong>：即使是最强的GPT-5（50帧）和Qwen3-VL-235B（1536帧），在Val@Month上准确率仅<strong>14.87%</strong>和<strong>14.33%</strong>，且Grounding分数（Ref@300）接近0，表明依赖语义先验而非视觉证据
+- <strong>智能体基线全局定位崩溃</strong>：VideoMind和LongVT在月级稀疏时间线上表现不佳（Val@Month准确率&lt;9%），DVD虽较好（10.57%）但仍显著落后
+- <strong>ReMA显著领先</strong>：在Val@Month达到<strong>18.62%</strong>准确率，Ref@300达<strong>15.46%</strong>；在未见过的Test@Week和Test@Day上分别达到<strong>18.82%</strong>和<strong>16.75%</strong>，验证了跨域泛化能力</p>
+<h2>2. 消融实验：架构组件分析</h2>
+<h3>2.1 递归深度的影响（Figure 7）</h3>
+<ul>
+<li><strong>Round 0</strong>（直接回答，无工具）：准确率仅4.86%</li>
+<li><strong>Round 1-3</strong>：随着记忆检索和视觉检查（MMInspect）的引入，性能逐步提升，Grounding精度在Round 3达到峰值</li>
+<li><strong>Round &gt;3</strong>：准确率饱和（~9.40%），Grounding分数轻微下降（因智能体验证负区间以确认假设，扩展了搜索范围）</li>
+</ul>
+<h3>2.2 感知粒度（∆t）的影响（Table 5）</h3>
+<p>测试了不同视频分段长度（2分钟至完整视频）：
+- <strong>2分钟最优</strong>：准确率12.83%，Ref@60达7.82%
+- <strong>粒度越粗性能越差</strong>：完整视频（Full）输入导致准确率暴跌至3.72%，Ref@60仅0.18%，且推理轮数增至6.81轮（因噪声过滤困难）
+- <strong>结论</strong>：细粒度感知（5分钟以内）对维持高效记忆压缩至关重要</p>
+<h3>2.3 骨干网络选择（Table 6）</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>测试模型</th>
+<th>关键结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLLM工具</strong></td>
+<td>Qwen3-VL-A3B vs GPT-5</td>
+<td>升级至GPT-5提升准确率（9.40%→10.57%）和Grounding</td>
+</tr>
+<tr>
+<td><strong>中央控制器</strong></td>
+<td>GPT-5 vs Qwen3-VL-A3B vs Qwen3-A3B (纯文本) vs Tongyi-DR</td>
+<td>MLLM显著优于纯文本LLM；Qwen3-VL-A3B（7.12%）虽低于GPT-5，但远胜Qwen3-A3B（2.30%）。纯文本控制器因缺乏多模态对齐导致灾难性崩溃（平均轮数&lt;2.8）</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 评判者一致性（Table 7）</h3>
+<p>验证LLM-as-a-Judge的可靠性：
+- <strong>GPT-5</strong>与人类评分的F1分数达<strong>99.39%</strong>
+- GPT-o4-mini和GPT-4.1也分别达到98.78%和98.20%
+- <strong>结论</strong>：GPT-5可可靠替代人工评分</p>
+<h2>3. 细粒度分析：Ref@N性能曲线（Figure 8）</h2>
+<p>在不同时间分辨率（$N \in {15, 30, 60, ..., 3600}$秒）下评估定位精度：
+- <strong>ReMA在所有尺度领先</strong>：在日、月、全数据集上 consistently 最优
+- <strong>DeepVideoDiscovery为次优</strong>：在周尺度上当$N&gt;600$时甚至略超ReMA
+- <strong>端到端MLLMs差距显著</strong>：Eagle-2.5、VideoMind等在$N$增大时性能差距扩大，证明其在粗粒度定位上的失效</p>
+<h2>4. 定性案例研究（Section D.2）</h2>
+<p>提供了5个详细示例展示模型行为差异：</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>问题类型</th>
+<th>关键观察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Example 1-2</strong></td>
+<td>端到端MLLMs对比</td>
+<td>GPT-5能准确回答"Split or Steal"游戏规则（Score 5），而Qwen3VL-A3B出现细节错误（Score 2/4），暴露短上下文下的细粒度理解差异</td>
+</tr>
+<tr>
+<td><strong>Example 3</strong></td>
+<td>ReMA成功案例</td>
+<td>通过多轮工具调用（Memory Search → 3次Video Inspect → 验证），正确回答重庆晚间交通方式（汽车+轮船），获得满分</td>
+</tr>
+<tr>
+<td><strong>Example 4</strong></td>
+<td>ReMA失败案例</td>
+<td>在少林徒步活动中，尽管多轮检查，ReMA仍因视觉证据冲突（部分片段显示无青蛙跳，部分显示有）而错误判断序列（Score 2）</td>
+</tr>
+<tr>
+<td><strong>Example 5</strong></td>
+<td>ReMA成功（多线索聚合）</td>
+<td>通过检索4个离散线索区间（[2073,2584], [4460,4981]等），准确总结《怪物猎人》随从的"吸引仇恨、治疗、增益"三大功能</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 数据污染控制实验（Appendix A.3）</h2>
+<ul>
+<li><strong>网络搜索影响</strong>：启用搜索后Gemini-Pro-preview性能从5.54提升至11.79，证明外部知识会污染评估，强调封闭测试环境的必要性</li>
+<li><strong>年尺度数据排除</strong>：尝试构建19年运动员生涯数据集（236小时），发现 annotator 验证成本极高，且模型可通过预训练知识或网络搜索轻易答题，故排除以保证评估聚焦于<strong>纯视觉推理</strong>而非文本检索</li>
+</ul>
+<p>这些实验共同验证了：<strong>动态记忆管理（ReMA）相比端到端处理和简单智能体基线，在超长时间稀疏多模态流理解上具有显著优势</strong>。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>基于论文第29页的"Limitations"章节及全文讨论，以下是可以进一步探索的研究方向：</p>
+<h3>1. 多主体与交互式终身理解</h3>
+<p>当前MM-Lifelong的每个时间尺度（日、周、月）仅跟踪<strong>单一主体</strong>（一个游戏角色、一位穿戴者、一位主播）。未来可构建包含<strong>多主体并行存在</strong>的数据集，研究：
+- 社会交互关系的长期演化（如家庭成员、团队成员间的动态）
+- 跨主体视角对齐与冲突解决（多相机、多第一人称视角的终身融合）
+- 群体行为模式在月级时间跨度上的涌现与变化</p>
+<h3>2. 未观察时期的显式建模与因果推理</h3>
+<p>现有任务仅测试模型能否<strong>连接</strong>跨间隙的事件，但未涉及<strong>未观察时期如何显式影响观察时期</strong>的复杂因果机制：
+- 构建显式评估"离线事件对后续观察的影响"的任务（如：睡眠期间发生了什么导致次日状态变化）
+- 开发能够推断$T_{span} - T_{dur}$期间潜在状态转移的预测模型
+- 结合动作分割（action segmentation）和自我中心注意建模（egocentric attention modeling）技术，捕捉间隙内粗粒度到细粒度的动态</p>
+<h3>3. 年尺度数据的非污染化构建</h3>
+<p>论文排除了年尺度数据 due to <strong>强语义先验</strong>（strong semantic priors）和数据污染风险。未来研究可探索：
+- 构建"不可搜索"（non-Googleable）的视觉任务，如个人生活流的细微视觉细节，而非公共历史事件
+- 开发半自动标注流程降低人工验证成本（当前单次QA验证时间极高）
+- 设计严格的封闭书（closed-book）评估协议，隔离网络搜索与参数化知识的影响</p>
+<h3>4. 记忆架构的层级化与神经-符号融合</h3>
+<p>ReMA目前使用语言空间进行记忆压缩，可进一步探索：
+- <strong>多层级记忆表示</strong>：结合低层视觉特征（像素级）与高层语义（事件级）的混合记忆索引
+- <strong>神经-符号记忆图</strong>：将时间线索显式编码为时序知识图谱（temporal knowledge graphs），支持更复杂的逻辑推理
+- <strong>在线终身学习</strong>：从离线两阶段架构扩展到流式（streaming）设置，支持实时记忆更新与遗忘机制</p>
+<h3>5. 跨模态时间对齐的细粒度研究</h3>
+<p>当前基准侧重于视觉-语言对齐，可深化：
+- <strong>音频-视觉-语言的三模态长期关联</strong>：如识别跨月重复出现的特定环境声音与视觉场景的绑定
+- <strong>时间定位的亚秒级精度</strong>：现有Ref@N指标量化到分钟级，探索秒级甚至帧级的超精细时间定位
+- <strong>概念漂移的量化与自适应</strong>：开发自动度量主体状态演化（如技能习得、外貌变化）的方法，使模型能自适应调整记忆检索策略</p>
+<h3>6. 效率与可扩展性的极限测试</h3>
+<ul>
+<li>将ReMA扩展至<strong>数百小时甚至上千小时</strong>的连续流，测试记忆压缩算法的渐近复杂度</li>
+<li>探索<strong>边缘设备部署</strong>：结合论文提到的VINCI等实时系统，研究在计算受限环境下（如AR眼镜）的终身理解能力</li>
+<li><strong>多智能体协作记忆</strong>：多个分布式智能体共享或同步终身记忆的知识融合机制</li>
+</ul>
+<p>这些方向共同指向一个核心目标：构建能够像人类一样在<strong>真实时间流逝</strong>中持续学习、遗忘、推理并适应的AI系统。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>该论文系统研究了<strong>多模态终身理解（Multimodal Lifelong Understanding）</strong>问题，通过严格的形式化定义、专用基准数据集和新型智能体架构，揭示了现有技术在超长时间稀疏视频流理解上的根本性局限，并提出了解决方案。</p>
+<h2>1. 核心问题定义</h2>
+<p>论文严格区分了视频理解中的两个关键维度：
+- <strong>观察时长（$T_{dur}$）</strong>：实际处理的视频播放总时长
+- <strong>物理时间跨度（$T_{span}$）</strong>：视频覆盖的真实世界时间范围</p>
+<p>现有数据集（如Ego4D、VideoMME）满足$T_{span} \approx T_{dur}$（密集拼接），而真实终身体验具有<strong>高度时间稀疏性</strong>（$T_{span} \gg T_{dur}$），包含跨天、跨月的未观察间隙。论文将满足$T_{dur} \geq 12\text{h}$、$T_{span} \geq 24\text{h}$且跟踪主体演化的任务定义为<strong>终身视野（Lifelong Horizon）</strong>。</p>
+<h2>2. MM-Lifelong数据集</h2>
+<p>构建了包含<strong>181.1小时</strong>视频的多尺度代理数据集，模拟真实生命周期的时间动态：</p>
+<table>
+<thead>
+<tr>
+<th>尺度</th>
+<th>领域</th>
+<th>$T_{dur}$</th>
+<th>$T_{span}$</th>
+<th>核心特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>日</strong></td>
+<td>Gamer's Journey</td>
+<td>23.6h</td>
+<td>~24h</td>
+<td>连续高密度游戏叙事</td>
+</tr>
+<tr>
+<td><strong>周</strong></td>
+<td>Egocentric Life</td>
+<td>51.9h</td>
+<td>~7d</td>
+<td>第一人称日常生活</td>
+</tr>
+<tr>
+<td><strong>月</strong></td>
+<td>Live Stream</td>
+<td>105.6h</td>
+<td>~51d</td>
+<td>非脚本化直播，含大规模时间间隙</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键设计</strong>：
+- <strong>线索标注（Clue-Grounded）</strong>：为1,289个问题标注1,810个因果线索区间，支持"Needle-in-a-Lifestream"（海量记忆中定位细节）和"Multi-Hop Reasoning"（跨日事件聚合）两类任务
+- <strong>严格划分</strong>：日/周尺度专用于测试域泛化；月尺度按时间顺序划分（前30%训练，后70%验证），防止时间邻近性作弊
+- <strong>超长依赖</strong>：127个问题需推理超过10小时的跨度，267个问题跨越1-10小时</p>
+<h2>3. 现有范式的失效模式</h2>
+<p>通过大规模评估发现：
+- <strong>端到端MLLMs的工作记忆瓶颈（Working Memory Bottleneck）</strong>：随输入帧数增加，性能先升后降，出现振荡甚至崩溃（如图2所示），因上下文饱和和噪声累积导致
+- <strong>智能体基线的全局定位崩溃（Global Localization Collapse）</strong>：现有方法（VideoMind、LongVT）在月级稀疏时间线上无法有效定位跨天事件</p>
+<h2>4. ReMA：递归多模态智能体</h2>
+<p>提出<strong>离线两阶段架构</strong>，将视频流转换为结构化语言信念状态：</p>
+<p><strong>感知阶段</strong>：将视频分段（$\Delta t=5\text{min}$）→ MMInspect（MLLM提取带时间戳描述）→ MemManage（动态合并重叠记忆，防止爆炸）</p>
+<p><strong>控制阶段</strong>：基于全局记忆库$B$，GPT-5控制器执行递归循环：
+1. <strong>MemSearch</strong>：检索相关记忆
+2. <strong>MMInspect</strong>：针对特定区间细粒度重检
+3. <strong>Answer</strong>：输出答案</p>
+<p>每次工具调用结果通过<code>MemManage</code>更新$B$，实现渐进式证据精炼。</p>
+<h2>5. 实验结论</h2>
+<ul>
+<li><strong>性能优势</strong>：ReMA在Val@Month上达<strong>18.62%</strong>准确率，显著优于GPT-5（14.87%）、Qwen3-VL-235B（14.33%）和DeepVideoDiscovery（10.57%）</li>
+<li><strong>定位精度</strong>：Ref@300指标达<strong>15.46%</strong>，解决月级时间线的全局定位问题</li>
+<li><strong>跨域泛化</strong>：在未见过的Test@Week和Test@Day上分别达到18.82%和16.75%</li>
+<li><strong>消融验证</strong>：细粒度感知（2-5分钟分段）至关重要；MLLM作为控制器显著优于纯文本LLM；递归深度4-5轮时性能饱和</li>
+</ul>
+<h2>6. 局限与未来方向</h2>
+<ul>
+<li><strong>单一主体</strong>：当前每尺度仅跟踪一个主体，缺乏多主体交互</li>
+<li><strong>未观察期建模</strong>：未显式评估间隙期间（$T_{span}-T_{dur}$）的潜在因果影响</li>
+<li><strong>年尺度挑战</strong>：公共知识污染使超长期（年）数据构建困难</li>
+</ul>
+<p>论文结论强调：<strong>从被动上下文扩展到主动、持久记忆管理的范式转变</strong>，是实现真正终身多模态理解的必要路径。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Towards%20Multimodal%20Lifelong%20Understanding%3A%20A%20Dataset%20and%20Agentic%20Baseline，链接是 https://arxiv.org/pdf/2603.05484 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2603.05484 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="mm-lifelong-rema-overview">MM-Lifelong / ReMA：日、周、月视频 overview</h1>
+<p><a href="../../index.html" data-catalog-home>返回全部论文目录</a> · <a href="preview_gallery.html">日 / 周 / 月预览</a> · <a href="../../overview.html">EgoLife 完整说明</a></p>
+<p>论文新建 <strong>MM-Lifelong</strong> 问答与时间证据基准，覆盖游戏历程、第一视角生活、直播三种时间尺度；<strong>ReMA</strong> 是配套的递归记忆智能体。Week 视频复用 EgoLife 的 Jake，不能把它作为另一套新拍视频重复统计。本次比对两仓库全部 6,266 个 Week 文件，文件名、大小和 LFS SHA-256 均一致（<a href="metadata/egolife_identity_check.json">核对结果</a>）。核对日期：2026-09-22。</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>数据主体</th>
+<th style="text-align: right;">论文播放时长</th>
+<th>现实时间跨度</th>
+<th>原始 / 当前发布单文件结构</th>
+<th>问题拆分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Day / Gamer’s Journey</td>
+<td>游戏人物的一次完整游戏历程</td>
+<td style="text-align: right;">23.6 小时</td>
+<td>约 24 小时的连续叙事</td>
+<td>论文列 31 段，每段 821–4,297 秒；当前 HF 合并成 <code>videos/day/0.mp4</code>，8.695 GB</td>
+<td>test 200</td>
+</tr>
+<tr>
+<td>Week / Egocentric Life</td>
+<td>EgoLife A1_JAKE</td>
+<td style="text-align: right;">51.9 小时</td>
+<td>约 7 天</td>
+<td>当前发布 6,266 个通常 30 秒的 MP4 片段</td>
+<td>test 200</td>
+</tr>
+<tr>
+<td>Month / Live Stream</td>
+<td>同一主播跨城市和社交活动</td>
+<td style="text-align: right;">105.6 小时</td>
+<td>约 51 天</td>
+<td>23 个广播 MP4；论文单段 2,390–42,900 秒，即约 39.8 分钟–11.92 小时</td>
+<td>train 266 / val 623</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>三个主体时间流</td>
+<td style="text-align: right;"><strong>181.1 小时</strong></td>
+<td>不将不同主体拼成同一真实时间线</td>
+<td><strong>6,290 个发布 MP4、203.061 GB</strong></td>
+<td><strong>1,289 题</strong></td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="https://arxiv.org/html/2603.05484v1" target="_blank" rel="noopener">论文表 1、2、9、10</a>、<a href="https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong" target="_blank" rel="noopener">当前官方 HF 数据卡</a>。HF 文件数量和大小来自本次 API 清单，论文的“3 个样本/流”与发布的 6,290 个文件不是同一计数单位。</p>
+<h2 id="_1">时长核对</h2>
+<p><a href="metadata/paper_video_timeline.csv">论文逐视频时间表 CSV</a>保留 Day 31 段、Month 23 个广播和 Week 每日起止时间。按论文的时长列求和：Day 为 <strong>84,914 秒 / 23.587 小时</strong>，Month 为 <strong>380,301 秒 / 105.639 小时</strong>。这些是公开表格值，本次另对 Day/Month 容器做 HTTP Range 探测，实测值及失败项在 <a href="metadata/video_inventory.csv">发布视频清单 CSV</a>、<a href="metadata/range_manifest.json">Range 清单</a>，不把表格值冒充逐文件实测值。</p>
+<p>Week 附录列出的每日开始到结束时间含拍摄空档：七天日内时间跨度合计约 <strong>79.621 小时</strong>，不能将它当作 51.9 小时的实际播放时长。当前 6,266 段×30 秒得到 <strong>52.217 小时</strong>只是标称估算，片尾短段等使其不等于实际总和；更完整的长度口径见 <a href="../../overview.html">EgoLife overview</a>。</p>
+<p>现已完成 <strong>Day + Month 全部 24 个文件的时长原子实测</strong>：Day 为 <strong>84,912.696313 秒 / 23.586860 小时</strong>，Month 23 个视频合计 <strong>380,303.824041 秒 / 105.639951 小时</strong>。读取 <code>mvhd</code> 和视频轨 <code>mdhd</code>，每个文件约 49–63 KB，不需要下载庞大的完整音视频索引。早期常规探测的超时/预算失败保存在 <a href="metadata/range_attempts.json">range_attempts.json</a>，最终已由 <a href="metadata/sparse_duration_probes.json">轻量时长探测</a>补齐。</p>
+<h2 id="100">100 帧预览与访问状态</h2>
+<p>Day 从合并原视频开头约 <strong>0.133–59.533 秒</strong>的 1,800 个真实解码帧中等间隔取 <strong>100 帧</strong>，只代表开头约 1 分钟；Month 在 <strong>1、14、19、23</strong> 号广播的中点附近分别取 <strong>25 帧</strong>，合计 <strong>100 帧</strong>；Week 复用跨 7 天的 <strong>100 个 Jake 片段帧</strong>。每帧都记录文件 URL、源视频总长和实际帧时间。大于 100 MB 的 Day / Month 源文件只通过带预算的 HTTP Range 读取，没有保存完整视频。三个类别均已完成 100 帧，共 300 个帧引用，其中新提取 200 张、复用 100 张。Day 的尾部索引原有 127.5 MB；本次直接读取必要视频样本表和编码数据，只用了约 8.35 MB Range 数据便获得开头预览。</p>
+<p><strong>使用作者当前仓库指向的 <a href="https://huggingface.co/datasets/MM-Lifelong/MM-Lifelong" target="_blank" rel="noopener">MM-Lifelong/MM-Lifelong</a>。</strong> 此次 API 返回 <code>gated=false</code>，文件和四份问答 JSON 均可匿名访问。原论文以及部分衍生仓库仍指向 <code>CG-Bench/MM-Lifelong</code>，该旧地址此次返回 401；这不代表当前数据未公开。新库路径有 <code>videos/</code> 前缀，不能原样沿用旧下载命令。网站的自动数据查看器存在字段不一致错误，但四份原始 JSON 可读取，已保存本地。</p>
+<p>原始来源列表见 <a href="sources/video_list.txt">sources/video_list.txt</a>：Day 为 Bilibili 游戏攻略，Week 为 EgoLife，Month 为 YouTube 直播。当前清单有 22 个 YouTube 地址，而发布目录有 23 个广播文件；本页按发布 MP4 统计，未假设一条网页 URL 一定对应一个文件。当前数据卡将用途限制为学术研究，代码和源视频权利范围应分别查看 <a href="sources/hf_current_README.md">当前数据卡快照</a>。</p>
+<h2 id="_2">问题与结果</h2>
+<p>1,289 道题附带 1,810 段证据区间，涵盖计数、因果、实体、时间、事件、语言内容回忆、幻觉判断、属性、社交、状态变化、事件追踪等 11 类。267 道题的证据跨度在 1–10 小时，127 道超过 10 小时。Month 按证据时间排序，前 30% 训练、后 70% 验证；Day/Week 全部留作测试，从而分离时间偏移与领域偏移。四个 split 的实际 JSON 行数已核对为 266 / 623 / 200 / 200。</p>
+<p>下表为 <a href="https://arxiv.org/html/2603.05484v1" target="_blank" rel="noopener">论文表 4</a>报告值，没有在本机复现模型。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">Month val Acc</th>
+<th style="text-align: right;">Month Ref@300</th>
+<th style="text-align: right;">Week test Acc</th>
+<th style="text-align: right;">Week Ref@300</th>
+<th style="text-align: right;">Day test Acc</th>
+<th style="text-align: right;">Day Ref@300</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-5，均匀 50 帧</td>
+<td style="text-align: right;">14.87</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">15.25</td>
+<td style="text-align: right;">0.53</td>
+</tr>
+<tr>
+<td>ReMA</td>
+<td style="text-align: right;"><strong>18.62</strong></td>
+<td style="text-align: right;"><strong>15.46</strong></td>
+<td style="text-align: right;"><strong>18.82</strong></td>
+<td style="text-align: right;"><strong>16.37</strong></td>
+<td style="text-align: right;"><strong>16.75</strong></td>
+<td style="text-align: right;"><strong>11.51</strong></td>
+</tr>
+<tr>
+<td>人类</td>
+<td style="text-align: right;">80.4</td>
+<td style="text-align: right;">33.5</td>
+<td style="text-align: right;">95.6</td>
+<td style="text-align: right;">42.4</td>
+<td style="text-align: right;">99.2</td>
+<td style="text-align: right;">49.8</td>
+</tr>
+</tbody>
+</table>
+<p>Acc 为 GPT-5 对开放答案的评价，原始 0–5 级分数映射到 0 / 0.5 / 1 再平均；不是四选一题的准确率。Ref@300 把时间线按 300 秒分桶，比较预测证据与标准证据的集合交并比。ReMA 可调用视频检查和记忆搜索，表中 <code>Full</code> 表示访问整条视频流，不代表把所有帧一次装进上下文。5 分钟等设置是记忆更新粒度，不是数据集视频文件长度。</p>
+<h2 id="_3">本地文件</h2>
+<p><a href="https://github.com/cg1177/Recursive-Multimodal-Agent" target="_blank" rel="noopener">官方代码</a> · <a href="https://arxiv.org/abs/2603.05484" target="_blank" rel="noopener">论文</a> · <a href="sources/README.md">来源快照</a>。</p>
+<ul>
+<li><a href="metadata/video_inventory.csv">metadata/video_inventory.csv</a>：6,290 个视频文件的大小、来源和已知时长依据。</li>
+<li><a href="metadata/paper_video_timeline.csv">metadata/paper_video_timeline.csv</a>：论文逐段时间表，特别区分 Week 日内时钟跨度与播放时长。</li>
+<li><a href="metadata/range_manifest.json">metadata/range_manifest.json</a>、<a href="project.json">project.json</a>：实测与真实帧来源。</li>
+<li><a href="../magic-video/overview.html">MAGIC-Video</a>：使用 Month 的 623 道验证题；其覆盖的 14 个广播是 Month 的一个子集。</li>
+</ul><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

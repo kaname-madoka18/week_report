@@ -1,0 +1,11 @@
+url,size_bytes,duration_seconds,fps,width,height,full_download,sha256
+https://pub-4433dcd10060475196ea5832312785f9.r2.dev/OpenCabinet.mp4,4342531,21.9,20.0,2304,512,True,169c547df9f8996cba85accb00ed5f486e7d8da4cc36921e0e9931b44412c567
+https://pub-4433dcd10060475196ea5832312785f9.r2.dev/ArrangeBreadBasket.mp4,20397071,59.9,20.0,2304,512,True,85b7be65cd946c253a0fa5ba5f49887fddf35888c4d0271e87c6fd4fbd370a9c
+https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/pnp.mp4,613427,6.033333333333333,30.0,1920,1080,True,9ecc38a8f78f6884c5301dbb7f89e139bf8cae0aec805403feef5a19084452c4
+https://robocasa.ai/assets/videos/basic_skills/door.mp4,368924,3.8,30.0,1920,1080,True,20c7896b39c9ff72372f7abbec6854370da23fe32b7166c4db8618a3a9b27df6
+https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/lever.mp4,177469,2.75,24.0,1920,1080,True,a50f736c5a6794ef975696785b97e64445a272205a232030099fd461fe53c35b
+https://raw.githubusercontent.com/robocasa/robocasa-web/19fe527256e3d4259ba9cb1a8ee97a3b91c5a3c9/assets/videos/basic_skills/knob.mp4,269196,7.333333333333333,24.0,1920,1080,True,dc812c43760fa8421315628936b88ae600dcf78a6b606ceede1ba7dcdf51141e
+https://robocasa.ai/assets/videos/basic_skills/button.mp4,211613,1.8666666666666667,30.0,1920,1080,True,bdcf631695e7808ec98e7174cc51c59bbd00fff4eb09776bfbcdb8a8b6096417
+https://robocasa.ai/assets/videos/composite_tasks/steaming_veg.mp4,1653291,12.875,24.0,1920,1080,True,4f5270a0dc2fdfc92db4d054bfd931e7eb80202e90f22c51d7873963fe49a977
+https://robocasa.ai/assets/videos/composite_tasks/restock.mp4,566454,6.25,24.0,1920,1080,True,ce553daeb91ea0f8f542fe585c670089eb951664270f6e9ff92f2e2b6cc8463b
+https://robocasa.ai/assets/videos/composite_tasks/brewing_coffee.mp4,1710098,13.041666666666666,24.0,1920,1080,True,e48e39b7ade5062560a1d1cdfe60c50dec19005665510eee85ab8b1968bbbd12

@@ -1,0 +1,27 @@
+{
+  "core_day_previews": {
+    "frames": 700,
+    "bytes": 152625547,
+    "range_requests": 2687,
+    "worker_elapsed_seconds_sum": 4339.345,
+    "wall_seconds_from_manifest_mtime": 545.826,
+    "effective_average_mbps": 2.237
+  },
+  "eye_tracking_previews": {
+    "frames": 100,
+    "bytes": 10385846,
+    "range_requests": 215
+  },
+  "website_header_probes": {
+    "videos": 58,
+    "bytes": 9054665,
+    "range_requests": 170
+  },
+  "website_small_full_downloads": {
+    "videos": 11,
+    "bytes": 10946843,
+    "local_file_bytes": 62851741,
+    "cap_bytes_per_video": 100000000
+  },
+  "all_recorded_payload_bytes": 183012901
+}

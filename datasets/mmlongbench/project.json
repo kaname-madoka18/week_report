@@ -1,0 +1,80 @@
+{
+  "slug": "mmlongbench",
+  "title": "MMLongBench：长上下文图文评测基准",
+  "category": "长上下文图文评测基准",
+  "summary": "13,331 个长上下文图文样本，统一控制 8K–128K token；覆盖视觉RAG、needle检索、many-shot学习、摘要与文档问答。",
+  "paper_url": "https://arxiv.org/abs/2505.10610",
+  "repo_url": "https://github.com/EdinburghNLP/MMLongBench",
+  "project_url": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/",
+  "dataset_urls": [
+    {
+      "label": "官方 Hugging Face 数据",
+      "url": "https://huggingface.co/datasets/ZhaoweiWang/MMLongBench"
+    }
+  ],
+  "duration_summary": "非视频数据：输入按 8K、16K、32K、64K、128K token 五档组织，图像与文本交错。视频秒数不适用。",
+  "availability": "官方项目/代码与数据入口可访问；本地预览获取情况见下方。",
+  "preview_status": "partial",
+  "relation_level": "长上下文近邻",
+  "limitations": [
+    "本数据集以图文文档和图像序列为主，展示官方任务样例图，不生成不存在的视频帧。",
+    "本页结果来自论文，未在本机复现模型。"
+  ],
+  "related_links": [
+    {
+      "label": "官方项目",
+      "href": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/"
+    },
+    {
+      "label": "论文原文",
+      "href": "https://arxiv.org/abs/2505.10610"
+    }
+  ],
+  "groups": [
+    {
+      "id": "official_images",
+      "title": "官方任务与数据示例图",
+      "description": "论文/官网发布的静态示意图或任务样例，不是视频抽帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "slug": "mmlongbench",
+          "image": "previews/overview_page.jpg",
+          "source_url": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/static/images/overview_page.jpg",
+          "source_label": "五类长上下文任务概览",
+          "size_bytes": 568710,
+          "width": 1655,
+          "height": 699,
+          "video_id": "not-video",
+          "sha256": "7eac2217c59597e4853910b762b1385411c976d9e9566676018b0c999b7186d7"
+        },
+        {
+          "slug": "mmlongbench",
+          "image": "previews/17_example_docqa-longdocurl_573.jpg",
+          "source_url": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/static/images/17_example_docqa-longdocurl_573.jpg",
+          "source_label": "长文档VQA样例",
+          "size_bytes": 1594087,
+          "width": 3542,
+          "height": 3713,
+          "video_id": "not-video",
+          "sha256": "2b4dad9fc294a449e4277008964701775ad249d09b98e48938c0b1cc5d29f634"
+        },
+        {
+          "slug": "mmlongbench",
+          "image": "previews/17_example_mm-niah-14.jpg",
+          "source_url": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/static/images/17_example_mm-niah-14.jpg",
+          "source_label": "Needle-in-a-Haystack 样例",
+          "size_bytes": 3612734,
+          "width": 3542,
+          "height": 3705,
+          "video_id": "not-video",
+          "sha256": "d8aedeb0b19b9ad8a0c10af6947b04630a4be577ad835b2f92cd37523d6b4a6d"
+        }
+      ]
+    }
+  ],
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified",
+  "short_video_case_threshold_seconds": 180,
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+}

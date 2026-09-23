@@ -1,0 +1,470 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ella — Embodied Social Agents with Lifelong Memory · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">Ella — Embodied Social Agents with Lifelong Memory</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-06-30</strong></div><div><span>引用数</span><strong>4</strong></div><div><span>GitHub stars</span><strong>18</strong></div><div><span>当前状态</span><strong>ICLR 2026 · under review</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2506.24019" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/UMass-Embodied-AGI/Ella" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/26b48dc3ed591ec38e4cba31b53fcbb69bb7221e" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openreview.net/pdf?id=6YNUdnFe3v" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=Ella%3A+Embodied+Social+Agents+with+Lifelong+Memory" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决如何构建能够在开放世界中进行终身学习的具身社交智能体（embodied social agents）的问题。具体而言，论文的核心目标包括以下几点：</p>
+<h3>终身学习与知识积累</h3>
+<ul>
+<li><strong>知识积累</strong>：具身智能体需要在与环境和其他智能体的互动中积累经验，包括视觉观察和社交互动，并从中获取知识。</li>
+<li><strong>知识组织</strong>：如何有效地存储、更新和检索这些知识，以支持智能体在长期的交互中做出合理的决策。</li>
+</ul>
+<h3>长期记忆系统</h3>
+<ul>
+<li><strong>结构化记忆</strong>：构建一个结构化的长期多模态记忆系统，包括语义记忆（semantic memory）和情景记忆（episodic memory），以支持智能体的终身学习。</li>
+<li><strong>记忆更新与检索</strong>：设计有效的机制，使智能体能够根据新的观察和互动更新记忆，并在需要时检索相关记忆。</li>
+</ul>
+<h3>社交智能与决策</h3>
+<ul>
+<li><strong>社交互动</strong>：智能体需要能够与其他智能体进行自然的社交互动，包括对话、合作和领导等行为。</li>
+<li><strong>决策能力</strong>：智能体需要根据其记忆和当前环境做出合理的决策，包括日常活动的规划和社交互动中的反应。</li>
+</ul>
+<h3>开放世界环境中的自主性</h3>
+<ul>
+<li><strong>自主进化</strong>：智能体需要能够在开放世界中自主地学习和进化，适应不断变化的环境和其他智能体的行为。</li>
+<li><strong>长期规划</strong>：智能体需要能够进行长期规划，以实现复杂的目标和任务。</li>
+</ul>
+<h3>具身智能与基础模型的结合</h3>
+<ul>
+<li><strong>具身智能</strong>：智能体需要能够在三维物理环境中进行具身交互，包括导航、物体交互等。</li>
+<li><strong>基础模型的整合</strong>：探索如何将结构化的长期记忆系统与基础模型（foundation models）相结合，以提升智能体的认知能力和决策能力。</li>
+</ul>
+<h3>实验验证</h3>
+<ul>
+<li><strong>动态3D开放世界</strong>：在动态的三维开放世界中进行实验，验证智能体在复杂环境中的表现。</li>
+<li><strong>能力评估</strong>：通过一系列控制实验，评估智能体的社交推理、领导力和合作能力等高级认知能力。</li>
+</ul></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>以下是论文中提到的相关研究，按主题分类：</p>
+<h3>具身社交智能（Embodied Social Intelligence）</h3>
+<ul>
+<li><strong>符号化或游戏化环境中的社交智能</strong>：<ul>
+<li>[78, 84, 38, 6, 64, 81, 99]：这些研究在简化了的符号化或游戏化环境中探索了社交智能，但往往忽略了开放世界中的感知和智能体多样化个性的挑战。</li>
+<li>[47, 106, 53, 13, 55, 56, 16]：一系列在基于文本的沙盒环境中探索社交智能的研究。</li>
+</ul>
+</li>
+<li><strong>现实世界领域中的社交智能</strong>：<ul>
+<li>[23, 24, 9, 17, 63, 77, 57, 62, 44]：这些研究关注现实世界领域，但局限于特定的任务设置。</li>
+</ul>
+</li>
+<li><strong>开放3D世界中的具身社交智能</strong>：<ul>
+<li>[105, 58, 11, 2, 7, 39, 70, 89, 72, 95, 87, 100, 48]：在开放3D世界中研究具身社交智能，与本文的研究方向更为接近。</li>
+</ul>
+</li>
+</ul>
+<h3>智能体记忆（Agent Memory）</h3>
+<ul>
+<li><strong>认知架构中的记忆研究</strong>：<ul>
+<li>[96, 52, 85]：在人工智能领域，记忆一直是认知架构中的一个重要研究方向。</li>
+</ul>
+</li>
+<li><strong>视觉记忆作为语义记忆</strong>：<ul>
+<li>[12, 8, 61, 74]：使用体素（voxels）表示视觉记忆。</li>
+<li>[49, 75, 41, 25]：使用场景图（scene graphs）表示视觉记忆。</li>
+<li>[32, 101, 4, 103]：使用八叉树（Octrees）表示视觉记忆。</li>
+<li>[80, 20, 33, 21]：使用隐式连续表示（implicit continuous representations）表示视觉记忆。</li>
+</ul>
+</li>
+<li><strong>长期记忆系统探索</strong>：<ul>
+<li>[41, 97] 和 [104]：为场景图基础的内存引入更新机制，使其适应长期任务。</li>
+<li>[92] 和 [50]：为特定游戏环境开发程序性记忆，以支持长期规划。</li>
+<li>[40]：提出基于图结构的长期记忆，以实现大型语言模型（LLM）任务中的自我进化。</li>
+<li>[94]：进一步整合长期和短期记忆，以解决家庭环境中的长期任务。</li>
+</ul>
+</li>
+<li><strong>知识检索以辅助大型语言模型</strong>：<ul>
+<li>[10, 28, 29, 67, 30, 82, 98]：研究如何更好地从外部数据源检索知识，以帮助大型语言模型回答问题。</li>
+</ul>
+</li>
+</ul>
+<h3>具身智能（Embodied Intelligence）</h3>
+<ul>
+<li>[22, 46, 71]：这些研究关注具身智能，即智能体在物理环境中通过与环境的交互来学习和行动。</li>
+<li>[66, 76, 26]：基础模型（Foundation Models）的发展为具身智能提供了强大的能力，但长期记忆这一关键组件在当前智能体研究中仍待深入探索。</li>
+</ul>
+<h3>社交互动与群体行为</h3>
+<ul>
+<li>[100]：CoELA是一个合作具身智能体框架，但仅考虑了在受限室内场景中两个智能体的情况。</li>
+<li>[68]：生成性智能体（Generative Agents）展示了人类行为的可信模拟，但其长期记忆是基于文本的，并且假设了在沙盒2D环境中的完美感知。</li>
+</ul>
+<h3>其他相关研究</h3>
+<ul>
+<li>[14]：探讨了终身机器学习的概念，为智能体在不同经验中积累、保留和重用知识提供了理论基础。</li>
+<li>[15]：动物AI奥林匹克竞赛，为评估智能体的高级认知能力提供了一个平台。</li>
+<li>[19]：研究了人类认知中的双系统理论，即快速的系统1和慢速的系统2思考，这可能对智能体的决策机制研究提供启示。</li>
+</ul></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过构建一个名为Ella的具身社交智能体来解决在开放世界中进行终身学习的问题。Ella的核心是一个结构化的长期多模态记忆系统，该系统能够有效地存储、更新和检索信息。以下是论文解决该问题的具体方法：</p>
+<h3>1. 结构化长期多模态记忆系统</h3>
+<ul>
+<li><strong>语义记忆（Semantic Memory）</strong>：<ul>
+<li><strong>以名字为中心的图结构</strong>：知识以名字为中心组织，并连接成图结构。这有助于智能体快速检索与特定名字相关的知识。</li>
+<li><strong>层次化场景图</strong>：作为空间记忆，帮助智能体在三维世界中导航。它包括体积网格层、物体层和区域层，分别用于低级几何记忆、物体检测与识别以及建筑物的分类。</li>
+</ul>
+</li>
+<li><strong>情景记忆（Episodic Memory）</strong>：<ul>
+<li><strong>事件存储</strong>：以时间、地点和多模态内容（文本描述和对应的第一人称图像）为属性存储个人经历。</li>
+<li><strong>检索机制</strong>：支持基于空间、时间和内容的检索。通过计算空间接近度、内容相关性和时间新鲜度来对存储的体验项进行排序，并检索最相关的事件。</li>
+</ul>
+</li>
+</ul>
+<h3>2. 与基础模型的整合</h3>
+<ul>
+<li><strong>规划（Planning）</strong>：<ul>
+<li>每天开始时，Ella从长期记忆中检索与当天计划相关的经验和知识，并利用基础模型生成结构化的日常计划，包括活动的开始时间、结束时间、活动描述和活动地点。</li>
+<li>考虑了在不同地点之间活动所需的通勤时间，以确保智能体能够合理安排时间。</li>
+</ul>
+</li>
+<li><strong>反应（Reaction）</strong>：<ul>
+<li>智能体接收到新的观察信息后，首先通过感知模块更新语义记忆，然后根据检索到的相关记忆和当前情况做出反应，如修订计划、与环境互动或进行对话。</li>
+<li>反应模块会定期触发，以确保智能体能够及时响应新情况。</li>
+</ul>
+</li>
+<li><strong>沟通（Communication）</strong>：<ul>
+<li>当智能体决定进行对话时，沟通模块会根据检索到的相关知识和经验生成对话内容。</li>
+<li>对话结束后，沟通模块会总结对话内容并将其存储在情景记忆中，同时尝试从对话中提取新知识以更新语义记忆。</li>
+</ul>
+</li>
+</ul>
+<h3>3. 动态3D开放世界中的实验验证</h3>
+<ul>
+<li><strong>实验环境</strong>：<ul>
+<li>在Virtual Community（一个基于真实世界的大型社区场景的开放世界模拟平台）中进行实验，该平台具有逼真的物理模拟和渲染。</li>
+<li>实验涉及15个具有独特性格的智能体在三个不同的社区场景中进行模拟。</li>
+</ul>
+</li>
+<li><strong>实验阶段</strong>：<ul>
+<li><strong>第一阶段</strong>：15个智能体在社区中模拟9小时（34200步），熟悉环境和其他智能体，并构建记忆。</li>
+<li><strong>第二阶段</strong>：通过两个控制评估任务（Influence Battle和Leadership Quest）测试智能体的能力。<ul>
+<li><strong>Influence Battle</strong>：测试智能体通过社交互动影响其他智能体的能力，例如说服其他智能体参加特定地点的聚会。</li>
+<li><strong>Leadership Quest</strong>：评估智能体的领导能力，例如在资源有限的情况下组织团队完成任务。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>评估指标</strong>：<ul>
+<li>在Influence Battle中，通过显示率（show-up rate）和总对话次数评估智能体影响他人的能力。</li>
+<li>在Leadership Quest中，通过平均完成率（average completion rate）和总对话次数评估智能体的领导和合作能力。</li>
+</ul>
+</li>
+</ul>
+<h3>4. 与其他方法的比较</h3>
+<ul>
+<li><strong>CoELA</strong>：一个合作具身智能体框架，但在受限的室内场景中仅考虑两个智能体。</li>
+<li><strong>Generative Agents</strong>：基于文本的长期记忆，假设在沙盒2D环境中具有完美感知。</li>
+<li><strong>Ella</strong>：通过结构化的长期记忆系统和基础模型的整合，在开放世界中展示了更有效的社交互动和决策能力。</li>
+</ul>
+<p>通过上述方法，Ella能够在开放世界中进行有效的终身学习，积累经验，获取知识，并通过视觉观察和社交互动与其他智能体进行自然的互动。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了以下实验：</p>
+<h3>实验环境</h3>
+<ul>
+<li><strong>平台</strong>：实验在Virtual Community（ViCo）中进行，这是一个基于真实世界的大型社区场景的开放世界模拟平台，具有逼真的物理模拟和渲染。</li>
+<li><strong>场景</strong>：使用了三个不同的社区场景：纽约、底特律和伦敦。</li>
+<li><strong>智能体</strong>：每个社区中有15个具有独特性格的智能体。</li>
+</ul>
+<h3>实验阶段</h3>
+<h4>第一阶段：社区适应与记忆构建</h4>
+<ul>
+<li><strong>时长</strong>：模拟9小时（34200步）。</li>
+<li><strong>目标</strong>：智能体熟悉环境和其他智能体，并构建记忆。</li>
+<li><strong>过程</strong>：智能体根据其性格特征规划第一天的活动，适应环境，并与其他智能体互动，积累经验和知识。</li>
+</ul>
+<h4>第二阶段：控制评估任务</h4>
+<ul>
+<li><strong>任务1：Influence Battle（影响力战斗）</strong><ul>
+<li><strong>目标</strong>：测试智能体通过社交互动影响其他智能体的能力。</li>
+<li><strong>设置</strong>：四个社交群体中的两个被要求在6小时内组织一个聚会，并邀请其他群体的成员参加。成员需要在城市中寻找并邀请非本群体的智能体参加聚会。</li>
+<li><strong>评估指标</strong>：<ul>
+<li><strong>显示率（Show-up Rate）</strong>：在30分钟聚会时间内出现在聚会地点的智能体数量与总智能体数量的比率。</li>
+<li><strong>总对话次数</strong>：组织聚会的群体参与的对话总数，反映邀请的效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>任务2：Leadership Quest（领导力任务）</strong><ul>
+<li><strong>目标</strong>：评估智能体的领导和合作能力。</li>
+<li><strong>设置</strong>：每个社交群体被分配一个任务，需要在3小时内从城市的不同商店购买若干物品并返回。每个群体中指定一名成员为领导者，只有领导者知道任务的全部细节，其他成员则被指示协助领导者。</li>
+<li><strong>评估指标</strong>：<ul>
+<li><strong>平均完成率（Average Completion Rate）</strong>：完成的目标物品数量与所有目标物品数量的比率，取所有群体的平均值。</li>
+<li><strong>总对话次数</strong>：反映智能体之间沟通的效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>实验结果</h3>
+<h4>Influence Battle（影响力战斗）</h4>
+<ul>
+<li><strong>Ella</strong>：<ul>
+<li><strong>显示率</strong>：纽约53.4%，伦敦66.7%，底特律46.7%，平均53.4%。</li>
+<li><strong>总对话次数</strong>：纽约12次，伦敦19次，底特律15次，平均15.3次。</li>
+</ul>
+</li>
+<li><strong>CoELA</strong>：<ul>
+<li><strong>显示率</strong>：纽约46.7%，伦敦40.0%，底特律66.7%，平均42.2%。</li>
+<li><strong>总对话次数</strong>：纽约57次，伦敦27次，底特律17次，平均33.7次。</li>
+</ul>
+</li>
+<li><strong>Generative Agents</strong>：<ul>
+<li><strong>显示率</strong>：纽约40.0%，伦敦40.0%，底特律66.7%，平均42.2%。</li>
+<li><strong>总对话次数</strong>：纽约3次，伦敦0次，底特律0次，平均1.0次。</li>
+</ul>
+</li>
+<li><strong>Ella（Oracle感知）</strong>：<ul>
+<li><strong>显示率</strong>：纽约60.0%，伦敦60.0%，底特律53.3%，平均57.8%。</li>
+<li><strong>总对话次数</strong>：纽约11次，伦敦28次，底特律17次，平均18.7次。</li>
+</ul>
+</li>
+</ul>
+<h4>Leadership Quest（领导力任务）</h4>
+<ul>
+<li><strong>Ella</strong>：<ul>
+<li><strong>平均完成率</strong>：纽约33.3%，伦敦26.7%，底特律37.5%，平均32.5%。</li>
+<li><strong>总对话次数</strong>：纽约15次，伦敦17次，底特律14次，平均15.3次。</li>
+</ul>
+</li>
+<li><strong>CoELA</strong>：<ul>
+<li><strong>平均完成率</strong>：纽约0.0%，伦敦0.0%，底特律11.5%，平均3.8%。</li>
+<li><strong>总对话次数</strong>：纽约72次，伦敦957次，底特律625次，平均551.3次。</li>
+</ul>
+</li>
+<li><strong>Generative Agents</strong>：<ul>
+<li><strong>平均完成率</strong>：纽约8.3%，伦敦0.0%，底特律16.7%，平均8.3%。</li>
+<li><strong>总对话次数</strong>：纽约169次，伦敦55次，底特律14次，平均79.3次。</li>
+</ul>
+</li>
+<li><strong>Ella（Oracle感知）</strong>：<ul>
+<li><strong>平均完成率</strong>：纽约39.6%，伦敦35.0%，底特律25.0%，平均33.2%。</li>
+<li><strong>总对话次数</strong>：纽约649次，伦敦5次，底特律2次，平均218.7次。</li>
+</ul>
+</li>
+</ul>
+<h3>实验结论</h3>
+<ul>
+<li><strong>Ella的表现</strong>：Ella在Influence Battle中的显示率高于其他基线方法，并且在Leadership Quest中的平均完成率也高于其他基线方法。这表明Ella能够有效地通过社交互动影响其他智能体，并展现出良好的领导和合作能力。</li>
+<li><strong>长期记忆的重要性</strong>：Ella的结构化长期记忆系统使其能够更有效地积累经验和知识，并在需要时检索相关信息，从而支持其在复杂环境中的决策和社交互动。</li>
+<li><strong>感知能力的影响</strong>：具有Oracle感知的Ella在性能上进一步提升，这表明在具身社交智能体中，准确的感知能力对于社交互动和任务完成至关重要。</li>
+</ul></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>论文中提出了一个具有开创性的具身社交智能体Ella，但仍然有一些可以进一步探索的点，以推动该领域的研究。以下是一些可能的研究方向：</p>
+<h3>记忆系统改进</h3>
+<ul>
+<li><strong>多跳推理</strong>：<ul>
+<li><strong>问题</strong>：当前的语义记忆虽然以图结构组织，但检索知识时仅基于文本和图像特征相似性，缺乏复杂的多跳推理能力。</li>
+<li><strong>探索方向</strong>：可以研究更复杂的基于图的检索方法，如图神经网络（Graph Neural Networks, GNNs）或知识图谱推理技术，以支持多跳推理。这将使智能体能够更好地处理复杂的推理任务，例如理解多个概念之间的间接关系。</li>
+</ul>
+</li>
+<li><strong>记忆的长期稳定性</strong>：<ul>
+<li><strong>问题</strong>：虽然Ella的结构化记忆系统在短期内表现出色，但其在更长时间尺度上的稳定性和可扩展性尚未得到充分验证。</li>
+<li><strong>探索方向</strong>：研究如何优化记忆系统的存储和检索机制，以支持更长时间跨度的学习和记忆。例如，可以探索增量学习和记忆压缩技术，以防止记忆过载并保持检索效率。</li>
+</ul>
+</li>
+</ul>
+<h3>智能体的社交能力</h3>
+<ul>
+<li><strong>情感和情绪建模</strong>：<ul>
+<li><strong>问题</strong>：当前的Ella主要关注知识和经验的积累，但缺乏对情感和情绪的理解和表达。</li>
+<li><strong>探索方向</strong>：可以研究如何将情感和情绪建模集成到智能体中，使其能够感知和响应其他智能体的情绪状态，从而更自然地进行社交互动。</li>
+</ul>
+</li>
+<li><strong>社交策略的多样性</strong>：<ul>
+<li><strong>问题</strong>：Ella在社交互动中主要依赖于基础模型生成的对话内容，缺乏多样化的社交策略。</li>
+<li><strong>探索方向</strong>：研究如何为智能体设计和学习多种社交策略，例如在不同情境下选择合适的说服、协商或合作策略。这可以通过强化学习或模仿学习来实现，使智能体能够根据不同的社交目标和环境动态调整其行为。</li>
+</ul>
+</li>
+</ul>
+<h3>环境和任务的复杂性</h3>
+<ul>
+<li><strong>更复杂的环境</strong>：<ul>
+<li><strong>问题</strong>：虽然Virtual Community已经是一个相对复杂的环境，但现实世界中的社交互动和环境更加多样化和复杂。</li>
+<li><strong>探索方向</strong>：开发更接近现实世界的模拟环境，包括更复杂的物理交互、动态变化的社交网络和多样化的任务。这将为智能体提供更丰富的学习和适应机会，提高其在真实世界中的适用性。</li>
+</ul>
+</li>
+<li><strong>多智能体协作与竞争</strong>：<ul>
+<li><strong>问题</strong>：当前的实验主要关注单个智能体的性能，而现实世界中的社交互动往往涉及多个智能体之间的协作和竞争。</li>
+<li><strong>探索方向</strong>：研究多智能体系统中的协作和竞争机制，例如如何设计智能体之间的激励机制、如何协调不同智能体的目标和行为等。这可以通过多智能体强化学习或博弈论方法来实现，以探索智能体在复杂社交环境中的最优行为策略。</li>
+</ul>
+</li>
+</ul>
+<h3>感知和导航能力</h3>
+<ul>
+<li><strong>鲁棒的感知系统</strong>：<ul>
+<li><strong>问题</strong>：尽管Ella在感知方面表现出了一定的能力，但在复杂环境中，如光线变化、遮挡和动态物体等情况下，感知系统的鲁棒性仍需提高。</li>
+<li><strong>探索方向</strong>：研究如何改进感知算法，使其能够更好地应对各种复杂情况。例如，可以探索多模态感知融合技术，结合视觉、听觉和触觉等多种感知信息，提高智能体对环境的理解和适应能力。</li>
+</ul>
+</li>
+<li><strong>高效导航算法</strong>：<ul>
+<li><strong>问题</strong>：在大规模环境中，智能体的导航效率和准确性对于其任务完成至关重要。</li>
+<li><strong>探索方向</strong>：开发更高效的导航算法，例如基于深度学习的端到端导航模型或结合传统规划方法和学习方法的混合导航策略。此外，还可以研究如何使智能体在动态环境中实时调整导航路径，以应对突发情况。</li>
+</ul>
+</li>
+</ul>
+<h3>计算效率和可扩展性</h3>
+<ul>
+<li><strong>实时决策</strong>：<ul>
+<li><strong>问题</strong>：当前的模拟环境中，每个智能体的决策过程需要至少一秒钟的实时计算时间，这限制了实验的规模和速度。</li>
+<li><strong>探索方向</strong>：研究如何优化智能体的决策过程，以实现更高效的实时决策。例如，可以探索轻量级的模型架构、并行计算技术和硬件加速方法，以提高智能体的决策效率。</li>
+</ul>
+</li>
+<li><strong>大规模模拟</strong>：<ul>
+<li><strong>问题</strong>：在大规模社区中模拟大量智能体的长期行为需要巨大的计算资源。</li>
+<li><strong>探索方向</strong>：开发更高效的模拟框架和算法，以支持大规模智能体的长期模拟。例如，可以研究分布式模拟技术、模型压缩和近似方法，以降低计算成本并提高模拟的可扩展性。</li>
+</ul>
+</li>
+</ul>
+<h3>伦理和社会影响</h3>
+<ul>
+<li><strong>AI驱动的说服和影响</strong>：<ul>
+<li><strong>问题</strong>：Ella在Influence Battle中展示了强大的说服能力，但这种能力在现实世界中可能被滥用，导致操纵、误导或不当影响。</li>
+<li><strong>探索方向</strong>：研究如何设计和监管AI驱动的说服系统，以确保其符合伦理和社会规范。例如，可以开发透明的意图披露机制、建立价值对齐的框架，并制定相应的政策和法规，以防止AI被用于有害的目的。</li>
+</ul>
+</li>
+<li><strong>公平性和偏见</strong>：<ul>
+<li><strong>问题</strong>：智能体的决策过程可能会无意中反映和加剧训练数据或交互模式中存在的社会偏见。</li>
+<li><strong>探索方向</strong>：研究如何检测和减轻智能体决策中的偏见，确保其在不同社会背景下的公平性和公正性。这可以通过开发偏见检测算法、采用多样化的训练数据集和持续评估智能体在不同群体中的表现来实现。</li>
+</ul>
+</li>
+</ul></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>本文介绍了一个名为Ella的具身社交智能体，它能够在三维开放世界的社区中进行终身学习。Ella的核心是一个结构化的长期多模态记忆系统，该系统由以名字为中心的语义记忆和时空情景记忆组成，能够有效地存储、更新和检索信息。通过将这个记忆系统与基础模型相结合，Ella能够在开放世界中积累经验、获取知识，并通过视觉观察和社交互动与其他智能体进行自然的交流。</p>
+<h3>研究背景与动机</h3>
+<ul>
+<li><strong>目标</strong>：创建能够在人类社区中生存的智能体，这要求智能体在开放且社交的世界中进行终身学习。</li>
+<li><strong>挑战</strong>：当前的智能体研究在长期记忆方面存在不足，尤其是在需要从视觉观察和社交互动中学习的开放世界环境中。</li>
+</ul>
+<h3>Ella的结构化长期记忆系统</h3>
+<ul>
+<li><strong>语义记忆</strong>：以名字为中心组织知识，连接成图结构，包括层次化场景图作为空间记忆，帮助智能体在三维世界中导航。</li>
+<li><strong>情景记忆</strong>：存储个人经历，每个事件包含时间、地点和多模态内容（文本描述和对应的第一人称图像），支持基于空间、时间和内容的检索。</li>
+</ul>
+<h3>Ella的决策与互动机制</h3>
+<ul>
+<li><strong>规划</strong>：每天开始时，Ella从长期记忆中检索相关信息，并利用基础模型生成结构化的日常计划。</li>
+<li><strong>反应</strong>：接收到新的观察信息后，Ella更新语义记忆，并根据检索到的相关记忆和当前情况做出反应，如修订计划、与环境互动或进行对话。</li>
+<li><strong>沟通</strong>：当决定进行对话时，Ella生成对话内容，并在对话结束后总结对话内容，更新语义记忆。</li>
+</ul>
+<h3>实验验证</h3>
+<ul>
+<li><strong>环境</strong>：在Virtual Community（ViCo）中进行实验，这是一个基于真实世界的大型社区场景的开放世界模拟平台。</li>
+<li><strong>实验设计</strong>：包括两个阶段，第一阶段让15个智能体在社区中模拟9小时以熟悉环境并构建记忆；第二阶段通过Influence Battle和Leadership Quest两个控制评估任务测试智能体的能力。</li>
+<li><strong>评估指标</strong>：Influence Battle中使用显示率和总对话次数评估智能体影响他人的能力；Leadership Quest中使用平均完成率和总对话次数评估智能体的领导和合作能力。</li>
+</ul>
+<h3>实验结果与结论</h3>
+<ul>
+<li><strong>Ella的表现</strong>：在Influence Battle中，Ella的显示率高于其他基线方法；在Leadership Quest中，Ella的平均完成率也高于其他基线方法，显示出其在社交互动和任务完成方面的优势。</li>
+<li><strong>长期记忆的重要性</strong>：Ella的结构化长期记忆系统使其能够有效地积累经验和知识，并在需要时检索相关信息，从而支持其在复杂环境中的决策和社交互动。</li>
+<li><strong>感知能力的影响</strong>：具有Oracle感知的Ella在性能上进一步提升，表明准确的感知能力对于具身社交智能体的社交互动和任务完成至关重要。</li>
+</ul>
+<h3>未来工作</h3>
+<ul>
+<li><strong>记忆系统改进</strong>：研究更复杂的基于图的检索方法，以支持多跳推理；优化记忆系统的存储和检索机制，以支持更长时间跨度的学习和记忆。</li>
+<li><strong>社交能力提升</strong>：将情感和情绪建模集成到智能体中；设计和学习多种社交策略，以适应不同的社交目标和环境。</li>
+<li><strong>环境和任务复杂性增加</strong>：开发更接近现实世界的模拟环境；研究多智能体系统中的协作和竞争机制。</li>
+<li><strong>计算效率和可扩展性</strong>：优化智能体的决策过程，以实现更高效的实时决策；开发更高效的模拟框架和算法，以支持大规模智能体的长期模拟。</li>
+<li><strong>伦理和社会影响</strong>：研究如何设计和监管AI驱动的说服系统，以确保其符合伦理和社会规范；研究如何检测和减轻智能体决策中的偏见，确保其公平性和公正性。</li>
+</ul></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Ella%3A%20Embodied%20Social%20Agents%20with%20Lifelong%20Memory，链接是 https://arxiv.org/pdf/2506.24019 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2506.24019 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="ella-overview">Ella 数据与预览 overview</h1>
+<p>核查日期：2026-09-22；论文内容按 arXiv v1 快照整理。对应 <a href="https://arxiv.org/abs/2506.24019" target="_blank" rel="noopener">Ella: Embodied Social Agents with Lifelong Memory</a>。<a href="https://umass-embodied-agi.github.io/Ella/" target="_blank" rel="noopener">项目页</a>标题也写作 Embodied Lifelong Learning Agents with Non-Parametric Memory；均为同一作者项目。<a href="https://github.com/UMass-Embodied-AGI/Ella" target="_blank" rel="noopener">代码</a>在 Virtual Community 仿真环境中运行。</p>
+<h2 id="_1">数据是什么、长度是什么</h2>
+<p>Ella 是具身社会智能体及记忆系统，不是新拍摄的长视频语料库。论文在纽约、伦敦、底特律风格的 <strong>3 个虚拟社区</strong>评估，每个有 <strong>15 个模拟人物</strong>；人物名是仿真角色，不是这些真实人物的录像。</p>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>论文含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>场景规模</td>
+<td>每个社区约600m×600m</td>
+</tr>
+<tr>
+<td>观察</td>
+<td>512×512 RGB + depth、位姿、时间、场所、对话及持有物等状态</td>
+</tr>
+<tr>
+<td>第一阶段</td>
+<td>在社区中经历9小时仿真日常生活，建立长期记忆</td>
+</tr>
+<tr>
+<td>Influence Battle</td>
+<td>组织6小时后的聚会，测邀请影响力；聚会计入30分钟出席窗口</td>
+</tr>
+<tr>
+<td>Leadership Quest</td>
+<td>3小时内分配购买任务并返回，测领导和合作</td>
+</tr>
+<tr>
+<td>计算时间</td>
+<td>附录称第一阶段每社区约20小时墙钟；每个第二阶段任务约10小时墙钟，单A100</td>
+</tr>
+<tr>
+<td>固定视频总小时 / 逐episode录像清单</td>
+<td>未以独立视频数据集形式公开，不能用15×9h推算已发布视频总长</td>
+</tr>
+</tbody>
+</table>
+<p>9h是仿真经历时间，20h是运行计算时间；下表是压缩剪辑后的演示播放时间，三种时间不能互相替代。</p>
+<h2 id="_2">官网视频时长与读取情况</h2>
+<table>
+<thead>
+<tr>
+<th>官网 MP4</th>
+<th style="text-align: right;">实测播放时长</th>
+<th style="text-align: right;">官方文件大小</th>
+<th>读取方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method.mp4</td>
+<td style="text-align: right;">63.833秒</td>
+<td style="text-align: right;">13,266,291 bytes</td>
+<td>仅HTTP Range</td>
+</tr>
+<tr>
+<td>influence_battle.mp4</td>
+<td style="text-align: right;">101.500秒</td>
+<td style="text-align: right;">66,574,375 bytes</td>
+<td>仅HTTP Range，100帧</td>
+</tr>
+<tr>
+<td>leadership_quest.mp4</td>
+<td style="text-align: right;">123.400秒</td>
+<td style="text-align: right;">102,232,940 bytes</td>
+<td><strong>超过100MB，仅HTTP Range</strong></td>
+</tr>
+<tr>
+<td>teaser.mp4</td>
+<td style="text-align: right;">未核验</td>
+<td style="text-align: right;">85,150,490 bytes</td>
+<td>元数据读取不稳定，未保存完整文件</td>
+</tr>
+</tbody>
+</table>
+<p>前三个时长来自 PyAV 在有限 Range 数据中的 video stream metadata。所有MP4都没有完整保存。相应<a href="metadata/video_inventory.csv">清单</a>把未知时长留空；未凭文件大小估算。</p>
+<h2 id="_3">原论文主要结果</h2>
+<p>下表为三社区平均；本次没有运行仿真、复现模型或重新评估。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">Influence Battle 出席率</th>
+<th style="text-align: right;">Leadership Quest 完成率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoELA</td>
+<td style="text-align: right;">24.5%</td>
+<td style="text-align: right;">3.8%</td>
+</tr>
+<tr>
+<td>Generative Agents</td>
+<td style="text-align: right;">33.3%</td>
+<td style="text-align: right;">8.3%</td>
+</tr>
+<tr>
+<td>Ella</td>
+<td style="text-align: right;"><strong>53.4%</strong></td>
+<td style="text-align: right;"><strong>32.5%</strong></td>
+</tr>
+<tr>
+<td>Ella + Oracle Perception</td>
+<td style="text-align: right;">57.8%</td>
+<td style="text-align: right;">33.2%</td>
+</tr>
+</tbody>
+</table>
+<p>Ella/CoELA 使用 GPT-4o-2024-11-20，Generative Agents 使用 GPT-3.5-Turbo-0125；Oracle Perception 版本使用真值2D分割。比较包含骨干差异和感知设置差异，不能只归因于记忆结构。出席率和任务物品完成率也不是视频问答准确率。</p>
+<h2 id="_4">官方数据预览</h2>
+<p>官网 <code>gh-pages</code> 树含 <strong>15,435 张原生 RGB 仿真观察图</strong>（15个角色各1,029张，文件以仿真step编号），供可交互的日常生活 demo 使用。本次跨角色、跨step选择 <strong>100张不同源内容的观察图</strong>；每张原PNG大小和Git blob SHA1均核对，转为JPG方便浏览。它们是有效的原生视觉观察数据，但<strong>不是从视频解码的帧</strong>。时间步到实际秒的映射未验证，因此不填写视频秒数。</p>
+<p>另外保存100帧方法讲解动画、100帧Influence Battle任务演示（30–40秒区间），以及Leadership Quest任务演示在Range读取中成功解码的有限帧。Leadership Quest没有完成100帧；精确采样日志中断的帧不给伪精确时间戳。</p>
+<p>当前图册：100张原生仿真观察图 + 228张MP4帧。<a href="preview_gallery.html">离线图册</a>按图像与视频来源分别标注；<a href="metadata/observation_manifest.json">观察来源清单</a>、<a href="metadata/final_media_manifest.json">演示时长</a>、<a href="metadata/download_audit.json">下载记录</a>。</p>
+<p>来源快照：<a href="sources/paper.html">论文</a>、<a href="sources/home.html">官网</a>、<a href="sources/README.md">代码README</a>、<a href="sources/site_tree.json">官网完整文件树</a>。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

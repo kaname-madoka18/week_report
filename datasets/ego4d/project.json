@@ -1,0 +1,345 @@
+{
+  "slug": "ego4d",
+  "title": "Ego4D — Episodic Memory",
+  "category": "第一人称情景记忆基准",
+  "summary": "论文原始版本 3,670 小时；情景记忆任务包括 NLQ、MQ、VQ。收集 12 个官方公开地区演示，各 100 帧。",
+  "paper_url": "https://arxiv.org/abs/2110.07058",
+  "repo_url": "https://github.com/EGO4D/episodic-memory",
+  "project_url": "https://ego4d-data.org/",
+  "dataset_urls": [
+    {
+      "label": "官方获取入口（需签许可）",
+      "url": "https://ego4d-data.org/#download"
+    },
+    {
+      "label": "情景记忆文档",
+      "url": "https://ego4d-data.org/docs/benchmarks/episodic-memory/"
+    }
+  ],
+  "duration_summary": "原论文全库 3,670h；NLQ 227.1h / 单clip均值8.2min；VQ2D 432.9h / 6.1min；MQ 328.7h / 7.9min。",
+  "availability": "基准代码公开；完整视频与标注需先签官方许可；官网短演示可公开访问",
+  "preview_status": "ready",
+  "limitations": [
+    "预览是官网地区演示，未核实与正式 Episodic Memory benchmark clip IDs 的对应关系。",
+    "各任务子集存在重叠，不能相加计算独立视频总小时数。",
+    "时长与基准规模引用原论文版本，不能当作今天下载版本的全量文件统计。"
+  ],
+  "groups": [
+    {
+      "id": "bristol",
+      "title": "Bristol / 英国 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "bristol",
+          "title": "Ego4D 官网地区演示 bristol",
+          "category": "Bristol / 英国 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/bristol.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/bristol/1.mp4",
+          "source_label": "Ego4D 官网地区演示 bristol",
+          "video_id": "bristol",
+          "duration_seconds": 10.533333333333333,
+          "frames": 316,
+          "fps": 30.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 435829,
+          "sha256": "8683e77b63551ca8331ef264d5bd6cd9869fccf28ab91791b89d43ab44f0652b"
+        }
+      ]
+    },
+    {
+      "id": "catania",
+      "title": "Catania / 意大利 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "catania",
+          "title": "Ego4D 官网地区演示 catania",
+          "category": "Catania / 意大利 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/catania.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/catania/1.mp4",
+          "source_label": "Ego4D 官网地区演示 catania",
+          "video_id": "catania",
+          "duration_seconds": 10.0,
+          "frames": 300,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 316506,
+          "sha256": "78d0486893173e0c3fb59d3ce7715d1defbfd55fa010f18a33d3022012397646"
+        }
+      ]
+    },
+    {
+      "id": "cmu",
+      "title": "CMU / 美国 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "cmu",
+          "title": "Ego4D 官网地区演示 cmu",
+          "category": "CMU / 美国 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/cmu.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/cmu/1.mp4",
+          "source_label": "Ego4D 官网地区演示 cmu",
+          "video_id": "cmu",
+          "duration_seconds": 9.066666666666666,
+          "frames": 272,
+          "fps": 30.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 421149,
+          "sha256": "80990a403bb4e8b196df2eb843db64daeee7416d22000da299518a38b8007034"
+        }
+      ]
+    },
+    {
+      "id": "cmuafrica",
+      "title": "CMU Africa / 卢旺达 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "cmuafrica",
+          "title": "Ego4D 官网地区演示 cmuafrica",
+          "category": "CMU Africa / 卢旺达 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/cmuafrica.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/cmuafrica/1.mp4",
+          "source_label": "Ego4D 官网地区演示 cmuafrica",
+          "video_id": "cmuafrica",
+          "duration_seconds": 10.066666666666666,
+          "frames": 302,
+          "fps": 30.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 316706,
+          "sha256": "ea25c7b28b0d9570ce5eca61a558765315fe08d20172dbb8e1af7e82d18d3606"
+        }
+      ]
+    },
+    {
+      "id": "fair",
+      "title": "FAIR / 美国 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "fair",
+          "title": "Ego4D 官网地区演示 fair",
+          "category": "FAIR / 美国 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/fair.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/fair/1.mp4",
+          "source_label": "Ego4D 官网地区演示 fair",
+          "video_id": "fair",
+          "duration_seconds": 15.133333333333333,
+          "frames": 454,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 778557,
+          "sha256": "1eb099cece75f3b812147f77a2b227c6a16d0cf5bb8c1e9cc65e705f44f1c6f6"
+        }
+      ]
+    },
+    {
+      "id": "georgiatech",
+      "title": "Georgia Tech / 美国 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "georgiatech",
+          "title": "Ego4D 官网地区演示 georgiatech",
+          "category": "Georgia Tech / 美国 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/georgiatech.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/georgiatech/1.mp4",
+          "source_label": "Ego4D 官网地区演示 georgiatech",
+          "video_id": "georgiatech",
+          "duration_seconds": 10.0,
+          "frames": 300,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 257780,
+          "sha256": "c8a2bd4268ee72c6930e956748916a4a864df7f9edec9020a0c10cf90e70904e"
+        }
+      ]
+    },
+    {
+      "id": "iiith",
+      "title": "IIIT Hyderabad / 印度 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "iiith",
+          "title": "Ego4D 官网地区演示 iiith",
+          "category": "IIIT Hyderabad / 印度 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/iiith.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/iiith/1.mp4",
+          "source_label": "Ego4D 官网地区演示 iiith",
+          "video_id": "iiith",
+          "duration_seconds": 10.0,
+          "frames": 300,
+          "fps": 30.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 193312,
+          "sha256": "9b6a7416abadf128e7f2d7716df779ff57d8b37651e4f9a0221da58d97246a9a"
+        }
+      ]
+    },
+    {
+      "id": "kaust",
+      "title": "KAUST / 沙特阿拉伯 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "kaust",
+          "title": "Ego4D 官网地区演示 kaust",
+          "category": "KAUST / 沙特阿拉伯 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/kaust.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/kaust/1.mp4",
+          "source_label": "Ego4D 官网地区演示 kaust",
+          "video_id": "kaust",
+          "duration_seconds": 10.0,
+          "frames": 300,
+          "fps": 30.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 102619,
+          "sha256": "36882eed4e2aa86cc9499626a11ab73f82742055d06673062215a3275da146b7"
+        }
+      ]
+    },
+    {
+      "id": "losandes",
+      "title": "Los Andes / 哥伦比亚 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "losandes",
+          "title": "Ego4D 官网地区演示 losandes",
+          "category": "Los Andes / 哥伦比亚 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/losandes.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/losandes/1.mp4",
+          "source_label": "Ego4D 官网地区演示 losandes",
+          "video_id": "losandes",
+          "duration_seconds": 10.266666666666667,
+          "frames": 308,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 887325,
+          "sha256": "8ea80cf342e396d36802475cdf92ac1019ee16983c0bf8e91b11a79be4118b1a"
+        }
+      ]
+    },
+    {
+      "id": "minnesota",
+      "title": "Minnesota / 美国 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "minnesota",
+          "title": "Ego4D 官网地区演示 minnesota",
+          "category": "Minnesota / 美国 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/minnesota.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/minnesota/1.mp4",
+          "source_label": "Ego4D 官网地区演示 minnesota",
+          "video_id": "minnesota",
+          "duration_seconds": 10.0,
+          "frames": 300,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 267942,
+          "sha256": "bd5f02ba37a6f0f4fed91ea7042539aebd489d38a7557eecc8fa214bd1b9e154"
+        }
+      ]
+    },
+    {
+      "id": "nus",
+      "title": "NUS / 新加坡 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "nus",
+          "title": "Ego4D 官网地区演示 nus",
+          "category": "NUS / 新加坡 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/nus.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/nus/1.mp4",
+          "source_label": "Ego4D 官网地区演示 nus",
+          "video_id": "nus",
+          "duration_seconds": 10.066666666666666,
+          "frames": 302,
+          "fps": 30.0,
+          "width": 640,
+          "height": 360,
+          "size_bytes": 181288,
+          "sha256": "bcbefa41d4b1e7c201a35bf07e7fe0ecb4a0683b0923f7f4dee8ffd222087a4c"
+        }
+      ]
+    },
+    {
+      "id": "tokyo",
+      "title": "东京大学 / 日本 官方演示",
+      "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+      "frames": [],
+      "media_kind": "video_case",
+      "video_cases": [
+        {
+          "id": "tokyo",
+          "title": "Ego4D 官网地区演示 tokyo",
+          "category": "东京大学 / 日本 官方演示",
+          "description": "Ego4D 官网公开片段；未确认属于 NLQ / MQ / VQ 的正式划分。每段按时间均匀选100帧。",
+          "local_video": "samples/tokyo.mp4",
+          "source_url": "https://ego4d-data.org/assets/videos/tokyo/1.mp4",
+          "source_label": "Ego4D 官网地区演示 tokyo",
+          "video_id": "tokyo",
+          "duration_seconds": 10.08,
+          "frames": 252,
+          "fps": 25.0,
+          "width": 480,
+          "height": 360,
+          "size_bytes": 221270,
+          "sha256": "bd1f051613c8d9051b2005d850fc947d3b7877b6a6bef948114bcde6492fe275"
+        }
+      ]
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "short_video_case_threshold_seconds": 180.0,
+  "short_video_case_policy": "本地完整副本不超过 180 秒且小于 100 MB 时直接展示 video case；其余视频继续抽帧。",
+  "short_video_cases_count": 12
+}

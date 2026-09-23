@@ -1,0 +1,51 @@
+{
+  "slug": "fetchbench",
+  "title": "FetchBench",
+  "category": "仿真抓取与取出 · 任务规格和轨迹",
+  "summary": "6,000 测试实例；论文生成 27,500 条训练轨迹。公开视频媒体入口未定位到，提供静态任务示例。",
+  "paper_url": "https://arxiv.org/abs/2406.11793",
+  "repo_url": "https://github.com/princeton-vl/FetchBench-CORL2024",
+  "project_url": "https://sites.google.com/view/fetchbench/home",
+  "duration_summary": "轨迹库逐条秒数未公开核验；控制步上限与算法计算时间不能等同 MP4 时长。",
+  "availability": "官方代码/资产入口公开；README 仍写 baseline dataset 将后续发布。",
+  "preview_status": "partial",
+  "limitations": [
+    "未找到可逐视频访问的官方训练轨迹发布清单；未下载大型资产包。",
+    "预览仅为论文静态研究图，不计视频帧，不补齐 100 张。",
+    "正文与表 4 对 drawer / basket 的数量有不一致。"
+  ],
+  "groups": [
+    {
+      "id": "static-examples",
+      "title": "官方静态任务示例",
+      "description": "静态研究图，非视频帧，也非完整数据集抽样。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/S1-F1.jpg",
+          "source_url": "https://arxiv.org/html/2406.11793v2/task_examples.png",
+          "source_label": "论文 S1.F1 静态图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/S2-F2.jpg",
+          "source_url": "https://arxiv.org/html/2406.11793v2/images/task_def3.png",
+          "source_label": "论文 S2.F2 静态图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        },
+        {
+          "image": "previews/S4-F3.jpg",
+          "source_url": "https://arxiv.org/html/2406.11793v2/procedural_examples.png",
+          "source_label": "论文 S4.F3 静态图",
+          "video_id": "",
+          "timestamp_seconds": null,
+          "duration_seconds": null
+        }
+      ]
+    }
+  ]
+}

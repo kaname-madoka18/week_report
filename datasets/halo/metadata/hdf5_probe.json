@@ -1,0 +1,218 @@
+[
+  {
+    "path": "MemFruitInSinkLeftFar/2025-07-13-15-44-32/demo_im128_notp.hdf5",
+    "size_bytes": 1010482274,
+    "keys": [
+      "data",
+      "mask"
+    ],
+    "env_args": {
+      "env_name": "MemFruitInSinkLeftFar",
+      "env_version": "1.5.0",
+      "type": 1,
+      "env_kwargs": {
+        "camera_segmentations": "instance",
+        "robots": [
+          "PandaOmron"
+        ],
+        "controller_configs": {
+          "type": "OSC_POSE",
+          "input_max": 1,
+          "input_min": -1,
+          "output_max": [
+            0.05,
+            0.05,
+            0.05,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "output_min": [
+            -0.05,
+            -0.05,
+            -0.05,
+            -0.5,
+            -0.5,
+            -0.5
+          ],
+          "kp": 150,
+          "damping_ratio": 1,
+          "impedance_mode": "fixed",
+          "kp_limits": [
+            0,
+            300
+          ],
+          "damping_ratio_limits": [
+            0,
+            10
+          ],
+          "position_limits": null,
+          "orientation_limits": null,
+          "uncouple_pos_ori": true,
+          "input_type": "delta",
+          "input_ref_frame": "base",
+          "interpolation": null,
+          "ramp_ratio": 0.2
+        },
+        "seed": 1,
+        "layout_ids": [
+          1
+        ],
+        "style_ids": [
+          0
+        ],
+        "translucent_robot": false,
+        "obj_instance_split": "A",
+        "reward_shaping": false,
+        "camera_names": [
+          "robot0_agentview_center",
+          "robot0_eye_in_hand"
+        ],
+        "camera_heights": 128,
+        "camera_widths": 128,
+        "has_renderer": false,
+        "has_offscreen_renderer": true,
+        "ignore_done": true,
+        "use_object_obs": true,
+        "use_camera_obs": true,
+        "camera_depths": false
+      }
+    },
+    "control_frequency_hz": null,
+    "episodes": [
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_1",
+        "num_samples": 1028,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_10",
+        "num_samples": 1009,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_12",
+        "num_samples": 766,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_13",
+        "num_samples": 1043,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_14",
+        "num_samples": 933,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_15",
+        "num_samples": 878,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_17",
+        "num_samples": 831,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_18",
+        "num_samples": 1106,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_19",
+        "num_samples": 871,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_2",
+        "num_samples": 776,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_20",
+        "num_samples": 1140,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_22",
+        "num_samples": 752,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_23",
+        "num_samples": 939,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_24",
+        "num_samples": 1150,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_25",
+        "num_samples": 851,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_26",
+        "num_samples": 756,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_28",
+        "num_samples": 772,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_31",
+        "num_samples": 906,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_32",
+        "num_samples": 858,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_34",
+        "num_samples": 757,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_4",
+        "num_samples": 819,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_5",
+        "num_samples": 784,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_6",
+        "num_samples": 929,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_7",
+        "num_samples": 715,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_8",
+        "num_samples": 883,
+        "duration_seconds": null
+      },
+      {
+        "episode": "MemFruitInSinkLeftFar_PandaOmron_demo_9",
+        "num_samples": 982,
+        "duration_seconds": null
+      }
+    ],
+    "range_bytes": 2326528,
+    "range_requests": 142,
+    "full_download": false
+  }
+]

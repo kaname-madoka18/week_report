@@ -1,0 +1,625 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EgoMem — Full-duplex Lifelong Memory Agent · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../index.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">EgoMem — Full-duplex Lifelong Memory Agent</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-23</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-09-15</strong></div><div><span>引用数</span><strong>3</strong></div><div><span>GitHub stars</span><strong>暂无公开仓库</strong></div><div><span>当前状态</span><strong>ICLR 2026 · under review</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2509.11914" target="_blank" rel="noopener">arXiv</a> · <a href="https://www.semanticscholar.org/paper/b0b24223dbb29589fad7efe43d842f2422c5d006" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openreview.net/pdf?id=9QYA3DiPl8" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=EgoMem%3A+Lifelong+Memory+Agent+for+Full-duplex+Omnimodal+Models" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>EgoMem 针对“全双工、全模态、终身部署”场景下长期缺失的一项能力——<strong>类人记忆</strong>——提出系统级解决方案。论文要解决的问题可归纳为：</p>
+<ol>
+<li>
+<p>传统文本 LLM 记忆方案无法直接迁移到<strong>实时音视频流</strong><br/>
+   - 扩展上下文窗口会随时间无限增长，百万 token 亦不足以容纳终身音视觉信息，且会丢失用户身份等关键信号。<br/>
+   - 现有记忆代理普遍假设“用户身份已知、对话边界清晰、输入为纯文本”，在全双工、多用户、无明确轮次的音视频流中均不成立。</p>
+</li>
+<li>
+<p>全双工 omnimodal 模型在“实时”与“终身”双重约束下，需要同时完成<br/>
+   - <strong>用户身份自发现</strong>：仅凭摄像头+麦克风即可识别谁在场。<br/>
+   - <strong>长期个性化知识调用</strong>：即时召回用户事实、偏好、社交关系。<br/>
+   - <strong>记忆持续写入与整理</strong>：从原始音视频流中自动抽取事件、检测对话边界、解决冲突并更新记忆。</p>
+</li>
+<li>
+<p>由此产生的技术挑战<br/>
+   - 无会话标记的<strong>对话边界检测</strong>（episodic boundary detection）。<br/>
+   - 面向<strong>多模态流</strong>的增量信息抽取与存储。<br/>
+   - 低延迟、全双工条件下，<strong>动态检索</strong>用户画像与社交图谱并注入生成过程。  </p>
+</li>
+</ol>
+<p>EgoMem 首次将上述能力整合为“终身记忆智能体”，使实时 omnimodal 模型在生命周期内可持续识别用户、回忆历史、基于社交关系回答个性化问题，并在真实音视频流中自动更新记忆，从而填补“全双工 omnimodal 系统缺乏类人记忆”这一空白。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>以下研究被论文直接或间接引用，可视为 EgoMem 的学术与技术上下文。按主题分组并给出核心贡献，方便快速定位相关脉络。</p>
+<hr/>
+<h3>1. 全双工 / 实时对话模型</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Moshi</strong> (Défossez et al., 2024)</td>
+<td>首个原生全双工语音-文本 foundation model，提出“时间复用”+深度 Transformer 解码方案，为 RoboEgo 的底层架构提供原型。</td>
+</tr>
+<tr>
+<td><strong>FLM-audio</strong> (Yao et al., 2025)</td>
+<td>通过“自然独白”双训练进一步降低全双工延迟与打断误差，是 RoboEgo 的同期改进。</td>
+</tr>
+<tr>
+<td><strong>Full-Duplex-Bench</strong> (Lin et al., 2025)</td>
+<td>提出一套衡量实时对话“抢话/停顿/打断”能力的 benchmark，为后续全双工系统提供评估协议。</td>
+</tr>
+<tr>
+<td><strong>Qwen2.5-Omni</strong> (Xu et al., 2025)</td>
+<td>工业界同期最强的流式多模态对话基线，被用作 RoboEgo 的对比对象。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>2. 大模型长期记忆机制</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mem0</strong> (Chhikara et al., 2025)</td>
+<td>面向 LLM 的“用户-会话-记忆”三层抽象，提供通用记忆代理框架，但仅支持文本且需显式用户 ID。</td>
+</tr>
+<tr>
+<td><strong>MemoryBank</strong> (Zhong et al., 2024)</td>
+<td>引入时间感知的键值存储与遗忘机制，验证“记忆-检索-重写”循环对长对话的有效性。</td>
+</tr>
+<tr>
+<td><strong>A-Mem</strong> (Xu et al., 2025)</td>
+<td>把记忆视为操作系统资源，支持多 agent 共享，但同样基于纯文本输入。</td>
+</tr>
+<tr>
+<td><strong>HippoRAG</strong> (Gutierrez et al., 2024)</td>
+<td>受海马体启发，用图+检索模拟人类联想记忆，为 EgoMem Level-2 的“关系图检索”提供生物合理性参考。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>3. 多模态长视频/长音频理解</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA-LMM</strong> (He et al., 2024)</td>
+<td>在视频领域引入“记忆仓”+压缩摘要，解决视觉 token 随帧数线性爆炸问题，思路与 EgoMem 的“episodic trigger→摘要”类似。</td>
+</tr>
+<tr>
+<td><strong>Kimi-Audio</strong> (Ding et al., 2025)</td>
+<td>统一音频-文本预训练，支持 1 M token 级音频上下文，但侧重一次性理解而非终身增量写入。</td>
+</tr>
+<tr>
+<td><strong>Gemini-1.5</strong> (Gemini Team, 2024)</td>
+<td>展示多模态 10 M token 上下文可行性，为“长上下文 vs. 外部记忆”之争提供工业级参照。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>4. 用户身份与社交关系识别</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepFace</strong> (Serengil &amp; Ozpinar, 2024)</td>
+<td>开源人脸验证流水线，Facenet512+RetinaFace，被 EgoMem 直接集成。</td>
+</tr>
+<tr>
+<td><strong>WaveLM-large</strong> (Chen et al., 2022)</td>
+<td>自监督语音表征，在 VoxCeleb 上微调后用于说话人确认，为 EgoMem 音频侧身份检索提供基线。</td>
+</tr>
+<tr>
+<td><strong>Personalized Graph RAG</strong> (Au et al., 2025)</td>
+<td>首次把“用户-关系-文档”异构图引入 LLM 检索，验证了社交关系对个性化问答的增益，与 Level-2 思路一致。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>5. 数据与评测</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VoxCeleb</strong> (Nagrani et al., 2017)</td>
+<td>大规模说话人识别数据集，被本文用来构建 speaker verification benchmark。</td>
+</tr>
+<tr>
+<td><strong>Seed-TTS-eval</strong> (Anastassiou et al., 2024)</td>
+<td>高质量中文语音语料，提供 imposter cohort 以计算自适应 s-norm，显著提升 EER。</td>
+</tr>
+<tr>
+<td><strong>RealWorldQA</strong> (xAI, 2024) / <strong>Infinity-Instruct</strong> (Zhao et al., 2024)</td>
+<td>多模态指令跟随数据，为 EgoMem 的合成个性化对话提供种子 prompt。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>6. 模型架构与训练技巧</h3>
+<table>
+<thead>
+<tr>
+<th>工作</th>
+<th>关键贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RQ-Transformer</strong> (Yang et al., 2023)</td>
+<td>层次化生成框架，用 100 M 深度 Transformer 先产文本 token 再自回归产音频，支撑 RoboEgo 的实时低延迟解码。</td>
+</tr>
+<tr>
+<td><strong>RoPE + Length-Extrapolatable Transformer</strong> (Sun et al., 2023)</td>
+<td>解决位置外推，为“终身”场景下上下文长度无界增长提供理论边界参考，间接说明“纯靠长上下文不可行”。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>小结</h3>
+<p>EgoMem 的差异化在于：<br/>
+- 将上述“实时全双工对话”“多模态记忆压缩”“用户身份自发现”“社交关系检索”四条主线首次整合到同一终身系统；<br/>
+- 所有记忆操作直接面向<strong>原始音视频流</strong>，无需文本转写作为中间枢纽；<br/>
+- 提出异步“检索-对话-管理”三进程架构，兼顾毫秒级延迟与终身增量写入。  </p>
+<p>因此，相关研究可视为 EgoMem 的模块级基石，而 EgoMem 本身填补了“全双工 omnimodal 终身记忆”这一整体空白。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>EgoMem 将“终身、全双工、全模态”记忆问题拆解为<strong>三大异步进程</strong>与<strong>两级记忆粒度</strong>，并用一套可端到端训练的流式架构一次性解决。核心思路是：<strong>让记忆系统像人类一样“边听边记、边记边用”</strong>，同时保证毫秒级对话延迟。技术路线可概括为 6 步。</p>
+<hr/>
+<h3>1. 异步三进程：把“实时对话”与“终身记忆”解耦</h3>
+<table>
+<thead>
+<tr>
+<th>进程</th>
+<th>职责</th>
+<th>关键设计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Retrieval</strong></td>
+<td>每 2 s 做一次“polling”：&lt;br&gt;① 视觉+声纹→确认用户身份；&lt;br&gt;② 如有社交查询→BM25+向量重排→召回相关事实。</td>
+<td>① 不依赖文本转写，直接对原始音视频片段做 embedding；&lt;br&gt;② 与主对话并行，零阻塞。</td>
+</tr>
+<tr>
+<td><strong>Omnimodal Dialog</strong></td>
+<td>原生全双工模型 RoboEgo 负责“听-想-说”同步进行；&lt;br&gt;把上一步检索到的 <strong>Level-1/2 MemChunk</strong> 当作额外 token 通道一次性 attend。</td>
+<td>① 12.5 fps 音频帧+2–4 s 视觉帧 TDM 复用；&lt;br&gt;② RQ-Transformer 深度 100 M 子网络保证 20 fps+ 生成速度。</td>
+</tr>
+<tr>
+<td><strong>Memory Management</strong></td>
+<td>每 10 min 离线切片：&lt;br&gt;① Episodic Trigger 标记对话边界；&lt;br&gt;② ASR+LLM 抽取“用户事实/偏好/关系”；&lt;br&gt;③ 冲突检测→写入/更新记忆库。</td>
+<td>① 完全异步，不影响实时延迟；&lt;br&gt;② 用外部 LLM（DeepSeek-V3）做信息抽取与冲突消解，降低实现成本。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>2. 两级记忆粒度：从“单用户画像”到“多用户社交图谱”</h3>
+<ul>
+<li>
+<p><strong>Level-1（Profile-only）</strong><br/>
+  – 记忆键：512-D 人脸向量 + 256-D 声纹向量<br/>
+  – 记忆值：姓名、事实列表、对话摘要、90-D 个性轨迹<br/>
+  – 检索驱动：固定 2 s 轮询 → 命中即把用户字典 token 化后塞进 <strong>Level-1 MemChunk</strong>（≤512 步，常驻 KV-cache）。  </p>
+</li>
+<li>
+<p><strong>Level-2（Content-driven）</strong><br/>
+  – 在 Level-1 基础上增加“社交关系三元组”(A, relation, B) 与外部知识。<br/>
+  – 检索驱动：由 RoboEgo 自己在 monologue 通道生成 <code>&lt;retr&gt; relation, keyword &lt;answer&gt;</code> 触发；<br/>
+  – 文本召回结果写入 <strong>Level-2 MemChunk</strong>（≤256 步），与 Level-1 同时 attend，实现“我同事 John 喜欢网球吗”这类跨用户推理。  </p>
+</li>
+</ul>
+<hr/>
+<h3>3. 无文本边界 → 用“Episodic Trigger”自动切分</h3>
+<ul>
+<li>100 M 参数的 RQ-Transformer 序列标注模型，离线监听 8192 步 17-通道 token 流；  </li>
+<li>输出四标签 {0: 无对话, 1: 新用户开始, 2: 会话中, 3: 会话结束}；  </li>
+<li>允许 ±5 步（0.4 s）误差下 F1 &gt; 0.98，直接把连续流切成“用户-一致”片段供后续抽取。  </li>
+</ul>
+<hr/>
+<h3>4. 端到端训练：同一份流式数据同时解决“识别-检索-生成”</h3>
+<ul>
+<li>
+<p><strong>数据构造</strong><br/>
+  – 500 合成用户画像 + 10 k Level-1 对话 + 5 k Level-2 社交问答；<br/>
+  – TTS 生成多说话人音频，再叠加噪声、回声、打断，模拟真实全双工；<br/>
+  – 用监督掩码在统一 8192-步 token 流上切出 158 k Level-1 样本、54 k Level-2 样本、100 k Episodic 标签样本。  </p>
+</li>
+<li>
+<p><strong>训练策略</strong><br/>
+  – RoboEgo 7 B 主干先 SFT→再用上述数据继续微调 5 epoch（Level-1）（1 epoch Level-2），lr 1e-5→1.5e-6；<br/>
+  – Episodic Trigger 从零训练 45 epoch，lr 1e-4→1e-6；<br/>
+  – 损失仅计算“对应角色说话段”+“查询词/回答段”，避免对噪声帧过拟合。  </p>
+</li>
+</ul>
+<hr/>
+<h3>5. 延迟与精度控制：毫秒级完成“听-检-答”闭环</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>延迟</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人脸验证</td>
+<td>0.2 s</td>
+<td>98.4 % (LFW)</td>
+</tr>
+<tr>
+<td>声纹验证</td>
+<td>0.1 s</td>
+<td>EER 0.89 %（VoxCeleb 1:119）</td>
+</tr>
+<tr>
+<td>文本检索</td>
+<td>0.1 s</td>
+<td>pass@5 96 %</td>
+</tr>
+<tr>
+<td>Episodic 标注</td>
+<td>0.08 s /10 min 段</td>
+<td>F1@0.4 s &gt; 0.98</td>
+</tr>
+<tr>
+<td>整体对话</td>
+<td>20 fps+</td>
+<td>Level-1 Fact Score 95.9 %，Level-2 89.5 %</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>6. 终身增量：记忆库在线/离线双通道更新</h3>
+<ul>
+<li><strong>在线</strong>：Retrieval 进程只读，不阻塞对话；  </li>
+<li><strong>离线</strong>：Memory Management 进程定期 Consolidation，用 LLM 做“冲突检测-合并-摘要”，支持无限时长部署而不会线性膨胀。  </li>
+</ul>
+<hr/>
+<h3>结果</h3>
+<ul>
+<li>首次在<strong>纯音视频流</strong>上实现“用户自识别→长期记忆检索→个性化全双工回答→自动记忆更新”的完整闭环；  </li>
+<li>各子模块精度 &gt; 95 %，对话事实一致性 &gt; 87 %，吞吐量保持 20 fps+，不损害 RoboEgo 原有通用对话能力。  </li>
+</ul>
+<p>因此，EgoMem 通过“异步三进程 + 两级记忆 + 流式统一训练”把终身记忆问题转化为可实时运行的工程系统，从根本上解决了“全双工 omnimodal 模型无法边聊边记”的难题。</p>
+<p></p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文围绕三大核心研究问题（RQ）展开定量实验，并额外给出系统级个性化对话评估，形成一套完整 benchmark。所有实验均在单张 Nvidia H100 上完成，以保证可复现性。</p>
+<hr/>
+<h3>RQ1 检索子模块是否“找对人、召回对内容”？</h3>
+<table>
+<thead>
+<tr>
+<th>子任务</th>
+<th>数据集</th>
+<th>指标</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人脸验证</td>
+<td>LFW</td>
+<td>Accuracy</td>
+<td>98.4 %（与公开基准一致）</td>
+</tr>
+<tr>
+<td>声纹验证</td>
+<td>VoxCeleb 1:119 极不平衡对</td>
+<td>EER / pass@1</td>
+<td>EER 0.89 %；pass@1 96.5 %（+s-norm）</td>
+</tr>
+<tr>
+<td>文本检索（Level-2）</td>
+<td>自构 200 查询×500 候选</td>
+<td>pass@5</td>
+<td>96 %（256 token 窗口内全部相关事实）</td>
+</tr>
+<tr>
+<td>延迟</td>
+<td>—</td>
+<td>Elapsed time</td>
+<td>≤ 0.2 s（人脸 0.2 s，声纹/文本 0.1 s）</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>RQ2 Episodic Trigger 能否“精准切分”无标记音视对话？</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>Jaccard</th>
+<th>P/R/F1 @0</th>
+<th>P/R/F1 @5 (±0.4 s)</th>
+<th>P/R/F1 @10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>干净</td>
+<td>0.992</td>
+<td>0.857/0.857/0.857</td>
+<td>0.986/0.986/0.986</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>加噪</td>
+<td>0.989</td>
+<td>0.790/0.788/0.789</td>
+<td>0.983/0.981/0.982</td>
+<td>0.984/0.982/0.983</td>
+</tr>
+<tr>
+<td>延迟</td>
+<td>—</td>
+<td>—</td>
+<td>0.08 s / 10 min 段（8192 步）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>&gt; 允许 ±0.4 s 误差时 F1&gt;0.98，验证其可作为终身记忆“分段器”。</p>
+<hr/>
+<h3>RQ3 集成 EgoMem 后，RoboEgo 能否“利用记忆”生成高质量个性化回复？</h3>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>Fact Score↑</th>
+<th>Answer Quality↑</th>
+<th>Throughput</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level-1 干净</td>
+<td>95.9 %</td>
+<td>9.17/10</td>
+<td>21.7 fps</td>
+</tr>
+<tr>
+<td>Level-1 加噪</td>
+<td>93.1 %</td>
+<td>9.02/10</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Level-2 干净</td>
+<td>89.5 %</td>
+<td>8.97/10</td>
+<td>20.6 fps</td>
+</tr>
+<tr>
+<td>Level-2 加噪</td>
+<td>87.6 %</td>
+<td>8.82/10</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Fact Score：二元指标，1=回复与检索到的用户画像/社交事实完全一致，0=存在矛盾或遗漏。  </li>
+<li>Answer Quality：0–10 通用有用性与流畅度，与是否个性化无关。  </li>
+<li>吞吐量仍远高于实时音频解码下限 12.5 fps。</li>
+</ul>
+<hr/>
+<h3>消融与鲁棒性补充</h3>
+<ol>
+<li>s-norm 消融：声纹 pass@1 从 95.8 %→96.5 %，证明自适应归一化有效。  </li>
+<li>阈值调优：EER 决策阈 4.63→6.0，人工 100 例 case study 后 precision/recall 平衡最佳。  </li>
+<li>MemChunk 长度影响：Level-2 由 256 降至 128 时 pass@5 降至 88 %；512 无明显提升，故保留 256。  </li>
+<li>噪声鲁棒：加噪仅导致 Fact Score ↓2–3 %，Answer Quality ↓0.15，表明系统对真实环境变化不敏感。</li>
+</ol>
+<hr/>
+<h3>可复现资源</h3>
+<ul>
+<li>公开部分测试集（个性化对话 500 段 + 对应音视 token 流与标注）与评测脚本，供后续研究对比。  </li>
+</ul>
+<hr/>
+<h3>结论</h3>
+<p>实验覆盖“识别-切分-检索-生成”全链路，所有模块精度≥95 %，端到端个性化一致性&gt;87 %，延迟&lt;0.2 s，吞吐量&gt;20 fps，首次在终身、全双工、纯音视流场景下给出可复现的强基准。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><ul>
+<li><strong>多模态记忆内容</strong>：当前仅对音频-文本做摘要，视觉信号仅用于身份确认。可引入视频片段、物体、场景、动作等视觉记忆，实现“你上周把钥匙放哪了”这类跨模态问答。  </li>
+<li><strong>持续学习 vs. 灾难遗忘</strong>：终身写入会导致分布漂移，需探索回放、正则或参数隔离策略，保证新知识不覆盖旧知识。  </li>
+<li><strong>参数化记忆模块</strong>：现用外部 LLM 做抽取/更新，可把记忆读写网络蒸馏进一个小型可训练模块，直接嵌入主干 Transformer，减少 API 调用与延迟。  </li>
+<li><strong>复杂工具与程序记忆</strong>：将 RAG 从“用户画像+社交图”扩展到“技能脚本、设备 API、房间地图”等程序记忆，实现“帮我用厨房机械臂热牛奶”并记住个性化口味。  </li>
+<li><strong>多用户并发与“鸡尾酒会”问题</strong>：目前一次仅一位说话人，下一步需引入声源分离与多路并行记忆流，支持多人同时打断。  </li>
+<li><strong>隐私与遗忘机制</strong>：提供用户级差分隐私、加密存储、即时“被遗忘权”接口，满足 GDPR 等法规。  </li>
+<li><strong>低资源与边缘部署</strong>：探索 1 B 以下小模型 + 量化 / 蒸馏，在机器人端侧完成全部记忆操作，无需 H100 级 GPU。  </li>
+<li><strong>可解释性与可控性</strong>：为每次记忆检索生成“溯源链”，让用户询问“你为什么知道我喜欢网球”时给出可验证的来源片段。</li>
+</ul></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><h3>论文题目</h3>
+<p><strong>EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models</strong></p>
+<hr/>
+<h3>1. 研究背景与问题</h3>
+<ul>
+<li>全双工、全模态（音视频文本实时流）模型在机器人等终身场景中，需要“认出用户、记住历史、基于社交关系个性化回答”。  </li>
+<li>现有方案要么“长上下文窗口”无法应对无限增长的音视频，要么“文本记忆代理”假设用户身份已知、对话边界清晰，均不适用于无标记、无轮次、多用户的实时流。</li>
+</ul>
+<hr/>
+<h3>2. EgoMem 框架概览</h3>
+<p>提出首个面向<strong>终身、全双工、全模态流</strong>的记忆智能体，通过<strong>三异步进程 + 两级记忆粒度</strong>实现毫秒级“边听边记边用”。</p>
+<table>
+<thead>
+<tr>
+<th>进程</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Retrieval</strong></td>
+<td>每 2 s  polling：音视频 embedding → 人脸+声纹确认用户；如有需要再触发文本检索召回社交事实。</td>
+</tr>
+<tr>
+<td><strong>Omnimodal Dialog</strong></td>
+<td>原生全双工模型 RoboEgo 实时“听-想-说”，将检索结果作为 MemChunk 一次性 attend 生成个性化语音回答。</td>
+</tr>
+<tr>
+<td><strong>Memory Management</strong></td>
+<td>每 10 min 离线切片：Episodic Trigger 自动切对话 → ASR+LLM 抽取事件/事实/关系 → 冲突检测后更新长期记忆库。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>3. 两级记忆粒度</h3>
+<ul>
+<li><strong>Level-1（Profile-only）</strong>：仅维护每位用户的画像（事实、偏好、摘要）。  </li>
+<li><strong>Level-2（Content-driven）</strong>：额外维护用户间社交关系图与外部知识，支持“我同事喜欢网球吗”这类跨用户推理。</li>
+</ul>
+<hr/>
+<h3>4. 关键子模块与性能</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>数据集</th>
+<th>指标</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人脸验证</td>
+<td>LFW</td>
+<td>Accuracy</td>
+<td>98.4 %</td>
+</tr>
+<tr>
+<td>声纹验证</td>
+<td>VoxCeleb</td>
+<td>EER / pass@1</td>
+<td>0.89 % / 96.5 %</td>
+</tr>
+<tr>
+<td>文本检索</td>
+<td>自建 200×500</td>
+<td>pass@5</td>
+<td>96 %</td>
+</tr>
+<tr>
+<td>Episodic 切分</td>
+<td>1 k 音视流</td>
+<td>F1@0.4 s</td>
+<td>&gt; 98 %</td>
+</tr>
+<tr>
+<td>端到端对话</td>
+<td>自建 500 段</td>
+<td>Fact Score</td>
+<td>L1 95.9 % / L2 89.5 %</td>
+</tr>
+<tr>
+<td>吞吐量</td>
+<td>—</td>
+<td>fps</td>
+<td>&gt; 20（满足实时 12.5 fps）</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>5. 训练与数据</h3>
+<ul>
+<li>统一构造 8192-步音视 token 流，含噪声、打断、多会话；  </li>
+<li>用监督掩码同时生成 158 k Level-1、54 k Level-2、200 k Episodic 标签样本；  </li>
+<li>RoboEgo 7 B 微调 1–5 epoch，Episodic Trigger 100 M 参数从头训练。</li>
+</ul>
+<hr/>
+<h3>6. 贡献总结</h3>
+<ol>
+<li>提出<strong>首个</strong>终身记忆智能体框架，适配全双工 omnimodal 实时流。  </li>
+<li>给出完整模块设计、数据管线与训练配置，基于 RoboEgo 实现。  </li>
+<li>实验验证各模块 &gt; 95 % 精度，端到端个性化一致性 &gt; 87 %，奠定未来研究强基准。</li>
+</ol>
+<hr/>
+<h3>7. 可继续探索方向</h3>
+<p>多模态视觉记忆、灾难遗忘、参数化记忆网络、多用户并发、隐私遗忘权、边缘部署与可解释性等。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是EgoMem%3A%20Lifelong%20Memory%20Agent%20for%20Full-duplex%20Omnimodal%20Models，链接是 https://arxiv.org/pdf/2509.11914 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2509.11914 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="egomem-overview">EgoMem 数据与视频 overview</h1>
+<p>核查日期：2026-09-22。对应论文是 <a href="https://arxiv.org/abs/2509.11914" target="_blank" rel="noopener">EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models</a>（本次读取 v2），作者 Yiqun Yao 等。<strong>它不是 VideoLucy 发布的同名 EgoMem 长视频问答 benchmark</strong>，也不对应搜索中其他作者的同名机器人库。</p>
+<h2 id="_1">真正使用的数据</h2>
+<p>这是实时音视频对话记忆系统，不是发布数百小时第一人称视频的论文。附录 C 用 DeepSeek-V3 合成用户档案与个性化文本回答，再通过 TTS、噪声与回声增强组织成全双工数据流。</p>
+<table>
+<thead>
+<tr>
+<th>数据层次</th>
+<th>规模与来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level-1</td>
+<td>500 个用户档案、90 维 persona；10,000 段对话，通常每段 3–5 轮</td>
+</tr>
+<tr>
+<td>Level-2</td>
+<td>500 种可能关系；主用户与 3–5 个关联用户组成图；5,000 段对话</td>
+</tr>
+<tr>
+<td>训练组合</td>
+<td>Level-1 158K 个上下文/监督组合；Level-2 54K，加 50% Level-1；另含 clean/noisy 版本</td>
+</tr>
+<tr>
+<td>分段触发器</td>
+<td>100K clean + 100K noised 训练样本；留出 1,000 样本测试</td>
+</tr>
+<tr>
+<td>人脸/声纹模块评测</td>
+<td>LFW、VoxCeleb、SeedTTS-eval；不是本项目新拍摄的视频库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">长度应如何理解</h2>
+<p>论文把多名用户的多段对话拼成最长 <strong>8,192 个时间步</strong>的 token stream。Mimi 的音频时间步为 12.5 Hz，故理论跨度为 <strong>655.36 秒，约 10.92 分钟</strong>。其中部分位置留给 memory chunk，实际有效对话更短。论文没有公开每段源 MP4 的长度、所有对话的总小时数或完整数据文件清单，不能用 15K 对话乘上述最大值估计视频时长。视觉输入每 2–4 秒插入一次；论文的 20+ fps 吞吐是音频 token 帧率，也不是摄像头 FPS。</p>
+<h2 id="_3">论文主要结果与条件</h2>
+<p>以下为原论文结果，本次没有训练或复现实验。</p>
+<table>
+<thead>
+<tr>
+<th>评测</th>
+<th>结果</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人脸验证</td>
+<td>98.4% accuracy</td>
+<td>LFW，已有 DeepFace 方案</td>
+</tr>
+<tr>
+<td>声纹检索</td>
+<td>96.5% pass@1</td>
+<td>1,000 query / 120 key；adaptive s-norm</td>
+</tr>
+<tr>
+<td>文本检索</td>
+<td>96.0% pass@5</td>
+<td>200 query，从 500 条关系/个人事实检索</td>
+</tr>
+<tr>
+<td>对话边界</td>
+<td>clean F1 0.986；noisy 0.982</td>
+<td>容许 ±5 时间步，即 ±0.4 秒；不是精确边界 F1</td>
+</tr>
+<tr>
+<td>Level-1 事实一致性</td>
+<td>clean 0.959；noisy 0.931</td>
+<td>RoboEgo 个性化对话，DeepSeek-V3 按轮打 0/1 分</td>
+</tr>
+<tr>
+<td>Level-2 事实一致性</td>
+<td>clean 0.895；noisy 0.876</td>
+<td>同上，需关系/内容检索</td>
+</tr>
+</tbody>
+</table>
+<p>个性化回答评估向打分模型提供用户指令、参考回答、memory 内容和 RoboEgo 生成文本，不是直接人工逐帧评估视频记忆。论文还报告与人工评估的一致性；这里保留其自动打分条件。</p>
+<h2 id="_4">发布和预览</h2>
+<p>论文脚注给出一个<a href="https://figshare.com/s/ebd3210db6b0a47149b7" target="_blank" rel="noopener">约 2 分钟的 Figshare 演示</a>。本环境请求返回空正文，网页工具也无法打开，无法取得可核验媒体地址和文件大小。未找到作者正式代码/合成训练数据的公开下载入口；这是本次检索结果，并非证明它们永远不会发布。因此本项目未生成预览，也没有借用其他同名 EgoMem 的视频。</p>
+<p>来源：<a href="sources/paper.html">论文快照</a>，主要依据第 4–5 节和附录 A/C/D。没有下载视频。</p><div class="report-footer"><a href="../../index.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

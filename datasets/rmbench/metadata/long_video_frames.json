@@ -1,0 +1,1002 @@
+[
+  {
+    "image": "previews/blocks_ranking_try-episode0-000.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 0.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-001.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 7.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-002.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 14.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-003.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 21.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-004.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 28.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-005.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 35.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-006.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 42.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-007.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 50.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-008.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 57.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-009.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 64.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-010.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 71.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-011.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 78.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-012.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 85.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-013.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 92.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-014.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 100.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-015.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 107.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-016.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 114.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-017.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 121.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-018.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 128.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-019.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 135.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-020.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 142.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-021.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 150.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-022.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 157.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-023.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 164.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-024.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 171.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-025.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 178.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-026.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 185.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-027.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 192.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-028.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 200.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-029.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 207.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-030.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 214.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-031.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 221.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-032.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 228.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-033.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 235.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-034.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 242.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-035.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 250.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-036.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 257.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-037.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 264.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-038.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 271.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-039.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 278.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-040.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 285.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-041.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 292.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-042.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 300.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-043.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 307.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-044.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 314.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-045.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 321.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-046.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 328.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-047.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 335.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-048.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 342.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode0-049.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode0.mp4",
+    "source_label": "blocks ranking try / episode0",
+    "video_id": "blocks_ranking_try-episode0",
+    "timestamp_seconds": 349.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode0.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-000.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 0.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-001.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 7.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-002.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 14.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-003.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 21.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-004.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 28.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-005.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 35.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-006.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 42.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-007.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 50.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-008.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 57.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-009.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 64.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-010.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 71.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-011.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 78.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-012.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 85.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-013.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 92.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-014.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 100.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-015.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 107.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-016.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 114.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-017.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 121.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-018.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 128.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-019.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 135.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-020.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 142.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-021.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 150.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-022.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 157.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-023.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 164.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-024.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 171.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-025.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 178.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-026.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 185.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-027.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 192.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-028.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 200.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-029.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 207.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-030.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 214.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-031.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 221.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-032.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 228.6,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-033.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 235.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-034.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 242.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-035.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 250.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-036.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 257.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-037.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 264.3,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-038.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 271.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-039.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 278.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-040.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 285.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-041.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 292.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-042.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 300.0,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-043.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 307.1,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-044.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 314.2,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-045.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 321.4,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-046.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 328.5,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-047.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 335.7,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-048.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 342.8,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  },
+  {
+    "image": "previews/blocks_ranking_try-episode1-049.jpg",
+    "source_url": "https://huggingface.co/qiuly/Mem-0-mn-RMBench/resolve/main/eval_results/blocks_ranking_try/episode1.mp4",
+    "source_label": "blocks ranking try / episode1",
+    "video_id": "blocks_ranking_try-episode1",
+    "timestamp_seconds": 349.9,
+    "duration_seconds": 350.0,
+    "duration_label": "已发布评测录像播放时长",
+    "local_video": "samples/blocks_ranking_try-episode1.mp4"
+  }
+]

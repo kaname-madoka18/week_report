@@ -1,0 +1,431 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WorldMM / EgoLife 数据集 overview</title><style>
+body{max-width:1120px;margin:36px auto;padding:0 24px;background:#f5f7fb;color:#152238;font:16px/1.8 system-ui,sans-serif}h1{font-size:32px}h2{margin-top:38px;font-size:24px}a{color:#006b73}table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow-x:auto;background:white}th,td{padding:10px 13px;border:1px solid #dce3ec;text-align:left}th{background:#eaf0f7}pre{padding:18px;overflow:auto;background:#e9eef5;border-radius:8px}code{font-size:13px}strong{color:#063f55}p{margin:18px 0}nav{padding:12px 0;border-bottom:1px solid #dce3ec}img{max-width:100%}</style></head><body><nav id="dataset-catalog-home" style="position:sticky;top:0;z-index:100;background:#122b3b;color:white;padding:12px 22px;font:14px/1.5 system-ui"><a href="index.html" data-catalog-home style="color:#ddfffa;text-decoration:none">← 返回论文与数据集主目录</a></nav><nav><a href="preview_gallery.html">打开 100 帧预览图册</a> · <a href="overview.md">Markdown 原文</a> · <a href="metadata/summary.json">机器可读汇总</a></nav><h1>WorldMM / EgoLife 数据集 overview</h1>
+<p>核对日期：2026-09-22（UTC）。WorldMM 项目页：<a href="https://worldmm.github.io/" target="_blank" rel="noopener">worldmm.github.io</a> · <a href="https://github.com/wgcyeo/WorldMM" target="_blank" rel="noopener">WorldMM 代码</a>。WorldMM 的 setup 脚本下载 <code>lmms-lab/EgoLife</code>，以下整理以该数据集及其公开关联模态为范围。EgoLife 入口：<a href="https://egolife-ai.github.io/" target="_blank" rel="noopener">项目官网</a> · <a href="https://egolife-ai.github.io/blog/" target="_blank" rel="noopener">官方博客</a> · <a href="https://arxiv.org/html/2503.03803v3" target="_blank" rel="noopener">论文 v3</a> · <a href="https://github.com/EvolvingLMMs-Lab/EgoLife" target="_blank" rel="noopener">代码</a>。</p>
+<p><strong>主视频共 32,001 段、512.226 GB；通常为 30 秒片段。已制作 1,600 张独立预览图，并提供 22 组各 100 帧的浏览入口，其中六组参与者入口复用每日预览。</strong></p>
+<p>直接打开 <strong><a href="preview_gallery.html">离线预览图册</a></strong>，可切换日期、参与者、眼动相机、第三视角和 QA 示例，点击图片查看来源及时间。所有图片均来自实际视频，未生成或补造画面。</p>
+<h2>数据内容与公开入口</h2>
+<p>EgoLife 记录六位参与者连续七天共同生活、筹备 Earth Day 派对的经历。主要数据为 Aria 眼镜的第一视角视频与声音，并配合 15 台固定相机、眼动及其他传感器。它适合研究跨小时、跨天的事件检索、个人记忆与多人交互。这里聚焦官网链接的 EgoLife 主数据、第三视角及眼动发布；EgoIT-99K 是相关的外部数据混合训练集。</p>
+<table>
+<thead>
+<tr>
+<th>数据部分</th>
+<th>本次核对的发布规模</th>
+<th>时长口径</th>
+<th>下载入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一视角 RGB + 音频</td>
+<td>32,001 个 MP4；512.226 GB</td>
+<td>通常约 30 秒；700 段实测 4.05–30.05 秒</td>
+<td><a href="https://huggingface.co/datasets/lmms-lab/EgoLife/tree/main" target="_blank" rel="noopener">lmms-lab/EgoLife</a></td>
+</tr>
+<tr>
+<td>第三视角 EgoLifeThird</td>
+<td>133 个 MP4；1,234.026 GB；Level1 69 段、Level2 64 段</td>
+<td>多数按整点命名，呈小时分块；<strong>真实播放时长未核验</strong></td>
+<td><a href="https://pan.baidu.com/s/1Xc3m4W9TxLx0QzQfb_LvmA?pwd=szxh" target="_blank" rel="noopener">百度网盘，提取码 szxh</a></td>
+</tr>
+<tr>
+<td>EyeTracking 双眼相机</td>
+<td>32,067 个 MP4</td>
+<td>100 段实测 9.25–30.00 秒，多数 30 秒</td>
+<td><a href="https://huggingface.co/datasets/Wangtwohappy/EgoLife_EyeTracking_EyeGaze" target="_blank" rel="noopener">眼动数据仓库</a></td>
+</tr>
+<tr>
+<td>EyeGaze</td>
+<td>32,067 个 CSV</td>
+<td>逐时间戳的眼动数值，无视频播放时长</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>EgoLifeCap</td>
+<td>406 个 DenseCaption SRT；402 个 Transcript SRT</td>
+<td>带时间戳的文本标注</td>
+<td><a href="https://huggingface.co/datasets/lmms-lab/EgoLife/tree/main/EgoLifeCap" target="_blank" rel="noopener">EgoLifeCap</a></td>
+</tr>
+<tr>
+<td>EgoLifeQA</td>
+<td>当前公开 Jake 的 500 道题；论文描述 3,000 道</td>
+<td>问题时间与证据时间，支持长历史检索</td>
+<td><a href="https://huggingface.co/datasets/lmms-lab/EgoLife/tree/main/EgoLifeQA" target="_blank" rel="noopener">EgoLifeQA</a></td>
+</tr>
+<tr>
+<td>EgoLife 的指令训练标注</td>
+<td>Caption 9,002 条 / 4,501 个不同视频；QA 33,352 条 / 6,027 个不同视频</td>
+<td>引用同一主视频仓库，不应重复计入视频小时数</td>
+<td><a href="https://huggingface.co/datasets/lmms-lab/EgoLife/tree/main/EgoIT" target="_blank" rel="noopener">EgoIT 子目录</a></td>
+</tr>
+</tbody>
+</table>
+<p>GB/MB 均为十进制（10⁹/10⁶ 字节）。文件数量、大小及标注条数为本次读取公开清单 / JSON 的统计。眼动与主视频有 32,000 个同名对应项；眼动侧独有 67 项，主视频侧独有 1 项，详见 <a href="metadata/eye_main_alignment.json">对应差异</a>。</p>
+<h2>视频长度：总量、每人、每天</h2>
+<p><strong>时长有摘要概数、论文详细统计和实际文件长度三种口径。</strong> 论文摘要写约 300 小时，详细比较表 Table 1 写 266 小时 / 6 位参与者、平均约 44.3 小时每人。当前公开清单按每段 30 秒折算为 <strong>266.675 小时</strong>；这是标称折算，不是 32,001 个视频实际时长之和。会话边界存在不足 30 秒的片段，少量片段为 30.05 秒。</p>
+<p>700 段主视频抽样中，685 段恰为 30.00 秒，5 段为 30.05 秒，10 段短于 30 秒。全部抽样均为 H.264、1408×1408、20 fps，带 1 路音频。实际画面有鱼眼视野、黑边、时间与参与者标识。此编码统计仅代表本次抽查。</p>
+<p>下列“折算小时”统一按片段数 × 30 秒计算。长记忆通常需要按人物和时间把这些片段组织成序列，单个 MP4 并非一天的连续录像；录像间可能有缺口。</p>
+<table>
+<thead>
+<tr>
+<th>参与者</th>
+<th>MP4 数</th>
+<th>折算小时（非精确）</th>
+<th>大小 GB</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1_JAKE</td>
+<td>6,266</td>
+<td>52.217</td>
+<td>102.782</td>
+<td><a href="previews/contact_sheets/PERSON_A1_JAKE.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>A2_ALICE</td>
+<td>5,515</td>
+<td>45.958</td>
+<td>85.604</td>
+<td><a href="previews/contact_sheets/PERSON_A2_ALICE.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>A3_TASHA</td>
+<td>4,844</td>
+<td>40.367</td>
+<td>78.470</td>
+<td><a href="previews/contact_sheets/PERSON_A3_TASHA.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>A4_LUCIA</td>
+<td>5,266</td>
+<td>43.883</td>
+<td>88.385</td>
+<td><a href="previews/contact_sheets/PERSON_A4_LUCIA.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>A5_KATRINA</td>
+<td>4,806</td>
+<td>40.050</td>
+<td>74.994</td>
+<td><a href="previews/contact_sheets/PERSON_A5_KATRINA.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>A6_SHURE</td>
+<td>5,304</td>
+<td>44.200</td>
+<td>81.990</td>
+<td><a href="previews/contact_sheets/PERSON_A6_SHURE.jpg">100 帧拼图</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>MP4 数</th>
+<th>折算小时（非精确）</th>
+<th>大小 GB</th>
+<th>当天内容概述</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAY1</td>
+<td>4,717</td>
+<td>39.308</td>
+<td>75.038</td>
+<td>计划、购物、做饭</td>
+<td><a href="previews/contact_sheets/DAY1.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY2</td>
+<td>4,418</td>
+<td>36.817</td>
+<td>65.848</td>
+<td>练舞、手工与布置</td>
+<td><a href="previews/contact_sheets/DAY2.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY3</td>
+<td>5,028</td>
+<td>41.900</td>
+<td>91.401</td>
+<td>游戏、户外与聚餐</td>
+<td><a href="previews/contact_sheets/DAY3.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY4</td>
+<td>4,814</td>
+<td>40.117</td>
+<td>76.010</td>
+<td>清洁、装饰与外出</td>
+<td><a href="previews/contact_sheets/DAY4.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY5</td>
+<td>4,318</td>
+<td>35.983</td>
+<td>72.674</td>
+<td>派对前最后准备</td>
+<td><a href="previews/contact_sheets/DAY5.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY6</td>
+<td>5,596</td>
+<td>46.633</td>
+<td>87.539</td>
+<td>Earth Day 派对</td>
+<td><a href="previews/contact_sheets/DAY6.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>DAY7</td>
+<td>3,110</td>
+<td>25.917</td>
+<td>43.716</td>
+<td>清理与告别</td>
+<td><a href="previews/contact_sheets/DAY7.jpg">100 帧拼图</a></td>
+</tr>
+</tbody>
+</table>
+<p>每日活动摘要参考论文附录 E；各小时统计是六人视频相加，包含同步多视角，不能当作单一时间轴的墙钟长度。完整的六人 × 七天统计见 <a href="metadata/by_participant_day.csv">by_participant_day.csv</a>。</p>
+<p>第一视角的 <strong><a href="metadata/video_inventory.csv">32,001 个文件清单</a></strong> 包含大小、来源、标称时长及已实测字段。只有 700 个抽样文件填入 <code>duration_seconds</code>，其他行留空；<code>nominal_duration_seconds=30</code> 不表示已核验。独立实测表见 <a href="metadata/measured_clip_durations.csv">measured_clip_durations.csv</a>。</p>
+<p>命名示例：<code>A1_JAKE/DAY1/DAY1_A1_JAKE_11100000.mp4</code>。末尾 <code>HHMMSSFF</code> 是当天时间码；按官方 <code>time_to_frame_idx</code>，最后两位为帧号，<strong>不是百分之一秒</strong>。主视频抽样 20 fps，因此一帧约 0.05 秒。<a href="https://github.com/EvolvingLMMs-Lab/EgoLife/blob/main/EgoRAG/egorag/utils/util.py" target="_blank" rel="noopener">代码来源</a></p>
+<h2>第三视角的已知范围</h2>
+<p>通过官方公开提取码读到了完整目录。133 段均超过 100 MB，单文件大小为 233.67 MB–10.945 GB，<strong>本次未下载这些完整视频</strong>。目录按 DAY1–DAY7 / Level1、Level2 组织，视频名多以 <code>10000000</code>、<code>11000000</code> 等整点结尾。目录未提供播放时长，尝试取得媒体访问配置未成功，不能由文件大小或相邻文件名把每段直接认定为 60 分钟。</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>Level1 文件数</th>
+<th>Level2 文件数</th>
+<th>合计 GB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAY1</td>
+<td>5</td>
+<td>5</td>
+<td>94.490</td>
+</tr>
+<tr>
+<td>DAY2</td>
+<td>12</td>
+<td>9</td>
+<td>201.182</td>
+</tr>
+<tr>
+<td>DAY3</td>
+<td>9</td>
+<td>9</td>
+<td>163.162</td>
+</tr>
+<tr>
+<td>DAY4</td>
+<td>12</td>
+<td>13</td>
+<td>239.762</td>
+</tr>
+<tr>
+<td>DAY5</td>
+<td>11</td>
+<td>10</td>
+<td>178.294</td>
+</tr>
+<tr>
+<td>DAY6</td>
+<td>13</td>
+<td>13</td>
+<td>256.700</td>
+</tr>
+<tr>
+<td>DAY7</td>
+<td>7</td>
+<td>5</td>
+<td>100.435</td>
+</tr>
+</tbody>
+</table>
+<p>完整列表见 <a href="metadata/third_person_inventory.csv">third_person_inventory.csv</a>，其时长列明确为空。已提供的两组第三视角 100 帧预览取自官网小型演示视频，展示多机位拼图效果，不能代表对上述 133 段的均匀抽样。</p>
+<h2>官网视频的实测长度及预览</h2>
+<p>主页有两段演示：Day 1 11:22 和 Day 1 13:20。三类拼图视频时长如下，每类各 100 帧。</p>
+<table>
+<thead>
+<tr>
+<th>视角</th>
+<th>11:22 演示</th>
+<th>13:20 演示</th>
+<th>抽帧方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一视角拼图</td>
+<td>120.000 秒</td>
+<td>71.100 秒</td>
+<td>50 + 50 帧</td>
+</tr>
+<tr>
+<td>第三视角一层</td>
+<td>120.100 秒</td>
+<td>71.100 秒</td>
+<td>50 + 50 帧</td>
+</tr>
+<tr>
+<td>第三视角二层</td>
+<td>120.100 秒</td>
+<td>71.100 秒</td>
+<td>50 + 50 帧</td>
+</tr>
+</tbody>
+</table>
+<p>主页单机位短片与拼图视频可能经过不同裁剪，长度并不相同。已测量主页 48 个视频和博客 9 个视频；完整 57 条时长、分辨率、帧率、文件大小与 URL 见 <strong><a href="metadata/website_video_durations.csv">website_video_durations.csv</a></strong>。</p>
+<p>EgoLifeQA 的五种任务是问题类别。下表“题数”只统计当前公开的 Jake 500 题；“视频长度”是博客对应示例短片的实测长度。</p>
+<table>
+<thead>
+<tr>
+<th>QA 类型</th>
+<th>公开题数</th>
+<th>示例视频长度</th>
+<th>示例大小</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EntityLog（实体日志）</td>
+<td>125</td>
+<td>9.067 秒</td>
+<td>7.77 MB</td>
+<td><a href="previews/contact_sheets/QA_EntityLog.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>EventRecall（事件回忆）</td>
+<td>126</td>
+<td>9.100 秒</td>
+<td>7.90 MB</td>
+<td><a href="previews/contact_sheets/QA_EventRecall.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>HabitInsight（习惯洞察）</td>
+<td>61</td>
+<td>8.867 秒</td>
+<td>7.57 MB</td>
+<td><a href="previews/contact_sheets/QA_HabitInsight.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>RelationMap（关系网络）</td>
+<td>125</td>
+<td>12.233 秒</td>
+<td>10.95 MB</td>
+<td><a href="previews/contact_sheets/QA_RelationMap.jpg">100 帧拼图</a></td>
+</tr>
+<tr>
+<td>TaskMaster（任务管理）</td>
+<td>63</td>
+<td>8.967 秒</td>
+<td>7.58 MB</td>
+<td><a href="previews/contact_sheets/QA_TaskMaster.jpg">100 帧拼图</a></td>
+</tr>
+</tbody>
+</table>
+<p>眼动视频另有 <strong><a href="previews/contact_sheets/EYE_TRACKING.jpg">100 帧拼图</a></strong>，来自 100 个不同视频；实测为 640×240、20 fps。双眼图像与观察外界的 RGB 视频是两种不同内容。眼动 <a href="metadata/eye_video_inventory.csv">全量文件名清单</a> 和 <a href="metadata/eye_measured_durations.csv">100 段实测时长</a> 已保留。</p>
+<h2>标注与论文结果</h2>
+<p>公开 QA JSON 含中英文问题、选项、答案、问题时间、证据时间，以及 <code>need_audio</code>、<code>need_name</code> 等字段。500 道公开题中 202 道标记需要声音。评测中的“证据回溯长度”指问题与历史证据的时间跨度，不等于某一个视频文件的时长。论文描述总共 3,000 题，约 66% 需要回看两小时以上，超过 15% 需要回看一天以上。<a href="https://egolife-ai.github.io/blog/" target="_blank" rel="noopener">官方博客</a></p>
+<p>论文这一版在 Jake 的 500 道 QA 上评测。下面是 Table 6 按证据回溯跨度统计的准确率（%）：Gemini-1.5-Pro 和 EgoGPT 基线按 30 分钟视频分段回答，EgoGPT + EgoRAG 则可跨段检索历史证据。因此这些数值不代表两种基线直接读入了完整多日视频。<strong>以下是论文报告值，本次没有运行模型复现</strong>。<a href="https://arxiv.org/html/2503.03803v3" target="_blank" rel="noopener">论文 §5 / Table 6</a></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>&lt;2 小时</th>
+<th>2–6 小时</th>
+<th>6–24 小时</th>
+<th>&gt;24 小时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini-1.5-Pro</td>
+<td>27.9</td>
+<td>14.8</td>
+<td>25.0</td>
+<td>18.4</td>
+</tr>
+<tr>
+<td>EgoGPT</td>
+<td>28.2</td>
+<td>29.1</td>
+<td>26.8</td>
+<td>25.0</td>
+</tr>
+<tr>
+<td>EgoGPT + EgoRAG</td>
+<td>27.2</td>
+<td>35.7</td>
+<td>38.9</td>
+<td>35.4</td>
+</tr>
+</tbody>
+</table>
+<p>对超过 24 小时的证据检索，EgoRAG 相对 EgoGPT 提高 10.4 个百分点；不到 2 小时这一档并未提高。论文 Table 5 的另一个比较将不同模型作为视频描述器接入统一的 EgoRAG 流程，最终答案统一由 GPT-4o 生成：平均分分别为 Gemini-1.5-Pro 36.9、GPT-4o 36.2、LLaVA-OV 30.8、EgoGPT(EgoIT) 33.1、EgoGPT(EgoIT+D1) 36.0，不能与 Table 6 各时间档直接混算。D1 个性化微调利用了第一天数据，设计训练/测试划分时应记录这一点。</p>
+<h2>本地文件与复现</h2>
+<table>
+<thead>
+<tr>
+<th>本地产物</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="preview_gallery.html">preview_gallery.html</a></td>
+<td>离线图册，22 组各 100 帧；支持切换类别、放大、上一帧/下一帧与来源链接</td>
+</tr>
+<tr>
+<td><code>previews/DAY1</code>–<code>DAY7</code></td>
+<td>每天 100 张，共 700 张，来自 700 个不同片段</td>
+</tr>
+<tr>
+<td><code>previews/EYE_TRACKING</code></td>
+<td>100 张，来自 100 个不同眼动片段</td>
+</tr>
+<tr>
+<td><code>previews/VIEW_*</code></td>
+<td>3 种视角，每种 100 张，来自官网两段拼图演示</td>
+</tr>
+<tr>
+<td><code>previews/QA_*</code></td>
+<td>5 种 QA 类型，每种 100 张，来自官网单个示例短片</td>
+</tr>
+<tr>
+<td><code>previews/contact_sheets</code></td>
+<td>22 张 10×10 拼图；人物组复用每日已有帧</td>
+</tr>
+<tr>
+<td><code>metadata/</code></td>
+<td>全量清单、实测时长、来源、抽帧时间、下载审计、机器可读汇总</td>
+</tr>
+<tr>
+<td><code>samples/</code></td>
+<td>11 个官网小视频，均严格小于 100 MB；共 62.85 MB，最大 10.95 MB</td>
+</tr>
+<tr>
+<td><code>sources/</code></td>
+<td>官方网页快照、原始标注 JSON、公开仓库元数据</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>清单采集、受限 Range 读取、抽帧与报告生成脚本</td>
+</tr>
+</tbody>
+</table>
+<p>主数据和眼动视频只读取所需 HTTP Range，未保存完整 MP4；每个采样源设置 3 MB 读取上限，服务器忽略 Range 时拒绝继续。成功记录的主视频抽帧读取约 152.63 MB，眼动约 10.39 MB。全量下载仅用于上述 11 个已确认小于 100 MB 的官网示例；100 MB 是单文件限制，不是全部网络流量上限。11 个完整小视频已与官网 GitHub 仓库的 Git blob 哈希逐一校验。该流量统计不含网页/标注、探测测试、失败请求和重试，详见 <a href="metadata/download_audit.json">download_audit.json</a> 与 <a href="metadata/demo_integrity.json">完整性校验</a>。</p>
+<p>核心 700 个日类别预览共读取 152.626 MB、发出 2,687 个 HTTP Range 请求；按预览任务开始/结束时间估计有效平均带宽约 <strong>2.237 Mbps</strong>。这是应用层 payload 速率，不包含 TCP/TLS 开销；眼动、网站探测和小视频副本的分项记录见 <a href="metadata/bandwidth_summary.json">bandwidth_summary.json</a>。</p>
+<p>运行环境：Python 3 + <code>requests</code>、<code>av</code>、<code>Pillow</code>、<code>beautifulsoup4</code>、<code>Markdown</code>。当前环境解释器为 <code>/usr/local/bin/python3</code>。报告和图册可在已有元数据、JPEG、小视频基础上离线重建：</p>
+<pre><code class="language-bash">cd /mnt/workspace/private/ztsong/day-long-mem
+/usr/local/bin/python3 scripts/build_overview.py
+</code></pre>
+<p>重新联网采集按 <code>collect_inventory.py</code> → <code>build_previews.py</code> / <code>eye_previews.py</code> / <code>website_previews.py</code>，以及 <code>collect_third_inventory.py</code> 执行，再运行 <code>build_overview.py</code>。抽帧脚本支持复用已成功的结果。HF 直连在本环境不可用，文件传输使用 <code>hf-mirror.com</code>；报告中的来源仍指向官方仓库。</p>
+<p>元信息备注：HF 主数据卡标为 MIT；代码仓库使用 S-Lab License。这里只记录各入口给出的标记，未将代码许可自动套用到全部数据模态。官网列出的 IMU、mmWave、3D 等模态未在本次主视频仓库树中发现对应全量发布，未计入已下载或已核验的数据。</p><script src="assets/page_navigation.js"></script></body></html>

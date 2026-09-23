@@ -1,0 +1,16 @@
+{
+  "full_download_files": [
+    {
+      "path": "samples/opening.gif",
+      "size_bytes": 23028540,
+      "source_url": "https://hd-epic.github.io/assets/img/opening.gif",
+      "sha": "5a4ab76ff49030d0d94446b12f95712c8f41d854",
+      "size_verified_before_download": true
+    }
+  ],
+  "large_video_full_downloads": 0,
+  "raw_video_transport": "HTTP Range, no full MP4 saved",
+  "raw_range_total_bytes": null,
+  "raw_range_note": "Some attempts timed out or were stopped after slow transfer; exact partial transfer bytes not logged.",
+  "frame_count": 110
+}

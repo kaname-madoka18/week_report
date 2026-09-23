@@ -1,0 +1,57 @@
+{
+  "slug": "m3docvqa",
+  "title": "M3DocVQA / M3DocRAG",
+  "category": "跨文档多模态问答 · 外部记忆检索",
+  "summary": "M3DocVQA 在3,000余份PDF、40,000余页中执行开放域跨页/跨文档问答；M3DocRAG提供视觉检索基线。",
+  "paper_url": "https://arxiv.org/abs/2411.04952",
+  "repo_url": "https://github.com/bloomberg/m3docrag",
+  "project_url": "https://m3docrag.github.io/",
+  "dataset_urls": [
+    {
+      "label": "官方数据准备说明",
+      "url": "https://github.com/bloomberg/m3docrag/tree/main/m3docvqa"
+    },
+    {
+      "label": "M3DocVQA正式出版论文",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025W/Findings/html/Cho_M3DocVQA_Multi-modal_Multi-page_Multi-document_Understanding_ICCVW_2025_paper.html"
+    }
+  ],
+  "duration_summary": "不适用视频时长：内容为PDF页面和文档证据，范围以文档数/页数描述。",
+  "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
+  "preview_status": "partial",
+  "limitations": [
+    "没有视频；展示官方文档与检索问答样例。",
+    "arXiv首发和引用数对应 M3DocRAG（2411.04952），正式 benchmark 版本以 M3DocVQA 标题发表于 ICCV 2025 Workshop。",
+    "官方 GitHub 仓库已于2026-07归档为只读；数据准备说明仍公开。"
+  ],
+  "relation_level": "长上下文近邻",
+  "groups": [
+    {
+      "id": "official_examples",
+      "title": "官方数据样例图",
+      "description": "来自官方项目页的原始示例/统计图；属于静态图，不是本次抽取的视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/qual_exam_daysgone.png",
+          "source_url": "https://m3docrag.github.io/static/images/qual_exam_daysgone.png",
+          "source_label": "官方跨文档检索问答样例：Days Gone"
+        },
+        {
+          "image": "previews/qual_exam_apwarrior.png",
+          "source_url": "https://m3docrag.github.io/static/images/qual_exam_apwarrior.png",
+          "source_label": "官方跨文档检索问答样例：AP Warrior"
+        },
+        {
+          "image": "previews/qual_exam_valencia.png",
+          "source_url": "https://m3docrag.github.io/static/images/qual_exam_valencia.png",
+          "source_label": "官方跨文档检索问答样例：Valencia"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "preview_version": "v2-short-video-cases",
+  "added_batch": "2026-09-23",
+  "selection_kind": "qualified"
+}
