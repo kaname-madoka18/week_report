@@ -49,5 +49,5 @@ function openFrame(index){
   if(!dialog.open)dialog.showModal();
 }
 dialog.addEventListener('close',()=>document.getElementById('large-video')?.pause());
-select.onchange=renderGroup;document.getElementById('frame-prev').onclick=()=>openFrame(current-1);document.getElementById('frame-next').onclick=()=>openFrame(current+1);document.getElementById('frame-close').onclick=()=>dialog.close();document.addEventListener('keydown',e=>{if(!dialog.open||e.target.tagName==='VIDEO')return;if(e.key==='ArrowLeft')openFrame(current-1);if(e.key==='ArrowRight')openFrame(current+1)});
+select.onchange=renderGroup;document.getElementById('frame-prev').onclick=()=>openFrame(current-1);document.getElementById('frame-next').onclick=()=>openFrame(current+1);document.getElementById('frame-close').onclick=()=>{document.getElementById('large-video')?.pause();dialog.close();};document.addEventListener('keydown',e=>{if(!dialog.open||e.target.tagName==='VIDEO')return;if(e.key==='ArrowLeft')openFrame(current-1);if(e.key==='ArrowRight')openFrame(current+1)});
 if(DATA.groups.length){const initial=location.hash.slice(1);if(DATA.groups.some(g=>g.id===initial))select.value=initial;renderGroup()}else{document.getElementById('gallery-controls').hidden=true;grid.innerHTML='<div class="empty">'+esc(DATA.no_preview_reason||'目前未取得符合下载限制的公开视频。请查看 overview 中的数据发布状态和访问方式。')+'</div>'}
