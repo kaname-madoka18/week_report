@@ -1,6 +1,6 @@
 # MM-Lifelong / ReMA：日、周、月视频 overview
 
-[返回全部论文目录](../../index.html) · [日 / 周 / 月预览](preview_gallery.html) · [EgoLife 完整说明](../../overview.html)
+[返回全部论文目录](../../catalog.html) · [日 / 周 / 月预览](preview_gallery.html) · [EgoLife 完整说明](../../overview.html)
 
 论文新建 **MM-Lifelong** 问答与时间证据基准，覆盖游戏历程、第一视角生活、直播三种时间尺度；**ReMA** 是配套的递归记忆智能体。Week 视频复用 EgoLife 的 Jake，不能把它作为另一套新拍视频重复统计。本次比对两仓库全部 6,266 个 Week 文件，文件名、大小和 LFS SHA-256 均一致（[核对结果](metadata/egolife_identity_check.json)）。核对日期：2026-09-22。
 

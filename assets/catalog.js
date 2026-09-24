@@ -5,7 +5,7 @@ const stateLabels={ready:'已有视频预览',partial:'部分资源可预览',un
 const pageMap=new Map(CATALOG.pages.map(p=>[p.path,p]));
 for(const p of CATALOG.pages){const o=document.createElement('option');o.value=p.path;o.textContent=p.title+(p.kind==='source'?' · 源网页':'');pageSelect.append(o)}
 function openPage(path,push=true){const target=pageMap.get(path);if(!target){showHome(push);return}home.hidden=true;viewer.hidden=false;frame.src=target.path;pageSelect.value=path;document.getElementById('standalone').href=target.path;document.getElementById('current-page').textContent=target.title;if(push)history.pushState(null,'','?page='+encodeURIComponent(path));window.scrollTo(0,0)}
-function showHome(push=true){viewer.hidden=true;home.hidden=false;frame.src='about:blank';document.getElementById('current-page').textContent=CATALOG.stats.papers+' 篇论文 · 数据概览与预览';if(push)history.pushState(null,'',location.pathname);window.scrollTo(0,0)}
+function showHome(push=true){viewer.hidden=true;home.hidden=false;frame.src='about:blank';document.getElementById('current-page').textContent=CATALOG.stats.homepage_visible_papers+' 篇主页论文 · 数据概览与预览';if(push)history.pushState(null,'',location.pathname);window.scrollTo(0,0)}
 document.querySelectorAll('[data-home]').forEach(el=>el.onclick=e=>{e.preventDefault();showHome()});
 pageSelect.onchange=()=>openPage(pageSelect.value);
 window.addEventListener('message',event=>{
@@ -34,9 +34,9 @@ function renderCards(){
   const visible=CATALOG.projects.filter(p=>{
     const m=p.paper_metadata||{};
     const haystack=[p.title,p.paper_title,p.summary,p.duration_summary,p.category,p.video_cases_count,p.relation_level,m.status_label,m.arxiv_published_at,m.citation_count,m.github_stars].join(' ').toLowerCase();
-    return (!query||haystack.includes(query))&&(!category||p.category===category)&&(!only||p.video_preview_images>0||p.video_cases_count>0)&&(!onlyNew||p.added_batch==='2026-09-23');
+    return (!p.homepage_hidden)&&(!query||haystack.includes(query))&&(!category||p.category===category)&&(!only||p.video_preview_images>0||p.video_cases_count>0)&&(!onlyNew||p.added_batch==='2026-09-23'||p.added_batch==='2026-09-24');
   });
-  document.getElementById('visible-count').textContent=visible.length+' / '+CATALOG.projects.length+' 篇';
+  document.getElementById('visible-count').textContent=visible.length+' / '+CATALOG.stats.homepage_visible_papers+' 篇（主页已隐藏 '+CATALOG.stats.hidden_homepage_papers+' 篇文本/文档条目）';
   document.getElementById('cards').innerHTML=visible.map(p=>{
     const image=p.thumbnail?'<img class="card-thumb" loading="lazy" src="'+esc(p.thumbnail)+'" alt="'+esc(p.title)+' 真实预览">':'<div class="card-placeholder">'+esc(p.title)+'</div>';
     const counts=[];if(p.preview_images)counts.push(p.preview_images+' 张图');if(p.video_cases_count)counts.push(p.video_cases_count+' 个视频 case');

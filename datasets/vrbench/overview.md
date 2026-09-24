@@ -45,4 +45,4 @@
 - [官方仓库](https://github.com/OpenGVLab/VRBench)
 - [官方项目](https://vrbench.github.io/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

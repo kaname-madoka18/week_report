@@ -1,0 +1,49 @@
+{
+  "slug": "emem-bench",
+  "title": "eMEM-Bench / eMEM: A Hybrid Spatio-Temporal Memory System for Embodied Agents",
+  "category": "具身多模态记忆 · embodied QA benchmark",
+  "summary": "eMEM-Bench 在 12 个 AI2-THOR 场景上提供 492 个 embodied QA，覆盖空间、时间、实体、情景和内感受记忆。",
+  "paper_url": "https://arxiv.org/abs/2606.03374",
+  "repo_url": "https://github.com/automatika-robotics/emem",
+  "project_url": "https://github.com/automatika-robotics/emem",
+  "dataset_urls": [
+    {
+      "label": "官方代码与 benchmark harness",
+      "url": "https://github.com/automatika-robotics/emem"
+    },
+    {
+      "label": "eMEM-Bench 数据目录说明",
+      "url": "https://github.com/automatika-robotics/emem/tree/main/data/emem_bench"
+    }
+  ],
+  "duration_summary": "官方 README 按 AI2-THOR 场景与 QA 数量描述 benchmark；当前公开仓库未提供可直接下载的官方视频 clip，因此不虚构播放时长。",
+  "availability": "论文和 GitHub 代码公开；仓库 README 给出 492 个问题、12 个场景和运行命令。",
+  "preview_status": "partial",
+  "limitations": [
+    "官方仓库当前公开的是 QA/benchmark harness 与静态系统图，没有可核验的公开视频 clip。",
+    "eMEM-Bench 的场景/轨迹时长需要运行 AI2-THOR 或读取其数据包，不能由 README 的 QA 数量推断。",
+    "本页放置官方 eMEM 图示供离线识别，并保留原始代码入口。"
+  ],
+  "relation_level": "直接记忆",
+  "groups": [
+    {
+      "id": "official_static_diagram",
+      "title": "官方 eMEM 系统图示",
+      "description": "官方 GitHub README 的静态图；仓库没有可直接下载的公开视频，因此不把图示包装成视频帧。",
+      "media_kind": "image",
+      "frames": [
+        {
+          "image": "previews/emem_light.png",
+          "source_url": "https://raw.githubusercontent.com/automatika-robotics/emem/main/docs/_static/eMEM_light.png",
+          "source_label": "eMEM 官方系统图示"
+        }
+      ],
+      "video_cases": []
+    }
+  ],
+  "short_video_cases_count": 0,
+  "short_video_case_threshold_seconds": 180,
+  "preview_version": "v1-requested-benchmark-refresh",
+  "added_batch": "2026-09-24",
+  "selection_kind": "requested"
+}

@@ -54,4 +54,4 @@
 - [官方仓库](https://github.com/ttgeng233/LongVALE)
 - [官方项目](https://ttgeng233.github.io/LongVALE/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

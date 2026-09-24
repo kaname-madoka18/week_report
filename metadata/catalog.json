@@ -1,16 +1,18 @@
 {
-  "generated_at_utc": "2026-09-23T11:53:26+00:00",
+  "generated_at_utc": "2026-09-24T08:01:55+00:00",
   "stats": {
-    "papers": 41,
-    "completed_papers": 41,
-    "overview_pages": 42,
-    "gallery_pages": 42,
-    "html_pages": 131,
-    "unique_video_preview_images": 2638,
-    "unique_preview_images": 2786,
-    "groups_100_including_reuse": 39,
-    "video_cases_count": 111,
-    "video_case_groups_count": 67,
+    "papers": 44,
+    "homepage_visible_papers": 40,
+    "hidden_homepage_papers": 4,
+    "completed_papers": 44,
+    "overview_pages": 45,
+    "gallery_pages": 45,
+    "html_pages": 137,
+    "unique_video_preview_images": 2938,
+    "unique_preview_images": 3087,
+    "groups_100_including_reuse": 42,
+    "video_cases_count": 135,
+    "video_case_groups_count": 69,
     "short_video_case_threshold_seconds": 180
   },
   "projects": [
@@ -1134,7 +1136,7 @@
       "slug": "behavior-1k",
       "title": "BEHAVIOR-1K / 2026 Challenge Demonstrations",
       "category": "仿真家庭活动 · 遥操作轨迹 · RGB-D",
-      "summary": "论文定义 1,000 项家庭活动；当前 2026 示范数据为 100 个任务、20,000 条 episode，已逐条核验时长。",
+      "summary": "论文定义 1,000 项家庭活动；2026 示范数据为 100 个任务、20,000 条 episode。本页扩展为 6 个 RGB-D 视角/任务片段、600 张 100 帧抽样。",
       "paper_url": "https://arxiv.org/abs/2403.09227",
       "repo_url": "https://github.com/StanfordVL/BEHAVIOR-1K",
       "project_url": "https://behavior.stanford.edu/",
@@ -1152,10 +1154,11 @@
       "availability": "代码/任务定义及 2026 示范元数据可公开访问；完整 LeRobot 数据官方标为 3.27 TB。",
       "preview_status": "ready",
       "limitations": [
-        "300 帧来自同一条 turning_on_radio 示范的三个 RGB 相机，100 帧/相机；不代表 1,000 活动或 100 任务的全覆盖。",
+        "600 帧来自公开 2026 示范中的 turning_on_radio 两个 episode / 三个 RGB 视角，不能代表 1,000 活动或 100 任务的全覆盖。",
         "原论文基线只评测 3 个活动；不能把其成功率当成当前 2026 的 100 任务成绩。",
-        "大 MP4 是多个 episode 拼接的容器，其总播放长度不等于单条示范长度；本次仅 Range 读取部分。"
+        "大 MP4 是多个 episode 拼接的容器；本次只读取 Range 片段，没有保存完整大视频。"
       ],
+      "sample_refresh_batch": "2026-09-24",
       "paper_metadata": {
         "slug": "behavior-1k",
         "title": "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation",
@@ -1190,13 +1193,13 @@
         "citation_title": "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1, 000 Everyday Activities and Realistic Simulation",
         "citation_retrieved_at_utc": "2026-09-23T11:24:44+00:00"
       },
-      "preview_images": 300,
-      "video_preview_images": 300,
+      "preview_images": 600,
+      "video_preview_images": 600,
       "video_cases_count": 0,
       "video_case_groups_count": 0,
       "short_video_case_threshold_seconds": 180,
-      "groups_count": 3,
-      "groups_100_count": 3,
+      "groups_count": 6,
+      "groups_100_count": 6,
       "overview_html": "datasets/behavior-1k/overview.html",
       "gallery_html": "datasets/behavior-1k/preview_gallery.html",
       "paper_title": "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation",
@@ -1738,6 +1741,8 @@
       "selection_kind": "qualified",
       "short_video_case_threshold_seconds": 180,
       "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。",
+      "homepage_hidden": true,
+      "homepage_hidden_reason": "图文长上下文/文本记忆评测条目；保留子页与全部 HTML URI，主页聚焦视频、多模态与具身记忆。",
       "paper_metadata": {
         "slug": "mmlongbench",
         "title": "MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly",
@@ -2407,9 +2412,9 @@
     },
     {
       "slug": "mikasa-robo",
-      "title": "MIKASA / MIKASA-Robo",
+      "title": "MIKASA-Robo: Memory Benchmark for Complex Robot Tasks",
       "category": "机器人视觉记忆 · 仿真控制 benchmark",
-      "summary": "论文版 MIKASA-Robo 含 32 项桌面操作记忆任务；当前官方 VLA 版扩展到 90 项、10 类记忆及 22,500 条轨迹。",
+      "summary": "论文版 32 项任务与官方 VLA 版 90 项任务；本页扩展为 10 个官方记忆任务小视频案例。",
       "paper_url": "https://arxiv.org/abs/2502.10550",
       "repo_url": "https://github.com/CognitiveAISystems/MIKASA-Robo",
       "project_url": "https://mikasarobo.github.io/",
@@ -2427,20 +2432,21 @@
           "url": "https://mikasarobo.github.io/vla_environments/index.html"
         }
       ],
-      "duration_summary": "可配置的 episode/延迟长度，按控制步数定义；官方分 Short/Medium/Long 三档。页面短演示仅表示播放时长，不能代替轨迹长度。 本地2段官网案例播放时长 0.50–0.83秒。",
+      "duration_summary": "官方 GIF 转码案例实测播放时长 0.50–1.33 秒；VLA 任务本身仍按 Short/Medium/Long 控制步数定义。",
       "availability": "论文、官方项目和标注/数据入口可公开访问；媒体预览范围见下方说明。",
-      "preview_status": "partial",
+      "preview_status": "ready",
       "limitations": [
-        "论文版的 32 项任务与当前 VLA 版 90 项任务分别记录，不能混作同一个实验版本。",
-        "官方短演示由 GIF 转为 MP4 播放；不属于对 22,500 条轨迹的随机抽样。",
+        "论文版 32 项任务与当前 VLA 版 90 项任务分别记录，不能混作同一实验版本。",
+        "本地案例是官方文档演示 GIF 的 MP4 转码，不是 22,500 条轨迹的随机抽样。",
         "未下载完整 RLDS/LeRobot 轨迹，未用未知控制频率把步数换算成秒。"
       ],
       "relation_level": "直接记忆",
-      "short_video_cases_count": 2,
+      "short_video_cases_count": 10,
       "short_video_case_threshold_seconds": 180,
-      "preview_version": "v2-short-video-cases",
+      "preview_version": "v3-more-short-video-cases",
       "added_batch": "2026-09-23",
       "selection_kind": "qualified",
+      "sample_refresh_batch": "2026-09-24",
       "paper_metadata": {
         "slug": "mikasa-robo",
         "title": "Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning",
@@ -2473,7 +2479,7 @@
       },
       "preview_images": 0,
       "video_preview_images": 0,
-      "video_cases_count": 2,
+      "video_cases_count": 10,
       "video_case_groups_count": 1,
       "groups_count": 1,
       "groups_100_count": 0,
@@ -2854,6 +2860,8 @@
       "preview_version": "v2-short-video-cases",
       "added_batch": "2026-09-23",
       "selection_kind": "qualified",
+      "homepage_hidden": true,
+      "homepage_hidden_reason": "文本/多页文档记忆条目；保留子页与全部 HTML URI，主页聚焦视频、多模态与具身记忆。",
       "paper_metadata": {
         "slug": "longdocurl",
         "title": "LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating",
@@ -2925,6 +2933,8 @@
       "preview_version": "v2-short-video-cases",
       "added_batch": "2026-09-23",
       "selection_kind": "qualified",
+      "homepage_hidden": true,
+      "homepage_hidden_reason": "文本/多页文档记忆条目；保留子页与全部 HTML URI，主页聚焦视频、多模态与具身记忆。",
       "paper_metadata": {
         "slug": "mmdocir",
         "title": "MMDocIR: Benchmarking Multi-Modal Retrieval for Long Documents",
@@ -2997,6 +3007,8 @@
       "preview_version": "v2-short-video-cases",
       "added_batch": "2026-09-23",
       "selection_kind": "qualified",
+      "homepage_hidden": true,
+      "homepage_hidden_reason": "文本/多页文档记忆条目；保留子页与全部 HTML URI，主页聚焦视频、多模态与具身记忆。",
       "paper_metadata": {
         "slug": "m3docvqa",
         "title": "M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding",
@@ -3106,6 +3118,234 @@
       "gallery_html": "datasets/neptune/preview_gallery.html",
       "paper_title": "Neptune: The Long Orbit to Benchmarking Long Video Understanding",
       "thumbnail": "datasets/neptune/previews/examples.png"
+    },
+    {
+      "slug": "robomemarena",
+      "title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+      "category": "机器人多模态记忆 · manipulation benchmark",
+      "summary": "26 个机器人操作任务，覆盖空间、时间、实体与情景记忆；官方页面提供 12 个任务演示，平均轨迹超过 1,000 步并包含关键帧标注。",
+      "paper_url": "https://arxiv.org/abs/2605.10921",
+      "repo_url": "https://github.com/OpenHelix-Team/RoboMemArena",
+      "project_url": "https://robomemarena.github.io/",
+      "dataset_urls": [
+        {
+          "label": "Hugging Face 数据集",
+          "url": "https://huggingface.co/datasets/RoboMemArenaBenchmark/RoboMemArena"
+        },
+        {
+          "label": "ModelScope 数据集入口",
+          "url": "https://modelscope.cn/profile/haodong123"
+        }
+      ],
+      "duration_summary": "官方任务视频实测 23.60–90.30 秒；展示视频是任务演示播放时长，不等于仿真轨迹的控制步数。",
+      "availability": "论文、官方项目页、代码和数据入口均公开；媒体预览只保留 12 个小于 100MB 的官方任务视频。",
+      "preview_status": "ready",
+      "limitations": [
+        "12 个视频来自项目页展示任务，不能视为 26 个任务的均匀随机抽样。",
+        "未下载 title_demo_95mb.mp4 和完整示范数据；本地视频只用于快速浏览。",
+        "论文中的真实机器人配对任务与仿真任务在本页合并展示时会单独标记来源。"
+      ],
+      "relation_level": "直接记忆",
+      "short_video_cases_count": 12,
+      "short_video_case_threshold_seconds": 180,
+      "preview_version": "v1-requested-benchmark-refresh",
+      "added_batch": "2026-09-24",
+      "selection_kind": "requested",
+      "paper_metadata": {
+        "slug": "robomemarena",
+        "title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+        "paper_url": "https://arxiv.org/abs/2605.10921",
+        "retrieved_at_utc": "2026-09-24T06:51:34+00:00",
+        "arxiv_id": "2605.10921",
+        "arxiv_url": "https://arxiv.org/abs/2605.10921",
+        "arxiv_title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+        "arxiv_published_at": "2026/05/11",
+        "arxiv_updated_at": "2026/05/11",
+        "arxiv_journal_reference": null,
+        "arxiv_fetch_status": "ok",
+        "arxiv_source_url": "https://arxiv.org/abs/2605.10921",
+        "citation_count": 17,
+        "citation_title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+        "citation_source": "Semantic Scholar",
+        "citation_source_url": "https://www.semanticscholar.org/paper/fbeefff51e3e11a2a5d99f562c2751577d52f6f4",
+        "citation_fetch_status": "ok",
+        "citation_retrieved_at_utc": "2026-09-24T06:51:37+00:00",
+        "github_repo": "OpenHelix-Team/RoboMemArena",
+        "github_url": "https://github.com/OpenHelix-Team/RoboMemArena",
+        "github_stars": 196,
+        "github_forks": 9,
+        "github_updated_at": "2026-09-24T03:17:38Z",
+        "github_fetch_status": "ok",
+        "github_source_url": "https://api.github.com/repos/OpenHelix-Team/RoboMemArena",
+        "status_label": "arXiv preprint · official benchmark release",
+        "status_source": "https://robomemarena.github.io/",
+        "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=RoboMemArena%3A+A+Comprehensive+and+Challenging+Robotic+Memory+Benchmark",
+        "papers_cool_detail_url": "https://papers.cool/arxiv/2605.10921",
+        "kimi_brief_status": "ok",
+        "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2605.10921"
+      },
+      "preview_images": 0,
+      "video_preview_images": 0,
+      "video_cases_count": 12,
+      "video_case_groups_count": 1,
+      "groups_count": 1,
+      "groups_100_count": 0,
+      "overview_html": "datasets/robomemarena/overview.html",
+      "gallery_html": "datasets/robomemarena/preview_gallery.html",
+      "paper_title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+      "thumbnail": ""
+    },
+    {
+      "slug": "emem-bench",
+      "title": "eMEM-Bench / eMEM: A Hybrid Spatio-Temporal Memory System for Embodied Agents",
+      "category": "具身多模态记忆 · embodied QA benchmark",
+      "summary": "eMEM-Bench 在 12 个 AI2-THOR 场景上提供 492 个 embodied QA，覆盖空间、时间、实体、情景和内感受记忆。",
+      "paper_url": "https://arxiv.org/abs/2606.03374",
+      "repo_url": "https://github.com/automatika-robotics/emem",
+      "project_url": "https://github.com/automatika-robotics/emem",
+      "dataset_urls": [
+        {
+          "label": "官方代码与 benchmark harness",
+          "url": "https://github.com/automatika-robotics/emem"
+        },
+        {
+          "label": "eMEM-Bench 数据目录说明",
+          "url": "https://github.com/automatika-robotics/emem/tree/main/data/emem_bench"
+        }
+      ],
+      "duration_summary": "官方 README 按 AI2-THOR 场景与 QA 数量描述 benchmark；当前公开仓库未提供可直接下载的官方视频 clip，因此不虚构播放时长。",
+      "availability": "论文和 GitHub 代码公开；仓库 README 给出 492 个问题、12 个场景和运行命令。",
+      "preview_status": "partial",
+      "limitations": [
+        "官方仓库当前公开的是 QA/benchmark harness 与静态系统图，没有可核验的公开视频 clip。",
+        "eMEM-Bench 的场景/轨迹时长需要运行 AI2-THOR 或读取其数据包，不能由 README 的 QA 数量推断。",
+        "本页放置官方 eMEM 图示供离线识别，并保留原始代码入口。"
+      ],
+      "relation_level": "直接记忆",
+      "short_video_cases_count": 0,
+      "short_video_case_threshold_seconds": 180,
+      "preview_version": "v1-requested-benchmark-refresh",
+      "added_batch": "2026-09-24",
+      "selection_kind": "requested",
+      "paper_metadata": {
+        "slug": "emem-bench",
+        "title": "eMEM: A Hybrid Spatio-Temporal Memory System For Embodied Agents",
+        "paper_url": "https://arxiv.org/abs/2606.03374",
+        "retrieved_at_utc": "2026-09-24T07:00:40+00:00",
+        "arxiv_id": "2606.03374",
+        "arxiv_url": "https://arxiv.org/abs/2606.03374",
+        "arxiv_title": "eMEM: A Hybrid Spatio-Temporal Memory System For Embodied Agents",
+        "arxiv_published_at": "2026/06/02",
+        "arxiv_updated_at": "2026/06/22",
+        "arxiv_journal_reference": null,
+        "arxiv_fetch_status": "ok",
+        "arxiv_source_url": "https://arxiv.org/abs/2606.03374",
+        "citation_count": 1,
+        "citation_title": "eMEM: A Hybrid Spatio-Temporal Memory System For Embodied Agents",
+        "citation_source": "Semantic Scholar",
+        "citation_source_url": "https://www.semanticscholar.org/paper/81405e1b66e54995731ac8325ce60e7af09fd7e2",
+        "citation_fetch_status": "ok",
+        "citation_retrieved_at_utc": "2026-09-24T07:00:45+00:00",
+        "github_repo": "automatika-robotics/emem",
+        "github_url": "https://github.com/automatika-robotics/emem",
+        "github_stars": 14,
+        "github_forks": 1,
+        "github_updated_at": "2026-09-24T00:52:55Z",
+        "github_fetch_status": "ok",
+        "github_source_url": "https://api.github.com/repos/automatika-robotics/emem",
+        "status_label": "arXiv preprint · official code released",
+        "status_source": "https://github.com/automatika-robotics/emem",
+        "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=eMEM%3A+A+Hybrid+Spatio-Temporal+Memory+System+For+Embodied+Agents",
+        "papers_cool_detail_url": "https://papers.cool/arxiv/2606.03374",
+        "kimi_brief_status": "ok",
+        "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2606.03374"
+      },
+      "preview_images": 1,
+      "video_preview_images": 0,
+      "video_cases_count": 0,
+      "video_case_groups_count": 0,
+      "groups_count": 1,
+      "groups_100_count": 0,
+      "overview_html": "datasets/emem-bench/overview.html",
+      "gallery_html": "datasets/emem-bench/preview_gallery.html",
+      "paper_title": "eMEM-Bench / eMEM: A Hybrid Spatio-Temporal Memory System for Embodied Agents",
+      "thumbnail": "datasets/emem-bench/previews/emem_light.png"
+    },
+    {
+      "slug": "findingdory",
+      "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+      "category": "具身视觉记忆 · Habitat benchmark",
+      "summary": "面向 embodied agents 的长程记忆 benchmark，在 Habitat 中构造 60 个任务与程序化扩展，要求从早期经验中检索空间和事件信息。",
+      "paper_url": "https://arxiv.org/abs/2506.15635",
+      "repo_url": "https://github.com/findingdory-benchmark/findingdory-habitat",
+      "project_url": "https://findingdory-benchmark.github.io/",
+      "dataset_urls": [
+        {
+          "label": "FindingDory 数据集",
+          "url": "https://huggingface.co/datasets/yali30/findingdory"
+        },
+        {
+          "label": "训练代码",
+          "url": "https://github.com/findingdory-benchmark/findingdory-train"
+        }
+      ],
+      "duration_summary": "官方示例 episode 实测 29.20–59.00 秒；任务轨迹的上下文长度由 Habitat episode 与记忆阶段定义。",
+      "availability": "项目页、Habitat 环境、训练代码和 Hugging Face 数据入口公开；本地保留 4 个完整官方 episode 视频。",
+      "preview_status": "ready",
+      "limitations": [
+        "4 个本地案例是官网示例视频，不是 60 个任务的均匀抽样。",
+        "官网还列出 episode 3371 和 89；本轮远端连接在大文件传输中断，页面仍保留外部来源入口。",
+        "视频播放秒数不等同于模型读取的记忆跨度或 Habitat step 数。"
+      ],
+      "relation_level": "直接记忆",
+      "short_video_cases_count": 4,
+      "short_video_case_threshold_seconds": 180,
+      "preview_version": "v1-requested-benchmark-refresh",
+      "added_batch": "2026-09-24",
+      "selection_kind": "requested",
+      "paper_metadata": {
+        "slug": "findingdory",
+        "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+        "paper_url": "https://arxiv.org/abs/2506.15635",
+        "retrieved_at_utc": "2026-09-24T07:01:18+00:00",
+        "arxiv_id": "2506.15635",
+        "arxiv_url": "https://arxiv.org/abs/2506.15635",
+        "arxiv_title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+        "arxiv_published_at": "2025/06/18",
+        "arxiv_updated_at": "2025/09/29",
+        "arxiv_journal_reference": null,
+        "arxiv_fetch_status": "ok",
+        "arxiv_source_url": "https://arxiv.org/abs/2506.15635",
+        "citation_count": 12,
+        "citation_title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+        "citation_source": "Semantic Scholar",
+        "citation_source_url": "https://www.semanticscholar.org/paper/919556328ac2da382215ea682f4eeb99b15fcf39",
+        "citation_fetch_status": "ok",
+        "citation_retrieved_at_utc": "2026-09-24T07:01:23+00:00",
+        "github_repo": "findingdory-benchmark/findingdory-habitat",
+        "github_url": "https://github.com/findingdory-benchmark/findingdory-habitat",
+        "github_stars": 10,
+        "github_forks": 1,
+        "github_updated_at": "2026-08-14T11:46:19Z",
+        "github_fetch_status": "ok",
+        "github_source_url": "https://api.github.com/repos/findingdory-benchmark/findingdory-habitat",
+        "status_label": "NeurIPS 2025 Workshop · SpaVLE",
+        "status_source": "https://openreview.net/pdf?id=vhkd8RekOx",
+        "papers_cool_search_url": "https://papers.cool/arxiv/search?highlight=1&query=FindingDory%3A+A+Benchmark+to+Evaluate+Memory+in+Embodied+Agents",
+        "papers_cool_detail_url": "https://papers.cool/arxiv/2506.15635",
+        "kimi_brief_status": "ok",
+        "kimi_source_url": "https://papers.cool/arxiv/kimi?paper=2506.15635"
+      },
+      "preview_images": 0,
+      "video_preview_images": 0,
+      "video_cases_count": 4,
+      "video_case_groups_count": 1,
+      "groups_count": 1,
+      "groups_100_count": 0,
+      "overview_html": "datasets/findingdory/overview.html",
+      "gallery_html": "datasets/findingdory/preview_gallery.html",
+      "paper_title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+      "thumbnail": ""
     }
   ],
   "pages": [
@@ -3114,910 +3354,952 @@
       "title": "EgoLife · 数据概览",
       "kind": "overview",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egolife/overview.html"
+      "file_uri": "datasets/egolife/overview.html"
     },
     {
       "path": "overview.html",
       "title": "EgoLife · 原详细 overview",
       "kind": "overview",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/overview.html"
+      "file_uri": "overview.html"
     },
     {
       "path": "datasets/m3-agent/overview.html",
       "title": "M3-Agent / M3-Bench：机器人与网络视频 · 数据概览",
       "kind": "overview",
       "paper_slug": "m3-agent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3-agent/overview.html"
+      "file_uri": "datasets/m3-agent/overview.html"
     },
     {
       "path": "datasets/worldmm/overview.html",
       "title": "WorldMM：五个既有长视频基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "worldmm",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/worldmm/overview.html"
+      "file_uri": "datasets/worldmm/overview.html"
     },
     {
       "path": "datasets/mm-lifelong/overview.html",
       "title": "MM-Lifelong / ReMA：日、周、月 · 数据概览",
       "kind": "overview",
       "paper_slug": "mm-lifelong",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mm-lifelong/overview.html"
+      "file_uri": "datasets/mm-lifelong/overview.html"
     },
     {
       "path": "datasets/egagent/overview.html",
       "title": "EGAgent：EgoLife 与 Video-MME · 数据概览",
       "kind": "overview",
       "paper_slug": "egagent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egagent/overview.html"
+      "file_uri": "datasets/egagent/overview.html"
     },
     {
       "path": "datasets/magic-video/overview.html",
       "title": "MAGIC-Video：EgoLife 与 MM-Lifelong · 数据概览",
       "kind": "overview",
       "paper_slug": "magic-video",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/magic-video/overview.html"
+      "file_uri": "datasets/magic-video/overview.html"
     },
     {
       "path": "datasets/ella/overview.html",
       "title": "Ella — Embodied Social Agents with Lifelong Memory · 数据概览",
       "kind": "overview",
       "paper_slug": "ella",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ella/overview.html"
+      "file_uri": "datasets/ella/overview.html"
     },
     {
       "path": "datasets/egomem/overview.html",
       "title": "EgoMem — Full-duplex Lifelong Memory Agent · 数据概览",
       "kind": "overview",
       "paper_slug": "egomem",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egomem/overview.html"
+      "file_uri": "datasets/egomem/overview.html"
     },
     {
       "path": "datasets/supermemory-vqa/overview.html",
       "title": "SuperMemory-VQA · 数据概览",
       "kind": "overview",
       "paper_slug": "supermemory-vqa",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/supermemory-vqa/overview.html"
+      "file_uri": "datasets/supermemory-vqa/overview.html"
     },
     {
       "path": "datasets/smb/overview.html",
       "title": "SMB — Spatial Memory Benchmark / LTE · 数据概览",
       "kind": "overview",
       "paper_slug": "smb",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/smb/overview.html"
+      "file_uri": "datasets/smb/overview.html"
     },
     {
       "path": "datasets/halo/overview.html",
       "title": "HALO / ReMemBench · 数据概览",
       "kind": "overview",
       "paper_slug": "halo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/halo/overview.html"
+      "file_uri": "datasets/halo/overview.html"
     },
     {
       "path": "datasets/memer/overview.html",
       "title": "MemER: Scaling Up Memory for Robot Control via Experience Retrieval · 数据概览",
       "kind": "overview",
       "paper_slug": "memer",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/memer/overview.html"
+      "file_uri": "datasets/memer/overview.html"
     },
     {
       "path": "datasets/silverware/overview.html",
       "title": "Break Out the Silverware / Stored Household Item Challenge · 数据概览",
       "kind": "overview",
       "paper_slug": "silverware",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/silverware/overview.html"
+      "file_uri": "datasets/silverware/overview.html"
     },
     {
       "path": "datasets/fetchbench/overview.html",
       "title": "FetchBench · 数据概览",
       "kind": "overview",
       "paper_slug": "fetchbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/fetchbench/overview.html"
+      "file_uri": "datasets/fetchbench/overview.html"
     },
     {
       "path": "datasets/roomr/overview.html",
       "title": "Visual Room Rearrangement / RoomR · 数据概览",
       "kind": "overview",
       "paper_slug": "roomr",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/roomr/overview.html"
+      "file_uri": "datasets/roomr/overview.html"
     },
     {
       "path": "datasets/behavior-1k/overview.html",
       "title": "BEHAVIOR-1K / 2026 Challenge Demonstrations · 数据概览",
       "kind": "overview",
       "paper_slug": "behavior-1k",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/behavior-1k/overview.html"
+      "file_uri": "datasets/behavior-1k/overview.html"
     },
     {
       "path": "datasets/robocasa365/overview.html",
       "title": "RoboCasa365 · 数据概览",
       "kind": "overview",
       "paper_slug": "robocasa365",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robocasa365/overview.html"
+      "file_uri": "datasets/robocasa365/overview.html"
     },
     {
       "path": "datasets/hd-epic/overview.html",
       "title": "HD-EPIC · 数据概览",
       "kind": "overview",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/overview.html"
+      "file_uri": "datasets/hd-epic/overview.html"
     },
     {
       "path": "datasets/ego4d/overview.html",
       "title": "Ego4D — Episodic Memory · 数据概览",
       "kind": "overview",
       "paper_slug": "ego4d",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ego4d/overview.html"
+      "file_uri": "datasets/ego4d/overview.html"
     },
     {
       "path": "datasets/rmbench/overview.html",
       "title": "RMBench / Mem-0 · 数据概览",
       "kind": "overview",
       "paper_slug": "rmbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/rmbench/overview.html"
+      "file_uri": "datasets/rmbench/overview.html"
     },
     {
       "path": "datasets/robodojo/overview.html",
       "title": "RoboDojo · 数据概览",
       "kind": "overview",
       "paper_slug": "robodojo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robodojo/overview.html"
+      "file_uri": "datasets/robodojo/overview.html"
     },
     {
       "path": "datasets/videowebarena/overview.html",
       "title": "VideoWebArena：视频记忆与网页智能体基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "videowebarena",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/videowebarena/overview.html"
+      "file_uri": "datasets/videowebarena/overview.html"
     },
     {
       "path": "datasets/mmlongbench/overview.html",
       "title": "MMLongBench：长上下文图文评测基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "mmlongbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mmlongbench/overview.html"
+      "file_uri": "datasets/mmlongbench/overview.html"
     },
     {
       "path": "datasets/cg-bench/overview.html",
       "title": "CG-Bench：长视频证据检索与问答基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "cg-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/cg-bench/overview.html"
+      "file_uri": "datasets/cg-bench/overview.html"
     },
     {
       "path": "datasets/longvale/overview.html",
       "title": "LongVALE：音视频语言事件基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "longvale",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/longvale/overview.html"
+      "file_uri": "datasets/longvale/overview.html"
     },
     {
       "path": "datasets/video-mmmu/overview.html",
       "title": "Video-MMMU：视频知识获取与迁移基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "video-mmmu",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/video-mmmu/overview.html"
+      "file_uri": "datasets/video-mmmu/overview.html"
     },
     {
       "path": "datasets/vsi-bench/overview.html",
       "title": "VSI-Bench：视觉空间记忆基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "vsi-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/vsi-bench/overview.html"
+      "file_uri": "datasets/vsi-bench/overview.html"
     },
     {
       "path": "datasets/vrbench/overview.html",
       "title": "VRBench：长叙事视频多步推理基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "vrbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/vrbench/overview.html"
+      "file_uri": "datasets/vrbench/overview.html"
     },
     {
       "path": "datasets/video-mmlu/overview.html",
       "title": "Video-MMLU：短视频知识理解评测 · 数据概览",
       "kind": "overview",
       "paper_slug": "video-mmlu",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/video-mmlu/overview.html"
+      "file_uri": "datasets/video-mmlu/overview.html"
     },
     {
       "path": "datasets/lv-haystack/overview.html",
       "title": "LV-Haystack / T*：长视频关键帧检索基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "lv-haystack",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/lv-haystack/overview.html"
+      "file_uri": "datasets/lv-haystack/overview.html"
     },
     {
       "path": "datasets/mem-gallery/overview.html",
       "title": "Mem-Gallery：长期多模态会话记忆基准 · 数据概览",
       "kind": "overview",
       "paper_slug": "mem-gallery",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mem-gallery/overview.html"
+      "file_uri": "datasets/mem-gallery/overview.html"
     },
     {
       "path": "datasets/mikasa-robo/overview.html",
-      "title": "MIKASA / MIKASA-Robo · 数据概览",
+      "title": "MIKASA-Robo: Memory Benchmark for Complex Robot Tasks · 数据概览",
       "kind": "overview",
       "paper_slug": "mikasa-robo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mikasa-robo/overview.html"
+      "file_uri": "datasets/mikasa-robo/overview.html"
     },
     {
       "path": "datasets/embodiedeval/overview.html",
       "title": "EmbodiedEval · 数据概览",
       "kind": "overview",
       "paper_slug": "embodiedeval",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/embodiedeval/overview.html"
+      "file_uri": "datasets/embodiedeval/overview.html"
     },
     {
       "path": "datasets/lsdbench/overview.html",
       "title": "LSDBench · 数据概览",
       "kind": "overview",
       "paper_slug": "lsdbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/lsdbench/overview.html"
+      "file_uri": "datasets/lsdbench/overview.html"
     },
     {
       "path": "datasets/streamingbench/overview.html",
       "title": "StreamingBench · 数据概览",
       "kind": "overview",
       "paper_slug": "streamingbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/streamingbench/overview.html"
+      "file_uri": "datasets/streamingbench/overview.html"
     },
     {
       "path": "datasets/ovo-bench/overview.html",
       "title": "OVO-Bench · 数据概览",
       "kind": "overview",
       "paper_slug": "ovo-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ovo-bench/overview.html"
+      "file_uri": "datasets/ovo-bench/overview.html"
     },
     {
       "path": "datasets/hourvideo/overview.html",
       "title": "HourVideo · 数据概览",
       "kind": "overview",
       "paper_slug": "hourvideo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hourvideo/overview.html"
+      "file_uri": "datasets/hourvideo/overview.html"
     },
     {
       "path": "datasets/longdocurl/overview.html",
       "title": "LongDocURL · 数据概览",
       "kind": "overview",
       "paper_slug": "longdocurl",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/longdocurl/overview.html"
+      "file_uri": "datasets/longdocurl/overview.html"
     },
     {
       "path": "datasets/mmdocir/overview.html",
       "title": "MMDocIR · 数据概览",
       "kind": "overview",
       "paper_slug": "mmdocir",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mmdocir/overview.html"
+      "file_uri": "datasets/mmdocir/overview.html"
     },
     {
       "path": "datasets/m3docvqa/overview.html",
       "title": "M3DocVQA / M3DocRAG · 数据概览",
       "kind": "overview",
       "paper_slug": "m3docvqa",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3docvqa/overview.html"
+      "file_uri": "datasets/m3docvqa/overview.html"
     },
     {
       "path": "datasets/neptune/overview.html",
       "title": "Neptune · 数据概览",
       "kind": "overview",
       "paper_slug": "neptune",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/neptune/overview.html"
+      "file_uri": "datasets/neptune/overview.html"
+    },
+    {
+      "path": "datasets/robomemarena/overview.html",
+      "title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark · 数据概览",
+      "kind": "overview",
+      "paper_slug": "robomemarena",
+      "file_uri": "datasets/robomemarena/overview.html"
+    },
+    {
+      "path": "datasets/emem-bench/overview.html",
+      "title": "eMEM-Bench / eMEM: A Hybrid Spatio-Temporal Memory System for Embodied Agents · 数据概览",
+      "kind": "overview",
+      "paper_slug": "emem-bench",
+      "file_uri": "datasets/emem-bench/overview.html"
+    },
+    {
+      "path": "datasets/findingdory/overview.html",
+      "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents · 数据概览",
+      "kind": "overview",
+      "paper_slug": "findingdory",
+      "file_uri": "datasets/findingdory/overview.html"
     },
     {
       "path": "datasets/egolife/preview_gallery.html",
       "title": "EgoLife · 视频预览",
       "kind": "gallery",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egolife/preview_gallery.html"
+      "file_uri": "datasets/egolife/preview_gallery.html"
     },
     {
       "path": "preview_gallery.html",
       "title": "EgoLife · 原离线图册",
       "kind": "gallery",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/preview_gallery.html"
+      "file_uri": "preview_gallery.html"
     },
     {
       "path": "datasets/m3-agent/preview_gallery.html",
       "title": "M3-Agent / M3-Bench：机器人与网络视频 · 视频预览",
       "kind": "gallery",
       "paper_slug": "m3-agent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3-agent/preview_gallery.html"
+      "file_uri": "datasets/m3-agent/preview_gallery.html"
     },
     {
       "path": "datasets/worldmm/preview_gallery.html",
       "title": "WorldMM：五个既有长视频基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "worldmm",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/worldmm/preview_gallery.html"
+      "file_uri": "datasets/worldmm/preview_gallery.html"
     },
     {
       "path": "datasets/mm-lifelong/preview_gallery.html",
       "title": "MM-Lifelong / ReMA：日、周、月 · 视频预览",
       "kind": "gallery",
       "paper_slug": "mm-lifelong",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mm-lifelong/preview_gallery.html"
+      "file_uri": "datasets/mm-lifelong/preview_gallery.html"
     },
     {
       "path": "datasets/egagent/preview_gallery.html",
       "title": "EGAgent：EgoLife 与 Video-MME · 视频预览",
       "kind": "gallery",
       "paper_slug": "egagent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egagent/preview_gallery.html"
+      "file_uri": "datasets/egagent/preview_gallery.html"
     },
     {
       "path": "datasets/magic-video/preview_gallery.html",
       "title": "MAGIC-Video：EgoLife 与 MM-Lifelong · 视频预览",
       "kind": "gallery",
       "paper_slug": "magic-video",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/magic-video/preview_gallery.html"
+      "file_uri": "datasets/magic-video/preview_gallery.html"
     },
     {
       "path": "datasets/ella/preview_gallery.html",
       "title": "Ella — Embodied Social Agents with Lifelong Memory · 视频预览",
       "kind": "gallery",
       "paper_slug": "ella",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ella/preview_gallery.html"
+      "file_uri": "datasets/ella/preview_gallery.html"
     },
     {
       "path": "datasets/egomem/preview_gallery.html",
       "title": "EgoMem — Full-duplex Lifelong Memory Agent · 视频预览",
       "kind": "gallery",
       "paper_slug": "egomem",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egomem/preview_gallery.html"
+      "file_uri": "datasets/egomem/preview_gallery.html"
     },
     {
       "path": "datasets/supermemory-vqa/preview_gallery.html",
       "title": "SuperMemory-VQA · 视频预览",
       "kind": "gallery",
       "paper_slug": "supermemory-vqa",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/supermemory-vqa/preview_gallery.html"
+      "file_uri": "datasets/supermemory-vqa/preview_gallery.html"
     },
     {
       "path": "datasets/smb/preview_gallery.html",
       "title": "SMB — Spatial Memory Benchmark / LTE · 视频预览",
       "kind": "gallery",
       "paper_slug": "smb",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/smb/preview_gallery.html"
+      "file_uri": "datasets/smb/preview_gallery.html"
     },
     {
       "path": "datasets/halo/preview_gallery.html",
       "title": "HALO / ReMemBench · 视频预览",
       "kind": "gallery",
       "paper_slug": "halo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/halo/preview_gallery.html"
+      "file_uri": "datasets/halo/preview_gallery.html"
     },
     {
       "path": "datasets/memer/preview_gallery.html",
       "title": "MemER: Scaling Up Memory for Robot Control via Experience Retrieval · 视频预览",
       "kind": "gallery",
       "paper_slug": "memer",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/memer/preview_gallery.html"
+      "file_uri": "datasets/memer/preview_gallery.html"
     },
     {
       "path": "datasets/silverware/preview_gallery.html",
       "title": "Break Out the Silverware / Stored Household Item Challenge · 视频预览",
       "kind": "gallery",
       "paper_slug": "silverware",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/silverware/preview_gallery.html"
+      "file_uri": "datasets/silverware/preview_gallery.html"
     },
     {
       "path": "datasets/fetchbench/preview_gallery.html",
       "title": "FetchBench · 视频预览",
       "kind": "gallery",
       "paper_slug": "fetchbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/fetchbench/preview_gallery.html"
+      "file_uri": "datasets/fetchbench/preview_gallery.html"
     },
     {
       "path": "datasets/roomr/preview_gallery.html",
       "title": "Visual Room Rearrangement / RoomR · 视频预览",
       "kind": "gallery",
       "paper_slug": "roomr",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/roomr/preview_gallery.html"
+      "file_uri": "datasets/roomr/preview_gallery.html"
     },
     {
       "path": "datasets/behavior-1k/preview_gallery.html",
       "title": "BEHAVIOR-1K / 2026 Challenge Demonstrations · 视频预览",
       "kind": "gallery",
       "paper_slug": "behavior-1k",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/behavior-1k/preview_gallery.html"
+      "file_uri": "datasets/behavior-1k/preview_gallery.html"
     },
     {
       "path": "datasets/robocasa365/preview_gallery.html",
       "title": "RoboCasa365 · 视频预览",
       "kind": "gallery",
       "paper_slug": "robocasa365",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robocasa365/preview_gallery.html"
+      "file_uri": "datasets/robocasa365/preview_gallery.html"
     },
     {
       "path": "datasets/hd-epic/preview_gallery.html",
       "title": "HD-EPIC · 视频预览",
       "kind": "gallery",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/preview_gallery.html"
+      "file_uri": "datasets/hd-epic/preview_gallery.html"
     },
     {
       "path": "datasets/ego4d/preview_gallery.html",
       "title": "Ego4D — Episodic Memory · 视频预览",
       "kind": "gallery",
       "paper_slug": "ego4d",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ego4d/preview_gallery.html"
+      "file_uri": "datasets/ego4d/preview_gallery.html"
     },
     {
       "path": "datasets/rmbench/preview_gallery.html",
       "title": "RMBench / Mem-0 · 视频预览",
       "kind": "gallery",
       "paper_slug": "rmbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/rmbench/preview_gallery.html"
+      "file_uri": "datasets/rmbench/preview_gallery.html"
     },
     {
       "path": "datasets/robodojo/preview_gallery.html",
       "title": "RoboDojo · 视频预览",
       "kind": "gallery",
       "paper_slug": "robodojo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robodojo/preview_gallery.html"
+      "file_uri": "datasets/robodojo/preview_gallery.html"
     },
     {
       "path": "datasets/videowebarena/preview_gallery.html",
       "title": "VideoWebArena：视频记忆与网页智能体基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "videowebarena",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/videowebarena/preview_gallery.html"
+      "file_uri": "datasets/videowebarena/preview_gallery.html"
     },
     {
       "path": "datasets/mmlongbench/preview_gallery.html",
       "title": "MMLongBench：长上下文图文评测基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "mmlongbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mmlongbench/preview_gallery.html"
+      "file_uri": "datasets/mmlongbench/preview_gallery.html"
     },
     {
       "path": "datasets/cg-bench/preview_gallery.html",
       "title": "CG-Bench：长视频证据检索与问答基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "cg-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/cg-bench/preview_gallery.html"
+      "file_uri": "datasets/cg-bench/preview_gallery.html"
     },
     {
       "path": "datasets/longvale/preview_gallery.html",
       "title": "LongVALE：音视频语言事件基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "longvale",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/longvale/preview_gallery.html"
+      "file_uri": "datasets/longvale/preview_gallery.html"
     },
     {
       "path": "datasets/video-mmmu/preview_gallery.html",
       "title": "Video-MMMU：视频知识获取与迁移基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "video-mmmu",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/video-mmmu/preview_gallery.html"
+      "file_uri": "datasets/video-mmmu/preview_gallery.html"
     },
     {
       "path": "datasets/vsi-bench/preview_gallery.html",
       "title": "VSI-Bench：视觉空间记忆基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "vsi-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/vsi-bench/preview_gallery.html"
+      "file_uri": "datasets/vsi-bench/preview_gallery.html"
     },
     {
       "path": "datasets/vrbench/preview_gallery.html",
       "title": "VRBench：长叙事视频多步推理基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "vrbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/vrbench/preview_gallery.html"
+      "file_uri": "datasets/vrbench/preview_gallery.html"
     },
     {
       "path": "datasets/video-mmlu/preview_gallery.html",
       "title": "Video-MMLU：短视频知识理解评测 · 视频预览",
       "kind": "gallery",
       "paper_slug": "video-mmlu",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/video-mmlu/preview_gallery.html"
+      "file_uri": "datasets/video-mmlu/preview_gallery.html"
     },
     {
       "path": "datasets/lv-haystack/preview_gallery.html",
       "title": "LV-Haystack / T*：长视频关键帧检索基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "lv-haystack",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/lv-haystack/preview_gallery.html"
+      "file_uri": "datasets/lv-haystack/preview_gallery.html"
     },
     {
       "path": "datasets/mem-gallery/preview_gallery.html",
       "title": "Mem-Gallery：长期多模态会话记忆基准 · 视频预览",
       "kind": "gallery",
       "paper_slug": "mem-gallery",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mem-gallery/preview_gallery.html"
+      "file_uri": "datasets/mem-gallery/preview_gallery.html"
     },
     {
       "path": "datasets/mikasa-robo/preview_gallery.html",
-      "title": "MIKASA / MIKASA-Robo · 视频预览",
+      "title": "MIKASA-Robo: Memory Benchmark for Complex Robot Tasks · 视频预览",
       "kind": "gallery",
       "paper_slug": "mikasa-robo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mikasa-robo/preview_gallery.html"
+      "file_uri": "datasets/mikasa-robo/preview_gallery.html"
     },
     {
       "path": "datasets/embodiedeval/preview_gallery.html",
       "title": "EmbodiedEval · 视频预览",
       "kind": "gallery",
       "paper_slug": "embodiedeval",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/embodiedeval/preview_gallery.html"
+      "file_uri": "datasets/embodiedeval/preview_gallery.html"
     },
     {
       "path": "datasets/lsdbench/preview_gallery.html",
       "title": "LSDBench · 视频预览",
       "kind": "gallery",
       "paper_slug": "lsdbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/lsdbench/preview_gallery.html"
+      "file_uri": "datasets/lsdbench/preview_gallery.html"
     },
     {
       "path": "datasets/streamingbench/preview_gallery.html",
       "title": "StreamingBench · 视频预览",
       "kind": "gallery",
       "paper_slug": "streamingbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/streamingbench/preview_gallery.html"
+      "file_uri": "datasets/streamingbench/preview_gallery.html"
     },
     {
       "path": "datasets/ovo-bench/preview_gallery.html",
       "title": "OVO-Bench · 视频预览",
       "kind": "gallery",
       "paper_slug": "ovo-bench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ovo-bench/preview_gallery.html"
+      "file_uri": "datasets/ovo-bench/preview_gallery.html"
     },
     {
       "path": "datasets/hourvideo/preview_gallery.html",
       "title": "HourVideo · 视频预览",
       "kind": "gallery",
       "paper_slug": "hourvideo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hourvideo/preview_gallery.html"
+      "file_uri": "datasets/hourvideo/preview_gallery.html"
     },
     {
       "path": "datasets/longdocurl/preview_gallery.html",
       "title": "LongDocURL · 视频预览",
       "kind": "gallery",
       "paper_slug": "longdocurl",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/longdocurl/preview_gallery.html"
+      "file_uri": "datasets/longdocurl/preview_gallery.html"
     },
     {
       "path": "datasets/mmdocir/preview_gallery.html",
       "title": "MMDocIR · 视频预览",
       "kind": "gallery",
       "paper_slug": "mmdocir",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mmdocir/preview_gallery.html"
+      "file_uri": "datasets/mmdocir/preview_gallery.html"
     },
     {
       "path": "datasets/m3docvqa/preview_gallery.html",
       "title": "M3DocVQA / M3DocRAG · 视频预览",
       "kind": "gallery",
       "paper_slug": "m3docvqa",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3docvqa/preview_gallery.html"
+      "file_uri": "datasets/m3docvqa/preview_gallery.html"
     },
     {
       "path": "datasets/neptune/preview_gallery.html",
       "title": "Neptune · 视频预览",
       "kind": "gallery",
       "paper_slug": "neptune",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/neptune/preview_gallery.html"
+      "file_uri": "datasets/neptune/preview_gallery.html"
+    },
+    {
+      "path": "datasets/robomemarena/preview_gallery.html",
+      "title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark · 视频预览",
+      "kind": "gallery",
+      "paper_slug": "robomemarena",
+      "file_uri": "datasets/robomemarena/preview_gallery.html"
+    },
+    {
+      "path": "datasets/emem-bench/preview_gallery.html",
+      "title": "eMEM-Bench / eMEM: A Hybrid Spatio-Temporal Memory System for Embodied Agents · 视频预览",
+      "kind": "gallery",
+      "paper_slug": "emem-bench",
+      "file_uri": "datasets/emem-bench/preview_gallery.html"
+    },
+    {
+      "path": "datasets/findingdory/preview_gallery.html",
+      "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents · 视频预览",
+      "kind": "gallery",
+      "paper_slug": "findingdory",
+      "file_uri": "datasets/findingdory/preview_gallery.html"
     },
     {
       "path": "research_overview.html",
       "title": "新增 benchmark · 筛选与对比",
       "kind": "other",
       "paper_slug": "research",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/research_overview.html"
+      "file_uri": "research_overview.html"
     },
     {
       "path": "sources/egolife_blog_current.html",
       "title": "egolife / egolife blog current",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/egolife_blog_current.html"
+      "file_uri": "sources/egolife_blog_current.html"
     },
     {
       "path": "sources/official_blog.html",
       "title": "egolife / official blog",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/official_blog.html"
+      "file_uri": "sources/official_blog.html"
     },
     {
       "path": "sources/official_home.html",
       "title": "egolife / official home",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/official_home.html"
+      "file_uri": "sources/official_home.html"
     },
     {
       "path": "sources/paper_arxiv_v3.html",
       "title": "egolife / paper arxiv v3",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/paper_arxiv_v3.html"
+      "file_uri": "sources/paper_arxiv_v3.html"
     },
     {
       "path": "sources/third_person_listing.html",
       "title": "egolife / third person listing",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/third_person_listing.html"
+      "file_uri": "sources/third_person_listing.html"
     },
     {
       "path": "sources/third_person_share.html",
       "title": "egolife / third person share",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/third_person_share.html"
+      "file_uri": "sources/third_person_share.html"
     },
     {
       "path": "sources/worldmm_home.html",
       "title": "egolife / worldmm home",
       "kind": "source",
       "paper_slug": "egolife",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/sources/worldmm_home.html"
+      "file_uri": "sources/worldmm_home.html"
     },
     {
       "path": "datasets/m3-agent/sources/paper.html",
       "title": "m3-agent / paper",
       "kind": "source",
       "paper_slug": "m3-agent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3-agent/sources/paper.html"
+      "file_uri": "datasets/m3-agent/sources/paper.html"
     },
     {
       "path": "datasets/m3-agent/sources/paper_abs.html",
       "title": "m3-agent / paper abs",
       "kind": "source",
       "paper_slug": "m3-agent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3-agent/sources/paper_abs.html"
+      "file_uri": "datasets/m3-agent/sources/paper_abs.html"
     },
     {
       "path": "datasets/m3-agent/sources/project.html",
       "title": "m3-agent / project",
       "kind": "source",
       "paper_slug": "m3-agent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/m3-agent/sources/project.html"
+      "file_uri": "datasets/m3-agent/sources/project.html"
     },
     {
       "path": "datasets/worldmm/sources/paper.html",
       "title": "worldmm / paper",
       "kind": "source",
       "paper_slug": "worldmm",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/worldmm/sources/paper.html"
+      "file_uri": "datasets/worldmm/sources/paper.html"
     },
     {
       "path": "datasets/worldmm/sources/project.html",
       "title": "worldmm / project",
       "kind": "source",
       "paper_slug": "worldmm",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/worldmm/sources/project.html"
+      "file_uri": "datasets/worldmm/sources/project.html"
     },
     {
       "path": "datasets/mm-lifelong/sources/paper.html",
       "title": "mm-lifelong / paper",
       "kind": "source",
       "paper_slug": "mm-lifelong",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/mm-lifelong/sources/paper.html"
+      "file_uri": "datasets/mm-lifelong/sources/paper.html"
     },
     {
       "path": "datasets/egagent/sources/paper.html",
       "title": "egagent / paper",
       "kind": "source",
       "paper_slug": "egagent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egagent/sources/paper.html"
+      "file_uri": "datasets/egagent/sources/paper.html"
     },
     {
       "path": "datasets/egagent/sources/project.html",
       "title": "egagent / project",
       "kind": "source",
       "paper_slug": "egagent",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egagent/sources/project.html"
+      "file_uri": "datasets/egagent/sources/project.html"
     },
     {
       "path": "datasets/magic-video/sources/paper.html",
       "title": "magic-video / paper",
       "kind": "source",
       "paper_slug": "magic-video",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/magic-video/sources/paper.html"
+      "file_uri": "datasets/magic-video/sources/paper.html"
     },
     {
       "path": "datasets/ella/sources/home.html",
       "title": "ella / home",
       "kind": "source",
       "paper_slug": "ella",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ella/sources/home.html"
+      "file_uri": "datasets/ella/sources/home.html"
     },
     {
       "path": "datasets/ella/sources/paper.html",
       "title": "ella / paper",
       "kind": "source",
       "paper_slug": "ella",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ella/sources/paper.html"
+      "file_uri": "datasets/ella/sources/paper.html"
     },
     {
       "path": "datasets/egomem/sources/demo.html",
       "title": "egomem / demo",
       "kind": "source",
       "paper_slug": "egomem",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egomem/sources/demo.html"
+      "file_uri": "datasets/egomem/sources/demo.html"
     },
     {
       "path": "datasets/egomem/sources/paper.html",
       "title": "egomem / paper",
       "kind": "source",
       "paper_slug": "egomem",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/egomem/sources/paper.html"
+      "file_uri": "datasets/egomem/sources/paper.html"
     },
     {
       "path": "datasets/smb/sources/paper.html",
       "title": "smb / paper",
       "kind": "source",
       "paper_slug": "smb",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/smb/sources/paper.html"
+      "file_uri": "datasets/smb/sources/paper.html"
     },
     {
       "path": "datasets/halo/sources/paper.html",
       "title": "halo / paper",
       "kind": "source",
       "paper_slug": "halo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/halo/sources/paper.html"
+      "file_uri": "datasets/halo/sources/paper.html"
     },
     {
       "path": "datasets/halo/sources/project.html",
       "title": "halo / project",
       "kind": "source",
       "paper_slug": "halo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/halo/sources/project.html"
+      "file_uri": "datasets/halo/sources/project.html"
     },
     {
       "path": "datasets/memer/sources/paper.html",
       "title": "memer / paper",
       "kind": "source",
       "paper_slug": "memer",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/memer/sources/paper.html"
+      "file_uri": "datasets/memer/sources/paper.html"
     },
     {
       "path": "datasets/memer/sources/project.html",
       "title": "memer / project",
       "kind": "source",
       "paper_slug": "memer",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/memer/sources/project.html"
+      "file_uri": "datasets/memer/sources/project.html"
     },
     {
       "path": "datasets/silverware/sources/paper.html",
       "title": "silverware / paper",
       "kind": "source",
       "paper_slug": "silverware",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/silverware/sources/paper.html"
+      "file_uri": "datasets/silverware/sources/paper.html"
     },
     {
       "path": "datasets/fetchbench/sources/paper.html",
       "title": "fetchbench / paper",
       "kind": "source",
       "paper_slug": "fetchbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/fetchbench/sources/paper.html"
+      "file_uri": "datasets/fetchbench/sources/paper.html"
     },
     {
       "path": "datasets/roomr/sources/cvf_page.html",
       "title": "roomr / cvf page",
       "kind": "source",
       "paper_slug": "roomr",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/roomr/sources/cvf_page.html"
+      "file_uri": "datasets/roomr/sources/cvf_page.html"
     },
     {
       "path": "datasets/roomr/sources/project.html",
       "title": "roomr / project",
       "kind": "source",
       "paper_slug": "roomr",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/roomr/sources/project.html"
+      "file_uri": "datasets/roomr/sources/project.html"
     },
     {
       "path": "datasets/behavior-1k/sources/challenge_dataset.html",
       "title": "behavior-1k / challenge dataset",
       "kind": "source",
       "paper_slug": "behavior-1k",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/behavior-1k/sources/challenge_dataset.html"
+      "file_uri": "datasets/behavior-1k/sources/challenge_dataset.html"
     },
     {
       "path": "datasets/behavior-1k/sources/paper.html",
       "title": "behavior-1k / paper",
       "kind": "source",
       "paper_slug": "behavior-1k",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/behavior-1k/sources/paper.html"
+      "file_uri": "datasets/behavior-1k/sources/paper.html"
     },
     {
       "path": "datasets/behavior-1k/sources/project.html",
       "title": "behavior-1k / project",
       "kind": "source",
       "paper_slug": "behavior-1k",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/behavior-1k/sources/project.html"
+      "file_uri": "datasets/behavior-1k/sources/project.html"
     },
     {
       "path": "datasets/robocasa365/sources/paper.html",
       "title": "robocasa365 / paper",
       "kind": "source",
       "paper_slug": "robocasa365",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robocasa365/sources/paper.html"
+      "file_uri": "datasets/robocasa365/sources/paper.html"
     },
     {
       "path": "datasets/robocasa365/sources/project.html",
       "title": "robocasa365 / project",
       "kind": "source",
       "paper_slug": "robocasa365",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robocasa365/sources/project.html"
+      "file_uri": "datasets/robocasa365/sources/project.html"
     },
     {
       "path": "datasets/hd-epic/sources/data_bris.html",
       "title": "hd-epic / data bris",
       "kind": "source",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/sources/data_bris.html"
+      "file_uri": "datasets/hd-epic/sources/data_bris.html"
     },
     {
       "path": "datasets/hd-epic/sources/home.html",
       "title": "hd-epic / home",
       "kind": "source",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/sources/home.html"
+      "file_uri": "datasets/hd-epic/sources/home.html"
     },
     {
       "path": "datasets/hd-epic/sources/paper.html",
       "title": "hd-epic / paper",
       "kind": "source",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/sources/paper.html"
+      "file_uri": "datasets/hd-epic/sources/paper.html"
     },
     {
       "path": "datasets/hd-epic/sources/site.html",
       "title": "hd-epic / site",
       "kind": "source",
       "paper_slug": "hd-epic",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/hd-epic/sources/site.html"
+      "file_uri": "datasets/hd-epic/sources/site.html"
     },
     {
       "path": "datasets/ego4d/sources/episodic.html",
       "title": "ego4d / episodic",
       "kind": "source",
       "paper_slug": "ego4d",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ego4d/sources/episodic.html"
+      "file_uri": "datasets/ego4d/sources/episodic.html"
     },
     {
       "path": "datasets/ego4d/sources/home.html",
       "title": "ego4d / home",
       "kind": "source",
       "paper_slug": "ego4d",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ego4d/sources/home.html"
+      "file_uri": "datasets/ego4d/sources/home.html"
     },
     {
       "path": "datasets/ego4d/sources/paper.html",
       "title": "ego4d / paper",
       "kind": "source",
       "paper_slug": "ego4d",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/ego4d/sources/paper.html"
+      "file_uri": "datasets/ego4d/sources/paper.html"
     },
     {
       "path": "datasets/rmbench/sources/official_home.html",
       "title": "rmbench / official home",
       "kind": "source",
       "paper_slug": "rmbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/rmbench/sources/official_home.html"
+      "file_uri": "datasets/rmbench/sources/official_home.html"
     },
     {
       "path": "datasets/rmbench/sources/paper.html",
       "title": "rmbench / paper",
       "kind": "source",
       "paper_slug": "rmbench",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/rmbench/sources/paper.html"
+      "file_uri": "datasets/rmbench/sources/paper.html"
     },
     {
       "path": "datasets/robodojo/sources/official_home.html",
       "title": "robodojo / official home",
       "kind": "source",
       "paper_slug": "robodojo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robodojo/sources/official_home.html"
+      "file_uri": "datasets/robodojo/sources/official_home.html"
     },
     {
       "path": "datasets/robodojo/sources/paper.html",
       "title": "robodojo / paper",
       "kind": "source",
       "paper_slug": "robodojo",
-      "file_uri": "file:///mnt/workspace/private/ztsong/day-long-mem/datasets/robodojo/sources/paper.html"
+      "file_uri": "datasets/robodojo/sources/paper.html"
     }
   ]
 }

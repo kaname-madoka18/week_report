@@ -76,5 +76,7 @@
   "added_batch": "2026-09-23",
   "selection_kind": "qualified",
   "short_video_case_threshold_seconds": 180,
-  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。"
+  "preview_provenance": "官方原始媒体；实测视频时长使用 PyAV / FFmpeg 库。短视频直接播放，超过180秒的视频均匀取100帧，静态图单列。",
+  "homepage_hidden": true,
+  "homepage_hidden_reason": "图文长上下文/文本记忆评测条目；保留子页与全部 HTML URI，主页聚焦视频、多模态与具身记忆。"
 }

@@ -1,0 +1,279 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FindingDory: A Benchmark to Evaluate Memory in Embodied Agents · 数据概览</title><link rel="stylesheet" href="../../assets/catalog.css"></head><body><header class="site-nav"><a class="brand" href="../../catalog.html" data-catalog-home>← 论文与数据集主目录</a><span class="muted">FindingDory: A Benchmark to Evaluate Memory in Embodied Agents</span><span class="spacer"></span><a href="overview.html">数据概览</a><a href="preview_gallery.html">视频预览</a></header><section class="paper-intel" aria-label="论文动态元数据"><div class="eyebrow">PAPER INTEL · 更新于 2026-09-24</div><div class="paper-intel-grid"><div><span>arXiv 首次提交</span><strong>2025-06-18</strong></div><div><span>引用数</span><strong>12</strong></div><div><span>GitHub stars</span><strong>10</strong></div><div><span>当前状态</span><strong>NeurIPS 2025 Workshop · SpaVLE</strong></div></div><p class="paper-intel-links"><a href="https://arxiv.org/abs/2506.15635" target="_blank" rel="noopener">arXiv</a> · <a href="https://github.com/findingdory-benchmark/findingdory-habitat" target="_blank" rel="noopener">GitHub 仓库</a> · <a href="https://www.semanticscholar.org/paper/919556328ac2da382215ea682f4eeb99b15fcf39" target="_blank" rel="noopener">Semantic Scholar</a> · <a href="https://openreview.net/pdf?id=vhkd8RekOx" target="_blank" rel="noopener">状态来源</a> · <a href="https://papers.cool/arxiv/search?highlight=1&amp;query=FindingDory%3A+A+Benchmark+to+Evaluate+Memory+in+Embodied+Agents" target="_blank" rel="noopener">papers.cool</a></p><details class="paper-brief" open><summary>Kimi brief（来自 papers.cool）</summary><div class="kimi-content"><section class="kimi-faq"><h3>Q1 : 这篇论文试图解决什么问题？</h3><p>这篇论文试图解决如何在具身智能体（embodied agents）中有效评估长期记忆能力的问题。具体来说，它旨在通过构建一个名为 FINDINGDORY 的基准测试来评估智能体在长期任务中对过去经验的回忆和利用能力。这些任务要求智能体在复杂的室内环境中进行导航、抓取和放置物体等操作，需要智能体具备对过去交互事件的详细回忆和多步推理能力。</p>
+<p>论文指出，现有的视觉-语言模型（VLMs）在处理短期或静态任务时表现出色，但在长期任务中，尤其是在需要整合多天收集的大量图像信息时，这些模型通常会遇到困难。因此，需要一个专门针对长期记忆的基准测试，以推动具身智能体在长期任务中的发展和应用。</p></section><section class="kimi-faq"><h3>Q2 : 有哪些相关研究？</h3><p>论文中提到了多个与长期记忆和具身智能体相关的研究领域，包括视频问答（Video QA）基准测试和具身人工智能（Embodied AI）基准测试。以下是一些主要的相关研究：</p>
+<h3>视频问答（Video QA）基准测试</h3>
+<ul>
+<li><strong>EgoSchema</strong> [24]: 提出了一种诊断性基准测试，用于评估长视频语言理解能力，但其多选问答格式可能不利于评估长期记忆。</li>
+<li><strong>MovieChat</strong> [36]: 专注于长视频理解，通过多轮交互和记忆增强知识来实现，但其任务设计可能更适合于特定类型的视频内容。</li>
+<li><strong>Milebench</strong> [35]: 用于评估长上下文中的多模态大型语言模型（LLMs），但其任务可能更侧重于文档理解而非具身交互。</li>
+<li><strong>Video-MME</strong> [11]: 提供了多模态 LLMs 在视频分析中的综合评估基准，但其任务可能更适合于视频内容的分类或描述，而不是长期记忆的评估。</li>
+</ul>
+<h3>具身人工智能（Embodied AI）基准测试</h3>
+<ul>
+<li><strong>MemoryMaze</strong> [27] 和 <strong>MemoryGym</strong> [28]: 这些基准测试专注于部分可观测环境中的决策制定和基于历史的状态建模，但它们的视觉效果较为简单，状态空间较小，限制了其在复杂现实世界记忆设置中的相关性。</li>
+<li><strong>MultiON</strong> [42]: 评估基于语义地图的多对象导航任务，但其任务设计可能更侧重于导航技能而非长期记忆。</li>
+<li><strong>OpenEQA</strong> [23]: 通过被动设置测试 VLMs 在预收集的剧集历史中的表现，但其多选评估方式可能会引入偏差，减少对真实记忆回忆的需求。</li>
+<li><strong>SIF</strong> [25]: 专注于具身指令遵循，要求智能体根据模糊的指令收集信息，但其任务设计可能允许智能体通过预计算相关对象和位置来绕过记忆挑战。</li>
+<li><strong>GoatBench</strong> [16]: 提供了一个多模态终身导航的基准测试，但其任务设计可能更侧重于导航技能而非长期记忆。</li>
+<li><strong>Excalibur</strong> [52]: 鼓励和评估具身探索，但其任务设计可能更侧重于探索技能而非长期记忆。</li>
+</ul>
+<h3>其他相关研究</h3>
+<ul>
+<li><strong>ReMEmbR</strong> [3]: 引入了一种非参数记忆树，用于存储和检索过去的经历，以支持规划。</li>
+<li><strong>Embodied RAG</strong> [43]: 提出了一种非参数记忆树，用于存储和检索过去的经历，以支持规划和生成。</li>
+<li><strong>MobilityVLA</strong> [45]: 利用长上下文 VLMs 处理过去的帧，通过 Gemini 进行目标帧选择，并使用拓扑映射指导导航。</li>
+</ul>
+<p>这些研究为具身智能体的长期记忆评估提供了不同的视角和方法，但 FINDINGDORY 基准测试通过其独特的任务设计和评估框架，填补了现有研究中的空白，特别是在需要长期记忆和复杂交互的具身任务中。</p></section><section class="kimi-faq"><h3>Q3 : 论文如何解决这个问题？</h3><p>论文通过构建一个名为 FINDINGDORY 的基准测试来解决具身智能体长期记忆能力评估的问题。该基准测试在 Habitat 模拟器中设计，包含 60 个多样化的导航任务，这些任务要求智能体在高度逼真的室内环境中进行长期的交互和记忆利用。以下是论文解决该问题的具体方法：</p>
+<h3>1. 基准测试设计</h3>
+<ul>
+<li><strong>两阶段设置</strong>：</li>
+<li><strong>经验收集阶段</strong>：一个特权智能体（oracle agent）在环境中自主收集经验，包括导航和操纵任务。这些任务涉及在环境中移动、抓取和放置物体，从而改变环境状态。</li>
+<li><strong>交互阶段</strong>：一个记忆评估智能体被引入到同一环境中，任务是根据特权智能体收集的经验完成指令。这些指令要求智能体回忆过去的交互事件，以确定导航目标或抓取对象。</li>
+</ul>
+<h3>2. 任务分类</h3>
+<ul>
+<li><strong>任务分类</strong>：FINDINGDORY 的任务被分为多个类别，每个类别针对不同的记忆挑战，包括空间、时间、语义和多目标任务。这些任务要求智能体进行复杂的时空推理，例如：</li>
+<li><strong>空间任务</strong>：如导航到特定对象或未交互的对象。</li>
+<li><strong>时间任务</strong>：如导航到在特定时间交互的对象。</li>
+<li><strong>语义任务</strong>：如导航到具有特定属性的对象（如颜色、形状）。</li>
+<li><strong>多目标任务</strong>：如按特定顺序重新访问多个对象或容器。</li>
+</ul>
+<h3>3. 评估指标</h3>
+<ul>
+<li><strong>评估指标</strong>：为了全面评估智能体的性能，论文引入了多种评估指标，包括：</li>
+<li><strong>高阶策略成功率（HL-SR）</strong>：衡量高阶策略正确预测目标帧的百分比。</li>
+<li><strong>低阶策略成功率（LL-SR）</strong>：衡量低阶导航策略成功导航到目标实体的百分比。</li>
+<li><strong>路径长度加权成功率（SPL）</strong>：评估智能体选择和导航到最优目标帧的效率。</li>
+<li><strong>放松版成功率（DTG-SR 和 SC-SR）</strong>：用于分析失败模式，分别放松对目标距离和语义覆盖的要求。</li>
+</ul>
+<h3>4. 基线模型</h3>
+<ul>
+<li><strong>基线模型</strong>：为了评估 FINDINGDORY 基准测试的有效性，论文实现了多种基线模型，包括：</li>
+<li><strong>视频语言模型（VLM）代理</strong>：使用 Gemini-2.0-Flash、GPT-4o、Qwen2.5-VL 和 Gemma-3 等 VLMs，这些模型能够处理长视频上下文，用于高阶目标选择。</li>
+<li><strong>文本记忆代理</strong>：将视频帧分解为块，使用 VLM 生成文本摘要，然后通过文本推理选择目标帧。</li>
+<li><strong>监督微调（SFT）</strong>：对 VLM 进行监督微调，使其能够从交互历史中预测目标帧索引。</li>
+</ul>
+<h3>5. 实验结果</h3>
+<ul>
+<li><strong>实验结果</strong>：论文通过实验验证了 FINDINGDORY 基准测试的有效性。结果显示，即使是当前最先进的 VLMs 在这些任务上也表现不佳，特别是在多目标任务和需要复杂时空推理的任务上。这表明，现有的 VLMs 在处理长期记忆任务时存在显著的局限性，需要进一步的研究和改进。</li>
+</ul>
+<h3>6. 可扩展性和扩展性</h3>
+<ul>
+<li><strong>可扩展性</strong>：FINDINGDORY 基准测试具有可扩展性，可以通过增加交互事件的数量或复杂性来扩展任务的难度，从而支持对长期记忆和推理能力的持续评估。</li>
+</ul>
+<p>通过这些方法，FINDINGDORY 基准测试为具身智能体的长期记忆能力提供了一个全面、可扩展且具有挑战性的评估框架，有助于推动相关领域的研究进展。</p></section><section class="kimi-faq"><h3>Q4 : 论文做了哪些实验？</h3><p>论文中进行了以下实验来评估不同方法在 FINDINGDORY 基准测试上的性能：</p>
+<h3>1. 基线模型的评估</h3>
+<ul>
+<li><strong>视频语言模型（VLM）代理</strong>：</li>
+<li>使用了多种 VLM，包括 Gemini-2.0-Flash、GPT-4o、Qwen2.5-VL 和 Gemma-3。</li>
+<li>这些模型被用于高阶目标选择，即从长视频中选择能够完成任务的关键帧。</li>
+<li>
+<p>评估了这些模型在不同任务类别上的表现，包括单目标空间任务、单目标时间任务和多目标任务。</p>
+</li>
+<li>
+<p><strong>文本记忆代理</strong>：</p>
+</li>
+<li>将视频帧分解为块，使用 VLM 生成文本摘要，然后通过文本推理选择目标帧。</li>
+<li>
+<p>评估了这种方法在任务上的表现，特别是与直接处理视频的 VLM 代理相比的效果。</p>
+</li>
+<li>
+<p><strong>监督微调（SFT）</strong>：</p>
+</li>
+<li>对 VLM 进行监督微调，使其能够从交互历史中预测目标帧索引。</li>
+<li>评估了微调后的模型在任务上的表现，特别是与未微调的 VLM 相比的改进。</li>
+</ul>
+<h3>2. 低阶导航策略的评估</h3>
+<ul>
+<li><strong>图像目标导航代理</strong>：</li>
+<li>使用了一个基于图像目标的导航策略，该策略通过 DDPPO 算法训练，能够根据当前视觉输入和目标图像生成导航动作。</li>
+<li>
+<p>评估了该策略在低阶导航任务上的成功率和路径长度加权成功率（SPL）。</p>
+</li>
+<li>
+<p><strong>显式映射代理</strong>：</p>
+</li>
+<li>使用了一个基于全局地图的导航策略，该策略通过 Fast Marching Method 生成最短路径，然后执行离散导航动作。</li>
+<li>评估了该策略在低阶导航任务上的表现，特别是与图像目标导航代理相比的效果。</li>
+</ul>
+<h3>3. 任务类别分析</h3>
+<ul>
+<li><strong>任务类别分析</strong>：</li>
+<li>对不同任务类别（如空间任务、时间任务、语义任务和多目标任务）进行了详细的性能分析。</li>
+<li>评估了基线模型在这些不同类别任务上的表现，以了解模型在不同记忆挑战下的强项和弱点。</li>
+</ul>
+<h3>4. 模型性能的详细分析</h3>
+<ul>
+<li><strong>高阶策略成功率（HL-SR）</strong>：</li>
+<li>评估了高阶策略在选择正确目标帧方面的成功率。</li>
+<li>
+<p>分析了不同模型在不同任务类别上的 HL-SR 表现。</p>
+</li>
+<li>
+<p><strong>低阶策略成功率（LL-SR）</strong>：</p>
+</li>
+<li>评估了低阶导航策略在导航到目标实体方面的成功率。</li>
+<li>
+<p>分析了不同导航策略在不同任务类别上的 LL-SR 表现。</p>
+</li>
+<li>
+<p><strong>路径长度加权成功率（SPL）</strong>：</p>
+</li>
+<li>评估了智能体选择和导航到最优目标帧的效率。</li>
+<li>
+<p>分析了不同模型和导航策略在不同任务类别上的 SPL 表现。</p>
+</li>
+<li>
+<p><strong>放松版成功率（DTG-SR 和 SC-SR）</strong>：</p>
+</li>
+<li>评估了放松目标距离和语义覆盖要求后的成功率。</li>
+<li>分析了这些放松版指标在不同任务类别上的表现，以了解模型在不同条件下的失败模式。</li>
+</ul>
+<h3>5. 模型性能的对比分析</h3>
+<ul>
+<li><strong>模型性能对比</strong>：</li>
+<li>对比了不同 VLM 代理、文本记忆代理和监督微调模型在任务上的表现。</li>
+<li>分析了不同模型在不同任务类别上的性能差异，以了解哪些模型在哪些任务上表现更好。</li>
+</ul>
+<h3>6. 输入帧数量的影响</h3>
+<ul>
+<li><strong>输入帧数量的影响</strong>：</li>
+<li>评估了不同数量的输入帧对高阶策略性能的影响。</li>
+<li>分析了模型在不同帧采样率下的表现，以了解模型对输入上下文长度的敏感性。</li>
+</ul>
+<h3>7. 短期视觉理解能力的评估</h3>
+<ul>
+<li><strong>短期视觉理解能力的评估</strong>：</li>
+<li>对模型在短期视觉理解任务上的表现进行了评估，以确定模型在长期任务上的表现不佳是否是由于领域或 sim2real 差异。</li>
+<li>通过采样对象交互周围的帧，让模型列出检测到的对象，并与真实类别进行比较，评估模型的短期视觉理解能力。</li>
+</ul>
+<h3>8. 低阶导航策略失败原因分析</h3>
+<ul>
+<li><strong>低阶导航策略失败原因分析</strong>：</li>
+<li>分析了低阶导航策略失败的原因，特别是当高阶策略正确选择目标帧时，低阶策略仍然失败的情况。</li>
+<li>通过检查导航策略在目标实体可见时是否正确停止，分析了导航策略的失败模式。</li>
+</ul>
+<p>这些实验全面评估了不同方法在 FINDINGDORY 基准测试上的性能，揭示了现有 VLMs 在长期记忆任务中的局限性，并为未来的研究提供了方向。</p></section><section class="kimi-faq"><h3>Q5 : 有什么可以进一步探索的点？</h3><p>论文在结论部分提出了几个可以进一步探索的点，以下是一些关键方向：</p>
+<h3>1. <strong>改进记忆驱动的导航策略</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：现有的记忆驱动导航策略在大型环境中表现不佳，尤其是在需要精确导航到目标位置时。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>改进导航策略</strong>：开发更先进的导航策略，能够更好地利用长期记忆中的信息进行精确导航。</li>
+<li><strong>端到端训练</strong>：探索端到端训练方法，使模型能够同时学习记忆检索和导航控制，而不是依赖于分层策略。</li>
+</ul>
+<h3>2. <strong>增强 VLM 的长期记忆能力</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：现有的 VLMs 在处理长视频上下文时存在局限性，特别是在需要精细时空推理的任务中。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>记忆压缩技术</strong>：研究有效的记忆压缩技术，使 VLMs 能够更高效地处理和利用长期记忆。</li>
+<li><strong>监督微调</strong>：进一步探索监督微调方法，以提高 VLMs 在长期记忆任务中的表现。</li>
+</ul>
+<h3>3. <strong>自然交互模型的开发</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：当前的交互模型在执行抓取和放置动作时不够自然，可能会导致 VLMs 误解交互事件。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>自然交互模型</strong>：开发更自然的交互模型，使交互动作更加平滑和自然，从而提高记忆痕迹的真实性和可解释性。</li>
+<li><strong>交互数据增强</strong>：通过增强交互数据的多样性和复杂性，提高 VLMs 对交互事件的理解能力。</li>
+</ul>
+<h3>4. <strong>增强任务的多样性</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：虽然 FINDINGDORY 基准测试已经包含多种任务，但任务的多样性仍有提升空间。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>扩展任务类型</strong>：增加更多类型的长期记忆任务，例如涉及更复杂的语义推理、多模态交互和动态环境变化的任务。</li>
+<li><strong>动态任务生成</strong>：开发动态任务生成方法，使任务能够根据智能体的表现自适应调整难度。</li>
+</ul>
+<h3>5. <strong>长期记忆的可扩展性</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：随着任务复杂性的增加，现有的 VLMs 在处理更长时间跨度和更多交互事件时表现不佳。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>可扩展性研究</strong>：研究如何扩展 VLMs 的长期记忆能力，以支持更长时间跨度和更复杂的任务。</li>
+<li><strong>记忆管理机制</strong>：开发更有效的记忆管理机制，使智能体能够更好地管理和利用长期记忆。</li>
+</ul>
+<h3>6. <strong>多模态交互的长期记忆</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：现有的研究主要集中在视觉和语言模态，但多模态交互（如触觉、听觉）在长期记忆中的作用尚未充分探索。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>多模态记忆融合</strong>：研究如何将触觉、听觉等多模态信息融合到长期记忆中，以提高智能体对环境的理解和交互能力。</li>
+<li><strong>多模态任务设计</strong>：设计更多涉及多模态交互的长期记忆任务，以评估智能体在多模态环境中的表现。</li>
+</ul>
+<h3>7. <strong>长期记忆的评估和分析</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：虽然 FINDINGDORY 提供了多种评估指标，但对长期记忆的评估和分析仍有改进空间。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>细粒度评估指标</strong>：开发更细粒度的评估指标，以更全面地评估智能体在长期记忆任务中的表现。</li>
+<li><strong>失败模式分析</strong>：进一步分析智能体在长期记忆任务中的失败模式，以揭示潜在的问题和改进方向。</li>
+</ul>
+<h3>8. <strong>跨领域应用</strong></h3>
+<ul>
+<li><strong>当前挑战</strong>：虽然 FINDINGDORY 主要针对室内环境，但长期记忆在其他领域（如医疗、教育、工业）的应用尚未充分探索。</li>
+<li><strong>探索方向</strong>：</li>
+<li><strong>跨领域任务设计</strong>：设计更多跨领域的长期记忆任务，以评估智能体在不同应用场景中的表现。</li>
+<li><strong>领域适应性研究</strong>：研究如何使智能体在不同领域中更好地适应和利用长期记忆。</li>
+</ul>
+<p>这些方向不仅有助于推动具身智能体在长期记忆任务中的发展，也为未来的研究提供了丰富的探索空间。</p></section><section class="kimi-faq"><h3>Q6 : 总结一下论文的主要内容</h3><p>论文《FINDINGDORY: A Benchmark to Evaluate Memory in Embodied Agents》介绍了一个名为 FINDINGDORY 的基准测试，旨在评估具身智能体在长期任务中的记忆能力。该基准测试通过构建需要智能体回忆过去经验的场景，特别是涉及各种交互的场景，来评估智能体的记忆能力。这些任务要求智能体在高度逼真的室内环境中完成导航、抓取和放置物体等操作。</p>
+<h3>背景知识</h3>
+<ul>
+<li><strong>具身智能体的记忆能力</strong>：具身智能体需要具备长期记忆能力，以便在动态环境中进行有效的决策和导航。然而，现有的视觉-语言模型（VLMs）在处理长期任务时存在局限性，通常只能处理少量图像，无法有效整合跨多天收集的大量图像信息。</li>
+<li><strong>现有基准测试的不足</strong>：现有的视频问答（Video QA）和具身 AI 基准测试要么依赖于多选格式，要么需要大量人工标注，无法全面评估智能体的长期记忆能力。</li>
+</ul>
+<h3>研究方法</h3>
+<ul>
+<li><strong>FINDINGDORY 基准测试</strong>：该基准测试包含 60 个多样化的导航任务，分为多个类别，每个类别针对不同的记忆挑战，包括空间、时间、语义和多目标任务。这些任务要求智能体进行复杂的时空推理，例如导航到特定对象、回忆过去的交互事件等。</li>
+<li><strong>两阶段设置</strong>：</li>
+<li><strong>经验收集阶段</strong>：特权智能体在环境中自主收集经验，包括导航和操纵任务，改变环境状态。</li>
+<li><strong>交互阶段</strong>：记忆评估智能体被引入到同一环境中，任务是根据特权智能体收集的经验完成指令。</li>
+<li><strong>评估指标</strong>：包括高阶策略成功率（HL-SR）、低阶策略成功率（LL-SR）、路径长度加权成功率（SPL）以及放松版成功率（DTG-SR 和 SC-SR）。</li>
+</ul>
+<h3>实验</h3>
+<ul>
+<li><strong>基线模型</strong>：</li>
+<li><strong>视频语言模型（VLM）代理</strong>：使用 Gemini-2.0-Flash、GPT-4o、Qwen2.5-VL 和 Gemma-3 等 VLMs，这些模型能够处理长视频上下文，用于高阶目标选择。</li>
+<li><strong>文本记忆代理</strong>：将视频帧分解为块，使用 VLM 生成文本摘要，然后通过文本推理选择目标帧。</li>
+<li><strong>监督微调（SFT）</strong>：对 VLM 进行监督微调，使其能够从交互历史中预测目标帧索引。</li>
+<li><strong>低阶导航策略</strong>：</li>
+<li><strong>图像目标导航代理</strong>：基于图像目标的导航策略，通过 DDPPO 算法训练。</li>
+<li><strong>显式映射代理</strong>：基于全局地图的导航策略，通过 Fast Marching Method 生成最短路径。</li>
+</ul>
+<h3>关键结论</h3>
+<ul>
+<li><strong>VLMs 的局限性</strong>：实验结果显示，即使是当前最先进的 VLMs 在 FINDINGDORY 基准测试上的表现也不佳，特别是在多目标任务和需要复杂时空推理的任务上。这表明现有的 VLMs 在处理长期记忆任务时存在显著的局限性。</li>
+<li><strong>记忆驱动导航的挑战</strong>：低阶导航策略在精确导航到目标位置时表现不佳，尤其是在目标实体可见但距离较远时。这表明需要改进记忆驱动的导航策略，以更好地利用长期记忆中的信息。</li>
+<li><strong>监督微调的效果</strong>：监督微调的 VLM 在任务上的表现有所提升，特别是在处理更长的视频上下文时。这表明适当的监督可以提高模型的时空推理能力。</li>
+<li><strong>输入帧数量的影响</strong>：实验发现，增加输入帧数量并不一定能提高模型的性能，反而可能导致性能下降。这表明模型需要更有效地处理和利用长期记忆中的信息。</li>
+<li><strong>短期视觉理解能力</strong>：模型在短期视觉理解任务上的表现优于长期任务，这表明模型在处理长期上下文时存在挑战。</li>
+</ul>
+<h3>进一步探索的方向</h3>
+<ul>
+<li><strong>改进记忆驱动的导航策略</strong>：开发更先进的导航策略，能够更好地利用长期记忆中的信息进行精确导航。</li>
+<li><strong>增强 VLM 的长期记忆能力</strong>：研究有效的记忆压缩技术，使 VLMs 能够更高效地处理和利用长期记忆。</li>
+<li><strong>自然交互模型的开发</strong>：开发更自然的交互模型，使交互动作更加平滑和自然，从而提高记忆痕迹的真实性和可解释性。</li>
+<li><strong>增强任务的多样性</strong>：增加更多类型的长期记忆任务，特别是涉及更复杂的语义推理和多模态交互的任务。</li>
+<li><strong>长期记忆的可扩展性</strong>：研究如何扩展 VLMs 的长期记忆能力，以支持更长时间跨度和更复杂的任务。</li>
+<li><strong>多模态交互的长期记忆</strong>：研究如何将触觉、听觉等多模态信息融合到长期记忆中，以提高智能体对环境的理解和交互能力。</li>
+<li><strong>长期记忆的评估和分析</strong>：开发更细粒度的评估指标，以更全面地评估智能体在长期记忆任务中的表现。</li>
+<li><strong>跨领域应用</strong>：设计更多跨领域的长期记忆任务，以评估智能体在不同应用场景中的表现。</li>
+</ul>
+<p>通过这些研究和实验，FINDINGDORY 基准测试为具身智能体的长期记忆能力提供了一个全面、可扩展且具有挑战性的评估框架，有助于推动相关领域的研究进展。</p></section><section class="kimi-faq"><h3>Q7 : 想要进一步了解论文</h3><p>以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是FindingDory%3A%20A%20Benchmark%20to%20Evaluate%20Memory%20in%20Embodied%20Agents，链接是 https://arxiv.org/pdf/2506.15635 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2506.15635 。请以此为基础，继续回答我后面的问题。&amp;system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&amp;send_immediately=true" rel="noopener" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。</p></section></div></details></section><main class="report"><h1 id="findingdory">FindingDory</h1>
+<p>FindingDory 是用于评估 embodied agent 记忆能力的 benchmark。论文在 Habitat 中定义长程任务，并通过程序化扩展控制记忆所需的空间与事件依赖。</p>
+<h2 id="_1">与多模态记忆的关系</h2>
+<p>直接记忆：智能体需要把视觉观察、位置关系和先前经历保留到后续重排任务，再从历史经验中检索可执行信息。</p>
+<h2 id="_2">数据与视频长度</h2>
+<p>论文描述 60 个基础任务及程序化扩展。项目页公开 Example Video Sequences；本页保存 4 个能够完整下载并解码的 episode，实测播放时长 29.20–59.00 秒。</p>
+<h2 id="_3">数据入口</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2506.15635" target="_blank" rel="noopener">论文</a></li>
+<li><a href="https://findingdory-benchmark.github.io/" target="_blank" rel="noopener">官方项目页</a></li>
+<li><a href="https://github.com/findingdory-benchmark/findingdory-habitat" target="_blank" rel="noopener">Habitat 环境代码</a></li>
+<li><a href="https://github.com/findingdory-benchmark/findingdory-train" target="_blank" rel="noopener">训练代码</a></li>
+<li><a href="https://huggingface.co/datasets/yali30/findingdory" target="_blank" rel="noopener">Hugging Face 数据集</a></li>
+</ul>
+<h2 id="_4">预览限制</h2>
+<ul>
+<li>本地 4 个视频是官网示例，不代表所有任务分布。</li>
+<li>项目页另外列有 episode 3371 与 89；这两项在本次网络传输中断，仍可从官网直接打开。</li>
+<li>记忆跨度应结合 Habitat episode / step 定义阅读，不能只看播放器秒数。</li>
+</ul>
+<h2 id="_5">首发与状态</h2>
+<ul>
+<li>arXiv：2506.15635；动态元数据中的日期、引用和 GitHub stars按本地刷新时间记录。</li>
+<li>公开页面显示其作为 NeurIPS 2025 Workshop SpaVLE 相关工作展示；状态来源保留在动态元数据。</li>
+</ul><div class="report-footer"><a href="../../catalog.html" data-catalog-home>← 返回主目录</a> · <a href="preview_gallery.html">查看预览</a> · <a href="overview.md">Markdown 原文</a> · <a href="project.json">来源与预览元数据</a></div></main><script src="../../assets/page_navigation.js"></script></body></html>

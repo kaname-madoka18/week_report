@@ -23,9 +23,6 @@
     }catch(_){return false}
   };
   const delegate=()=>catalogReady||catalogParent();
-  document.querySelectorAll('a[data-catalog-home]').forEach(link=>{
-    link.href=new URL('catalog.html',root).href;
-  });
   const notify=message=>{if(window.parent!==window)window.parent.postMessage(message,'*')};
   window.addEventListener('message',event=>{
     if(event.source===window.parent&&event.data?.type==='dataset-catalog-ready')catalogReady=true;
@@ -37,13 +34,13 @@
     const link=event.target.closest?.('a[href]');
     if(!link||!delegate())return;
     const href=link.getAttribute('href')||'';
-    if(!href||href.startsWith('#'))return;
+    if(!href||href.startsWith('#')||/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href))return;
     let target;
     try{target=new URL(href,document.baseURI)}catch(_){return}
     if(target.origin!==root.origin||!target.pathname.startsWith(rootPath))return;
     let targetPath;
     try{targetPath=decodeURIComponent(target.pathname.slice(rootPath.length))}catch(_){return}
-    if(targetPath!=='index.html'&&targetPath!=='catalog.html')return;
+    if(targetPath!=='index.html')return;
     // This is the only navigation that must leave the child frame.  The
     // catalog handles it without asking the browser to navigate its top frame.
     event.preventDefault();

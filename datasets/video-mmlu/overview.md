@@ -50,4 +50,4 @@
 - [官方仓库](https://github.com/Espere-1119-Song/Video-MMLU)
 - [官方项目](https://www.enxinsong.com/Video-MMLU-web/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

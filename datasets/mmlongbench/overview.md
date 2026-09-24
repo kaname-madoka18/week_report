@@ -44,4 +44,4 @@ Visual RAG、Needle-in-a-Haystack、Many-Shot ICL、文档摘要和长文档 VQA
 - [官方仓库](https://github.com/EdinburghNLP/MMLongBench)
 - [官方项目](https://zhaowei-wang-nlp.github.io/MMLongBench-page/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

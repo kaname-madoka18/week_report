@@ -1,0 +1,108 @@
+{
+  "slug": "findingdory",
+  "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+  "category": "具身视觉记忆 · Habitat benchmark",
+  "summary": "面向 embodied agents 的长程记忆 benchmark，在 Habitat 中构造 60 个任务与程序化扩展，要求从早期经验中检索空间和事件信息。",
+  "paper_url": "https://arxiv.org/abs/2506.15635",
+  "repo_url": "https://github.com/findingdory-benchmark/findingdory-habitat",
+  "project_url": "https://findingdory-benchmark.github.io/",
+  "dataset_urls": [
+    {
+      "label": "FindingDory 数据集",
+      "url": "https://huggingface.co/datasets/yali30/findingdory"
+    },
+    {
+      "label": "训练代码",
+      "url": "https://github.com/findingdory-benchmark/findingdory-train"
+    }
+  ],
+  "duration_summary": "官方示例 episode 实测 29.20–59.00 秒；任务轨迹的上下文长度由 Habitat episode 与记忆阶段定义。",
+  "availability": "项目页、Habitat 环境、训练代码和 Hugging Face 数据入口公开；本地保留 4 个完整官方 episode 视频。",
+  "preview_status": "ready",
+  "limitations": [
+    "4 个本地案例是官网示例视频，不是 60 个任务的均匀抽样。",
+    "官网还列出 episode 3371 和 89；本轮远端连接在大文件传输中断，页面仍保留外部来源入口。",
+    "视频播放秒数不等同于模型读取的记忆跨度或 Habitat step 数。"
+  ],
+  "relation_level": "直接记忆",
+  "groups": [
+    {
+      "id": "official_episode_examples",
+      "title": "官方 Habitat episode 示例",
+      "description": "项目页 Example Video Sequences 的可完整下载案例；每个视频小于 100MB、时长不超过 180 秒并通过解码检查。",
+      "media_kind": "video_case",
+      "frames": [],
+      "video_cases": [
+        {
+          "local_video": "samples/ep_id_327.mp4",
+          "source_url": "https://findingdory-benchmark.github.io/static/media/videos/ep_id_327.mp4",
+          "title": "Official example episode 327",
+          "category": "FindingDory official Habitat episode",
+          "description": "Official project-page rearrangement sequence; complete local file is below 100MB and direct-playable.",
+          "source_label": "Official example episode 327",
+          "video_id": "ep_id_327",
+          "size_bytes": 8542741,
+          "sha256": "80aa8f6700cae04709f923a645d2a2dc0cc892ab18caa255f29a2a4005f3c4c4",
+          "duration_seconds": 43.6,
+          "width": 540,
+          "height": 720,
+          "fps": 30.0,
+          "frames": 1308
+        },
+        {
+          "local_video": "samples/ep_id_1242.mp4",
+          "source_url": "https://findingdory-benchmark.github.io/static/media/videos/ep_id_1242.mp4",
+          "title": "Official example episode 1242",
+          "category": "FindingDory official Habitat episode",
+          "description": "Official project-page rearrangement sequence; complete local file is below 100MB and direct-playable.",
+          "source_label": "Official example episode 1242",
+          "video_id": "ep_id_1242",
+          "size_bytes": 7646322,
+          "sha256": "ddd397fd5a3d82c1dbde1995fe9ea64fc0a78c8b4a524a28e2f26c5c0cd2ebb1",
+          "duration_seconds": 35.666666666666664,
+          "width": 540,
+          "height": 720,
+          "fps": 30.0,
+          "frames": 1070
+        },
+        {
+          "local_video": "samples/ep_id_2835.mp4",
+          "source_url": "https://findingdory-benchmark.github.io/static/media/videos/ep_id_2835.mp4",
+          "title": "Official example episode 2835",
+          "category": "FindingDory official Habitat episode",
+          "description": "Official project-page rearrangement sequence; complete local file is below 100MB and direct-playable.",
+          "source_label": "Official example episode 2835",
+          "video_id": "ep_id_2835",
+          "size_bytes": 10529129,
+          "sha256": "ca5ed8eee37677eb146bb121ec3d7fdd11412275edc6f5298c69badff2301ff1",
+          "duration_seconds": 59.0,
+          "width": 540,
+          "height": 720,
+          "fps": 30.0,
+          "frames": 1770
+        },
+        {
+          "local_video": "samples/ep_id_819.mp4",
+          "source_url": "https://findingdory-benchmark.github.io/static/media/videos/ep_id_819.mp4",
+          "title": "Official example episode 819",
+          "category": "FindingDory official Habitat episode",
+          "description": "Official project-page rearrangement sequence; complete local file is below 100MB and direct-playable.",
+          "source_label": "Official example episode 819",
+          "video_id": "ep_id_819",
+          "size_bytes": 5455847,
+          "sha256": "b8224ea25eebc0687aa4edfc1e52cbda9141b9f129f0b26c12d5438b82218556",
+          "duration_seconds": 29.2,
+          "width": 540,
+          "height": 720,
+          "fps": 30.0,
+          "frames": 876
+        }
+      ]
+    }
+  ],
+  "short_video_cases_count": 4,
+  "short_video_case_threshold_seconds": 180,
+  "preview_version": "v1-requested-benchmark-refresh",
+  "added_batch": "2026-09-24",
+  "selection_kind": "requested"
+}

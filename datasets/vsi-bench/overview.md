@@ -52,4 +52,4 @@
 - [官方仓库](https://github.com/vision-x-nyu/thinking-in-space)
 - [官方项目](https://vision-x-nyu.github.io/thinking-in-space.github.io/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

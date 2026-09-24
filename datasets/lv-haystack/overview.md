@@ -51,4 +51,4 @@
 - [官方仓库](https://github.com/mll-lab-nu/TStar)
 - [官方项目](https://longvideohaystack.github.io/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

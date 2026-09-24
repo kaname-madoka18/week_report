@@ -45,4 +45,4 @@
 - [官方仓库](https://github.com/YuanchenBei/Mem-Gallery)
 - [官方项目](https://github.com/YuanchenBei/Mem-Gallery)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

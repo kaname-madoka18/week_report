@@ -1,6 +1,6 @@
 # WorldMM：数据集与视频预览
 
-[返回全部论文目录](../../index.html) · [本页预览图册](preview_gallery.html) · [EgoLife 完整 overview](../../overview.html)
+[返回全部论文目录](../../catalog.html) · [本页预览图册](preview_gallery.html) · [EgoLife 完整 overview](../../overview.html)
 
 WorldMM 是长视频记忆与检索方法，**没有另建名为 WorldMM 的原始视频数据集**。它使用 EgoLifeQA、Ego-R1 Bench、HippoVlog、LVBench 和 Video-MME Long 五个已有基准，另公开 EgoLife 的预构建记忆元数据。以下区分原始视频、问题集合和衍生记忆文件。核对日期：2026-09-22。
 

@@ -1,6 +1,6 @@
 # M3-Agent / M3-Bench：数据集 overview
 
-[返回全部论文目录](../../index.html) · [700 帧场景图册](preview_gallery.html)
+[返回全部论文目录](../../catalog.html) · [700 帧场景图册](preview_gallery.html)
 
 这篇论文提出带长期记忆的多模态智能体 **M3-Agent**，并新建问答基准 **M3-Bench**。后者包含机器人视角情景视频与网络视频两个子集；另在 Video-MME Long 上评测。机器人子集由演员按脚本模拟服务机器人及人与机器人的互动，以头戴相机记录，并非真实机器人自主执行任务的轨迹。核对日期：2026-09-22。
 

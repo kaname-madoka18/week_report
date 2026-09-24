@@ -1,6 +1,6 @@
 # MAGIC-Video：底层数据、长度与预览
 
-[返回全部论文目录](../../index.html) · [本页图册](preview_gallery.html) · [MM-Lifelong 数据说明](../mm-lifelong/overview.html)
+[返回全部论文目录](../../catalog.html) · [本页图册](preview_gallery.html) · [MM-Lifelong 数据说明](../mm-lifelong/overview.html)
 
 MAGIC-Video 是无需额外训练的图记忆与跨时间叙事链方法，**没有新建原始视频数据集**。论文评测三套问答：EgoLifeQA、Ego-R1 和 MM-Lifelong Month；底层只有 EgoLife 与 MM-Lifelong 两个视频库。此次核对 [论文 v1](https://arxiv.org/html/2605.08271v1)、[官方代码](https://github.com/lijiazheng0917/MAGIC-video)与公开文件列表，日期为 2026-09-22。
 

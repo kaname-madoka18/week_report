@@ -55,4 +55,4 @@ Perception定位知识相关信息；Comprehension理解概念；Adaptation将�
 - [官方仓库](https://github.com/EvolvingLMMs-Lab/VideoMMMU)
 - [官方项目](https://videommmu.github.io/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)

@@ -1,6 +1,6 @@
 # EGAgent：既有视频基准与方法演示
 
-[返回全部论文目录](../../index.html) · [预览图册](preview_gallery.html) · [EgoLife 完整 overview](../../overview.html)
+[返回全部论文目录](../../catalog.html) · [预览图册](preview_gallery.html) · [EgoLife 完整 overview](../../overview.html)
 
 《Agentic Very Long Video Understanding》提出围绕实体场景图的 **EGAgent**：规划智能体组合视觉、音频转写和实体图搜索。**本文没有新增原始视频数据集**，实验使用 EgoLifeQA 与 Video-MME Long。核对日期为 2026-09-22，结果采用 [论文 v3](https://arxiv.org/html/2601.18157v3)。
 

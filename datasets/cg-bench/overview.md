@@ -46,4 +46,4 @@
 - [官方仓库](https://github.com/CG-Bench/CG-Bench)
 - [官方项目](https://cg-bench.github.io/leaderboard/)
 
-[← 返回主目录](../../index.html)
+[← 返回主目录](../../catalog.html)
